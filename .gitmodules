@@ -1,9 +1,9 @@
-[submodule "uv"]
-	path = uv
-	url = https://github.com/titaniumnetwork-dev/Ultraviolet-Core.git
 [submodule "ebutuoy"]
 	path = ebutuoy
 	url = https://github.com/ruochenjia/ebutuoy.git
 [submodule "vmlinux"]
 	path = vmlinux
 	url = https://github.com/ruochenjia/vmlinux.git
+[submodule "uv"]
+	path = uv
+	url = https://github.com/titaniumnetwork-dev/Ultraviolet-Core.git

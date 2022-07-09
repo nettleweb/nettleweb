@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<base href="/" />
+		<title>_</title>
+		<script type="text/javascript" src="/uv.config.js"></script>
+		<script type="text/javascript">
+"use strict";
+
+(async () => {
+
+function getQueryString(key, fallback,  url = window.location.href) {
+	key = key.replace(/[\[\]]/g, '\\$&');
+	let regex = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
+	let results = regex.exec(url);
+	if (!results) return fallback;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+// unregister all services workers before start
+// this can fix certain issues
+let regs = await window.navigator.serviceWorker.getRegistrations();
+for (let i = 0; i < regs.length; i++)
+	regs[i].unregister();
+
+
+let baseUrl = (() => {
+	let base = new URL(window.location.href);
+	base.pathname = "/";
+	base.search = "";
+	return base.href;
+})();
+
+let url = getQueryString("url", "");
+let eurl = __uv$config.encodeUrl(new URL(url).href);
+let encodedUrl = baseUrl.slice(0, -1) +  __uv$config.prefix + eurl;
+
+await window.navigator.serviceWorker.register("/sw.js", {
+	scope:  __uv$config.prefix
+});
+window.location = new URL(encodedUrl);
+
+})();
+		</script>
+	</head>
+	<body></body>
+</html>

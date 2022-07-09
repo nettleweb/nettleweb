@@ -65,13 +65,13 @@ body {
 	font-weight: 600;
 	text-align: center;
 	cursor: pointer;
+	box-sizing: border-box;
 }
 
 .nav-button:hover {
 	border-bottom-style: solid;
 	border-bottom-color: #ffffff;
 	border-bottom-width: 3px;
-	box-sizing: border-box;
 }
 
 #tools {
@@ -102,7 +102,10 @@ body {
 	padding-left: 20px;
 	padding-right: 20px;
 	overflow-y: auto;
-	/* set a background color to override previous screen */
+}
+
+#noscript-screen {
+	/*set the background color to override default screen*/
 	background-color: #001a1a;
 }
 
@@ -173,6 +176,52 @@ a {
 	font-style: italic;
 }
 
+.game-label {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+	line-height: 18px;
+	cursor: pointer;
+	text-decoration: underline;
+	font-style: italic;
+}
+
+.game-item {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+}
+
+#html5-game-container, #dos-game-container, #flash-game-container {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+}
+
+.game-frame-container {
+	position: relative;
+	display: block;
+	width: 800px;
+	height: 600px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+game-frame {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
 		</style>
 	</head>
 	<body>
@@ -199,13 +248,20 @@ a {
 				<a class="text" href="https://whitespider.tk" target="_blank" style="margin-bottom: 60px;">https://whitespider.tk</a>
 				<div class="subtitle">GitHub Project</div>
 				<div class="text">If you are an developer, you can access the source code and contribute to the project on GitHub.</div>
-				<a class="text" href="https://www.github.com/ruochenjia/whitespider">GitHub Project</a>
+				<a class="text" href="https://www.github.com/ruochenjia/whitespider" target="_blank">GitHub Project</a>
 			</div>
 			<div id="games-screen" style="display: none;">
-				<div class="title">Games</div>
+				<div class="title" style="margin-bottom: 50px;">Games</div>
+				<div class="subtitle" style="margin-bottom: 30px;">HTML5 Games</div>
+				<div id="html5-game-container" style="margin-bottom: 50px;"></div>
+				<div class="subtitle" style="margin-bottom: 30px;">DOS Games</div>
+				<div id="dos-game-container" style="margin-bottom: 50px;"></div>
+				<div class="subtitle" style="margin-bottom: 30px;">Flash Games</div>
+				<div id="flash-game-container" style="margin-bottom: 50px;"></div>
+				<div class="text">More games are coming soon!</div>
 			</div>
 			<div id="tools-screen" style="display: none;">
-				<div class="tools">Tools</div>
+				<div class="title">Tools</div>
 			</div>
 			<noscript>
 				<div id="noscript-screen">
@@ -218,25 +274,75 @@ a {
 
 // <![CDATA[
 
-// override the default alert function
-function alert(msg, title, icon) {
-	// throw null;
-}
-
-// override the default importScripts function
-function importScripts(url) {
-	// throw null;
-}
-
 // default error handler
 window.onerror = (msg, src, lineno, colno, e) => {
 };
 
+
+// basic navigations
 let homeScreen = document.getElementById("home-screen");
 let gamesScreen = document.getElementById("games-screen");
 let toolsScreen = document.getElementById("tools-screen");
+document.getElementById("home").onclick = () => {
+	gamesScreen.style.display = "none";
+	toolsScreen.style.display = "none";
+	homeScreen.style.display = "block";
+};
+document.getElementById("games").onclick = () => {
+	homeScreen.style.display = "none";
+	toolsScreen.style.display = "none";
+	gamesScreen.style.display = "block";
+};
+document.getElementById("tools").onclick = () => {
+	homeScreen.style.display = "none";
+	gamesScreen.style.display = "none";
+	toolsScreen.style.display = "block";
+};
 
-document.getElementById("home");
+// load game contents
+import { contents } from "./contents.js";
+import { ContentFrame } from "./contentframe.js";
+let html5Games = contents.html5Games;
+let dosGames = contents.dosGames;
+let flashGames = contents.flashGames;
+
+function initContent(contents, container) {
+	for (let i in contents) {
+		let content = contents[i];
+		let item = document.createElement("div");
+		item.className = "game-item";
+		let label = document.createElement("div");
+		label.className = "game-label";
+		label.innerHTML = content.name;
+		item.appendChild(label);
+		let frameContainer = document.createElement("div");
+		frameContainer.className = "game-frame-container";
+		frameContainer.style.display = "none";
+		item.appendChild(frameContainer);
+		container.appendChild(item);
+
+		label.onclick = (e) => {
+			e.preventDefault();
+			if (frameContainer.style.display == "none") {
+				let frame = document.createElement("content-frame");
+				let path = content.path;
+				if (path != null)
+					frame.setAttribute("path", content.path);
+				else frame.setAttribute("src", content.url);
+				frame.setAttribute("type", "text/plain");
+				frameContainer.appendChild(frame);
+				frameContainer.style.display = "block";
+			} else {
+				frameContainer.innerHTML = "";
+				frameContainer.style.display = "none";
+			}
+		}
+	}
+}
+
+initContent(html5Games, document.getElementById("html5-game-container"));
+initContent(dosGames, document.getElementById("dos-game-container"));
+initContent(flashGames, document.getElementById("flash-game-container"));
 
 // ]]>
 		</script>
