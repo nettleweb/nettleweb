@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<title>ebuTuoY</title>
+		<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+		<script type="text/javascript" src="https://ruochenjia.github.io/winxp-dialog/alert.js"></script>
+		<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+}
+
+body {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	font-size: 14px;
+	font-family: monospace;
+	font-weight: 500;
+}
+
+#noscript-msg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	margin: 0px;
+	padding: 10px;
+	background-color: #ffffff;
+	font-size: 16px;
+}
+
+#container {
+	position: relative;
+	display: block;
+	width: 500px;
+	height: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	margin-bottom: 10px;
+}
+
+@keyframes logo-flip {
+    from { transform: scaleX(1); }
+    to { transform: scaleX(-1); }
+}
+
+#logo {
+	position: relative;
+	display: block;
+	width: 400px;
+	height: 300px;
+	margin: auto;
+}
+
+#logo:hover {
+	animation-name: logo-flip;
+	animation-duration: 1s;
+	animation-delay: 0s;
+	transform: scaleX(-1);
+}
+
+#search-bar {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: fit-content;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#text-input {
+	position: relative;
+	display: block;
+	width: 78%;
+	height: auto;
+	padding: 10px;
+	outline: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+#search-button {
+	position: relative;
+	display: block;
+	width: 16%;
+	height: auto;
+	padding: 5px;
+	cursor: pointer;
+	background-color: #800000;
+	border-style: solid;
+	border-width: 1px;
+	border-top-color: white;
+	border-left-color: white;
+	border-bottom-color: black;
+	border-right-color: black;
+	margin-right: 2%;
+}
+
+#search-icon {
+	position: relative;
+	display: block;
+	width: 24px;
+	height: 24px;
+	margin: auto;
+}
+
+#search-button:active {
+	border-top-color: black;
+	border-left-color: black;
+	border-bottom-color: white;
+	border-right-color: white;
+}
+
+#option-bar {
+	position: relative;
+	display: flex;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+}
+
+#option-bar p {
+	position: relative;
+	width: fit-content;
+	height: auto;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+	font-size: 14px;
+}
+
+#option-max-results {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: auto;
+	outline: none;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+
+#option-order {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: auto;
+	outline: none;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+}
+
+#result-container {
+	position: relative;
+	width: 800px;
+	height: fit-content;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.result {
+	position: relative;
+	width: 100%;
+	height: fit-content;
+}
+
+.result-item {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: fit-content;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.result-preview {
+	position: relative;
+	width: 160px;
+	height: 90px;
+}
+
+.result-details {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	padding: 5px;
+}
+
+.result-title {
+	position: relative;
+	width: 100%;
+	height: fit-content;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.result-description {
+	position: relative;
+	width: 100%;
+	height: fit-content;
+	color: #303030;
+}
+
+.result-publish-time {
+	position: relative;
+	width: 100%;
+	height: fit-content;
+	color: #808080;
+	margin-top: 5px;
+}
+
+.video-container {
+	position: relative;
+	width: 400px;
+	height: 300px;
+	resize: both;
+	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+#loadmore-button {
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	color: #808080;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#footer {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-size: 12px;
+	text-align: center;
+	color: #808080;
+	background-color: #f0f0f0; 
+}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<img id="logo" src="logo.png" width="400" height="300" />
+			<div id="search-bar">
+				<input id="text-input" type="text" value="" placeholder="" />
+				<div id="search-button">
+					<img id="search-icon" src="search.png" width="24" height="24" />
+				</div>
+			</div>
+			<div id="option-bar">
+				<p>Max results: </p>
+				<input id="option-max-results" type="number" min="1" max="50" value="10" placeholder="10" />
+				<p>Sort by: </p>
+				<select id="option-order">
+					<option value="date">Date</option>
+					<option value="rating">Rating</option>
+					<option value="relevance" selected="true">Relevance</option>
+					<option value="title">Title</option>
+					<option value="viewCount">View Count</option>
+				</select>
+			</div>
+		</div>
+		<div id="result-container"></div>
+		<div class="result" style="display: none;">
+			<div class="result-item">
+				<img class="result-preview" width="160" height="90" />
+				<div class="result-details">
+					<div class="result-title"></div>
+					<div class="result-description"></div>
+					<div class="result-publish-time"></div>
+				</div>
+			</div>
+			<div class="video-container" style="display: none;"></div>
+		</div>
+		<div id="loadmore-button" style="display: none;">Load More</div>
+		<div id="footer">Created by Ruochen Jia -- <a href="https://github.com/ruochenjia/ebutuoy/">GitHub Project</a></div>
+		<noscript>
+			<div id="noscript-msg">Please enable JavaScript and refresh this page to continue.</div>
+		</noscript>
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>

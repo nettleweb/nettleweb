@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+		<link rel="icon" type="image/x-icon" href="data:image/x-icon;charset=utf-8," />
+		<link rel="stylesheet" type="text/css" href="/lib/jsdos/js-dos.css" />
+		<title>Page Title</title>
+		<script type="text/javascript" src="/lib/ruffle/ruffle.js"></script>
+		<script type="text/javascript" src="/lib/jsdos/js-dos.js"></script>
+		<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+embed, ruffle-embed {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+#frame {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+"use strict";
+
+// <![CDATA[
+(() => {
+
+function getQueryStr(name, url = window.location.href) {
+	name = name.replace(/[\[\]]/g, '\\$&');
+	let regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+		results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+let src = getQueryStr("src");
+if (src == null || src.length == 0) {
+	console.warn("src not specified");
+	return;
+}
+
+let type = getQueryStr("type");
+if (type == null || type.length == 0) {
+	console.warn("type not specified");
+	return;
+}
+
+emulators.pathPrefix = "/lib/jsdos/";
+
+switch (type) {
+	case "flash": {
+		let frame = document.createElement("embed");
+		frame.type = "application/x-shockwave-flash";
+		frame.width = "1024";
+		frame.height = "768";
+		frame.src = src;
+		document.body.appendChild(frame);
+		break;
+	}
+	case "jsdos": {
+		let frame = document.createElement("div");
+		frame.id = "frame";
+		document.body.appendChild(frame);
+		Dos(frame).run(src);
+		break;
+	}
+	default:
+		console.warn("unsupported type: " + type);
+		break;
+}
+
+
+})();
+// ]]>
+		</script>
+	</body>
+</html>
