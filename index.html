@@ -235,7 +235,7 @@ a {
 	margin-bottom: 20px;
 }
 
-game-frame {
+game-frame, embed {
 	position: absolute;
 	display: block;
 	width: 100%;
@@ -281,7 +281,15 @@ game-frame {
 				<div class="text" style="margin-bottom: 50px;">More games are coming soon!</div>
 			</div>
 			<div id="tools-screen" style="display: none;">
-				<div class="title">Tools</div>
+				<div class="title" style="margin-bottom: 50px;">Tools</div>
+				<a class="game-label" href="https://unblocker.whitespider.gq" target="_blank">Unblocker</a>
+				<div class="text" style="margin-bottom: 25px;">This tool allows you to access all blocked websites through a web proxy.</div>
+				<div class="game-label" id="youtube-adless">YouTube Adless</div>
+				<div class="text" style="margin-bottom: 25px;">An unofficial YouTube client, with all ads removed.</div>
+				<div class="game-frame-container" id="youtube-adless-frame" style="display: none;"></div>
+				<div class="game-label" id="vmlinux">VMLinux</div>
+				<div class="text" style="margin-bottom: 25px;">A 32-bit PC emulator based on <a href="https://github.com/copy/v86" target="_blank">v86</a>.</div>
+				<div class="game-frame-container" id="vmlinux-frame" style="display: none;"></div>
 			</div>
 			<noscript>
 				<div id="noscript-screen">
@@ -363,6 +371,40 @@ function initContent(contents, container) {
 initContent(html5Games, document.getElementById("html5-game-container"));
 initContent(dosGames, document.getElementById("dos-game-container"));
 initContent(flashGames, document.getElementById("flash-game-container"));
+
+
+
+document.getElementById("youtube-adless").onclick = () => {
+	let frame = document.getElementById("youtube-adless-frame");
+	if (frame.style.display == "none") {
+		let embed = document.createElement("embed");
+		embed.type = "text/plain";
+		embed.width = "1024";
+		embed.height = "768";
+		embed.src = "ebutuoy";
+		frame.appendChild(embed);
+		frame.style.display = "block";
+	} else {
+		frame.innerHTML = "";
+		frame.style.display = "none";
+	}
+};
+document.getElementById("vmlinux").onclick = () => {
+	let frame = document.getElementById("vmlinux-frame");
+	if (frame.style.display == "none") {
+		let embed = document.createElement("embed");
+		embed.type = "text/plain";
+		embed.width = "1024";
+		embed.height = "768";
+		embed.src = "vmlinux";
+		frame.appendChild(embed);
+		frame.style.display = "block";
+	} else {
+		frame.innerHTML = "";
+		frame.style.display = "none";
+	}
+};
+
 
 // ]]>
 		</script>
