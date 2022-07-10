@@ -71,6 +71,10 @@ let contents = {
 			"url": "https://ikatchelo.github.io/happ/"
 		},
 		{
+			"name": "Hextris",
+			"url": "https://hextris.io/"
+		},
+		{
 			"name": "hole.io",
 			"url": "https://hole-io.com"
 		},
@@ -192,8 +196,148 @@ let contents = {
 		}
 	],
 	"dosGames": [
+		{
+			"name": "Blood",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fblood.jsdos"
+		},
+		{
+			"name": "CHAMP Kong",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fchamp-kong.jsdos"
+		},
+		{
+			"name": "Doom",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fdoom.jsdos"
+		},
+		{
+			"name": "Duke Nukem 3D",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fduke-nukem-3d.jsdos"
+		},
+		{
+			"name": "Pac-Man",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fpac-man.jsdos"
+		},
+		{
+			"name": "Quake",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fquake.jsdos"
+		},
+		{
+			"name": "Super Street Fighter II Turbo",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fsuper-street-fighter-ii-turbo.jsdos"
+		},
+		{
+			"name": "Tetris",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Ftetris.jsdos"
+		},
+		{
+			"name": "Wolfenstein 3D",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fwolfenstein-3d.jsdos"
+		},
+		{
+			"name": "X-Men: Children of the Atom",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fx-men-children-of-the-atom.jsdos"
+		}
 	],
 	"flashGames": [
+		{
+			"name": "7 Days Without Rain",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2F7-days-without-rain.swf"
+		},
+		{
+			"name": "Amorphous Plus",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Famorphous-plus.swf"
+		},
+		{
+			"name": "Bloons Player Pack 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbloons-player-pack-2.swf"
+		},
+		{
+			"name": "Bloons Player Pack 3",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbloons-player-pack-3.swf"
+		},
+		{
+			"name": "Bloons Player Pack 4",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbloons-player-pack-4.swf"
+		},
+		{
+			"name": "Bloons Tower Defense",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbloons-tower-defense.swf"
+		},
+		{
+			"name": "Bloons Tower Defense 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbloons-tower-defense-2.swf"
+		},
+		{
+			"name": "Bubble Trouble",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbubble-trouble.swf"
+		},
+		{
+			"name": "Falldown",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffalldown.swf"
+		},
+		{
+			"name": "Falldown 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffalldown2.swf"
+		},
+		{
+			"name": "Fancy Pants Adventure",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffancy-pants-adventure.swf"
+		},
+		{
+			"name": "Fancy Pants Adventure 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffancy-pants-adventure2.swf"
+		},
+		{
+			"name": "Gold Miner",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fgold_miner_xploit_machine_edition_2009.swf"
+		},
+		{
+			"name": "Gold Miner (Special Edition)",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fgold_miner_special_edition.swf"
+		},
+		{
+			"name": "Henry Stickmin: Breaking the Bank",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhenry-stickmin-breaking-the-bank.swf"
+		},
+		{
+			"name": "Henry Stickmin: Escaping The Prison",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhenry-stickmin-escaping-the-prison.swf"
+		},
+		{
+			"name": "Henry Stickmin: Stealing The Diamond",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhenry-stickmin-stealing-the-diamond.swf"
+		},
+		{
+			"name": "Plant VS Zombies 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fplant_vs_zombies_2.swf"
+		},
+		{
+			"name": "Plazma Burst",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fplazma-burst.swf"
+		},
+		{
+			"name": "Super Mario Flash",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsuper-mario-flash.swf"
+		},
+		{
+			"name": "Super Mario Flash 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsuper-mario-flash2.swf"
+		},
+		{
+			"name": "Super Smash Flash",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsuper-smash-flash.swf"
+		},
+		{
+			"name": "The Impossible Quiz",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthe-impossible-quiz.swf"
+		},
+		{
+			"name": "The Impossible Quiz 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthe-impossible-quiz-2.swf"
+		},
+		{
+			"name": "World's Hardest Game",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fworlds-hardest-game.swf"
+		}
 	]
 };
 

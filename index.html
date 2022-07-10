@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
@@ -22,6 +22,26 @@
 	font-family: "Ubuntu Mono";
 	font-style: normal;
 	src: url("res/ubuntu-mono.ttf") format("truetype");
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(255, 255, 255, 0.8);
 }
 
 body {
@@ -248,7 +268,7 @@ game-frame {
 				<a class="text" href="https://whitespider.tk" target="_blank" style="margin-bottom: 60px;">https://whitespider.tk</a>
 				<div class="subtitle">GitHub Project</div>
 				<div class="text">If you are an developer, you can access the source code and contribute to the project on GitHub.</div>
-				<a class="text" href="https://www.github.com/ruochenjia/whitespider" target="_blank">GitHub Project</a>
+				<a class="text" href="https://www.github.com/ruochenjia/whitespider" target="_blank" style="margin-bottom: 60px;">GitHub Project</a>
 			</div>
 			<div id="games-screen" style="display: none;">
 				<div class="title" style="margin-bottom: 50px;">Games</div>
@@ -258,7 +278,7 @@ game-frame {
 				<div id="dos-game-container" style="margin-bottom: 50px;"></div>
 				<div class="subtitle" style="margin-bottom: 30px;">Flash Games</div>
 				<div id="flash-game-container" style="margin-bottom: 50px;"></div>
-				<div class="text">More games are coming soon!</div>
+				<div class="text" style="margin-bottom: 50px;">More games are coming soon!</div>
 			</div>
 			<div id="tools-screen" style="display: none;">
 				<div class="title">Tools</div>

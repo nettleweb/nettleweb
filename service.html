@@ -32,6 +32,11 @@ let baseUrl = (() => {
 })();
 
 let url = getQueryString("url", "");
+if (url.length == 0) {
+	console.warn("no url specified");
+	return;
+}
+
 let eurl = __uv$config.encodeUrl(new URL(url).href);
 let encodedUrl = baseUrl.slice(0, -1) +  __uv$config.prefix + eurl;
 

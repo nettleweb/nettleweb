@@ -97,7 +97,48 @@ class ContentFrame extends HTMLElement {
 		shadow.getElementById("fullscreen-button").onclick = () => {
 			baseFrame.focus({ preventScroll: true });
 			baseFrame.requestFullscreen().catch((err) => {
-				console.warn("Failed to enter fullscreen mode", err);
+				// fullscreen is not supported here
+				// so open a new window instead
+
+				let win = window.open("", "_blank", "height=" + screen.availHeight + ", width=" + screen.availWidth);
+				let doc = win.document;
+				let baseUrl = (() => {
+					let base = new URL(window.location.href);
+					base.pathname = "/";
+					base.search = "";
+					return base.href;
+				})();
+
+				doc.documentElement.innerHTML = `<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+		<base href="` + baseUrl + `" />
+		<title>_</title>
+		<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#base-frame {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+		</style>
+	</head>
+	<body></body>`;
+				doc.body.appendChild(baseFrame);
 			});
 		};
 	}
