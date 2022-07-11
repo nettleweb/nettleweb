@@ -3,6 +3,10 @@
 let contents = {
 	"html5Games": [
 		{
+			"name": "1v1.lol",
+			"url": "https://1v1.lol/"
+		},
+		{
 			"name": "2048",
 			"url": "https://gabrielecirulli.github.io/2048/"
 		},
@@ -43,8 +47,12 @@ let contents = {
 			"path": "https://app-165865.games.s3.yandex.net/165865/g5i92zlftj709k08ejk195g6vimi7ezc/index.html"
 		},
 		{
+			"name": "Dogeminer 2",
+			"url": "https://dogeminer2.com/"
+		},
+		{
 			"name": "Doodle Jump",
-			"url": "https://ruochenjia.github.io/html5-games/doodle-jump/"
+			"path": "html5-games/doodle-jump/"
 		},
 		{
 			"name": "ev.io",
@@ -52,7 +60,7 @@ let contents = {
 		},
 		{
 			"name": "Flappy Bird",
-			"url": "https://ruochenjia.github.io/html5-games/flappy-bird"
+			"path": "html5-games/flappy-bird/"
 		},
 		{
 			"name": "Flip 3D",
@@ -100,7 +108,7 @@ let contents = {
 		},
 		{
 			"name": "Minesweeper",
-			"url": "https://ruochenjia.github.io/html5-games/minesweeper"
+			"path": "html5-games/minesweeper/"
 		},
 		{
 			"name": "Pac-Man",
@@ -123,6 +131,18 @@ let contents = {
 			"url": "https://ubg100.github.io/games/run3"
 		},
 		{
+			"name": "Shadow Fighters",
+			"url": "https://html5.gamedistribution.com/49cb67eea34644a1afafea2970eaead1/?gd_sdk_referrer_url=YOUR_EXACT_GAME_PAGE_URL"
+		},
+		{
+			"name": "Shell Shockers",
+			"url": "https://shellshock.io/"
+		},
+		{
+			"name": "Skydom",
+			"url": "https://html5.gamedistribution.com/ae10263247c44278b33c845ff1c2df80/?gd_sdk_referrer_url=YOUR_EXACT_GAME_PAGE_URL"
+		},
+		{
 			"name": "slither.io",
 			"url": "https://slither.io"
 		},
@@ -136,7 +156,7 @@ let contents = {
 		},
 		{
 			"name": "Solitaire",
-			"url": "https://ruochenjia.github.io/html5-games/solitaire/"
+			"path": "html5-games/solitaire/"
 		},
 		{
 			"name": "Squid Game",
@@ -144,11 +164,11 @@ let contents = {
 		},
 		{
 			"name": "Surf",
-			"url": "https://ruochenjia.github.io/html5-games/surf/"
+			"path": "html5-games/surf/"
 		},
 		{
 			"name": "T-Rex Run",
-			"url": "https://ruochenjia.github.io/html5-games/chromedino/"
+			"path": "html5-games/chromedino/"
 		},
 		{
 			"name": "T-Rex Run 3D",
@@ -160,7 +180,7 @@ let contents = {
 		},
 		{
 			"name": "Tetris",
-			"url": "https://ruochenjia.github.io/html5-games/tetris/"
+			"path": "html5-games/tetris/"
 		},
 		{
 			"name": "Triple Connect",

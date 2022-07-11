@@ -55,17 +55,24 @@ class ContentFrame extends HTMLElement {
 			return frame;
 		})();
 
-		let setAttr = (key, value) => {
+		let baseUrl = (() => {
+			let base = new URL(window.location.href);
+			base.pathname = "/";
+			base.search = "";
+			return base.href;
+		})();
+
+		let setAttr = (key, value = "") => {
 			switch(key) {
 				case "src":
+					if (value.includes("YOUR_EXACT_GAME_PAGE_URL"))
+						// for gamedistribution.com only
+						value = value.replace("YOUR_EXACT_GAME_PAGE_URL", baseUrl);
+
 					if (window != window.top) {
 						// set src attribute directly as service workers are not supported
 						baseFrame.src = value;
-					} else {
-						let base = new URL(window.location.href);
-						base.pathname = "/";
-						baseFrame.src = base.href + "service.html?url=" + encodeURIComponent(value);
-					}
+					} else baseFrame.src = baseUrl + "service.html?url=" + encodeURIComponent(value);
 					break;
 				case "path":
 					baseFrame.src = value;
