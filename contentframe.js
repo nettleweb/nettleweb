@@ -51,6 +51,7 @@ class ContentFrame extends HTMLElement {
 			frame.id = "base-frame";
 			frame.setAttribute("loading", "lazy");
 			frame.setAttribute("allowfullscreen", "true");
+			frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms");
 			shadow.prepend(frame);
 			return frame;
 		})();
@@ -65,10 +66,6 @@ class ContentFrame extends HTMLElement {
 		let setAttr = (key, value = "") => {
 			switch(key) {
 				case "src":
-					if (value.includes("YOUR_EXACT_GAME_PAGE_URL"))
-						// for gamedistribution.com only
-						value = value.replace("YOUR_EXACT_GAME_PAGE_URL", baseUrl);
-
 					if (window != window.top) {
 						// set src attribute directly as service workers are not supported
 						baseFrame.src = value;
