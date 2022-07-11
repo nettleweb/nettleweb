@@ -1,4 +1,15 @@
 User-agent: *
-Disallow: /
-
+Allow: /
+Disallow: /dos-games/
+Disallow: /flash-games/
+Disallow: /html5-games/
+Disallow: /lib/
+Disallow: /res/
+Disallow: /uv/
+Disallow: /service.html
+Disallow: /embed.html
+Disallow: /ebutuoy/
+Disallow: /vmlinux/
+Disallow: /.git/
+Disallow: */.git/
 
