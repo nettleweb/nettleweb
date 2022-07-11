@@ -98,22 +98,27 @@ class ContentFrame extends HTMLElement {
 			return value;
 		};
 
-		shadow.getElementById("fullscreen-button").onclick = () => {
-			baseFrame.focus({ preventScroll: true });
-			baseFrame.requestFullscreen().catch((err) => {
-				// fullscreen is not supported here
-				// so open a new window instead
+		let newTabOrWindow = (sw) => {
+			if (sw)
+				return window.open("", "_blank", "height=" + screen.availHeight + ", width=" + screen.availWidth);
+			else {
+				let win = window.open("", "_blank");
+				win.focus();
+				return win;
+			}
+		};
 
-				let win = window.open("", "_blank", "height=" + screen.availHeight + ", width=" + screen.availWidth);
-				let doc = win.document;
-				let baseUrl = (() => {
-					let base = new URL(window.location.href);
-					base.pathname = "/";
-					base.search = "";
-					return base.href;
-				})();
+		let inNewTabOrWindow = (newWindow) => {
+			let win = newTabOrWindow(newWindow);
+			let doc = win.document;
+			let baseUrl = (() => {
+				let base = new URL(window.location.href);
+				base.pathname = "/";
+				base.search = "";
+				return base.href;
+			})();
 
-				doc.documentElement.innerHTML = `<head>
+			doc.documentElement.innerHTML = `<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 		<base href="` + baseUrl + `" />
@@ -142,9 +147,20 @@ body {
 		</style>
 	</head>
 	<body></body>`;
-				doc.body.appendChild(baseFrame);
+			doc.body.appendChild(baseFrame);
+		};
+
+		shadow.getElementById("fullscreen-button").onclick = () => {
+			baseFrame.focus({ preventScroll: true });
+			baseFrame.requestFullscreen().catch((err) => {
+				// fullscreen is not supported here
+				// so open a new window instead
+				inNewTabOrWindow(true);
 			});
 		};
+
+		this.inNewTab = () => inNewTabOrWindow(false);
+		this.inNewWindow = () => inNewTabOrWindow(true);
 	}
 }
 

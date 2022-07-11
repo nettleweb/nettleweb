@@ -43,6 +43,12 @@ let encodedUrl = baseUrl.slice(0, -1) +  __uv$config.prefix + eurl;
 await window.navigator.serviceWorker.register("/sw.js", {
 	scope:  __uv$config.prefix
 });
+
+// wait before redirecting to fix certain issues
+await new Promise(resolve => {	
+	setTimeout(() => resolve(null), 1000);
+});
+
 window.location = new URL(encodedUrl);
 
 })();

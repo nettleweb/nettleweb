@@ -3,7 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Referrer-Policy" content="no-referrer" />
 		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="description" content="An open-source ad-less unblocked games website" />
+		<meta name="keywords" content="whitespider,white spider,unblocked,unblocked games,html games,html5 games,open source,games">
 		<base href="/" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<title>WhiteSpider</title>
@@ -123,6 +127,7 @@ body {
 	padding-left: 20px;
 	padding-right: 20px;
 	overflow-y: auto;
+	overflow-x: hidden;
 }
 
 #noscript-screen {
@@ -195,6 +200,8 @@ a {
 	cursor: pointer;
 	text-decoration: underline;
 	font-style: italic;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .game-label {
@@ -203,10 +210,12 @@ a {
 	width: fit-content;
 	height: fit-content;
 	margin: auto;
-	line-height: 18px;
+	line-height: 16px;
 	cursor: pointer;
 	text-decoration: underline;
 	font-style: italic;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 .game-item {
@@ -362,8 +371,13 @@ function initContent(contents, container) {
 					frame.setAttribute("path", content.path);
 				else frame.setAttribute("src", content.url);
 				frame.setAttribute("type", "text/plain");
-				frameContainer.appendChild(frame);
-				frameContainer.style.display = "block";
+				if (document.documentElement.clientWidth < 850) {
+					// for mobile phones
+					frame.inNewTab();	
+				} else {
+					frameContainer.appendChild(frame);
+					frameContainer.style.display = "block";
+				}
 			} else {
 				frameContainer.innerHTML = "";
 				frameContainer.style.display = "none";
