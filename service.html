@@ -21,7 +21,7 @@ function getQueryString(key, fallback,  url = window.location.href) {
 // this can fix certain issues
 let regs = await window.navigator.serviceWorker.getRegistrations();
 for (let i = 0; i < regs.length; i++)
-	regs[i].unregister();
+	await regs[i].unregister();
 
 
 let baseUrl = (() => {

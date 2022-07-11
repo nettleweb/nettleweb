@@ -47,7 +47,7 @@ class ContentFrame extends HTMLElement {
 </div>`;
 
 		let baseFrame = (() => {
-			let frame = document.createElement("iframe");
+			let frame = document.createElement(window == window.top ? "iframe" : "embed");
 			frame.id = "base-frame";
 			frame.setAttribute("loading", "lazy");
 			frame.setAttribute("allowfullscreen", "true");

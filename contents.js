@@ -132,7 +132,7 @@ let contents = {
 		},
 		{
 			"name": "Shadow Fighters",
-			"url": "https://html5.gamedistribution.com/49cb67eea34644a1afafea2970eaead1/?gd_sdk_referrer_url=YOUR_EXACT_GAME_PAGE_URL"
+			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://html5.gamedistribution.com/49cb67eea34644a1afafea2970eaead1/"
 		},
 		{
 			"name": "Shell Shockers",
@@ -140,7 +140,7 @@ let contents = {
 		},
 		{
 			"name": "Skydom",
-			"url": "https://html5.gamedistribution.com/ae10263247c44278b33c845ff1c2df80/?gd_sdk_referrer_url=YOUR_EXACT_GAME_PAGE_URL"
+			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&https://html5.gamedistribution.com/ae10263247c44278b33c845ff1c2df80/"
 		},
 		{
 			"name": "slither.io",
