@@ -79,6 +79,11 @@ initContent(flashGames, document.getElementById("flash-game-container"));
 document.getElementById("youtube-adless").onclick = () => {
 	let frame = document.getElementById("youtube-adless-frame");
 	if (frame.style.display == "none") {
+		if (document.documentElement.clientWidth < 850) {
+			// for mobile phones
+			frame.style.width = "100%";
+			frame.style.height = "100%";
+		}
 		let embed = document.createElement("embed");
 		embed.type = "text/plain";
 		embed.width = "1024";
@@ -94,6 +99,11 @@ document.getElementById("youtube-adless").onclick = () => {
 document.getElementById("vmlinux").onclick = () => {
 	let frame = document.getElementById("vmlinux-frame");
 	if (frame.style.display == "none") {
+		if (document.documentElement.clientWidth < 850) {
+			// for mobile phones
+			frame.style.width = "100%";
+			frame.style.height = "100%";
+		}
 		let embed = document.createElement("embed");
 		embed.type = "text/plain";
 		embed.width = "1024";
