@@ -88,7 +88,7 @@ let contents = {
 		},
 		{
 			"name": "Hextris",
-			"url": "https://hextris.io/"
+			"path": "html5-games/hextris/"
 		},
 		{
 			"name": "hole.io",
@@ -112,7 +112,7 @@ let contents = {
 		},
 		{
 			"name": "Minecraft Classic",
-			"url": "https://classic.minecraft.net"
+			"path": "html5-games/minecraft-classic"
 		},
 		{
 			"name": "Minesweeper",
