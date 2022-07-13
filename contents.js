@@ -8,7 +8,7 @@ let contents = {
 		},
 		{
 			"name": "2048",
-			"url": "https://gabrielecirulli.github.io/2048/"
+			"path": "html5-games/2048"
 		},
 		{
 			"name": "4 Colors",
@@ -16,7 +16,11 @@ let contents = {
 		},
 		{
 			"name": "9007199254740992",
-			"url": "https://www.csie.ntu.edu.tw/~b01902112/9007199254740992/"
+			"path": "html5-games/9007199254740992/"
+		},
+		{
+			"name": "Among US",
+			"path": "html5-games/among-us"
 		},
 		{
 			"name": "Appel",
@@ -36,15 +40,19 @@ let contents = {
 		},
 		{
 			"name": "Cut The Rope",
-			"path": "https://app-97515.games.s3.yandex.net/97515/u1824c0o9xlk2nm9hlcxtbs4l6ysl44s/index.html"
+			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-97515.games.s3.yandex.net/97515/u1824c0o9xlk2nm9hlcxtbs4l6ysl44s/index.html"
 		},
 		{
 			"name": "Cut The Rope 2",
-			"path": "https://app-151508.games.s3.yandex.net/151508/jvxf9j9k2sdt71knpwa2f6azsndo6nrw/index.html"
+			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-151508.games.s3.yandex.net/151508/jvxf9j9k2sdt71knpwa2f6azsndo6nrw/index.html"
 		},
 		{
 			"name": "Death Worm",
-			"path": "https://app-165865.games.s3.yandex.net/165865/g5i92zlftj709k08ejk195g6vimi7ezc/index.html"
+			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-165865.games.s3.yandex.net/165865/g5i92zlftj709k08ejk195g6vimi7ezc/index.html"
+		},
+		{
+			"name": "Dogeminer",
+			"path": "html5-games/dogeminer"
 		},
 		{
 			"name": "Dogeminer 2",
@@ -192,7 +200,7 @@ let contents = {
 		},
 		{
 			"name": "Uno",
-			"path": "https://app-177799.games.s3.yandex.net/177799/d7a35e57hl874np745ncsvajwen2ges9/index.html"
+			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-177799.games.s3.yandex.net/177799/d7a35e57hl874np745ncsvajwen2ges9/index.html"
 		},
 		{
 			"name": "venge.io",
@@ -208,7 +216,7 @@ let contents = {
 		},
 		{
 			"name": "Zombie Killer",
-			"path": "https://app-158693.games.s3.yandex.net/158693/2289i4hez4nkfqyo31x4l2jr4mq2lx0u/index.html"
+			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-158693.games.s3.yandex.net/158693/2289i4hez4nkfqyo31x4l2jr4mq2lx0u/index.html"
 		},
 		{
 			"name": "zombsroyale.io",
