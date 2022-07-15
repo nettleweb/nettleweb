@@ -271,8 +271,36 @@ let contents = {
 			"path": "embed.html?type=flash&src=%2Fflash-games%2F7-days-without-rain.swf"
 		},
 		{
+			"name": "Achivement Unlocked",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fachivement-unlocked.swf"
+		},
+		{
 			"name": "Amorphous Plus",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Famorphous-plus.swf"
+		},
+		{
+			"name": "Asteroids",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fasteroids.swf"
+		},
+		{
+			"name": "Astroflash",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fastroflash.swf"
+		},
+		{
+			"name": "Atari Breakout",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fatari-breakout.swf"
+		},
+		{
+			"name": "Avalanche",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Favalanche.swf"
+		},
+		{
+			"name": "Battle Pong",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbattle-pong.swf"
+		},
+		{
+			"name": "Battleships",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbattleships.swf"
 		},
 		{
 			"name": "Bloons Player Pack 2",
@@ -295,8 +323,48 @@ let contents = {
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbloons-tower-defense-2.swf"
 		},
 		{
+			"name": "Bloxorz",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbloxorz.swf"
+		},
+		{
+			"name": "Bowman",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbowman.swf"
+		},
+		{
+			"name": "Boxhead 2 Play",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fboxhead-2-play.swf"
+		},
+		{
+			"name": "Breaking The Bank",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbreaking-the-bank.swf"
+		},
+		{
+			"name": "Bubble Shooter",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbubble-shooter.swf"
+		},
+		{
+			"name": "Bubble Tanks 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbubble-tanks-2.swf"
+		},
+		{
 			"name": "Bubble Trouble",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbubble-trouble.swf"
+		},
+		{
+			"name": "Bullet Bill",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fbullet-bill.swf"
+		},
+		{
+			"name": "Castle Wars",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fcastle-wars.swf"
+		},
+		{
+			"name": "Causality",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fcausality.swf"
+		},
+		{
+			"name": "Champion Archer",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fchampion-archer.swf"
 		},
 		{
 			"name": "Falldown",
@@ -321,18 +389,6 @@ let contents = {
 		{
 			"name": "Gold Miner (Special Edition)",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fgold_miner_special_edition.swf"
-		},
-		{
-			"name": "Henry Stickmin: Breaking the Bank",
-			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhenry-stickmin-breaking-the-bank.swf"
-		},
-		{
-			"name": "Henry Stickmin: Escaping The Prison",
-			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhenry-stickmin-escaping-the-prison.swf"
-		},
-		{
-			"name": "Henry Stickmin: Stealing The Diamond",
-			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhenry-stickmin-stealing-the-diamond.swf"
 		},
 		{
 			"name": "Plant VS Zombies 2",
