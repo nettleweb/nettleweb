@@ -128,8 +128,55 @@ document.getElementById("load-custom-games").onclick = () => {
 		initContent(TestGameDB.data, container);
 	});
 };
-document.getElementById("request-custom-game").onclick = () => {
-	let gameName = prompt("Game Name");
+
+function imNotARobot() {
+	let resolve;
+	let reject;
+	let promise = new Promise((a, b) => {
+		resolve = a;
+		reject = b;
+	});
+
+	let allowClick = false;
+	setTimeout(() => allowClick = true, 200);
+
+	let dialog = new webAlert.Dialog({
+		title: "",
+		message: "I'm not a robot",
+		input: {
+			type: "checkbox"
+		},
+		positiveButton: {
+			text: "Confirm",
+			onclick: () => {
+				if (allowClick)
+					resolve(dialog.inputElement().checked);
+				else reject("You are a robot!");
+				dialog.dismiss();
+			}
+		},
+		negativeButton: {
+			text: "Cancel",
+			onclick: () => {
+				resolve(null);
+				dialog.cancel();
+			}
+		}
+	});
+	dialog.show().then(() => {
+		dialog.inputElement().onclick = (e) => {
+			e.preventDefault();
+			setTimeout(() => {
+				let el = e.target;
+				el.checked = !el.checked;
+			}, 800);
+		};	
+	});
+	return promise;
+}
+
+document.getElementById("request-custom-game").onclick = async () => {
+	let gameName = await prompt("Game Name");
 	if (gameName == null)
 		return;
 	if (gameName.length == 0) {
@@ -137,7 +184,7 @@ document.getElementById("request-custom-game").onclick = () => {
 		return;
 	}
 
-	let gameUrl = prompt("Game URL");
+	let gameUrl = await prompt("Game URL");
 	if (gameUrl == null)
 		return;
 	if (gameUrl.length == 0) {
@@ -151,11 +198,11 @@ document.getElementById("request-custom-game").onclick = () => {
 		return;
 	}
 
-	let imNotARobot = prompt("I'm not a robot", "No");
-	if (imNotARobot == null)
+	let checked = await imNotARobot();
+	if (checked == null)
 		return;
-	if (imNotARobot.toLowerCase() != "yes") {
-		alert("🖕");
+	if (!checked) {
+		alert("🖕🏼");
 		return;
 	}
 
