@@ -367,6 +367,98 @@ let contents = {
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fchampion-archer.swf"
 		},
 		{
+			"name": "Choose Your Weapon",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fchoose-your-weapon.swf"
+		},
+		{
+			"name": "Choose Your Weapon 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fchoose-your-weapon-2.swf"
+		},
+		{
+			"name": "Choose Your Weapon 3",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fchoose-your-weapon-3.swf"
+		},
+		{
+			"name": "Choose Your Weapon 4",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fchoose-your-weapon-4.swf"
+		},
+		{
+			"name": "Classic Snake",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fclassic-snake.swf"
+		},
+		{
+			"name": "Color Switch",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fcolor-switch.swf"
+		},
+		{
+			"name": "Connect 4",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fconnect-4.swf"
+		},
+		{
+			"name": "Conquer Antarctica",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fconquer-antarctica.swf"
+		},
+		{
+			"name": "Crimson Room",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fcrimson-room.swf"
+		},
+		{
+			"name": "Cubefield",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fcubefield.swf"
+		},
+		{
+			"name": "Cursor 10",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fcursor-10.swf"
+		},
+		{
+			"name": "Cursor Invisible",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fcursor-invisible.swf"
+		},
+		{
+			"name": "Curveball",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fcurveball.swf"
+		},
+		{
+			"name": "Dr. Carter and the Cave of Despair",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fdr-carter-and-the-cave-of-despair.swf"
+		},
+		{
+			"name": "Duck Life",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fduck-life.swf"
+		},
+		{
+			"name": "Duck Life 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fduck-life-2.swf"
+		},
+		{
+			"name": "Duck Life 3",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fduck-life-3.swf"
+		},
+		{
+			"name": "Duck Life 4",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fduck-life-4.swf"
+		},
+		{
+			"name": "Effing Worms",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Feffing-worms.swf"
+		},
+		{
+			"name": "Eggtastic",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Feggtastic.swf"
+		},
+		{
+			"name": "Electric Man 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Felectric-man-2.swf"
+		},
+		{
+			"name": "Escaping The Prison",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fescaping-the-prison.swf"
+		},
+		{
+			"name": "Extinct",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fextinct.swf"
+		},
+		{
 			"name": "Falldown",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffalldown.swf"
 		},
@@ -381,6 +473,30 @@ let contents = {
 		{
 			"name": "Fancy Pants Adventure 2",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffancy-pants-adventure2.swf"
+		},
+		{
+			"name": "Fat Ninja",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffat-ninja.swf"
+		},
+		{
+			"name": "Feed Us",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffeed-us.swf"
+		},
+		{
+			"name": "Feudalism",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffeudalism.swf"
+		},
+		{
+			"name": "Fleeing The Complex",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffleeing-the-complex.swf"
+		},
+		{
+			"name": "Frogger",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffrogger.swf"
+		},
+		{
+			"name": "Galaga",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fgalaga.swf"
 		},
 		{
 			"name": "Gold Miner",
