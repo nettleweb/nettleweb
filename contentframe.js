@@ -152,9 +152,11 @@ body {
 
 		shadow.getElementById("fullscreen-button").onclick = () => {
 			baseFrame.focus({ preventScroll: true });
-			if (document.fullscreenEnabled)
-				baseFrame.requestFullscreen({ navigationUI: "hide" });
-			else newTabOrWindow(true);
+			baseFrame.requestFullscreen({ navigationUI: "hide" }).catch((err) => {
+				// fullscreen is not supported here
+				// so open a new window instead
+				inNewTabOrWindow(true);
+			});
 		};
 
 		this.inNewTab = () => inNewTabOrWindow(false);
