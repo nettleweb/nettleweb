@@ -180,7 +180,7 @@ let contents = {
 		},
 		{
 			"name": "T-Rex Run 3D",
-			"path": "html5-games/chromedino-3d/"
+			"path": "html5-games/chromedino-3d/low.html"
 		},
 		{
 			"name": "Temple Run 2",
