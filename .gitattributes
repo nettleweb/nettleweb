@@ -1,2 +1,2 @@
-/html5-games/ linguist-vendored
-/lib/ linguist-vendored
+html5-games/* linguist-vendored
+lib/* linguist-vendored
