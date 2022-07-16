@@ -619,6 +619,10 @@ let contents = {
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fportal.swf"
 		},
 		{
+			"name": "Portal 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fportal-2.swf"
+		},
+		{
 			"name": "Potty Racers",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fpotty-racers.swf"
 		},
@@ -639,6 +643,130 @@ let contents = {
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fraft-wars.swf"
 		},
 		{
+			"name": "Raft Wars 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fraft-wars-2.swf"
+		},
+		{
+			"name": "Ragdoll Avalanche",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fragdoll-avalanche.swf"
+		},
+		{
+			"name": "Ragdoll Avalanche 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fragdoll-avalanche-2.swf"
+		},
+		{
+			"name": "Rage",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Frage.swf"
+		},
+		{
+			"name": "Rage 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Frage-2.swf"
+		},
+		{
+			"name": "Rage 3",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Frage-3.swf"
+		},
+		{
+			"name": "Redbeard",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fredbeard.swf"
+		},
+		{
+			"name": "Riddle School",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Friddle-school.swf"
+		},
+		{
+			"name": "Riddle School 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Friddle-school-2.swf"
+		},
+		{
+			"name": "Riddle School 3",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Friddle-school-3.swf"
+		},
+		{
+			"name": "Riddle School 4",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Friddle-school-4.swf"
+		},
+		{
+			"name": "Riddle School 5",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Friddle-school-5.swf"
+		},
+		{
+			"name": "Riddle Transfer",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Friddle-transfer.swf"
+		},
+		{
+			"name": "Riddle Transfer 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Friddle-transfer-2.swf"
+		},
+		{
+			"name": "Roadblock",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Froadblock.swf"
+		},
+		{
+			"name": "Roadblock 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Froadblock-2.swf"
+		},
+		{
+			"name": "Sandwich Stacker",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsandwich-stacker.swf"
+		},
+		{
+			"name": "Shift",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fshift.swf"
+		},
+		{
+			"name": "Shift 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fshift-2.swf"
+		},
+		{
+			"name": "Shift 3",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fshift-3.swf"
+		},
+		{
+			"name": "Shift 4",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fshift-4.swf"
+		},
+		{
+			"name": "Shopping Cart Hero",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fshopping-cart-hero.swf"
+		},
+		{
+			"name": "Shuffle",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fshuffle.swf"
+		},
+		{
+			"name": "Skywire",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fskywire.swf"
+		},
+		{
+			"name": "Skywire 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fskywire-2.swf"
+		},
+		{
+			"name": "Snow Storm",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsnow-storm.swf"
+		},
+		{
+			"name": "Solitaire",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsolitaire.swf"
+		},
+		{
+			"name": "Sonic",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsonic.swf"
+		},
+		{
+			"name": "Space Invaders",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fspace-invaders.swf"
+		},
+		{
+			"name": "Stick RPG",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fstick-rpg.swf"
+		},
+		{
+			"name": "Super Mario 63",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsuper-mario-63.swf"
+		},
+		{
 			"name": "Super Mario Flash",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsuper-mario-flash.swf"
 		},
@@ -649,6 +777,14 @@ let contents = {
 		{
 			"name": "Super Smash Flash",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsuper-smash-flash.swf"
+		},
+		{
+			"name": "Swords and Sandals",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fswords-and-sandals.swf"
+		},
+		{
+			"name": "Swords and Sandals 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fswords-and-sandals-2.swf"
 		},
 		{
 			"name": "The Impossible Game Lite",
@@ -663,8 +799,40 @@ let contents = {
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthe-impossible-quiz-2.swf"
 		},
 		{
+			"name": "Ultimate Chess",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fultimate-chess.swf"
+		},
+		{
+			"name": "Unfair Mario",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Funfair-mario.swf"
+		},
+		{
+			"name": "Warp Shot",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fwarp-shot.swf"
+		},
+		{
+			"name": "Whack Your PC",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fwhack-your-pc.swf"
+		},
+		{
+			"name": "World's Easiest Game",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fworlds-easiest-game.swf"
+		},
+		{
 			"name": "World's Hardest Game",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fworlds-hardest-game.swf"
+		},
+		{
+			"name": "World's Hardest Game 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fworlds-hardest-game-2.swf"
+		},
+		{
+			"name": "Yuletide Riptide",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fyuletide-riptide.swf"
+		},
+		{
+			"name": "Zombocalypse",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fzombocalypse.swf"
 		}
 	]
 };

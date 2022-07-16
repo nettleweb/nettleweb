@@ -51,7 +51,7 @@ class ContentFrame extends HTMLElement {
 			frame.id = "base-frame";
 			frame.setAttribute("loading", "lazy");
 			frame.setAttribute("allowfullscreen", "true");
-			frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms");
+			frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups");
 			shadow.prepend(frame);
 			return frame;
 		})();
@@ -152,11 +152,9 @@ body {
 
 		shadow.getElementById("fullscreen-button").onclick = () => {
 			baseFrame.focus({ preventScroll: true });
-			baseFrame.requestFullscreen().catch((err) => {
-				// fullscreen is not supported here
-				// so open a new window instead
-				inNewTabOrWindow(true);
-			});
+			if (document.fullscreenEnabled)
+				baseFrame.requestFullscreen({ navigationUI: "hide" });
+			else newTabOrWindow(true);
 		};
 
 		this.inNewTab = () => inNewTabOrWindow(false);
