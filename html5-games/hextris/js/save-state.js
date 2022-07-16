@@ -1,0 +1,5 @@
+function exportSaveState(){var e={}
+if(1==gameState||-1==gameState||0===gameState&&void 0!==localStorage.getItem("saveState")){e={hex:$.extend(!0,{},MainHex),blocks:$.extend(!0,[],blocks),score:score,wavegen:waveone,gdx:gdx,gdy:gdy,comboTime:settings.comboTime},e.hex.blocks.map(function(e){for(var t=0;t<e.length;t++)e[t]=$.extend(!0,{},e[t])
+e.map(descaleBlock)})
+for(var t=0;t<e.blocks.length;t++)e.blocks[t]=$.extend(!0,{},e.blocks[t])
+e.blocks.map(descaleBlock)}return localStorage.setItem("highscores",JSON.stringify(highscores)),JSONfn.stringify(e)}function descaleBlock(e){e.distFromHex/=settings.scale}function writeHighScores(){highscores.sort(function(e,t){return e=parseInt(e,10),t=parseInt(t,10),t>e?1:e>t?-1:0}),highscores=highscores.slice(0,3),localStorage.setItem("highscores",JSON.stringify(highscores))}function clearSaveState(){localStorage.setItem("saveState","{}")}function isStateSaved(){return"{}"!=localStorage.getItem("saveState")&&void 0!=localStorage.getItem("saveState")}
