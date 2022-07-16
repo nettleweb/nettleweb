@@ -7,15 +7,15 @@ https://whitespider.gq (GitHub page)
 ## Alternative Links
 If the main link does not work, you can also access this website with one of the following link:
 
-(Cloudflare page)
-https://whitespider.cf
-https://whitespider.ga
-https://whitespider.ml
+(Cloudflare page) <br />
+https://whitespider.cf <br />
+https://whitespider.ga <br />
+https://whitespider.ml <br />
 https://whitespider.tk
 
-(Google Sites)
-https://sites.google.com/view/whitespider
-https://sites.google.com/view/white-spider
+(Google Sites) <br />
+https://sites.google.com/view/whitespider <br />
+https://sites.google.com/view/white-spider <br />
 https://sites.google.com/view/wsunbl
 
 ## Self-hosting
