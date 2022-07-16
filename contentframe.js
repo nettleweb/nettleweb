@@ -120,7 +120,6 @@ class ContentFrame extends HTMLElement {
 
 			doc.documentElement.innerHTML = `<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 		<base href="` + baseUrl + `" />
 		<title>_</title>
 		<style type="text/css">
@@ -147,16 +146,14 @@ body {
 		</style>
 	</head>
 	<body></body>`;
-			doc.body.appendChild(baseFrame);
+			doc.body.appendChild(baseFrame.cloneNode(true));
 		};
 
 		shadow.getElementById("fullscreen-button").onclick = () => {
 			baseFrame.focus({ preventScroll: true });
-			baseFrame.requestFullscreen({ navigationUI: "hide" }).catch((err) => {
-				// fullscreen is not supported here
-				// so open a new window instead
-				inNewTabOrWindow(true);
-			});
+			if (document.fullscreenEnabled)
+				baseFrame.requestFullscreen({ navigationUI: "hide" });
+			else inNewTabOrWindow(true);
 		};
 
 		this.inNewTab = () => inNewTabOrWindow(false);
