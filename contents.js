@@ -80,7 +80,7 @@ let contents = {
 		},
 		{
 			"name": "Greedy Shark",
-			"url": "https://ruochenjia.github.io/Greedy-Shark/"
+			"path": "html5-games/greedy-shark/"
 		},
 		{
 			"name": "Happy Wheels",
@@ -180,11 +180,11 @@ let contents = {
 		},
 		{
 			"name": "T-Rex Run 3D",
-			"url": "https://elgoog.im/t-rex/3d/"
+			"path": "html5-games/chromedino-3d/"
 		},
 		{
 			"name": "Temple Run 2",
-			"url": "https://yell0wsuit.github.io/html5-games/games/templerun2/"
+			"path": "html5-games/temple-run-2/"
 		},
 		{
 			"name": "Tetris",

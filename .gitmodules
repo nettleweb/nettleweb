@@ -7,4 +7,6 @@
 [submodule "uv"]
 	path = uv
 	url = https://github.com/titaniumnetwork-dev/Ultraviolet-Core.git
-
+[submodule "html5-games/greedy-shark"]
+	path = html5-games/greedy-shark
+	url = https://github.com/ruochenjia/Greedy-Shark.git
