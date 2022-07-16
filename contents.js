@@ -487,10 +487,6 @@ let contents = {
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffeudalism.swf"
 		},
 		{
-			"name": "Fleeing The Complex",
-			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffleeing-the-complex.swf"
-		},
-		{
 			"name": "Frogger",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Ffrogger.swf"
 		},
@@ -507,12 +503,140 @@ let contents = {
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fgold_miner_special_edition.swf"
 		},
 		{
+			"name": "Gridlock",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fgridlock.swf"
+		},
+		{
+			"name": "Gun Mayhem 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fgun-mayhem-2.swf"
+		},
+		{
+			"name": "Gun Mayhem 3",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fgun-mayhem-3.swf"
+		},
+		{
+			"name": "Hobo",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhobo.swf"
+		},
+		{
+			"name": "Hobo 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhobo-2.swf"
+		},
+		{
+			"name": "Hobo 3",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhobo-3.swf"
+		},
+		{
+			"name": "Hobo 4",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhobo-4.swf"
+		},
+		{
+			"name": "Hobo 5",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhobo-5.swf"
+		},
+		{
+			"name": "Hobo 6",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhobo-6.swf"
+		},
+		{
+			"name": "Hobo 7",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fhobo-7.swf"
+		},
+		{
+			"name": "Learn to Fly",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Flearn-to-fly.swf"
+		},
+		{
+			"name": "Learn to Fly 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Flearn-to-fly-2.swf"
+		},
+		{
+			"name": "Line Rider",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fline-rider.swf"
+		},
+		{
+			"name": "Mindfields 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fmindfields-2.swf"
+		},
+		{
+			"name": "Missile Strike",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fmissile-strike.swf"
+		},
+		{
+			"name": "Monster Brawl",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fmonster-brawl.swf"
+		},
+		{
+			"name": "Moss",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fmoss.swf"
+		},
+		{
+			"name": "Multitask",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fmultitask.swf"
+		},
+		{
+			"name": "N Game",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fn-game.swf"
+		},
+		{
+			"name": "Pac Man",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fpac-man.swf"
+		},
+		{
+			"name": "Pandemic 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fpandemic-2.swf"
+		},
+		{
+			"name": "Papa's Pizzeria",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fpapas-pizzeria.swf"
+		},
+		{
+			"name": "Penguin",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fpenguin.swf"
+		},
+		{
+			"name": "Penguin Diner",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fpenguin-diner.swf"
+		},
+		{
 			"name": "Plant VS Zombies 2",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fplant_vs_zombies_2.swf"
 		},
 		{
+			"name": "Playing With Fire 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fplaying-with-fire-2.swf"
+		},
+		{
 			"name": "Plazma Burst",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fplazma-burst.swf"
+		},
+		{
+			"name": "Plumber 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fplumber-2.swf"
+		},
+		{
+			"name": "Portal",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fportal.swf"
+		},
+		{
+			"name": "Potty Racers",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fpotty-racers.swf"
+		},
+		{
+			"name": "Potty Racers 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fpotty-racers-2.swf"
+		},
+		{
+			"name": "Primary",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fprimary.swf"
+		},
+		{
+			"name": "Puzzle Bobble",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fpuzzle-bobble.swf"
+		},
+		{
+			"name": "Raft Wars",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fraft-wars.swf"
 		},
 		{
 			"name": "Super Mario Flash",
@@ -525,6 +649,10 @@ let contents = {
 		{
 			"name": "Super Smash Flash",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsuper-smash-flash.swf"
+		},
+		{
+			"name": "The Impossible Game Lite",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthe-impossible-game-lite.swf"
 		},
 		{
 			"name": "The Impossible Quiz",
