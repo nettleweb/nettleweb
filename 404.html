@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>404 - Not found</title>
+    </head>
+    <body>
+        <noscript>
+            <div>Please enable JavaScript to continue.</div>
+        </noscript>
+        <div>You have tried to access a page that does not exist.</div>
+        <div>Redirecting you to the home page...</div>
+        <script>
+setTimeout(() => {
+    let loc = new URL(window.location.href);
+    loc.pathname = "/";
+    loc.search = "";
+    window.location = loc;
+}, 2000);
+        </script>
+    </body>
+</html>
