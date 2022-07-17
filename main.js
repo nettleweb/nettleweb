@@ -7,23 +7,19 @@ window.onerror = (msg, src, lineno, colno, e) => {
 let homeScreen = document.getElementById("home-screen");
 let gamesScreen = document.getElementById("games-screen");
 let toolsScreen = document.getElementById("tools-screen");
-let gameRequestScreen = document.getElementById("game-request-screen");
 document.getElementById("home").onclick = () => {
 	gamesScreen.style.display = "none";
 	toolsScreen.style.display = "none";
-	gameRequestScreen.style.display = "none";
 	homeScreen.style.display = "block";
 };
 document.getElementById("games").onclick = () => {
 	homeScreen.style.display = "none";
 	toolsScreen.style.display = "none";
-	gameRequestScreen.style.display = "none";
 	gamesScreen.style.display = "block";
 };
 document.getElementById("tools").onclick = () => {
 	homeScreen.style.display = "none";
 	gamesScreen.style.display = "none";
-	gameRequestScreen.style.display = "none";
 	toolsScreen.style.display = "block";
 };
 
