@@ -763,6 +763,10 @@ let contents = {
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fstick-rpg.swf"
 		},
 		{
+			"name": "Stupidity Test",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fstupidity-test.swf"
+		},
+		{
 			"name": "Super Mario 63",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fsuper-mario-63.swf"
 		},
@@ -787,6 +791,34 @@ let contents = {
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fswords-and-sandals-2.swf"
 		},
 		{
+			"name": "Tank Trouble 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ftank-trouble-2.swf"
+		},
+		{
+			"name": "Tanks",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ftanks.swf"
+		},
+		{
+			"name": "Territory War",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fterritory-war.swf"
+		},
+		{
+			"name": "Tetris",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ftetris.swf"
+		},
+		{
+			"name": "The Battle",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthe-battle.swf"
+		},
+		{
+			"name": "The Bright From The Screen",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthe-bright-from-the-screen.swf"
+		},
+		{
+			"name": "The Classroom",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthe-classroom.swf"
+		},
+		{
 			"name": "The Impossible Game Lite",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthe-impossible-game-lite.swf"
 		},
@@ -797,6 +829,42 @@ let contents = {
 		{
 			"name": "The Impossible Quiz 2",
 			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthe-impossible-quiz-2.swf"
+		},
+		{
+			"name": "Thing Thing",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthing-thing.swf"
+		},
+		{
+			"name": "Thing Thing 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthing-thing-2.swf"
+		},
+		{
+			"name": "Thing Thing 3",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthing-thing-3.swf"
+		},
+		{
+			"name": "Thing Thing 4",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthing-thing-4.swf"
+		},
+		{
+			"name": "Thing Thing Arena",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthing-thing-arena.swf"
+		},
+		{
+			"name": "Thing Thing Arena 2",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthing-thing-arena-2.swf"
+		},
+		{
+			"name": "This is the Only Level",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Fthis-is-the-only-level.swf"
+		},
+		{
+			"name": "Tic Tac Toe",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ftic-tac-toe.swf"
+		},
+		{
+			"name": "Travelogue Escape",
+			"path": "embed.html?type=flash&src=%2Fflash-games%2Ftravelogue-escape.swf"
 		},
 		{
 			"name": "Ultimate Chess",
