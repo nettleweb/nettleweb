@@ -196,7 +196,7 @@ let contents = {
 		},
 		{
 			"name": "Tunnel Rush",
-			"url": "html5-games/tunnel-rush"
+			"path": "html5-games/tunnel-rush"
 		},
 		{
 			"name": "Uno",
