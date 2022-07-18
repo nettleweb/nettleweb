@@ -84,7 +84,7 @@ let contents = {
 		},
 		{
 			"name": "Happy Wheels",
-			"url": "https://ikatchelo.github.io/happ/"
+			"url": "https://games-online.io/game/HappyWheels/"
 		},
 		{
 			"name": "Hextris",
@@ -196,7 +196,7 @@ let contents = {
 		},
 		{
 			"name": "Tunnel Rush",
-			"url": "https://ubg100.github.io/games/tunnelrush/"
+			"url": "html5-games/tunnel-rush"
 		},
 		{
 			"name": "Uno",
