@@ -18,7 +18,7 @@ https://sites.google.com/view/whitespider <br />
 https://sites.google.com/view/white-spider <br />
 https://sites.google.com/view/wsunbl
 
-(GitHub page) <br />
+(GitHub page, old version) <br />
 https://whitespide.github.io
 
 ## Self-hosting
