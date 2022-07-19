@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<base href="/" />
+		<title>_</title>
+		<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+body {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.gcse-search {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+"use strict";
+
+(() => {
+function getQueryString(key, fallback,  url = window.location.href) {
+	key = key.replace(/[\[\]]/g, '\\$&');
+	let regex = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
+	let results = regex.exec(url);
+	if (!results) return fallback;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
+let key = getQueryString("key", "");
+if (key.length == 0) {
+	console.warn("No key specified");
+	return;
+}
+
+let script = document.createElement("script");
+script.type = "text/javascript";
+script.src = new URL("https://cse.google.com/cse.js?cx=" + key).href;
+script.async = true;
+document.getElementsByTagName("head")[0].appendChild(script);
+
+let frame = document.createElement("div");
+frame.className = "gcse-search"
+document.body.appendChild(frame);
+})();
+		</script>
+	</body>
+</html>

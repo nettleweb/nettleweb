@@ -72,8 +72,8 @@ initContent(html5Games, document.getElementById("html5-game-container"));
 initContent(dosGames, document.getElementById("dos-game-container"));
 initContent(flashGames, document.getElementById("flash-game-container"));
 
-document.getElementById("youtube-adless").onclick = () => {
-	let frame = document.getElementById("youtube-adless-frame");
+function cFrame(id, src) {
+	let frame = document.getElementById(id);
 	if (frame.style.display == "none") {
 		if (document.documentElement.clientWidth < 850) {
 			// for mobile phones
@@ -84,36 +84,31 @@ document.getElementById("youtube-adless").onclick = () => {
 		embed.type = "text/plain";
 		embed.width = "1024";
 		embed.height = "768";
-		embed.src = "ebutuoy";
+		embed.src = src;
 		frame.appendChild(embed);
 		frame.style.display = "block";
 	} else {
 		frame.innerHTML = "";
 		frame.style.display = "none";
 	}
-};
-document.getElementById("vmlinux").onclick = () => {
-	let frame = document.getElementById("vmlinux-frame");
-	if (frame.style.display == "none") {
-		if (document.documentElement.clientWidth < 850) {
-			// for mobile phones
-			frame.style.width = "100%";
-			frame.style.height = "100%";
-		}
-		let embed = document.createElement("embed");
-		embed.type = "text/plain";
-		embed.width = "1024";
-		embed.height = "768";
-		embed.src = "vmlinux";
-		frame.appendChild(embed);
-		frame.style.display = "block";
-	} else {
-		frame.innerHTML = "";
-		frame.style.display = "none";
-	}
-};
+}
 
-
+document.getElementById("youtube-adless").onclick = (e) => {
+	e.preventDefault();
+	cFrame("youtube-adless-frame", "ebutuoy");
+};
+document.getElementById("vmlinux").onclick = (e) => {
+	e.preventDefault();
+	cFrame("vmlinux-frame", "vmlinux");
+};
+document.getElementById("private-search").onclick = (e) => {
+	e.preventDefault();
+	cFrame("private-search-frame", "google-search.html?key=6505c81d738124627");
+};
+document.getElementById("google-sites-finder").onclick = (e) => {
+	e.preventDefault();
+	cFrame("gsf-frame", "google-search.html?key=b7716b371218d4d34");
+};
 
 import { TestGameDB } from "./testgamedb.js";
 document.getElementById("load-custom-games").onclick = () => {
