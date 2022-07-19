@@ -39,8 +39,16 @@ let contents = {
 			"url": "https://shsgames.github.io/built-games/cookieclicker/index.html"
 		},
 		{
-			"name": "Cut The Rope",
+			"name": "Cut the Rope",
+			"path": "html5-games/cut-the-rope"
+		},
+		{
+			"name": "Cut the Rope: Time Travel",
 			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-97515.games.s3.yandex.net/97515/u1824c0o9xlk2nm9hlcxtbs4l6ysl44s/index.html"
+		},
+		{
+			"name": "Cut the Rope Vivid Edition",
+			"path": "html5-games/cut-the-rope-vivid-edition"
 		},
 		{
 			"name": "Cut The Rope 2",
