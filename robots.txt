@@ -3,10 +3,6 @@ Allow: /
 Disallow: /dos-games/
 Disallow: /flash-games/
 Disallow: /html5-games/
-Disallow: /ebutuoy/
-Disallow: /vmlinux/
 Disallow: /uv/
-Disallow: /service.html
-Disallow: /embed.html
 Disallow: /.git/
 Disallow: */.git/
