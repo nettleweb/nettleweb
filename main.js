@@ -4,6 +4,13 @@
 window.onerror = (msg, src, lineno, colno, e) => {
 };
 
+
+window.dataLayer = window.dataLayer || [];
+function gtag() { dataLayer.push(arguments); }
+gtag("js", new Date());
+gtag("config", "G-MPQKJFLRE1");
+
+
 let homeScreen = document.getElementById("home-screen");
 let gamesScreen = document.getElementById("games-screen");
 let toolsScreen = document.getElementById("tools-screen");
