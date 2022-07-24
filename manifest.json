@@ -2,13 +2,13 @@
 	"manifest_version": 2,
 	"name": "WhiteSpider",
 	"short_name": "WhiteSpider",
-	"description": "",
+	"description": "Unblocked games",
 	"version": "1.0",
 	"display": "fullscreen",
 	"orientation": "any",
 	"background_color": "#001a1a",
 	"theme_color": "#001a1a",
-	"start_url": "index.html",
+	"start_url": "/",
 	"scope": "/",
 	"icons": [
 		{

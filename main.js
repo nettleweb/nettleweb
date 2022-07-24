@@ -1,15 +1,36 @@
 "use strict";
 
+import { contents } from "./contents.js";
+import { ContentFrame } from "./contentframe.js";
+import { TestGameDB } from "./testgamedb.js";
+
+(() => {
 // default error handler
 window.onerror = (msg, src, lineno, colno, e) => {
+	alert(msg, "Error");
 };
-
 
 window.dataLayer = window.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag("js", new Date());
 gtag("config", "G-MPQKJFLRE1");
 
+if(!("serviceWorker" in window.navigator)) {
+	// service workers are not supported
+	alert("Your browser does not support service workers, please use a supported browser to continue", "Warning");
+	return;
+}
+
+if (window != window.top) {
+	// service workers are very likely to be rejected inside a frame
+	alert(`This page might not function properly while running inside a frame, please click <a href="${window.location.href}" target="_blank">here</a> to open it in a new tab.`, "Warning");
+}
+
+let swReg = window.navigator.serviceWorker.register("/sw.js", {
+	scope: "/",
+	type: "classic",
+	updateViaCache: "all"
+});
 
 let homeScreen = document.getElementById("home-screen");
 let gamesScreen = document.getElementById("games-screen");
@@ -30,8 +51,6 @@ document.getElementById("tools").onclick = () => {
 	toolsScreen.style.display = "block";
 };
 
-import { contents } from "./contents.js";
-import { ContentFrame } from "./contentframe.js";
 let html5Games = contents.html5Games;
 let dosGames = contents.dosGames;
 let flashGames = contents.flashGames;
@@ -117,7 +136,6 @@ document.getElementById("google-sites-finder").onclick = (e) => {
 	cFrame("gsf-frame", "google-search.html?key=b7716b371218d4d34");
 };
 
-import { TestGameDB } from "./testgamedb.js";
 document.getElementById("load-custom-games").onclick = () => {
 	let container = document.getElementById("custom-game-container");
 	container.innerHTML = `<div class="text">Loading...</div>`;
@@ -210,5 +228,38 @@ document.getElementById("request-custom-game").onclick = async () => {
 	});
 };
 
-export {  }
-export default {  }
+
+let contextMenu = document.getElementById("context-menu");
+document.body.oncontextmenu = (e) => {
+	e.preventDefault();
+	contextMenu.style.top = e.clientY + "px";
+	contextMenu.style.left = e.clientX + "px";
+	contextMenu.style.display = "block";
+};
+document.body.onclick = () => {
+	contextMenu.style.display = "none";
+};
+document.getElementById("clear-site-data").onclick = async () => {
+	window.sessionStorage.clear();
+	window.localStorage.clear();
+	let databases = await indexedDB.databases();
+	for (let i = 0; i < databases.length; i++)
+		indexedDB.deleteDatabase(databases[i].name);
+};
+document.getElementById("clear-cache").onclick = async () => {
+	let keys = await caches.keys();
+	for (let i = 0; i < keys.length; i++)
+		await caches.delete(keys[i]);
+};
+document.getElementById("unregister-sw").onclick = async () => {
+	let regs = await window.navigator.serviceWorker.getRegistrations();
+	for (let i = 0; i < regs.length; i++)
+		await regs[i].unregister();
+};
+document.getElementById("inspect").onclick = () => {
+	alert("Press ctrl+shift+i to open inspect menu.", "Notice");
+};
+
+})();
+
+export {};

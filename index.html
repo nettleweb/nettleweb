@@ -34,7 +34,10 @@
 }
 
 ::-webkit-scrollbar {
+	position: absolute;
+	display: block;
 	width: 10px;
+	height: 100%;
 }
 
 ::-webkit-scrollbar-track {
@@ -119,9 +122,8 @@ body {
 	position: absolute;
 	display: block;
 	width: 100%;
-	height: calc(100% - 100px);
+	height: calc(100% - 60px);
 	top: 60px;
-	bottom: 30px;
 }
 
 #home-screen, #games-screen, #tools-screen, #about-screen, #noscript-screen {
@@ -272,27 +274,32 @@ game-frame, embed {
 	border: none;
 }
 
-#footer {
+#context-menu {
 	position: absolute;
-	display: flex;
-	width: 100%;
-	height: 40px;
-	bottom: 0px;
-	align-items: center;
-	justify-content: center;
-}
-
-#footer * {
-	position: relative;
-	display: block;
 	width: fit-content;
-	height: 40px;
-	padding: 0px;
-	line-height: 40px;
-	margin-left: 10px;
-	margin-right: 10px;
+	height: fit-content;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #ffffff;
+	color: #303030;
+	background-color: #f0f0f0;
 }
 
+#context-menu div {
+	position: relative;
+	width: auto;
+	height: 14px;
+	line-height: 14px;
+	font-size: 14px;
+	font-weight: 500;
+	padding: 10px;
+	cursor: pointer;
+}
+
+#context-menu div:hover {
+	color: #ffffff;
+	background-color: #001a1a;
+}
 		</style>
 	</head>
 	<body>
@@ -369,22 +376,16 @@ game-frame, embed {
 				</div>
 			</noscript>
 		</div>
-		<div id="footer">
-			<div>Created by Ruochen Jia</div>
-			<div>-</div>
-			<a href="https://www.github.com/ruochenjia/whitespider" target="_blank">GitHub Project</a>
-			<div>-</div>
-			<a href="https://discord.gg/MWCNr2ANEz" target="_blank">Discord Server</a>
+		<div id="context-menu" style="display: none;">
+			<div id="clear-site-data">Clear site data</div>
+			<div id="clear-cache">Clear cache</div>
+			<div id="unregister-sw">Unregister SW</div>
+			<div id="inspect">Inspect</div>
 		</div>
 		<script type="module">
 "use strict";
-import "./main.js";
 
-// window.navigator.serviceWorker.register("app_sw.js").then((reg) => {
-// 	console.log("App service worker registered", reg);
-// }).catch((err) => {
-// 	console.warn("Failed to register app service worker", err);
-// });
+import "./main.js";
 		</script>
 	</body>
 </html>

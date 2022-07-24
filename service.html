@@ -1,14 +1,18 @@
 <html>
 	<head>
 		<base href="/" />
-		<title>_</title>
+		<title>Loading...</title>
+	</head>
+	<body>
+		<noscript>Please enable JavaScript to continue.</noscript>
+		<div style="color: #ffffff;">Loading...</div>
 		<script type="text/javascript" src="/uv/uv.config.js"></script>
 		<script type="text/javascript">
 "use strict";
 
-(async () => {
+(() => {
 
-function getQueryString(key, fallback,  url = window.location.href) {
+function getQueryString(key, fallback, url) {
 	key = key.replace(/[\[\]]/g, '\\$&');
 	let regex = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
 	let results = regex.exec(url);
@@ -17,45 +21,26 @@ function getQueryString(key, fallback,  url = window.location.href) {
 	return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
-// unregister all services workers before start
-// this can fix certain issues
-let regs = await window.navigator.serviceWorker.getRegistrations();
-for (let i = 0; i < regs.length; i++)
-	await regs[i].unregister();
-
-
-let baseUrl = (() => {
-	let base = new URL(window.location.href);
+function encodeUrl(url) {
+	let base = new URL(location);
 	base.pathname = "/";
 	base.search = "";
-	return base.href;
-})();
+	base = base.href;
+	url = __uv$config.encodeUrl(url);
+	return base.slice(0, -1) + __uv$config.prefix + url;
+}
 
-let url = getQueryString("url", "");
+let location = window.location.href;
+
+let url = getQueryString("url", "", location);
 if (url.length == 0) {
 	console.warn("no url specified");
 	return;
 }
 
-let eurl = __uv$config.encodeUrl(new URL(url).href);
-let encodedUrl = baseUrl.slice(0, -1) +  __uv$config.prefix + eurl;
-
-await window.navigator.serviceWorker.register("/sw.js", {
-	scope:  __uv$config.prefix
-});
-
-// wait before redirecting to fix certain issues
-await new Promise(resolve => {	
-	setTimeout(() => resolve(null), 1000);
-});
-
-window.location = new URL(encodedUrl);
-
+url = encodeUrl(new URL(url).href);
+window.location = new URL(url);
 })();
 		</script>
-	</head>
-	<body>
-		<noscript>Please enable JavaScript to continue.</noscript>
-		<div style="color: #ffffff;">Loading...</div>
 	</body>
 </html>

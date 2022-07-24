@@ -5,7 +5,7 @@
 "use strict";import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";import { getDatabase, ref, child, get, set } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";let app = initializeApp({apiKey: "AIzaSyBqQGSeJZUdI0itB4t-UW21-DOv3Ae1cAk",authDomain: "invertible-fin-279111.firebaseapp.com",databaseURL: "https://invertible-fin-279111-default-rtdb.firebaseio.com",projectId: "invertible-fin-279111",storageBucket: "invertible-fin-279111.appspot.com",messagingSenderId: "677364250175",appId: "1:677364250175:web:cbb6e68cec099d3f2a2a8a"});let database = getDatabase(app);
 
 let TestGameDB = {};
-TestGameDB.prototype = {};
+
 TestGameDB.load = async () => {
 	let _this = TestGameDB;
 	let ss = await get(ref(database, "gamedata"))
@@ -42,5 +42,4 @@ TestGameDB.append = (item) => {
 	_this.save();
 };
 
-export { TestGameDB }
-
+export { TestGameDB };

@@ -4,5 +4,3 @@ Disallow: /dos-games/
 Disallow: /flash-games/
 Disallow: /html5-games/
 Disallow: /uv/
-Disallow: /.git/
-Disallow: */.git/
