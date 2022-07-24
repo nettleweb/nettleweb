@@ -233,6 +233,10 @@ let contents = {
 	],
 	"dosGames": [
 		{
+			"name": "Beats of Rage",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fbeats-of-rage.jsdos"
+		},
+		{
 			"name": "Blood",
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fblood.jsdos"
 		},
@@ -255,6 +259,10 @@ let contents = {
 		{
 			"name": "Quake",
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fquake.jsdos"
+		},
+		{
+			"name": "Space Invaders",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fspace-invaders.jsdos"
 		},
 		{
 			"name": "Super Street Fighter II Turbo",
