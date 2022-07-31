@@ -233,10 +233,6 @@ let contents = {
 	],
 	"dosGames": [
 		{
-			"name": "Beats of Rage",
-			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fbeats-of-rage.jsdos"
-		},
-		{
 			"name": "Blood",
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fblood.jsdos"
 		},
