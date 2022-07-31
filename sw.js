@@ -1,44 +1,30 @@
 "use strict";
 
 (() => {
+// SERVICE WORKER
+
+importScripts("/uv/uv.config.js");
 importScripts("/uv/uv.sw.js");
-importScripts("/app.js");
 
-let sw = new UVServiceWorker(__uv$config);
-let cacheName =  new URL(location).hostname + app.id + app.version;
+const sw = new UVServiceWorker();
+const cacheName =  self.location.hostname + "-" + "whitespider";
 
-async function install() {
-	let cache = await caches.open(cacheName);
-	await cache.addAll(app.fileList);
-}
-
-async function _fetch({ request }) {
+async function fetchRe({ request }) {
 	request.request = request;
-	if (request.url.startsWith(self.location.origin + __uv$config.prefix)) {
+	if (request.url.startsWith(self.location.origin + __uv$config.prefix))
 		return await sw.fetch(request);
-	} else {
-		let response = await caches.match(request);
-		if (response != null)
-			return response;
-		else {
-			response = await fetch(request);
-			let cache = await caches.open(cacheName);
-			cache.put(request, response.clone());
-			return response;
-		}
+
+	let response = await caches.match(request);
+	if (response == null) {
+		response = await fetch(request);
+		(await caches.open(cacheName)).put(request, response.clone());
 	}
+
+	return response;
 }
-
-self.addEventListener("install", (event) => {
-	event.waitUntil(install());
-});
-
-self.addEventListener("update", (event) => {
-	event.waitUntil(install());
-});
 
 self.addEventListener("fetch", (event) => {
-	event.respondWith(_fetch(event));
+	event.respondWith(fetchRe(event));
 });
 
 })();

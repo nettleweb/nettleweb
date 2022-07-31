@@ -15,18 +15,20 @@ function gtag() { dataLayer.push(arguments); }
 gtag("js", new Date());
 gtag("config", "G-MPQKJFLRE1");
 
-if(!("serviceWorker" in window.navigator)) {
+if(!("serviceWorker" in navigator)) {
 	// service workers are not supported
-	alert("Your browser does not support service workers, please use a supported browser to continue", "Warning");
+	new webAlert.Dialog({
+		title: "Warning",
+		message: "Your browser does not support service workers, please use a supported browser to continue."
+	}).show();
 	return;
 }
 
 if (window != window.top) {
-	// service workers are very likely to be rejected inside a frame
-	alert(`This page might not function properly while running inside a frame, please click <a href="${window.location.href}" target="_blank">here</a> to open it in a new tab.`, "Warning");
+	alert(`This page might not function properly while running inside a frame. Click <a href="${window.location.href}" target="_blank">here</a> to open it in a new tab.`, "Warning");
 }
 
-let swReg = window.navigator.serviceWorker.register("/sw.js", {
+window.navigator.serviceWorker.register("/sw.js", {
 	scope: "/",
 	type: "classic",
 	updateViaCache: "all"
@@ -255,9 +257,6 @@ document.getElementById("unregister-sw").onclick = async () => {
 	let regs = await window.navigator.serviceWorker.getRegistrations();
 	for (let i = 0; i < regs.length; i++)
 		await regs[i].unregister();
-};
-document.getElementById("inspect").onclick = () => {
-	alert("Press ctrl+shift+i to open inspect menu.", "Notice");
 };
 
 })();
