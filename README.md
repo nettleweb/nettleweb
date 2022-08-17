@@ -1,11 +1,11 @@
 # whitespider
-An open-source ad-less unblocked games website
+An open-source adless unblocked games website, with more than 200 HTML5, Flash and DOS games.
 
 ## Main link
 https://whitespider.gq (GitHub page)
 
 ## Alternative Links
-If the main link does not work, you can also access this website with one of the following link:
+If the main link does not work, you can try using one of the following links:
 
 (Cloudflare page) <br />
 https://whitespider.cf <br />
@@ -21,7 +21,6 @@ https://sites.google.com/view/wsunbl
 (GitHub page, old version) <br />
 https://whitespide.github.io
 
-## Self-hosting
-If all of the listed links are blocked, you can download the source code and host it on your own server.
-
+## License
+... view LICENSE.md for details.
 
