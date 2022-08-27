@@ -148,49 +148,47 @@ document.getElementById("load-custom-games").onclick = () => {
 };
 
 function imNotARobot() {
-	let resolve;
-	let reject;
-	let promise = new Promise((a, b) => {
-		resolve = a;
-		reject = b;
-	});
+	return new Promise((resolve, reject) => {
+		let allowClick = false;
+		setTimeout(() => allowClick = true, 1000);
 
-	let allowClick = false;
-	setTimeout(() => allowClick = true, 200);
-
-	let dialog = new webAlert.Dialog({
-		title: "",
-		message: "I'm not a robot",
-		input: {
-			type: "checkbox"
-		},
-		positiveButton: {
-			text: "Confirm",
-			onclick: () => {
-				if (allowClick)
-					resolve(dialog.inputElement().checked);
-				else reject("You are a robot!");
-				dialog.dismiss();
+		let dialog = new webAlert.Dialog({
+			title: "",
+			message: "I'm not a robot",
+			input: {
+				type: "checkbox"
+			},
+			positiveButton: {
+				text: "Confirm",
+				onclick: () => {
+					if (allowClick)
+						resolve(dialog.inputElement.checked);
+					else reject("You are a robot!");
+					dialog.dismiss();
+				}
+			},
+			negativeButton: {
+				text: "Cancel",
+				onclick: () => {
+					resolve(null);
+					dialog.cancel();
+				}
 			}
-		},
-		negativeButton: {
-			text: "Cancel",
-			onclick: () => {
-				resolve(null);
-				dialog.cancel();
-			}
-		}
-	});
-	dialog.show().then(() => {
-		dialog.inputElement().onclick = (e) => {
-			e.preventDefault();
-			setTimeout(() => {
+		});
+		dialog.show().then(() => {
+			let timer = null;
+			dialog.inputElement.onclick = (e) => {
+				e.preventDefault();
 				let el = e.target;
-				el.checked = !el.checked;
-			}, 800);
-		};	
+				if (timer != null)
+					return;
+				timer = setTimeout(() => {
+					el.checked = !el.checked;
+					timer = null;
+				}, 800);
+			};
+		});
 	});
-	return promise;
 }
 
 document.getElementById("request-custom-game").onclick = async () => {
@@ -198,7 +196,7 @@ document.getElementById("request-custom-game").onclick = async () => {
 	if (gameName == null)
 		return;
 	if (gameName.length == 0) {
-		alert("Please input a name for your game.");
+		alert("Name cannot be empty.");
 		return;
 	}
 
@@ -206,7 +204,7 @@ document.getElementById("request-custom-game").onclick = async () => {
 	if (gameUrl == null)
 		return;
 	if (gameUrl.length == 0) {
-		alert("Please input a valid URL.");
+		alert("URL cannot be empty.");
 		return;
 	}
 	try {
@@ -228,6 +226,8 @@ document.getElementById("request-custom-game").onclick = async () => {
 		name: gameName,
 		url: gameUrl
 	});
+
+	window.location.reload();
 };
 
 

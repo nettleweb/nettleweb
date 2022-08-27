@@ -5,7 +5,7 @@ let coder={encode(e){if(!e)return e;e=e.toString();const r=Array.from("ABCDEFGHI
 
 self.__uv$config = {
 	prefix: "/O00O0O/",
-	bare: "https://incog.dev/bare/",
+	bare: "https://giigle.cf/",
 	encodeUrl: coder1.encode,
 	decodeUrl: coder1.decode,
 	bundle: "/uv/uv.bundle.js",

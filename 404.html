@@ -1,20 +1,38 @@
-<html>
-    <head>
-        <title>404 - Not found</title>
-    </head>
-    <body>
-        <noscript>
-            <div>Please enable JavaScript to continue.</div>
-        </noscript>
-        <div>You have tried to access a page that does not exist.</div>
-        <div>Redirecting you to the home page...</div>
-        <script>
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<base href="/" />
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="standard.css" />
+		<title>404 - Not found</title>
+		<style type="text/css">
+div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px;
+}
+		</style>
+	</head>
+	<body>
+		<noscript>
+			<div>Please enable JavaScript and reload this page to continue.</div>
+		</noscript>
+		<div>You have tried to access a page that does not exist.</div>
+		<div>Redirecting you to the home page...</div>
+		<script>
 setTimeout(() => {
-    let loc = new URL(window.location.href);
-    loc.pathname = "/";
-    loc.search = "";
-    window.location = loc;
+	let loc = new URL(window.location.href);
+	loc.pathname = "/";
+	loc.search = "";
+	window.location = loc;
 }, 2000);
-        </script>
-    </body>
+		</script>
+	</body>
 </html>

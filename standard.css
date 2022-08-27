@@ -1,0 +1,53 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+@font-face {
+	font-family: "Ubuntu";
+	font-style: normal;
+	src: url("res/ubuntu.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Ubuntu Mono";
+	font-style: normal;
+	src: url("res/ubuntu-mono.ttf") format("truetype");
+}
+
+::-webkit-scrollbar {
+	position: absolute;
+	display: block;
+	width: 10px;
+	height: 100%;
+}
+
+::-webkit-scrollbar-track {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+body {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	font-family: "Ubuntu";
+	font-weight: 500;
+	font-style: normal;
+	color: #ffffff;
+	background-color: #001a1a;
+	overflow: hidden;
+}

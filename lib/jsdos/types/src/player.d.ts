@@ -9,7 +9,7 @@ export interface DosPlayer extends DosInstance {
     bundleUrl: string | null;
 }
 export interface DosPlayerOptions extends DosOptions {
-    style?: "default" | "none";
+    style?: "default" | "none" | "hidden";
     hardware?: Hardware;
     clientId?: ClientIdSupplier;
     onBeforeExit?: () => Promise<void>;
