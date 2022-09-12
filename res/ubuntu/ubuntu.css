@@ -1,0 +1,23 @@
+@font-face {
+	font-family: "Ubuntu";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("ubuntu.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Ubuntu Condensed";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("ubuntu-condensed.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "Ubuntu Mono";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("ubuntu-mono.ttf") format("truetype");
+}

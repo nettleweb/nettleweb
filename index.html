@@ -3,11 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-		<meta http-equiv="Referrer-Policy" content="no-referrer" />
-		<meta name="referrer" content="no-referrer" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="description" content="An open-source adless unblocked games website, with more than 200 HTML5, Flash and DOS games" />
-		<meta name="keywords" content="whitespider,white,spider,unblocked,unlocked,games,game,html5,open-source,flash,proxy" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+		<meta name="description" content="An open source adless HTML5, DOS, Flash game collection website, contains more than 200 unblocked games for school!" />
+		<meta name="keywords" content="whitespider,unblocked,games,game,html5,flash,dos,open-source,free,no ads,adless" />
 		<base href="/" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="standard.css" />
@@ -15,14 +13,11 @@
 		<link rel="canonical" href="https://whitespider.gq/" />
 		<script type="text/javascript" src="https://webalert.pages.dev/webalert.js"></script>
 		<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-MPQKJFLRE1"></script>
-		<script type="text/javascript" src="lib/jquery/jquery-3.6.0.min.js"></script>
 		<title>WhiteSpider</title>
 		<style type="text/css">
-
-
 #header {
 	position: absolute;
-	display: flex;
+	display: block;
 	width: calc(100% - 10px);
 	height: 50px;
 	padding: 5px;
@@ -33,7 +28,7 @@
 	display: block;
 	width: 200px;
 	height: 50px;
-	background-image: url("res/logo-low.svg");
+	background-image: url("res/logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
@@ -54,6 +49,10 @@
 	border-bottom-style: solid;
 	border-bottom-color: #ffffff;
 	border-bottom-width: 3px;
+}
+
+.nav-button:active {
+	background-color: #002a2a;
 }
 
 #tools {
@@ -97,7 +96,10 @@
 	display: block;
 	width: 512px;
 	height: 128px;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	margin-bottom: 10px;
 	background-image: url("res/logo.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -108,8 +110,9 @@
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: auto;
-	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 100px;
 	font-style: italic;
 	font-size: 16px;
 	line-height: 25px;
@@ -137,17 +140,24 @@
 	line-height: 25px;
 }
 
-.text, .text2 {
+.subsubtitle {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 20px;
+}
+
+.text {
 	position: relative;
 	display: block;
 	width: fit-content;
 	height: fit-content;
 	margin: auto;
 	line-height: 18px;
-}
-
-.text2 {
-	color: #001a1a;
 }
 
 #noscript-screen .text {
@@ -240,6 +250,7 @@ game-frame, embed {
 	height: 600px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 10px;
 	margin-bottom: 60px;
 	border: none;
 }
@@ -270,6 +281,11 @@ game-frame, embed {
 	color: #ffffff;
 	background-color: #001a1a;
 }
+
+#context-menu div:active {
+	color: #ffffff;
+	background-color: #002a2a;
+}
 		</style>
 	</head>
 	<body>
@@ -281,31 +297,27 @@ game-frame, embed {
 		</div>
 		<div id="content">
 			<div id="home-screen">
-				<div id="large-logo" style="margin-bottom: 10px;"></div>
-				<div id="description" style="margin-bottom: 100px;">An open-source adless unblocked games website</div>
-				<div class="subtitle">Embedded Links</div>
-				<div class="text">If this website has been blocked, you can try one of the following link:</div>
+				<div id="large-logo"></div>
+				<div id="description">An open source adless HTML5, DOS, Flash game collection website, contains more than 200 unblocked games for school!</div>
+				<div class="subtitle">Mirror Links</div>
+				<div class="subsubtitle" style="margin-top: 20px; margin-bottom: 20px;">Embedded Mirrors:</div>
 				<a class="text" href="https://sites.google.com/view/whitespider" target="_blank">https://sites.google.com/view/whitespider</a>
 				<a class="text" href="https://sites.google.com/view/white-spider" target="_blank">https://sites.google.com/view/white-spider</a>
 				<a class="text" href="https://sites.google.com/view/whitespi" target="_blank">https://sites.google.com/view/whitespi</a>
 				<a class="text" href="https://sites.google.com/view/wsunbl" target="_blank">https://sites.google.com/view/wsunbl</a>
 				<a class="text" href="https://sites.google.com/view/x999" target="_blank">https://sites.google.com/view/x999</a>
-				<div class="text" style="margin-top: 20px; margin-bottom: 60px;">All of these links are blocked?<br/><a href="https://discord.gg/MWCNr2ANEz" target="_blank">Join the Discord server</a> to get more unblocked links.</div>
-				<div class="subtitle">Alternative Links</div>
-				<div class="text">You can also access this website with one of the following link:</div>
+				<div class="subsubtitle" style="margin-top: 20px; margin-bottom: 20px;">Standalone Mirrors:</div>
 				<a class="text" href="https://whitespider.cf" target="_blank">https://whitespider.cf</a>
 				<a class="text" href="https://whitespider.ga" target="_blank">https://whitespider.ga</a>
 				<a class="text" href="https://whitespider.gq" target="_blank">https://whitespider.gq</a>
 				<a class="text" href="https://whitespider.ml" target="_blank">https://whitespider.ml</a>
-				<a class="text" href="https://whitespider.tk" target="_blank" style="margin-bottom: 60px;">https://whitespider.tk</a>
+				<a class="text" href="https://whitespider.tk" target="_blank">https://whitespider.tk</a>
+				<div class="text" style="margin-top: 20px; margin-bottom: 60px;">None of these links work?<br/><a href="https://discord.gg/MWCNr2ANEz" target="_blank">Join the Discord server now</a> to get help.</div>
 				<div class="subtitle">Discord Server</div>
-				<a class="text"  href="https://discord.gg/MWCNr2ANEz" target="_blank" style="margin-bottom: 60px;">Join the Discord server now</a>
+				<a class="text" href="https://discord.gg/MWCNr2ANEz" target="_blank" style="margin-bottom: 60px;">Join the Discord server now</a>
 				<div class="subtitle">Site Feedback</div>
 				<iframe id="game-request-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" width="640" height="574" loading="lazy"></iframe>
-				<div class="subtitle">GitHub Project</div>
-				<div class="text">If you are an developer, you can access the source code and contribute to the project on GitHub.</div>
-				<a class="text" href="https://www.github.com/ruochenjia/whitespider" target="_blank" style="margin-bottom: 60px;">GitHub Project</a>
-				<div class="footer">©2022 WhiteSpider, created and managed by <a href="https://www.github.com/ruochenjia">Ruochen Jia</a></div>
+				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank">GitHub</a></div>
 			</div>
 			<div id="games-screen" style="display: none;">
 				<div class="title" style="margin-bottom: 50px;">Games</div>
@@ -324,7 +336,6 @@ game-frame, embed {
 					<div id="load-custom-games" class="game-label">CLICK HERE TO LOAD</div>
 				</div>
 				<div id="request-custom-game" class="game-label" style="margin-bottom: 50px;">Submit a game now</div>
-				<div class="footer">©2022 WhiteSpider, created and managed by <a href="https://www.github.com/ruochenjia">Ruochen Jia</a></div>
 			</div>
 			<div id="tools-screen" style="display: none;">
 				<div class="title" style="margin-bottom: 50px;">Tools</div>
@@ -344,12 +355,10 @@ game-frame, embed {
 				<div class="game-label" id="google-sites-finder">Google Sites Finder</div>
 				<div class="text" style="margin-bottom: 25px;">This tool allows you to find more unblocked games websites on Google Sites.</div>
 				<div class="game-frame-container" id="gsf-frame" style="display: none;"></div>
-				<div class="footer">©2022 WhiteSpider, created and managed by <a href="https://www.github.com/ruochenjia">Ruochen Jia</a></div>
 			</div>
 			<noscript>
 				<div id="noscript-screen">
 					<div class="text">Please enable JavaScript and reload this page to continue.</div>
-					<div class="footer">©2022 WhiteSpider, created and managed by <a href="https://www.github.com/ruochenjia">Ruochen Jia</a></div>
 				</div>
 			</noscript>
 		</div>
