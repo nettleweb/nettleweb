@@ -30,7 +30,7 @@ if (window != window.top) {
 
 window.navigator.serviceWorker.register("/sw.js", {
 	scope: "/",
-	type: "classic",
+	type: "module",
 	updateViaCache: "all"
 });
 

@@ -1,6 +1,4 @@
-"use strict";
-
-self.app = {
+const app = {
 	debug: true,
 	cacheName: "whitespider",
 	cacheVersion: "0.1.0",
@@ -16,3 +14,5 @@ self.app = {
 		//"X-Frame-Options": "SAMEORIGIN"
 	}
 };
+
+export { app };
