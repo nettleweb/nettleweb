@@ -34,7 +34,7 @@ const coder={encode(e){if(!e)return e;e=e.toString();const r=Array.from("ABCDEFG
 const encode = coder1.encode;
 const decode = coder1.decode;
 const location = new URL(window.location.href);
-const serverLocation = new URL("http://localhost:8787/");
+const serverLocation = new URL("https://whitespider-sw.html6.workers.dev/");
 const svcPrefix = JSON.parse(await (await fetch(serverLocation.href + "svcinfo.json")).text())["svc-prefix"];
 
 function encodeUrl(url) {
