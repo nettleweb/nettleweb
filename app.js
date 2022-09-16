@@ -1,7 +1,7 @@
 const app = {
 	debug: true,
 	cacheName: "whitespider",
-	cacheVersion: "0.1.0",
+	cacheVersion: "0.2.0",
 	cacheList: [],
 	headers: {
 		"Access-Control-Allow-Origin": "*",
