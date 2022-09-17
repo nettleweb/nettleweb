@@ -1,6 +1,11 @@
-import { app } from "./app.js";
+"use strict";
+
+(() => {
+importScripts("/uv/uv.sw.js");
+importScripts("/app.js");
 
 const cacheName =  `${self.location.hostname}-${app.cacheName}-${app.cacheVersion}`;
+const sw = new UVServiceWorker();
 
 async function install() {
 	let cache = await caches.open(cacheName);
@@ -19,7 +24,7 @@ async function cache(request, response) {
 async function fetchRe({ request }) {
 	let response = await caches.match(request);
 	if (response == null) {
-		response = await fetch(request);
+		response = await sw.fetch({ request });
 		if (response.status == 0)
 			return response;
 
@@ -56,3 +61,5 @@ self.addEventListener("fetch", (event) => {
 self.addEventListener("activate", (event) => {
 	event.waitUntil(removeOldCaches());
 });
+
+})();

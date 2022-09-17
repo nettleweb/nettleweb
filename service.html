@@ -25,6 +25,7 @@ div {
 			<div>Please enable JavaScript and reload this page to continue.</div>
 		</noscript>
 		<div>Loading...</div>
+		<script type="text/javascript" src="uv/uv.config.js"></script>
 		<script type="text/javascript">
 "use strict";
 
@@ -34,11 +35,9 @@ const coder={encode(e){if(!e)return e;e=e.toString();const r=Array.from("ABCDEFG
 const encode = coder1.encode;
 const decode = coder1.decode;
 const location = new URL(window.location.href);
-const serverLocation = new URL("https://whitespider-sw.html6.workers.dev/");
-const svcPrefix = JSON.parse(await (await fetch(serverLocation.href + "svcinfo.json")).text())["svc-prefix"];
 
 function encodeUrl(url) {
-	return serverLocation.origin + svcPrefix + encode(url);
+	return location.origin + __uv$config.prefix + __uv$config.encodeUrl(url);
 }
 
 let url = location.searchParams.get("url");
