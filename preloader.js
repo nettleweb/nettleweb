@@ -224,8 +224,6 @@ x-frame {
 </div>`;
 
 		let baseUrl = window.location.origin;
-		let top = window == window.top;
-
 		let baseFrame = new ExFrame();
 		baseFrame.type = "text/plain";
 		baseFrame.loading = "lazy";
@@ -239,8 +237,8 @@ x-frame {
 				return baseFrame.src;
 			},
 			set(value) {
-				if (top) {
-					baseFrame.src = baseUrl + "service.html?url=" + encodeURIComponent(value);
+				if (window == window.top) {
+					baseFrame.src = baseUrl + "/service.html?url=" + encodeURIComponent(value);
 				} else {
 					// set src attribute directly as service workers are not supported
 					baseFrame.src = value;
