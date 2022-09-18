@@ -22,28 +22,27 @@ function Coder() {
 	 * @param {string | URL} url 
 	 */
 	this.encode = (url) => {
-		let str = validateUrl(url);
-		let str1 = "";
+		url = validateUrl(url);
+		
+		let str = Array.from(url).map((ch, i) => {
+			return i % 2 ? String.fromCharCode(ch.charCodeAt(0) + 0x1000) : ch;
+		}).join("");
 
-		for (let i = 0; i < str.length; i++) {
-			str1 += String.fromCharCode(str.charCodeAt(i) + 0x1000);
-		}
-
-		return encodeURIComponent(str1);
+		return encodeURIComponent(str);
 	};
 
 	/**
 	 * @param {string} url 
 	 */
 	this.decode = (url) => {
-		let str = decodeURIComponent(url);
-		let str1 = "";
+		let [ input, ...search ] = url.split('?');
+		input = decodeURIComponent(input);
 
-		for (let i = 0; i < str.length; i++) {
-			str1 += String.fromCharCode(str.charCodeAt(i) - 0x1000);
-		}
+		let str = Array.from(input).map((ch, i) => {
+			return i % 2 ? String.fromCodePoint(ch.charCodeAt(0) - 0x1000) : ch;
+		}).join("");
 
-		return str1;
+		return str + (search.length ? '?' + search.join('?') : '');
 	};
 }
 
