@@ -1,4 +1,3 @@
-"use strict";
 
 class ContentFrame extends HTMLElement {
 	constructor() {

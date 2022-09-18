@@ -1,4 +1,3 @@
-"use strict";
 
 let contents = {
 	"html5Games": [

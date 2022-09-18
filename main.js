@@ -1,10 +1,7 @@
-"use strict";
-
 import { contents } from "./contents.js";
 import { ContentFrame } from "./contentframe.js";
 import { TestGameDB } from "./testgamedb.js";
 
-(() => {
 // default error handler
 window.onerror = (msg, src, lineno, colno, e) => {
 	alert(msg, "Error");
@@ -16,16 +13,12 @@ gtag("js", new Date());
 gtag("config", "G-MPQKJFLRE1");
 
 if(!("serviceWorker" in navigator)) {
-	// service workers are not supported
 	new webAlert.Dialog({
 		title: "Warning",
 		message: "Your browser does not support service workers, please use a supported browser to continue."
 	}).show();
-	return;
-}
 
-if (window != window.top) {
-	alert(`This page might not function properly while running inside a frame. Click <a href="${window.location.href}" target="_blank">here</a> to open it in a new tab.`, "Warning");
+	throw "Service workers not supported"
 }
 
 window.navigator.serviceWorker.register("/sw.js", {
@@ -258,7 +251,3 @@ document.getElementById("unregister-sw").onclick = async () => {
 	for (let i = 0; i < regs.length; i++)
 		await regs[i].unregister();
 };
-
-})();
-
-export {};
