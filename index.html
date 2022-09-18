@@ -13,6 +13,7 @@
 		<link rel="canonical" href="https://whitespider.gq/" />
 		<script type="text/javascript" src="https://webalert.pages.dev/webalert.js"></script>
 		<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-MPQKJFLRE1"></script>
+		<script type="text/javascript" src="./preloader.js" defer="true"></script>
 		<title>WhiteSpider</title>
 		<style type="text/css">
 #header {
@@ -216,6 +217,31 @@ a {
 	margin-bottom: 20px;
 }
 
+#youtube-adless-frame, #vmlinux-frame, #private-search-frame, #gsf-frame {
+	position: relative;
+	display: block;
+	width: 800px;
+	height: 600px;
+	margin: auto;
+}
+
+@media all and (max-width: 800px) {
+	#youtube-adless-frame, #private-search-frame, #gsf-frame {
+		width: 100%;
+	}
+}
+
+#vmlinux-frame {
+	width: 1100px;
+	height: 1600px;
+}
+
+@media all and (max-width: 1100px) {
+	#vmlinux-frame {
+		width: 100%;
+	}
+}
+
 .footer {
 	position: relative;
 	display: block;
@@ -234,13 +260,6 @@ a {
 .footer a {
 	color: #a0a0a0;
 	padding: 0px;
-}
-
-game-frame, embed {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
 }
 
 #game-request-form {
@@ -316,7 +335,7 @@ game-frame, embed {
 				<div class="subtitle">Discord Server</div>
 				<a class="text" href="https://discord.gg/MWCNr2ANEz" target="_blank" style="margin-bottom: 60px;">Join the Discord server now</a>
 				<div class="subtitle">Site Feedback</div>
-				<iframe id="game-request-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" width="640" height="574" loading="lazy"></iframe>
+				<x-frame id="game-request-form" type="text/plain" src="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" loading="lazy"></x-frame>
 				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank">GitHub</a></div>
 			</div>
 			<div id="games-screen" style="display: none;">
@@ -345,16 +364,16 @@ game-frame, embed {
 				<div class="text" style="margin-bottom: 25px;">If the first one has been blocked, you can try this one.</div>
 				<div class="game-label" id="youtube-adless">YouTube Adless</div>
 				<div class="text" style="margin-bottom: 25px;">An unofficial YouTube client, with all ads removed.</div>
-				<div class="game-frame-container" id="youtube-adless-frame" style="display: none;"></div>
+				<x-frame id="youtube-adless-frame" style="display: none;" type="text/plain" src="ebutuoy" allowfullscreen="true"></x-frame>
 				<div class="game-label" id="vmlinux">VMLinux</div>
 				<div class="text" style="margin-bottom: 25px;">A 32-bit PC emulator that runs in your browser.</div>
-				<div class="game-frame-container" id="vmlinux-frame" style="display: none; width: 1100px; height: 1600px;"></div>
+				<x-frame id="vmlinux-frame" style="display: none;" type="text/plain" src="vmlinux" allowfullscreen="true"></x-frame>
 				<div class="game-label" id="private-search">Private Search</div>
 				<div class="text" style="margin-bottom: 25px;">A private search engine without logging and history saving.</div>
-				<div class="game-frame-container" id="private-search-frame" style="display: none;"></div>
+				<x-frame id="private-search-frame" style="display: none;" type="text/plain" src="google-search.html?key=6505c81d738124627" allowfullscreen="true"></x-frame>
 				<div class="game-label" id="google-sites-finder">Google Sites Finder</div>
 				<div class="text" style="margin-bottom: 25px;">This tool allows you to find more unblocked games websites on Google Sites.</div>
-				<div class="game-frame-container" id="gsf-frame" style="display: none;"></div>
+				<x-frame id="gsf-frame" style="display: none;" type="text/plain" src="google-search.html?key=b7716b371218d4d34" allowfullscreen="true"></x-frame>
 			</div>
 			<noscript>
 				<div id="noscript-screen">

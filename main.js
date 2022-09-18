@@ -1,5 +1,4 @@
 import { contents } from "./contents.js";
-import { ContentFrame } from "./contentframe.js";
 import { TestGameDB } from "./testgamedb.js";
 
 // default error handler
@@ -65,15 +64,13 @@ function initContent(contents, container) {
 		item.appendChild(frameContainer);
 		container.appendChild(item);
 
-		label.onclick = (e) => {
-			e.preventDefault();
+		label.onclick = () => {
 			if (frameContainer.style.display == "none") {
 				let frame = document.createElement("content-frame");
-				let path = content.path;
-				if (path != null)
-					frame.setAttribute("path", content.path);
-				else frame.setAttribute("src", content.url);
-				frame.setAttribute("type", "text/plain");
+				if (content.path != null)
+					frame.path = content.path;
+				else frame.src = content.url;
+
 				if (document.documentElement.clientWidth < 850) {
 					// for mobile phones
 					frame.inNewTab();	
@@ -93,42 +90,33 @@ initContent(html5Games, document.getElementById("html5-game-container"));
 initContent(dosGames, document.getElementById("dos-game-container"));
 initContent(flashGames, document.getElementById("flash-game-container"));
 
-function cFrame(id, src) {
-	let frame = document.getElementById(id);
-	if (frame.style.display == "none") {
-		if (document.documentElement.clientWidth < 850) {
-			// for mobile phones
-			frame.style.width = "100%";
-			frame.style.height = "100%";
-		}
-		let embed = document.createElement("embed");
-		embed.type = "text/plain";
-		embed.width = "1024";
-		embed.height = "768";
-		embed.src = src;
-		frame.appendChild(embed);
-		frame.style.display = "block";
-	} else {
-		frame.innerHTML = "";
-		frame.style.display = "none";
-	}
-}
-
-document.getElementById("youtube-adless").onclick = (e) => {
-	e.preventDefault();
-	cFrame("youtube-adless-frame", "ebutuoy");
+let youtubeAdlessFrame = document.getElementById("youtube-adless-frame");
+let vmLinuxFrame = document.getElementById("vmlinux-frame");
+let privateSearchFrame = document.getElementById("private-search-frame");
+let gsfFrame = document.getElementById("gsf-frame");
+document.getElementById("youtube-adless").onclick = () => {
+	if (youtubeAdlessFrame.style.display == "none") {
+		youtubeAdlessFrame.style.display = "block";
+		youtubeAdlessFrame.resizeToContent();
+	} else youtubeAdlessFrame.style.display = "none";
 };
-document.getElementById("vmlinux").onclick = (e) => {
-	e.preventDefault();
-	cFrame("vmlinux-frame", "vmlinux");
+document.getElementById("vmlinux").onclick = () => {
+	if (vmLinuxFrame.style.display == "none") {
+		vmLinuxFrame.style.display = "block";
+		vmLinuxFrame.resizeToContent();
+	} else vmLinuxFrame.style.display = "none";
 };
-document.getElementById("private-search").onclick = (e) => {
-	e.preventDefault();
-	cFrame("private-search-frame", "google-search.html?key=6505c81d738124627");
+document.getElementById("private-search").onclick = () => {
+	if (privateSearchFrame.style.display == "none") {
+		privateSearchFrame.style.display = "block";
+		privateSearchFrame.resizeToContent();
+	} else privateSearchFrame.style.display = "none";
 };
 document.getElementById("google-sites-finder").onclick = (e) => {
-	e.preventDefault();
-	cFrame("gsf-frame", "google-search.html?key=b7716b371218d4d34");
+	if (gsfFrame.style.display == "none") {
+		gsfFrame.style.display = "block";
+		gsfFrame.resizeToContent();
+	} else gsfFrame.style.display = "none";
 };
 
 document.getElementById("load-custom-games").onclick = () => {
