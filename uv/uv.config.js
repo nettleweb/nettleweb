@@ -25,7 +25,7 @@ function Coder() {
 		url = validateUrl(url);
 		
 		let str = Array.from(url).map((ch, i) => {
-			return i % 2 ? String.fromCharCode(ch.charCodeAt(0) + 0x1000) : ch;
+			return i % 2 ? String.fromCharCode(ch.charCodeAt(0) ^ 0x7c) : ch;
 		}).join("");
 
 		return encodeURIComponent(str);
@@ -39,7 +39,7 @@ function Coder() {
 		input = decodeURIComponent(input);
 
 		let str = Array.from(input).map((ch, i) => {
-			return i % 2 ? String.fromCodePoint(ch.charCodeAt(0) - 0x1000) : ch;
+			return i % 2 ? String.fromCodePoint(ch.charCodeAt(0) ^ 0x7c) : ch;
 		}).join("");
 
 		return str + (search.length ? '?' + search.join('?') : '');
