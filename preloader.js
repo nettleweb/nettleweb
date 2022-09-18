@@ -51,7 +51,10 @@ class ExFrame extends HTMLElement {
 	 */
 	resizeToContent = () => {};
 
-	constructor() {
+	/**
+	 * @param {((baseFrame: HTMLElement) => void) | undefined} callback 
+	 */
+	constructor(callback) {
 		super();
 		let shadow = this.attachShadow({ mode: "closed" });
 		let base = document.createElement(window == window.top ? "iframe" : "embed");
@@ -63,6 +66,9 @@ class ExFrame extends HTMLElement {
 		base.width = "1024";
 		base.height = "768";
 		shadow.appendChild(base);
+
+		if (callback != null)
+			callback(base);
 
 		function nullstr(str) {
 			return str == null ? "" : str;
@@ -224,7 +230,8 @@ x-frame {
 </div>`;
 
 		let baseUrl = window.location.origin;
-		let baseFrame = new ExFrame();
+		let _baseFr;
+		let baseFrame = new ExFrame(f => _baseFr = f);
 		baseFrame.type = "text/plain";
 		baseFrame.loading = "lazy";
 		baseFrame.allowfullscreen = "true";
@@ -287,7 +294,7 @@ body {
 	overflow: hidden;
 }
 
-#base-frame {
+iframe, embed {
 	position: absolute;
 	display: block;
 	width: 100%;
@@ -297,7 +304,7 @@ body {
 		</style>
 	</head>
 	<body></body>`;
-			doc.body.appendChild(baseFrame.cloneNode(true));
+			doc.body.appendChild(_baseFr.cloneNode(true));
 		};
 
 		shadow.getElementById("fullscreen-button").onclick = () => {
