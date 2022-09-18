@@ -188,7 +188,7 @@ class ContentFrame extends HTMLElement {
 	padding: 0px;
 }
 
-fframe {
+x-frame {
 	position: absolute;
 	display: block;
 	width: 100%;
