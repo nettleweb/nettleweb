@@ -7,7 +7,7 @@ let contents = {
 		},
 		{
 			"name": "2048",
-			"path": "html5-games/2048"
+			"path": "html5-games/2048/"
 		},
 		{
 			"name": "4 Colors",
@@ -19,7 +19,7 @@ let contents = {
 		},
 		{
 			"name": "Among US",
-			"path": "html5-games/among-us"
+			"path": "html5-games/among-us/"
 		},
 		{
 			"name": "Appel",
@@ -47,7 +47,7 @@ let contents = {
 		},
 		{
 			"name": "Cut the Rope",
-			"path": "html5-games/cut-the-rope"
+			"path": "html5-games/cut-the-rope/"
 		},
 		{
 			"name": "Cut the Rope: Time Travel",
@@ -55,7 +55,7 @@ let contents = {
 		},
 		{
 			"name": "Cut the Rope Vivid Edition",
-			"path": "html5-games/cut-the-rope-vivid-edition"
+			"path": "html5-games/cut-the-rope-vivid-edition/"
 		},
 		{
 			"name": "Cut The Rope 2",
@@ -67,7 +67,7 @@ let contents = {
 		},
 		{
 			"name": "Dogeminer",
-			"path": "html5-games/dogeminer"
+			"path": "html5-games/dogeminer/"
 		},
 		{
 			"name": "Dogeminer 2",
@@ -127,7 +127,7 @@ let contents = {
 		},
 		{
 			"name": "Minecraft Classic",
-			"path": "html5-games/minecraft-classic"
+			"path": "html5-games/minecraft-classic/"
 		},
 		{
 			"name": "Minesweeper",
@@ -199,7 +199,7 @@ let contents = {
 		},
 		{
 			"name": "T-Rex Run 3D",
-			"path": "html5-games/chromedino-3d/low.html"
+			"path": "html5-games/chromedino-3d/"
 		},
 		{
 			"name": "Temple Run 2",
@@ -215,7 +215,7 @@ let contents = {
 		},
 		{
 			"name": "Tunnel Rush",
-			"path": "html5-games/tunnel-rush"
+			"path": "html5-games/tunnel-rush/"
 		},
 		{
 			"name": "Uno",
