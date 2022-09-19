@@ -268,6 +268,10 @@ let contents = {
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fduke-nukem-3d.jsdos"
 		},
 		{
+			"name": "Grand Theft Auto",
+			"path": "embed.html?type=jsdos&src=https%3A%2F%2Frjia.gq%2Flfstorage%2Fdos-games%2Fgrand-theft-auto.jsdos"
+		},
+		{
 			"name": "GroundFire",
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fground-fire.jsdos"
 		},
