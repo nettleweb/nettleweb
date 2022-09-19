@@ -260,20 +260,44 @@ let contents = {
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fdoom.jsdos"
 		},
 		{
+			"name": "Drake Snake and the Secret Crypt",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fdrake-snake-and-the-secret-crypt.jsdos"
+		},
+		{
 			"name": "Duke Nukem 3D",
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fduke-nukem-3d.jsdos"
+		},
+		{
+			"name": "GroundFire",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fground-fire.jsdos"
+		},
+		{
+			"name": "HangMan!",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fhang-man.jsdos"
 		},
 		{
 			"name": "Pac-Man",
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fpac-man.jsdos"
 		},
 		{
+			"name": "Prince of Persia",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fprince-of-persia.jsdos"
+		},
+		{
 			"name": "Quake",
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fquake.jsdos"
 		},
 		{
+			"name": "Silencer",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fsilencer.jsdos"
+		},
+		{
 			"name": "Space Invaders",
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fspace-invaders.jsdos"
+		},
+		{
+			"name": "Spitball",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fspitball.jsdos"
 		},
 		{
 			"name": "Super Roco Bros",
