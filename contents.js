@@ -30,6 +30,14 @@ let contents = {
 			"url": "https://storage.y8.com/y8-studio/unity_webgl/y8games/BallFall3D-2022-b4/index.html"
 		},
 		{
+			"name": "Bricks Breaker",
+			"url": "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/3d3d68da6d5a471e93bab1c3bde01d70/"
+		},
+		{
+			"name": "Bubble Burst",
+			"url": "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/405c00612981466cbc5d9dcef4214811/"
+		},
+		{
 			"name": "Chess",
 			"url": "https://playpager.com/embed/minichess/index.html"
 		},
@@ -43,7 +51,7 @@ let contents = {
 		},
 		{
 			"name": "Cut the Rope: Time Travel",
-			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-97515.games.s3.yandex.net/97515/u1824c0o9xlk2nm9hlcxtbs4l6ysl44s/index.html"
+			"url": "https://embed.gamedistribution.com/?url=https://app-97515.games.s3.yandex.net/97515/u1824c0o9xlk2nm9hlcxtbs4l6ysl44s/index.html"
 		},
 		{
 			"name": "Cut the Rope Vivid Edition",
@@ -51,11 +59,11 @@ let contents = {
 		},
 		{
 			"name": "Cut The Rope 2",
-			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-151508.games.s3.yandex.net/151508/jvxf9j9k2sdt71knpwa2f6azsndo6nrw/index.html"
+			"url": "https://embed.gamedistribution.com/?url=https://app-151508.games.s3.yandex.net/151508/jvxf9j9k2sdt71knpwa2f6azsndo6nrw/index.html"
 		},
 		{
 			"name": "Death Worm",
-			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-165865.games.s3.yandex.net/165865/g5i92zlftj709k08ejk195g6vimi7ezc/index.html"
+			"url": "https://embed.gamedistribution.com/?url=https://app-165865.games.s3.yandex.net/165865/g5i92zlftj709k08ejk195g6vimi7ezc/index.html"
 		},
 		{
 			"name": "Dogeminer",
@@ -147,7 +155,7 @@ let contents = {
 		},
 		{
 			"name": "Shadow Fighters",
-			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://html5.gamedistribution.com/49cb67eea34644a1afafea2970eaead1/"
+			"url": "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/49cb67eea34644a1afafea2970eaead1/"
 		},
 		{
 			"name": "Shell Shockers",
@@ -155,7 +163,7 @@ let contents = {
 		},
 		{
 			"name": "Skydom",
-			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&https://html5.gamedistribution.com/ae10263247c44278b33c845ff1c2df80/"
+			"url": "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/ae10263247c44278b33c845ff1c2df80/"
 		},
 		{
 			"name": "slither.io",
@@ -172,6 +180,10 @@ let contents = {
 		{
 			"name": "Solitaire",
 			"path": "html5-games/solitaire/"
+		},
+		{
+			"name": "Space Blaze",
+			"url": "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/a1c4858cc2db451bb97c8e926257b49a/"
 		},
 		{
 			"name": "Squid Game",
@@ -207,7 +219,7 @@ let contents = {
 		},
 		{
 			"name": "Uno",
-			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-177799.games.s3.yandex.net/177799/d7a35e57hl874np745ncsvajwen2ges9/index.html"
+			"url": "https://embed.gamedistribution.com/?url=https://app-177799.games.s3.yandex.net/177799/d7a35e57hl874np745ncsvajwen2ges9/index.html"
 		},
 		{
 			"name": "venge.io",
@@ -223,7 +235,7 @@ let contents = {
 		},
 		{
 			"name": "Zombie Killer",
-			"url": "https://embed.gamedistribution.com/?language=en&gdpr-tracking=0&gdpr-targeting=0&gdpr-third-party=0&url=https://app-158693.games.s3.yandex.net/158693/2289i4hez4nkfqyo31x4l2jr4mq2lx0u/index.html"
+			"url": "https://embed.gamedistribution.com/?url=https://app-158693.games.s3.yandex.net/158693/2289i4hez4nkfqyo31x4l2jr4mq2lx0u/index.html"
 		},
 		{
 			"name": "zombsroyale.io",
@@ -234,6 +246,10 @@ let contents = {
 		{
 			"name": "Blood",
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fblood.jsdos"
+		},
+		{
+			"name": "Bombjack",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fbombjack.jsdos"
 		},
 		{
 			"name": "CHAMP Kong",
@@ -258,6 +274,10 @@ let contents = {
 		{
 			"name": "Space Invaders",
 			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fspace-invaders.jsdos"
+		},
+		{
+			"name": "Super Roco Bros",
+			"path": "embed.html?type=jsdos&src=%2Fdos-games%2Fsuper-roco-bros.jsdos"
 		},
 		{
 			"name": "Super Street Fighter II Turbo",

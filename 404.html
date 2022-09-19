@@ -28,12 +28,16 @@ div {
 		<div>You have tried to access a page that does not exist.</div>
 		<div>Redirecting you to the home page...</div>
 		<script>
+"use strict";
+
+// <![CDATA[
 setTimeout(() => {
 	let loc = new URL(window.location.href);
 	loc.pathname = "/";
 	loc.search = "";
 	window.location = loc;
 }, 2000);
+// ]]>
 		</script>
 	</body>
 </html>

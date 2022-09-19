@@ -30,6 +30,7 @@ div {
 		<script type="text/javascript">
 "use strict";
 
+// <![CDATA[
 (() => {
 const location = new URL(window.location.href);
 
@@ -46,6 +47,7 @@ if (url == null || url.length == 0) {
 url = encodeUrl(new URL(url).href);
 window.location = new URL(url);
 })();
+// ]]>
 		</script>
 	</body>
 </html>

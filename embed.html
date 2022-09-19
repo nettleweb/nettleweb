@@ -48,20 +48,16 @@ embed, ruffle-embed, ruffle-player {
 
 // <![CDATA[
 (() => {
-
-function getQueryString(key, fallback,  url = window.location.href) {
-	key = key.replace(/[\[\]]/g, '\\$&');
-	let regex = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
-	let results = regex.exec(url);
-	if (!results) return fallback;
-	if (!results[2]) return '';
-	return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
-let src = getQueryString("src", "");
-let type = getQueryString("type", "");
-
+const location = new URL(window.location.href);
 emulators.pathPrefix = "/lib/jsdos/";
+
+let src = location.searchParams.get("src");
+let type = location.searchParams.get("type");
+
+if (src == null || src.length == 0) {
+	console.warn("No embed source specified");
+	return;
+}
 
 switch (type) {
 	case "flash": {
