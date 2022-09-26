@@ -28,7 +28,7 @@ async function fetchRe({ request }) {
 		if (response.status == 0)
 			return response;
 
-		cache(request, response);
+		await cache(request, response);
 	}
 
 	return new Response(response.body, {
