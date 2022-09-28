@@ -23,11 +23,11 @@ if(!("serviceWorker" in navigator)) {
 	});
 }
 
-// window.navigator.serviceWorker.register("/sw.js", {
-// 	scope: "/",
-// 	type: "classic",
-// 	updateViaCache: "all"
-// });
+window.navigator.serviceWorker.register("/sw.js", {
+	scope: "/",
+	type: "classic",
+	updateViaCache: "all"
+});
 
 let homeScreen = document.getElementById("home-screen");
 let gamesScreen = document.getElementById("games-screen");
