@@ -17,14 +17,17 @@ if(!("serviceWorker" in navigator)) {
 		message: "Your browser does not support service workers, please use a supported browser to continue."
 	}).show();
 
-	throw "Service workers not supported"
+	// thread lock
+	await new Promise((_, $) => {
+		$("Service workers not supported");
+	});
 }
 
-window.navigator.serviceWorker.register("/sw.js", {
-	scope: "/",
-	type: "classic",
-	updateViaCache: "all"
-});
+// window.navigator.serviceWorker.register("/sw.js", {
+// 	scope: "/",
+// 	type: "classic",
+// 	updateViaCache: "all"
+// });
 
 let homeScreen = document.getElementById("home-screen");
 let gamesScreen = document.getElementById("games-screen");
@@ -203,7 +206,7 @@ document.getElementById("request-custom-game").onclick = async () => {
 		return;
 	}
 
-	TestGameDB.append({
+	await TestGameDB.append({
 		name: gameName,
 		url: gameUrl
 	});

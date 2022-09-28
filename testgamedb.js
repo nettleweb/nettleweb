@@ -2,44 +2,59 @@
   TEST ONLY
 */
 
-"use strict";import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";import { getDatabase, ref, child, get, set } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";let app = initializeApp({apiKey: "AIzaSyBqQGSeJZUdI0itB4t-UW21-DOv3Ae1cAk",authDomain: "invertible-fin-279111.firebaseapp.com",databaseURL: "https://invertible-fin-279111-default-rtdb.firebaseio.com",projectId: "invertible-fin-279111",storageBucket: "invertible-fin-279111.appspot.com",messagingSenderId: "677364250175",appId: "1:677364250175:web:cbb6e68cec099d3f2a2a8a"});let database = getDatabase(app);
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
+import { getDatabase, ref, child, get, set } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
 
-let TestGameDB = {};
+const app = initializeApp({
+	apiKey: "AIzaSyBqQGSeJZUdI0itB4t-UW21-DOv3Ae1cAk",
+	authDomain: "invertible-fin-279111.firebaseapp.com",
+	databaseURL: "https://invertible-fin-279111-default-rtdb.firebaseio.com",
+	projectId: "invertible-fin-279111",
+	storageBucket: "invertible-fin-279111.appspot.com",
+	messagingSenderId: "677364250175",
+	appId: "1:677364250175:web:cbb6e68cec099d3f2a2a8a"
+});
+const database = getDatabase(app);
+const dbRef = ref(database, "gamedata");
 
-TestGameDB.load = async () => {
-	let _this = TestGameDB;
-	let ss = await get(ref(database, "gamedata"))
-	if (!ss.exists()) {
+let data = null;
+
+async function load() {
+	let s = await get(dbRef);
+	if (!s.exists()) {
 		console.warn("Failed to load data");
-		_this.data = [];
+		data = [];
 		return;
 	}
-	_this.data = ss.val().data;
-};
-TestGameDB.save = () => {
-	let _this = TestGameDB;
-	if (_this.data == null) {
-		_this.load().then(() => {
-			_this.save();
-		});
-		return;
+	data = s.val().data;
+}
+
+async function save() {
+	if (data == null) {
+		await load();
+		await save();
 	}
 
-	set(ref(database, "gamedata"), {
-		data: _this.data
-	});
-};
-TestGameDB.append = (item) => {
-	let _this = TestGameDB;
-	if (_this.data == null) {
-		_this.load().then(() => {
-			_this.append(item);
-		});
-		return;
+	await set(dbRef, { data });
+}
+
+async function append(item) {
+	if (data == null) {
+		await load();
+		await append(item);
 	}
 
-	_this.data.push(item);
-	_this.save();
+	data.push(item);
+	await save();
+}
+
+const TestGameDB = {
+	save,
+	load,
+	append,
+	get data() {
+		return data;
+	}
 };
 
 export { TestGameDB };
