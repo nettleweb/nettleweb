@@ -55,7 +55,7 @@
 }
 
 .nav-button:active {
-	background-color: #002a2a;
+	background-color: #2a002a;
 }
 
 #tools {
@@ -91,7 +91,7 @@
 
 #noscript-screen {
 	/*set the background color to override default screen*/
-	background-color: #001a1a;
+	background-color: #1a001a;
 }
 
 #large-logo {
@@ -285,6 +285,7 @@ content-frame {
 
 #context-menu {
 	position: absolute;
+	display: none;
 	width: fit-content;
 	height: fit-content;
 	border-style: solid;
@@ -298,21 +299,22 @@ content-frame {
 	position: relative;
 	width: auto;
 	height: 14px;
+	padding: 10px;
 	line-height: 14px;
 	font-size: 14px;
 	font-weight: 500;
-	padding: 10px;
 	cursor: pointer;
+	user-select: none;
 }
 
 #context-menu div:hover {
 	color: #ffffff;
-	background-color: #001a1a;
+	background-color: #1a001a;
 }
 
 #context-menu div:active {
 	color: #ffffff;
-	background-color: #002a2a;
+	background-color: #2a002a;
 }
 		</style>
 	</head>
@@ -355,12 +357,12 @@ content-frame {
 				<div class="text">If you see messages like "TypeError: Failed to fetch" while launching a game (or unblocker), that might caused a temporary server-side failure.</div>
 				<div class="text">Instead, you can play DOS and Flash games which should never have this issue.</div>
 				<div class="text" style="margin-bottom: 60px;">Some games might stop working if third-party cookies are disabled.</div>
-				<div class="subtitle" style="margin-bottom: 30px;">HTML5 Games</div>
-				<div id="html5-game-container" style="margin-bottom: 50px;"></div>
 				<div class="subtitle" style="margin-bottom: 30px;">DOS Games</div>
 				<div id="dos-game-container" style="margin-bottom: 50px;"></div>
 				<div class="subtitle" style="margin-bottom: 30px;">Flash Games</div>
 				<div id="flash-game-container" style="margin-bottom: 50px;"></div>
+				<div class="subtitle" style="margin-bottom: 30px;">HTML5 Games</div>
+				<div id="html5-game-container" style="margin-bottom: 50px;"></div>
 				<div class="subtitle" style="margin-bottom: 10px;">User-Added Games</div>
 				<div class="text" style="margin-bottom: 30px;">You can now add games to this website and play the games added by others.</div>
 				<div id="custom-game-container" style="margin-bottom: 20px;">
@@ -393,7 +395,7 @@ content-frame {
 				</div>
 			</noscript>
 		</div>
-		<div id="context-menu" style="display: none;">
+		<div id="context-menu">
 			<div id="clear-site-data">Clear site data</div>
 			<div id="clear-cache">Clear cache</div>
 			<div id="unregister-sw">Unregister SW</div>
