@@ -1,6 +1,8 @@
 import { contents } from "./contents.js";
 import { TestGameDB } from "./testgamedb.js";
 
+(() => {
+
 // default error handler
 window.onerror = (msg, src, lineno, colno, e) => {
 	alert(msg, "Error");
@@ -12,15 +14,8 @@ gtag("js", new Date());
 gtag("config", "G-MPQKJFLRE1");
 
 if(!("serviceWorker" in navigator)) {
-	new webAlert.Dialog({
-		title: "Warning",
-		message: "Your browser does not support service workers, please use a supported browser to continue."
-	}).show();
-
-	// thread lock
-	await new Promise((_, $) => {
-		$("Service workers not supported");
-	});
+	block("Your browser does not support service workers, please use a supported browser to continue.", "Warning");
+	return;
 }
 
 window.navigator.serviceWorker.register("/sw.js", {
@@ -48,11 +43,9 @@ document.getElementById("tools").onclick = () => {
 	toolsScreen.style.display = "block";
 };
 
-let html5Games = contents.html5Games;
-let dosGames = contents.dosGames;
-let flashGames = contents.flashGames;
+function loadContent(contents, container) {
+	container.innerHTML = "";
 
-function initContent(contents, container) {
 	for (let i in contents) {
 		let content = contents[i];
 		let item = document.createElement("div");
@@ -89,9 +82,17 @@ function initContent(contents, container) {
 	}
 }
 
-initContent(html5Games, document.getElementById("html5-game-container"));
-initContent(dosGames, document.getElementById("dos-game-container"));
-initContent(flashGames, document.getElementById("flash-game-container"));
+let html5GameContainer = document.getElementById("html5-game-container");
+let dosGameContainer = document.getElementById("dos-game-container");
+let flashGameContainer = document.getElementById("flash-game-container");
+
+function loadDefaultContent() {
+	loadContent(contents.html5Games, html5GameContainer);
+	loadContent(contents.dosGames, dosGameContainer);
+	loadContent(contents.flashGames, flashGameContainer);
+}
+
+loadDefaultContent();
 
 let youtubeAdlessFrame = document.getElementById("youtube-adless-frame");
 let vmLinuxFrame = document.getElementById("vmlinux-frame");
@@ -126,71 +127,65 @@ document.getElementById("load-custom-games").onclick = () => {
 	let container = document.getElementById("custom-game-container");
 	container.innerHTML = `<div class="text">Loading...</div>`;
 	TestGameDB.load().then(() => {
-		container.innerHTML = "";
-		initContent(TestGameDB.data, container);
+		loadContent(TestGameDB.data, container);
 	});
 };
+document.getElementById("game-search-bar").oninput = (e) => {
+	let value = e.target.value.toLowerCase();
+	if (value.length == 0) {
+		// reset to default when search is empty
+		loadDefaultContent();
+		return;
+	}
 
-function imNotARobot() {
-	return new Promise((resolve, reject) => {
-		let allowClick = false;
-		setTimeout(() => allowClick = true, 1000);
+	function match(cs) {
+		let a = [];
+		for (let g of cs) {
+			if (g.name.toLowerCase().includes(value))
+				a.push(g);
+		}
+		return a;
+	}
 
-		let dialog = new webAlert.Dialog({
-			title: "",
-			message: "I'm not a robot",
-			input: {
-				type: "checkbox"
-			},
-			positiveButton: {
-				text: "Confirm",
-				onclick: () => {
-					if (allowClick)
-						resolve(dialog.inputElement.checked);
-					else reject("You are a robot!");
-					dialog.dismiss();
-				}
-			},
-			negativeButton: {
-				text: "Cancel",
-				onclick: () => {
-					resolve(null);
-					dialog.cancel();
-				}
-			}
-		});
-		dialog.show().then(() => {
-			let timer = null;
-			dialog.inputElement.onclick = (e) => {
-				e.preventDefault();
-				let el = e.target;
-				if (timer != null)
-					return;
-				timer = setTimeout(() => {
-					el.checked = !el.checked;
-					timer = null;
-				}, 800);
-			};
-		});
-	});
-}
+	loadContent(match(contents.html5Games), html5GameContainer);
+	loadContent(match(contents.dosGames), dosGameContainer);
+	loadContent(match(contents.flashGames), flashGameContainer);
+};
 
 document.getElementById("request-custom-game").onclick = async () => {
-	let gameName = await prompt("Game Name");
-	if (gameName == null)
+	let result = await form("", "Submit a game", [
+		{
+			label: "Name",
+			input: {
+				type: "text",
+				placeholder: "Game Name"
+			}
+		},
+		{
+			label: "URL",
+			input: {
+				type: "text",
+				placeholder: "https://example.com/example"
+			}
+		}
+	]);
+
+	if (result == null)
 		return;
+
+	let gameName = result[0].value;
+	let gameUrl = result[1].value;
+
 	if (gameName.length == 0) {
 		alert("Name cannot be empty.");
 		return;
 	}
 
-	let gameUrl = await prompt("Game URL");
-	if (gameUrl == null)
-		return;
 	if (gameUrl.length == 0) {
 		alert("URL cannot be empty.");
 		return;
 	}
+
 	try {
 		gameUrl = new URL(gameUrl).href;
 	} catch(e) {
@@ -198,20 +193,13 @@ document.getElementById("request-custom-game").onclick = async () => {
 		return;
 	}
 
-	let checked = await imNotARobot();
-	if (checked == null)
-		return;
-	if (!checked) {
-		alert("🖕🏼");
-		return;
-	}
+	// await TestGameDB.append({
+	// 	name: gameName,
+	// 	url: gameUrl
+	// });
 
-	await TestGameDB.append({
-		name: gameName,
-		url: gameUrl
-	});
-
-	window.location.reload();
+	// window.location.reload();
+	console.log(gameName, gameUrl);
 };
 
 
@@ -242,3 +230,5 @@ document.getElementById("unregister-sw").onclick = async () => {
 	for (let i = 0; i < regs.length; i++)
 		await regs[i].unregister();
 };
+
+})();

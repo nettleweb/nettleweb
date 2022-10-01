@@ -1,1 +1,117 @@
-function Grid(t,i){this.size=t,this.cells=i?this.fromState(i):this.empty()}Grid.prototype.empty=function(){for(var t=[],i=0;i<this.size;i++)for(var e=t[i]=[],r=0;r<this.size;r++)e.push(null);return t},Grid.prototype.fromState=function(t){for(var i=[],e=0;e<this.size;e++)for(var r=i[e]=[],l=0;l<this.size;l++){var o=t[e][l];r.push(o?new Tile(o.position,o.value):null)}return i},Grid.prototype.randomAvailableCell=function(){var t=this.availableCells();if(t.length)return t[Math.floor(Math.random()*t.length)]},Grid.prototype.availableCells=function(){var t=[];return this.eachCell((function(i,e,r){r||t.push({x:i,y:e})})),t},Grid.prototype.eachCell=function(t){for(var i=0;i<this.size;i++)for(var e=0;e<this.size;e++)t(i,e,this.cells[i][e])},Grid.prototype.cellsAvailable=function(){return!!this.availableCells().length},Grid.prototype.cellAvailable=function(t){return!this.cellOccupied(t)},Grid.prototype.cellOccupied=function(t){return!!this.cellContent(t)},Grid.prototype.cellContent=function(t){return this.withinBounds(t)?this.cells[t.x][t.y]:null},Grid.prototype.insertTile=function(t){this.cells[t.x][t.y]=t},Grid.prototype.removeTile=function(t){this.cells[t.x][t.y]=null},Grid.prototype.withinBounds=function(t){return t.x>=0&&t.x<this.size&&t.y>=0&&t.y<this.size},Grid.prototype.serialize=function(){for(var t=[],i=0;i<this.size;i++)for(var e=t[i]=[],r=0;r<this.size;r++)e.push(this.cells[i][r]?this.cells[i][r].serialize():null);return{size:this.size,cells:t}};
+function Grid(size, previousState) {
+  this.size = size;
+  this.cells = previousState ? this.fromState(previousState) : this.empty();
+}
+
+// Build a grid of the specified size
+Grid.prototype.empty = function () {
+  var cells = [];
+
+  for (var x = 0; x < this.size; x++) {
+    var row = cells[x] = [];
+
+    for (var y = 0; y < this.size; y++) {
+      row.push(null);
+    }
+  }
+
+  return cells;
+};
+
+Grid.prototype.fromState = function (state) {
+  var cells = [];
+
+  for (var x = 0; x < this.size; x++) {
+    var row = cells[x] = [];
+
+    for (var y = 0; y < this.size; y++) {
+      var tile = state[x][y];
+      row.push(tile ? new Tile(tile.position, tile.value) : null);
+    }
+  }
+
+  return cells;
+};
+
+// Find the first available random position
+Grid.prototype.randomAvailableCell = function () {
+  var cells = this.availableCells();
+
+  if (cells.length) {
+    return cells[Math.floor(Math.random() * cells.length)];
+  }
+};
+
+Grid.prototype.availableCells = function () {
+  var cells = [];
+
+  this.eachCell(function (x, y, tile) {
+    if (!tile) {
+      cells.push({ x: x, y: y });
+    }
+  });
+
+  return cells;
+};
+
+// Call callback for every cell
+Grid.prototype.eachCell = function (callback) {
+  for (var x = 0; x < this.size; x++) {
+    for (var y = 0; y < this.size; y++) {
+      callback(x, y, this.cells[x][y]);
+    }
+  }
+};
+
+// Check if there are any cells available
+Grid.prototype.cellsAvailable = function () {
+  return !!this.availableCells().length;
+};
+
+// Check if the specified cell is taken
+Grid.prototype.cellAvailable = function (cell) {
+  return !this.cellOccupied(cell);
+};
+
+Grid.prototype.cellOccupied = function (cell) {
+  return !!this.cellContent(cell);
+};
+
+Grid.prototype.cellContent = function (cell) {
+  if (this.withinBounds(cell)) {
+    return this.cells[cell.x][cell.y];
+  } else {
+    return null;
+  }
+};
+
+// Inserts a tile at its position
+Grid.prototype.insertTile = function (tile) {
+  this.cells[tile.x][tile.y] = tile;
+};
+
+Grid.prototype.removeTile = function (tile) {
+  this.cells[tile.x][tile.y] = null;
+};
+
+Grid.prototype.withinBounds = function (position) {
+  return position.x >= 0 && position.x < this.size &&
+         position.y >= 0 && position.y < this.size;
+};
+
+Grid.prototype.serialize = function () {
+  var cellState = [];
+
+  for (var x = 0; x < this.size; x++) {
+    var row = cellState[x] = [];
+
+    for (var y = 0; y < this.size; y++) {
+      row.push(this.cells[x][y] ? this.cells[x][y].serialize() : null);
+    }
+  }
+
+  return {
+    size: this.size,
+    cells: cellState
+  };
+};

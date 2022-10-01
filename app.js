@@ -2,7 +2,7 @@
 self.app = {
 	debug: true,
 	cacheName: "whitespider",
-	cacheVersion: "0.2.2",
+	cacheVersion: "0.3.0",
 	cacheList: [],
 	headers: {
 		"Access-Control-Allow-Origin": "*",

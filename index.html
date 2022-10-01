@@ -200,6 +200,26 @@ a {
 	margin: auto;
 }
 
+#game-search-bar {
+	position: relative;
+	display: block;
+	width: 300px;
+	height: 20px;
+	line-height: 20px;
+	padding: 10px;
+	margin: auto;
+	outline: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #808080;
+	border-radius: 25px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+#game-search-bar:focus {
+	border-color: #ffffff;
+}
+
 #html5-game-container, #dos-game-container, #flash-game-container {
 	position: relative;
 	display: block;
@@ -355,7 +375,8 @@ content-frame {
 				<div class="subtitle" style="margin-bottom: 20px;">Important Notice</div>
 				<div class="text">If you see messages like "TypeError: Failed to fetch" while launching a game (or unblocker), that might caused a temporary server-side failure.</div>
 				<div class="text">Instead, you can play DOS and Flash games which should never have this issue.</div>
-				<div class="text" style="margin-bottom: 60px;">Some games might stop working if third-party cookies are disabled.</div>
+				<div class="text" style="margin-bottom: 30px;">Some games might stop working if third-party cookies are disabled.</div>
+				<input id="game-search-bar" type="text" value="" placeholder="Search" style="margin-bottom: 30px;"/>
 				<div class="subtitle" style="margin-bottom: 30px;">DOS Games</div>
 				<div id="dos-game-container" style="margin-bottom: 50px;"></div>
 				<div class="subtitle" style="margin-bottom: 30px;">Flash Games</div>
