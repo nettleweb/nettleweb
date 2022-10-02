@@ -32,6 +32,11 @@
 	background-color: rgba(255, 255, 255, 0.8);
 }
 
+::selection {
+	color: #ffffff;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
 body {
 	position: absolute;
 	display: block;

@@ -140,7 +140,7 @@
 	margin: auto;
 	font-size: 18px;
 	font-weight: 600;
-	line-height: 25px;
+	line-height: 30px;
 }
 
 .subsubtitle {
@@ -151,14 +151,14 @@
 	margin: auto;
 	font-size: 14px;
 	font-weight: 600;
-	line-height: 20px;
+	line-height: 30px;
 }
 
 .text {
 	position: relative;
 	display: block;
 	width: fit-content;
-	height: 20px;
+	height: fit-content;
 	line-height: 20px;
 	margin: auto;
 }
@@ -295,12 +295,18 @@ content-frame {
 	position: relative;
 	display: block;
 	width: 640px;
-	height: 600px;
+	height: 1800px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 10px;
 	margin-bottom: 60px;
 	border: none;
+}
+
+@media all and (max-width: 640px) {
+	#game-request-form {
+		width: 100%;
+	}
 }
 
 #context-menu {
@@ -349,20 +355,20 @@ content-frame {
 			<div id="home-screen">
 				<div id="large-logo"></div>
 				<div id="description">An open source adless HTML5, DOS, Flash game collection website, contains more than 200 unblocked games for school!</div>
-				<div class="subtitle">Mirror Links</div>
-				<div class="subsubtitle" style="margin-top: 20px; margin-bottom: 20px;">Embedded Mirrors:</div>
+				<div class="subtitle" style="margin-bottom: 20px;">Mirror Links</div>
+				<div class="subsubtitle">Embedded Mirrors:</div>
 				<a class="text" href="https://sites.google.com/view/whitespider" target="_blank">https://sites.google.com/view/whitespider</a>
 				<a class="text" href="https://sites.google.com/view/white-spider" target="_blank">https://sites.google.com/view/white-spider</a>
 				<a class="text" href="https://sites.google.com/view/whitespi" target="_blank">https://sites.google.com/view/whitespi</a>
 				<a class="text" href="https://sites.google.com/view/wsunbl" target="_blank">https://sites.google.com/view/wsunbl</a>
-				<a class="text" href="https://sites.google.com/view/x999" target="_blank">https://sites.google.com/view/x999</a>
-				<div class="subsubtitle" style="margin-top: 20px; margin-bottom: 20px;">Standalone Mirrors:</div>
+				<a class="text" href="https://sites.google.com/view/x999" target="_blank" style="margin-bottom: 20px;">https://sites.google.com/view/x999</a>
+				<div class="subsubtitle">Standalone Mirrors:</div>
 				<a class="text" href="https://whitespider.cf" target="_blank">https://whitespider.cf</a>
 				<a class="text" href="https://whitespider.ga" target="_blank">https://whitespider.ga</a>
 				<a class="text" href="https://whitespider.gq" target="_blank">https://whitespider.gq</a>
 				<a class="text" href="https://whitespider.ml" target="_blank">https://whitespider.ml</a>
-				<a class="text" href="https://whitespider.tk" target="_blank">https://whitespider.tk</a>
-				<div class="subsubtitle" style="margin-top: 20px; margin-bottom: 20px;">Old Version Backup:</div>
+				<a class="text" href="https://whitespider.tk" target="_blank" style="margin-bottom: 20px;">https://whitespider.tk</a>
+				<div class="subsubtitle">Old Version Backup:</div>
 				<a class="text" href="https://whitespidergq.github.io" target="_blank" style="margin-bottom: 60px;">https://whitespidergq.github.io</a>
 				<div class="subtitle">Discord Server</div>
 				<a class="text" href="https://discord.gg/MWCNr2ANEz" target="_blank" style="margin-bottom: 60px;">Join the Discord server now</a>
@@ -375,17 +381,17 @@ content-frame {
 				<div class="subtitle" style="margin-bottom: 20px;">Important Notice</div>
 				<div class="text">If you see messages like "TypeError: Failed to fetch" while launching a game (or unblocker), that might caused a temporary server-side failure.</div>
 				<div class="text">Instead, you can play DOS and Flash games which should never have this issue.</div>
-				<div class="text" style="margin-bottom: 30px;">Some games might stop working if third-party cookies are disabled.</div>
+				<div class="text" style="margin-bottom: 60px;">Some games might stop working if third-party cookies are disabled.</div>
 				<input id="game-search-bar" type="text" value="" placeholder="Search" style="margin-bottom: 30px;"/>
-				<div class="subtitle" style="margin-bottom: 30px;">DOS Games</div>
-				<div id="dos-game-container" style="margin-bottom: 50px;"></div>
-				<div class="subtitle" style="margin-bottom: 30px;">Flash Games</div>
-				<div id="flash-game-container" style="margin-bottom: 50px;"></div>
-				<div class="subtitle" style="margin-bottom: 30px;">HTML5 Games</div>
-				<div id="html5-game-container" style="margin-bottom: 50px;"></div>
-				<div class="subtitle" style="margin-bottom: 10px;">User-Added Games</div>
-				<div class="text" style="margin-bottom: 30px;">You can now add games to this website and play the games added by others.</div>
-				<div id="custom-game-container" style="margin-bottom: 20px;">
+				<div class="subtitle" style="margin-bottom: 20px;">DOS Games</div>
+				<div id="dos-game-container" style="margin-bottom: 60px;"></div>
+				<div class="subtitle" style="margin-bottom: 20px;">Flash Games</div>
+				<div id="flash-game-container" style="margin-bottom: 60px;"></div>
+				<div class="subtitle" style="margin-bottom: 20px;">HTML5 Games</div>
+				<div id="html5-game-container" style="margin-bottom: 60px;"></div>
+				<div class="subtitle">User-Added Games</div>
+				<div class="text" style="margin-bottom: 20px;">You can now add games to this website and play the games added by others.</div>
+				<div id="custom-game-container" style="margin-bottom: 30px;">
 					<div id="load-custom-games" class="game-label">CLICK HERE TO LOAD</div>
 				</div>
 				<div id="request-custom-game" class="game-label" style="margin-bottom: 50px;">Submit a game now</div>
@@ -393,20 +399,20 @@ content-frame {
 			<div id="tools-screen" style="display: none;">
 				<div class="title" style="margin-bottom: 50px;">Tools</div>
 				<a class="game-label" href="https://unblocker.whitespider.gq" target="_blank">Unblocker</a>
-				<div class="text" style="margin-bottom: 25px;">This tool allows you to access all blocked websites through a web proxy.</div>
+				<div class="text" style="margin-bottom: 30px;">This tool allows you to access all blocked websites through a web proxy.</div>
 				<a class="game-label" href="https://unblocker.ruochenjia.repl.co" target="_blank">Unblocker 2</a>
-				<div class="text" style="margin-bottom: 25px;">If the first one has been blocked, you can try this one.</div>
+				<div class="text" style="margin-bottom: 30px;">If the first one has been blocked, you can try this one.</div>
 				<div class="game-label" id="youtube-adless">YouTube Adless</div>
-				<div class="text" style="margin-bottom: 25px;">An unofficial YouTube client, with all ads removed.</div>
+				<div class="text" style="margin-bottom: 30px;">An unofficial YouTube client, with all ads removed.</div>
 				<x-frame id="youtube-adless-frame" style="display: none;" type="text/plain" src="ebutuoy/" allowfullscreen="true"></x-frame>
 				<div class="game-label" id="vmlinux">VMLinux</div>
-				<div class="text" style="margin-bottom: 25px;">A 32-bit PC emulator that runs in your browser.</div>
+				<div class="text" style="margin-bottom: 30px;">A 32-bit PC emulator that runs in your browser.</div>
 				<x-frame id="vmlinux-frame" style="display: none;" type="text/plain" src="vmlinux/" allowfullscreen="true"></x-frame>
 				<div class="game-label" id="private-search">Private Search</div>
-				<div class="text" style="margin-bottom: 25px;">A private search engine without logging and history saving.</div>
+				<div class="text" style="margin-bottom: 30px;">A private search engine without logging and history saving.</div>
 				<x-frame id="private-search-frame" style="display: none;" type="text/plain" src="google-search.html?key=6505c81d738124627" allowfullscreen="true"></x-frame>
 				<div class="game-label" id="google-sites-finder">Google Sites Finder</div>
-				<div class="text" style="margin-bottom: 25px;">This tool allows you to find more unblocked games websites on Google Sites.</div>
+				<div class="text" style="margin-bottom: 30px;">This tool allows you to find more unblocked games websites on Google Sites.</div>
 				<x-frame id="gsf-frame" style="display: none;" type="text/plain" src="google-search.html?key=b7716b371218d4d34" allowfullscreen="true"></x-frame>
 			</div>
 			<noscript>
