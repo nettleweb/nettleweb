@@ -8,11 +8,6 @@ window.onerror = (msg, src, lineno, colno, e) => {
 	alert(msg, "Error");
 };
 
-window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
-gtag("js", new Date());
-gtag("config", "G-MPQKJFLRE1");
-
 if(!("serviceWorker" in navigator)) {
 	block("Your browser does not support service workers, please use a supported browser to continue.", "Warning");
 	return;
