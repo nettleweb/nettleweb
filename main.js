@@ -193,13 +193,12 @@ document.getElementById("request-custom-game").onclick = async () => {
 		return;
 	}
 
-	// await TestGameDB.append({
-	// 	name: gameName,
-	// 	url: gameUrl
-	// });
+	await TestGameDB.append({
+		name: gameName,
+		url: gameUrl
+	});
 
-	// window.location.reload();
-	console.log(gameName, gameUrl);
+	window.location.reload();
 };
 
 
