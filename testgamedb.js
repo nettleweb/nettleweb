@@ -2,8 +2,9 @@
   TEST ONLY
 */
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
-import { getDatabase, ref, child, get, set } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-analytics.js"
+import { getDatabase, ref, child, get, set } from "https://www.gstatic.com/firebasejs/9.10.0/firebase-database.js";
 
 const app = initializeApp({
 	apiKey: "AIzaSyBqQGSeJZUdI0itB4t-UW21-DOv3Ae1cAk",
@@ -14,6 +15,7 @@ const app = initializeApp({
 	messagingSenderId: "677364250175",
 	appId: "1:677364250175:web:cbb6e68cec099d3f2a2a8a"
 });
+const analytics = getAnalytics(app);
 const database = getDatabase(app);
 const dbRef = ref(database, "gamedata");
 
