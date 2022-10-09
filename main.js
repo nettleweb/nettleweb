@@ -224,5 +224,8 @@ document.getElementById("unregister-sw").onclick = async () => {
 	for (let i = 0; i < regs.length; i++)
 		await regs[i].unregister();
 };
+document.getElementById("leave-without-history").onclick = () => {
+	window.location.replace(new URL("https://www.google.com/"));
+};
 
 })();
