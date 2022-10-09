@@ -16,7 +16,7 @@ if(!("serviceWorker" in navigator)) {
 window.navigator.serviceWorker.register("/sw.js", {
 	scope: "/",
 	type: "classic",
-	updateViaCache: "all"
+	updateViaCache: "none"
 });
 
 let homeScreen = document.getElementById("home-screen");
