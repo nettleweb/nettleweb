@@ -49,7 +49,7 @@ function Coder() {
 const coder = new Coder();
 
 self.__uv$config = {
-	prefix: "/O0O000/",
+	prefix: "/OO0OOO0/",
 	bare: "https://bare.whitespider.gq/bare/",
 	encodeUrl: coder.encode,
 	decodeUrl: coder.decode,

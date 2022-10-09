@@ -1,3 +1,27 @@
+//////////////////////////////////
+
+// some extensions force refresh pages after a period of time
+// which can cause bugs with the service worker
+// therefore re-register service worker to resolve this issue
+
+// ensure service worker registered
+window.navigator.serviceWorker.register("/sw.js", {
+	scope: "/",
+	type: "classic",
+	updateViaCache: "all"
+});
+
+// re-register service worker every 30 seconds
+setInterval(() => {
+    window.navigator.serviceWorker.register("/sw.js", {
+        scope: "/",
+        type: "classic",
+        updateViaCache: "all"
+    });
+}, 30000);
+
+//////////////////////////////////
+
 if (!self.__uv) {
     __uvHook(self, self.__uv$config, self.__uv$config.bare);
 };
