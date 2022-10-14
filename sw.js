@@ -8,26 +8,41 @@ const cacheName =  `${self.location.hostname}-${app.cacheName}-${app.cacheVersio
 const sw = new UVServiceWorker();
 
 async function install() {
-	let cache = await caches.open(cacheName);
+	const cache = await caches.open(cacheName);
 	await cache.addAll(app.cacheList);
 }
 
+/**
+ * @param {Request} request 
+ * @param {Response} response 
+ */
 async function cache(request, response) {
 	try {
-		let cache = await caches.open(cacheName);
+		const cache = await caches.open(cacheName);
 		await cache.put(request, response.clone());
 	} catch(err) {
 		// ignore - this is usually caused by an unsupported request method
 	}
 }
 
-async function fetchRe({ request }) {
+/**
+ * @param {Request} request 
+ */
+async function fetchRe(request) {
+	// lookup from caches first
 	let response = await caches.match(request);
 	if (response == null) {
-		response = await sw.fetch({ request });
-		if (response.status == 0)
-			return response;
+		// if null, fetch from uv service worker
+		response = await sw.fetch(request);
+		if (response == null) {
+			// fetch as normal
+			response = await fetch(request);
 
+			// cross-origin response
+			if (response.status == 0)
+				return response; 
+		}
+		// add response to caches
 		await cache(request, response);
 	}
 
@@ -55,7 +70,7 @@ self.addEventListener("install", (event) => {
 });
 
 self.addEventListener("fetch", (event) => {
-	event.respondWith(fetchRe(event));
+	event.respondWith(fetchRe(event.request));
 });
 
 self.addEventListener("activate", (event) => {

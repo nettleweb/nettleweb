@@ -4,21 +4,23 @@
 // which can cause bugs with the service worker
 // therefore re-register service worker to resolve this issue
 
-// ensure service worker registered
-window.navigator.serviceWorker.register("/sw.js", {
-	scope: "/",
-	type: "classic",
-	updateViaCache: "all"
-});
+(() => {
+"use strict";
 
-// re-register service worker every 30 seconds
-setInterval(() => {
-    window.navigator.serviceWorker.register("/sw.js", {
+const nsw = window.navigator.serviceWorker;
+const tick = () => {
+    nsw.register("/sw.js", {
         scope: "/",
         type: "classic",
-        updateViaCache: "all"
+        updateViaCache: "none"
     });
-}, 30000);
+};
+
+// tick service worker every 30 seconds
+tick();
+setInterval(tick, 30000);
+
+})();
 
 //////////////////////////////////
 
