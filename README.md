@@ -29,7 +29,7 @@ https://unblocker.ruochenjia.repl.co <br />
 https://unblocker-bfx.pages.dev
 
 ## License
-This repository is licensed under Apache-2.0 license, see LICENSE.md for more details. <br />
+This repository is licensed under Apache-2.0 License, see `LICENSE.md` for more details. <br />
 Games are licensed by their owners.
 
 ## Libraries Used
