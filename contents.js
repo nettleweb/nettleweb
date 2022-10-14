@@ -42,6 +42,18 @@ let contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fhang-man.jsdos"
 		},
 		{
+			name: "Mini Prince",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fmini-prince.jsdos"
+		},
+		{
+			name: "Neut Tower",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fneut-tower.jsdos"
+		},
+		{
+			name: "Ninja Blitz",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fninja-blitz.jsdos"
+		},
+		{
 			name: "Pac-Man",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fpac-man.jsdos"
 		},
@@ -56,6 +68,14 @@ let contents = {
 		{
 			name: "Silencer",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fsilencer.jsdos"
+		},
+		{
+			name: "Slip Speed",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fslip-speed.jsdos"
+		},
+		{
+			name: "Snake",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fsnake.jsdos"
 		},
 		{
 			name: "Space Invaders",
@@ -110,6 +130,10 @@ let contents = {
 		{
 			name: "Age of War",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fage-of-war.swf"
+		},
+		{
+			name: "Alien Hominid",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Falien-hominid.swf"
 		},
 		{
 			name: "Amorphous Plus",
@@ -286,6 +310,10 @@ let contents = {
 		{
 			name: "Eggtastic",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Feggtastic.swf"
+		},
+		{
+			name: "Electric Box",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Felectric-box.swf"
 		},
 		{
 			name: "Electric Man 2",
@@ -560,6 +588,14 @@ let contents = {
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fsandwich-stacker.swf"
 		},
 		{
+			name: "Scary Maze Game",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fscary-maze-game.swf"
+		},
+		{
+			name: "Shanghai Dynasty",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fshanghai-dynasty.swf"
+		},
+		{
 			name: "Shift",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fshift.swf"
 		},
@@ -682,6 +718,10 @@ let contents = {
 		{
 			name: "The Impossible Quiz 2",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fthe-impossible-quiz-2.swf"
+		},
+		{
+			name: "The Last Stand Union City",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fthe-last-stand-union-city.swf"
 		},
 		{
 			name: "Thing Thing",
