@@ -22,6 +22,10 @@ let contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdoom-ii.jsdos"
 		},
 		{
+			name: "Double Snake",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdouble-snake.jsdos"
+		},
+		{
 			name: "Drake Snake and the Secret Crypt",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdrake-snake-and-the-secret-crypt.jsdos"
 		},
@@ -31,7 +35,7 @@ let contents = {
 		},
 		{
 			name: "Grand Theft Auto",
-			path: "embed.html?type=jsdos&src=https%3A%2F%2Frjia.gq%2Flfstorage%2Fdos-games%2Fgrand-theft-auto.jsdos"
+			path: "embed.html?type=jsdos&src=https%3A%2F%2Fbare.whitespider.gq%2Flfs%2Fdos-games%2Fgrand-theft-auto.jsdos"
 		},
 		{
 			name: "GroundFire",
@@ -42,8 +46,16 @@ let contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fhang-man.jsdos"
 		},
 		{
+			name: "Kasia",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fkasia.jsdos"
+		},
+		{
 			name: "Mini Prince",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fmini-prince.jsdos"
+		},
+		{
+			name: "Mortal Kombat",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fmortal-kombat.jsdos"
 		},
 		{
 			name: "Neut Tower",
@@ -98,6 +110,10 @@ let contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fsuper-street-fighter-ii-turbo.jsdos"
 		},
 		{
+			name: "TetraFix",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Ftetrafix.jsdos"
+		},
+		{
 			name: "Tetris",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Ftetris.jsdos"
 		},
@@ -112,12 +128,28 @@ let contents = {
 	],
 	flashGames: [
 		{
+			name: "3 Foot Ninja",
+			path: "embed.html?type=flash&src=%2Fflash-games%2F3-foot-ninja.swf"
+		},
+		{
+			name: "3 Foot Ninja II",
+			path: "embed.html?type=flash&src=%2Fflash-games%2F3-foot-ninja-ii.swf"
+		},
+		{
 			name: "3D Reversi",
 			path: "embed.html?type=flash&src=%2Fflash-games%2F3d-reversi.swf"
 		},
 		{
+			name: "625 Sandwich Stacker",
+			path: "embed.html?type=flash&src=%2Fflash-games%2F625-sandwich-stacker.swf"
+		},
+		{
 			name: "7 Days Without Rain",
 			path: "embed.html?type=flash&src=%2Fflash-games%2F7-days-without-rain.swf"
+		},
+		{
+			name: "Ace of Space",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Face-of-space.swf"
 		},
 		{
 			name: "Achivement Unlocked",
@@ -126,6 +158,10 @@ let contents = {
 		{
 			name: "Action Driving Game",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Faction-driving-game.swf"
+		},
+		{
+			name: "Addiction Solitaire",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Faddiction-solitaire.swf"
 		},
 		{
 			name: "Age of War",
@@ -584,10 +620,6 @@ let contents = {
 			path: "embed.html?type=flash&src=%2Fflash-games%2Froadblock-2.swf"
 		},
 		{
-			name: "Sandwich Stacker",
-			path: "embed.html?type=flash&src=%2Fflash-games%2Fsandwich-stacker.swf"
-		},
-		{
 			name: "Scary Maze Game",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fscary-maze-game.swf"
 		},
@@ -670,6 +702,10 @@ let contents = {
 		{
 			name: "Super Smash Flash",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fsuper-smash-flash.swf"
+		},
+		{
+			name: "Super Smash Flash 2",
+			path: "embed.html?type=flash&src=https%3A%2F%2Fbare.whitespider.gq%2Flfs%2Fflash-games%2Fsuper-smash-flash-2.swf"
 		},
 		{
 			name: "Swords and Sandals",
