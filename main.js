@@ -1,23 +1,28 @@
 import { contents } from "./contents.js";
 import { TestGameDB } from "./testgamedb.js";
 
-(() => {
-
 // default error handler
 window.onerror = (msg, src, lineno, colno, e) => {
 	alert(msg, "Error");
 };
 
-if(!("serviceWorker" in navigator)) {
-	block("Your browser does not support service workers, please use a supported browser to continue.", "Warning");
-	return;
-}
+let proxy = true;
 
-window.navigator.serviceWorker.register("/sw.js", {
-	scope: "/",
-	type: "classic",
-	updateViaCache: "none"
-});
+const nsw = window.navigator.serviceWorker;
+if (nsw == null) {
+	alert("Your browser does not support service workers, game proxy will be disabled.", "Warning");
+	proxy = false;
+} else {
+	nsw.register("/sw.js", {
+		scope: "/",
+		type: "classic",
+		updateViaCache: "none"
+	}).catch(err => {
+		console.log(err);
+		alert("Failed to register service worker, game proxy will be disabled.", "Warning");
+		proxy = false;
+	});
+}
 
 let homeScreen = document.getElementById("home-screen");
 let gamesScreen = document.getElementById("games-screen");
@@ -58,6 +63,7 @@ function loadContent(contents, container) {
 		label.onclick = () => {
 			if (frameContainer.style.display == "none") {
 				let frame = document.createElement("content-frame");
+				frame.proxy = proxy;
 				if (content.path != null)
 					frame.path = content.path;
 				else frame.src = content.url;
@@ -227,5 +233,3 @@ document.getElementById("unregister-sw").onclick = async () => {
 document.getElementById("leave-without-history").onclick = () => {
 	window.location.replace(new URL("https://www.google.com/"));
 };
-
-})();

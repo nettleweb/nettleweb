@@ -176,6 +176,11 @@ class ContentFrame extends HTMLElement {
 	path;
 
 	/**
+	 * @type {boolean}
+	 */
+	proxy = true;
+
+	/**
 	 * @type {() => void}
 	 */
 	inNewTab;
@@ -231,6 +236,7 @@ x-frame {
 
 		let baseUrl = window.location.origin;
 		let _baseFr;
+		let _this = this;
 		let baseFrame = new ExFrame(f => _baseFr = f);
 		baseFrame.type = "text/plain";
 		baseFrame.loading = "lazy";
@@ -244,7 +250,7 @@ x-frame {
 				return baseFrame.src;
 			},
 			set(value) {
-				if (window == window.top) {
+				if (_this.proxy) {
 					baseFrame.src = baseUrl + "/service.html?url=" + encodeURIComponent(value);
 				} else {
 					// set src attribute directly as service workers are not supported
