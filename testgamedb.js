@@ -59,4 +59,4 @@ const TestGameDB = {
 	}
 };
 
-export { TestGameDB };
+export default TestGameDB;

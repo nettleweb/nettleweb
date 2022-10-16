@@ -1,5 +1,8 @@
+const contents = {
+	// path = same-origin resource (no proxy)
+	// url = cross-origin resource (with proxy)
+	// TODO add preview images for every game
 
-let contents = {
 	dosGames: [
 		{
 			name: "Blood",
@@ -1080,4 +1083,4 @@ let contents = {
 	]
 };
 
-export { contents };
+export default contents;

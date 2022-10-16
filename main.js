@@ -1,5 +1,5 @@
-import { contents } from "./contents.js";
-import { TestGameDB } from "./testgamedb.js";
+import contents from "./contents.js";
+import TestGameDB from "./testgamedb.js";
 
 // default error handler
 window.onerror = (msg, src, lineno, colno, e) => {
@@ -7,7 +7,6 @@ window.onerror = (msg, src, lineno, colno, e) => {
 };
 
 let proxy = true;
-
 const nsw = window.navigator.serviceWorker;
 if (nsw == null) {
 	alert("Your browser does not support service workers, game proxy will be disabled.", "Warning");
@@ -18,142 +17,219 @@ if (nsw == null) {
 		type: "classic",
 		updateViaCache: "none"
 	}).catch(err => {
-		console.log(err);
+		console.warn(err);
 		alert("Failed to register service worker, game proxy will be disabled.", "Warning");
 		proxy = false;
 	});
 }
 
-let homeScreen = document.getElementById("home-screen");
-let gamesScreen = document.getElementById("games-screen");
-let toolsScreen = document.getElementById("tools-screen");
-document.getElementById("home").onclick = () => {
-	gamesScreen.style.display = "none";
-	toolsScreen.style.display = "none";
-	homeScreen.style.display = "block";
-};
-document.getElementById("games").onclick = () => {
-	homeScreen.style.display = "none";
-	toolsScreen.style.display = "none";
-	gamesScreen.style.display = "block";
-};
-document.getElementById("tools").onclick = () => {
-	homeScreen.style.display = "none";
-	gamesScreen.style.display = "none";
-	toolsScreen.style.display = "block";
-};
+const baseUrl = window.location.origin;
 
-function loadContent(contents, container) {
+const homeScreen = document.getElementById("home-screen");
+const gameScreen = document.getElementById("game-screen");
+const searchBar = document.getElementById("search-bar");
+const homeButton = document.getElementById("home-button");
+
+const gameTitle = document.getElementById("game-title");
+const frameContainer = document.getElementById("frame-container");
+const fullscreenButton = document.getElementById("fullscreen-button");
+const reloadButton = document.getElementById("reload-button");
+
+const html5GameGrid = document.getElementById("html5-game-grid");
+const dosGameGrid = document.getElementById("dos-game-grid");
+const flashGameGrid = document.getElementById("flash-game-grid");
+const userGameGrid = document.getElementById("user-game-grid");
+const gameItemTemplate = document.getElementById("game-item-template");
+const contextMenu = document.getElementById("context-menu");
+
+/**
+ * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents
+ * @param {HTMLElement} container
+ */
+function updateContents(contents, container) {
 	container.innerHTML = "";
+	for (let content of contents) {
+		/**
+		 * @type {HTMLElement}
+		 */
+		const item = gameItemTemplate.cloneNode(true);
+		item.removeAttribute("id");
+		item.getElementsByClassName("game-info")[0].innerHTML = content.name;
 
-	for (let i in contents) {
-		let content = contents[i];
-		let item = document.createElement("div");
-		item.className = "game-item";
-		let label = document.createElement("div");
-		label.className = "game-label";
-		label.innerHTML = content.name;
-		item.appendChild(label);
-		let frameContainer = document.createElement("div");
-		frameContainer.className = "game-frame-container";
-		frameContainer.style.display = "none";
-		item.appendChild(frameContainer);
-		container.appendChild(item);
-
-		label.onclick = () => {
-			if (frameContainer.style.display == "none") {
-				let frame = document.createElement("content-frame");
-				frame.proxy = proxy;
-				if (content.path != null)
-					frame.path = content.path;
-				else frame.src = content.url;
-
-				if (document.documentElement.clientWidth < 850) {
-					// for mobile phones
-					frame.inNewTab();	
-				} else {
-					frameContainer.appendChild(frame);
-					frameContainer.style.display = "block";
-				}
-			} else {
-				frameContainer.innerHTML = "";
-				frameContainer.style.display = "none";
-			}
+		const preview = content.preview;
+		if (preview != null) {
+			item.getElementsByClassName("game-preview")[0].setAttribute("style", `background-image: url("${preview}");`);
 		}
+
+		item.onclick = () => {
+			const frame = createFrame(content.path, content.url);
+			if (document.documentElement.clientWidth < 850) {
+				// for mobile phones
+				inNewTabOrWindow(frame);
+				return;
+			}
+
+			homeScreen.style.display = "none";
+			gameScreen.style.display = "block";
+			searchBar.style.display = "none";
+			homeButton.style.display = "block";
+
+			gameTitle.innerHTML = content.name;
+			frameContainer.appendChild(frame);
+
+			fullscreenButton.onclick = () => {
+				frame.focus({ preventScroll: true });
+				if (document.fullscreenEnabled)
+					frame.requestFullscreen({ navigationUI: "hide" });
+				else inNewTabOrWindow(frame, true);
+			};
+
+			reloadButton.onclick = () => {
+				frame.src = frame.getAttribute("src");
+			};
+		};
+
+		container.appendChild(item);
 	}
 }
 
-let html5GameContainer = document.getElementById("html5-game-container");
-let dosGameContainer = document.getElementById("dos-game-container");
-let flashGameContainer = document.getElementById("flash-game-container");
+/**
+ * @param {string | undefined} path 
+ * @param {string | undefined} url 
+ */
+function createFrame(path, url) {
+	const frame = document.createElement(window == window.top ? "iframe" : "embed");
+	frame.setAttribute("type", "text/plain");
+	frame.setAttribute("width", "800");
+	frame.setAttribute("height", "600");
+	frame.setAttribute("loading", "lazy");
+	frame.setAttribute("allowfullscreen", "true");
+	frame.setAttribute("allow", "cross-origin-isolated");
+	frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups");
+	frame.setAttribute("src", path != null ? path : (proxy ? baseUrl + "/service.html?url=" + encodeURIComponent(url) : url));
+	return frame;
+}
+
+/**
+ * @param {HTMLElement} elem 
+ * @param {boolean | undefined} newWindow 
+ */
+function inNewTabOrWindow(elem, newWindow) {
+	const win = newWindow ? window.open("", "_blank", "height=" + screen.availHeight + ", width=" + screen.availWidth) : window.open("", "_blank");
+	if (win == null) {
+		alert("Failed to open new window.", "Error");
+		return;
+	}
+	win.focus();
+
+	const doc = win.document;
+	doc.write(`<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+		<base href="${baseUrl}"/>
+		<link rel="icon" type="image/x-icon" href="https://www.google.com/favicon.ico" />
+		<title>Google</title>
+		<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+iframe, embed {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+		</style>
+	</head>
+</html>`);
+	doc.body.appendChild(elem.cloneNode(true));
+}
+
+/**
+ * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents 
+ * @param {string} lowerCaseInput 
+ */
+function match(contents, lowerCaseInput) {
+	if (lowerCaseInput.length == 0)
+		return contents;
+
+	let r = [];
+	for (let c of contents) {
+		if (c.name.toLowerCase().includes(lowerCaseInput))
+			r.push(c);
+	}
+	return r;
+}
 
 function loadDefaultContent() {
-	loadContent(contents.html5Games, html5GameContainer);
-	loadContent(contents.dosGames, dosGameContainer);
-	loadContent(contents.flashGames, flashGameContainer);
+	updateContents(contents.html5Games, html5GameGrid);
+	updateContents(contents.dosGames, dosGameGrid);
+	updateContents(contents.flashGames, flashGameGrid);
 }
 
 loadDefaultContent();
+TestGameDB.load().then(() => {
+	updateContents(TestGameDB.data, userGameGrid);
+});
 
-let youtubeAdlessFrame = document.getElementById("youtube-adless-frame");
-let vmLinuxFrame = document.getElementById("vmlinux-frame");
-let privateSearchFrame = document.getElementById("private-search-frame");
-let gsfFrame = document.getElementById("gsf-frame");
-document.getElementById("youtube-adless").onclick = () => {
-	if (youtubeAdlessFrame.style.display == "none") {
-		youtubeAdlessFrame.style.display = "block";
-		youtubeAdlessFrame.resizeToContent();
-	} else youtubeAdlessFrame.style.display = "none";
+searchBar.oninput = () => {
+	const value = searchBar.value.toLowerCase();
+	updateContents(match(contents.html5Games, value), html5GameGrid);
+	updateContents(match(contents.dosGames, value), dosGameGrid);
+	updateContents(match(contents.flashGames, value), flashGameGrid);
 };
-document.getElementById("vmlinux").onclick = () => {
-	if (vmLinuxFrame.style.display == "none") {
-		vmLinuxFrame.style.display = "block";
-		vmLinuxFrame.resizeToContent();
-	} else vmLinuxFrame.style.display = "none";
-};
-document.getElementById("private-search").onclick = () => {
-	if (privateSearchFrame.style.display == "none") {
-		privateSearchFrame.style.display = "block";
-		privateSearchFrame.resizeToContent();
-	} else privateSearchFrame.style.display = "none";
-};
-document.getElementById("google-sites-finder").onclick = (e) => {
-	if (gsfFrame.style.display == "none") {
-		gsfFrame.style.display = "block";
-		gsfFrame.resizeToContent();
-	} else gsfFrame.style.display = "none";
+homeButton.onclick = () => {
+	frameContainer.innerHTML = ""; // clear frame
+	gameScreen.style.display = "none";
+	homeScreen.style.display = "block";
+	homeButton.style.display = "none";
+	searchBar.style.display = "block";
 };
 
-document.getElementById("load-custom-games").onclick = () => {
-	let container = document.getElementById("custom-game-container");
-	container.innerHTML = `<div class="text">Loading...</div>`;
-	TestGameDB.load().then(() => {
-		loadContent(TestGameDB.data, container);
+document.getElementById("html5-games").onclick = () => {
+	html5GameGrid.scrollIntoView({
+		behavior: "smooth",
+		block: "start",
+		inline: "nearest"
 	});
 };
-document.getElementById("game-search-bar").oninput = (e) => {
-	let value = e.target.value.toLowerCase();
-	if (value.length == 0) {
-		// reset to default when search is empty
-		loadDefaultContent();
-		return;
-	}
-
-	function match(cs) {
-		let a = [];
-		for (let g of cs) {
-			if (g.name.toLowerCase().includes(value))
-				a.push(g);
-		}
-		return a;
-	}
-
-	loadContent(match(contents.html5Games), html5GameContainer);
-	loadContent(match(contents.dosGames), dosGameContainer);
-	loadContent(match(contents.flashGames), flashGameContainer);
+document.getElementById("dos-games").onclick = () => {
+	dosGameGrid.scrollIntoView({
+		behavior: "smooth",
+		block: "start",
+		inline: "nearest"
+	});
 };
-
-document.getElementById("request-custom-game").onclick = async () => {
+document.getElementById("flash-games").onclick = () => {
+	flashGameGrid.scrollIntoView({
+		behavior: "smooth",
+		block: "start",
+		inline: "nearest"
+	});
+};
+document.getElementById("tools").onclick = () => {
+	document.getElementById("tools-grid").scrollIntoView({
+		behavior: "smooth",
+		block: "start",
+		inline: "nearest"
+	});
+};
+document.getElementById("game-submission-button").onclick = async () => {
 	let result = await form("", "Submit a game", [
 		{
 			label: "Name",
@@ -202,8 +278,6 @@ document.getElementById("request-custom-game").onclick = async () => {
 	window.location.reload();
 };
 
-
-let contextMenu = document.getElementById("context-menu");
 document.body.oncontextmenu = (e) => {
 	e.preventDefault();
 	contextMenu.style.top = e.clientY + "px";

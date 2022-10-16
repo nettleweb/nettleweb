@@ -2,7 +2,7 @@
 self.app = {
 	debug: true,
 	cacheName: "whitespider",
-	cacheVersion: "0.4.2",
+	cacheVersion: "1.0.0-beta1",
 	cacheList: [],
 	headers: {
 		// cross orgin isolation disabled due to issues with Firebase API
