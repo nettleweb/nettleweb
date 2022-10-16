@@ -922,6 +922,10 @@ let contents = {
 			url: "https://scratch.mit.edu/projects/430999356/embed"
 		},
 		{
+			name: "Fruit Ninja",
+			path: "html5-games/fruit-ninja/"
+		},
+		{
 			name: "Geometry Dash",
 			url: "https://scratch.mit.edu/projects/105500895/embed"
 		},
