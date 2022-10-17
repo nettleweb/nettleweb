@@ -96,6 +96,11 @@
 	background-color: #001a1a;
 }
 
+#dynamic-screen {
+	width: 100%;
+	padding: 0px;
+}
+
 #noscript-text {
 	position: relative;
 	display: block;
@@ -233,7 +238,7 @@
 	position: relative;
 	display: block;
 	width: 128px;
-	height: fit-content;
+	height: 85px;
 	padding: 10px;
 	box-sizing: border-box;
 	font-size: 12px;
@@ -387,15 +392,30 @@ iframe, embed {
 				<div class="title">Tools</div>
 				<div id="tools-grid" class="game-grid">
 					<a href="https://unblocker.whitespider.gq" target="_blank" class="game-item">
-						<div class="game-preview"></div>
+						<div class="game-preview" style="background-image: url('res/logo3.svg');"></div>
 						<div class="game-info">Unblocker</div>
 						<div class="game-desc">This tool allows you to access all blocked websites through a web proxy.</div>
 					</a>
 					<a href="https://unblocker.ruochenjia.repl.co" target="_blank" class="game-item">
-						<div class="game-preview"></div>
+						<div class="game-preview" style="background-image: url('res/logo3.svg');"></div>
 						<div class="game-info">Unblocker 2</div>
 						<div class="game-desc">If the first one has been blocked, you can try this one.</div>
 					</a>
+					<div id="ebutuoy" class="game-item">
+						<div class="game-preview" style="background-image: url('res/ytprev.svg');"></div>
+						<div class="game-info">YouTube Unblocked</div>
+						<div class="game-desc">Unblocked version of YouTube, with all ads removed.</div>
+					</div>
+					<div id="vmlinux" class="game-item">
+						<div class="game-preview"></div>
+						<div class="game-info">VMLinux</div>
+						<div class="game-desc">A 32-bit PC emulator that runs in your browser.</div>
+					</div>
+					<div id="private-search" class="game-item">
+						<div class="game-preview" style="background-image: url('res/goprev.svg');"></div>
+						<div class="game-info">Private Search</div>
+						<div class="game-desc">A private search engine without logging and history saving.</div>
+					</div>
 				</div>
 				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank">GitHub</a></div>
 			</div>
@@ -409,6 +429,9 @@ iframe, embed {
 					</div>
 				</div>
 				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank">GitHub</a></div>
+			</div>
+			<div id="dynamic-screen" class="screen" style="display: none;">
+				<!-- Dynamically rendered contents -->
 			</div>
 			<noscript>
 				<div id="noscript-screen" class="screen">

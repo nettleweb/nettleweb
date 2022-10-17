@@ -27,6 +27,7 @@ const baseUrl = window.location.origin;
 
 const homeScreen = document.getElementById("home-screen");
 const gameScreen = document.getElementById("game-screen");
+const dynamicScreen = document.getElementById("dynamic-screen");
 const searchBar = document.getElementById("search-bar");
 const homeButton = document.getElementById("home-button");
 
@@ -195,7 +196,9 @@ searchBar.oninput = () => {
 };
 homeButton.onclick = () => {
 	frameContainer.innerHTML = ""; // clear frame
+	dynamicScreen.innerHTML = "";
 	gameScreen.style.display = "none";
+	dynamicScreen.style.display = "none";
 	homeScreen.style.display = "block";
 	homeButton.style.display = "none";
 	searchBar.style.display = "block";
@@ -276,6 +279,29 @@ document.getElementById("game-submission-button").onclick = async () => {
 	});
 
 	window.location.reload();
+};
+
+/**
+ * @param {string} url 
+ */
+function dynscr(url) {
+	homeScreen.style.display = "none";
+	dynamicScreen.style.display = "block";
+	searchBar.style.display = "none";
+	homeButton.style.display = "block";
+
+	const frame = createFrame(url);
+	dynamicScreen.appendChild(frame);
+}
+
+document.getElementById("ebutuoy").onclick = () => {
+	dynscr("ebutuoy/");
+};
+document.getElementById("vmlinux").onclick = () => {
+	dynscr("vmlinux/");
+};
+document.getElementById("private-search").onclick = () => {
+	dynscr("google-search.html?key=6505c81d738124627");
 };
 
 document.body.oncontextmenu = (e) => {
