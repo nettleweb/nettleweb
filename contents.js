@@ -283,10 +283,6 @@ const contents = {
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fchoose-your-weapon-4.swf"
 		},
 		{
-			name: "Classic Snake",
-			path: "embed.html?type=flash&src=%2Fflash-games%2Fclassic-snake.swf"
-		},
-		{
 			name: "Color Switch",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fcolor-switch.swf"
 		},
@@ -663,6 +659,10 @@ const contents = {
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fskywire-2.swf"
 		},
 		{
+			name: "Snake",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fsnake.swf"
+		},
+		{
 			name: "Snow Storm",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fsnow-storm.swf"
 		},
@@ -949,7 +949,7 @@ const contents = {
 			url: "https://hole-io.com"
 		},
 		{
-			name: "krunker.io",
+			name: "Krunker",
 			url: "https://krunker.io"
 		},
 		{

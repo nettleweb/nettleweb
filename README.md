@@ -2,6 +2,15 @@
 An open source HTML5, DOS, Flash game collection website (originally used as an unblocked games site). <br />
 Link to website: https://unblocker.whitespider.gq
 
+## Features
+ - Contains more than 200 games (HTML5, DOS, Flash)
+ - Hidden proxy for online games
+ - Supports mobile phones
+ - Supports instant game submission
+ - Includes additional tools (Unblocker and more)
+ - Supports leaving without history logging (in right-click menu)
+ - No ads, free forever
+
 ## Mirror Links
 If the main link has been restricted, you can try using a mirror link. <br />
 Note: You can get more mirrors at https://sites.google.com/view/wsug-mirrors
