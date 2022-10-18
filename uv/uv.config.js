@@ -50,7 +50,7 @@ const coder = new Coder();
 
 self.__uv$config = {
 	prefix: "/O0O000O/",
-	bare: "https://bare.whitespider.gq/bare/",
+	bare: "https://googlecom.gq/bare/",
 	encodeUrl: coder.encode,
 	decodeUrl: coder.decode,
 	bundle: "/uv/uv.bundle.js",
