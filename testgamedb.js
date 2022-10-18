@@ -21,14 +21,26 @@ const dbRef = ref(database, "gamedata");
 
 let data = null;
 
+/**
+ * @param {any[]} data 
+ */
+function clean(data) {
+	const newArr = [];
+	for (let elem of data) {
+		if (elem !== void 0)
+			newArr.push(elem);
+	}
+
+	return newArr;
+}
+
 async function load() {
-	let s = await get(dbRef);
+	const s = await get(dbRef);
 	if (!s.exists()) {
-		console.warn("Failed to load data");
 		data = [];
 		return;
 	}
-	data = s.val().data;
+	data = clean(s.val().data);
 }
 
 async function save() {

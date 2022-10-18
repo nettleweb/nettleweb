@@ -2,8 +2,8 @@ import contents from "./contents.js";
 import TestGameDB from "./testgamedb.js";
 
 // default error handler
-window.onerror = (msg, src, lineno, colno, e) => {
-	alert(msg, "Error");
+window.onerror = (message, src, lineno, colno, error) => {
+	console.log(`Error at "${src}", line ${lineno}:${colno}: \n${error}`, "Error");
 };
 
 let proxy = true;
