@@ -44,18 +44,41 @@ const gameItemTemplate = document.getElementById("game-item-template");
 const contextMenu = document.getElementById("context-menu");
 
 /**
+ * @param {string} text 
+ */
+function encodeText(text) {
+	return text.replace(/[&"'\<\>]/g, (ch) => {
+		switch (ch) {
+			case "&":
+				return "&amp;";
+			case "'":
+				return "&#39;";
+			case '"':
+				return "&quot;";
+			case "<":
+				return "&lt;";
+			case ">":
+				return "&gt;";
+		}
+	});
+}
+
+/**
  * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents
  * @param {HTMLElement} container
  */
 function updateContents(contents, container) {
 	container.innerHTML = "";
 	for (let content of contents) {
+		// To be super safe, always escape illegal html characters in name
+		const displayName = encodeText(content.name);
+
 		/**
 		 * @type {HTMLElement}
 		 */
 		const item = gameItemTemplate.cloneNode(true);
 		item.removeAttribute("id");
-		item.getElementsByClassName("game-info")[0].innerHTML = content.name;
+		item.getElementsByClassName("game-info")[0].innerHTML = displayName;
 
 		const preview = content.preview;
 		if (preview != null) {
@@ -75,7 +98,7 @@ function updateContents(contents, container) {
 			searchBar.style.display = "none";
 			homeButton.style.display = "block";
 
-			gameTitle.innerHTML = content.name;
+			gameTitle.innerHTML = displayName;
 			frameContainer.appendChild(frame);
 
 			fullscreenButton.onclick = () => {
