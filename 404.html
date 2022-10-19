@@ -4,6 +4,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta http-equiv="Refresh" content="2;url=/" />
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
 		<meta name="robots" content="noindex,nofollow" />
@@ -22,22 +23,7 @@ div {
 		</style>
 	</head>
 	<body>
-		<noscript>
-			<div>Please enable JavaScript and reload this page to continue.</div>
-		</noscript>
-		<div>You have tried to access a page that does not exist.</div>
-		<div>Redirecting you to the home page...</div>
-		<script>
-"use strict";
-
-// <![CDATA[
-setTimeout(() => {
-	let loc = new URL(window.location.href);
-	loc.pathname = "/";
-	loc.search = "";
-	window.location = loc;
-}, 2000);
-// ]]>
-		</script>
+		<div>The requested resource does not exist on the server.</div>
+		<div>Redirecting to the home page...</div>
 	</body>
 </html>
