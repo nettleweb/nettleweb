@@ -2,16 +2,17 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta name="referrer" content="no-referrer" />
 		<meta name="robots" content="noindex,nofollow" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
 		<base href="/" />
-		<link rel="icon" type="image/x-icon" href="data:image/x-icon;charset=utf-8," />
-		<link rel="stylesheet" type="text/css" href="/lib/jsdos/js-dos.css" />
-		<title>_</title>
-		<script type="text/javascript" src="/lib/ruffle/ruffle.js"></script>
-		<script type="text/javascript" src="/lib/jsdos/js-dos.js"></script>
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="lib/jsdos/js-dos.css" />
+		<script type="text/javascript" src="lib/ruffle/ruffle.js"></script>
+		<script type="text/javascript" src="lib/jsdos/js-dos.js"></script>
+		<title>Frame0</title>
 		<style type="text/css">
 * {
 	margin: 0px;
@@ -47,20 +48,16 @@ embed, ruffle-embed, ruffle-player {
 
 // <![CDATA[
 (() => {
-
-function getQueryString(key, fallback,  url = window.location.href) {
-	key = key.replace(/[\[\]]/g, '\\$&');
-	let regex = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
-	let results = regex.exec(url);
-	if (!results) return fallback;
-	if (!results[2]) return '';
-	return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
-
-let src = getQueryString("src", "");
-let type = getQueryString("type", "");
-
+const location = new URL(window.location.href);
 emulators.pathPrefix = "/lib/jsdos/";
+
+let src = location.searchParams.get("src");
+let type = location.searchParams.get("type");
+
+if (src == null || src.length == 0) {
+	console.warn("No embed source specified");
+	return;
+}
 
 switch (type) {
 	case "flash": {

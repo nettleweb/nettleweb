@@ -5,77 +5,26 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta http-equiv="Referrer-Policy" content="no-referrer" />
 		<meta name="referrer" content="no-referrer" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="description" content="An open-source ad-less unblocked games website" />
-		<meta name="keywords" content="whitespider,white,spider,unblocked,unlocked,games,game,html5,open-source,flash,proxy" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+		<meta name="description" content="An open source adless HTML5, DOS, Flash game collection website, contains more than 200 unblocked games for school!" />
+		<meta name="keywords" content="whitespider,unblocked,games,game,html5,flash,dos,open-source,free,no ads,adless" />
 		<base href="/" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="standard.css" />
 		<link rel="manifest" href="manifest.json" />
 		<link rel="canonical" href="https://whitespider.gq/" />
-		<script type="text/javascript" src="https://webalert.pages.dev/webalert.js"></script>
-		<script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=G-MPQKJFLRE1"></script>
+		<script type="text/javascript" src="./lib/webalert.js"></script>
 		<title>WhiteSpider</title>
 		<style type="text/css">
-* {
-	margin: 0px;
-	padding: 0px;
-}
-
-@font-face {
-	font-family: "Ubuntu";
-	font-style: normal;
-	src: url("res/ubuntu.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "Ubuntu Mono";
-	font-style: normal;
-	src: url("res/ubuntu-mono.ttf") format("truetype");
-}
-
-::-webkit-scrollbar {
-	position: absolute;
-	display: block;
-	width: 10px;
-	height: 100%;
-}
-
-::-webkit-scrollbar-track {
-	border-style: solid;
-	border-width: 1px;
-	border-color: rgba(255, 255, 255, 0.5);
-	border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb {
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background-color: rgba(255, 255, 255, 0.8);
-}
-
-body {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	font-size: 14px;
-	font-family: "Ubuntu";
-	font-weight: 500;
-	font-style: normal;
-	color: #ffffff;
-	background-color: #001a1a;
-	overflow: hidden;
-}
-
 #header {
 	position: absolute;
-	display: flex;
+	display: block;
 	width: calc(100% - 10px);
 	height: 50px;
 	padding: 5px;
+	border-bottom-style: solid;
+	border-bottom-width: 3px;
+	border-bottom-color: #ffffff;
 }
 
 #logo {
@@ -83,50 +32,55 @@ body {
 	display: block;
 	width: 200px;
 	height: 50px;
-	background-image: url("res/logo-low.svg");
+	background-image: url("res/logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 }
 
-.nav-button {
+#search-bar {
 	position: absolute;
 	display: block;
-	width: 60px;
-	height: 100%;
-	line-height: 50px;
-	font-weight: 600;
-	text-align: center;
+	width: 300px;
+	height: 30px;
+	top: 10px;
+	right: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	outline: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #808080;
+	border-radius: 10px;
+}
+
+#search-bar:focus {
+	border-color: #ffffff;
+}
+
+#home-button {
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 50px;
+	top: 5px;
+	right: 5px;
 	cursor: pointer;
-	box-sizing: border-box;
-}
-
-.nav-button:hover {
-	border-bottom-style: solid;
-	border-bottom-color: #ffffff;
-	border-bottom-width: 3px;
-}
-
-#tools {
-	right: 10px;
-}
-
-#games {
-	right: 70px;
-}
-
-#home {
-	right: 130px;
+	background-image: url("res/home.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 #content {
 	position: absolute;
 	display: block;
 	width: 100%;
-	height: calc(100% - 60px);
-	top: 60px;
+	height: calc(100% - 63px);
+	top: 63px;
 }
 
-#home-screen, #games-screen, #tools-screen, #about-screen, #noscript-screen {
+.screen {
 	position: absolute;
 	display: block;
 	width: calc(100% - 40px);
@@ -142,12 +96,31 @@ body {
 	background-color: #001a1a;
 }
 
+#dynamic-screen {
+	width: 100%;
+	padding: 0px;
+}
+
+#noscript-text {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+	font-size: 16px;
+	font-weight: 600;
+	color: #ff8080;
+}
+
 #large-logo {
 	position: relative;
 	display: block;
 	width: 512px;
 	height: 128px;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	background-image: url("res/logo.svg");
 	background-repeat: no-repeat;
 	background-size: contain;
@@ -158,11 +131,23 @@ body {
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: auto;
-	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
 	font-style: italic;
 	font-size: 16px;
 	line-height: 25px;
+}
+
+#navigation-bar {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	line-height: 16px;
 }
 
 .title {
@@ -170,63 +155,36 @@ body {
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: auto;
-	font-size: 24px;
-	font-weight: 600;
-	line-height: 40px;
-}
-
-.subtitle {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: auto;
+	line-height: 36px;
 	font-size: 18px;
 	font-weight: 600;
-	line-height: 25px;
 }
 
-.text, .text2 {
+.text {
 	position: relative;
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: auto;
-	line-height: 18px;
+	line-height: 16px
 }
 
-.text2 {
-	color: #001a1a;
-}
-
-#noscript-screen .text {
-	font-size: 16px;
-	font-weight: 600;
-	color: #ff8080;
-}
-
-a {
+.symtext {
 	color: #ffffff;
 	cursor: pointer;
 	text-decoration: underline;
 	font-style: italic;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	line-height: 16px;
 }
 
-.game-label {
+.game-grid {
 	position: relative;
-	display: block;
-	width: fit-content;
+	display: flex;
+	width: 100%;
 	height: fit-content;
-	margin: auto;
-	line-height: 16px;
-	cursor: pointer;
-	text-decoration: underline;
-	font-style: italic;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	flex-direction: row;
+	flex-wrap: wrap;
 }
 
 .game-item {
@@ -234,26 +192,54 @@ a {
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: auto;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	color: #000000;
+	background-color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #000000;
+	border-radius: 10px;
+	cursor: pointer;
+	user-select: none;
 }
 
-#html5-game-container, #dos-game-container, #flash-game-container {
+.game-preview {
 	position: relative;
 	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: auto;
+	width: 128px;
+	height: 128px;
+	background-image: url("res/defprev.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	border-radius: 10px;
 }
 
-.game-frame-container {
+.game-info {
 	position: relative;
 	display: block;
-	width: 800px;
-	height: 600px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	width: 108px;
+	height: 44px;
+	margin: 10px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 16px;
+	overflow: hidden;
+}
+
+.game-info:hover {
+	text-decoration: underline;
+}
+
+.game-desc {
+	position: relative;
+	display: block;
+	width: 128px;
+	height: 85px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-size: 12px;
+	line-height: 14px;
 }
 
 .footer {
@@ -273,141 +259,192 @@ a {
 
 .footer a {
 	color: #a0a0a0;
-	padding: 0px;
+	cursor: pointer;
+	text-decoration: underline;
 }
 
-game-frame, embed {
+#frame {
+	position: relative;
+	display: block;
+	width: 800px;
+	height: 600px;
+	background-color: #ffffff;
+}
+
+#frame-container {
+	position: absolute;
+	display: block;
+	width: 800px;
+	height: 600px;
+}
+
+iframe, embed {
 	position: absolute;
 	display: block;
 	width: 100%;
 	height: 100%;
+	border: none;
 }
 
-#game-request-form {
-	position: relative;
+#control-bar {
+	position: absolute;
 	display: block;
-	width: 640px;
-	height: 600px;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 60px;
-	border: none;
+	width: 100%;
+	height: 40px;
+	bottom: 0px;
+	color: #ffffff;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#fullscreen-button, #reload-button {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	top: 5px;
+	cursor: pointer;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#fullscreen-button {
+	right: 5px;
+	background-image: url("res/fullscreen.svg");
+}
+
+#reload-button {
+	right: 40px;
+	background-image: url("res/reload.svg");
+}
+
+#game-item-template {
+	display: none;
 }
 
 #context-menu {
 	position: absolute;
+	display: none;
 	width: fit-content;
 	height: fit-content;
 	border-style: solid;
 	border-width: 1px;
-	border-color: #ffffff;
+	border-color: #808080;
 	color: #303030;
-	background-color: #f0f0f0;
+	background-color: #ffffff;
 }
 
 #context-menu div {
 	position: relative;
 	width: auto;
 	height: 14px;
+	padding: 10px;
 	line-height: 14px;
 	font-size: 14px;
 	font-weight: 500;
-	padding: 10px;
 	cursor: pointer;
+	user-select: none;
 }
 
 #context-menu div:hover {
 	color: #ffffff;
 	background-color: #001a1a;
 }
+
+#context-menu div:active {
+	color: #ffffff;
+	background-color: #002a2a;
+}
 		</style>
 	</head>
 	<body>
 		<div id="header">
 			<div id="logo"></div>
-			<div id="home" class="nav-button">Home</div>
-			<div id="games" class="nav-button">Games</div>
-			<div id="tools" class="nav-button">Tools</div>
+			<input id="search-bar" type="text" value="" placeholder="Search games" />
+			<div id="home-button" style="display: none;"></div>
 		</div>
 		<div id="content">
-			<div id="home-screen">
-				<div id="large-logo" style="margin-bottom: 10px;"></div>
-				<div id="description" style="margin-bottom: 100px;">An open-source ad-less unblocked games website</div>
-				<div class="subtitle">Embedded Links</div>
-				<div class="text">If this website has been blocked, you can try one of the following link:</div>
-				<a class="text" href="https://sites.google.com/view/whitespider" target="_blank">https://sites.google.com/view/whitespider</a>
-				<a class="text" href="https://sites.google.com/view/white-spider" target="_blank">https://sites.google.com/view/white-spider</a>
-				<a class="text" href="https://sites.google.com/view/whitespi" target="_blank">https://sites.google.com/view/whitespi</a>
-				<a class="text" href="https://sites.google.com/view/wsunbl" target="_blank">https://sites.google.com/view/wsunbl</a>
-				<a class="text" href="https://sites.google.com/view/x999" target="_blank">https://sites.google.com/view/x999</a>
-				<div class="text" style="margin-top: 20px; margin-bottom: 60px;">All of these links are blocked?<br/><a href="https://discord.gg/MWCNr2ANEz" target="_blank">Join the Discord server</a> to get more unblocked links.</div>
-				<div class="subtitle">Alternative Links</div>
-				<div class="text">You can also access this website with one of the following link:</div>
-				<a class="text" href="https://whitespider.cf" target="_blank">https://whitespider.cf</a>
-				<a class="text" href="https://whitespider.ga" target="_blank">https://whitespider.ga</a>
-				<a class="text" href="https://whitespider.gq" target="_blank">https://whitespider.gq</a>
-				<a class="text" href="https://whitespider.ml" target="_blank">https://whitespider.ml</a>
-				<a class="text" href="https://whitespider.tk" target="_blank" style="margin-bottom: 60px;">https://whitespider.tk</a>
-				<div class="subtitle">Discord Server</div>
-				<a class="text"  href="https://discord.gg/MWCNr2ANEz" target="_blank" style="margin-bottom: 60px;">Join the Discord server now</a>
-				<div class="subtitle">Site Feedback</div>
-				<iframe id="game-request-form" src="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" width="640" height="574" loading="lazy"></iframe>
-				<div class="subtitle">GitHub Project</div>
-				<div class="text">If you are an developer, you can access the source code and contribute to the project on GitHub.</div>
-				<a class="text" href="https://www.github.com/ruochenjia/whitespider" target="_blank" style="margin-bottom: 60px;">GitHub Project</a>
-				<div class="footer">©2022 WhiteSpider, created and managed by <a href="https://www.github.com/ruochenjia">Ruochen Jia</a></div>
-			</div>
-			<div id="games-screen" style="display: none;">
-				<div class="title" style="margin-bottom: 50px;">Games</div>
-				<div class="subtitle">Important Notice</div>
-				<div class="text" style="font-size: 16px; font-weight: 600;">In order to provide the best performance, please make sure that third-party cookies are enabled.</div>
-				<div class="text" style="font-size: 16px; font-weight: 600; margin-bottom: 60px;">Some games might stop working by disabling third-party cookies or blocking ads.</div>
-				<div class="subtitle" style="margin-bottom: 30px;">HTML5 Games</div>
-				<div id="html5-game-container" style="margin-bottom: 50px;"></div>
-				<div class="subtitle" style="margin-bottom: 30px;">DOS Games</div>
-				<div id="dos-game-container" style="margin-bottom: 50px;"></div>
-				<div class="subtitle" style="margin-bottom: 30px;">Flash Games</div>
-				<div id="flash-game-container" style="margin-bottom: 50px;"></div>
-				<div class="subtitle" style="margin-bottom: 10px;">User-Added Games</div>
-				<div class="text" style="margin-bottom: 30px;">You can now add games to this website and play the games added by others.</div>
-				<div id="custom-game-container" style="margin-bottom: 20px;">
-					<div id="load-custom-games" class="game-label">CLICK HERE TO LOAD</div>
+			<div id="home-screen" class="screen">
+				<div id="large-logo"></div>
+				<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 200 unblocked games for school!</div>
+				<div id="navigation-bar">
+					<span id="html5-games" class="symtext">HTML5 Games</span> |
+					<span id="dos-games" class="symtext">DOS Games</span> |
+					<span id="flash-games" class="symtext">Flash Games</span> |
+					<span id="tools" class="symtext">Tools</span> |
+					<a class="symtext" href="https://sites.google.com/view/wsug-mirrors" target="_blank">Mirror Links</a> |
+					<a class="symtext" href="https://github.com/ruochenjia/whitespider" target="_blank">GitHub</a> |
+					<a class="symtext" href="https://discord.gg/MWCNr2ANEz" target="_blank">Discord</a> |
+					<a class="symtext" href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank">Feedback</a>
 				</div>
-				<div id="request-custom-game" class="game-label" style="margin-bottom: 50px;">Submit a game now</div>
-				<div class="footer">©2022 WhiteSpider, created and managed by <a href="https://www.github.com/ruochenjia">Ruochen Jia</a></div>
+				<div class="title">HTML5 Games</div>
+				<div id="html5-game-grid" class="game-grid"></div>
+				<div class="title">DOS Games</div>
+				<div id="dos-game-grid" class="game-grid"></div>
+				<div class="title">Flash Games</div>
+				<div id="flash-game-grid" class="game-grid"></div>
+				<div class="title">User-Added Games</div>
+				<div class="text">The games listed here were added by users, you can play them but might have some issues.</div>
+				<div id="game-submission-button" class="symtext">Submit a game now</div>
+				<div id="user-game-grid" class="game-grid"></div>
+				<div class="title">Tools</div>
+				<div id="tools-grid" class="game-grid">
+					<a href="https://unblocker.whitespider.gq" target="_blank" class="game-item">
+						<div class="game-preview" style="background-image: url('res/logo3.svg');"></div>
+						<div class="game-info">Unblocker</div>
+						<div class="game-desc">This tool allows you to access all blocked websites through a web proxy.</div>
+					</a>
+					<a href="https://unblocker.ruochenjia.repl.co" target="_blank" class="game-item">
+						<div class="game-preview" style="background-image: url('res/logo3.svg');"></div>
+						<div class="game-info">Unblocker 2</div>
+						<div class="game-desc">If the first one has been blocked, you can try this one.</div>
+					</a>
+					<div id="ebutuoy" class="game-item">
+						<div class="game-preview" style="background-image: url('res/ytprev.svg');"></div>
+						<div class="game-info">YouTube Unblocked</div>
+						<div class="game-desc">Unblocked version of YouTube, with all ads removed.</div>
+					</div>
+					<div id="vmlinux" class="game-item">
+						<div class="game-preview"></div>
+						<div class="game-info">VMLinux</div>
+						<div class="game-desc">A 32-bit PC emulator that runs in your browser.</div>
+					</div>
+					<div id="private-search" class="game-item">
+						<div class="game-preview" style="background-image: url('res/goprev.svg');"></div>
+						<div class="game-info">Private Search</div>
+						<div class="game-desc">A private search engine without logging and history saving.</div>
+					</div>
+				</div>
+				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank">GitHub</a></div>
 			</div>
-			<div id="tools-screen" style="display: none;">
-				<div class="title" style="margin-bottom: 50px;">Tools</div>
-				<a class="game-label" href="https://unblocker.whitespider.gq" target="_blank">Unblocker</a>
-				<div class="text" style="margin-bottom: 25px;">This tool allows you to access all blocked websites through a web proxy.</div>
-				<a class="game-label" href="https://unblocker.ruochenjia.repl.co" target="_blank">Unblocker 2</a>
-				<div class="text" style="margin-bottom: 25px;">If the first one has been blocked, you can try this one.</div>
-				<div class="game-label" id="youtube-adless">YouTube Adless</div>
-				<div class="text" style="margin-bottom: 25px;">An unofficial YouTube client, with all ads removed.</div>
-				<div class="game-frame-container" id="youtube-adless-frame" style="display: none;"></div>
-				<div class="game-label" id="vmlinux">VMLinux</div>
-				<div class="text" style="margin-bottom: 25px;">A 32-bit PC emulator based on <a href="https://github.com/copy/v86" target="_blank">v86</a>.</div>
-				<div class="game-frame-container" id="vmlinux-frame" style="display: none; width: 1100px; height: 1600px;"></div>
-				<div class="game-label" id="private-search">Private Search</div>
-				<div class="text" style="margin-bottom: 25px;">A private search engine without logging and history saving.</div>
-				<div class="game-frame-container" id="private-search-frame" style="display: none;"></div>
-				<div class="game-label" id="google-sites-finder">Google Sites Finder</div>
-				<div class="text" style="margin-bottom: 25px;">This tool allows you to find more unblocked games websites on Google Sites.</div>
-				<div class="game-frame-container" id="gsf-frame" style="display: none;"></div>
-				<div class="footer">©2022 WhiteSpider, created and managed by <a href="https://www.github.com/ruochenjia">Ruochen Jia</a></div>
+			<div id="game-screen" class="screen" style="display: none;">
+				<div id="game-title" class="title">Title</div>
+				<div id="frame">
+					<div id="frame-container"></div>
+					<div id="control-bar">
+						<div id="fullscreen-button"></div>
+						<div id="reload-button"></div>
+					</div>
+				</div>
+				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank">GitHub</a></div>
+			</div>
+			<div id="dynamic-screen" class="screen" style="display: none;">
+				<!-- Dynamically rendered contents -->
 			</div>
 			<noscript>
-				<div id="noscript-screen">
-					<div class="text">Please <a href="https://www.google.com/search?q=how+to+enable+javascript" target="_blank">enable JavaScript</a> and reload this page.</div>
-					<div class="footer">©2022 WhiteSpider, created and managed by <a href="https://www.github.com/ruochenjia">Ruochen Jia</a></div>
+				<div id="noscript-screen" class="screen">
+					<div id="noscript-text">Please enable JavaScript and refresh this page to continue.</div>
 				</div>
 			</noscript>
 		</div>
-		<div id="context-menu" style="display: none;">
+		<div id="game-item-template" class="game-item">
+			<div class="game-preview"></div>
+			<div class="game-info">Example</div>
+		</div>
+		<div id="context-menu">
 			<div id="clear-site-data">Clear site data</div>
 			<div id="clear-cache">Clear cache</div>
 			<div id="unregister-sw">Unregister SW</div>
-			<div id="inspect">Inspect</div>
+			<div id="leave-without-history">Leave without history</div>
 		</div>
 		<script type="module">
 "use strict";

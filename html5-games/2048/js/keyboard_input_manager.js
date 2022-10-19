@@ -1,1 +1,144 @@
-function KeyboardInputManager(){this.events={},window.navigator.msPointerEnabled?(this.eventTouchstart="MSPointerDown",this.eventTouchmove="MSPointerMove",this.eventTouchend="MSPointerUp"):(this.eventTouchstart="touchstart",this.eventTouchmove="touchmove",this.eventTouchend="touchend"),this.listen()}KeyboardInputManager.prototype.on=function(t,e){this.events[t]||(this.events[t]=[]),this.events[t].push(e)},KeyboardInputManager.prototype.emit=function(t,e){var n=this.events[t];n&&n.forEach((function(t){t(e)}))},KeyboardInputManager.prototype.listen=function(){var t,e,n=this,o={38:0,39:1,40:2,37:3,75:0,76:1,74:2,72:3,87:0,68:1,83:2,65:3};document.addEventListener("keydown",(function(t){var e=t.altKey||t.ctrlKey||t.metaKey||t.shiftKey,i=o[t.which];e||void 0!==i&&(t.preventDefault(),n.emit("move",i)),e||82!==t.which||n.restart.call(n,t)})),this.bindButtonPress(".retry-button",this.restart),this.bindButtonPress(".restart-button",this.restart),this.bindButtonPress(".keep-playing-button",this.keepPlaying);var i=document.getElementsByClassName("game-container")[0];i.addEventListener(this.eventTouchstart,(function(n){!window.navigator.msPointerEnabled&&n.touches.length>1||n.targetTouches.length>1||(window.navigator.msPointerEnabled?(t=n.pageX,e=n.pageY):(t=n.touches[0].clientX,e=n.touches[0].clientY),n.preventDefault())})),i.addEventListener(this.eventTouchmove,(function(t){t.preventDefault()})),i.addEventListener(this.eventTouchend,(function(o){if(!(!window.navigator.msPointerEnabled&&o.touches.length>0||o.targetTouches.length>0)){var i,a;window.navigator.msPointerEnabled?(i=o.pageX,a=o.pageY):(i=o.changedTouches[0].clientX,a=o.changedTouches[0].clientY);var r=i-t,s=Math.abs(r),h=a-e,u=Math.abs(h);Math.max(s,u)>10&&n.emit("move",s>u?r>0?1:3:h>0?2:0)}}))},KeyboardInputManager.prototype.restart=function(t){t.preventDefault(),this.emit("restart")},KeyboardInputManager.prototype.keepPlaying=function(t){t.preventDefault(),this.emit("keepPlaying")},KeyboardInputManager.prototype.bindButtonPress=function(t,e){var n=document.querySelector(t);n.addEventListener("click",e.bind(this)),n.addEventListener(this.eventTouchend,e.bind(this))};
+function KeyboardInputManager() {
+  this.events = {};
+
+  if (window.navigator.msPointerEnabled) {
+    //Internet Explorer 10 style
+    this.eventTouchstart    = "MSPointerDown";
+    this.eventTouchmove     = "MSPointerMove";
+    this.eventTouchend      = "MSPointerUp";
+  } else {
+    this.eventTouchstart    = "touchstart";
+    this.eventTouchmove     = "touchmove";
+    this.eventTouchend      = "touchend";
+  }
+
+  this.listen();
+}
+
+KeyboardInputManager.prototype.on = function (event, callback) {
+  if (!this.events[event]) {
+    this.events[event] = [];
+  }
+  this.events[event].push(callback);
+};
+
+KeyboardInputManager.prototype.emit = function (event, data) {
+  var callbacks = this.events[event];
+  if (callbacks) {
+    callbacks.forEach(function (callback) {
+      callback(data);
+    });
+  }
+};
+
+KeyboardInputManager.prototype.listen = function () {
+  var self = this;
+
+  var map = {
+    38: 0, // Up
+    39: 1, // Right
+    40: 2, // Down
+    37: 3, // Left
+    75: 0, // Vim up
+    76: 1, // Vim right
+    74: 2, // Vim down
+    72: 3, // Vim left
+    87: 0, // W
+    68: 1, // D
+    83: 2, // S
+    65: 3  // A
+  };
+
+  // Respond to direction keys
+  document.addEventListener("keydown", function (event) {
+    var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
+                    event.shiftKey;
+    var mapped    = map[event.which];
+
+    if (!modifiers) {
+      if (mapped !== undefined) {
+        event.preventDefault();
+        self.emit("move", mapped);
+      }
+    }
+
+    // R key restarts the game
+    if (!modifiers && event.which === 82) {
+      self.restart.call(self, event);
+    }
+  });
+
+  // Respond to button presses
+  this.bindButtonPress(".retry-button", this.restart);
+  this.bindButtonPress(".restart-button", this.restart);
+  this.bindButtonPress(".keep-playing-button", this.keepPlaying);
+
+  // Respond to swipe events
+  var touchStartClientX, touchStartClientY;
+  var gameContainer = document.getElementsByClassName("game-container")[0];
+
+  gameContainer.addEventListener(this.eventTouchstart, function (event) {
+    if ((!window.navigator.msPointerEnabled && event.touches.length > 1) ||
+        event.targetTouches.length > 1) {
+      return; // Ignore if touching with more than 1 finger
+    }
+
+    if (window.navigator.msPointerEnabled) {
+      touchStartClientX = event.pageX;
+      touchStartClientY = event.pageY;
+    } else {
+      touchStartClientX = event.touches[0].clientX;
+      touchStartClientY = event.touches[0].clientY;
+    }
+
+    event.preventDefault();
+  });
+
+  gameContainer.addEventListener(this.eventTouchmove, function (event) {
+    event.preventDefault();
+  });
+
+  gameContainer.addEventListener(this.eventTouchend, function (event) {
+    if ((!window.navigator.msPointerEnabled && event.touches.length > 0) ||
+        event.targetTouches.length > 0) {
+      return; // Ignore if still touching with one or more fingers
+    }
+
+    var touchEndClientX, touchEndClientY;
+
+    if (window.navigator.msPointerEnabled) {
+      touchEndClientX = event.pageX;
+      touchEndClientY = event.pageY;
+    } else {
+      touchEndClientX = event.changedTouches[0].clientX;
+      touchEndClientY = event.changedTouches[0].clientY;
+    }
+
+    var dx = touchEndClientX - touchStartClientX;
+    var absDx = Math.abs(dx);
+
+    var dy = touchEndClientY - touchStartClientY;
+    var absDy = Math.abs(dy);
+
+    if (Math.max(absDx, absDy) > 10) {
+      // (right : left) : (down : up)
+      self.emit("move", absDx > absDy ? (dx > 0 ? 1 : 3) : (dy > 0 ? 2 : 0));
+    }
+  });
+};
+
+KeyboardInputManager.prototype.restart = function (event) {
+  event.preventDefault();
+  this.emit("restart");
+};
+
+KeyboardInputManager.prototype.keepPlaying = function (event) {
+  event.preventDefault();
+  this.emit("keepPlaying");
+};
+
+KeyboardInputManager.prototype.bindButtonPress = function (selector, fn) {
+  var button = document.querySelector(selector);
+  button.addEventListener("click", fn.bind(this));
+  button.addEventListener(this.eventTouchend, fn.bind(this));
+};

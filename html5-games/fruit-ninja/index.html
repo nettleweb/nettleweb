@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- Google -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1477355143669983"
+            crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RN2RSBQT28"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-RN2RSBQT28');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <meta name="theme-color" content="#000000" />
+
+    <link rel="manifest" href="./manifest.json" />
+
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="application-name" content="Fruit Ninja" />
+    <meta name="apple-mobile-web-app-title" content="Fruit Ninja" />
+    <meta name="msapplication-starturl" content="./" />
+    <script type="text/javascript" src="h5Sdk.js"></script>
+
+    <title>Fruit Ninja</title>
+    <style>
+          @font-face {
+              font-family: gangofchinese;
+              src: url('assets/font/gangofchinese.ttf');
+          }
+
+          body {
+              background-color: #000000;
+              margin: 0;
+              height: 100%;
+              max-height: 100vh !important;
+              overflow: hidden;
+              position: relative;
+          }
+
+          .fontLoader {
+              position: absolute;
+              left: -1000px;
+              visibility: hidden;
+          }
+
+          #phaser-canvas {
+              margin: 0 auto;
+          }
+
+          /*#enable3d-three-canvas{
+            position: sticky !important;
+        }*/
+          /*#enable3d-phaser-canvas{
+            margin: 0 auto;
+            position: absolute !important;
+        }*/
+
+          body, #content {
+              height: 100vh !important;
+              max-height: 100vh !important;
+          }
+
+          #divAds, #tempads {
+              display: none;
+              /*background-color: green;*/
+          }
+
+          canvas {
+              width: 100%;
+              height: 100%;
+              display: grid !important;
+              grid-area: 1/1;
+              /*position: sticky !important;*/
+              /*margin: 0 auto !important;*/
+              margin-top: 0 !important;
+              margin-bottom: 0 !important;
+              /*margin-left: auto !important;
+            margin-right: auto !important;*/
+              padding: 0 !important;
+              max-width: 100% !important;
+              max-height: 100vh !important;
+          }
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" href="css/styles.css"> -->
+
+    <noscript>Please enable javascript to continue using this application.</noscript>
+
+    <script async
+            data-ad-client="ca-pub-6934234812187351"
+            data-ad-frequency-hint="30s"
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+    window.adsbygoogle = window.adsbygoogle || [];
+        const adBreak = adConfig = function (o) { adsbygoogle.push(o); }
+    </script>
+    <!-- installs the serviceWorker -->
+    <!-- <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+        })
+      }
+    </script> -->
+</head>
+  <body>
+    <div class="fontLoader" style="font-family: gangofchinese;">-</div>
+    <div id="content">
+        <div id="phaser-canvas"></div>
+    </div>        
+    <!-- <div id="phaser-game"></div> -->
+  <script type="text/javascript" src="vendors.fb6f2f7c51aa86f87ee3.bundle.js"></script><script type="text/javascript" src="main.bb79cf245c33f6bf6733.bundle.js"></script><style id="injectStyles">html, body{ background: none !important; }</style>
+</body>
+</html>

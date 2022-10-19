@@ -3,15 +3,15 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+		<meta name="robots" content="noindex,nofollow" />
 		<base href="/" />
-		<title>_</title>
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="standard.css" />
+		<title>Google Search Bar</title>
 		<style type="text/css">
-* {
-	margin: 0px;
-	padding: 0px;
-}
-
-
 body {
 	position: absolute;
 	display: block;
@@ -20,44 +20,50 @@ body {
 	overflow: hidden;
 }
 
-.gcse-search {
+#container {
 	position: absolute;
 	display: block;
 	width: 100%;
 	height: 100%;
+	color: #000000;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.gcse-search {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
 }
 		</style>
 	</head>
 	<body>
+		<div id="container">
+			<div class="gcse-search"></div>
+		</div>
 		<script type="text/javascript">
 "use strict";
 
+// <![CDATA[
 (() => {
-function getQueryString(key, fallback,  url = window.location.href) {
-	key = key.replace(/[\[\]]/g, '\\$&');
-	let regex = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
-	let results = regex.exec(url);
-	if (!results) return fallback;
-	if (!results[2]) return '';
-	return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+const location = new URL(window.location.href);
 
-let key = getQueryString("key", "");
-if (key.length == 0) {
+let key = location.searchParams.get("key");
+if (key == null || key.length == 0) {
 	console.warn("No key specified");
 	return;
 }
 
 let script = document.createElement("script");
 script.type = "text/javascript";
-script.src = new URL("https://cse.google.com/cse.js?cx=" + key).href;
+script.src = "https://cse.google.com/cse.js?cx=" + key;
 script.async = true;
 document.getElementsByTagName("head")[0].appendChild(script);
 
-let frame = document.createElement("div");
-frame.className = "gcse-search"
-document.body.appendChild(frame);
 })();
+// ]]>
 		</script>
 	</body>
 </html>

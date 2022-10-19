@@ -1,7 +1,15 @@
-"use strict";
 
 self.app = {
-	"id": "whitespider",
-	"version": "1.0",
-	"fileList": []
+	debug: true,
+	cacheName: "whitespider",
+	cacheVersion: "1.0.0-beta4",
+	cacheList: [],
+	headers: {
+		// cross orgin isolation disabled due to issues with Firebase API
+
+		// "Cross-Origin-Embedder-Policy": "require-corp",
+		// "Cross-Origin-Opener-Policy": "same-origin",
+		"Referrer-Policy": "no-referrer",
+		"X-Content-Type-Options": "nosniff"
+	}
 };

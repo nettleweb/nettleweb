@@ -1,214 +1,294 @@
-"use strict";
+import contents from "./contents.js";
+import TestGameDB from "./testgamedb.js";
 
-import { contents } from "./contents.js";
-import { ContentFrame } from "./contentframe.js";
-import { TestGameDB } from "./testgamedb.js";
-
-(() => {
 // default error handler
-window.onerror = (msg, src, lineno, colno, e) => {
-	alert(msg, "Error");
+window.onerror = (message, src, lineno, colno, error) => {
+	console.log(`Error at "${src}", line ${lineno}:${colno}: \n${error}`, "Error");
 };
 
-window.dataLayer = window.dataLayer || [];
-function gtag() { dataLayer.push(arguments); }
-gtag("js", new Date());
-gtag("config", "G-MPQKJFLRE1");
-
-if(!("serviceWorker" in navigator)) {
-	// service workers are not supported
-	new webAlert.Dialog({
-		title: "Warning",
-		message: "Your browser does not support service workers, please use a supported browser to continue."
-	}).show();
-	return;
+let proxy = true;
+const nsw = window.navigator.serviceWorker;
+if (nsw == null) {
+	alert("Your browser does not support service workers, game proxy will be disabled.", "Warning");
+	proxy = false;
+} else {
+	nsw.register("/sw.js", {
+		scope: "/",
+		type: "classic",
+		updateViaCache: "none"
+	}).catch(err => {
+		console.warn(err);
+		alert("Failed to register service worker, game proxy will be disabled.", "Warning");
+		proxy = false;
+	});
 }
 
-if (window != window.top) {
-	alert(`This page might not function properly while running inside a frame. Click <a href="${window.location.href}" target="_blank">here</a> to open it in a new tab.`, "Warning");
+const baseUrl = window.location.origin;
+
+const homeScreen = document.getElementById("home-screen");
+const gameScreen = document.getElementById("game-screen");
+const dynamicScreen = document.getElementById("dynamic-screen");
+const searchBar = document.getElementById("search-bar");
+const homeButton = document.getElementById("home-button");
+
+const gameTitle = document.getElementById("game-title");
+const frameContainer = document.getElementById("frame-container");
+const fullscreenButton = document.getElementById("fullscreen-button");
+const reloadButton = document.getElementById("reload-button");
+
+const html5GameGrid = document.getElementById("html5-game-grid");
+const dosGameGrid = document.getElementById("dos-game-grid");
+const flashGameGrid = document.getElementById("flash-game-grid");
+const userGameGrid = document.getElementById("user-game-grid");
+const gameItemTemplate = document.getElementById("game-item-template");
+const contextMenu = document.getElementById("context-menu");
+
+/**
+ * @param {string} text 
+ */
+function encodeText(text) {
+	return text.replace(/[&"'\<\>]/g, (ch) => {
+		switch (ch) {
+			case "&":
+				return "&amp;";
+			case "'":
+				return "&#39;";
+			case '"':
+				return "&quot;";
+			case "<":
+				return "&lt;";
+			case ">":
+				return "&gt;";
+		}
+	});
 }
 
-window.navigator.serviceWorker.register("/sw.js", {
-	scope: "/",
-	type: "classic",
-	updateViaCache: "all"
+/**
+ * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents
+ * @param {HTMLElement} container
+ */
+function updateContents(contents, container) {
+	container.innerHTML = "";
+	for (let content of contents) {
+		// To be super safe, always escape illegal html characters in name
+		const displayName = encodeText(content.name);
+
+		/**
+		 * @type {HTMLElement}
+		 */
+		const item = gameItemTemplate.cloneNode(true);
+		item.removeAttribute("id");
+		item.getElementsByClassName("game-info")[0].innerHTML = displayName;
+
+		const preview = content.preview;
+		if (preview != null) {
+			item.getElementsByClassName("game-preview")[0].setAttribute("style", `background-image: url("${preview}");`);
+		}
+
+		item.onclick = () => {
+			const frame = createFrame(content.path, content.url);
+			if (document.documentElement.clientWidth < 850) {
+				// for mobile phones
+				inNewTabOrWindow(frame);
+				return;
+			}
+
+			homeScreen.style.display = "none";
+			gameScreen.style.display = "block";
+			searchBar.style.display = "none";
+			homeButton.style.display = "block";
+
+			gameTitle.innerHTML = displayName;
+			frameContainer.appendChild(frame);
+
+			fullscreenButton.onclick = () => {
+				frame.focus({ preventScroll: true });
+				if (document.fullscreenEnabled)
+					frame.requestFullscreen({ navigationUI: "hide" });
+				else inNewTabOrWindow(frame, true);
+			};
+
+			reloadButton.onclick = () => {
+				frame.src = frame.getAttribute("src");
+			};
+		};
+
+		container.appendChild(item);
+	}
+}
+
+/**
+ * @param {string | undefined} path 
+ * @param {string | undefined} url 
+ */
+function createFrame(path, url) {
+	const frame = document.createElement(window == window.top ? "iframe" : "embed");
+	frame.setAttribute("type", "text/plain");
+	frame.setAttribute("width", "800");
+	frame.setAttribute("height", "600");
+	frame.setAttribute("loading", "lazy");
+	frame.setAttribute("allowfullscreen", "true");
+	frame.setAttribute("allow", "cross-origin-isolated");
+	frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups");
+	frame.setAttribute("src", path != null ? path : (proxy ? baseUrl + "/service.html?url=" + encodeURIComponent(url) : url));
+	return frame;
+}
+
+/**
+ * @param {HTMLElement} elem 
+ * @param {boolean | undefined} newWindow 
+ */
+function inNewTabOrWindow(elem, newWindow) {
+	const win = newWindow ? window.open("", "_blank", "height=" + screen.availHeight + ", width=" + screen.availWidth) : window.open("", "_blank");
+	if (win == null) {
+		alert("Failed to open new window.", "Error");
+		return;
+	}
+	win.focus();
+
+	const doc = win.document;
+	doc.write(`<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+		<base href="${baseUrl}"/>
+		<link rel="icon" type="image/x-icon" href="https://www.google.com/favicon.ico" />
+		<title>Google</title>
+		<style type="text/css">
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+iframe, embed {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+		</style>
+	</head>
+</html>`);
+	doc.body.appendChild(elem.cloneNode(true));
+}
+
+/**
+ * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents 
+ * @param {string} lowerCaseInput 
+ */
+function match(contents, lowerCaseInput) {
+	if (lowerCaseInput.length == 0)
+		return contents;
+
+	let r = [];
+	for (let c of contents) {
+		if (c.name.toLowerCase().includes(lowerCaseInput))
+			r.push(c);
+	}
+	return r;
+}
+
+function loadDefaultContent() {
+	updateContents(contents.html5Games, html5GameGrid);
+	updateContents(contents.dosGames, dosGameGrid);
+	updateContents(contents.flashGames, flashGameGrid);
+}
+
+loadDefaultContent();
+TestGameDB.load().then(() => {
+	updateContents(TestGameDB.data, userGameGrid);
 });
 
-let homeScreen = document.getElementById("home-screen");
-let gamesScreen = document.getElementById("games-screen");
-let toolsScreen = document.getElementById("tools-screen");
-document.getElementById("home").onclick = () => {
-	gamesScreen.style.display = "none";
-	toolsScreen.style.display = "none";
-	homeScreen.style.display = "block";
+searchBar.oninput = () => {
+	const value = searchBar.value.toLowerCase();
+	updateContents(match(contents.html5Games, value), html5GameGrid);
+	updateContents(match(contents.dosGames, value), dosGameGrid);
+	updateContents(match(contents.flashGames, value), flashGameGrid);
 };
-document.getElementById("games").onclick = () => {
-	homeScreen.style.display = "none";
-	toolsScreen.style.display = "none";
-	gamesScreen.style.display = "block";
+homeButton.onclick = () => {
+	frameContainer.innerHTML = ""; // clear frame
+	dynamicScreen.innerHTML = "";
+	gameScreen.style.display = "none";
+	dynamicScreen.style.display = "none";
+	homeScreen.style.display = "block";
+	homeButton.style.display = "none";
+	searchBar.style.display = "block";
+};
+
+document.getElementById("html5-games").onclick = () => {
+	html5GameGrid.scrollIntoView({
+		behavior: "smooth",
+		block: "start",
+		inline: "nearest"
+	});
+};
+document.getElementById("dos-games").onclick = () => {
+	dosGameGrid.scrollIntoView({
+		behavior: "smooth",
+		block: "start",
+		inline: "nearest"
+	});
+};
+document.getElementById("flash-games").onclick = () => {
+	flashGameGrid.scrollIntoView({
+		behavior: "smooth",
+		block: "start",
+		inline: "nearest"
+	});
 };
 document.getElementById("tools").onclick = () => {
-	homeScreen.style.display = "none";
-	gamesScreen.style.display = "none";
-	toolsScreen.style.display = "block";
-};
-
-let html5Games = contents.html5Games;
-let dosGames = contents.dosGames;
-let flashGames = contents.flashGames;
-
-function initContent(contents, container) {
-	for (let i in contents) {
-		let content = contents[i];
-		let item = document.createElement("div");
-		item.className = "game-item";
-		let label = document.createElement("div");
-		label.className = "game-label";
-		label.innerHTML = content.name;
-		item.appendChild(label);
-		let frameContainer = document.createElement("div");
-		frameContainer.className = "game-frame-container";
-		frameContainer.style.display = "none";
-		item.appendChild(frameContainer);
-		container.appendChild(item);
-
-		label.onclick = (e) => {
-			e.preventDefault();
-			if (frameContainer.style.display == "none") {
-				let frame = document.createElement("content-frame");
-				let path = content.path;
-				if (path != null)
-					frame.setAttribute("path", content.path);
-				else frame.setAttribute("src", content.url);
-				frame.setAttribute("type", "text/plain");
-				if (document.documentElement.clientWidth < 850) {
-					// for mobile phones
-					frame.inNewTab();	
-				} else {
-					frameContainer.appendChild(frame);
-					frameContainer.style.display = "block";
-				}
-			} else {
-				frameContainer.innerHTML = "";
-				frameContainer.style.display = "none";
-			}
-		}
-	}
-}
-
-initContent(html5Games, document.getElementById("html5-game-container"));
-initContent(dosGames, document.getElementById("dos-game-container"));
-initContent(flashGames, document.getElementById("flash-game-container"));
-
-function cFrame(id, src) {
-	let frame = document.getElementById(id);
-	if (frame.style.display == "none") {
-		if (document.documentElement.clientWidth < 850) {
-			// for mobile phones
-			frame.style.width = "100%";
-			frame.style.height = "100%";
-		}
-		let embed = document.createElement("embed");
-		embed.type = "text/plain";
-		embed.width = "1024";
-		embed.height = "768";
-		embed.src = src;
-		frame.appendChild(embed);
-		frame.style.display = "block";
-	} else {
-		frame.innerHTML = "";
-		frame.style.display = "none";
-	}
-}
-
-document.getElementById("youtube-adless").onclick = (e) => {
-	e.preventDefault();
-	cFrame("youtube-adless-frame", "ebutuoy");
-};
-document.getElementById("vmlinux").onclick = (e) => {
-	e.preventDefault();
-	cFrame("vmlinux-frame", "vmlinux");
-};
-document.getElementById("private-search").onclick = (e) => {
-	e.preventDefault();
-	cFrame("private-search-frame", "google-search.html?key=6505c81d738124627");
-};
-document.getElementById("google-sites-finder").onclick = (e) => {
-	e.preventDefault();
-	cFrame("gsf-frame", "google-search.html?key=b7716b371218d4d34");
-};
-
-document.getElementById("load-custom-games").onclick = () => {
-	let container = document.getElementById("custom-game-container");
-	container.innerHTML = `<div class="text">Loading...</div>`;
-	TestGameDB.load().then(() => {
-		container.innerHTML = "";
-		initContent(TestGameDB.data, container);
+	document.getElementById("tools-grid").scrollIntoView({
+		behavior: "smooth",
+		block: "start",
+		inline: "nearest"
 	});
 };
-
-function imNotARobot() {
-	let resolve;
-	let reject;
-	let promise = new Promise((a, b) => {
-		resolve = a;
-		reject = b;
-	});
-
-	let allowClick = false;
-	setTimeout(() => allowClick = true, 200);
-
-	let dialog = new webAlert.Dialog({
-		title: "",
-		message: "I'm not a robot",
-		input: {
-			type: "checkbox"
-		},
-		positiveButton: {
-			text: "Confirm",
-			onclick: () => {
-				if (allowClick)
-					resolve(dialog.inputElement().checked);
-				else reject("You are a robot!");
-				dialog.dismiss();
+document.getElementById("game-submission-button").onclick = async () => {
+	let result = await form("", "Submit a game", [
+		{
+			label: "Name",
+			input: {
+				type: "text",
+				placeholder: "Game Name"
 			}
 		},
-		negativeButton: {
-			text: "Cancel",
-			onclick: () => {
-				resolve(null);
-				dialog.cancel();
+		{
+			label: "URL",
+			input: {
+				type: "text",
+				placeholder: "https://example.com/example"
 			}
 		}
-	});
-	dialog.show().then(() => {
-		dialog.inputElement().onclick = (e) => {
-			e.preventDefault();
-			setTimeout(() => {
-				let el = e.target;
-				el.checked = !el.checked;
-			}, 800);
-		};	
-	});
-	return promise;
-}
+	]);
 
-document.getElementById("request-custom-game").onclick = async () => {
-	let gameName = await prompt("Game Name");
-	if (gameName == null)
+	if (result == null)
 		return;
+
+	let gameName = result[0].value;
+	let gameUrl = result[1].value;
+
 	if (gameName.length == 0) {
-		alert("Please input a name for your game.");
+		alert("Name cannot be empty.");
 		return;
 	}
 
-	let gameUrl = await prompt("Game URL");
-	if (gameUrl == null)
-		return;
 	if (gameUrl.length == 0) {
-		alert("Please input a valid URL.");
+		alert("URL cannot be empty.");
 		return;
 	}
+
 	try {
 		gameUrl = new URL(gameUrl).href;
 	} catch(e) {
@@ -216,22 +296,37 @@ document.getElementById("request-custom-game").onclick = async () => {
 		return;
 	}
 
-	let checked = await imNotARobot();
-	if (checked == null)
-		return;
-	if (!checked) {
-		alert("🖕🏼");
-		return;
-	}
-
-	TestGameDB.append({
+	await TestGameDB.append({
 		name: gameName,
 		url: gameUrl
 	});
+
+	window.location.reload();
 };
 
+/**
+ * @param {string} url 
+ */
+function dynscr(url) {
+	homeScreen.style.display = "none";
+	dynamicScreen.style.display = "block";
+	searchBar.style.display = "none";
+	homeButton.style.display = "block";
 
-let contextMenu = document.getElementById("context-menu");
+	const frame = createFrame(url);
+	dynamicScreen.appendChild(frame);
+}
+
+document.getElementById("ebutuoy").onclick = () => {
+	dynscr("ebutuoy/");
+};
+document.getElementById("vmlinux").onclick = () => {
+	dynscr("vmlinux/");
+};
+document.getElementById("private-search").onclick = () => {
+	dynscr("google-search.html?key=6505c81d738124627");
+};
+
 document.body.oncontextmenu = (e) => {
 	e.preventDefault();
 	contextMenu.style.top = e.clientY + "px";
@@ -258,7 +353,6 @@ document.getElementById("unregister-sw").onclick = async () => {
 	for (let i = 0; i < regs.length; i++)
 		await regs[i].unregister();
 };
-
-})();
-
-export {};
+document.getElementById("leave-without-history").onclick = () => {
+	window.location.replace(new URL("https://www.google.com/"));
+};

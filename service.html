@@ -1,39 +1,45 @@
-<html>
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+		<meta name="robots" content="noindex,nofollow" />
 		<base href="/" />
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="standard.css" />
 		<title>Loading...</title>
+		<style type="text/css">
+div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px;
+}
+		</style>
 	</head>
 	<body>
-		<noscript>Please enable JavaScript to continue.</noscript>
-		<div style="color: #ffffff;">Loading...</div>
-		<script type="text/javascript" src="/uv/uv.config.js"></script>
+		<noscript>
+			<div>Please enable JavaScript and reload this page to continue.</div>
+		</noscript>
+		<div>Loading...</div>
+		<script type="text/javascript" src="uv/uv.config.js"></script>
 		<script type="text/javascript">
 "use strict";
 
+// <![CDATA[
 (() => {
-
-function getQueryString(key, fallback, url) {
-	key = key.replace(/[\[\]]/g, '\\$&');
-	let regex = new RegExp('[?&]' + key + '(=([^&#]*)|&|#|$)');
-	let results = regex.exec(url);
-	if (!results) return fallback;
-	if (!results[2]) return '';
-	return decodeURIComponent(results[2].replace(/\+/g, ' '));
-}
+const location = new URL(window.location.href);
 
 function encodeUrl(url) {
-	let base = new URL(location);
-	base.pathname = "/";
-	base.search = "";
-	base = base.href;
-	url = __uv$config.encodeUrl(url);
-	return base.slice(0, -1) + __uv$config.prefix + url;
+	return location.origin + __uv$config.prefix + __uv$config.encodeUrl(url);
 }
 
-let location = window.location.href;
-
-let url = getQueryString("url", "", location);
-if (url.length == 0) {
+let url = location.searchParams.get("url");
+if (url == null || url.length == 0) {
 	console.warn("no url specified");
 	return;
 }
@@ -41,6 +47,7 @@ if (url.length == 0) {
 url = encodeUrl(new URL(url).href);
 window.location = new URL(url);
 })();
+// ]]>
 		</script>
 	</body>
 </html>

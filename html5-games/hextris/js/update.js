@@ -1,8 +1,73 @@
-function update(e){MainHex.dt=e,1==gameState&&(waveone.update(),MainHex.ct-waveone.prevTimeScored>1e3&&(waveone.prevTimeScored=MainHex.ct))
-var t,n,r,a=99
-for(t=0;t<blocks.length;t++)MainHex.doesBlockCollide(blocks[t]),blocks[t].settled?blocks[t].removed||(blocks[t].removed=1):blocks[t].initializing||(blocks[t].distFromHex-=blocks[t].iter*e*settings.scale)
-for(t=0;t<MainHex.blocks.length;t++)for(n=0;n<MainHex.blocks[t].length;n++)1==MainHex.blocks[t][n].checked&&(consolidateBlocks(MainHex,MainHex.blocks[t][n].attachedLane,MainHex.blocks[t][n].getIndex()),MainHex.blocks[t][n].checked=0)
-for(t=0;t<MainHex.blocks.length;t++){for(a=99,n=0;n<MainHex.blocks[t].length;n++)r=MainHex.blocks[t][n],2==r.deleted&&(MainHex.blocks[t].splice(n,1),blockDestroyed(),a>n&&(a=n),n--)
-if(a<MainHex.blocks[t].length)for(n=a;n<MainHex.blocks[t].length;n++)MainHex.blocks[t][n].settled=0}for(t=0;t<MainHex.blocks.length;t++)for(n=0;n<MainHex.blocks[t].length;n++)r=MainHex.blocks[t][n],MainHex.doesBlockCollide(r,n,MainHex.blocks[t]),MainHex.blocks[t][n].settled||(MainHex.blocks[t][n].distFromHex-=r.iter*e*settings.scale)
-for(t=0;t<blocks.length;t++)1==blocks[t].removed&&(blocks.splice(t,1),t--)
-MainHex.ct+=e}
+
+//remember to update history function to show the respective iter speeds
+function update(dt) {
+	MainHex.dt = dt;
+	if (gameState == 1) {
+		waveone.update();
+		if (MainHex.ct - waveone.prevTimeScored > 1000) {
+			waveone.prevTimeScored = MainHex.ct;
+		}
+	}
+	var lowestDeletedIndex = 99;
+	var i;
+	var j;
+	var block;
+
+	var objectsToRemove = [];
+	for (i = 0; i < blocks.length; i++) {
+		MainHex.doesBlockCollide(blocks[i]);
+		if (!blocks[i].settled) {
+			if (!blocks[i].initializing) blocks[i].distFromHex -= blocks[i].iter * dt * settings.scale;
+		} else if (!blocks[i].removed) {
+			blocks[i].removed = 1;
+		}
+	}
+
+	for (i = 0; i < MainHex.blocks.length; i++) {
+		for (j = 0; j < MainHex.blocks[i].length; j++) {
+			if (MainHex.blocks[i][j].checked ==1 ) {
+				consolidateBlocks(MainHex,MainHex.blocks[i][j].attachedLane,MainHex.blocks[i][j].getIndex());
+				MainHex.blocks[i][j].checked=0;
+			}
+		}
+	}
+
+	for (i = 0; i < MainHex.blocks.length; i++) {
+		lowestDeletedIndex = 99;
+		for (j = 0; j < MainHex.blocks[i].length; j++) {
+			block = MainHex.blocks[i][j];
+			if (block.deleted == 2) {
+				MainHex.blocks[i].splice(j,1);
+				blockDestroyed();
+				if (j < lowestDeletedIndex) lowestDeletedIndex = j;
+				j--;
+			}
+		}
+
+		if (lowestDeletedIndex < MainHex.blocks[i].length) {
+			for (j = lowestDeletedIndex; j < MainHex.blocks[i].length; j++) {
+				MainHex.blocks[i][j].settled = 0;
+			}
+		}
+	}
+
+	for (i = 0; i < MainHex.blocks.length; i++) {
+		for (j = 0; j < MainHex.blocks[i].length; j++) {
+			block = MainHex.blocks[i][j];
+			MainHex.doesBlockCollide(block, j, MainHex.blocks[i]);
+
+			if (!MainHex.blocks[i][j].settled) {
+				MainHex.blocks[i][j].distFromHex -= block.iter * dt * settings.scale;
+			}
+		}
+	}
+
+	for(i = 0; i < blocks.length;i++){
+		if (blocks[i].removed == 1) {
+			blocks.splice(i,1);
+			i--;
+		}
+	}
+
+	MainHex.ct += dt;
+}
