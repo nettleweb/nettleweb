@@ -4,6 +4,12 @@
 [submodule "vmlinux"]
 	path = vmlinux
 	url = https://github.com/ruochenjia/vmlinux.git
-[submodule "html5-games/greedy-shark"]
-	path = html5-games/greedy-shark
-	url = https://github.com/ruochenjia/Greedy-Shark.git
+[submodule "dos-games"]
+	path = dos-games
+	url = https://github.com/ruochenjia/dos-games
+[submodule "html5-games"]
+	path = html5-games
+	url = https://github.com/ruochenjia/html5-games.git
+[submodule "flash-games"]
+	path = flash-games
+	url = https://github.com/ruochenjia/flash-games.git
