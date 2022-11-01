@@ -1,8 +1,4 @@
 const contents = {
-	// path = same-origin resource (no proxy)
-	// url = cross-origin resource (with proxy)
-	// TODO add preview images for every game
-
 	dosGames: [
 		{
 			name: "Blood",

@@ -155,6 +155,9 @@
 	display: block;
 	width: fit-content;
 	height: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 80px;
 	line-height: 36px;
 	font-size: 18px;
 	font-weight: 600;
@@ -165,10 +168,20 @@
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	line-height: 16px
+	line-height: 16px;
+	margin: auto;
 }
 
-.symtext {
+#game-grid {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.symtext, .game-item {
 	color: #ffffff;
 	cursor: pointer;
 	text-decoration: underline;
@@ -176,70 +189,23 @@
 	line-height: 16px;
 }
 
-.game-grid {
-	position: relative;
-	display: flex;
-	width: 100%;
-	height: fit-content;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	flex-direction: row;
-	flex-wrap: wrap;
-}
-
 .game-item {
 	position: relative;
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin-right: 10px;
-	margin-bottom: 10px;
-	color: #000000;
-	background-color: #ffffff;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #000000;
-	border-radius: 10px;
-	cursor: pointer;
-	user-select: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
-.game-preview {
+#game-submission-button {
 	position: relative;
 	display: block;
-	width: 128px;
-	height: 128px;
-	background-image: url("res/defprev.svg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	border-radius: 10px;
-}
-
-.game-info {
-	position: relative;
-	display: block;
-	width: 108px;
-	height: 44px;
-	margin: 10px;
-	font-size: 14px;
-	text-align: center;
-	line-height: 16px;
-	overflow: hidden;
-}
-
-.game-info:hover {
-	text-decoration: underline;
-}
-
-.game-desc {
-	position: relative;
-	display: block;
-	width: 128px;
-	height: 85px;
-	padding: 10px;
-	box-sizing: border-box;
-	font-size: 12px;
-	line-height: 14px;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
 }
 
 .footer {
@@ -367,63 +333,37 @@ iframe, embed {
 				<div id="large-logo"></div>
 				<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 200 unblocked games for school!</div>
 				<div id="navigation-bar">
-					<span id="html5-games" class="symtext">HTML5 Games</span> |
 					<span id="dos-games" class="symtext">DOS Games</span> |
 					<span id="flash-games" class="symtext">Flash Games</span> |
+					<span id="html5-games" class="symtext">HTML5 Games</span> |
 					<span id="tools" class="symtext">Tools</span> |
 					<a class="symtext" href="https://sites.google.com/view/wsug-mirrors" target="_blank">Mirror Links</a> |
 					<a class="symtext" href="https://github.com/ruochenjia/whitespider" target="_blank">GitHub</a> |
 					<a class="symtext" href="https://discord.gg/MWCNr2ANEz" target="_blank">Discord</a> |
 					<a class="symtext" href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank">Feedback</a>
 				</div>
-				<div class="title">HTML5 Games</div>
-				<div id="html5-game-grid" class="game-grid"></div>
 				<div class="title">DOS Games</div>
 				<div id="dos-game-grid" class="game-grid"></div>
 				<div class="title">Flash Games</div>
 				<div id="flash-game-grid" class="game-grid"></div>
+				<div class="title">HTML5 Games</div>
+				<div id="html5-game-grid" class="game-grid"></div>
 				<div class="title">User-Added Games</div>
-				<div class="text">The games listed here were added by users, you can play them but might have some issues.</div>
-				<div id="game-submission-button" class="symtext">Submit a game now</div>
+				<div class="text" style="margin-top: 5px; margin-bottom: 5px;">The games listed here were added by users, you can play them but might have some issues.</div>
+				<div id="game-submission-button" class="symtext" style="margin-bottom: 50px;">Submit a game now</div>
 				<div id="user-game-grid" class="game-grid"></div>
 				<div class="title">Tools</div>
 				<div id="tools-grid" class="game-grid">
-					<a href="https://unblocker.whitespider.gq" target="_blank" class="game-item">
-						<div class="game-preview" style="background-image: url('res/logo3.svg');"></div>
-						<div class="game-info">Unblocker</div>
-						<div class="game-desc">This tool allows you to access all blocked websites through a web proxy.</div>
-					</a>
-					<a href="https://unblocker.ruochenjia.repl.co" target="_blank" class="game-item">
-						<div class="game-preview" style="background-image: url('res/logo3.svg');"></div>
-						<div class="game-info">Unblocker 2</div>
-						<div class="game-desc">If the first one has been blocked, you can try this one.</div>
-					</a>
-					<div id="ebutuoy" class="game-item">
-						<div class="game-preview" style="background-image: url('res/ytprev.svg');"></div>
-						<div class="game-info">YouTube Unblocked</div>
-						<div class="game-desc">Unblocked version of YouTube, with all ads removed.</div>
-					</div>
-					<div id="vmlinux" class="game-item">
-						<div class="game-preview"></div>
-						<div class="game-info">VMLinux</div>
-						<div class="game-desc">A 32-bit PC emulator that runs in your browser.</div>
-					</div>
-					<div id="private-search" class="game-item">
-						<div class="game-preview" style="background-image: url('res/goprev.svg');"></div>
-						<div class="game-info">Private Search</div>
-						<div class="game-desc">A private search engine without logging and history saving.</div>
-					</div>
-				</div>
-				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank">GitHub</a></div>
-			</div>
-			<div id="game-screen" class="screen" style="display: none;">
-				<div id="game-title" class="title">Title</div>
-				<div id="frame">
-					<div id="frame-container"></div>
-					<div id="control-bar">
-						<div id="fullscreen-button"></div>
-						<div id="reload-button"></div>
-					</div>
+					<a class="game-item" href="https://unblocker.whitespider.gq" target="_blank" style="margin-bottom: 5px;">Unblocker</a>
+					<div class="text">This tool allows you to access all blocked websites through a web proxy.</div>
+					<a class="game-item" href="https://unblocker.ruochenjia.repl.co" target="_blank" style="margin-bottom: 5px;">Unblocker 2</a>
+					<div class="text">If the first one has been blocked, you can try this one.</div>
+					<div id="ebutuoy" class="game-item" style="margin-bottom: 5px;">YouTube Unblocked</div>
+					<div class="text">Unblocked version of YouTube, with all ads removed.</div>
+					<div id="vmlinux" class="game-item" style="margin-bottom: 5px;">VMLinux</div>
+					<div class="text">A 32-bit PC emulator that runs in your browser.</div>
+					<div id="private-search" class="game-item" style="margin-bottom: 5px;">Private Search</div>
+					<div class="text">A private search engine without logging and history saving.</div>
 				</div>
 				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank">GitHub</a></div>
 			</div>
@@ -435,10 +375,6 @@ iframe, embed {
 					<div id="noscript-text">Please enable JavaScript and refresh this page to continue.</div>
 				</div>
 			</noscript>
-		</div>
-		<div id="game-item-template" class="game-item">
-			<div class="game-preview"></div>
-			<div class="game-info">Example</div>
 		</div>
 		<div id="context-menu">
 			<div id="clear-site-data">Clear site data</div>
