@@ -26,21 +26,14 @@ if (nsw == null) {
 const baseUrl = window.location.origin;
 
 const homeScreen = document.getElementById("home-screen");
-const gameScreen = document.getElementById("game-screen");
 const dynamicScreen = document.getElementById("dynamic-screen");
 const searchBar = document.getElementById("search-bar");
 const homeButton = document.getElementById("home-button");
-
-const gameTitle = document.getElementById("game-title");
-const frameContainer = document.getElementById("frame-container");
-const fullscreenButton = document.getElementById("fullscreen-button");
-const reloadButton = document.getElementById("reload-button");
 
 const html5GameGrid = document.getElementById("html5-game-grid");
 const dosGameGrid = document.getElementById("dos-game-grid");
 const flashGameGrid = document.getElementById("flash-game-grid");
 const userGameGrid = document.getElementById("user-game-grid");
-const gameItemTemplate = document.getElementById("game-item-template");
 const contextMenu = document.getElementById("context-menu");
 
 /**
@@ -76,14 +69,9 @@ function updateContents(contents, container) {
 		/**
 		 * @type {HTMLElement}
 		 */
-		const item = gameItemTemplate.cloneNode(true);
-		item.removeAttribute("id");
-		item.getElementsByClassName("game-info")[0].innerHTML = displayName;
-
-		const preview = content.preview;
-		if (preview != null) {
-			item.getElementsByClassName("game-preview")[0].setAttribute("style", `background-image: url("${preview}");`);
-		}
+		const item = document.createElement("div");
+		item.className = "game-item";
+		item.innerHTML = displayName;
 
 		item.onclick = () => {
 			const frame = createFrame(content.path, content.url);
@@ -93,24 +81,15 @@ function updateContents(contents, container) {
 				return;
 			}
 
-			homeScreen.style.display = "none";
-			gameScreen.style.display = "block";
-			searchBar.style.display = "none";
-			homeButton.style.display = "block";
+			window.popup(frame, displayName);
+		};
 
-			gameTitle.innerHTML = displayName;
-			frameContainer.appendChild(frame);
+		item.oncontextmenu = (e) => {
+			e.preventDefault();
+			e.stopPropagation();
 
-			fullscreenButton.onclick = () => {
-				frame.focus({ preventScroll: true });
-				if (document.fullscreenEnabled)
-					frame.requestFullscreen({ navigationUI: "hide" });
-				else inNewTabOrWindow(frame, true);
-			};
-
-			reloadButton.onclick = () => {
-				frame.src = frame.getAttribute("src");
-			};
+			const frame = createFrame(content.path, content.url);
+			inNewTabOrWindow(frame);
 		};
 
 		container.appendChild(item);
@@ -130,7 +109,7 @@ function createFrame(path, url) {
 	frame.setAttribute("allowfullscreen", "true");
 	frame.setAttribute("allow", "cross-origin-isolated");
 	frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups");
-	frame.setAttribute("src", path != null ? path : (proxy ? baseUrl + "/service.html?url=" + encodeURIComponent(url) : url));
+	frame.setAttribute("src", new URL(path != null ? path : (proxy ? baseUrl + "/service.html?url=" + encodeURIComponent(url) : url), baseUrl).href);
 	return frame;
 }
 
@@ -145,6 +124,7 @@ function inNewTabOrWindow(elem, newWindow) {
 		return;
 	}
 	win.focus();
+	win.stop();
 
 	const doc = win.document;
 	doc.write(`<!DOCTYPE html>
@@ -218,9 +198,7 @@ searchBar.oninput = () => {
 	updateContents(match(contents.flashGames, value), flashGameGrid);
 };
 homeButton.onclick = () => {
-	frameContainer.innerHTML = ""; // clear frame
 	dynamicScreen.innerHTML = "";
-	gameScreen.style.display = "none";
 	dynamicScreen.style.display = "none";
 	homeScreen.style.display = "block";
 	homeButton.style.display = "none";
