@@ -1,6 +1,6 @@
 # WhiteSpider
 An open source HTML5, DOS, Flash game collection website (originally used as an unblocked games site). <br />
-Link to website: https://unblocker.whitespider.gq
+Link to website: https://whitespider.gq
 
 ## Features
  - Contains more than 200 games (HTML5, DOS, Flash)
@@ -34,8 +34,7 @@ https://whitespidergq.github.io
 
 ### Mirrors for Unblocker
 https://unblocker.whitespider.gq <br />
-https://unblocker.ruochenjia.repl.co <br />
-https://unblocker-bfx.pages.dev
+https://unblocker.ruochenjia.repl.co
 
 ## License
 This repository is licensed under Apache-2.0 License, see `LICENSE.md` for more details. <br />
@@ -46,3 +45,4 @@ Games are licensed by their owners.
  - <a href="https://js-dos.com" target="_blank">JS-DOS</a>
  - <a href="https://github.com/titaniumnetwork-development/Ultraviolet" target="_blank">Ultraviolet</a> (Modified)
  - <a href="https://github.com/ruochenjia/webalert" target="_blank">webalert.js</a>
+ 
