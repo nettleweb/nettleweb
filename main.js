@@ -162,6 +162,14 @@ iframe, embed {
 	</head>
 </html>`);
 	doc.body.appendChild(elem.cloneNode(true));
+
+	win.onbeforeunload = win.onunload = (e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		const msg = "preventdefault";
+		e.returnValue = msg;
+		return msg;
+	};
 }
 
 /**
