@@ -34,7 +34,7 @@ const contents = {
 		},
 		{
 			name: "Grand Theft Auto",
-			path: "embed.html?type=jsdos&src=https%3A%2F%2Fbare.whitespider.gq%2Flfs%2Fdos-games%2Fgrand-theft-auto.jsdos"
+			path: "embed.html?type=jsdos&src=https%3A%2F%2Fgooglecom.gq%2Flfs%2Fdos-games%2Fgrand-theft-auto.jsdos"
 		},
 		{
 			name: "GroundFire",
@@ -704,7 +704,7 @@ const contents = {
 		},
 		{
 			name: "Super Smash Flash 2",
-			path: "embed.html?type=flash&src=https%3A%2F%2Fbare.whitespider.gq%2Flfs%2Fflash-games%2Fsuper-smash-flash-2.swf"
+			path: "embed.html?type=flash&src=https%3A%2F%2Fgooglecom.gq%2Flfs%2Fflash-games%2Fsuper-smash-flash-2.swf"
 		},
 		{
 			name: "Swords and Sandals",
