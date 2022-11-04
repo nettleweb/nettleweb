@@ -127,6 +127,7 @@ function inNewTabOrWindow(elem, newWindow) {
 	win.stop();
 
 	const doc = win.document;
+	doc.open();
 	doc.write(`<!DOCTYPE html>
 <html>
 	<head>
@@ -161,6 +162,7 @@ iframe, embed {
 		</style>
 	</head>
 </html>`);
+	doc.close();
 	doc.body.appendChild(elem.cloneNode(true));
 
 	win.onbeforeunload = win.onunload = (e) => {
