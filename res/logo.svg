@@ -29,14 +29,15 @@
      units="px"
      width="1024px"
      inkscape:zoom="1.0633188"
-     inkscape:cx="610.8234"
-     inkscape:cy="215.36345"
+     inkscape:cx="554.39629"
+     inkscape:cy="163.6386"
      inkscape:window-width="1920"
      inkscape:window-height="1029"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     borderlayer="true" />
   <defs
      id="defs2">
     <clipPath
@@ -148,7 +149,7 @@
        inkscape:export-ydpi="96" />
     <g
        id="g113"
-       transform="scale(3.7795276)">
+       transform="matrix(3.7795276,0,0,3.7795276,16,0)">
       <g
          id="g921"
          style="stroke:none;stroke-width:1.05833"
