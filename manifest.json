@@ -3,7 +3,7 @@
 	"name": "WhiteSpider",
 	"short_name": "WhiteSpider",
 	"description": "Unblocked games",
-	"version": "1.0.0-beta6",
+	"version": "1.0.0",
 	"display": "fullscreen",
 	"orientation": "any",
 	"background_color": "#001a1a",

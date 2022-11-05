@@ -9,8 +9,16 @@ const contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fbombjack.jsdos"
 		},
 		{
+			name: "Cavern of the Evil Wizard",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fcavern-of-the-evil-wizard.jsdos"
+		},
+		{
 			name: "CHAMP Kong",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fchamp-kong.jsdos"
+		},
+		{
+			name: "Cross Country Trucking",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fcross-country-trucking.jsdos"
 		},
 		{
 			name: "Doom",
@@ -49,6 +57,10 @@ const contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fkasia.jsdos"
 		},
 		{
+			name: "KBall",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fkball.jsdos"
+		},
+		{
 			name: "Mini Prince",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fmini-prince.jsdos"
 		},
@@ -75,6 +87,14 @@ const contents = {
 		{
 			name: "Quake",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fquake.jsdos"
+		},
+		{
+			name: "RCross",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Frcross.jsdos"
+		},
+		{
+			name: "RetroFuel",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fretro-fuel.jsdos"
 		},
 		{
 			name: "Silencer",
@@ -127,6 +147,10 @@ const contents = {
 	],
 	flashGames: [
 		{
+			name: "1 on 1 Soccer",
+			path: "embed.html?type=flash&src=%2Fflash-games%2F1on1-soccer.swf"
+		},
+		{
 			name: "3 Foot Ninja",
 			path: "embed.html?type=flash&src=%2Fflash-games%2F3-foot-ninja.swf"
 		},
@@ -137,6 +161,10 @@ const contents = {
 		{
 			name: "3D Reversi",
 			path: "embed.html?type=flash&src=%2Fflash-games%2F3d-reversi.swf"
+		},
+		{
+			name: "3D Tanks",
+			path: "embed.html?type=flash&src=%2Fflash-games%2F3d-tanks.swf"
 		},
 		{
 			name: "625 Sandwich Stacker",
@@ -151,8 +179,16 @@ const contents = {
 			path: "embed.html?type=flash&src=%2Fflash-games%2Face-of-space.swf"
 		},
 		{
-			name: "Achivement Unlocked",
-			path: "embed.html?type=flash&src=%2Fflash-games%2Fachivement-unlocked.swf"
+			name: "Achievement Unlocked",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fachievement-unlocked.swf"
+		},
+		{
+			name: "Achievement Unlocked 2",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fachievement-unlocked-2.swf"
+		},
+		{
+			name: "Achievement Unlocked 3",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fachievement-unlocked-3.swf"
 		},
 		{
 			name: "Action Driving Game",
@@ -209,6 +245,10 @@ const contents = {
 		{
 			name: "Bloons Player Pack 4",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fbloons-player-pack-4.swf"
+		},
+		{
+			name: "Bloons Player Pack 5",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fbloons-player-pack-5.swf"
 		},
 		{
 			name: "Bloons Tower Defense",
@@ -315,7 +355,7 @@ const contents = {
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fcurveball.swf"
 		},
 		{
-			name: "Dr. Carter and the Cave of Despair",
+			name: "Dr Carter and the Cave of Despair",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fdr-carter-and-the-cave-of-despair.swf"
 		},
 		{
@@ -357,6 +397,22 @@ const contents = {
 		{
 			name: "Extinct",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fextinct.swf"
+		},
+		{
+			name: "Factory Balls",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Ffactory-balls.swf"
+		},
+		{
+			name: "Factory Balls 2",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Ffactory-balls-2.swf"
+		},
+		{
+			name: "Factory Balls 3",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Ffactory-balls-3.swf"
+		},
+		{
+			name: "Factory Balls 4",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Ffactory-balls-4.swf"
 		},
 		{
 			name: "Falldown",
@@ -455,6 +511,10 @@ const contents = {
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fline-rider.swf"
 		},
 		{
+			name: "Mario Combat",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fmario-combat.swf"
+		},
+		{
 			name: "Mindfields 2",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fmindfields-2.swf"
 		},
@@ -501,6 +561,10 @@ const contents = {
 		{
 			name: "Penguin",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fpenguin.swf"
+		},
+		{
+			name: "Pico's School",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fpicos-school.swf"
 		},
 		{
 			name: "Penguin Diner",
