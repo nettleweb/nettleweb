@@ -9,7 +9,7 @@ window.onerror = (message, src, lineno, colno, error) => {
 let proxy = true;
 const nsw = window.navigator.serviceWorker;
 if (nsw == null) {
-	alert("Your browser does not support service workers, game proxy will be disabled.", "Warning");
+	alert("Your browser does not support service workers, game proxy would be disabled.", "Warning");
 	proxy = false;
 } else {
 	nsw.register("/sw.js", {
@@ -17,8 +17,7 @@ if (nsw == null) {
 		type: "classic",
 		updateViaCache: "none"
 	}).catch(err => {
-		console.warn(err);
-		alert("Failed to register service worker, game proxy will be disabled.", "Warning");
+		alert("Failed to register service worker, game proxy would be disabled.\n" + err, "Warning");
 		proxy = false;
 	});
 }
@@ -336,11 +335,9 @@ document.getElementById("clear-cache").onclick = async () => {
 	for (let i = 0; i < keys.length; i++)
 		await caches.delete(keys[i]);
 };
-document.getElementById("unregister-sw").onclick = async () => {
-	let regs = await window.navigator.serviceWorker.getRegistrations();
-	for (let i = 0; i < regs.length; i++)
-		await regs[i].unregister();
-};
 document.getElementById("leave-without-history").onclick = () => {
 	window.location.replace(new URL("https://www.google.com/"));
+};
+document.getElementById("debug-shell").onclick = () => {
+	inspect();
 };
