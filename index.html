@@ -22,9 +22,8 @@
 	width: calc(100% - 10px);
 	height: 50px;
 	padding: 5px;
-	border-bottom-style: solid;
-	border-bottom-width: 3px;
-	border-bottom-color: #ffffff;
+	color: #ffffff;
+	background-color: #002a2a;
 }
 
 #logo {
@@ -37,39 +36,36 @@
 	background-repeat: no-repeat;
 }
 
-#search-bar {
+#navigation-bar {
 	position: absolute;
-	display: block;
-	width: 300px;
-	height: 30px;
-	top: 10px;
-	right: 5px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	outline: none;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #808080;
-	border-radius: 10px;
-}
-
-#search-bar:focus {
-	border-color: #ffffff;
-}
-
-#home-button {
-	position: absolute;
-	display: block;
-	width: 50px;
+	display: flex;
+	width: 100%;
 	height: 50px;
+	right: 0px;
 	top: 5px;
-	right: 5px;
+	flex-direction: row-reverse;
+	flex-wrap: nowrap;
+}
+
+#navigation-bar a {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: 50px;
+	line-height: 50px;
+	margin-left: 10px;
+	margin-right: 10px;
 	cursor: pointer;
-	background-image: url("res/home.svg");
-	background-size: contain;
-	background-repeat: no-repeat;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+#navigation-bar a:hover {
+	color: #a0a0a0;
+}
+
+#navigation-bar a:active {
+	color: #808080;
 }
 
 #content {
@@ -77,7 +73,7 @@
 	display: block;
 	width: 100%;
 	height: calc(100% - 63px);
-	top: 63px;
+	top: 60px;
 }
 
 .screen {
@@ -94,11 +90,6 @@
 #noscript-screen {
 	/*set the background color to override default screen*/
 	background-color: #001a1a;
-}
-
-#dynamic-screen {
-	width: 100%;
-	padding: 0px;
 }
 
 #noscript-text {
@@ -139,15 +130,34 @@
 	line-height: 25px;
 }
 
-#navigation-bar {
+#search-bar {
 	position: relative;
 	display: block;
-	width: fit-content;
+	width: 300px;
+	height: 30px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: auto;
+	outline: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #808080;
+	border-radius: 10px;
+}
+
+#search-bar:focus {
+	border-color: #ffffff;
+}
+
+.section {
+	position: relative;
+	display: block;
+	width: 100%;
 	height: fit-content;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 30px;
-	line-height: 16px;
+	margin-top: 40px;
+	margin-bottom: 40px;
 }
 
 .title {
@@ -155,12 +165,23 @@
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 80px;
-	line-height: 36px;
-	font-size: 18px;
+	line-height: 32px;
+	font-size: 16px;
 	font-weight: 600;
+}
+
+.section-expand-button {
+	position: absolute;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	right: 0px;
+	top: 0px;
+	cursor: pointer;
+	line-height: 32px;
+	font-size: 14px;
+	font-style: italic;
+	text-decoration: underline;
 }
 
 .text {
@@ -169,35 +190,107 @@
 	width: fit-content;
 	height: fit-content;
 	line-height: 16px;
-	margin: auto;
 }
 
-#game-grid {
+.game-grid {
 	position: relative;
-	display: block;
+	display: flex;
 	width: 100%;
 	height: fit-content;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	padding-bottom: 10px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	column-gap: 20px;
+	overflow-x: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
 }
 
-.symtext, .game-item {
-	color: #ffffff;
+.game-grid[expanded] {
+	flex-wrap: wrap;
+	row-gap: 20px;
+	overflow: hidden;
+}
+
+.game-item, .tool-item {
+	position: relative;
+	display: block;
+	width: 256px;
+	flex: 0 0 256px;
 	cursor: pointer;
-	text-decoration: underline;
-	font-style: italic;
-	line-height: 16px;
+	background-color: #005050;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #008080;
+	border-radius: 10px;
 }
 
 .game-item {
-	position: relative;
+	height: 256px;
+}
+
+.tool-item {
+	height: 192px;
+}
+
+.game-preview {
+	position: absolute;
 	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	width: 256px;
+	height: 192px;
+	left: 0px;
+	top: 0px;
+	background-image: url("res/defprev.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	border-radius: 10px;
+}
+
+.game-label, .tool-label {
+	position: absolute;
+	display: block;
+	width: 236px;
+	height: 44px;
+	left: 0px;
+	padding: 10px;
+	line-height: 20px;
+	font-size: 16px;
+	text-align: center;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+.game-label {
+	top: 192px;
+}
+
+.tool-label {
+	top: 10px;
+}
+
+.tool-desc {
+	position: absolute;
+	display: block;
+	width: 236px;
+	height: 98px;
+	left: 0px;
+	top: 74px;
+	color: #a0a0a0;
+	padding: 10px;
+	line-height: 18px;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+.tool-desc a {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#dynamic-screen {
+	width: 100%;
+	padding: 0px;
 }
 
 #game-submission-button {
@@ -205,7 +298,11 @@
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: auto;
+	color: #ffffff;
+	cursor: pointer;
+	text-decoration: underline;
+	font-style: italic;
+	line-height: 16px;
 }
 
 .footer {
@@ -229,62 +326,12 @@
 	text-decoration: underline;
 }
 
-#frame {
-	position: relative;
-	display: block;
-	width: 800px;
-	height: 600px;
-	background-color: #ffffff;
-}
-
-#frame-container {
-	position: absolute;
-	display: block;
-	width: 800px;
-	height: 600px;
-}
-
 iframe, embed {
 	position: absolute;
 	display: block;
 	width: 100%;
 	height: 100%;
 	border: none;
-}
-
-#control-bar {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 40px;
-	bottom: 0px;
-	color: #ffffff;
-	background-color: rgba(0, 0, 0, 0.5);
-}
-
-#fullscreen-button, #reload-button {
-	position: absolute;
-	display: block;
-	width: 30px;
-	height: 30px;
-	top: 5px;
-	cursor: pointer;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-#fullscreen-button {
-	right: 5px;
-	background-image: url("res/fullscreen.svg");
-}
-
-#reload-button {
-	right: 40px;
-	background-image: url("res/reload.svg");
-}
-
-#game-item-template {
-	display: none;
 }
 
 #context-menu {
@@ -325,45 +372,64 @@ iframe, embed {
 	<body>
 		<div id="header">
 			<div id="logo"></div>
-			<input id="search-bar" type="text" value="" placeholder="Search games" />
-			<div id="home-button" style="display: none;"></div>
+			<div id="navigation-bar">
+				<a href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a>
+				<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">Discord</a>
+				<a href="https://github.com/ruochenjia/whitespider" target="_blank" rel="noopener">GitHub</a>
+				<a href="https://sites.google.com/view/wsug-mirrors" target="_blank" rel="noopener">Mirror Links</a>
+			</div>
 		</div>
 		<div id="content">
 			<div id="home-screen" class="screen">
 				<div id="large-logo"></div>
 				<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 200 unblocked games for school!</div>
-				<div id="navigation-bar">
-					<span id="html5-games" class="symtext">HTML5 Games</span> |
-					<span id="dos-games" class="symtext">DOS Games</span> |
-					<span id="flash-games" class="symtext">Flash Games</span> |
-					<span id="tools" class="symtext">Tools</span> |
-					<a class="symtext" href="https://sites.google.com/view/wsug-mirrors" target="_blank" rel="noopener">Mirror Links</a> |
-					<a class="symtext" href="https://github.com/ruochenjia/whitespider" target="_blank" rel="noopener">GitHub</a> |
-					<a class="symtext" href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">Discord</a> |
-					<a class="symtext" href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a>
+				<input id="search-bar" type="text" placeholder="Search Games" />
+				<div class="section">
+					<div class="title">HTML5 Games</div>
+					<div class="section-expand-button">Show more</div>
+					<div id="html5-game-grid" class="game-grid"></div>
 				</div>
-				<div class="title">Flash Games</div>
-				<div id="flash-game-grid" class="game-grid"></div>
-				<div class="title">DOS Games</div>
-				<div id="dos-game-grid" class="game-grid"></div>
-				<div class="title">HTML5 Games</div>
-				<div id="html5-game-grid" class="game-grid"></div>
-				<div class="title">User-Added Games</div>
-				<div class="text" style="margin-top: 5px; margin-bottom: 5px;">The games listed here were added by users, you can play them but might have some issues.</div>
-				<div id="game-submission-button" class="symtext" style="margin-bottom: 50px;">Submit a game now</div>
-				<div id="user-game-grid" class="game-grid"></div>
-				<div class="title">Tools</div>
-				<div id="tools-grid" class="game-grid">
-					<a class="game-item" href="https://unblocker.whitespider.gq" target="_blank" rel="noopener" style="margin-bottom: 5px;">Unblocker</a>
-					<div class="text">This tool allows you to access all blocked websites through a web proxy.</div>
-					<a class="game-item" href="https://unblocker.ruochenjia.repl.co" target="_blank" rel="noopener" style="margin-bottom: 5px;">Unblocker 2</a>
-					<div class="text">If the first one has been blocked, you can try this one.</div>
-					<div id="ebutuoy" class="game-item" style="margin-bottom: 5px;">YouTube Unblocked</div>
-					<div class="text">Unblocked version of YouTube, with all ads removed.</div>
-					<div id="vmlinux" class="game-item" style="margin-bottom: 5px;">VMLinux</div>
-					<div class="text">A 32-bit PC emulator that runs in your browser.</div>
-					<div id="private-search" class="game-item" style="margin-bottom: 5px;">Private Search</div>
-					<div class="text">A private search engine without logging and history saving.</div>
+				<div class="section">
+					<div class="title">Flash Games</div>
+					<div class="section-expand-button">Show more</div>
+					<div id="flash-game-grid" class="game-grid"></div>
+				</div>
+				<div class="section">
+					<div class="title">DOS Games</div>
+					<div class="section-expand-button">Show more</div>
+					<div id="dos-game-grid" class="game-grid"></div>
+				</div>
+				<div class="section">
+					<div class="title">Tools</div>
+					<div class="game-grid">
+						<a class="tool-item" href="https://unblocker.whitespider.gq" target="_blank" rel="noopener">
+							<div class="tool-label">Unblocker</div>
+							<div class="tool-desc">Unblock websites through a proxy server, bypass the restrictions of local network and browser extensions.</div>
+						</a>
+						<a class="tool-item" href="https://unblocker.ruochenjia.repl.co" target="_blank" rel="noopener">
+							<div class="tool-label">Unblocker 2</div>
+							<div class="tool-desc">If the first one has been blocked, you can try this one. (or get more unblocker links from the mirror links provided)</div>
+						</a>
+						<div id="ebutuoy" class="tool-item">
+							<div class="tool-label">YouTube Unblocked</div>
+							<div class="tool-desc">Unblocked version of YouTube, with all ads removed.</div>
+						</div>
+						<div id="vmlinux" class="tool-item">
+							<div class="tool-label">VMLinux</div>
+							<div class="tool-desc">A 32-bit PC emulator that runs in your browser.</div>
+						</div>
+						<div id="private-search" class="tool-item">
+							<div class="tool-label">Private Search</div>
+							<div class="tool-desc">A private search engine that prevents logging and history saving.</div>
+						</div>
+					</div>
+				</div>
+				<div class="section">
+					<div class="title">Unverified Games</div>
+					<div class="section-expand-button">Show more</div>
+					<div class="text" style="margin-top: 5px; margin-bottom: 5px;">The games listed here were added by users with the button below, which might have certain issues. You can report these issues with the feedback button in the header.</div>
+					<div id="game-submission-button" class="symtext" style="margin-bottom: 50px;">Submit a game now</div>
+					<div id="user-game-grid" class="game-grid"></div>
 				</div>
 				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank" rel="noopener">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank" rel="noopener">GitHub</a></div>
 			</div>
@@ -383,9 +449,9 @@ iframe, embed {
 			<div id="debug-shell">Debug Shell</div>
 		</div>
 		<script type="module">
-"use strict";
+import { locker } from "./main.js";
 
-import "./main.js";
+locker.lock();
 		</script>
 	</body>
 </html>

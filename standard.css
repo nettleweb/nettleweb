@@ -10,10 +10,8 @@
 }
 
 ::-webkit-scrollbar {
-	position: absolute;
-	display: block;
+	height: 10px;
 	width: 10px;
-	height: 100%;
 }
 
 ::-webkit-scrollbar-track {
@@ -47,7 +45,7 @@ body {
 	font-family: "Ubuntu";
 	font-weight: 500;
 	font-style: normal;
-	color: #ffffff;
+	color: #f0f0f0;
 	background-color: #001a1a;
 }
 

@@ -24,11 +24,7 @@ if (nsw == null) {
 
 const baseUrl = window.location.origin;
 
-const homeScreen = document.getElementById("home-screen");
-const dynamicScreen = document.getElementById("dynamic-screen");
 const searchBar = document.getElementById("search-bar");
-const homeButton = document.getElementById("home-button");
-
 const html5GameGrid = document.getElementById("html5-game-grid");
 const dosGameGrid = document.getElementById("dos-game-grid");
 const flashGameGrid = document.getElementById("flash-game-grid");
@@ -56,6 +52,46 @@ function encodeText(text) {
 }
 
 /**
+ * @param {RequestInfo | URL} request 
+ * @returns {Promise<Response | null>}
+ */
+async function fetchE(request) {
+	try {
+		return await fetch(request);
+	} catch(err) {
+		return null;
+	}
+}
+
+/**
+ * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string; cachedPreview?: string}} content 
+ * @param {HTMLElement} elem 
+ */
+async function loadPreview(content, elem) {
+	const name = content.name;
+	const cached = content.cachedPreview;
+	if (cached != null) {
+		elem.setAttribute("style", `background-image: url(${cached});`);
+		return;
+	}
+
+	const response = await fetchE(new Request(`./preview/${encodeURIComponent(name)}.jpg`, {
+		method: "GET",
+		mode: "same-origin",
+		signal: null
+	}));
+
+	let url = "res/defprev.svg";
+	if (response != null && response.ok) {
+		const buf = await response.arrayBuffer();
+		url = URL.createObjectURL(new Blob([buf], { type: "image/jpeg", endings: "native" }));
+	}
+
+	content.cachedPreview = url;
+	elem.setAttribute("style", `background-image: url(${url});`);
+}
+
+/**
  * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents
  * @param {HTMLElement} container
  */
@@ -65,12 +101,18 @@ function updateContents(contents, container) {
 		// To be super safe, always escape illegal html characters in name
 		const displayName = encodeText(content.name);
 
-		/**
-		 * @type {HTMLElement}
-		 */
 		const item = document.createElement("div");
 		item.className = "game-item";
-		item.innerHTML = displayName;
+		
+		const preview = document.createElement("div");
+		preview.className = "game-preview";
+		item.appendChild(preview);
+		loadPreview(content, preview);
+
+		const label = document.createElement("div");
+		label.className = "game-label";
+		label.innerHTML = displayName;
+		item.appendChild(label);
 
 		item.onclick = () => {
 			const frame = createFrame(content.path, content.url);
@@ -200,48 +242,26 @@ TestGameDB.load().then(() => {
 	updateContents(TestGameDB.data, userGameGrid);
 });
 
+for (let item of document.getElementsByClassName("section-expand-button")) {
+	item.onclick = () => {
+		const gridElem = item.parentElement.getElementsByClassName("game-grid")[0];
+		if (gridElem.hasAttribute("expanded")) {
+			gridElem.removeAttribute("expanded");
+			item.innerHTML = "Show more";
+		} else {
+			gridElem.setAttribute("expanded", "true");
+			item.innerHTML = "Show less";
+		}
+	};
+}
+
 searchBar.oninput = () => {
 	const value = searchBar.value.toLowerCase();
 	updateContents(match(contents.html5Games, value), html5GameGrid);
 	updateContents(match(contents.dosGames, value), dosGameGrid);
 	updateContents(match(contents.flashGames, value), flashGameGrid);
 };
-homeButton.onclick = () => {
-	dynamicScreen.innerHTML = "";
-	dynamicScreen.style.display = "none";
-	homeScreen.style.display = "block";
-	homeButton.style.display = "none";
-	searchBar.style.display = "block";
-};
 
-document.getElementById("html5-games").onclick = () => {
-	html5GameGrid.scrollIntoView({
-		behavior: "smooth",
-		block: "start",
-		inline: "nearest"
-	});
-};
-document.getElementById("dos-games").onclick = () => {
-	dosGameGrid.scrollIntoView({
-		behavior: "smooth",
-		block: "start",
-		inline: "nearest"
-	});
-};
-document.getElementById("flash-games").onclick = () => {
-	flashGameGrid.scrollIntoView({
-		behavior: "smooth",
-		block: "start",
-		inline: "nearest"
-	});
-};
-document.getElementById("tools").onclick = () => {
-	document.getElementById("tools-grid").scrollIntoView({
-		behavior: "smooth",
-		block: "start",
-		inline: "nearest"
-	});
-};
 document.getElementById("game-submission-button").onclick = async () => {
 	let result = await form("", "Submit a game", [
 		{
@@ -295,13 +315,8 @@ document.getElementById("game-submission-button").onclick = async () => {
  * @param {string} url 
  */
 function dynscr(url) {
-	homeScreen.style.display = "none";
-	dynamicScreen.style.display = "block";
-	searchBar.style.display = "none";
-	homeButton.style.display = "block";
-
 	const frame = createFrame(url);
-	dynamicScreen.appendChild(frame);
+	window.popup(frame);
 }
 
 document.getElementById("ebutuoy").onclick = () => {
@@ -341,3 +356,5 @@ document.getElementById("leave-without-history").onclick = () => {
 document.getElementById("debug-shell").onclick = () => {
 	inspect();
 };
+
+export const locker = { lock: () => { /*****/ console.log("%cWhiteSpider.gq", "background-color:#001a1a;border:3px solid #008080;border-radius:10px;color:#ffffff;display:block;font-family:Ubuntu;font-size:24px;font-stretch:normal;font-style:normal;font-weight:600;height:fit-content;margin:10px;padding:10px;position:relative;text-align:start;text-decoration:none;width:fit-content");console.log("%cPage Verified", "position: relative;display: block;width: fit-content;height: fit-content;color: #ffffff;background-color: #008000;font-size: 14px;font-weight: 600;font-family: \"Ubuntu Mono\";font-stretch: normal;text-align: start;text-decoration: none;"); } };
