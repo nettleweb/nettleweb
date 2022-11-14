@@ -986,7 +986,7 @@ const contents = {
 		},
 		{
 			name: "Fruit Ninja",
-			path: "html5-games/fruit-ninja/"
+			url: "https://storms.com/games/FruitNinja-WebProtected/"
 		},
 		{
 			name: "Geometry Dash",
@@ -1003,6 +1003,10 @@ const contents = {
 		{
 			name: "Hextris",
 			path: "html5-games/hextris/"
+		},
+		{
+			name: "Jetpack Joyride",
+			url: "https://storms.com/games/JetpackJoyride-WebProtected/"
 		},
 		{
 			name: "hole.io",
@@ -1123,6 +1127,22 @@ const contents = {
 		{
 			name: "venge.io",
 			url: "https://venge.io"
+		},
+		{
+			name: "Vex 3",
+			path: "html5-games/vex3/"
+		},
+		{
+			name: "Vex 4",
+			path: "html5-games/vex4/"
+		},
+		{
+			name: "Vex 5",
+			path: "html5-games/vex5/"
+		},
+		{
+			name: "Vex 6",
+			path: "html5-games/vex6/"
 		},
 		{
 			name: "voxiom.io",
