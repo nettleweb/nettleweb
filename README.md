@@ -1,9 +1,10 @@
 # WhiteSpider
-An open source HTML5, DOS, Flash game collection website (originally used as an unblocked games site). <br />
+![Discord Shield](https://discordapp.com/api/guilds/998658232207814667/widget.png?style=shield) <br />
+An open source HTML5, DOS, Flash game collection website, includes more than 300 unblocked games for school. <br />
 Link to website: https://whitespider.gq
 
 ## Features
- - Contains more than 200 games (HTML5, DOS, Flash)
+ - Contains more than 300 games (HTML5, DOS, Flash)
  - Hidden proxy for online games
  - Supports mobile phones
  - Supports instant game submission
@@ -36,6 +37,9 @@ https://whitespidergq.github.io
 https://unblocker.whitespider.gq <br />
 https://unblocker.ruochenjia.repl.co
 
+## Hosting
+This website can only be hosted on the root directory of a domain (due to service workers and resource linkage), therefore GitHub page is not supported unless you use the `username.github.io` repository for this website.
+
 ## License
 This repository is licensed under Apache-2.0 License, see `LICENSE.md` for more details. <br />
 Games are licensed by their owners.
@@ -45,4 +49,3 @@ Games are licensed by their owners.
  - <a href="https://js-dos.com" target="_blank">JS-DOS</a>
  - <a href="https://github.com/titaniumnetwork-development/Ultraviolet" target="_blank">Ultraviolet</a> (Modified)
  - <a href="https://github.com/ruochenjia/webalert" target="_blank">webalert.js</a>
- 
