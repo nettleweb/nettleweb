@@ -11,6 +11,7 @@
 		<base href="/" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="standard.css" />
+		<link rel="apple-touch-icon" type="image/png" href="res/logo256.png" />
 		<link rel="manifest" href="manifest.json" />
 		<link rel="canonical" href="https://whitespider.gq/" />
 		<script type="text/javascript" src="./lib/webalert.js"></script>
@@ -76,6 +77,13 @@
 	top: 60px;
 }
 
+#background {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
 .screen {
 	position: absolute;
 	display: block;
@@ -128,6 +136,27 @@
 	font-style: italic;
 	font-size: 16px;
 	line-height: 25px;
+}
+
+#status-bar {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 30px;
+	line-height: 25px;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+#status-bar * {
+	-webkit-user-drag: none;
+}
+
+#status-bar a {
+	cursor: pointer;
 }
 
 #search-bar {
@@ -355,6 +384,7 @@ iframe, embed {
 	font-size: 14px;
 	font-weight: 500;
 	cursor: pointer;
+	-webkit-user-select: none;
 	user-select: none;
 }
 
@@ -374,15 +404,22 @@ iframe, embed {
 			<div id="logo"></div>
 			<div id="navigation-bar">
 				<a href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a>
-				<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">Discord</a>
 				<a href="https://github.com/ruochenjia/whitespider" target="_blank" rel="noopener">GitHub</a>
 				<a href="https://sites.google.com/view/wsug-mirrors" target="_blank" rel="noopener">Mirror Links</a>
 			</div>
 		</div>
 		<div id="content">
+			<canvas id="background" width="1920" height="1080"></canvas>
 			<div id="home-screen" class="screen">
 				<div id="large-logo"></div>
 				<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 200 unblocked games for school!</div>
+				<div id="status-bar">
+					<img src="https://img.shields.io/github/manifest-json/v/ruochenjia/whitespider?label=Version" alt="Version" />
+					<img src="https://img.shields.io/github/last-commit/ruochenjia/whitespider?label=Last%20Update" alt="Last Update" />
+					<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">
+						<img src="https://img.shields.io/discord/998658232207814667?label=Discord&logo=discord" alt="Discord" />
+					</a>
+				</div>
 				<input id="search-bar" type="text" placeholder="Search Games" />
 				<div class="section">
 					<div class="title">HTML5 Games</div>
