@@ -65,12 +65,12 @@ async function fetchE(request) {
 }
 
 /**
- * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string; cachedPreview?: string}} content 
+ * @param {{readonly name: string; readonly path?: string; readonly url?: string; preview?: string;}} content 
  * @param {HTMLElement} elem 
  */
 async function loadPreview(content, elem) {
 	const name = content.name;
-	const cached = content.cachedPreview;
+	const cached = content.preview;
 	if (cached != null) {
 		elem.setAttribute("style", `background-image: url(${cached});`);
 		return;
@@ -78,8 +78,7 @@ async function loadPreview(content, elem) {
 
 	const response = await fetchE(new Request(`./preview/${encodeURIComponent(name)}.jpg`, {
 		method: "GET",
-		mode: "same-origin",
-		signal: null
+		mode: "same-origin"
 	}));
 
 	let url = "res/defprev.svg";
@@ -88,15 +87,16 @@ async function loadPreview(content, elem) {
 		url = URL.createObjectURL(new Blob([buf], { type: "image/jpeg", endings: "native" }));
 	}
 
-	content.cachedPreview = url;
+	content.preview = url;
 	elem.setAttribute("style", `background-image: url(${url});`);
 }
 
 /**
- * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents
- * @param {HTMLElement} container
+ * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents 
+ * @param {HTMLElement} container 
+ * @param {boolean} noprev 
  */
-function updateContents(contents, container) {
+function updateContents(contents, container, noprev = false) {
 	container.innerHTML = "";
 	for (let content of contents) {
 		// To be super safe, always escape illegal html characters in name
@@ -108,7 +108,8 @@ function updateContents(contents, container) {
 		const preview = document.createElement("div");
 		preview.className = "game-preview";
 		item.appendChild(preview);
-		loadPreview(content, preview);
+		if (!noprev)
+			loadPreview(content, preview);
 
 		const label = document.createElement("div");
 		label.className = "game-label";
@@ -239,7 +240,7 @@ function loadDefaultContent() {
 }
 
 TestGameDB.load().then(() => {
-	updateContents(TestGameDB.data, userGameGrid);
+	updateContents(TestGameDB.data, userGameGrid, true);
 });
 
 for (let item of document.getElementsByClassName("section-expand-button")) {
