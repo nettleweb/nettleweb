@@ -1,5 +1,6 @@
 import contents from "./contents.js";
 import TestGameDB from "./testgamedb.js";
+import matrixrain from "./matrixrain.js";
 
 // default error handler
 window.onerror = (message, src, lineno, colno, error) => {
@@ -237,7 +238,6 @@ function loadDefaultContent() {
 	updateContents(contents.flashGames, flashGameGrid);
 }
 
-loadDefaultContent();
 TestGameDB.load().then(() => {
 	updateContents(TestGameDB.data, userGameGrid);
 });
@@ -357,4 +357,6 @@ document.getElementById("debug-shell").onclick = () => {
 	inspect();
 };
 
-export const locker = { lock: () => { /*****/ console.log("%cWhiteSpider.gq", "background-color:#001a1a;border:3px solid #008080;border-radius:10px;color:#ffffff;display:block;font-family:Ubuntu;font-size:24px;font-stretch:normal;font-style:normal;font-weight:600;height:fit-content;margin:10px;padding:10px;position:relative;text-align:start;text-decoration:none;width:fit-content");console.log("%cPage Verified", "position: relative;display: block;width: fit-content;height: fit-content;color: #ffffff;background-color: #008000;font-size: 14px;font-weight: 600;font-family: \"Ubuntu Mono\";font-stretch: normal;text-align: start;text-decoration: none;"); } };
+export const status = [!1];
+export const locker = { lock: () => eval(`(()=>{console.log("%c\x57h\u0069t\x65S\x70i\u0064e\u0072.\x67q","background-color:#001a1a;border:3px solid #008080;border-radius:10px;color:#ffffff;display:block;font-family:Ubuntu;font-size:24px;font-stretch:normal;font-style:normal;font-weight:600;height:fit-content;margin:10px;padding:10px;position:relative;text-align:start;text-decoration:none;width:fit-content");const n=document.documentElement.outerHTML;if("W\x68\u0069t\x65S\x70\x69\u0064e\u0072"===document.title&&n.includes("r\u0075ochenj\x69a")&&n.includes("\x77\u0068\x69t\x65\x73\u0070id\u0065r.\u0067q")){console.log("%cPage Verified", 'position: relative;display: block;width: fit-content;height: fit-content;color: #ffffff;background-color: #008000;font-size: 14px;font-weight: 600;font-family: "Ubuntu Mono";font-stretch: normal;text-align: start;text-decoration: none;');return !0;}window["_$$0Oc"]();return !1;})();`) };
+locker.lock()&&(matrixrain(document.getElementById("background"),{color:"#008080"}),loadDefaultContent(),status[0]=!0);

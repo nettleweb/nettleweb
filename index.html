@@ -6,7 +6,7 @@
 		<meta http-equiv="Referrer-Policy" content="no-referrer" />
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
-		<meta name="description" content="An open source adless HTML5, DOS, Flash game collection website, contains more than 200 unblocked games for school!" />
+		<meta name="description" content="An open source adless HTML5, DOS, Flash game collection website, contains more than 300 unblocked games for school!" />
 		<meta name="keywords" content="whitespider,unblocked,games,game,html5,flash,dos,open-source,free,no ads,adless" />
 		<base href="/" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
@@ -32,6 +32,7 @@
 	display: block;
 	width: 200px;
 	height: 50px;
+	cursor: pointer;
 	background-image: url("res/logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -40,9 +41,9 @@
 #navigation-bar {
 	position: absolute;
 	display: flex;
-	width: 100%;
+	width: calc(100% - 210px);
 	height: 50px;
-	right: 0px;
+	right: 5px;
 	top: 5px;
 	flex-direction: row-reverse;
 	flex-wrap: nowrap;
@@ -401,7 +402,7 @@ iframe, embed {
 	</head>
 	<body>
 		<div id="header">
-			<div id="logo"></div>
+			<a id="logo" href="https://whitespider.gq" target="_blank" rel="noopener" title="WhiteSpider"></a>
 			<div id="navigation-bar">
 				<a href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a>
 				<a href="https://github.com/ruochenjia/whitespider" target="_blank" rel="noopener">GitHub</a>
@@ -412,7 +413,7 @@ iframe, embed {
 			<canvas id="background" width="1920" height="1080"></canvas>
 			<div id="home-screen" class="screen">
 				<div id="large-logo"></div>
-				<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 200 unblocked games for school!</div>
+				<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 300 unblocked games for school!</div>
 				<div id="status-bar">
 					<img src="https://img.shields.io/github/manifest-json/v/ruochenjia/whitespider?label=Version" alt="Version" />
 					<img src="https://img.shields.io/github/last-commit/ruochenjia/whitespider?label=Last%20Update" alt="Last Update" />
@@ -485,10 +486,6 @@ iframe, embed {
 			<div id="leave-without-history">Leave without history</div>
 			<div id="debug-shell">Debug Shell</div>
 		</div>
-		<script type="module">
-import { locker } from "./main.js";
-
-locker.lock();
-		</script>
+		<script type="module">import{status,locker}from"./main.js";status[0]||locker.lock()||window._$$0Oc();</script>
 	</body>
 </html>
