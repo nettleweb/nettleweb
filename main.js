@@ -96,7 +96,7 @@ async function loadPreview(content, elem) {
  * @param {HTMLElement} container 
  * @param {boolean} noprev 
  */
-function updateContents(contents, container, noprev = false) {
+async function updateContents(contents, container, noprev = false) {
 	container.innerHTML = "";
 	for (let content of contents) {
 		// To be super safe, always escape illegal html characters in name
@@ -109,7 +109,7 @@ function updateContents(contents, container, noprev = false) {
 		preview.className = "game-preview";
 		item.appendChild(preview);
 		if (!noprev)
-			loadPreview(content, preview);
+			await loadPreview(content, preview);
 
 		const label = document.createElement("div");
 		label.className = "game-label";
@@ -232,10 +232,10 @@ function match(contents, lowerCaseInput) {
 	return r;
 }
 
-function loadDefaultContent() {
-	updateContents(contents.html5Games, html5GameGrid);
-	updateContents(contents.dosGames, dosGameGrid);
-	updateContents(contents.flashGames, flashGameGrid);
+async function loadDefaultContent() {
+	await updateContents(contents.html5Games, html5GameGrid);
+	await updateContents(contents.dosGames, dosGameGrid);
+	await updateContents(contents.flashGames, flashGameGrid);
 }
 
 TestGameDB.load().then(() => {
@@ -357,6 +357,5 @@ document.getElementById("debug-shell").onclick = () => {
 	inspect();
 };
 
-export const status = [!1];
-export const locker = { lock: () => eval(`(()=>{console.log("%c\x57h\u0069t\x65S\x70i\u0064e\u0072.\x67q","background-color:#001a1a;border:3px solid #008080;border-radius:10px;color:#ffffff;display:block;font-family:Ubuntu;font-size:24px;font-stretch:normal;font-style:normal;font-weight:600;height:fit-content;margin:10px;padding:10px;position:relative;text-align:start;text-decoration:none;width:fit-content");const n=document.documentElement.outerHTML;if("W\x68\u0069t\x65S\x70\x69\u0064e\u0072"===document.title&&n.includes("r\u0075ochenj\x69a")&&n.includes("\x77\u0068\x69t\x65\x73\u0070id\u0065r.\u0067q")){console.log("%cPage Verified", 'position: relative;display: block;width: fit-content;height: fit-content;color: #ffffff;background-color: #008000;font-size: 14px;font-weight: 600;font-family: "Ubuntu Mono";font-stretch: normal;text-align: start;text-decoration: none;');return !0;}window["_$$0Oc"]();return !1;})();`) };
-locker.lock()&&(loadDefaultContent(),status[0]=!0);
+export const status = [!1];export const locker = { lock: () => eval(`(()=>{console.log("%c\x57h\u0069t\x65S\x70i\u0064e\u0072.\x67q","background-color:#001a1a;border:3px solid #008080;border-radius:10px;color:#ffffff;display:block;font-family:Ubuntu;font-size:24px;font-stretch:normal;font-style:normal;font-weight:600;height:fit-content;margin:10px;padding:10px;position:relative;text-align:start;text-decoration:none;width:fit-content");const n=document.documentElement.outerHTML;if("W\x68\u0069t\x65S\x70\x69\u0064e\u0072"===document.title&&n.includes("r\u0075ochenj\x69a")&&n.includes("\x77\u0068\x69t\x65\x73\u0070id\u0065r.\u0067q")){console.log("%cPage Verified", 'position: relative;display: block;width: fit-content;height: fit-content;color: #ffffff;background-color: #008000;font-size: 14px;font-weight: 600;font-family: "Ubuntu Mono";font-stretch: normal;text-align: start;text-decoration: none;');return !0;}window["_$$0Oc"]();return !1;})();`) };
+locker.lock()&&(await loadDefaultContent(),status[0]=!0);document.getElementById("background-screen").style.display="none";document.getElementById("home-screen").style.display="block";

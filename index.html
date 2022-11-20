@@ -89,6 +89,20 @@
 	overflow-x: hidden;
 }
 
+#loading-text {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+#home-screen, #dynamic-screen {
+	display: none;
+}
+
 #noscript-screen {
 	/*set the background color to override default screen*/
 	background-color: #001a1a;
@@ -407,6 +421,9 @@ iframe, embed {
 			</div>
 		</div>
 		<div id="content">
+			<div id="background-screen" class="screen">
+				<div id="loading-text">Loading...</div>
+			</div>
 			<div id="home-screen" class="screen">
 				<img id="large-logo" src="res/logo.svg" width="512" height="128" alt="WhiteSpider Logo" />
 				<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 300 unblocked games for school!</div>
@@ -467,7 +484,7 @@ iframe, embed {
 				</div>
 				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank" rel="noopener">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank" rel="noopener">GitHub</a></div>
 			</div>
-			<div id="dynamic-screen" class="screen" style="display: none;">
+			<div id="dynamic-screen" class="screen">
 				<!-- Dynamically rendered contents -->
 			</div>
 			<noscript>
