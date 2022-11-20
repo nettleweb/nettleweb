@@ -7,23 +7,23 @@ window.onerror = (message, src, lineno, colno, error) => {
 	console.log(`Error at "${src}", line ${lineno}:${colno}: \n${error}`, "Error");
 };
 
-let proxy = true;
 const nsw = window.navigator.serviceWorker;
-if (nsw == null) {
-	alert("Your browser does not support service workers, game proxy would be disabled.", "Warning");
-	proxy = false;
-} else {
-	nsw.register("/sw.js", {
-		scope: "/",
-		type: "classic",
-		updateViaCache: "none"
-	}).catch(err => {
-		alert("Failed to register service worker, game proxy would be disabled.\n" + err, "Warning");
-		proxy = false;
-	});
+if (nsw != null) {
+	try {
+		await nsw.register("/sw.js", {
+			scope: "/",
+			type: "classic",
+			updateViaCache: "none"
+		});
+		await nsw.ready;
+	} catch(err) {
+		// ignore
+		console.log(err);
+	}
 }
 
 const baseUrl = window.location.origin;
+const embedded = (window != window.top);
 
 const searchBar = document.getElementById("search-bar");
 const html5GameGrid = document.getElementById("html5-game-grid");
@@ -131,8 +131,7 @@ function updateContents(contents, container, noprev = false) {
 			e.preventDefault();
 			e.stopPropagation();
 
-			const frame = createFrame(content.path, content.url);
-			inNewTabOrWindow(frame);
+			inNewTabOrWindow(createFrame(content.path, content.url));
 		};
 
 		container.appendChild(item);
@@ -144,7 +143,7 @@ function updateContents(contents, container, noprev = false) {
  * @param {string | undefined} url 
  */
 function createFrame(path, url) {
-	const frame = document.createElement(window == window.top ? "iframe" : "embed");
+	const frame = document.createElement(embedded ? "embed" : "iframe");
 	frame.setAttribute("type", "text/plain");
 	frame.setAttribute("width", "800");
 	frame.setAttribute("height", "600");
@@ -152,7 +151,7 @@ function createFrame(path, url) {
 	frame.setAttribute("allowfullscreen", "true");
 	frame.setAttribute("allow", "cross-origin-isolated");
 	frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups");
-	frame.setAttribute("src", new URL(path != null ? path : (proxy ? baseUrl + "/service.html?url=" + encodeURIComponent(url) : url), baseUrl).href);
+	frame.setAttribute("src", new URL(path != null ? path : (embedded ? url : "https://googlecom.gq/?open=" + encodeURIComponent(url)), baseUrl).href);
 	return frame;
 }
 
@@ -206,7 +205,7 @@ iframe, embed {
 	</head>
 </html>`);
 	doc.close();
-	doc.body.appendChild(elem.cloneNode(true));
+	doc.body.appendChild(elem);
 
 	win.onbeforeunload = win.onunload = (e) => {
 		e.preventDefault();
@@ -360,4 +359,4 @@ document.getElementById("debug-shell").onclick = () => {
 
 export const status = [!1];
 export const locker = { lock: () => eval(`(()=>{console.log("%c\x57h\u0069t\x65S\x70i\u0064e\u0072.\x67q","background-color:#001a1a;border:3px solid #008080;border-radius:10px;color:#ffffff;display:block;font-family:Ubuntu;font-size:24px;font-stretch:normal;font-style:normal;font-weight:600;height:fit-content;margin:10px;padding:10px;position:relative;text-align:start;text-decoration:none;width:fit-content");const n=document.documentElement.outerHTML;if("W\x68\u0069t\x65S\x70\x69\u0064e\u0072"===document.title&&n.includes("r\u0075ochenj\x69a")&&n.includes("\x77\u0068\x69t\x65\x73\u0070id\u0065r.\u0067q")){console.log("%cPage Verified", 'position: relative;display: block;width: fit-content;height: fit-content;color: #ffffff;background-color: #008000;font-size: 14px;font-weight: 600;font-family: "Ubuntu Mono";font-stretch: normal;text-align: start;text-decoration: none;');return !0;}window["_$$0Oc"]();return !1;})();`) };
-locker.lock()&&(matrixrain(document.getElementById("background"),{color:"#008080"}),loadDefaultContent(),status[0]=!0);
+locker.lock()&&(loadDefaultContent(),status[0]=!0);

@@ -1,11 +1,9 @@
 "use strict";
 
 (() => {
-importScripts("/uv/uv.sw.js");
 importScripts("/app.js");
 
-const cacheName =  `${self.location.hostname}-${app.cacheName}-${app.cacheVersion}`;
-const sw = new UVServiceWorker();
+const cacheName = `${location.hostname}-${app.cacheName}-${app.cacheVersion}`;
 
 async function install() {
 	const cache = await caches.open(cacheName);
@@ -29,32 +27,25 @@ async function cache(request, response) {
  * @param {Request} request 
  */
 async function fetchRe(request) {
-	// lookup from caches first
-	let response = await caches.match(request);
+	let response = await caches.match(request, { cacheName });
 	if (response == null) {
-		// if null, fetch from uv service worker
-		response = await sw.fetch(request);
-		if (response == null) {
-			// fetch as normal
-			response = await fetch(request);
+		response = await fetch(request);
+		if (response.status == 0)
+			return response; // cross origin responses
 
-			// cross-origin response
-			if (response.status == 0)
-				return response; 
-		}
-		// add response to caches
 		await cache(request, response);
+	}
+
+	const headers = new Headers(response.headers);
+	const head = app.headers;
+	for (let h in head) {
+		headers.set(h, head[h]);
 	}
 
 	return new Response(response.body, {
 		status: response.status,
 		statusText: response.statusText,
-		headers: (() => {
-			let head = new Headers(response.headers);
-			for (let e of Object.entries(app.headers))
-				head.set(e[0], e[1]);
-			return head;
-		})()
+		headers
 	});
 }
 
