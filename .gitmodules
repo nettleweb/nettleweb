@@ -1,0 +1,15 @@
+[submodule "dos-games"]
+	path = dos-games
+	url = https://github.com/ruochenjia/dos-games.git
+[submodule "flash-games"]
+	path = flash-games
+	url = https://github.com/ruochenjia/flash-games.git
+[submodule "html5-games"]
+	path = html5-games
+	url = https://github.com/ruochenjia/html5-games.git
+[submodule "ebutuoy"]
+	path = ebutuoy
+	url = https://github.com/ruochenjia/ebutuoy.git
+[submodule "vmlinux"]
+	path = vmlinux
+	url = https://github.com/ruochenjia/vmlinux.git
