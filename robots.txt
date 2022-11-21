@@ -6,3 +6,5 @@ Disallow: /html5-games/
 Disallow: /vmlinux/
 Disallow: /ebutuoy/
 Disallow: /uv/
+
+Sitemap: https://whitespider.gq/sitemap.txt
