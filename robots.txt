@@ -1,10 +1,7 @@
 User-agent: *
 Allow: /
-Disallow: /dos-games/
-Disallow: /flash-games/
 Disallow: /html5-games/
 Disallow: /vmlinux/
 Disallow: /ebutuoy/
-Disallow: /uv/
 
 Sitemap: https://whitespider.gq/sitemap.txt
