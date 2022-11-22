@@ -20,8 +20,9 @@ Note: You can get more mirrors at https://sites.google.com/view/wsug-mirrors
 https://sites.google.com/view/whitespider <br />
 https://sites.google.com/view/white-spider <br />
 https://sites.google.com/view/whitespi <br />
-https://sites.google.com/view/wsunbl <br />
 https://sites.google.com/view/x999 <br />
+https://sites.google.com/view/wsug <br />
+https://sites.google.com/view/theunlockedbay <br />
 
 ### Standalone Mirrors
 https://whitespider.cf <br />
@@ -29,13 +30,11 @@ https://whitespider.ga <br />
 https://whitespider.gq <br />
 https://whitespider.ml <br />
 https://whitespider.tk <br />
-
-### Old Version Backup
-https://whitespidergq.github.io
+https://whitespidergq.github.io (Used for backup, might be outdated) <br />
 
 ### Mirrors for Unblocker
 https://unblocker.whitespider.gq <br />
-https://unblocker.ruochenjia.repl.co
+https://unblocker.ruochenjia.repl.co (No longer available) <br />
 
 ## Hosting
 This website can only be hosted on the root directory of a domain (due to service workers and resource linkage), therefore GitHub page is not supported unless you use the `username.github.io` repository for this website.
@@ -45,7 +44,6 @@ This repository is licensed under Apache-2.0 License, see `LICENSE.md` for more 
 Games are licensed by their owners.
 
 ## Libraries Used
- - <a href="https://ruffle.rs" target="_blank">Ruffle</a>
- - <a href="https://js-dos.com" target="_blank">JS-DOS</a>
- - <a href="https://github.com/titaniumnetwork-development/Ultraviolet" target="_blank">Ultraviolet</a> (Modified)
- - <a href="https://github.com/ruochenjia/webalert" target="_blank">webalert.js</a>
+ - <a href="https://ruffle.rs" target="_blank">Ruffle</a> - AVM1 Flash Emulator
+ - <a href="https://js-dos.com" target="_blank">JS-DOS</a> - DOS Emulator
+ - <a href="https://github.com/ruochenjia/webalert" target="_blank">webalert.js</a> - Popup Window/Dialog Library
