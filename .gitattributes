@@ -1,1 +1,4 @@
 lib/** linguist-vendored
+dos-games/** linguist-vendored
+flash-games/** linguist-vendored
+html5-games/** linguist-vendored
