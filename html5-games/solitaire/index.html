@@ -1,0 +1,310 @@
+<!DOCTYPE html><html><head><meta content="text/html;charset=utf-8" http-equiv="Content-Type"><title>Solitaire</title><style type="text/css">*{margin:0;padding:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}body{position:relative;font-family:monospace;background:green;overflow:hidden}.warnings{background-color:red;color:#fff;height:fit-content;width:100%}.card,body{box-sizing:border-box}.card{font-weight:700;width:8em;height:12em;background:#fff;border-radius:4px;box-shadow:0 0 5px rgba(0,0,0,.5);display:inline-block;padding:.2em;position:absolute;-webkit-transform:rotateY(-180deg);transform:rotateY(-180deg);-webkit-transition:top .02s linear,left .02s linear,-webkit-transform .3s ease;transition:top .02s linear,left .02s linear,-webkit-transform .3s ease;transition:transform .3s ease,top .02s linear,left .02s linear;transition:transform .3s ease,top .02s linear,left .02s linear,-webkit-transform .3s ease;z-index:1}.card *{pointer-events:none}.card.open{cursor:move;-webkit-transition:-webkit-transform .3s ease;transition:-webkit-transform .3s ease;transition:transform .3s ease;transition:transform .3s ease,-webkit-transform .3s ease;-webkit-transform:rotateY(0);transform:rotateY(0)}.card.open:after{display:none}.card:after{content:'';display:block;position:absolute;top:0;left:0;width:100%;height:100%;background-color:#fff;background-size:cover;background-position:50%;background-repeat:no-repeat;-webkit-transform:rotateY(180deg);transform:rotateY(180deg);border-radius:4px;box-shadow:0 0 5px rgba(0,0,0,.5)}.card>*{position:absolute;font-size:1.3em}.card>span:first-child{top:.25em;left:.25em}.card>span:last-child{bottom:.25em;right:.25em}.card .type{position:absolute;text-align:center;font-size:4em;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%)}.card.red{color:red}.card.selected{margin-top:0!important;pointer-events:none;z-index:2}.card.selected+.selected{margin-top:2em!important}.card.selected+.selected+.selected{margin-top:4em!important}.card.selected+.selected+.selected+.selected{margin-top:6em!important}.card.selected+.selected+.selected+.selected+.selected{margin-top:8em!important}.card.selected+.selected+.selected+.selected+.selected+.selected{margin-top:10em!important}.card.selected+.selected+.selected+.selected+.selected+.selected+.selected{margin-top:12em!important}.card.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected{margin-top:14em!important}.card.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected{margin-top:16em!important}.card.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected{margin-top:18em!important}.card.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected{margin-top:20em!important}.card.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected{margin-top:22em!important}.card.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected{margin-top:24em!important}.card.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected+.selected{margin-top:26em!important}.foundations,.full,.stack,.view{width:8em;height:12em;border:1px dashed #fff;box-sizing:border-box}.full{position:relative}.full:before{content:'↺';position:absolute;top:50%;left:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);font-size:5em;color:#fff;font-weight:300}.full:after{content:'';position:absolute;top:0;left:0;width:100%;height:100%}.draw{margin-bottom:1em;display:-webkit-box;display:flex;justify-content:space-around}.draw>div{margin:0 1em 0 0}.stacks{display:-webkit-box;display:flex;width:100%;justify-content:space-around}.stacks .stack .card:nth-child(2){margin-top:2em}.stacks .stack .card:nth-child(3){margin-top:4em}.stacks .stack .card:nth-child(4){margin-top:6em}.stacks .stack .card:nth-child(5){margin-top:8em}.stacks .stack .card:nth-child(6){margin-top:10em}.stacks .stack .card:nth-child(7){margin-top:12em}.stacks .stack .card:nth-child(8){margin-top:14em}.stacks .stack .card:nth-child(9){margin-top:16em}.stacks .stack .card:nth-child(10){margin-top:18em}.stacks .stack .card:nth-child(11){margin-top:20em}.stacks .stack .card:nth-child(12){margin-top:22em}.stacks .stack .card:nth-child(13){margin-top:24em}.foundation{display:-webkit-box;display:flex;justify-content:space-around}.foundation>div{margin:0 1em 0 0}.top{display:-webkit-box;display:flex;-webkit-box-pack:justify;justify-content:space-between}</style></head><body><noscript><p class="warnings"><strong>WARNING:</strong>This website requires JavaScript enabled, please enable it in your browser settings and reload this page.</p></noscript><div class="top"><div class="draw"><div class="full"></div><div class="view"></div></div><div class="foundation"><div class="foundations"></div><div class="foundations"></div><div class="foundations"></div><div class="foundations"></div></div></div><div class="bottom"><div class="stacks"></div></div><script type="text/javascript">/* --------------------
+		   GENERAL FUNCTIONS   
+		-------------------- */
+
+		function $(e) {
+			return document.querySelectorAll(e)[1] === undefined ? document.querySelector(e) : document.querySelectorAll(e)
+		}
+
+		Array.prototype.shuffle = function () {
+			for (let i = this.length; i; i--) {
+				let j = Math.floor(Math.random() * i);
+				[this[i - 1], this[j]] = [this[j], this[i - 1]]
+			}
+		}
+
+		/* --------------------
+			GLOBAL VARIABLES
+		-------------------- */
+
+		let allCards = []
+		let selectedElements = []
+		let offsetX = 0
+		let offsetY = 0
+
+		/* --------------------
+				 CARDS
+		-------------------- */
+
+		class Card {
+			constructor(num, type) {
+				this.num = num
+				this.type = type
+			}
+
+			get numName() {
+				return this._numToName(this.num)
+			}
+
+			get typeName() {
+				return this._typeToName(this.type)
+			}
+
+			get element() {
+				let el = document.createElement('div')
+				el.classList.add('card')
+				el.classList.add(this.typeName[2])
+				el.setAttribute("data-num", this.num)
+				el.setAttribute("data-type", this.type)
+				const span = `<span>${this.numName} ${this.typeName[1]}</span>`
+				el.innerHTML = `${span}<div class="type">${this.typeName[1]}</div>${span}`
+				return el
+			}
+
+			_numToName(num) {
+				if (num >= 1 && num <= 13) {
+					switch (num) {
+						case 1:
+							return 'A'
+						case 11:
+							return 'J'
+						case 12:
+							return 'Q'
+						case 13:
+							return 'K'
+						default:
+							return num
+					}
+				} else {
+					throw new Error(`Num '${this.num}' does not exist`)
+				}
+			}
+
+			_typeToName(type) {
+				switch (type) {
+					case 0:
+						return ['Hearts', '♥', 'red']
+					case 1:
+						return ['Clubs', '♣', 'black']
+					case 2:
+						return ['Diamonds', '♦', 'red']
+					case 3:
+						return ['Spades', '♠', 'black']
+					default:
+						throw new Error(`Card type '${type}' does not exist`)
+				}
+			}
+		}
+
+		function createCards() {
+			for (let i = 0; i <= 3; i++) {
+				for (let j = 1; j <= 13; j++) {
+					allCards.push(new Card(j, i))
+				}
+			}
+			allCards.shuffle();
+		}
+
+		function initStacks() {
+			for (let i = 1; i < 8; i++) {
+				let el = document.createElement("div")
+				el.classList.add("stack")
+				el.classList.add("stack_" + i)
+				el.setAttribute("data-max", i)
+				$('.stacks').appendChild(el)
+			}
+
+			for (let el of $(".stack")) {
+				let max = el.getAttribute("data-max")
+
+				for (let j = 0; j < max; j++) {
+					let card = allCards[0]
+					allCards.splice(0, 1)
+					let newEl = card.element
+					if (j == max - 1) {
+						newEl.classList.add("open")
+					}
+					el.appendChild(newEl)
+				}
+
+				el.addEventListener("mouseup", function () {
+					if (typeof selectedElements[0] !== "undefined") {
+						onDrop(this)
+					}
+				})
+			}
+
+			for (let card of allCards) {
+				$(".full").appendChild(card.element)
+			}
+		}
+
+		/* --------------------
+			HELPER FUNCTIONS
+		-------------------- */
+
+		function _addSelectedElement(el) {
+			el.classList.add("selected")
+			selectedElements.push(el)
+		}
+
+		function _rmSelectedElements() {
+			if (typeof selectedElements[0] !== undefined) {
+				for (let el of selectedElements) {
+					el.classList.remove("selected")
+				}
+				selectedElements = []
+			}
+		}
+
+		function _moveElement(element, toParent, toFront = false) {
+			let element2 = element
+			element.parentNode.removeChild(element)
+			if (toFront) {
+				toParent.insertBefore(element2, toParent.firstChild)
+			} else {
+				toParent.appendChild(element2)
+			}
+		}
+
+		/* --------------------
+			 DRAG AND DROP
+		-------------------- */
+
+		function initDragAndDrop() {
+			for (let cardsEl of $(".card")) {
+				cardsEl.addEventListener("mousedown", function (e) {
+					offsetX = e.offsetX
+					offsetY = e.offsetY
+					if (this.parentNode.lastChild == this) {
+						this.classList.add("open")
+					}
+					if (this.classList.contains("open")) {
+						let sibling = this
+						while (sibling) {
+							_addSelectedElement(sibling)
+							sibling = sibling.nextElementSibling
+						}
+					}
+					for (let el of selectedElements) {
+						el.style.top = event.clientY - offsetY + "px"
+						el.style.left = event.clientX - offsetX + "px"
+					}
+				})
+			}
+
+			document.addEventListener("dblclick", autoMove)
+
+			document.addEventListener("mouseup", function () {
+				if (typeof selectedElements[0] !== undefined) {
+					for (let el of selectedElements) {
+						el.style.top = "auto"
+						el.style.left = "auto"
+					}
+				}
+				_rmSelectedElements()
+			})
+
+			document.addEventListener("mousemove", function () {
+				if (typeof selectedElements[0] !== undefined) {
+					for (let el of selectedElements) {
+						el.style.top = event.clientY - offsetY + "px"
+						el.style.left = event.clientX - offsetX + "px"
+					}
+				}
+			})
+
+			for (let el of $(".foundations")) {
+				el.addEventListener("mouseup", function () {
+					onDrop(this)
+				})
+			}
+
+			$(".full").addEventListener("click", function () {
+				if (this.childNodes.length > 0) {
+					this.lastChild.classList.add("open")
+					_moveElement(this.lastChild, $(".view"))
+				} else {
+					for (let card of $(".view .card")) {
+						card.classList.remove("open")
+						_moveElement(card, $(".full"), true)
+					}
+				}
+			})
+		}
+
+		function onDrop(parent) {
+			if (typeof selectedElements[0] !== undefined) {
+				if (selectedElements.length + parent.childNodes.length <= 13) {
+					if (parent.classList.contains("foundations")) {
+						if (foundationCanStack(parent)) {
+							allowDrop(parent)
+						}
+					}
+					if (parent.classList.contains("stack")) {
+						if (stacksCanStack(parent)) {
+							allowDrop(parent)
+						}
+					}
+				}
+			}
+		}
+
+		function allowDrop(parent) {
+			for (let el of selectedElements) {
+				let element = el
+				el.parentNode.removeChild(el)
+
+				parent.appendChild(element)
+
+				element.style.top = "auto"
+				element.style.left = "auto"
+			}
+			_rmSelectedElements()
+		}
+
+		function foundationCanStack(parent) {
+			if (parent.childNodes.length === 0) {
+				return (parseInt(selectedElements[0].getAttribute("data-num")) === 1)
+			}
+
+			if (selectedElements.length > 1) {
+				return false
+			}
+
+			if (parseInt(parent.lastChild.getAttribute("data-type")) === parseInt(selectedElements[0].getAttribute("data-type"))) {
+				const num1 = parseInt(parent.lastChild.getAttribute("data-num"))
+				const num2 = parseInt(selectedElements[0].getAttribute("data-num"))
+				return (num1 + 1 === num2)
+			}
+		}
+
+		function stacksCanStack(parent) {
+			if (parent.childNodes.length === 0) {
+				return (parseInt(selectedElements[0].getAttribute("data-num")) === 13)
+			}
+
+			if (parseInt(parent.lastChild.getAttribute("data-num")) - 1 === parseInt(selectedElements[0].getAttribute("data-num"))) {
+				const type1 = parseInt(parent.lastChild.getAttribute("data-type")) % 2
+				const type2 = parseInt(selectedElements[0].getAttribute("data-type")) % 2
+				return (type1 !== type2)
+			}
+		}
+
+		function autoMove() {
+			for (let stack of $('.stack')) {
+				for (let foundation of $(".foundations")) {
+					if (stack.childNodes.length > 0) {
+						if (foundation.childNodes.length > 0) {
+							if (stack.lastChild.getAttribute("data-type") === foundation.lastChild.getAttribute("data-type")) {
+								if (parseInt(stack.lastChild.getAttribute("data-num")) === parseInt(foundation.lastChild.getAttribute("data-num")) + 1) {
+									_moveElement(stack.lastChild, foundation)
+								}
+							}
+						} else {
+							if (stack.lastChild.getAttribute("data-num") == 1) {
+								_moveElement(stack.lastChild, foundation)
+							}
+						}
+					}
+				}
+			}
+		}
+
+		/* --------------------
+				 INIT
+		-------------------- */
+
+		createCards()
+		initStacks()
+		initDragAndDrop()</script></body></html>
