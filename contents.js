@@ -113,10 +113,6 @@ const contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fpac-man.jsdos"
 		},
 		{
-			name: "Prehistorik",
-			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fprehistorik.jsdos"
-		},
-		{
 			name: "Prince of Persia",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fprince-of-persia.jsdos"
 		},
