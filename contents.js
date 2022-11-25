@@ -37,6 +37,10 @@ const contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fcross-country-trucking.jsdos"
 		},
 		{
+			name: "DC Games",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdc-games.jsdos"
+		},
+		{
 			name: "Doom",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdoom.jsdos"
 		},
@@ -59,6 +63,14 @@ const contents = {
 		{
 			name: "Dzzee",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdzzee.jsdos"
+		},
+		{
+			name: "Flappy Bird",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fflappy-bird.jsdos"
+		},
+		{
+			name: "Freak Farm",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Ffreak-farm.jsdos"
 		},
 		{
 			name: "GroundFire",
@@ -91,6 +103,10 @@ const contents = {
 		{
 			name: "Ninja Blitz",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fninja-blitz.jsdos"
+		},
+		{
+			name: "Ossuary",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fossuary.jsdos"
 		},
 		{
 			name: "Pac-Man",
@@ -145,6 +161,10 @@ const contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fsuper-roco-bros.jsdos"
 		},
 		{
+			name: "Super Space Fuel Inc.",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fsuper-space-fuel-inc.jsdos"
+		},
+		{
 			name: "Super Street Fighter II Turbo",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fsuper-street-fighter-ii-turbo.jsdos"
 		},
@@ -157,8 +177,20 @@ const contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Ftetris.jsdos"
 		},
 		{
+			name: "The Hunt",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fthe-hunt.jsdos"
+		},
+		{
+			name: "Urthwurm",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Furthwurm.jsdos"
+		},
+		{
 			name: "Wolfenstein 3D",
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fwolfenstein-3d.jsdos"
+		},
+		{
+			name: "WorDOS",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fwordos.jsdos"
 		},
 		{
 			name: "X-Men: Children of the Atom",
