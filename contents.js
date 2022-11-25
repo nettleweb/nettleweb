@@ -57,8 +57,8 @@ const contents = {
 			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fduke-nukem-3d.jsdos"
 		},
 		{
-			name: "Grand Theft Auto",
-			path: "embed.html?type=jsdos&src=https%3A%2F%2Fgooglecom.gq%2Flfs%2Fdos-games%2Fgrand-theft-auto.jsdos"
+			name: "Dzzee",
+			path: "embed.html?type=jsdos&src=%2Fdos-games%2Fdzzee.jsdos"
 		},
 		{
 			name: "GroundFire",
@@ -785,10 +785,6 @@ const contents = {
 		{
 			name: "Super Smash Flash",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fsuper-smash-flash.swf"
-		},
-		{
-			name: "Super Smash Flash 2",
-			path: "embed.html?type=flash&src=https%3A%2F%2Fgooglecom.gq%2Flfs%2Fflash-games%2Fsuper-smash-flash-2.swf"
 		},
 		{
 			name: "Swords and Sandals",
