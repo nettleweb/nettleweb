@@ -223,6 +223,10 @@ const contents = {
 			path: "embed.html?type=flash&src=%2Fflash-games%2F7-days-without-rain.swf"
 		},
 		{
+			name: "Abobo's Big Adventure",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fabobos-big-adventure.swf"
+		},
+		{
 			name: "Ace of Space",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Face-of-space.swf"
 		},
@@ -257,6 +261,10 @@ const contents = {
 		{
 			name: "Amorphous Plus",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Famorphous-plus.swf"
+		},
+		{
+			name: "Apple Shooter",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fapple-shooter.swf"
 		},
 		{
 			name: "Asteroids",
@@ -305,6 +313,10 @@ const contents = {
 		{
 			name: "Bloons Tower Defense 2",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fbloons-tower-defense-2.swf"
+		},
+		{
+			name: "Bloons Tower Defense 3",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fbloons-tower-defense-3.swf"
 		},
 		{
 			name: "Bloxorz",
@@ -367,8 +379,16 @@ const contents = {
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fchoose-your-weapon-4.swf"
 		},
 		{
+			name: "Color Combat",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fcolor-combat.swf"
+		},
+		{
 			name: "Color Switch",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fcolor-switch.swf"
+		},
+		{
+			name: "Commando",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fcommando.swf"
 		},
 		{
 			name: "Connect 4",
@@ -401,6 +421,10 @@ const contents = {
 		{
 			name: "Curveball",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fcurveball.swf"
+		},
+		{
+			name: "Dad n' Me",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fdad-n-me.swf"
 		},
 		{
 			name: "Dr Carter and the Cave of Despair",
