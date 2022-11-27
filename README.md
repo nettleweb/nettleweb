@@ -10,7 +10,7 @@ Link to website: https://whitespider.gq
  - Supports instant game submission
  - Includes additional tools (Unblocker and more)
  - Supports leaving without history logging (in right-click menu)
- - No ads, free forever
+ - New games every week
 
 ## Mirror Links
 If the main link has been restricted, you can try using a mirror link. <br />
@@ -35,6 +35,7 @@ https://whitespidergq.github.io (Used for backup, might be outdated) <br />
 ### Mirrors for Unblocker
 https://unblocker.whitespider.gq <br />
 https://unblocker.ruochenjia.repl.co (No longer available) <br />
+https://googlecom.gq <br />
 
 ## Hosting
 This website can only be hosted on the root directory of a domain (due to service workers and resource linkage), therefore GitHub page is not supported unless you use the `username.github.io` repository for this website.
