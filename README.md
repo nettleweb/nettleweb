@@ -1,7 +1,7 @@
 # WhiteSpider
 <a href="https://discord.gg/MWCNr2ANEz" target="_blank">![Discord Shield](https://discordapp.com/api/guilds/998658232207814667/widget.png?style=shield)</a> ![Current Version](https://img.shields.io/github/manifest-json/v/ruochenjia/whitespider) <br/>
 An open source HTML5, DOS, Flash game collection website, includes more than 300 unblocked games for school. <br />
-Link to website: https://whitespider.gq
+Link to website: https://whitespider.pages.dev
 
 ## Features
  - Contains more than 300 games (HTML5, DOS, Flash)
