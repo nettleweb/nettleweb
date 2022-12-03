@@ -16,15 +16,17 @@ limitations under the License.
 
 import contents from "./contents.js";
 import TestGameDB from "./testgamedb.js";
-import matrixrain from "./matrixrain.js";
 
 // default error handler
 window.onerror = (message, src, lineno, colno, error) => {
-	console.log(`Error at "${src}", line ${lineno}:${colno}: \n${error}`, "Error");
+	alert(`Error at "${src}", line ${lineno}:${colno}: \n${error}`, "Error");
 };
 
+const location = new URL(window.location.href);
 const nsw = window.navigator.serviceWorker;
-if (nsw != null) {
+const embedded = (window != window.top);
+
+if (nsw != null && location.hostname != "localhost") {
 	try {
 		await nsw.register("/sw.js", {
 			scope: "/",
@@ -33,13 +35,9 @@ if (nsw != null) {
 		});
 		await nsw.ready;
 	} catch(err) {
-		// ignore
-		console.log(err);
+		console.warn(err);
 	}
 }
-
-const baseUrl = window.location.origin;
-const embedded = (window != window.top);
 
 const searchBar = document.getElementById("search-bar");
 const html5GameGrid = document.getElementById("html5-game-grid");
@@ -94,18 +92,7 @@ function updateContents(contents, container, noprev = false) {
 		label.innerHTML = displayName;
 		item.appendChild(label);
 
-		item.onclick = () => {
-			const frame = createFrame(content.path, content.url);
-			if (document.documentElement.clientWidth < 850) {
-				// for mobile phones
-				inNewTabOrWindow(frame);
-				return;
-			}
-
-			window.popup(frame, displayName);
-		};
-
-		item.oncontextmenu = (e) => {
+		item.onclick = item.oncontextmenu = (e) => {
 			e.preventDefault();
 			e.stopPropagation();
 
@@ -129,7 +116,7 @@ function createFrame(path, url) {
 	frame.setAttribute("allowfullscreen", "true");
 	frame.setAttribute("allow", "cross-origin-isolated");
 	frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups");
-	frame.setAttribute("src", new URL(path != null ? path : (embedded ? url : "https://googlecom.gq/?open=" + encodeURIComponent(url)), baseUrl).href);
+	frame.setAttribute("src", new URL(path != null ? path : url, location.origin).href);
 	return frame;
 }
 
@@ -144,7 +131,6 @@ function inNewTabOrWindow(elem, newWindow) {
 		return;
 	}
 	win.focus();
-	win.stop();
 
 	const doc = win.document;
 	doc.open();
@@ -152,10 +138,11 @@ function inNewTabOrWindow(elem, newWindow) {
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 		<meta http-equiv="Referrer-Policy" content="no-referrer" />
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
-		<base href="${baseUrl}"/>
+		<base href="${location.origin}"/>
 		<link rel="icon" type="image/x-icon" href="https://www.google.com/favicon.ico" />
 		<title>Google</title>
 		<style type="text/css">
@@ -172,7 +159,7 @@ body {
 	overflow: hidden;
 }
 
-iframe, embed {
+embed, iframe {
 	position: absolute;
 	display: block;
 	width: 100%;
@@ -181,17 +168,27 @@ iframe, embed {
 }
 		</style>
 	</head>
+	<body>
+		<script type="text/javascript">
+"use strict";
+
+(() => {
+
+window.onbeforeunload = window.onunload = (e) => {
+	e.preventDefault();
+	e.stopPropagation();
+
+	const msg = "prevent default";
+	e.returnValue = msg;
+	return msg;
+};
+
+})();
+		</script>
+	</body>
 </html>`);
 	doc.close();
 	doc.body.appendChild(elem);
-
-	win.onbeforeunload = win.onunload = (e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		const msg = "preventdefault";
-		e.returnValue = msg;
-		return msg;
-	};
 }
 
 /**
@@ -220,7 +217,7 @@ TestGameDB.load().then(() => {
 	updateContents(TestGameDB.data, userGameGrid, true);
 });
 
-for (let item of document.getElementsByClassName("section-expand-button")) {
+for (let item of document.getElementsByClassName("expand")) {
 	item.onclick = () => {
 		const gridElem = item.parentElement.getElementsByClassName("game-grid")[0];
 		if (gridElem.hasAttribute("expanded")) {
@@ -331,9 +328,8 @@ document.getElementById("clear-cache").onclick = async () => {
 document.getElementById("leave-without-history").onclick = () => {
 	window.location.replace(new URL("https://www.google.com/"));
 };
-document.getElementById("debug-shell").onclick = () => {
-	inspect();
-};
 
-export const status = [!1];export const locker = { lock: () => eval(`(()=>{console.log("%c\x57h\u0069t\x65S\x70i\u0064e\u0072.\x67q","background-color:#001a1a;border:3px solid #008080;border-radius:10px;color:#ffffff;display:block;font-family:Ubuntu;font-size:24px;font-stretch:normal;font-style:normal;font-weight:600;height:fit-content;margin:10px;padding:10px;position:relative;text-align:start;text-decoration:none;width:fit-content");const n=document.documentElement.outerHTML;if(document.title.includes("W\x68\u0069t\x65S\x70\x69\u0064e\u0072")&&n.includes("r\u0075ochenj\x69a")&&n.includes("\x77\u0068\x69t\x65\x73\u0070id\u0065r.\u0067q")){console.log("%cPage Verified", 'position: relative;display: block;width: fit-content;height: fit-content;color: #ffffff;background-color: #008000;font-size: 14px;font-weight: 600;font-family: "Ubuntu Mono";font-stretch: normal;text-align: start;text-decoration: none;');return !0;}window["_$$0Oc"]();return !1;})();`) };
-locker.lock()&&(loadDefaultContent(),status[0]=!0);document.getElementById("background-screen").style.display="none";document.getElementById("home-screen").style.display="block";
+loadDefaultContent();
+
+// export const status = [!1];export const locker = { lock: () => eval(``) };
+// locker.lock()&&(loadDefaultContent(),status[0]=!0);document.getElementById("background-screen").style.display="none";document.getElementById("home-screen").style.display="block";

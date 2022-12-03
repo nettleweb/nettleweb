@@ -1,34 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<!--
-⁠$$\      $$\ $$\       $$\   $$\                $$$$$$\            $$\       $$\                                             
-⁠$$ | $\  $$ |$$ |      \__|  $$ |              $$  __$$\           \__|      $$ |                                            
-⁠$$ |$$$\ $$ |$$$$$$$\  $$\ $$$$$$\    $$$$$$\  $$ /  \__| $$$$$$\  $$\  $$$$$$$ | $$$$$$\   $$$$$$\       $$$$$$\   $$$$$$\  
-⁠$$ $$ $$\$$ |$$  __$$\ $$ |\_$$  _|  $$  __$$\ \$$$$$$\  $$  __$$\ $$ |$$  __$$ |$$  __$$\ $$  __$$\     $$  __$$\ $$  __$$\ 
-⁠$$$$  _$$$$ |$$ |  $$ |$$ |  $$ |    $$$$$$$$ | \____$$\ $$ /  $$ |$$ |$$ /  $$ |$$$$$$$$ |$$ |  \__|    $$ /  $$ |$$ /  $$ |
-⁠$$$  / \$$$ |$$ |  $$ |$$ |  $$ |$$\ $$   ____|$$\   $$ |$$ |  $$ |$$ |$$ |  $$ |$$   ____|$$ |          $$ |  $$ |$$ |  $$ |
-⁠$$  /   \$$ |$$ |  $$ |$$ |  \$$$$  |\$$$$$$$\ \$$$$$$  |$$$$$$$  |$$ |\$$$$$$$ |\$$$$$$$\ $$ |      $$\ \$$$$$$$ |\$$$$$$$ |
-⁠\__/     \__|\__|  \__|\__|   \____/  \_______| \______/ $$  ____/ \__| \_______| \_______|\__|      \__| \____$$ | \____$$ |
-⁠                                                         $$ |                                            $$\   $$ |      $$ |
-⁠                                                         $$ |                                            \$$$$$$  |      $$ |
-⁠                                                         \__|                                             \______/       \__|
-	-->
-	<!--
-		Copyright 2022 Ruochen Jia
-
-		Licensed under the Apache License, Version 2.0 (the "License");
-		you may not use this file except in compliance with the License.
-		You may obtain a copy of the License at
-
-		http://www.apache.org/licenses/LICENSE-2.0
-
-		Unless required by applicable law or agreed to in writing, software
-		distributed under the License is distributed on an "AS IS" BASIS,
-		WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-		See the License for the specific language governing permissions and
-		limitations under the License.
-	-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta http-equiv="Referrer-Policy" content="no-referrer" />
@@ -42,8 +14,9 @@
 		<link rel="apple-touch-icon" type="image/png" href="res/logo256.png" />
 		<link rel="manifest" href="manifest.json" />
 		<link rel="canonical" href="https://whitespider.gq/" />
-		<script type="text/javascript" src="./lib/webalert.js"></script>
-		<title>WhiteSpider.gq</title>
+		<script type="text/javascript" src="lib/socket.io.min.js"></script>
+		<script type="text/javascript" src="lib/webalert.js"></script>
+		<title>WhiteSpider</title>
 		<style type="text/css">
 #header {
 	position: absolute;
@@ -51,8 +24,8 @@
 	width: calc(100% - 10px);
 	height: 50px;
 	padding: 5px;
-	color: #ffffff;
-	background-color: #002a2a;
+	color: #323232;
+	background-color: #f0f0f0;
 }
 
 #logo {
@@ -104,47 +77,78 @@
 	width: 100%;
 	height: calc(100% - 63px);
 	top: 60px;
-}
-
-.screen {
-	position: absolute;
-	display: block;
-	width: calc(100% - 40px);
-	height: 100%;
-	padding-left: 20px;
-	padding-right: 20px;
-	overflow-y: auto;
 	overflow-x: hidden;
+	overflow-y: auto;
 }
 
-#loading-text {
+#main {
 	position: relative;
 	display: block;
-	width: fit-content;
+	width: 100%;
+	height: fit-content;
+}
+
+#menu {
+	position: relative;
+	display: block;
+	width: 1024px;
 	height: fit-content;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 20px;
+	margin-top: 150px;
+	margin-bottom: 150px;
+	padding: 30px;
+	background-color: #ffffff;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #323232;
+	border-radius: 10px;
+	box-shadow: 10px 5px 5px #323232;
 }
 
-#home-screen, #dynamic-screen {
-	display: none;
+#menu input {
+	position: relative;
+	display: block;
+	width: 300px;
+	height: 20px;
+	padding: 10px;
+	margin: auto;
+	line-height: 20px;
+	font-size: 16px;
+	outline: none;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #808080;
+	border-radius: 10px;
 }
 
-#noscript-screen {
-	/*set the background color to override default screen*/
-	background-color: #001a1a;
+#menu input:focus {
+	border-color: #5a97f3;
 }
 
-#noscript-text {
+#menu .button {
 	position: relative;
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	line-height: 20px;
 	font-size: 16px;
-	font-weight: 600;
-	color: #ff8080;
+	cursor: pointer;
+	color: #ffffff;
+	background-color: #5a97f3;
+	text-align: center;
+	box-shadow: 2px 2px 2px #323232;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #808080;
+	border-radius: 10px;
+}
+
+#menu .button:active {
+	box-shadow: -2px -2px 2px #323232;
 }
 
 #large-logo {
@@ -156,6 +160,9 @@
 	margin-right: auto;
 	margin-top: 10px;
 	margin-bottom: 10px;
+	background-image: url("res/logo.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 #description {
@@ -171,63 +178,13 @@
 	line-height: 25px;
 }
 
-#status-bar {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 30px;
-	line-height: 25px;
-	-webkit-user-select: none;
-	user-select: none;
-}
-
-#status-bar * {
-	-webkit-user-drag: none;
-}
-
-#status-bar a {
-	cursor: pointer;
-}
-
-#search-bar {
-	position: relative;
-	display: block;
-	width: 300px;
-	height: 30px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin: auto;
-	outline: none;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #808080;
-	border-radius: 10px;
-}
-
-#search-bar:focus {
-	border-color: #ffffff;
-}
-
 .section {
 	position: relative;
 	display: block;
-	width: 1024px;
+	width: 100%;
 	height: fit-content;
-	margin-left: auto;
-	margin-right: auto;
 	margin-top: 40px;
 	margin-bottom: 40px;
-}
-
-@media all and (max-width: 1024px) {
-	.section {
-		width: 100%;
-	}
 }
 
 .title {
@@ -240,26 +197,26 @@
 	font-weight: 600;
 }
 
-.section-expand-button {
-	position: absolute;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	right: 0px;
-	top: 0px;
-	cursor: pointer;
-	line-height: 32px;
-	font-size: 14px;
-	font-style: italic;
-	text-decoration: underline;
-}
-
 .text {
 	position: relative;
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	line-height: 16px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #808080;
+}
+
+#menu .expand {
+	position: absolute;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px;
+	padding: 5px;
+	top: 0px;
+	right: 0px;
+	line-height: 14px;
+	font-size: 14px;
 }
 
 .game-grid {
@@ -289,10 +246,9 @@
 	width: 200px;
 	flex: 0 0 200px;
 	cursor: pointer;
-	background-color: #005050;
 	border-style: solid;
 	border-width: 1px;
-	border-color: #008080;
+	border-color: #808080;
 	border-radius: 10px;
 }
 
@@ -357,62 +313,16 @@
 	text-decoration: underline;
 }
 
-#dynamic-screen {
-	width: 100%;
-	padding: 0px;
-}
-
-#game-submission-button {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	color: #ffffff;
-	cursor: pointer;
-	text-decoration: underline;
-	font-style: italic;
-	line-height: 16px;
-}
-
-.footer {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 20px;
-	line-height: 20px;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	color: #a0a0a0;
-	font-size: 12px;
-	font-weight: 400;
-	text-align: center;
-	text-decoration: none;
-}
-
-.footer a {
-	color: #a0a0a0;
-	cursor: pointer;
-	text-decoration: underline;
-}
-
-iframe, embed {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	border: none;
-}
-
 #context-menu {
 	position: absolute;
 	display: none;
 	width: fit-content;
 	height: fit-content;
+	color: #323232;
+	background-color: #ffffff;
 	border-style: solid;
 	border-width: 1px;
 	border-color: #808080;
-	color: #303030;
-	background-color: #ffffff;
 }
 
 #context-menu div {
@@ -424,19 +334,119 @@ iframe, embed {
 	font-size: 14px;
 	font-weight: 500;
 	cursor: pointer;
-	-webkit-user-select: none;
-	user-select: none;
 }
 
 #context-menu div:hover {
 	color: #ffffff;
-	background-color: #001a1a;
+	background-color: #5a97f3;
 }
 
 #context-menu div:active {
 	color: #ffffff;
-	background-color: #002a2a;
+	background-color: #317ae9;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #login-dialog-logo {
+	position: relative;
+	display: block;
+	width: 200px;
+	height: 50px;
+	margin: auto;
+	background-image: url("res/logo.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#login-dialog input, #login-dialog .button {
+	position: relative;
+	display: block;
+	width: 250px;
+	height: 20px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	line-height: 20px;
+	font-size: 16px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #808080;
+	border-radius: 10px;
+}
+
+#login-dialog input {
+	outline: none;
+}
+
+#login-dialog input:focus {
+	border-color: #5a97f3;
+}
+
+#login-dialog .button {
+	cursor: pointer;
+	color: #ffffff;
+	background-color: #5a97f3;
+	text-align: center;
+	box-shadow: 2px 2px 2px #323232;
+}
+
+#login-dialog .button:active {
+	box-shadow: -2px -2px 2px #323232;
+}
+
+#error-message, #login-dialog .small-text {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	max-width: 270px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #808080;
+	font-size: 12px;
+}
+
+#error-message {
+	font-size: 14px;
+	color: #ff6060;
+}
+
+#register-switch, #login-switch {
+	cursor: pointer;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+#login, #register {
+	position: relative;
+	display: none;
+	width: fit-content;
+	height: fit-content;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.title {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	line-height: 30px;
+	font-size: 16px;
+	font-weight: 600;
+} */
 		</style>
 	</head>
 	<body>
@@ -449,84 +459,108 @@ iframe, embed {
 			</div>
 		</div>
 		<div id="content">
-			<div id="background-screen" class="screen">
-				<div id="loading-text">Loading...</div>
-			</div>
-			<div id="home-screen" class="screen">
-				<img id="large-logo" src="res/logo.svg" width="512" height="128" alt="WhiteSpider Logo" />
-				<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 300 unblocked games for school!</div>
-				<div id="status-bar">
-					<img src="https://img.shields.io/github/manifest-json/v/ruochenjia/whitespider?label=Version" alt="Version" />
-					<img src="https://img.shields.io/github/last-commit/ruochenjia/whitespider?label=Last%20Update" alt="Last Update" />
-					<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">
-						<img src="https://img.shields.io/discord/998658232207814667?label=Discord&logo=discord" alt="Discord" />
-					</a>
-				</div>
-				<input id="search-bar" type="text" placeholder="Search Games" />
-				<div class="section">
-					<div class="title">DOS Games</div>
-					<div class="section-expand-button">Show more</div>
-					<div id="dos-game-grid" class="game-grid"></div>
-				</div>
-				<div class="section">
-					<div class="title">Flash Games</div>
-					<div class="section-expand-button">Show more</div>
-					<div id="flash-game-grid" class="game-grid"></div>
-				</div>
-				<div class="section">
-					<div class="title">HTML5 Games</div>
-					<div class="section-expand-button">Show more</div>
-					<div id="html5-game-grid" class="game-grid"></div>
-				</div>
-				<div class="section">
-					<div class="title">Tools</div>
-					<div class="game-grid">
-						<a class="tool-item" href="https://unblocker.whitespider.gq" target="_blank" rel="noopener">
-							<div class="tool-label">Unblocker</div>
-							<div class="tool-desc">Unblock websites through a proxy server, bypass the restrictions of local network and browser extensions.</div>
-						</a>
-						<a class="tool-item" href="https://unblocker.ruochenjia.repl.co" target="_blank" rel="noopener">
-							<div class="tool-label">Unblocker 2</div>
-							<div class="tool-desc">If the first one has been blocked, you can try this one. (or get more unblocker links from the mirror links provided)</div>
-						</a>
-						<div id="ebutuoy" class="tool-item">
-							<div class="tool-label">YouTube Unblocked</div>
-							<div class="tool-desc">Unblocked version of YouTube, with all ads removed.</div>
-						</div>
-						<div id="vmlinux" class="tool-item">
-							<div class="tool-label">VMLinux</div>
-							<div class="tool-desc">A 32-bit PC emulator that runs in your browser.</div>
-						</div>
-						<div id="private-search" class="tool-item">
-							<div class="tool-label">Private Search</div>
-							<div class="tool-desc">A private search engine that prevents logging and history saving.</div>
+			<div id="menu">
+				<noscript>
+					<div class="text">Please enable JavaScript and refresh this page to continue.</div>
+				</noscript>
+				<div id="main">
+					<div id="large-logo"></div>
+					<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 300 unblocked games for school!</div>
+					<input id="search-bar" type="text" placeholder="Search Games" />
+					<div class="section">
+						<div class="title">DOS Games</div>
+						<div class="expand button">Show more</div>
+						<div id="dos-game-grid" class="game-grid"></div>
+					</div>
+					<div class="section">
+						<div class="title">Flash Games</div>
+						<div class="expand button">Show more</div>
+						<div id="flash-game-grid" class="game-grid"></div>
+					</div>
+					<div class="section">
+						<div class="title">HTML5 Games</div>
+						<div class="expand button">Show more</div>
+						<div id="html5-game-grid" class="game-grid"></div>
+					</div>
+					<div class="section">
+						<div class="title">Tools</div>
+						<div class="game-grid">
+							<a class="tool-item" href="https://unblocker.whitespider.gq" target="_blank" rel="noopener">
+								<div class="tool-label">Unblocker</div>
+								<div class="tool-desc">Unblock websites through a proxy server, bypass the restrictions of local network and browser extensions.</div>
+							</a>
+							<a class="tool-item" href="https://unblocker.ruochenjia.repl.co" target="_blank" rel="noopener">
+								<div class="tool-label">Unblocker 2</div>
+								<div class="tool-desc">If the first one has been blocked, you can try this one. (or get more unblocker links from the mirror links provided)</div>
+							</a>
+							<div id="ebutuoy" class="tool-item">
+								<div class="tool-label">YouTube Unblocked</div>
+								<div class="tool-desc">Unblocked version of YouTube, with all ads removed.</div>
+							</div>
+							<div id="vmlinux" class="tool-item">
+								<div class="tool-label">VMLinux</div>
+								<div class="tool-desc">A 32-bit PC emulator that runs in your browser.</div>
+							</div>
+							<div id="private-search" class="tool-item">
+								<div class="tool-label">Private Search</div>
+								<div class="tool-desc">A private search engine that prevents logging and history saving.</div>
+							</div>
 						</div>
 					</div>
+					<div class="section">
+						<div class="title">Unverified Games</div>
+						<div class="expand button">Show more</div>
+						<div class="text">The games listed here were added by users with the button below, which might have certain issues. You can report these issues with the feedback button in the header.</div>
+						<div id="game-submission-button" class="button">Submit a game now</div>
+						<div id="user-game-grid" class="game-grid"></div>
+					</div>
 				</div>
-				<div class="section">
-					<div class="title">Unverified Games</div>
-					<div class="section-expand-button">Show more</div>
-					<div class="text" style="margin-top: 5px; margin-bottom: 5px;">The games listed here were added by users with the button below, which might have certain issues. You can report these issues with the feedback button in the header.</div>
-					<div id="game-submission-button" class="symtext" style="margin-bottom: 50px;">Submit a game now</div>
-					<div id="user-game-grid" class="game-grid"></div>
-				</div>
-				<div class="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank" rel="noopener">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank" rel="noopener">GitHub</a></div>
 			</div>
-			<div id="dynamic-screen" class="screen">
-				<!-- Dynamically rendered contents -->
-			</div>
-			<noscript>
-				<div id="noscript-screen" class="screen">
-					<div id="noscript-text">Please enable JavaScript and refresh this page to continue.</div>
-				</div>
-			</noscript>
 		</div>
 		<div id="context-menu">
 			<div id="clear-site-data">Clear site data</div>
 			<div id="clear-cache">Clear cache</div>
 			<div id="leave-without-history">Leave without history</div>
-			<div id="debug-shell">Debug Shell</div>
 		</div>
-		<script type="module">import{status,locker}from"./main.js";status[0]||locker.lock()||window._$$0Oc();</script>
+
+<!-- 		
+		
+
+		<div id="login-screen" class="screen">
+			<div id="ls-content">
+				<div id="login-container">
+					<div id="login-dialog">
+						<div id="login-dialog-logo"></div>
+						<div id="login">
+							<input id="username" type="text" placeholder="Username" />
+							<input id="password" type="password" placeholder="Password" />
+							<div id="login-button" class="button">Login</div>
+							<div class="small-text">Don't have an account? <span id="register-switch">Register now</span></div>
+						</div>
+						<div id="register">
+							<input id="reg-username" type="text" placeholder="Username" />
+							<input id="reg-email" type="email" placeholder="Email" />
+							<input id="reg-password" type="password" placeholder="Password" />
+							<input id="reg-cpassword" type="password" placeholder="Confirm Password" />
+							<input id="i'm not a robot" type="hidden" />
+							<div id="register-button" class="button">Register</div>
+							<div class="small-text">Already have an account? <span id="login-switch">Login</span></div>
+							<div class="small-text">By clicking register, you agree to our <a href="terms.html" target="_blank" rel="noopener">Terms &#38; Policies</a>.</div>
+						</div>
+						<noscript>
+							<div class="small-text">Please enable JavaScript and refresh this page to continue.</div>
+						</noscript>
+						<div id="error-message">&#x26a0; Initialization failure</div>
+					</div>
+				</div>
+			</div>
+			<div id="ls-footer">
+				<div>©2022 Pac-Shark | <a href="terms.html" target="_blank" rel="noopener">Terms &#38; Policies</a></div>
+			</div>
+		</div>
+		<div id="home-screen" class="screen">
+		</div>
+		<script type="text/javascript" src="main.js"></script> -->
+		<script type="module" src="main.js"></script>
 	</body>
 </html>
