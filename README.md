@@ -1,16 +1,15 @@
 # WhiteSpider
 <a href="https://discord.gg/MWCNr2ANEz" target="_blank">![Discord Shield](https://discordapp.com/api/guilds/998658232207814667/widget.png?style=shield)</a> ![Current Version](https://img.shields.io/github/manifest-json/v/ruochenjia/whitespider) <br/>
-An open source HTML5, DOS, Flash game collection website, includes more than 300 unblocked games for school. <br />
-Link to website: https://whitespider.pages.dev
+An open source HTML5, DOS, Flash game collection website, with more than 300 unblocked games for school. <br />
+Link to website: https://whitespider.gq
 
 ## Features
  - Contains more than 300 games (HTML5, DOS, Flash)
- - Hidden proxy for online games
  - Supports mobile phones
  - Supports instant game submission
  - Includes additional tools (Unblocker and more)
- - Supports leaving without history logging (in right-click menu)
- - New games every week
+ - Supports history hiding (in right-click menu, does not work for embed mirrors)
+ - New games (or updates) every weekend
 
 ## Mirror Links
 If the main link has been restricted, you can try using a mirror link. <br />
@@ -30,11 +29,8 @@ https://whitespider.ga <br />
 https://whitespider.gq <br />
 https://whitespider.ml <br />
 https://whitespider.tk <br />
-https://whitespidergq.github.io (Used for backup, might be outdated) <br />
-
-### Mirrors for Unblocker
-https://unblocker.whitespider.gq <br />
-https://googlecom.gq <br />
+https://whitespidergq.github.io (Used for backup) <br />
+https://ws.repl.ga (New) <br />
 
 ## Hosting
 This website can only be hosted on the root directory of a domain (due to service workers and resource linkage), therefore GitHub page is not supported unless you use the `username.github.io` repository for this website.
