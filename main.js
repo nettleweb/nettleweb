@@ -330,6 +330,5 @@ document.getElementById("leave-without-history").onclick = () => {
 };
 
 loadDefaultContent();
-
-// export const status = [!1];export const locker = { lock: () => eval(``) };
-// locker.lock()&&(loadDefaultContent(),status[0]=!0);document.getElementById("background-screen").style.display="none";document.getElementById("home-screen").style.display="block";
+document.getElementById("loading").style.display = "none";
+document.getElementById("main").style.display = "block";

@@ -83,7 +83,7 @@
 
 #main {
 	position: relative;
-	display: block;
+	display: none;
 	width: 100%;
 	height: fit-content;
 }
@@ -163,6 +163,22 @@
 	background-image: url("res/logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
+}
+
+@media all and (max-width: 1024px) {
+	#menu {
+		width: calc(90% - 62px);
+	}
+
+	#menu input {
+		width: calc(100% - 20px);
+	}
+
+	#large-logo {
+		width: 100%;
+		height: unset;
+		aspect-ratio: 4/1;
+	}
 }
 
 #description {
@@ -469,6 +485,7 @@
 				<noscript>
 					<div class="text">Please enable JavaScript and refresh this page to continue.</div>
 				</noscript>
+				<div id="loading" class="text">Loading...</div>
 				<div id="main">
 					<div id="large-logo"></div>
 					<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 300 unblocked games for school!</div>
