@@ -368,107 +368,22 @@
 	background-color: #317ae9;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* #login-dialog-logo {
-	position: relative;
-	display: block;
-	width: 200px;
-	height: 50px;
-	margin: auto;
-	background-image: url("res/logo.svg");
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-#login-dialog input, #login-dialog .button {
-	position: relative;
-	display: block;
-	width: 250px;
-	height: 20px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-	padding: 10px;
-	line-height: 20px;
-	font-size: 16px;
-	border-style: solid;
-	border-width: 1px;
-	border-color: #808080;
-	border-radius: 10px;
-}
-
-#login-dialog input {
-	outline: none;
-}
-
-#login-dialog input:focus {
-	border-color: #5a97f3;
-}
-
-#login-dialog .button {
-	cursor: pointer;
-	color: #ffffff;
-	background-color: #5a97f3;
-	text-align: center;
-	box-shadow: 2px 2px 2px #323232;
-}
-
-#login-dialog .button:active {
-	box-shadow: -2px -2px 2px #323232;
-}
-
-#error-message, #login-dialog .small-text {
+#footer {
 	position: relative;
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	max-width: 270px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: auto;
+	margin-right: auto;
 	color: #808080;
-	font-size: 12px;
 }
 
-#error-message {
-	font-size: 14px;
-	color: #ff6060;
-}
-
-#register-switch, #login-switch {
+#footer a {
 	cursor: pointer;
-	font-weight: 600;
 	text-decoration: underline;
 }
-
-#login, #register {
-	position: relative;
-	display: none;
-	width: fit-content;
-	height: fit-content;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.title {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	line-height: 30px;
-	font-size: 16px;
-	font-weight: 600;
-} */
 		</style>
 	</head>
 	<body>
@@ -488,7 +403,7 @@
 				<div id="loading" class="text">Loading...</div>
 				<div id="main">
 					<div id="large-logo"></div>
-					<div id="description">An open-source adless HTML5, DOS, Flash game collection website, contains more than 300 unblocked games for school!</div>
+					<div id="description">Open-source adless HTML5, DOS, Flash games unblocked, with updates every weekend</div>
 					<input id="search-bar" type="text" placeholder="Search Games" />
 					<div class="section">
 						<div class="title">DOS Games</div>
@@ -537,6 +452,7 @@
 						<div id="game-submission-button" class="button">Submit a game now</div>
 						<div id="user-game-grid" class="game-grid"></div>
 					</div>
+					<div id="footer">©2022 WhiteSpider | Created by <a href="https://github.com/ruochenjia" target="_blank" rel="noopener">Ruochen Jia</a> | Open source on <a href="https://github.com/ruochenjia/whitespider" target="_blank" rel="noopener">GitHub</a></div>
 				</div>
 			</div>
 		</div>
@@ -545,45 +461,6 @@
 			<div id="clear-cache">Clear cache</div>
 			<div id="leave-without-history">Leave without history</div>
 		</div>
-
-<!-- 		
-		
-
-		<div id="login-screen" class="screen">
-			<div id="ls-content">
-				<div id="login-container">
-					<div id="login-dialog">
-						<div id="login-dialog-logo"></div>
-						<div id="login">
-							<input id="username" type="text" placeholder="Username" />
-							<input id="password" type="password" placeholder="Password" />
-							<div id="login-button" class="button">Login</div>
-							<div class="small-text">Don't have an account? <span id="register-switch">Register now</span></div>
-						</div>
-						<div id="register">
-							<input id="reg-username" type="text" placeholder="Username" />
-							<input id="reg-email" type="email" placeholder="Email" />
-							<input id="reg-password" type="password" placeholder="Password" />
-							<input id="reg-cpassword" type="password" placeholder="Confirm Password" />
-							<input id="i'm not a robot" type="hidden" />
-							<div id="register-button" class="button">Register</div>
-							<div class="small-text">Already have an account? <span id="login-switch">Login</span></div>
-							<div class="small-text">By clicking register, you agree to our <a href="terms.html" target="_blank" rel="noopener">Terms &#38; Policies</a>.</div>
-						</div>
-						<noscript>
-							<div class="small-text">Please enable JavaScript and refresh this page to continue.</div>
-						</noscript>
-						<div id="error-message">&#x26a0; Initialization failure</div>
-					</div>
-				</div>
-			</div>
-			<div id="ls-footer">
-				<div>©2022 Pac-Shark | <a href="terms.html" target="_blank" rel="noopener">Terms &#38; Policies</a></div>
-			</div>
-		</div>
-		<div id="home-screen" class="screen">
-		</div>
-		<script type="text/javascript" src="main.js"></script> -->
 		<script type="module" src="main.js"></script>
 	</body>
 </html>
