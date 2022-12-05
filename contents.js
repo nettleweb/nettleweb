@@ -1037,6 +1037,10 @@ const contents = {
 			url: "https://dogeminer2.com/"
 		},
 		{
+			name: "Dominoes",
+			path: "html5-games/dominoes/"
+		},
+		{
 			name: "Doodle Jump",
 			path: "html5-games/doodle-jump/"
 		},
