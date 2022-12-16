@@ -54,6 +54,7 @@ self.__uv$config = {
 	encodeUrl: coder.encode,
 	decodeUrl: coder.decode,
 	bundle: "/uv/uv.bundle.js",
+	client: "/uv/uv.client.js",
 	config: "/uv/uv.config.js",
 	handler: "/uv/uv.handler.js",
 	sw: "/uv/uv.sw.js"

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<!--
+⁠$$\      $$\ $$\       $$\   $$\                $$$$$$\            $$\       $$\                                             
+⁠$$ | $\  $$ |$$ |      \__|  $$ |              $$  __$$\           \__|      $$ |                                            
+⁠$$ |$$$\ $$ |$$$$$$$\  $$\ $$$$$$\    $$$$$$\  $$ /  \__| $$$$$$\  $$\  $$$$$$$ | $$$$$$\   $$$$$$\       $$$$$$\   $$$$$$\  
+⁠$$ $$ $$\$$ |$$  __$$\ $$ |\_$$  _|  $$  __$$\ \$$$$$$\  $$  __$$\ $$ |$$  __$$ |$$  __$$\ $$  __$$\     $$  __$$\ $$  __$$\ 
+⁠$$$$  _$$$$ |$$ |  $$ |$$ |  $$ |    $$$$$$$$ | \____$$\ $$ /  $$ |$$ |$$ /  $$ |$$$$$$$$ |$$ |  \__|    $$ /  $$ |$$ /  $$ |
+⁠$$$  / \$$$ |$$ |  $$ |$$ |  $$ |$$\ $$   ____|$$\   $$ |$$ |  $$ |$$ |$$ |  $$ |$$   ____|$$ |          $$ |  $$ |$$ |  $$ |
+⁠$$  /   \$$ |$$ |  $$ |$$ |  \$$$$  |\$$$$$$$\ \$$$$$$  |$$$$$$$  |$$ |\$$$$$$$ |\$$$$$$$\ $$ |      $$\ \$$$$$$$ |\$$$$$$$ |
+⁠\__/     \__|\__|  \__|\__|   \____/  \_______| \______/ $$  ____/ \__| \_______| \_______|\__|      \__| \____$$ | \____$$ |
+⁠                                                         $$ |                                            $$\   $$ |      $$ |
+⁠                                                         $$ |                                            \$$$$$$  |      $$ |
+⁠                                                         \__|                                             \______/       \__|
+	-->
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta name="referrer" content="no-referrer" />
+		<meta name="robots" content="noindex,nofollow" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+		<meta name="theme-color" content="#001a1a" />
+		<base href="/" />
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="standard.css" />
+		<title>Loading...</title>
+		<style type="text/css">
+#message {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px;
+}
+		</style>
+	</head>
+	<body>
+		<div id="message">Loading...</div>
+		<script type="text/javascript" src="uv/uv.config.js"></script>
+		<script type="text/javascript" src="b64.js"></script>
+		<script type="text/javascript">
+"use strict";
+
+// <![CDATA[
+(async () => {
+const location = new URL(window.location.href);
+const message = document.getElementById("message");
+const open = location.searchParams.get("o");
+const nsw = window.navigator.serviceWorker;
+
+if (open == null || open.length == 0) {
+	message.innerHTML = "Error: No URL specified.";
+	return;
+}
+
+if (nsw != null) {
+	try {
+		await nsw.register("/sw.js", {
+			scope: "/",
+			type: "classic",
+			updateViaCache: "none"
+		});
+		await nsw.ready;
+	} catch(err) {
+		console.error(err);
+		message.innerHTML = "Error: Failed to register service worker, see console logs for details.";
+		return;
+	}
+}
+
+const url = new URL(Base64.atob(open));
+window.location.replace(location.origin + __uv$config.prefix + __uv$config.encodeUrl(url.href));
+
+})();
+// ]]>
+		</script>
+	</body>
+</html>
