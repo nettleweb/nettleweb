@@ -981,6 +981,10 @@ const contents = {
 			path: "html5-games/9007199254740992/"
 		},
 		{
+			name: "All Fives Domino",
+			url: "https://cdn.htmlgames.com/AllFivesDomino/"
+		},
+		{
 			name: "Among US",
 			path: "html5-games/among-us/"
 		},
@@ -1005,8 +1009,16 @@ const contents = {
 			url: "https://playpager.com/embed/minichess/index.html"
 		},
 		{
+			name: "Chinese Freecell",
+			url: "https://cdn.htmlgames.com/ChineseFreeCell/"
+		},
+		{
 			name: "Cookie Clicker",
 			url: "https://shsgames.github.io/built-games/cookieclicker/index.html"
+		},
+		{
+			name: "Coloring Mandalas",
+			url: "https://cdn.htmlgames.com/ColoringMandalas/"
 		},
 		{
 			name: "Cut the Rope",
@@ -1045,6 +1057,10 @@ const contents = {
 			path: "html5-games/doodle-jump/"
 		},
 		{
+			name: "Dunk Balls",
+			url: "https://cdn.htmlgames.com/DunkBalls/"
+		},
+		{
 			name: "ev.io",
 			url: "https://www.ev.io"
 		},
@@ -1055,6 +1071,10 @@ const contents = {
 		{
 			name: "Flip 3D",
 			url: "https://scratch.mit.edu/projects/430999356/embed"
+		},
+		{
+			name: "Freecell",
+			url: "https://cdn.htmlgames.com/Free-cell/"
 		},
 		{
 			name: "Fruit Ninja",
@@ -1077,6 +1097,10 @@ const contents = {
 			path: "html5-games/hextris/"
 		},
 		{
+			name: "Hidden Forest",
+			url: "https://cdn.htmlgames.com/HiddenForest/"
+		},
+		{
 			name: "Jetpack Joyride",
 			url: "https://storms.com/games/JetpackJoyride-WebProtected/"
 		},
@@ -1093,6 +1117,10 @@ const contents = {
 			url: "https://cdn.htmlgames.com/Ludo/"
 		},
 		{
+			name: "Mahjong Triple Dimensions",
+			url: "https://cdn.htmlgames.com/MahjongTripleDimensions/"
+		},
+		{
 			name: "MaZe",
 			url: "https://storage.y8.com/y8-studio/html5/akeemywka/maze_v1/index.html"
 		},
@@ -1107,6 +1135,14 @@ const contents = {
 		{
 			name: "Minesweeper",
 			path: "html5-games/minesweeper/"
+		},
+		{
+			name: "Neon Math",
+			url: "https://cdn.htmlgames.com/NeonMath/"
+		},
+		{
+			name: "One Line",
+			url: "https://cdn.htmlgames.com/OneLine/"
 		},
 		{
 			name: "Pac-Man",
@@ -1159,6 +1195,10 @@ const contents = {
 		{
 			name: "Space Blaze",
 			url: "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/a1c4858cc2db451bb97c8e926257b49a/"
+		},
+		{
+			name: "Space Blast",
+			url: "https://cdn.htmlgames.com/SpaceBlast/"
 		},
 		{
 			name: "Squid Game",
