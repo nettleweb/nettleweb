@@ -2,7 +2,7 @@
 self.app = {
 	debug: true,
 	cacheName: "whitespider",
-	cacheVersion: "2.0.0-beta3",
+	cacheVersion: "2.0.0",
 	cacheList: [],
 	headers: {
 		"Referrer-Policy": "no-referrer",
