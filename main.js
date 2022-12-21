@@ -24,9 +24,10 @@ window.onerror = (message, src, lineno, colno, error) => {
 
 const location = new URL(window.location.href);
 const nsw = window.navigator.serviceWorker;
-const embedded = (window != window.top);
+const embedded = window != window.top;
+let proxy = nsw != null && location.hostname != "localhost";
 
-if (nsw != null && location.hostname != "localhost") {
+if (proxy) {
 	try {
 		await nsw.register("/sw.js", {
 			scope: "/",
@@ -35,7 +36,8 @@ if (nsw != null && location.hostname != "localhost") {
 		});
 		await nsw.ready;
 	} catch(err) {
-		console.warn(err);
+		console.error(err);
+		proxy = false;
 	}
 }
 
@@ -104,6 +106,13 @@ function updateContents(contents, container, noprev = false) {
 }
 
 /**
+ * @param {string} url 
+ */
+function proxyUrl(url) {
+	return proxy ? "uv.xht?o=" + encodeURIComponent(url) : url;
+}
+
+/**
  * @param {string | undefined} path 
  * @param {string | undefined} url 
  */
@@ -115,8 +124,8 @@ function createFrame(path, url) {
 	frame.setAttribute("loading", "lazy");
 	frame.setAttribute("allowfullscreen", "true");
 	frame.setAttribute("allow", "cross-origin-isolated");
-	frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups");
-	frame.setAttribute("src", new URL(path != null ? path : url, location.origin).href);
+	//frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups");
+	frame.setAttribute("src", path != null ? path : proxyUrl(url));
 	return frame;
 }
 

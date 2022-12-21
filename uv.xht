@@ -38,7 +38,6 @@
 	<body>
 		<div id="message">Loading...</div>
 		<script type="text/javascript" src="uv/uv.config.js"></script>
-		<script type="text/javascript" src="b64.js"></script>
 		<script type="text/javascript">
 "use strict";
 
@@ -54,23 +53,20 @@ if (open == null || open.length == 0) {
 	return;
 }
 
-if (nsw != null) {
-	try {
-		await nsw.register("/sw.js", {
-			scope: "/",
-			type: "classic",
-			updateViaCache: "none"
-		});
-		await nsw.ready;
-	} catch(err) {
-		console.error(err);
-		message.innerHTML = "Error: Failed to register service worker, see console logs for details.";
-		return;
-	}
+try {
+	await nsw.register("/sw.js", {
+		scope: "/",
+		type: "classic",
+		updateViaCache: "none"
+	});
+	await nsw.ready;
+} catch(err) {
+	message.innerHTML = "Error: Failed to register service worker.";
+	console.error(err);
+	return;
 }
 
-const url = new URL(Base64.atob(open));
-window.location.replace(location.origin + __uv$config.prefix + __uv$config.encodeUrl(url.href));
+window.location.replace(location.origin + __uv$config.prefix + __uv$config.encodeUrl(new URL(open).href));
 
 })();
 // ]]>
