@@ -10,10 +10,11 @@ Link to website: https://whitespider.gq
  - Includes additional tools (Unblocker and more)
  - Supports history hiding (in right-click menu, does not work for embed mirrors)
  - New games (or updates) every weekend
+ - Proxy for online games (might not work all the time)
 
 ## Mirror Links
 If the main link has been restricted, you can try using a mirror link. <br />
-Note: You can get more mirrors at https://sites.google.com/view/wsug-mirrors
+You can get more mirrors at https://sites.google.com/view/wsug-mirrors <br />
 
 ### Embedded Mirrors
 https://sites.google.com/view/whitespider <br />
@@ -29,8 +30,8 @@ https://whitespider.ga <br />
 https://whitespider.gq <br />
 https://whitespider.ml <br />
 https://whitespider.tk <br />
+https://ws.repl.ga <br />
 https://whitespidergq.github.io (Used for backup) <br />
-https://ws.repl.ga (New) <br />
 
 ## Hosting
 This website can only be hosted on the root directory of a domain (due to service workers and resource linkage), therefore GitHub page is not supported unless you use the `username.github.io` repository for this website.
