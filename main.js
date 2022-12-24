@@ -49,55 +49,45 @@ const userGameGrid = document.getElementById("user-game-grid");
 const contextMenu = document.getElementById("context-menu");
 
 /**
- * @param {string} text 
- */
-function encodeText(text) {
-	return text.replace(/[&"'\<\>]/g, (ch) => {
-		switch (ch) {
-			case "&":
-				return "&amp;";
-			case "'":
-				return "&#39;";
-			case '"':
-				return "&quot;";
-			case "<":
-				return "&lt;";
-			case ">":
-				return "&gt;";
-		}
-	});
-}
-
-/**
  * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents 
  * @param {HTMLElement} container 
  * @param {boolean} noprev 
  */
 function updateContents(contents, container, noprev = false) {
 	container.innerHTML = "";
+
 	for (let content of contents) {
-		// To be super safe, always escape illegal html characters in name
-		const displayName = encodeText(content.name);
+		const name = content.name;
+		const path = content.path;
+		const url = content.url;
 
 		const item = document.createElement("div");
 		item.className = "game-item";
-		
+
 		const preview = document.createElement("div");
 		preview.className = "game-preview";
 		item.appendChild(preview);
 		if (!noprev) {
-			preview.setAttribute("style", `background-image: url("./preview/${encodeURIComponent(content.name)}.jpg");`);
+			preview.setAttribute("style", `background-image: url("./preview/${encodeURIComponent(name)}.jpg");`);
 		}
 
 		const label = document.createElement("div");
 		label.className = "game-label";
-		label.innerHTML = displayName;
+		label.textContent = name;
 		item.appendChild(label);
 
-		item.onclick = item.oncontextmenu = (e) => {
+		item.onclick = () => {
+			const frame = createFrame(content.path, content.url);
+
+			if (document.documentElement.clientWidth < 1024)
+				// mobile phones
+				inNewTabOrWindow(frame);
+			else popup(frame, name);
+		};
+
+		item.oncontextmenu = (e) => {
 			e.preventDefault();
 			e.stopPropagation();
-
 			inNewTabOrWindow(createFrame(content.path, content.url));
 		};
 
@@ -152,7 +142,7 @@ function inNewTabOrWindow(elem, newWindow) {
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
 		<base href="${location.origin}"/>
-		<link rel="icon" type="image/x-icon" href="https://www.google.com/favicon.ico" />
+		<link rel="icon" type="image/x-icon" href="res/google.ico" />
 		<title>Google</title>
 		<style type="text/css">
 * {
@@ -247,51 +237,48 @@ searchBar.oninput = () => {
 };
 
 document.getElementById("game-submission-button").onclick = async () => {
-	let result = await form("", "Submit a game", [
-		{
-			label: "Name",
-			input: {
-				type: "text",
-				placeholder: "Game Name"
-			}
+	const result = await form("", "Submit a game", {
+		"Name": {
+			tagName: "input",
+			attributes: { type: "text", placeholder: "Game Name" }
 		},
-		{
-			label: "URL",
-			input: {
-				type: "text",
-				placeholder: "https://example.com/example"
-			}
+		"URL": {
+			tagName: "input",
+			attributes: { type: "text", placeholder: "https://example.com/example" }
 		}
-	]);
+	});
 
 	if (result == null)
-		return;
+		return; // canceled
 
-	let gameName = result[0].value;
-	let gameUrl = result[1].value;
+	const name = result["Name"].value;
+	const url = result["URL"].value;
 
-	if (gameName.length == 0) {
-		alert("Name cannot be empty.");
+	if (name.length == 0) {
+		alert("Name cannot be empty.", "Error");
 		return;
 	}
 
-	if (gameUrl.length == 0) {
-		alert("URL cannot be empty.");
+	if (url.length == 0) {
+		alert("URL cannot be empty.", "Error");
 		return;
 	}
 
 	try {
-		gameUrl = new URL(gameUrl).href;
+		const o = new URL(url);
+		if (o.protocol != "http:" && o.protocol != "https:") {
+			alert("Invalid URL protocol", "Error");
+			return;
+		}
 	} catch(e) {
-		alert("Invalid URL");
+		alert("Invalid URL", "Error");
 		return;
 	}
 
 	await TestGameDB.append({
-		name: gameName,
-		url: gameUrl
+		name: name,
+		url: url
 	});
-
 	window.location.reload();
 };
 
@@ -334,8 +321,9 @@ document.getElementById("clear-cache").onclick = async () => {
 	for (let i = 0; i < keys.length; i++)
 		await caches.delete(keys[i]);
 };
-document.getElementById("leave-without-history").onclick = () => {
-	window.location.replace(new URL("https://www.google.com/"));
+document.getElementById("settings").onclick = () => {
+
 };
+document.getElementById("debug-shell").onclick = inspect;
 
 export const status=[!1];export const locker={lock:()=>eval(`(()=>{console.log("%c\x57h\u0069t\x65S\x70i\u0064e\u0072.\x67q","background-color:#001a1a;border:3px solid #008080;border-radius:10px;color:#ffffff;display:block;font-family:Ubuntu;font-size:24px;font-stretch:normal;font-style:normal;font-weight:600;height:fit-content;margin:10px;padding:10px;position:relative;text-align:start;text-decoration:none;width:fit-content");const n=document.documentElement.outerHTML;if(document["\x74itle"]==="W\x68\u0069t\x65S\x70\x69\u0064e\u0072"&&n.includes("r\u0075ochenj\x69a")&&n.includes("\x77\u0068\x69t\x65\x73\u0070id\u0065r.\u0067q")){console.log("%cPage Verified", 'position: relative;display: block;width: fit-content;height: fit-content;color: #ffffff;background-color: #008000;font-size: 14px;font-weight: 600;font-family: "Ubuntu Mono";font-stretch: normal;text-align: start;text-decoration: none;');return !0;}window["_$$0Oc"]();return !1;})();`)};locker.lock()&&(loadDefaultContent(),document.getElementById("loading").style.display="none",document.getElementById("main").style.display="block",status[0]=!0);
