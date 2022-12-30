@@ -17,6 +17,9 @@ limitations under the License.
 import contents from "./contents.js";
 import TestGameDB from "./testgamedb.js";
 
+window.stop();
+await new Promise(resolve => setTimeout(resolve, 100));
+
 // default error handler
 window.onerror = (message, src, lineno, colno, error) => {
 	alert(`Error at "${src}", line ${lineno}:${colno}: \n${error}`, "Error");
