@@ -64,3 +64,11 @@ a {
 	cursor: pointer;
 	text-decoration: underline;
 }
+
+#-_0 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px;
+}
