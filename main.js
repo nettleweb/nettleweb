@@ -77,7 +77,7 @@ function updateContents(contents, container, noprev = false) {
 		item.appendChild(label);
 
 		item.onclick = () => {
-			const frame = createFrame(content.path, content.url);
+			const frame = createFrame(path, url);
 
 			if (document.documentElement.clientWidth < 1024)
 				// mobile phones
@@ -88,7 +88,7 @@ function updateContents(contents, container, noprev = false) {
 		item.oncontextmenu = (e) => {
 			e.preventDefault();
 			e.stopPropagation();
-			inNewTabOrWindow(createFrame(content.path, content.url));
+			inNewTabOrWindow(createFrame(path, url));
 		};
 
 		container.appendChild(item);
@@ -282,22 +282,14 @@ document.getElementById("game-submission-button").onclick = async () => {
 	window.location.reload();
 };
 
-/**
- * @param {string} url 
- */
-function dynscr(url) {
-	const frame = createFrame(url);
-	window.popup(frame);
-}
-
 document.getElementById("ebutuoy").onclick = () => {
-	dynscr("ebutuoy/");
+	popup("ebutuoy/", "Youtube Unblocked");
 };
 document.getElementById("vmlinux").onclick = () => {
-	dynscr("vmlinux/");
+	popup("vmlinux/", "VMLinux");
 };
 document.getElementById("private-search").onclick = () => {
-	dynscr("google-search.html?key=6505c81d738124627");
+	popup("google-search.html", "Private Search");
 };
 
 document.body.oncontextmenu = (e) => {

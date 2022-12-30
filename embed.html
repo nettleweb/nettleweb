@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<!--
 ⁠$$\      $$\ $$\       $$\   $$\                $$$$$$\            $$\       $$\                                             
 ⁠$$ | $\  $$ |$$ |      \__|  $$ |              $$  __$$\           \__|      $$ |                                            
@@ -19,7 +19,7 @@
 		<meta http-equiv="Referrer-Policy" content="no-referrer" />
 		<meta name="referrer" content="no-referrer" />
 		<meta name="robots" content="noindex,nofollow" />
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<base href="/" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="lib/jsdos/js-dos.css" />
@@ -62,33 +62,30 @@ embed, ruffle-embed, ruffle-player {
 // <![CDATA[
 (() => {
 const location = new URL(window.location.href);
-emulators.pathPrefix = "/lib/jsdos/";
-
-let src = location.searchParams.get("src");
-let type = location.searchParams.get("type");
-
+const src = location.searchParams.get("src");
 if (src == null || src.length == 0) {
 	console.warn("No embed source specified");
 	return;
 }
 
-switch (type) {
+switch (location.searchParams.get("type")) {
 	case "flash": {
-		let ruffle = window.RufflePlayer.newest();
-		let player = ruffle.createPlayer();
+		const ruffle = window.RufflePlayer.newest();
+		const player = ruffle.createPlayer();
 		document.body.appendChild(player);
 		player.load(src);
 		break;
 	}
 	case "jsdos": {
-		let frame = document.createElement("div");
+		const frame = document.createElement("div");
 		frame.id = "frame";
 		document.body.appendChild(frame);
+		emulators.pathPrefix = "/lib/jsdos/";
 		Dos(frame).run(src);
 		break;
 	}
 	default: {
-		let frame = document.createElement("embed");
+		const frame = document.createElement("embed");
 		frame.type = "text/plain";
 		frame.width = "1024";
 		frame.height = "768";

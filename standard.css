@@ -19,20 +19,20 @@
 	border-width: 1px;
 	border-color: #d0d0d0;
 	border-radius: 5px;
-	background-color: #ffffff;
+	background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: #d0d0d0;
 	border-radius: 5px;
+	background: #d0d0d0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background-color: #c0c0c0;
+	background: #c0c0c0;
 }
 
 ::-webkit-scrollbar-thumb:active {
-	background-color: #a0a0a0;
+	background: #a0a0a0;
 }
 
 body {
@@ -50,17 +50,17 @@ body {
 	background-color: #5a97f3;
 }
 
-input, select, textarea {
+input, select, option, textarea, button {
 	font-size: inherit;
 	font-family: inherit;
 	font-weight: inherit;
 	font-style: inherit;
 	color: inherit;
-	background-color: rgba(0, 0, 0, 0);
+	background: rgba(0, 0, 0, 0);
 }
 
 a {
 	color: unset;
-	cursor: unset;
-	text-decoration: unset;
+	cursor: pointer;
+	text-decoration: underline;
 }
