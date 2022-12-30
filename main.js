@@ -42,21 +42,29 @@ if (proxy) {
 }
 
 const searchBar = document.getElementById("search-bar");
-const html5GameGrid = document.getElementById("html5-game-grid");
-const dosGameGrid = document.getElementById("dos-game-grid");
-const flashGameGrid = document.getElementById("flash-game-grid");
-const userGameGrid = document.getElementById("user-game-grid");
 const contextMenu = document.getElementById("context-menu");
+
+const html5GameGrid = document.getElementById("html5-game-grid");
+const flashGameGrid = document.getElementById("flash-game-grid");
+const dosGameGrid = document.getElementById("dos-game-grid");
+const userGameGrid = document.getElementById("user-game-grid");
+
+const html5GameCount = document.getElementById("html5-game-count");
+const flashGameCount = document.getElementById("flash-game-count");
+const dosGameCount = document.getElementById("dos-game-count");
+const userGameCount = document.getElementById("user-game-count");
 
 /**
  * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents 
- * @param {HTMLElement} container 
- * @param {boolean} noprev 
+ * @param {HTMLElement} grid 
+ * @param {HTMLElement} gridCounter 
+ * @param {boolean | undefined} noPreview 
  */
-function updateContents(contents, container, noprev = false) {
-	container.innerHTML = "";
+function updateContents(contents, grid, gridCounter, noPreview) {
+	grid.innerHTML = "";
+	gridCounter.innerHTML = contents.length;
 
-	for (let content of contents) {
+	for (const content of contents) {
 		const name = content.name;
 		const path = content.path;
 		const url = content.url;
@@ -66,10 +74,10 @@ function updateContents(contents, container, noprev = false) {
 
 		const preview = document.createElement("div");
 		preview.className = "game-preview";
-		item.appendChild(preview);
-		if (!noprev) {
+		if (!noPreview) {
 			preview.setAttribute("style", `background-image: url("./preview/${encodeURIComponent(name)}.jpg");`);
 		}
+		item.appendChild(preview);
 
 		const label = document.createElement("div");
 		label.className = "game-label";
@@ -91,7 +99,7 @@ function updateContents(contents, container, noprev = false) {
 			inNewTabOrWindow(createFrame(path, url));
 		};
 
-		container.appendChild(item);
+		grid.appendChild(item);
 	}
 }
 
@@ -192,28 +200,25 @@ window.onbeforeunload = window.onunload = (e) => {
 
 /**
  * @param {{readonly name: string; readonly path?: string; readonly url?: string; readonly preview?: string}[]} contents 
- * @param {string} lowerCaseInput 
+ * @param {string} input 
  */
-function match(contents, lowerCaseInput) {
-	if (lowerCaseInput.length == 0)
-		return contents;
-
-	let r = [];
-	for (let c of contents) {
-		if (c.name.toLowerCase().includes(lowerCaseInput))
-			r.push(c);
+function match(contents, input) {
+	const list = [];
+	for (const content of contents) {
+		if (content.name.toLowerCase().includes(input))
+			list.push(content);
 	}
-	return r;
+	return list;
 }
 
 function loadDefaultContent() {
-	updateContents(contents.html5Games, html5GameGrid);
-	updateContents(contents.dosGames, dosGameGrid);
-	updateContents(contents.flashGames, flashGameGrid);
+	updateContents(contents.html5Games, html5GameGrid, html5GameCount);
+	updateContents(contents.flashGames, flashGameGrid, flashGameCount);
+	updateContents(contents.dosGames, dosGameGrid, dosGameCount);
 }
 
 TestGameDB.load().then(() => {
-	updateContents(TestGameDB.data, userGameGrid, true);
+	updateContents(TestGameDB.data, userGameGrid, userGameCount, true);
 });
 
 for (let item of document.getElementsByClassName("expand")) {
@@ -231,9 +236,14 @@ for (let item of document.getElementsByClassName("expand")) {
 
 searchBar.oninput = () => {
 	const value = searchBar.value.toLowerCase();
-	updateContents(match(contents.html5Games, value), html5GameGrid);
-	updateContents(match(contents.dosGames, value), dosGameGrid);
-	updateContents(match(contents.flashGames, value), flashGameGrid);
+	if (value.length == 0) {
+		loadDefaultContent();
+		return;
+	}	
+
+	updateContents(match(contents.html5Games, value), html5GameGrid, html5GameCount);
+	updateContents(match(contents.flashGames, value), flashGameGrid, flashGameCount);
+	updateContents(match(contents.dosGames, value), dosGameGrid, dosGameCount);
 };
 
 document.getElementById("game-submission-button").onclick = async () => {

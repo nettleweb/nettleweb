@@ -207,14 +207,6 @@
 	line-height: 25px;
 }
 
-#status-bar {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 30px auto;
-}
-
 .section {
 	position: relative;
 	display: block;
@@ -387,9 +379,57 @@
 	display: block;
 	width: 100%;
 	height: fit-content;
-	margin: 15px 0px;
+	margin: 100px 0px 15px;
 	color: #808080;
-	line-height: 18px;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 20px;
+}
+
+#links {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-around;
+}
+
+#links>* {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+}
+
+#links .title {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+#links a {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	font-size: 12px;
+	line-height: 20px;
+	text-decoration: none;
+}
+
+#links a:hover {
+	text-decoration: underline;
+}
+
+#copyright {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
 	text-align: center;
 }
 		</style>
@@ -412,26 +452,19 @@
 				<div id="main">
 					<div id="large-logo"></div>
 					<div id="description">Open-source adless HTML5, DOS, Flash games unblocked, with updates every weekend</div>
-					<div id="status-bar">
-						<img src="https://img.shields.io/github/manifest-json/v/chromehackteam/whitespider?label=Version" alt="Version" />
-						<img src="https://img.shields.io/github/last-commit/chromehackteam/whitespider?label=Last%20Update" alt="Last Update" />
-						<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener" title="Join Discord">
-							
-						</a>
-					</div>
 					<input id="search-bar" type="text" placeholder="Search Games" />
 					<div class="section">
-						<div class="title">HTML5 Games</div>
+						<div class="title">HTML5 Games (<span id="html5-game-count"></span>)</div>
 						<div class="expand button">Show more</div>
 						<div id="html5-game-grid" class="game-grid"></div>
 					</div>
 					<div class="section">
-						<div class="title">Flash Games</div>
+						<div class="title">Flash Games (<span id="flash-game-count"></span>)</div>
 						<div class="expand button">Show more</div>
 						<div id="flash-game-grid" class="game-grid"></div>
 					</div>
 					<div class="section">
-						<div class="title">DOS Games</div>
+						<div class="title">DOS Games (<span id="dos-game-count"></span>)</div>
 						<div class="expand button">Show more</div>
 						<div id="dos-game-grid" class="game-grid"></div>
 					</div>
@@ -461,15 +494,52 @@
 						</div>
 					</div>
 					<div class="section">
-						<div class="title">Unverified Games</div>
+						<div class="title">Unverified Games (<span id="user-game-count"></span>)</div>
 						<div class="expand button">Show more</div>
 						<div class="text">The games listed here were added by users with the button below, which might have certain issues. You can report these issues with the feedback button in the header.</div>
 						<div id="game-submission-button" class="button">Submit a game now</div>
 						<div id="user-game-grid" class="game-grid"></div>
 					</div>
 					<div id="footer">
-						<div>©2022 ChromeHack Team, <a href="https://www.chromehack.com" target="_blank" rel="noopener">ChromeHack.com</a></div>
-						<div>We are working hard to improve your user experience.</div>
+						<div id="links">
+							<div>
+								<div class="title">Alternative Links</div>
+								<a href="https://whitespider.cf" target="_blank" rel="noopener">https://whitespider.cf</a>
+								<a href="https://whitespider.ml" target="_blank" rel="noopener">https://whitespider.ml</a>
+								<a href="https://whitespider.ga" target="_blank" rel="noopener">https://whitespider.ga</a>
+								<a href="https://whitespider.gq" target="_blank" rel="noopener">https://whitespider.gq</a>
+								<a href="https://whitespider.tk" target="_blank" rel="noopener">https://whitespider.tk</a>
+								<br />
+								<div>You can get more mirror links at<br /></div>
+								<a href="https://mirrors.whitespider.gq">mirrors.whitespider.gq</a>
+							</div>
+							<div>
+								<div class="title">Contribute</div>
+								<a href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a>
+								<a href="https://github.com/chromehackteam/whitespider" target="_blank" rel="noopener">View source</a>
+								<a href="https://github.com/chromehackteam/whitespider/issues/new?asignees=&labels=bug&title=" target="_blank" rel="noopener">Report a bug</a>
+								<a href="bitcoin:1FJ6eoujTZCCjnorwyJgXWqnvbKosNuSgN?amount=0.0003&message=Donate" target="_blank" rel="noopener">Donate</a>
+							</div>
+							<div>
+								<div class="title">Social</div>
+								<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">Discord</a>
+								<a href="https://www.youtube.com/@wsug" target="_blank" rel="noopener">YouTube</a>
+								<a href="https://github.com/whitespidergq/" target="_blank" rel="noopener">GitHub (Profile 1)</a>
+								<a href="https://github.com/fuckyougoogle/" target="_blank" rel="noopener">GitHub (Profile 2)</a>
+							</div>
+							<div>
+								<div class="title">Related Links</div>
+								<a href="https://googlecom.gq" target="_blank" rel="noopener">WhiteSpider Unblocker</a>
+							</div>
+						</div>
+						<div id="copyright">
+							<div>
+								<img src="https://img.shields.io/github/manifest-json/v/chromehackteam/whitespider?label=Version" alt="Version" />
+								<img src="https://img.shields.io/github/last-commit/chromehackteam/whitespider?label=Last%20Update" alt="Last Update" />
+							</div>
+							<div>©2022 ChromeHack Team, <a href="https://www.chromehack.com" target="_blank" rel="noopener">ChromeHack.com</a></div>
+							<div>We are working hard to improve your user experience.</div>
+						</div>
 					</div>
 				</div>
 			</div>
