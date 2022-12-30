@@ -1014,7 +1014,7 @@ const contents = {
 		},
 		{
 			name: "Cookie Clicker",
-			url: "https://shsgames.github.io/built-games/cookieclicker/index.html"
+			url: "html5-games/cookie-clicker/"
 		},
 		{
 			name: "Coloring Mandalas",
