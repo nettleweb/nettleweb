@@ -17,9 +17,6 @@ limitations under the License.
 import contents from "./contents.js";
 import TestGameDB from "./testgamedb.js";
 
-window.stop();
-await new Promise(resolve => setTimeout(resolve, 100));
-
 // default error handler
 window.onerror = (message, src, lineno, colno, error) => {
 	alert(`Error at "${src}", line ${lineno}:${colno}: \n${error}`, "Error");
@@ -125,7 +122,6 @@ function createFrame(path, url) {
 	frame.setAttribute("loading", "lazy");
 	frame.setAttribute("allowfullscreen", "true");
 	frame.setAttribute("allow", "cross-origin-isolated");
-	//frame.setAttribute("sandbox", "allow-scripts allow-same-origin allow-pointer-lock allow-forms allow-popups");
 	frame.setAttribute("src", path != null ? path : proxyUrl(url));
 	return frame;
 }
