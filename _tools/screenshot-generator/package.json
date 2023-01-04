@@ -1,0 +1,7 @@
+{
+	"main": "main.js",
+	"type": "module",
+	"dependencies": {
+		"puppeteer": "^19.4.1"
+	}
+}

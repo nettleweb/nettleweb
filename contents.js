@@ -981,6 +981,10 @@ const contents = {
 			path: "html5-games/9007199254740992/"
 		},
 		{
+			name: "Alien Pyramid Solitaire",
+			url: "https://cdn.htmlgames.com/AlienPyramidSolitaire/"
+		},
+		{
 			name: "All Fives Domino",
 			url: "https://cdn.htmlgames.com/AllFivesDomino/"
 		},
@@ -995,6 +999,10 @@ const contents = {
 		{
 			name: "Ball Fall 3D",
 			url: "https://storage.y8.com/y8-studio/unity_webgl/y8games/BallFall3D-2022-b4/index.html"
+		},
+		{
+			name: "Bingo",
+			url: "https://cdn.htmlgames.com/Bingo/"
 		},
 		{
 			name: "Bricks Breaker",
@@ -1037,6 +1045,10 @@ const contents = {
 			url: "https://embed.gamedistribution.com/?url=https://app-151508.games.s3.yandex.net/151508/jvxf9j9k2sdt71knpwa2f6azsndo6nrw/index.html"
 		},
 		{
+			name: "Dark Mahjong Connect",
+			url: "https://cdn.htmlgames.com/DarkMahjongConnect/"
+		},
+		{
 			name: "Death Worm",
 			url: "https://embed.gamedistribution.com/?url=https://app-165865.games.s3.yandex.net/165865/g5i92zlftj709k08ejk195g6vimi7ezc/index.html"
 		},
@@ -1059,6 +1071,10 @@ const contents = {
 		{
 			name: "Dunk Balls",
 			url: "https://cdn.htmlgames.com/DunkBalls/"
+		},
+		{
+			name: "Egypt Runes",
+			url: "https://cdn.htmlgames.com/EgyptRunes/"
 		},
 		{
 			name: "ev.io",
@@ -1097,8 +1113,16 @@ const contents = {
 			path: "html5-games/hextris/"
 		},
 		{
+			name: "Hex Connect",
+			url: "https://cdn.htmlgames.com/HexConnect/"
+		},
+		{
 			name: "Hidden Forest",
 			url: "https://cdn.htmlgames.com/HiddenForest/"
+		},
+		{
+			name: "House of Cards",
+			url: "https://cdn.htmlgames.com/HouseOfCards/"
 		},
 		{
 			name: "Jetpack Joyride",
@@ -1115,6 +1139,10 @@ const contents = {
 		{
 			name: "Ludo",
 			url: "https://cdn.htmlgames.com/Ludo/"
+		},
+		{
+			name: "Ludo Dash",
+			url: "https://zv1y2i8p.play.gamezop.com/g/SJRX12TXcRH"
 		},
 		{
 			name: "Mahjong Triple Dimensions",
@@ -1153,6 +1181,10 @@ const contents = {
 			url: "https://storage.y8.com/y8-studio/unity/joll/papergame/paper_battle_v20/index.html"
 		},
 		{
+			name: "Pool Master",
+			url: "https://zv1y2i8p.play.gamezop.com/g/hgempP8Sc"
+		},
+		{
 			name: "powerline.io",
 			url: "https://powerline.io"
 		},
@@ -1165,12 +1197,20 @@ const contents = {
 			url: "https://ubg100.github.io/games/run3"
 		},
 		{
+			name: "Scary Bubbles",
+			url: "https://cdn.htmlgames.com/ScaryBubbles/"
+		},
+		{
 			name: "Shadow Fighters",
 			url: "https://embed.gamedistribution.com/?url=https://html5.gamedistribution.com/49cb67eea34644a1afafea2970eaead1/"
 		},
 		{
 			name: "Shell Shockers",
 			url: "https://shellshock.io/"
+		},
+		{
+			name: "Ski Slalom",
+			url: "https://cdn.htmlgames.com/SkiSlalom/"
 		},
 		{
 			name: "Skydom",
@@ -1219,6 +1259,10 @@ const contents = {
 		{
 			name: "Temple Run 2",
 			path: "html5-games/temple-run-2/"
+		},
+		{
+			name: "Tic Tac Toe",
+			url: "https://zv1y2i8p.play.gamezop.com/g/H1WmafkP9JQ"
 		},
 		{
 			name: "Tetris",
