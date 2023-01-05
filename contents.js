@@ -363,6 +363,10 @@ const contents = {
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fchampion-archer.swf"
 		},
 		{
+			name: "Chasm",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Fchasm.swf"
+		},
+		{
 			name: "Choose Your Weapon",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Fchoose-your-weapon.swf"
 		},
@@ -493,6 +497,10 @@ const contents = {
 		{
 			name: "Falldown 2",
 			path: "embed.html?type=flash&src=%2Fflash-games%2Ffalldown2.swf"
+		},
+		{
+			name: "Family Crisis",
+			path: "embed.html?type=flash&src=%2Fflash-games%2Ffamily-crisis.swf"
 		},
 		{
 			name: "Fancy Pants Adventure",
