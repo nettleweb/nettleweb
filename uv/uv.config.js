@@ -1,63 +1,17 @@
 "use strict";
 
 (() => {
+	const encode=o=>{let e=Array.from(o).map(((o,e)=>e%2?String.fromCharCode(127^o.charCodeAt(0)):o)).join("");return encodeURIComponent(e)},decode=o=>{let[e,...r]=o.split("?");return e=decodeURIComponent(e),Array.from(e).map(((o,e)=>e%2?String.fromCodePoint(127^o.charCodeAt(0)):o)).join("")+(r.length?"?"+r.join("?"):"")};
 
-function Coder() {
-	/**
-	 * @param {string | URL} url 
-	 */
-	function validateUrl(url) {
-		if (url instanceof URL) {
-			return url.href;
-		}
-
-		try {
-			return new URL(url).href;
-		} catch(err) {
-			throw TypeError("Invalid URL: " + url);
-		}
-	}
-
-	/**
-	 * @param {string | URL} url 
-	 */
-	this.encode = (url) => {
-		url = validateUrl(url);
-		
-		let str = Array.from(url).map((ch, i) => {
-			return i % 2 ? String.fromCharCode(ch.charCodeAt(0) ^ 0x7f) : ch;
-		}).join("");
-
-		return encodeURIComponent(str);
+	self.__uv$config = {
+		prefix: "/g0/",
+		bare: "https://chromehack.com/bare/",
+		encodeUrl: encode,
+		decodeUrl: decode,
+		bundle: "/uv/uv.bundle.js",
+		client: "/uv/uv.client.js",
+		config: "/uv/uv.config.js",
+		handler: "/uv/uv.handler.js",
+		sw: "/uv/uv.sw.js"
 	};
-
-	/**
-	 * @param {string} url 
-	 */
-	this.decode = (url) => {
-		let [ input, ...search ] = url.split('?');
-		input = decodeURIComponent(input);
-
-		let str = Array.from(input).map((ch, i) => {
-			return i % 2 ? String.fromCodePoint(ch.charCodeAt(0) ^ 0x7f) : ch;
-		}).join("");
-
-		return str + (search.length ? '?' + search.join('?') : '');
-	};
-}
-
-const coder = new Coder();
-
-self.__uv$config = {
-	prefix: "/O0O000O/",
-	bare: "https://bare.chromehack.com/bare/",
-	encodeUrl: coder.encode,
-	decodeUrl: coder.decode,
-	bundle: "/uv/uv.bundle.js",
-	client: "/uv/uv.client.js",
-	config: "/uv/uv.config.js",
-	handler: "/uv/uv.handler.js",
-	sw: "/uv/uv.sw.js"
-};
-
 })();
