@@ -25,10 +25,9 @@
 * {
 	margin: 0px;
 	padding: 0px;
-}
-
-*:hover, *:active {
+	font-smooth: never;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-font-smoothing: none;
 }
 
 ::-webkit-scrollbar {
@@ -64,12 +63,12 @@ body {
 	height: 100%;
 	overflow: hidden;
 	font-size: 14px;
-	font-family: "Ubuntu Condensed";
+	font-family: "Ubuntu";
 	font-weight: 500;
 	font-style: normal;
 	color: #323232;
-	accent-color: #5a97f3;
-	background-color: #5a97f3;
+	accent-color: #005a5a;
+	background-color: #ffffff;
 }
 
 input, select, option, textarea, button {
@@ -77,20 +76,15 @@ input, select, option, textarea, button {
 	font-family: inherit;
 	font-weight: inherit;
 	font-style: inherit;
+	font-stretch: inherit;
+	font-variant: inherit;
 	color: inherit;
 	background: rgba(0, 0, 0, 0);
+	box-sizing: content-box;
 }
 
 a {
 	color: unset;
 	cursor: pointer;
 	text-decoration: underline;
-}
-
-#-_0 {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 10px;
 }
