@@ -61,7 +61,6 @@ body {
 	display: block;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
 	font-size: 14px;
 	font-family: "Ubuntu";
 	font-weight: 500;
@@ -87,4 +86,96 @@ a {
 	color: unset;
 	cursor: pointer;
 	text-decoration: underline;
+}
+
+#logo {
+	position: relative;
+	display: block;
+	width: 512px;
+	height: 128px;
+	margin: 120px auto 20px;
+	background-image: url("res/logo.svg");
+	background-position: -10px -10px;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+noscript>div {
+	position: relative;
+	display: block;
+	width: 512px;
+	height: fit-content;
+	padding: 20px;
+	margin: 20px auto;
+	border: 3px solid #ff0000;
+}
+
+#nav-bar {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 20px auto 10px;
+}
+
+#nav-bar>button {
+	position: relative;
+	display: inline-block;
+	width: 80px;
+	height: 20px;
+	padding: 5px 0px 2px;
+	color: #808080;
+	font-size: 14px;
+	text-align: center;
+	line-height: 20px;
+	letter-spacing: 0px;
+	border: none;
+	border-bottom: 3px solid rgba(0, 0, 0, 0);
+}
+
+#nav-bar>button:hover {
+	background: #f0f0f0;
+}
+
+#nav-bar>button:active {
+	background: #e0e0e0;
+}
+
+#nav-bar>button[current] {
+	color: #005a5a;
+	border-bottom: 3px solid #005a5a;
+}
+
+#body {
+	position: relative;
+	display: block;
+	width: 768px;
+	height: fit-content;
+	padding: 20px;
+	margin: 10px auto 20px;
+}
+
+#footer {
+	position: relative;
+	display: flex;
+	width: 768px;
+	height: fit-content;
+	margin: 20px auto;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#footer>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	color: #808080;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: center;
+	line-height: 20px;
+	letter-spacing: 0px;
 }
