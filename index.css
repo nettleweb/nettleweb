@@ -1,4 +1,26 @@
-@import url("res/ubuntu/ubuntu.css");
+@font-face {
+	font-family: "Ubuntu";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("res/ubuntu.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Ubuntu Condensed";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("res/ubuntu-condensed.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Ubuntu Mono";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("res/ubuntu-mono.woff2") format("woff2");
+}
 
 * {
 	margin: 0px;

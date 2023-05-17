@@ -1,35 +1,35 @@
 {
-	"manifest_version": 2,
-	"name": "WhiteSpider",
-	"short_name": "WhiteSpider",
-	"description": "Unblocked Games",
-	"version": "2.1.2",
+	"background_color": "#ffffff",
+	"description": "WhiteSpider GameHub - Free unblocked games",
 	"display": "fullscreen",
-	"orientation": "any",
-	"background_color": "#5a97f3",
-	"theme_color": "#5a97f3",
-	"start_url": "/",
-	"scope": "/",
 	"icons": [
 		{
-			"src": "res/logo64.png",
 			"sizes": "64x64",
+			"src": "res/logo64.png",
 			"type": "image/png"
 		},
 		{
-			"src": "res/logo128.png",
 			"sizes": "128x128",
+			"src": "res/logo128.png",
 			"type": "image/png"
 		},
 		{
-			"src": "res/logo256.png",
 			"sizes": "256x256",
+			"src": "res/logo256.png",
 			"type": "image/png"
 		},
 		{
-			"src": "res/logo512.png",
 			"sizes": "512x512",
+			"src": "res/logo512.png",
 			"type": "image/png"
 		}
-	]
+	],
+	"manifest_version": 2,
+	"name": "Wh\u0456teSp\u0456der",
+	"orientation": "any",
+	"scope": "/",
+	"short_name": "WhiteSpider",
+	"start_url": "/",
+	"theme_color": "#ffffff",
+	"version": "0.0.1"
 }

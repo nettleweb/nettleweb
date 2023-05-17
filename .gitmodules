@@ -1,6 +1,0 @@
-[submodule "ebutuoy"]
-	path = ebutuoy
-	url = https://github.com/ruochenjia/ebutuoy.git
-[submodule "vmlinux"]
-	path = vmlinux
-	url = https://github.com/ruochenjia/vmlinux.git
