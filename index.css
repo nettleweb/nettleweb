@@ -155,6 +155,35 @@ noscript>div {
 	margin: 10px auto 20px;
 }
 
+#body>div {
+	position: relative;
+	display: none;
+	width: 100%;
+	height: fit-content;
+}
+
+#body>div[current] {
+	display: block;
+}
+
+#home-page>p {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+	line-height: 18px;
+}
+
+#home-page>ol {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+	padding-left: 15px;
+}
+
 #footer {
 	position: relative;
 	display: flex;
