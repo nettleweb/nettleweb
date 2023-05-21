@@ -100,7 +100,7 @@ a {
 	background-repeat: no-repeat;
 }
 
-noscript>div {
+#error, noscript>div {
 	position: relative;
 	display: block;
 	width: 512px;
@@ -108,6 +108,10 @@ noscript>div {
 	padding: 20px;
 	margin: 20px auto;
 	border: 3px solid #ff0000;
+}
+
+#error {
+	display: none;
 }
 
 #nav-bar {
@@ -184,12 +188,89 @@ noscript>div {
 	padding-left: 15px;
 }
 
+#games-page>input {
+	position: relative;
+	display: block;
+	width: 300px;
+	height: 20px;
+	margin: 10px auto;
+	padding: 5px 10px;
+	outline: none;
+	line-height: 20px;
+	letter-spacing: 0px;
+	border: 1px solid #808080;
+	border-radius: 15px;
+}
+
+#games-page>input:focus {
+	border-color: #005a5a;
+}
+
+#games-page>div {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: fit-content;
+	flex-direction: row;
+	flex-wrap: wrap;
+	row-gap: 10px;
+	column-gap: 10px;
+}
+
+#games-page>div>div {
+	position: relative;
+	display: block;
+	width: 140px;
+	height: 140px;
+	flex: 0 0 140px;
+	cursor: pointer;
+	box-shadow: 2px 5px 5px #808080;
+	border-radius: 15px;
+	background-color: #f0f0f0;
+	/* background-image: url("preview.jpg"); */
+	background-position: 0px 0px;
+	background-size: 140px 105px;
+	background-repeat: no-repeat;
+}
+
+#games-page>div>div>label {
+	position: relative;
+	display: block;
+	width: 45px;
+	height: 16px;
+	margin: 5px 2px 2px 88px;
+	padding: 2px 5px;
+	color: #ffffff;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16px;
+	/* background: #ff0000; */
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+
+#games-page>div>div>div {
+	position: absolute;
+	display: block;
+	width: 130px;
+	height: 25px;
+	padding: 5px;
+	top: 105px;
+	color: #606060;
+	font-size: 12px;
+	text-align: center;
+	line-height: 12px;
+	letter-spacing: 0px;
+}
+
 #footer {
 	position: relative;
 	display: flex;
 	width: 768px;
 	height: fit-content;
 	margin: 20px auto;
+	padding: 0px 5px 40px;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	align-items: center;

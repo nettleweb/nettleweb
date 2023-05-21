@@ -20,6 +20,7 @@
 	<body>
 		<div id="logo"></div>
 		<noscript><div>WARNING: This page cannot function properly unless you enable JavaScript.</div></noscript>
+		<div id="error"></div>
 		<div id="nav-bar">
 			<button type="button" id="home" current="true">Home</button>
 			<button type="button" id="games">Games</button>
@@ -59,10 +60,25 @@
 				<p><strong>Important Notice: You should NEVER trust links from non-official sources, as ads and
 					malicious code can be injected, putting you into security risks.</strong></p>
 			</div>
-			<div id="games-page"></div>
-			<div id="unblocker-page"></div>
-			<div id="apps-page"></div>
-			<div id="settings-page"></div>
+			<div id="games-page">
+				<input id="game-search" type="text" placeholder="Search Games" />
+				<div id="game-container">
+					<div>
+						<div>Example</div>
+						<label>Flash</label>
+						<label>New</label>
+					</div>
+				</div>
+			</div>
+			<div id="unblocker-page">
+				<h2>Coming soon :)</h2>
+			</div>
+			<div id="apps-page">
+				<h2>Coming soon :)</h2>
+			</div>
+			<div id="settings-page">
+				<h2>Coming soon :)</h2>
+			</div>
 		</div>
 		<div id="footer">
 			<div>
@@ -70,9 +86,9 @@
 				<div>We are working hard to improve your user experience.</div>
 			</div>
 			<div>
-				<a href="https://github.com/chromehackteam/whitespider" target="_blank" rel="noopener"><img src="res/github.svg" width="32" height="32" /></a>
-				<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener"><img src="res/discord.svg" width="32" height="32" /></a>
-				<a href="https://www.youtube.com/@wsug" target="_blank" rel="noopener"><img src="res/youtube.svg" width="32" height="32" /></a>
+				<a href="https://github.com/chromehackteam/whitespider" target="_blank" rel="noopener"><img src="res/github.svg" width="32" height="32" draggable="false" title="GitHub" /></a>
+				<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener"><img src="res/discord.svg" width="32" height="32" draggable="false" title="Discord" /></a>
+				<a href="https://www.youtube.com/@wsug" target="_blank" rel="noopener"><img src="res/youtube.svg" width="32" height="32" draggable="false" title="YouTube" /></a>
 			</div>
 			<div>
 				<a href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a><br />
@@ -80,5 +96,7 @@
 				<a href="https://github.com/chromehackteam/whitespider/issues/new?asignees=&amp;labels=bug&amp;title=" target="_blank" rel="noopener">Report a bug</a>
 			</div>
 		</div>
+		<script type="text/javascript" src="lib/webalert.js"></script>
+		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
