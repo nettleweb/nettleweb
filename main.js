@@ -1,16 +1,15 @@
 "use strict"; (async () => {
 	// default error handler
-	window.onerror = (e, source, lineno, colno, error) => {
+	window.onerror = (e, source, lineno, colno, err) => {
 		let msg = "Unhandled error at " + (source || "unknown source ");
 		if (lineno != null)
 			msg += lineno;
 		if (colno != null)
 			msg += ":" + colno;
+		if (err != null)
+			msg += "\n\n" + err;
 
-		if (error != null)
-			msg += "\n\n" + error;
-
-		errorMsg.textContent = msg;
+		error(msg);
 	};
 
 	// wait document loading to fully complete
@@ -39,6 +38,11 @@
 		};
 	}
 
+	// app launch listeners
+	document.getElementById("ytunbl").onclick = () => inNewWindow(createFrame("/apps/ytunbl/"));
+	document.getElementById("vmlinux").onclick = () => inNewWindow(createFrame("/apps/vmlinux/"));
+	document.getElementById("privsearch").onclick = () => inNewWindow(createFrame("/apps/privsearch/"));
+
 	// game search bar
 	gamesSearch.oninput = () => {
 		const value = gamesSearch.value.toLowerCase();
@@ -57,9 +61,26 @@
 	};
 
 	/**
+	 * @param {string | null} message 
+	 */
+	function error(message) {
+		if (message != null) {
+			errorMsg.style.display = "block";
+			errorMsg.textContent = message;
+		} else errorMsg.style.display = "none";
+	}
+
+	/**
 	 * @param {GameInfo} game 
 	 */
-	function createFrame(game) {
+	function createGameFrame(game) {
+		return createFrame("player.xht?type=" + game.type + "&url=" + encodeURIComponent(game.url));
+	}
+
+	/**
+	 * @param {string} url 
+	 */
+	function createFrame(url) {
 		const frame = document.createElement("embed");
 		frame.setAttribute("type", "text/plain");
 		frame.setAttribute("width", "800");
@@ -67,7 +88,7 @@
 		frame.setAttribute("loading", "lazy");
 		frame.setAttribute("allow", "cross-origin-isolated");
 		frame.setAttribute("allowfullscreen", "true");
-		frame.setAttribute("src", "player.xht?type=" + game.type + "&url=" + encodeURIComponent(game.url));
+		frame.setAttribute("src", url);
 		return frame;
 	}
 
@@ -77,7 +98,7 @@
 	function inNewWindow(elem) {
 		const win = window.open("", "_blank");
 		if (win == null) {
-			errorMsg.textContent = "Error: Failed to open popup window, please allow popups in your browser settings.";
+			error("Error: Failed to open popup window, please allow popups in your browser settings.");
 			return;
 		}
 		win.focus();
@@ -111,17 +132,6 @@ body, embed, iframe {
 		</style>
 	</head>
 	<body>
-		<script type="text/javascript">
-"use strict";
-window.onbeforeunload = window.onunload = (e) => {
-	e.preventDefault();
-	e.stopPropagation();
-
-	const msg = "prevent default";
-	e.returnValue = msg;
-	return msg;
-};
-		</script>
 	</body>
 </html>`);
 		doc.close();
@@ -139,7 +149,7 @@ window.onbeforeunload = window.onunload = (e) => {
 
 			const elem = document.createElement("div");
 			elem.style.backgroundImage = `url("preview.jpg?game=${encodeURIComponent(name)}")`;
-			elem.onclick = () => inNewWindow(createFrame(game));
+			elem.onclick = () => inNewWindow(createGameFrame(game));
 			elem.oncontextmenu = (e) => {
 				e.preventDefault();
 				e.stopPropagation();
@@ -176,6 +186,19 @@ window.onbeforeunload = window.onunload = (e) => {
 	/**
 	 * @type {GameInfo[]}
 	 */
-	const gameList = await (async () => { const t = await fetch("/games/list.txt"); if (!t.ok) return void (errorMsg.textContent = "Error: Failed to load game list."); const o = []; for (const s of (await t.text()).split("\n").sort()) { const t = s.split(";", 3); o.push({ name: t[0], type: t[1], url: t[2] }) } return o })();
+	const gameList = await (async () => {
+		const res = await fetch("/games/list.txt");
+		if (res.ok) {
+			const list = [];
+			for (const it of (await res.text()).split("\n").sort()) {
+				const data = it.split(";", 3);
+				list.push({ name: data[0], type: data[1], url: data[2] });
+			}
+			return list;
+		} else {
+			error("Error: Failed to load game list.");
+			return [];
+		}
+	})();
 	updateGameList(gameList);
 })();

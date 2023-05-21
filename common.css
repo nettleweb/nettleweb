@@ -1,0 +1,89 @@
+@font-face {
+	font-family: "Ubuntu";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("res/ubuntu.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Ubuntu Condensed";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("res/ubuntu-condensed.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Ubuntu Mono";
+	font-style: normal;
+	font-weight: normal;
+	font-stretch: normal;
+	src: url("res/ubuntu-mono.woff2") format("woff2");
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	font-smooth: never;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-font-smoothing: none;
+}
+
+::-webkit-scrollbar {
+	height: 10px;
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #d0d0d0;
+	border-radius: 5px;
+	background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	background: #d0d0d0;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #c0c0c0;
+}
+
+::-webkit-scrollbar-thumb:active {
+	background: #a0a0a0;
+}
+
+body {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	font-family: "Ubuntu";
+	font-weight: 500;
+	font-style: normal;
+	color: #323232;
+	accent-color: #005a5a;
+	background-color: #ffffff;
+}
+
+input, select, option, textarea, button {
+	font-size: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+	font-stretch: inherit;
+	font-variant: inherit;
+	color: inherit;
+	background: rgba(0, 0, 0, 0);
+	box-sizing: content-box;
+}
+
+a {
+	color: unset;
+	cursor: pointer;
+	text-decoration: underline;
+}

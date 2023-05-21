@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="icon.svg" />
+		<script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+		<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+		<title>YouTube Unblocked</title>
+		<style type="text/css">
+@import url("/common.css");
+
+#top {
+	position: relative;
+	display: block;
+	width: 500px;
+	height: fit-content;
+	margin: 20px auto;
+}
+
+@media all and (max-width: 500px) {
+	#top {
+		width: 90%;
+	}
+}
+
+#search-bar {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: fit-content;
+	margin: 10px auto;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	column-gap: 10px;
+}
+
+#search {
+	position: relative;
+	display: block;
+	width: calc(80% - 34px);
+	height: 20px;
+	padding: 8px 10px;
+	line-height: 20px;
+	font-size: 16px;
+	outline: none;
+	border: 1px solid #808080;
+	border-radius: 25px;
+}
+
+#search:focus {
+	border-color: #323232;
+}
+
+#search-button {
+	position: relative;
+	display: block;
+	width: 20%;
+	height: 20px;
+	padding: 8px 0px;
+	cursor: pointer;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	box-shadow: 2px 2px 2px #808080;
+	background-color: #800000;
+	background-image: url("search.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#search-button:active {
+	box-shadow: -2px -2px 2px #808080;
+}
+
+#option-bar {
+	position: relative;
+	display: flex;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	column-gap: 10px;
+}
+
+#option-bar label {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: 22px;
+	line-height: 22px;
+}
+
+#max-results, #order {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: 20px;
+	padding: 0px 2px;
+	outline: none;
+	line-height: 20px;
+	border: 1px solid #808080;
+}
+
+#max-results:focus, #order:focus {
+	border-color: #323232;
+}
+
+#message {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px auto;
+	color: #ff0000;
+	font-weight: 600;
+}
+
+#results {
+	position: relative;
+	width: 780px;
+	height: fit-content;
+	margin: 10px auto;
+	padding: 10px;
+}
+
+@media all and (max-width: 800px) {
+	#results {
+		width: calc(100% - 20px);
+	}
+}
+
+.result {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+}
+
+.result-item {
+	position: relative;
+	display: flex;
+	width: calc(100% - 20px);
+	height: fit-content;
+	padding: 10px;
+	cursor: pointer;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	column-gap: 15px;
+}
+
+.result-preview {
+	position: relative;
+	display: block;
+	width: 160px;
+	height: 90px;
+	flex: 0 0 160px;
+}
+
+.result-details {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+}
+
+.result-title {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin-bottom: 10px;
+	line-height: 18px;
+	font-weight: 600;
+}
+
+.result-description {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin-bottom: 5px;
+	line-height: 16px;
+	color: #808080;
+}
+
+.result-publish-time {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	line-height: 14px;
+	font-size: 12px;
+	color: #c0c0c0;
+}
+
+.video-container {
+	position: relative;
+	display: none;
+	width: 400px;
+	height: 300px;
+	margin: 15px auto;
+	resize: both;
+	overflow: hidden;
+}
+
+embed, iframe {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+#loadmore {
+	position: relative;
+	display: none;
+	width: fit-content;
+	height: fit-content;
+	margin: auto;
+	padding: 15px 0px 30px;
+	color: #808080;
+	cursor: pointer;
+	text-decoration: underline;
+}
+		</style>
+	</head>
+	<body>
+		<div id="top">
+			<div id="search-bar">
+				<input id="search" type="text" value="" placeholder="Search" />
+				<div id="search-button"></div>
+			</div>
+			<div id="option-bar">
+				<label for="max-results">Max results:</label>
+				<input id="max-results" type="number" min="1" max="50" value="10" placeholder="10" />
+				<label for="order">Sort by:</label>
+				<select id="order">
+					<option value="date">Date</option>
+					<option value="rating">Rating</option>
+					<option value="relevance" selected="true">Relevance</option>
+					<option value="title">Title</option>
+					<option value="viewCount">View Count</option>
+				</select>
+			</div>
+		</div>
+		<div id="message"></div>
+		<div id="results"></div>
+		<div id="loadmore">Load More</div>
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>
