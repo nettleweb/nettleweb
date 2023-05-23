@@ -22,6 +22,21 @@
 		}, 50);
 	});
 
+	// register service worker
+	const nsw = window.navigator.serviceWorker;
+	if (nsw != null) {
+		try {
+			await nsw.register("/sw.js", {
+				scope: "/",
+				type: "classic",
+				updateViaCache: "none"
+			});
+			await nsw.ready;
+		} catch (err) {
+			// ignore as service worker is optional
+		}
+	}
+
 	const errorMsg = document.getElementById("error");
 	const gamesPage = document.getElementById("games-page");
 	const gamesSearch = document.getElementById("game-search");
