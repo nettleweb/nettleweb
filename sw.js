@@ -24,15 +24,39 @@
 			return cached;
 		}
 
-		try {
-			const response = await self.fetch(request);
-			if (hostname !== "localhost") {
-				const cache = await caches.open(cacheName);
-				await cache.put(request, response.clone());
-			}
-			return response;
-		} catch (err) {
-			return Response.error();
+		const url = new URL(request.url);
+		switch (url.protocol) {
+			case "http:":
+			case "https:":
+				try {
+					const response = await self.fetch(request);
+					if (hostname !== "localhost" && url.pathname !== "/socket.io/") {
+						const cache = await caches.open(cacheName);
+						await cache.put(request, response);
+					}
+
+					switch (response.type) {
+						case "cors":
+						case "basic":
+						case "default":
+							return new Response(response.body, {
+								status: response.status,
+								statusText: response.statusText,
+								headers: response.headers
+							});
+						default:
+							return response;
+					}
+				} catch (err) {
+					console.error(err);
+					return Response.error();
+				}
+			case "data:":
+			case "blob:":
+				return await self.fetch(request);
+			default:
+				console.error("Aborted");
+				return Response.error();
 		}
 	}
 

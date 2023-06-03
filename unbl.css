@@ -1,0 +1,188 @@
+@import url("common.css");
+
+button[title] /*Image Button*/ {
+	border: none;
+	border-radius: 25px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+button[title]:hover {
+	background-color: #d0d0d0;
+}
+
+button[title]:active {
+	background-color: #c0c0c0;
+}
+
+#tab-bar {
+	position: relative;
+	display: flex;
+	width: calc(100% - 10px);
+	height: 35px;
+	padding: 0px 5px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	background: #e0e0e0;
+}
+
+#tabs {
+	position: relative;
+	display: flex;
+	width: fit-content;
+	height: 35px;
+	flex: 0 1;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+#new-tab {
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 35px;
+	flex: 0 0 35px;
+	background-image: url("res/add.svg");
+	background-size: 20px;
+}
+
+#tabs>div {
+	position: relative;
+	display: flex;
+	width: 250px;
+	height: 35px;
+	flex: 0 1 250px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	border-left: 1px solid #c0c0c0;
+	border-right: 1px solid #c0c0c0;
+}
+
+#tabs>div[current] {
+	background: #f0f0f0;
+}
+
+#tabs>div>img {
+	position: relative;
+	display: block;
+	width: 19px;
+	height: 19px;
+	padding: 8px;
+	flex: 0 0 19px;
+}
+
+#tabs>div>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 19px;
+	padding: 8px 0px;
+	flex: 0 1 100%;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 19px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+#tabs>div>button {
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 35px;
+	flex: 0 0 35px;
+	background-image: url("res/close.svg");
+	background-size: 15px;
+}
+
+#toolbar {
+	position: relative;
+	display: flex;
+	width: calc(100% - 20px);
+	height: 25px;
+	padding: 5px 10px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	column-gap: 10px;
+	background: #f0f0f0;
+	border-bottom: 1px solid #c0c0c0;
+}
+
+#back, #forward, #refresh, #menu {
+	position: relative;
+	display: block;
+	width: 25px;
+	height: 25px;
+	flex: 0 0 25px;
+	background-size: 20px;
+}
+
+#back {
+	background-image: url("res/back.svg");
+}
+
+#forward {
+	background-image: url("res/forward.svg");
+}
+
+#refresh {
+	background-image: url("res/refresh.svg");
+}
+
+#menu {
+	background-image: url("res/menu.svg");
+}
+
+#address {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 15px;
+	padding: 4px 15px;
+	flex: 0 1 100%;
+	line-height: 15px;
+	letter-spacing: 0px;
+	outline: none;
+	border: 1px solid #e0e0e0;
+	border-radius: 25px;
+	background: #ffffff;
+}
+
+#address:focus {
+	border-color: #808080;
+}
+
+#frame-container {
+	position: relative;
+	display: block;
+	width: 1280px;
+	height: 720px;
+	margin: auto;
+}
+
+#frame {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	outline: none;
+	overflow: hidden;
+}
+
+#frame-overlay {
+	position: absolute;
+	display: none;
+	width: calc(100% - 40px);
+	height: calc(100% - 40px);
+	padding: 20px;
+	top: 0px;
+	left: 0px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 20px;
+	letter-spacing: 1px;
+	background: rgba(0, 0, 0, 0.7);
+}

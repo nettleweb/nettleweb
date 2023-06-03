@@ -9,7 +9,7 @@
 		if (err != null)
 			msg += "\n\n" + err;
 
-		error(msg);
+		alert(msg, "Error");
 	};
 
 	// wait document loading to fully complete
@@ -37,10 +37,16 @@
 		}
 	}
 
+	// html element constants
 	const errorMsg = document.getElementById("error");
+	// games page
 	const gamesPage = document.getElementById("games-page");
 	const gamesSearch = document.getElementById("game-search");
 	const gamesContainer = document.getElementById("game-container");
+	// unblocker page
+	const unblSearch = document.getElementById("unbl-search");
+	const unblMode = document.getElementById("unbl-mode");
+	const useTor = document.getElementById("use-tor");
 
 	// menu switcher
 	for (const elem of document.querySelectorAll("#nav-bar>button")) {
@@ -57,6 +63,52 @@
 	document.getElementById("ytunbl").onclick = () => inNewWindow(createFrame("/apps/ytunbl/"));
 	document.getElementById("vmlinux").onclick = () => inNewWindow(createFrame("/apps/vmlinux/"));
 	document.getElementById("privsearch").onclick = () => inNewWindow(createFrame("/apps/privsearch/"));
+
+	// unblocker related functions
+	document.getElementById("search-btn").onclick = () => openUnblFrame("https://www.google.com/search?igu=1&q=", true);
+	document.getElementById("random-btn").onclick = () => openUnblFrame("https://www.google.com/search?igu=1&btnI=Im+Feeling+Lucky&q=", true);
+
+	unblMode.onchange = () => {
+		switch (unblMode.value) {
+			case "puppeteer":
+			case "webcore":
+				useTor.disabled = false;
+				break;
+			default:
+				useTor.disabled = true;
+		}
+	};
+
+	unblSearch.onkeydown = (e) => {
+		if (e.key === "Enter") {
+			e.preventDefault();
+			openUnblFrame("https://www.google.com/search?igu=1&q=", false);
+		}
+	};
+
+	const fixURL = (() => { function t(t) { t = t.toLowerCase(); for (let r = 0; r < t.length; r++) { const e = t.charCodeAt(r); if ((e < 48 || e > 57) && (e < 97 || e > 122) && 45 != e && 46 != e) return !1 } return !0 } return function (r, e) { if (function (t) { try { return new URL(t), !0 } catch (t) { return !1 } }(r = r.replace(/\s+/g, " ").trim())) return r; const n = r.indexOf("/"); if (n > 0) { if (t(r.substring(0, n))) return "http://" + r } else if (r.includes(".") && t(r)) return "http://" + r; return e + encodeURIComponent(r) } })();
+
+	/**
+	 * @param {string} s 
+	 * @param {boolean} r 
+	 */
+	function openUnblFrame(s, r) {
+		const value = unblSearch.value.toLowerCase();
+		const url = r ? s + encodeURIComponent(value) : fixURL(value, s);
+
+		switch (unblMode.value) {
+			case "embed": {
+				inNewWindow(createFrame(url));
+				break;
+			}
+			case "puppeteer": {
+				inNewWindow(createFrame("unbl.xht?q=" + encodeURIComponent(url) + "&t=" + useTor.checked));
+				break;
+			}
+			default:
+				throw new Error("Invalid mode");
+		}
+	}
 
 	// game search bar
 	gamesSearch.oninput = () => {

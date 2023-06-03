@@ -40,6 +40,9 @@
 				<p>If you are not good at coding but would like to make a contribution, you can share this
 					website with people around you, which would be helpful on increasing the clicking rate
 					and search engine ranking.</p>
+				<p><strong>Press Ctrl+Q to leave this page instantly without history logging.</strong> (This method only works
+					on the main site and <strong>does not work for 'about:blank' tabs</strong>, although they are excluded from
+					history in most browsers)</p>
 				<h3>Site is blocked?</h3>
 				<p>Never worry if this website is blocked, as our developers are working on different ways
 					on unblocking this website.</p>
@@ -53,14 +56,26 @@
 					unblocked domain, or use a <a href="https://sites.google.com/view/chrhk/h%D0%B0cks/vnc-server">VNC server</a>.</p>
 				<h3>Mirror Links</h3>
 				<p>To make things easier for beginners, we have hosted serveral mirror links listed down below:</p>
+				<h4>Embed Mirrors</h4>
+				<a href="https://sites.google.com/view/whitespider">https://sites.google.com/view/whitespider</a><br />
+				<a href="https://sites.google.com/view/white-spider">https://sites.google.com/view/white-spider</a><br />
+				<a href="https://sites.google.com/view/whitespi">https://sites.google.com/view/whitespi</a><br />
+				<a href="https://sites.google.com/view/wsunbl">https://sites.google.com/view/wsunbl</a><br />
+				<a href="https://sites.google.com/view/wsug">https://sites.google.com/view/wsug</a><br />
+				<a href="https://sites.google.com/view/x999">https://sites.google.com/view/x999</a><br />
+				<a href="https://sites.google.com/view/wsug">https://sites.google.com/view/wsug</a><br />
+				<a href="https://sites.google.com/view/gainforschool">https://sites.google.com/view/gainforschool</a><br />
+				<a href="https://sites.google.com/view/theunlockedbay">https://sites.google.com/view/theunlockedbay</a><br />
+				<h4>Standalone Mirrors</h4>
+				<a href="https://wsug.gq/">https://wsug.gq/</a><br />
 				<a href="https://whitespider.cf/">https://whitespider.cf/</a><br />
 				<a href="https://whitespider.ga/">https://whitespider.ga/</a><br />
 				<a href="https://whitespider.gq/">https://whitespider.gq/</a><br />
 				<a href="https://whitespider.ml/">https://whitespider.ml/</a><br />
 				<a href="https://whitespider.tk/">https://whitespider.tk/</a><br />
-				<a href="https://wsug.gq/">https://wsug.gq/</a><br />
-				<a href="https://ws.repl.ga/">https://ws.repl.ga</a><br />
 				<a href="https://whitespider.chromehack.com/">https://whitespider.chromehack.com/</a><br />
+				<a href="https://whitespider.pages.dev/">https://whitespider.pages.dev/</a> (Old Version)<br/>
+				<a href="https://whitespider.idek29879890.repl.co/">https://whitespider.idek29879890.repl.co/</a> (Slow)<br />
 				<p><strong>Important Notice: You should NEVER trust links from non-official sources, as ads and
 					malicious code can be injected, putting you into security risks.</strong></p>
 			</div>
@@ -75,7 +90,21 @@
 				</div>
 			</div>
 			<div id="unblocker-page">
-				<h2>Coming soon :)</h2>
+				<input id="unbl-search" type="text" placeholder="Search or Type a URL" />
+				<div>
+					<label for="unbl-mode">Mode:</label>
+					<select id="unbl-mode">
+						<option value="embed">Raw Embed</option>
+						<option value="puppeteer">Puppeteer</option>
+						<option value="webcore" disabled="true">WebCore (coming soon)</option>
+					</select>
+					<label for="use-tor">Use TOR:</label>
+					<input id="use-tor" type="checkbox" />
+				</div>
+				<div>
+					<button type="button" id="search-btn">Unblocked Search</button>
+					<button type="button" id="random-btn">I'm Feeling Lucky</button>
+				</div>
 			</div>
 			<div id="apps-page">
 				<div>
