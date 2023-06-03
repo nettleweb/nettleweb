@@ -82,7 +82,7 @@
 	display: block;
 }
 
-#home-page>p {
+#home-page>p, #home-page>a {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -91,20 +91,20 @@
 	line-height: 18px;
 }
 
-#home-page>ol {
+#home-page>h3, #home-page>h4 {
 	position: relative;
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: 15px 0px;
-	padding-left: 15px;
+	margin: 10px 0px;
+	line-height: 1.2;
 }
 
 #home-page>textarea {
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 100px;
+	height: 70px;
 	resize: none;
 	outline: none;
 	font-size: 10px;

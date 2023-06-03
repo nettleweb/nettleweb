@@ -12,6 +12,30 @@
 		alert(msg, "Error");
 	};
 
+	document.onkeydown = (e) => {
+		if (e.ctrlKey && !e.altKey && !e.metaKey && !e.shiftKey) {
+			switch (e.key) {
+				case "q":
+					e.preventDefault();
+					e.stopPropagation();
+					window.location.replace("https://www.google.com/webhp?igu=1");
+					break;
+				case "h":
+					e.preventDefault();
+					e.stopPropagation();
+					if (document.title === "WhiteSpider") {
+						document.title = "\u2060";
+						document.querySelector("link[rel*='icon']").href = "/res/empty.ico";
+					} else {
+						document.title = "WhiteSpider";
+						document.querySelector("link[rel*='icon']").href = "/favicon.ico";
+					}
+				default:
+					break;
+			}
+		}
+	};
+
 	// wait document loading to fully complete
 	await new Promise(resolve => {
 		const timer = setInterval(() => {
