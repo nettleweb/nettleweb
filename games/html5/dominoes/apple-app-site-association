@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+        {
+        "appID": "AN88NA66A3.com.playdrift.dominoes",
+        "paths": [ "*" ]
+      }
+    ]
+  }
+}

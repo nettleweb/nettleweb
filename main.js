@@ -165,7 +165,7 @@
 	 * @param {GameInfo} game 
 	 */
 	function createGameFrame(game) {
-		return createFrame("player.xht?type=" + game.type + "&url=" + encodeURIComponent(game.url));
+		return createFrame("player.html?type=" + game.type + "&url=" + encodeURIComponent(game.url));
 	}
 
 	/**
@@ -239,7 +239,7 @@ body, embed, iframe {
 			const name = game.name;
 
 			const elem = document.createElement("div");
-			elem.style.backgroundImage = `url("preview.jpg?game=${encodeURIComponent(name)}")`;
+			elem.style.backgroundImage = `url("/games/previews/${encodeURIComponent(name)}.jpg")`;
 			elem.onclick = () => inNewWindow(createGameFrame(game));
 			elem.oncontextmenu = (e) => {
 				e.preventDefault();

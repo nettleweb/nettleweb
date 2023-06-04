@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" ng-csp is-chrome-packaged manifest="appcache/manifest.appcache">
+  <head>
+    <title>Dominoes</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Play some bones! Dominoes is the classic logic game. Single- and online multiplayer.">
+    <link rel="manifest" href="/webmanifest.json">
+    <link rel="alternate" href="android-app://com.playdrift.dominoes/https/dominoes.playdrift.com">
+    <meta name="app-version-str" content="2.0.52">
+    <meta name="app-version-int" content="2000052">
+    <meta name="emery-version" content="2.0.52">
+    <meta name="emery-vcint" content="2000052">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://ssl.gstatic.com https://ssl.gstatic.com http://google-analytics.com https://google-analytics.com http://www.google-analytics.com https://www.google-analytics.com http://api.playdrift.com https://api.playdrift.com wss://api.playdrift.com ws://api.playdrift.com http://api2.playdrift.com https://api2.playdrift.com wss://api2.playdrift.com ws://api2.playdrift.com localhost:11800 http://localhost:11800 ws://localhost:11800 ws://localhost:8080 ws://localhost:8081 http://*.facebook.net https://*.facebook.net http://*.facebook.com https://*.facebook.com http://*.fbcdn.net https://*.fbcdn.net; style-src 'self' 'unsafe-inline'; media-src *;">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="google" content="notranslate">
+    <meta name="theme-color" content="#3C4450">
+    <meta name="jslib-analyticsua-web" content="UA-8008756-30">
+    <meta name="h5-fbappid" content="450904285095167">
+    <meta name="google-site-verification" content="9gJv9yuyOhsdPxjRx1Tc8kq1yTILeCQzMVrnl2TVHLk">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, minimum-scale=1, maximum-scale=1.0, width=device-width, height=device-height, viewport-fit=cover">
+    <link rel="icon" sizes="48x48" href="assets/56445f27f4c406794ca8c3dbd13dc895.png" type="image/png">
+    <link rel="icon" sizes="72x72" href="assets/31c07ac0419b6940b1736899f75c69d5.png" type="image/png">
+    <link rel="icon" sizes="96x96" href="assets/ee2fc57dff3b2947291140ba3a9497c6.png" type="image/png">
+    <link rel="icon" sizes="144x144" href="assets/51fdcfc6eee377745656d136f4a1ea88.png" type="image/png">
+    <link rel="icon" sizes="192x192" href="assets/7ee16772778254b3c298fa3786d4fc70.png" type="image/png">
+    <link rel="icon" sizes="128x128" href="assets/3f21f7984c8e708cee5c35e312f4813e.png" type="image/png">
+    <link rel="icon" sizes="256x256" href="assets/9cc2f7430384877fdb00057d854a7a56.png" type="image/png">
+    <link rel="icon" sizes="512x512" href="assets/7020a1b0406ea2c01426d9707c8804ec.png" type="image/png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/acf460cfcf816e981fbdaa9bf2d1a689.png">
+    <style>#splash {
+  position: fixed;
+  left: 0;
+  top: 0;
+  color: #FFFFFF;
+  font-family: 'Verdana', sans-serif;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+}
+#splash .text,
+#splash .image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+#splash .image {
+  text-align: center;
+  background-image: url('assets/4d3867643e49671ff26b8271632707ef.jpg');
+  background-color: #3C4450;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+#splash .image .indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 0;
+  text-align: center;
+  margin-top: -45px;
+  margin-left: -45px;
+  height: 90px;
+  width: 90px;
+  /* Spinning gradients */
+}
+#splash .image .indicator .outer,
+#splash .image .indicator .inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+}
+#splash .image .indicator .outer {
+  left: 14px;
+  right: 14px;
+  top: 14px;
+  bottom: 14px;
+}
+#splash .image .indicator .outer {
+  border: 7px solid rgba(0, 0, 0, 0);
+  border-right: 7px solid rgba(255, 255, 255, 0.7);
+}
+#splash .image .indicator .inner {
+  border: 7px solid rgba(0, 0, 0, 0);
+  border-left: 7px solid rgba(255, 255, 255, 0.7);
+}
+#splash .image .indicator .outer,
+#splash .image .indicator .inner {
+  -webkit-animation-duration: 5s;
+  -moz-animation-duration: 5s;
+  -ms-animation-duration: 5s;
+  -o-animation-duration: 5s;
+  animation-duration: 5s;
+  -webkit-animation-iteration-count: infinite;
+  -moz-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-timing-function: linear;
+  -ms-animation-timing-function: linear;
+  -o-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+#splash .image .indicator .outer {
+  -webkit-animation-name: index-splash-rotate-outer;
+  -moz-animation-name: index-splash-rotate-outer;
+  -ms-animation-name: index-splash-rotate-outer;
+  -o-animation-name: index-splash-rotate-outer;
+  animation-name: index-splash-rotate-outer;
+}
+#splash .image .indicator .inner {
+  -webkit-animation-name: index-splash-rotate-inner;
+  -moz-animation-name: index-splash-rotate-inner;
+  -ms-animation-name: index-splash-rotate-inner;
+  -o-animation-name: index-splash-rotate-inner;
+  animation-name: index-splash-rotate-inner;
+}
+@keyframes index-splash-rotate-outer {
+  0% {
+    transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1080deg);
+    -moz-transform: rotate(1080deg);
+    -webkit-transform: rotate(1080deg);
+  }
+}
+@-webkit-keyframes index-splash-rotate-outer {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(1080deg);
+  }
+}
+@keyframes index-splash-rotate-inner {
+  0% {
+    transform: rotate(720deg);
+    -moz-transform: rotate(720deg);
+    -webkit-transform: rotate(720deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes index-splash-rotate-inner {
+  0% {
+    -webkit-transform: rotate(720deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+  }
+}
+
+      
+    </style>
+    <script type="text/javascript" src="index.js"></script>
+  </head>
+  <body>
+    <div id="splash">
+      <div class="text">
+        <h1>Dominoes</h1>
+        <p>Play some bones! Dominoes is the classic logic game. Single- and online multiplayer.</p>
+      </div>
+      <div class="image">
+        <div class="indicator">
+          <div class="inner"></div>
+          <div class="outer"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
