@@ -1,0 +1,25 @@
+{
+   "app": {
+      "background": {
+         "scripts": [ "chrome.background.js" ]
+      }
+   },
+   "description": "Play some bones! Dominoes is the classic logic game. Single- and online multiplayer.",
+   "icons": {
+      "128": "assets/3f21f7984c8e708cee5c35e312f4813e.png",
+      "144": "assets/51fdcfc6eee377745656d136f4a1ea88.png",
+      "192": "assets/7ee16772778254b3c298fa3786d4fc70.png",
+      "256": "assets/9cc2f7430384877fdb00057d854a7a56.png",
+      "48": "assets/56445f27f4c406794ca8c3dbd13dc895.png",
+      "512": "assets/7020a1b0406ea2c01426d9707c8804ec.png",
+      "72": "assets/31c07ac0419b6940b1736899f75c69d5.png",
+      "96": "assets/ee2fc57dff3b2947291140ba3a9497c6.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAjDyNrWMkz8d8zePAONRrkXhK72eCzf8nAxDGRllNqN3AMsI8kP810ENjrQsxBGL8i/nt+Fzwl4ChzmLs0tLSxPzhSl15P+6uQOzdFwta3dmYjh9VP1rVEqdh9Ec3fEvWgN/UwvYtl76cYl+sKccATCt1BOlyshPOPUBcEBkt4CDMqI4v9ykzusCxYok1tw8wWY2mRdIbsiZRboIqd+wX1xJzpcXajng0VAfcqtiUDkX5dVvko7LM9V17eHhsFeD254xoWITunltZbDg3xEqhwnVi2sVOjm54517mPaccTMVs9b/FQox1VqBoaAawiJELKjGEOOtrKDCg6P0d8TyYDwIDAQAB",
+   "manifest_version": 2,
+   "name": "Dominoes",
+   "offline_enabled": true,
+   "permissions": [ "webview", "storage", "\u003Call_urls>" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.0.52"
+}
