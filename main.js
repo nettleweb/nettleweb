@@ -201,6 +201,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<base href="${window.origin}"/>
@@ -226,6 +227,8 @@ body, embed, iframe {
 	</body>
 </html>`);
 		doc.close();
+		doc.title = "Google";
+		doc.querySelector("link[rel*='icon']").href = "/res/google.ico";
 		doc.body.appendChild(elem);
 	}
 
