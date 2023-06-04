@@ -7,7 +7,7 @@
 	 */
 	const self = _;
 
-	const cacheName = "582a8aa6-0e82-417c-a5ce-d948ec881746";
+	const cacheName = "f0dd3f25-22d6-4891-a28d-e778f511f1ed";
 	const hostname = self.location.hostname;
 
 	async function handleInstall() {
@@ -32,7 +32,7 @@
 					const response = await self.fetch(request);
 					if (hostname !== "localhost" && url.pathname !== "/socket.io/") {
 						const cache = await caches.open(cacheName);
-						await cache.put(request, response);
+						await cache.put(request, response.clone());
 					}
 
 					switch (response.type) {
