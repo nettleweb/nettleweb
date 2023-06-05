@@ -282,17 +282,18 @@ body, embed, iframe {
 	 */
 	const gameList = await (async () => {
 		const res = await fetch("/games/list.txt");
-		if (res.ok) {
-			const list = [];
-			for (const it of (await res.text()).split("\n").sort()) {
-				const data = it.split(";", 3);
-				list.push({ name: data[0], type: data[1], url: data[2] });
-			}
-			return list;
-		} else {
+		if (!res.ok) {
 			error("Error: Failed to load game list.");
 			return [];
 		}
+		const list = [];
+		const lines = await res.text();
+
+		for (const line of lines.split("\n").filter(l => l.length > 0 && l.charAt(0) !== "#").sort()) {
+			const [ name, type, url ] = line.split(";", 3);
+			list.push({ name, type, url });
+		}
+		return list;
 	})();
 	updateGameList(gameList);
 })();

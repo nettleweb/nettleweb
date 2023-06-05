@@ -324,3 +324,15 @@ World's Hardest Game;flash;/games/flash/worlds-hardest-game.swf
 World's Hardest Game 2;flash;/games/flash/worlds-hardest-game-2.swf
 Yuletide Riptide;flash;/games/flash/yuletide-riptide.swf
 Zombocalypse;flash;/games/flash/zombocalypse.swf
+Ms Pacman PC;dos;/games/dos/ms-pacman-pc.jsdos
+Commander Keen 4: Secret of the Oracle;dos;/games/dos/commander-keen-4.jsdos
+Quinta;dos;/games/dos/quinta.jsdos
+Super VGA Puzzle;dos;/games/dos/super-vga-puzzle.jsdos
+Absence;dos;/games/dos/absence.jsdos
+Alien Cabal;dos;/games/dos/alien-cabal.jsdos
+Astro 3D;dos;/games/dos/astro-3d.jsdos
+Chex Quest;dos;/games/dos/chex-quest.jsdos
+3D Bomber;dos;/games/dos/3d-bomber.jsdos
+Mindgames DOS Collection;dos;/games/dos/mindgames-dos-collection.jsdos
+Abuse;dos;/games/dos/abuse.jsdos
+Ack-Ack Attack;dos;/games/dos/ack-ack-attack.jsdos
