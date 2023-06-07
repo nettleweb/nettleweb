@@ -292,6 +292,15 @@
 	line-height: 18px;
 }
 
+#chat-page>embed {
+	position: relative;
+	display: block;
+	width: 120%;
+	height: unset;
+	margin: 10px -10%;
+	aspect-ratio: 16/9;
+}
+
 #footer {
 	position: relative;
 	display: flex;
@@ -321,5 +330,9 @@
 @media all and (max-width: 800px) {
 	#body, #footer {
 		width: calc(100% - 40px);
+	}
+	
+	button#chat, #chat-page>embed {
+		display: none;
 	}
 }
