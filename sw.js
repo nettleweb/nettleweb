@@ -7,7 +7,7 @@
 	 */
 	const self = _;
 
-	const cacheName = "f0dd3f25-22d6-4891-a28d-e778f511f1ed";
+	const cacheName = "7f00c2e9-9338-4f9d-959c-6b6fbb87f8fb";
 	const hostname = self.location.hostname;
 
 	async function handleInstall() {
