@@ -30,23 +30,24 @@
 			case "https:":
 				try {
 					const response = await self.fetch(request);
-					if (hostname !== "localhost" && url.pathname !== "/socket.io/") {
-						const cache = await caches.open(cacheName);
-						await cache.put(request, response.clone());
-					}
-
 					switch (response.type) {
 						case "cors":
 						case "basic":
 						case "default":
-							return new Response(response.body, {
-								status: response.status,
-								statusText: response.statusText,
-								headers: response.headers
-							});
+							if (!response.ok) {
+								// error responses are not cached and only status code is passed
+								return new Response(void 0, { status: response.status });
+							}
+							break;
 						default:
-							return response;
+							break;
 					}
+
+					if (hostname !== "localhost" && url.pathname !== "/socket.io/") {
+						const cache = await caches.open(cacheName);
+						await cache.put(request, response.clone());
+					}
+					return response;
 				} catch (err) {
 					console.error(err);
 					return Response.error();
