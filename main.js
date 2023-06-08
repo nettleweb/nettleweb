@@ -24,8 +24,8 @@
 					e.preventDefault();
 					e.stopPropagation();
 					if (document.title === "WhiteSpider") {
-						document.title = "\u2060";
-						document.querySelector("link[rel*='icon']").href = "/res/empty.ico";
+						document.title = "Google";
+						document.querySelector("link[rel*='icon']").href = "/res/google.ico";
 					} else {
 						document.title = "WhiteSpider";
 						document.querySelector("link[rel*='icon']").href = "/favicon.ico";
@@ -64,7 +64,6 @@
 	// html element constants
 	const errorMsg = document.getElementById("error");
 	// games page
-	const gamesPage = document.getElementById("games-page");
 	const gamesSearch = document.getElementById("game-search");
 	const gamesContainer = document.getElementById("game-container");
 	// unblocker page
@@ -295,5 +294,6 @@ body, embed, iframe {
 		}
 		return list;
 	})();
+	document.title = "Wh\x69teSp\x69\x64er";
 	updateGameList(gameList);
 })();

@@ -97,8 +97,8 @@ display.onclick = (e) => {
 function start() {
 	applyConfig(true);
 	startButton.innerHTML = "Stop";
-	pauseButton.setAttribute("disabled", "false");
-	saveStateButton.setAttribute("disabled", "false");
+	pauseButton.removeAttribute("disabled");
+	saveStateButton.removeAttribute("disabled");
 	applyButton.setAttribute("disabled", "true");
 }
 
@@ -109,7 +109,7 @@ function stop() {
 	pauseButton.innerHTML = "Pause";
 	pauseButton.setAttribute("disabled", "true");
 	saveStateButton.setAttribute("disabled", "true");
-	applyButton.setAttribute("disabled", "false");
+	applyButton.removeAttribute("disabled");
 }
 
 function pause() {
