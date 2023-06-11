@@ -1,14 +1,28 @@
 "use strict";
 
 (async () => {
-	// html elements
-	const searchBar = document.getElementById("search");
-	const searchButton = document.getElementById("search-button");
-	const maxResults = document.getElementById("max-results");
-	const order = document.getElementById("order");
-	const message = document.getElementById("message");
-	const resultContainer = document.getElementById("results");
-	const loadmore = document.getElementById("loadmore");
+	// default error handler
+	window.onerror = (e, source, lineno, colno, err) => {
+		let msg = "Unhandled error at " + (source || "unknown source ");
+		if (lineno != null)
+			msg += lineno;
+		if (colno != null)
+			msg += ":" + colno;
+		if (err != null)
+			msg += "\n\n" + err;
+
+		alert(msg, "Error");
+	};
+
+	// wait document loading to fully complete
+	await new Promise(resolve => {
+		const timer = setInterval(() => {
+			if (document.readyState === "complete") {
+				clearInterval(timer);
+				resolve();
+			}
+		}, 50);
+	});
 
 	// load youtube gapi
 	await new Promise(r => gapi.load("client", r));
@@ -26,12 +40,41 @@
 		return;
 	}
 
+	// html elements
+	const searchBar = document.getElementById("search-input");
+	const searchButton = document.getElementById("search-button");
+	const maxResults = document.getElementById("max-results");
+	const order = document.getElementById("order");
+	const message = document.getElementById("message");
+	const results = document.getElementById("results");
+	const loadmore = document.getElementById("loadmore");
+
 	let pageToken = null;
 
 	searchButton.onclick = () => {
-		resultContainer.innerHTML = "";
+		results.innerHTML = "";
 		pageToken = null;
-		run();
+		const url = optUrl(searchBar.value);
+		if (url == null) {
+			run();
+			return;
+		}
+
+		message.innerHTML = "";
+		loadmore.style.display = "none";
+
+		const id = parseId(url);
+		if (id == null) {
+			message.innerHTML = "Invalid YouTube video URL";
+			return;
+		}
+
+		const embed = document.createElement("embed");
+		embed.type = "text/plain";
+		embed.width = "800"
+		embed.height = "600";
+		embed.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&controls=1&rel=0&color=white"
+		results.appendChild(embed);
 	};
 	searchBar.onkeydown = (e) => {
 		if (e.key == "Enter") {
@@ -41,50 +84,49 @@
 	};
 
 	/**
-	 * @param {HTMLInputElement} element 
-	 * @param {number} def 
-	 * @param {number} min 
-	 * @param {number} max 
+	 * @param {string} str 
 	 */
-	function correctNumberRange(element, def, min, max) {
-		const val = element.value;
-		if (val == null || val.length == 0)
-			return element.value = def.toString();
-
-		const nVal = parseInt(val);
-		if (nVal < min)
-			return element.value = min.toString();
-		else if (nVal > max)
-			return element.value = max.toString();
-		else return element.value;
-	}
-
-	function run() {
-		loadmore.style.display = "none"
-		message.innerHTML = "";
-		search(searchBar.value, correctNumberRange(maxResults, 10, 1, 50), order.value).catch(err => {
-			message.textContent = "API Error (See dev console for details)";
-			console.error(err);
-		});
+	function optUrl(str) {
+		try {
+			return new URL(str);
+		} catch (err) {
+			return null;
+		}
 	}
 
 	/**
-	 * @param {HTMLElement} container 
-	 * @param {string} videoId 
+	 * @param {URL} url 
 	 */
-	function createVideoFrame(container, videoId) {
-		const frame = document.createElement("embed");
-		frame.setAttribute("type", "text/plain");
-		frame.setAttribute("width", "800");
-		frame.setAttribute("height", "600");
-		frame.setAttribute("loading", "lazy");
-		frame.setAttribute("scrolling", "no");
-		frame.setAttribute("fetchpriority", "high");
-		frame.setAttribute("allowfullscreen", "true");
-		frame.setAttribute("referrerpolicy", "no-referrer");
-		frame.setAttribute("sandbox", "allow-scripts allow-same-origin");
-		frame.setAttribute("src", "https://www.youtube-nocookie.com/embed/" + videoId + "?autoplay=1&controls=1&rel=0&color=white");
-		container.appendChild(frame);
+	function parseId(url) {
+		switch (url.host) {
+			case "youtube.com":
+			case "youtube-nocookie.com":
+			case "www.youtube.com":
+			case "www.youtube-nocookie.com":
+				const path = url.pathname;
+				if (path === "/watch")
+					return url.searchParams.get("v") || null;
+				if (path.startsWith("/embed/"))
+					return url.pathname.substring(7) || null; // return empty string as null
+				return null;
+			case "youtu.be":
+				return url.pathname.substring(1) || null;
+			default:
+				return null;
+		}
+	}
+
+	async function run() {
+		message.innerHTML = "";
+		loadmore.style.display = "none";
+		searchButton.setAttribute("disabled", "true");
+
+		try {
+			await search(searchBar.value, maxResults.value, order.value);
+		} catch (err) {
+			message.textContent = "API Error (See dev console for details)";
+			console.error(err);
+		}
 	}
 
 	/**
@@ -96,10 +138,8 @@
 		const params = {
 			part: "snippet",
 			type: "video",
-			order,
-			maxResults,
-			pageToken,
-			q
+			maxResults: Math.max(Math.min(maxResults, 50), 1),
+			q, order, pageToken
 		};
 
 		const response = await youtube.search.list(params);
@@ -122,33 +162,58 @@
 
 		for (const item of items) {
 			const id = item.id.videoId;
-			const title = item.snippet.title;
-			const description = item.snippet.description;
-			const publishTime = item.snippet.publishTime;
-			const thumbnail = item.snippet.thumbnails.medium;
+			const snippet = item.snippet;
 
-			const container = document.createElement("div");
-			container.className = "result";
-			container.innerHTML = '<div class="result-item"><img class="result-preview" width="160" height="90" /><div class="result-details"><div class="result-title">Example</div><div class="result-description">An example video</div><div class="result-publish-time">A long time ago</div></div></div><div class="video-container"></div>';
-			container.getElementsByClassName("result-preview")[0].setAttribute("src", thumbnail.url);
-			container.getElementsByClassName("result-title")[0].textContent = title;
-			container.getElementsByClassName("result-description")[0].textContent = description;
-			container.getElementsByClassName("result-publish-time")[0].textContent = publishTime;
+			const elem = document.createElement("div");
+			const iElem = document.createElement("div");
 
-			const videoContainer = container.getElementsByClassName("video-container")[0];
-			videoContainer.style.display = "none";
+			{
+				elem.appendChild(iElem);
 
-			container.getElementsByClassName("result-item")[0].onclick = () => {
-				if (videoContainer.style.display == "none") {
-					videoContainer.style.display = "block";
-					createVideoFrame(videoContainer, id);
+				const img = document.createElement("img");
+				img.width = 160;
+				img.height = 90;
+				img.title = "Video Preview";
+				img.draggable = false;
+				img.src = snippet.thumbnails.medium.url;
+				iElem.appendChild(img);
+
+				const dElem = document.createElement("div");
+				iElem.appendChild(dElem);
+
+				const title = document.createElement("div");
+				title.className = "title";
+				title.textContent = snippet.title;
+				dElem.appendChild(title);
+
+				const desc = document.createElement("div");
+				desc.className = "desc";
+				desc.textContent = snippet.description;
+				dElem.appendChild(desc);
+
+				const time = document.createElement("div");
+				time.className = "time";
+				time.textContent = snippet.publishTime;
+				dElem.appendChild(time);
+			}
+
+			const embed = document.createElement("embed");
+			embed.type = "text/plain";
+			embed.width = "800";
+			embed.height = "600";
+			embed.style.display = "none";
+			elem.appendChild(embed);
+
+			iElem.onclick = () => {
+				if (embed.style.display == "none") {
+					embed.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&controls=1&rel=0&color=white";
+					embed.style.display = "block";
 				} else {
-					videoContainer.innerHTML = "";
-					videoContainer.style.display = "none";
+					embed.src = "about:blank";
+					embed.style.display = "none";
 				}
 			};
-
-			resultContainer.appendChild(container);
+			results.appendChild(elem);
 		}
 
 		const nextPageToken = result.nextPageToken;
@@ -159,5 +224,7 @@
 				run();
 			};
 		}
+
+		searchButton.removeAttribute("disabled");
 	}
 })();
