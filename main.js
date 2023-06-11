@@ -255,8 +255,6 @@ body, embed, iframe {
 			elem.appendChild(elem2);
 
 			const label = document.createElement("label");
-			elem.appendChild(label);
-
 			switch (game.type) {
 				case "html5":
 					label.textContent = "HTML5";
@@ -271,8 +269,25 @@ body, embed, iframe {
 					label.style.background = "#80bfff";
 					break;
 			}
+			elem.appendChild(label);
+
+			if (game.new) {
+				const label = document.createElement("label");
+				label.textContent = "New";
+				label.style.background = "#ff0000";
+				elem.appendChild(label);
+			}
+
 			gamesContainer.appendChild(elem);
 		}
+	}
+
+	/**
+	 * @param {string} a 
+	 * @param {string} b 
+	 */
+	function compareString(a, b) {
+		return a === b ? 0 : a > b ? -1 : 1;
 	}
 
 	// load game list
@@ -288,11 +303,13 @@ body, embed, iframe {
 		const list = [];
 		const lines = await res.text();
 
-		for (const line of lines.split("\n").filter(l => l.length > 0 && l.charAt(0) !== "#").sort()) {
-			const [ name, type, url ] = line.split(";", 3);
-			list.push({ name, type, url });
+		for (const line of lines.split("\n").filter(l => l.length > 0 && l.charAt(0) !== "#")) {
+			const [name, props, url] = line.split(";", 3);
+			const [type, attr] = props.split(",", 2);
+			list.push({ name, type, url, new: attr == "new" });
 		}
-		return list;
+
+		return list.sort((a, b) => a.new ? (b.new ? compareString(a.name, b.name) : 1) : (b.new ? -1 : compareString(a.name, b.name))).reverse();
 	})();
 	document.title = "Wh\x69teSp\x69\x64er";
 	updateGameList(gameList);
