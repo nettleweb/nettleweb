@@ -3,7 +3,7 @@
  * @type {Object}
  */
 const config = {
-	"base_path": "/html5-games/chromedino-3d/",
+	"base_path": "/games/html5/chromedino-3d/",
 	"logs": true,
 	"debug": false,
 	"camera": {
