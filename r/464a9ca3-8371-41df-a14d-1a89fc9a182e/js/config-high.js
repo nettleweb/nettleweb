@@ -1,14 +1,12 @@
-/**
- * Configuration.
- * @type {Object}
- */
+
+
 const config = {
-	"base_path": "/games/html5/chromedino-3d/",
+	"base_path": document.baseURI,
 	"logs": true,
 	"debug": false,
 	"camera": {
 		"fov": 45,
-		"aspect": window.innerWidth/window.innerHeight,
+		"aspect": window.innerWidth / window.innerHeight,
 		"near": 0.1,
 		"far": 200,
 		"controls": false,
@@ -42,8 +40,9 @@ const config = {
 	// TODO(crbug.com/998999): Fix navigator.userAgent such that it reliably
 	// returns an agent string containing "CriOS".
 	"IS_IOS": (/CriOS/.test(window.navigator.userAgent) ||
-    /iPad|iPhone|iPod|MacIntel/.test(window.navigator.platform) &&
-        !(/Safari/.test(window.navigator.userAgent))),
+		/iPad|iPhone|iPod|MacIntel/.test(window.navigator.platform) &&
+		!(/Safari/.test(window.navigator.userAgent))),
 
-    "IS_MOBILE": /Android/.test(window.navigator.userAgent) || this.IS_IOS
-}
+	"IS_MOBILE": /Android/.test(window.navigator.userAgent) || this.IS_IOS
+};
+
