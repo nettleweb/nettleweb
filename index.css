@@ -444,13 +444,6 @@
 
 #yt-results>div {
 	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-}
-
-#yt-results>div>div {
-	position: relative;
 	display: flex;
 	width: calc(100% - 20px);
 	height: fit-content;
@@ -462,7 +455,7 @@
 	column-gap: 10px;
 }
 
-#yt-results>div>div>img {
+#yt-results>div>img {
 	position: relative;
 	display: block;
 	width: 160px;
@@ -470,14 +463,14 @@
 	flex: 0 0 160px;
 }
 
-#yt-results>div>div>div {
+#yt-results>div>div {
 	position: relative;
 	display: block;
 	width: calc(100% - 170px);
 	height: fit-content;
 }
 
-#yt-results>div>div>div>.title {
+#yt-results>div>div>.title {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -488,7 +481,7 @@
 	line-height: 18px;
 }
 
-#yt-results>div>div>div>.desc {
+#yt-results>div>div>.desc {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -499,7 +492,7 @@
 	line-height: 16px;
 }
 
-#yt-results>div>div>div>.time {
+#yt-results>div>div>.time {
 	position: relative;
 	display: block;
 	width: 100%;
