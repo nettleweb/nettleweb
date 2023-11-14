@@ -7,7 +7,7 @@
 	 */
 	const self = _;
 
-	const cacheName = "9a7be431-a5dd-453c-b6e8-57fc66989350";
+	const cacheName = "167e1f07-b59a-4742-bb45-15cf3caabcce";
 	const hostname = self.location.hostname;
 	const origin = self.location.origin;
 
