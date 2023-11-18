@@ -6,10 +6,8 @@
 	 * @type {ServiceWorkerGlobalScope}
 	 */
 	const self = _;
-
-	const cacheName = "167e1f07-b59a-4742-bb45-15cf3caabcce";
 	const hostname = self.location.hostname;
-	const origin = self.location.origin;
+	const cacheName = "167e1f07-b59a-4742-bb45-15cf3caabcce";
 
 	/**
 	 * @param {FetchEvent} e 
@@ -66,11 +64,35 @@
 	 */
 	async function handleActivate(e) {
 		await self.clients.claim();
-
 		for (const k of await caches.keys()) {
 			if (k != cacheName)
 				await caches.delete(k);
 		}
+
+		const mfReq = new Request("/manifest.json", {
+			cache: "no-cache",
+			method: "GET",
+			headers: {
+				"Accept": "application/json"
+			}
+		});
+
+		const oldMf = await caches.match(mfReq, { cacheName });
+		const newMf = await self.fetch(mfReq);
+		if (!newMf.ok) {
+			console.error("Failed to fetch manifest.");
+			return;
+		}
+
+		if (oldMf != null) {
+			const oldVersion = (await oldMf.json()).version;
+			const newVersion = (await newMf.clone().json()).version;
+
+			if (oldVersion !== newVersion) {
+				await caches.delete(cacheName);
+				await (await caches.open(cacheName)).put(mfReq, newMf);
+			}
+		} else await (await caches.open(cacheName)).put(mfReq, newMf);
 	}
 
 	self.addEventListener("fetch", (e) => e.respondWith(handleFetch(e)), { passive: true });

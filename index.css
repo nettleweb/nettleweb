@@ -194,7 +194,7 @@
 	display: block;
 	width: 300px;
 	height: 20px;
-	margin: 10px auto;
+	margin: 10px auto 30px;
 	padding: 5px 10px;
 	outline: none;
 	line-height: 20px;
@@ -207,18 +207,19 @@
 	border-color: #005a5a;
 }
 
-#games-page>div, #apps-page>div {
+#game-container {
 	position: relative;
 	display: flex;
 	width: 100%;
 	height: fit-content;
+	margin: 30px 0px;
 	flex-direction: row;
 	flex-wrap: wrap;
 	row-gap: 10px;
 	column-gap: 10px;
 }
 
-#games-page>div>div {
+#game-container>div {
 	position: relative;
 	display: block;
 	width: 140px;
@@ -233,7 +234,7 @@
 	background-repeat: no-repeat;
 }
 
-#games-page>div>div>label {
+#game-container>div>label {
 	position: relative;
 	display: block;
 	width: 45px;
@@ -249,7 +250,7 @@
 	text-transform: uppercase;
 }
 
-#games-page>div>div>div {
+#game-container>div>div {
 	position: absolute;
 	display: block;
 	width: 130px;
@@ -261,6 +262,52 @@
 	text-align: center;
 	line-height: 12px;
 	letter-spacing: 0px;
+}
+
+#game-notice {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 30px 0px 10px;
+	color: #808080;
+	font-style: italic;
+	line-height: 18px;
+}
+
+#game-disclaimer {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 20px 0px;
+	color: #808080;
+	font-size: 12px;
+	line-height: 16px;
+}
+
+#submit-game {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 15px 20px;
+	margin: 10px;
+	color: #ffffff;
+	cursor: pointer;
+	outline: none;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	box-shadow: 2px 2px #808080;
+	background: #005a5a;
+}
+
+#submit-game:focus {
+	border-color: #323232;
+}
+
+#submit-game:active {
+	box-shadow: -2px -2px #808080;
 }
 
 #services-page>h2 {
@@ -390,14 +437,19 @@
 	width: calc(20% - 12px);
 	height: 38px;
 	cursor: pointer;
-	box-shadow: 2px 2px #808080;
-	border: 1px solid #303030;
+	outline: none;
+	border: 1px solid #808080;
 	border-radius: 25px;
+	box-shadow: 2px 2px #808080;
 	background-color: #005a5a;
 	background-image: url("res/search-w.svg");
 	background-size: 24px 24px;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+#yt-search-bar>button:focus {
+	border-color: #323232;
 }
 
 #yt-search-bar>button:active {
@@ -675,7 +727,7 @@
 	}
 }
 
-#frame-view {
+#frame-view, #submit-game-frame {
 	position: absolute;
 	display: none;
 	width: 100%;
@@ -737,4 +789,105 @@
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
+}
+
+#submit-game-frame>div {
+	position: relative;
+	display: block;
+	width: 300px;
+	height: fit-content;
+	padding: 20px;
+	margin: 70px auto;
+	border: 1px solid #ffffff;
+	border-radius: 10px;
+	background: #ffffff;
+}
+
+#submit-game-frame>div>h3 {
+	position: relative;
+	display: block;
+	width: 300px;
+	height: 24px;
+	margin: 10px 0px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 24px;
+}
+
+#submit-game-frame>div>label {
+	position: relative;
+	display: block;
+	width: 300px;
+	height: 18px;
+	margin: 5px 0px 2px;
+	line-height: 18px;
+}
+
+#submit-game-frame>div>input {
+	position: relative;
+	display: block;
+	width: 288px;
+	height: 18px;
+	padding: 3px 5px;
+	outline: none;
+	line-height: 18px;
+	border: 1px solid #808080;
+	border-radius: 10px;
+}
+
+#submit-game-frame>div>input:focus {
+	border-color: #005a5a;
+}
+
+#submit-game-frame>div>hr {
+	margin: 10px 0px;
+	border: 1px solid #808080;
+}
+
+#submit-game-frame>div>div {
+	position: relative;
+	display: block;
+	width: 300px;
+	height: fit-content;
+	margin: 5px 0px;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+#submit-game-frame>div>button {
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 18px;
+	padding: 5px;
+	margin: 0px 15px;
+	color: #ffffff;
+	cursor: pointer;
+	outline: none;
+	line-height: 18px;
+	border: 1px solid #808080;
+	border-radius: 10px;
+	box-shadow: 2px 2px #808080;
+	background: #005a5a;
+}
+
+#submit-game-frame>div>button:focus {
+	border-color: #323232;
+}
+
+#submit-game-frame>div>button:active {
+	box-shadow: -2px -2px #808080;
+}
+
+#error-msg {
+	position: relative;
+	display: none;
+	width: 276px;
+	height: fit-content;
+	padding: 10px;
+	margin: 10px 0px;
+	border: 2px solid #ff0000;
+	border-radius: 10px;
+	line-height: 18px;
+	letter-spacing: 0px;
 }
