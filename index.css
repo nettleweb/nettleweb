@@ -727,7 +727,124 @@
 	}
 }
 
-#frame-view, #submit-game-frame {
+#frame-view, #video-frame {
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.7);
+	user-select: none;
+}
+
+#frame {
+	position: relative;
+	display: block;
+	width: 1280px;
+	height: 720px;
+	overflow: hidden;
+	background: #ffffff;
+}
+
+@media (max-width: 1300px) and (orientation: landscape) {
+	#frame {
+		width: 90%;
+		height: unset;
+		aspect-ratio: 16/9;
+	}
+}
+
+@media (max-width: 1300px) and (orientation: portrait) {
+	#frame {
+		width: 90%;
+		height: unset;
+		aspect-ratio: 9/16;
+	}
+}
+
+
+#frame>embed {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+#frame-close, #video-close {
+	position: absolute;
+	display: block;
+	width: 48px;
+	height: 48px;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-image: url("res/close-w.svg");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#frame-newtab, #video-fullscreen {
+	position: absolute;
+	display: block;
+	width: 48px;
+	height: 48px;
+	right: 20px;
+	bottom: 20px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-color: rgba(0, 0, 0, 0.7);
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#frame-newtab {
+	background-image: url("res/newtab-w.svg");
+}
+
+#video-fullscreen {
+	background-image: url("res/fullscreen-w.svg");
+}
+
+#video {
+	position: relative;
+	display: block;
+	width: 800px;
+	height: 600px;
+	overflow: hidden;
+	background: #000000;
+}
+
+@media all and (max-width: 850px) {
+	#video {
+		width: 95%;
+		height: unset;
+		aspect-ratio: 4/3;
+	}
+}
+
+#video>iframe {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+#submit-game-frame {
 	position: absolute;
 	display: none;
 	width: 100%;
@@ -738,57 +855,6 @@
 	bottom: 0px;
 	overflow: hidden;
 	background: rgba(0, 0, 0, 0.7);
-	user-select: none;
-}
-
-#frame {
-	position: absolute;
-	display: block;
-	width: 1280px;
-	height: 720px;
-	left: 50%;
-	top: 50%;
-	margin-left: -640px;
-	margin-top: -360px;
-	overflow: hidden;
-	background: #ffffff;
-}
-
-#frame>embed, #frame>iframe {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	border: none;
-}
-
-#frame-close {
-	position: absolute;
-	display: block;
-	width: 48px;
-	height: 48px;
-	top: 20px;
-	right: 20px;
-	cursor: pointer;
-	background-image: url("res/close-w.svg");
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-#frame-newtab {
-	position: absolute;
-	display: block;
-	width: 48px;
-	height: 48px;
-	left: calc(50% + 592px);
-	top: calc(50% + 312px);
-	cursor: pointer;
-	background-image: url("res/newtab-w.svg");
-	background-color: rgba(0, 0, 0, 0.7);
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 
 #submit-game-frame>div {
