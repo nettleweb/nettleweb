@@ -350,18 +350,12 @@
 	}
 }
 
-#unbl-options {
+#unbl-buttons, #unbl-options {
 	position: relative;
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: 10px auto;
-}
-
-#unbl-options>hr {
-	margin: 10px 0px;
-	border: none;
-	border-bottom: 1px solid #e0e0e0;
+	margin: 20px auto;
 }
 
 #unbl-options>label {
@@ -373,27 +367,32 @@
 	color: #808080;
 }
 
-#unbl-options>select, #unbl-options>input, #unbl-options>button {
+#unbl-options>select, #unbl-options>input, #unbl-buttons>button {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
 	height: fit-content;
-	margin: 0px 5px;
-	padding: 3px;
+	margin: 5px;
+	padding: 5px;
 	outline: none;
 	border: 1px solid #808080;
 	border-radius: 25px;
 }
 
-#unbl-options>select:focus, #unbl-options>input:focus, #unbl-options>button:focus {
+#unbl-options>select:focus, #unbl-options>input:focus, #unbl-buttons>button:focus {
 	border-color: #005a5a;
 }
 
-#unbl-options>button:hover {
+#unbl-options>input:disabled {
+	border-color: #c0c0c0;
 	background: #f0f0f0;
 }
 
-#unbl-options>button:active {
+#unbl-buttons>button:hover {
+	background: #f0f0f0;
+}
+
+#unbl-buttons>button:active {
 	background: #e0e0e0;
 }
 

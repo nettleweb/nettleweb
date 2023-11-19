@@ -20,14 +20,13 @@
 			<button id="back" type="button" title="Back"></button>
 			<button id="forward" type="button" title="Forward"></button>
 			<button id="refresh" type="button" title="Refresh"></button>
-			<input id="address" type="text" placeholder="Search or Type a URL" />
+			<input id="address" type="text" placeholder="Search or Type a URL" spellcheck="false" />
 			<button id="menu" type="button" title="menu"></button>
 		</div>
-		<div id="frame-container">
+		<div id="container">
 			<img id="frame" width="1280" height="720" loading="eager" decoding="sync" draggable="false" tabindex="1" alt="Loading..." />
-			<div id="frame-overlay">Error</div>
+			<div id="message">Error</div>
 		</div>
-		<script type="text/javascript" src="lib/webalert.js"></script>
 		<script type="text/javascript" src="lib/socket.io/socket.io.min.js"></script>
 		<script type="text/javascript" src="unbl.js"></script>
 	</body>

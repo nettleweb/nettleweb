@@ -1,4 +1,6 @@
 "use strict"; (async () => {
+	const msgElem = document.getElementById("message");
+
 	// default error handler
 	window.onerror = (e, source, lineno, colno, err) => {
 		let msg = "Unhandled error at " + (source || "unknown source ");
@@ -9,7 +11,8 @@
 		if (err != null)
 			msg += "\n\n" + err;
 
-		alert(msg, "Error");
+		msgElem.textContent = msg;
+		msgElem.style.display = "block";
 	};
 
 	// wait document loading to fully complete
@@ -23,15 +26,13 @@
 	});
 
 	const location = new URL(window.location.href);
-	// mouse button names, used in server side
 	const buttons = ["left", "middle", "right", "back", "forward"];
 
 	// html element constants
-	const frameContainer = document.getElementById("frame-container");
-	const frameOverlay = document.getElementById("frame-overlay");
-	const frame = document.getElementById("frame");
 	const tabs = document.getElementById("tabs");
+	const frame = document.getElementById("frame");
 	const address = document.getElementById("address");
+	const container = document.getElementById("container");
 
 	/**
 	 * @type {HTMLElement}
@@ -43,150 +44,10 @@
 	 */
 	function message(msg) {
 		if (msg != null) {
-			frameOverlay.textContent = msg;
-			frameOverlay.style.display = "block";
-		} else frameOverlay.style.display = "none";
+			msgElem.textContent = msg;
+			msgElem.style.display = "block";
+		} else msgElem.style.display = "none";
 	}
-
-	/**
-	 * @param {string} s 
-	 */
-	function isURL(s) {
-		try {
-			new URL(s);
-			return true;
-		} catch (err) {
-			return false;
-		}
-	}
-
-	/**
-	 * @param {string} s 
-	 */
-	function isHostname(s) {
-		s = s.toLowerCase();
-
-		for (let i = 0; i < s.length; i++) {
-			const ch = s.charCodeAt(i);
-			if ((ch < 0x30 || ch > 0x39) && (ch < 0x61 || ch > 0x7a) && ch != 0x2d && ch != 0x2e) {
-				return false;
-			}
-		}
-		return true;
-	}
-
-	/**
-	 * @param {string} input 
-	 * @param {string} search 
-	 */
-	function fixURL(input, search) {
-		input = input.replace(/\s+/g, " ").trim();
-
-		if (isURL(input))
-			return input;
-
-		const slash = input.indexOf("/");
-		if (slash > 0) {
-			if (isHostname(input.substring(0, slash)))
-				return "http://" + input;
-		} else {
-			if (input.includes(".") && isHostname(input))
-				return "http://" + input;
-		}
-
-		return search + encodeURIComponent(input);
-	}
-
-	/**
-	 * @type {<E>(obj: ArrayLike<E>) => E[]}
-	 */
-	function toArray(obj) {
-		const array = [];
-		for (let i = 0; i < obj.length; i++) {
-			array[i] = obj[i];
-		}
-		return array;
-	}
-
-	function guiNewTab() {
-		const tab = document.createElement("div");
-		tab.innerHTML = "<img src=\"res/empty.ico\" width=\"19\" height=\"19\" draggable=\"false\" alt=\"favicon\" />";
-		tab.setAttribute("current", "true");
-		tab.appendChild(document.createElement("div"));
-		tab.onclick = () => {
-			const elems = toArray(tabs.children);
-			for (const elem of elems)
-				elem.removeAttribute("current");
-			tab.setAttribute("current", "true");
-			socket.emit("focustab", elems.indexOf(tab));
-			currentTab = tab;
-		};
-
-		const close = document.createElement("button");
-		close.type = "button";
-		close.title = "Close";
-		close.onclick = (e) => {
-			e.stopPropagation();
-			socket.emit("closetab", toArray(tabs.children).indexOf(tab));
-		};
-		tab.appendChild(close);
-
-		for (const elem of tabs.children)
-			elem.removeAttribute("current");
-		currentTab = tab;
-		tabs.appendChild(tab);
-	}
-
-	// start socket.io connection
-	/**
-	 * @type {NodeJS.EventEmitter & { readonly io: NodeJS.EventEmitter; }}
-	 */
-	const socket = io("/", {
-		forceNew: true,
-		reconnectionDelayMax: 10000
-	});
-
-	// connection error listeners
-	socket.io.on("reconnect", () => message(null));
-	socket.io.on("error", () => message("Server connection error"));
-	socket.io.on("reconnect_attempt", () => message("Reconnecting..."));
-	socket.io.on("reconnect_error", () => message("Failed to reconnect"));
-
-	// wait for connection
-	message("Connecting to server");
-	await new Promise(resolve => socket.once("connect", resolve));
-
-	// start new session
-	message("Requesting new session");
-	socket.emit("request_new_session", {
-		_width: document.documentElement.clientWidth,
-		_height: document.documentElement.clientHeight,
-		touch: window.navigator.maxTouchPoints > 0,
-		url: location.searchParams.get("q") || "",
-		tor: location.searchParams.get("t") === "true"
-	});
-	const { width, height } = await new Promise(resolve => socket.once("session_ready", resolve));
-
-	frameContainer.style.width = width + "px";
-	frameContainer.style.height = height + "px";
-	frame.width = width;
-	frame.height = height;
-	frame.autofocus = true;
-	frame.focus({ preventScroll: true });
-	message(null);
-
-	document.getElementById("back").onclick = () => socket.emit("goback");
-	document.getElementById("forward").onclick = () => socket.emit("goforward");
-	document.getElementById("refresh").onclick = () => socket.emit("refresh");
-	document.getElementById("new-tab").onclick = () => socket.emit("newtab");
-
-	address.onkeydown = (e) => {
-		if (e.keyCode === 13) {
-			e.preventDefault();
-			socket.emit("navigate", fixURL(address.value, "https://www.google.com/search?q="));
-			address.blur();
-		}
-	};
 
 	/**
 	 * @param {MouseEvent} e 
@@ -274,6 +135,160 @@
 		frame.focus({ preventScroll: true });
 		return false;
 	}
+
+	/**
+	 * @param {string} str 
+	 * @returns {URL | null}
+	 */
+	function optURL(str) {
+		try {
+			return new URL(str);
+		} catch (err) {
+			return null;
+		}
+	}
+
+	/**
+	 * @param {string} str 
+	 */
+	function isHostname(str) {
+		str = str.toLowerCase();
+		for (let i = 0; i < str.length; i++) {
+			const ch = str.charCodeAt(i);
+			if ((ch < 48 || ch > 57) && (ch < 97 || ch > 122) && ch !== 45 && ch !== 46) {
+				return false;
+			}
+		}
+		return true;
+	}
+
+	/**
+	 * @param {string} value 
+	 * @param {string} search 
+	 * @returns {string}
+	 */
+	function rewriteURL(value, search) {
+		value = value.replace(/\s+/g, " ").trim();
+
+		const url = optURL(value);
+		if (url != null)
+			return url.href;
+
+		if (value.includes(" "))
+			return search + encodeURIComponent(value);
+
+		const i = value.indexOf("/");
+		if (i === 0)
+			return search + encodeURIComponent(value);
+
+		if (i > 0) {
+			const host = value.substring(0, i);
+			if (isHostname(host))
+				return "http://" + value;
+		} else {
+			if (isHostname(value) && value.includes("."))
+				return "http://" + value;
+		}
+
+		return search + encodeURIComponent(value);
+	}
+
+	/**
+	 * @type {<E>(obj: ArrayLike<E>) => E[]}
+	 */
+	function toArray(obj) {
+		const array = [];
+		for (let i = 0; i < obj.length; i++) {
+			array[i] = obj[i];
+		}
+		return array;
+	}
+
+	function guiNewTab() {
+		const tab = document.createElement("div");
+		tab.innerHTML = "<img src=\"res/empty.ico\" width=\"19\" height=\"19\" draggable=\"false\" alt=\"favicon\" />";
+		tab.setAttribute("current", "true");
+		tab.appendChild(document.createElement("div"));
+		tab.onclick = () => {
+			tabs.children[Symbol.iterator]
+			const elems = toArray(tabs.children);
+			for (const elem of elems)
+				elem.removeAttribute("current");
+			tab.setAttribute("current", "true");
+			socket.emit("focustab", elems.indexOf(tab));
+			currentTab = tab;
+		};
+
+		const close = document.createElement("button");
+		close.type = "button";
+		close.title = "Close";
+		close.onclick = (e) => {
+			e.stopPropagation();
+			socket.emit("closetab", toArray(tabs.children).indexOf(tab));
+		};
+		tab.appendChild(close);
+
+		for (const elem of tabs.children)
+			elem.removeAttribute("current");
+		currentTab = tab;
+		tabs.appendChild(tab);
+	}
+
+	// start socket.io connection
+	/**
+	 * @type {import("socket.io-client").Socket}
+	 */
+	const socket = io(location.searchParams.get("sv") || "https://gq.whitespider.eu.org/", {
+		path: "/mortes/",
+		secure: true,
+		upgrade: true,
+		timeout: 5000,
+		forceNew: true
+	});
+
+	// connection error listeners
+	socket.io.on("reconnect", () => message(null));
+	socket.io.on("error", () => message("Server connection error"));
+	socket.io.on("reconnect_attempt", () => message("Reconnecting..."));
+	socket.io.on("reconnect_error", () => message("Failed to reconnect"));
+
+	// wait for connection
+	message("Connecting to server...");
+	await new Promise((resolve) => {
+		socket.once("connect", resolve);
+	});
+
+	// start new session
+	message("Requesting new session...");
+	socket.emit("request_new_session", {
+		_width: document.documentElement.clientWidth,
+		_height: document.documentElement.clientHeight,
+		touch: window.navigator.maxTouchPoints > 0,
+		url: location.searchParams.get("q") || "",
+		tor: location.searchParams.get("t") === "true"
+	});
+	const { width, height } = await new Promise(resolve => socket.once("session_ready", resolve));
+
+	container.style.width = width + "px";
+	container.style.height = height + "px";
+	frame.width = width;
+	frame.height = height;
+	frame.autofocus = true;
+	frame.focus({ preventScroll: true });
+	message(null);
+
+	document.getElementById("back").onclick = () => socket.emit("goback");
+	document.getElementById("forward").onclick = () => socket.emit("goforward");
+	document.getElementById("refresh").onclick = () => socket.emit("refresh");
+	document.getElementById("new-tab").onclick = () => socket.emit("newtab");
+
+	address.onkeydown = (e) => {
+		if (e.keyCode === 13) {
+			e.preventDefault();
+			socket.emit("navigate", rewriteURL(address.value, "https://www.google.com/search?q="));
+			address.blur();
+		}
+	};
 
 	frame.addEventListener("mousedown", mouseEventHandler, { passive: false });
 	frame.addEventListener("mouseup", mouseEventHandler, { passive: false });

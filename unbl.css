@@ -154,7 +154,7 @@ button[title]:active {
 	border-color: #808080;
 }
 
-#frame-container {
+#container {
 	position: relative;
 	display: block;
 	width: 1280px;
@@ -167,12 +167,16 @@ button[title]:active {
 	display: block;
 	width: 100%;
 	height: 100%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
 	border: none;
 	outline: none;
 	overflow: hidden;
 }
 
-#frame-overlay {
+#message {
 	position: absolute;
 	display: none;
 	width: calc(100% - 40px);
@@ -180,7 +184,10 @@ button[title]:active {
 	padding: 20px;
 	top: 0px;
 	left: 0px;
+	right: 0px;
+	bottom: 0px;
 	color: #ffffff;
+	cursor: default;
 	text-align: center;
 	line-height: 20px;
 	letter-spacing: 1px;
