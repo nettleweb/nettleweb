@@ -10,6 +10,18 @@
 	const cacheName = "167e1f07-b59a-4742-bb45-15cf3caabcce";
 
 	/**
+	 * @param {Request} request
+	 * @returns {Promise<Response>}
+	 */
+	async function optFetch(request) {
+		try {
+			return await self.fetch(request);
+		} catch (err) {
+			return new Response(void 0, { status: 500 });
+		}
+	}
+
+	/**
 	 * @param {FetchEvent} e 
 	 * @returns {Promise<Response>}
 	 */
@@ -30,14 +42,14 @@
 			case "HEAD":
 				break;
 			default:
-				return await self.fetch(request);
+				return await optFetch(request);
 		}
 
 		const cached = await caches.match(request, { cacheName });
 		if (cached != null)
 			return cached;
 
-		const response = await e.preloadResponse || await self.fetch(request);
+		const response = await e.preloadResponse || await optFetch(request);
 		if (hostname !== "localhost") {
 			const cache = await caches.open(cacheName);
 			await cache.put(request, response.clone());
@@ -60,15 +72,9 @@
 	}
 
 	/**
-	 * @param {ExtendableEvent} e 
+	 * @returns {Promise<boolean>}
 	 */
-	async function handleActivate(e) {
-		await self.clients.claim();
-		for (const k of await caches.keys()) {
-			if (k != cacheName)
-				await caches.delete(k);
-		}
-
+	async function checkForUpdates() {
 		const mfReq = new Request("/manifest.json", {
 			cache: "no-cache",
 			method: "GET",
@@ -78,21 +84,42 @@
 		});
 
 		const oldMf = await caches.match(mfReq, { cacheName });
-		const newMf = await self.fetch(mfReq);
+		const newMf = await optFetch(mfReq);
 		if (!newMf.ok) {
 			console.error("Failed to fetch manifest.");
-			return;
+			return false;
 		}
 
 		if (oldMf != null) {
 			const oldVersion = (await oldMf.json()).version;
 			const newVersion = (await newMf.clone().json()).version;
 
-			if (oldVersion !== newVersion) {
-				await caches.delete(cacheName);
-				await (await caches.open(cacheName)).put(mfReq, newMf);
+			if (oldVersion === newVersion)
+				return false;
+		}
+
+		await caches.delete(cacheName);
+		await (await caches.open(cacheName)).put(mfReq, newMf);
+		return true;
+	}
+
+	/**
+	 * @param {ExtendableEvent} e 
+	 */
+	async function handleActivate(e) {
+		await self.clients.claim();
+		for (const k of await caches.keys()) {
+			if (k != cacheName)
+				await caches.delete(k);
+		}
+
+		if (await checkForUpdates()) {
+			console.log("Update available!");
+			for (const win of await self.clients.matchAll({ type: "window", includeUncontrolled: true })) {
+				await self.skipWaiting();
+				await win.navigate("/");
 			}
-		} else await (await caches.open(cacheName)).put(mfReq, newMf);
+		}
 	}
 
 	self.addEventListener("fetch", (e) => e.respondWith(handleFetch(e)), { passive: true });
