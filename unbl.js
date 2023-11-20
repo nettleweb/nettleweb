@@ -317,8 +317,8 @@
 
 	socket.on("tabinfo", (data) => {
 		const tab = tabs.children[data.id];
-		tab.querySelector("div").textContent = data.title;
-		tab.querySelector("img").src = data.favicon;
+		tab.querySelector("div").textContent = data.title || "Untitled";
+		tab.querySelector("img").src = data.favicon || "/res/empty.ico";
 	});
 	socket.on("tabopen", () => guiNewTab());
 	socket.on("tabclose", (i) => {
