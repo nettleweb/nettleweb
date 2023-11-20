@@ -193,44 +193,35 @@
 		return search + encodeURIComponent(value);
 	}
 
-	/**
-	 * @type {<E>(obj: ArrayLike<E>) => E[]}
-	 */
-	function toArray(obj) {
-		const array = [];
-		for (let i = 0; i < obj.length; i++) {
-			array[i] = obj[i];
-		}
-		return array;
-	}
-
 	function guiNewTab() {
 		const tab = document.createElement("div");
-		tab.innerHTML = "<img src=\"res/empty.ico\" width=\"19\" height=\"19\" draggable=\"false\" alt=\"favicon\" />";
+		tab.innerHTML = "<img src=\"res/empty.ico\" width=\"19\" height=\"19\" draggable=\"false\" alt=\"favicon\" /><div></div>";
 		tab.setAttribute("current", "true");
-		tab.appendChild(document.createElement("div"));
 		tab.onclick = () => {
-			tabs.children[Symbol.iterator]
-			const elems = toArray(tabs.children);
-			for (const elem of elems)
+			for (const elem of tabElems)
 				elem.removeAttribute("current");
-			tab.setAttribute("current", "true");
-			socket.emit("focustab", elems.indexOf(tab));
+
 			currentTab = tab;
+			tab.setAttribute("current", "true");
+			socket.emit("focustab", Array.from(tabElems).indexOf(tab));
 		};
 
 		const close = document.createElement("button");
 		close.type = "button";
 		close.title = "Close";
 		close.onclick = (e) => {
+			e.preventDefault();
 			e.stopPropagation();
-			socket.emit("closetab", toArray(tabs.children).indexOf(tab));
+			socket.emit("closetab", Array.from(tabElems).indexOf(tab));
 		};
 		tab.appendChild(close);
 
-		for (const elem of tabs.children)
+		const tabElems = tabs.children;
+		for (const elem of tabElems)
 			elem.removeAttribute("current");
+
 		currentTab = tab;
+		tab.setAttribute("current", "true");
 		tabs.appendChild(tab);
 	}
 
@@ -246,23 +237,25 @@
 		forceNew: true
 	});
 
+	window.socket = socket;
+
 	// connection error listeners
+	socket.io.on("error", (err) => message("Server connection error. Message: " + err.message));
 	socket.io.on("reconnect", () => message(null));
-	socket.io.on("error", () => message("Server connection error"));
 	socket.io.on("reconnect_attempt", () => message("Reconnecting..."));
-	socket.io.on("reconnect_error", () => message("Failed to reconnect"));
+	socket.io.on("reconnect_failed", () => message("Failed to reconnect"));
 
 	// wait for connection
 	message("Connecting to server...");
 	await new Promise((resolve) => {
-		socket.once("connect", resolve);
+		socket.once("connect", resolve)
 	});
 
 	// start new session
 	message("Requesting new session...");
 	socket.emit("request_new_session", {
-		_width: document.documentElement.clientWidth,
-		_height: document.documentElement.clientHeight,
+		width: document.documentElement.clientWidth,
+		height: document.documentElement.clientHeight,
 		touch: window.navigator.maxTouchPoints > 0,
 		url: location.searchParams.get("q") || "",
 		tor: location.searchParams.get("t") === "true"
@@ -273,6 +266,7 @@
 	container.style.height = height + "px";
 	frame.width = width;
 	frame.height = height;
+	frame.tabIndex = 0;
 	frame.autofocus = true;
 	frame.focus({ preventScroll: true });
 	message(null);
@@ -281,12 +275,13 @@
 	document.getElementById("forward").onclick = () => socket.emit("goforward");
 	document.getElementById("refresh").onclick = () => socket.emit("refresh");
 	document.getElementById("new-tab").onclick = () => socket.emit("newtab");
+	document.getElementById("menu").onclick = () => socket.emit("sync");
 
 	address.onkeydown = (e) => {
-		if (e.keyCode === 13) {
+		if (e.key === "Enter") {
 			e.preventDefault();
+			frame.focus({ preventScroll: true });
 			socket.emit("navigate", rewriteURL(address.value, "https://www.google.com/search?q="));
-			address.blur();
 		}
 	};
 
@@ -302,20 +297,40 @@
 	frame.addEventListener("click", preventDefault, { passive: false });
 	frame.addEventListener("contextmenu", preventDefault, { passive: false });
 
-	socket.on("data", (data) => {
-		frame.src = "data:image/jpeg;base64," + data.buffer;
+	socket.on("url", (url) => {
 		if (document.activeElement !== address)
-			address.value = data.url;
-		currentTab.querySelector("div").textContent = data.title;
+			address.value = url;
+	});
+	socket.on("frame", async (data) => {
+		frame.src = "data:image/jpeg;base64," + data;
+
+		let tm = false;
+		setTimeout(() => {
+			tm = true;
+			socket.emit("sync");
+		}, 1000);
+
+		await frame.decode();
+		if (!tm)
+			socket.emit("sync");
 	});
 
+	socket.on("tabinfo", (data) => {
+		const tab = tabs.children[data.id];
+		tab.querySelector("div").textContent = data.title;
+		tab.querySelector("img").src = data.favicon;
+	});
 	socket.on("tabopen", () => guiNewTab());
 	socket.on("tabclose", (i) => {
-		const elems = toArray(tabs.children);
-		elems[i - 1].setAttribute("current", "true");
+		const elems = tabs.children;
+		if (i > 1) {
+			const e = elems[i - 1];
+			currentTab = e;
+			e.setAttribute("current", "true");
+		}
 		elems[i].remove();
 	});
 
 	guiNewTab();
-	setInterval(() => socket.emit("sync"), 100);
+	socket.emit("sync");
 })();
