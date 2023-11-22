@@ -1,5 +1,14 @@
 "use strict"; (async () => {
-	const msgElem = document.getElementById("message");
+	/**
+	 * @type {(id: string) => HTMLElement}
+	 */
+	const $ = (id) => {
+		const elem = document.getElementById(id);
+		if (elem == null)
+			throw new Error("Element does not exist: " + id);
+		return elem;
+	};
+	const msgElem = $("message");
 
 	// default error handler
 	window.onerror = (e, source, lineno, colno, err) => {
@@ -20,24 +29,10 @@
 		const timer = setInterval(() => {
 			if (document.readyState === "complete") {
 				clearInterval(timer);
-				resolve();
+				resolve(void 0);
 			}
 		}, 50);
 	});
-
-	const location = new URL(window.location.href);
-	const buttons = ["left", "middle", "right", "back", "forward"];
-
-	// html element constants
-	const tabs = document.getElementById("tabs");
-	const frame = document.getElementById("frame");
-	const address = document.getElementById("address");
-	const container = document.getElementById("container");
-
-	/**
-	 * @type {HTMLElement}
-	 */
-	let currentTab = null;
 
 	/**
 	 * @param {string | null} msg 
@@ -193,39 +188,141 @@
 		return search + encodeURIComponent(value);
 	}
 
-	function guiNewTab() {
-		const tab = document.createElement("div");
-		tab.innerHTML = "<img src=\"res/empty.ico\" width=\"19\" height=\"19\" draggable=\"false\" alt=\"favicon\" /><div></div>";
-		tab.setAttribute("current", "true");
-		tab.onclick = () => {
-			for (const elem of tabElems)
+	async function startOrRestoreSession() {
+		socket.removeAllListeners();
+		socket.emit("request_new_session", connectOptions);
+
+		{
+			const { width, height } = await new Promise((resolve) => {
+				socket.once("session_ready", (d) => resolve(d));
+			});
+
+			container.style.width = width + "px";
+			container.style.height = height + "px";
+			frame.width = width;
+			frame.height = height;
+		}
+
+		for (const page of pages) {
+			socket.emit("newtab");
+			await new Promise((resolve) => {
+				socket.once("tabopen", () => resolve(void 0));
+			});
+
+			socket.emit("navigate", page.url);
+			await new Promise((resolve) => {
+				socket.once("tabinfo", (data) => {
+					const tab = tabs.children[data.id];
+					page.title = tab.querySelector("div").textContent = data.title || "Untitled";
+					page.favicon = tab.querySelector("img").src = data.favicon || "/res/empty.ico";
+					resolve(void 0);
+				});
+			});
+		}
+
+		socket.on("url", (url) => {
+			pages[currentTabId].url = url;
+			if (document.activeElement !== address)
+				address.value = url;
+		});
+		socket.on("frame", (data) => {
+			frame.src = "data:image/jpeg;base64," + data;
+		});
+		socket.on("tabinfo", (data) => {
+			const { id } = data;
+			const tab = tabs.children[id];
+			const page = pages[id];
+			page.title = tab.querySelector("div").textContent = data.title || "Untitled";
+			page.favicon = tab.querySelector("img").src = data.favicon || "/res/empty.ico";
+		});
+		socket.on("tabopen", () => {
+			const tabElem = document.createElement("div");
+			tabElem.innerHTML = "<img src=\"res/empty.ico\" width=\"19\" height=\"19\" draggable=\"false\" decoding=\"async\" loading=\"lazy\" alt=\"Site Icon\" /><div></div>";
+			tabElem.onclick = () => {
+				for (const elem of tabs.children)
+					elem.removeAttribute("current");
+				tabElem.setAttribute("current", "true");
+
+				socket.emit("focustab", currentTabId = pages.indexOf(page));
+			};
+
+			const close = document.createElement("button");
+			close.type = "button";
+			close.title = "Close";
+			close.onclick = (e) => {
+				e.preventDefault();
+				e.stopPropagation();
+				socket.emit("closetab", pages.indexOf(page));
+			};
+			tabElem.appendChild(close);
+
+			for (const elem of tabs.children)
 				elem.removeAttribute("current");
+			tabElem.setAttribute("current", "true");
 
-			currentTab = tab;
-			tab.setAttribute("current", "true");
-			socket.emit("focustab", Array.from(tabElems).indexOf(tab));
-		};
+			/**
+			 * @type {PageInfo}
+			 */
+			const page = {
+				url: "",
+				title: "",
+				favicon: ""
+			};
 
-		const close = document.createElement("button");
-		close.type = "button";
-		close.title = "Close";
-		close.onclick = (e) => {
-			e.preventDefault();
-			e.stopPropagation();
-			socket.emit("closetab", Array.from(tabElems).indexOf(tab));
-		};
-		tab.appendChild(close);
+			currentTabId = pages.length;
+			pages.push(page);
+			tabs.appendChild(tabElem);
+		});
+		socket.on("tabclose", (i) => {
+			const elems = tabs.children;
 
-		const tabElems = tabs.children;
-		for (const elem of tabElems)
-			elem.removeAttribute("current");
+			if (i === currentTabId) {
+				if (i > 1)
+					elems[currentTabId = i - 1].setAttribute("current", "true");
+				else if (pages.length > 0)
+					elems[currentTabId = 0].setAttribute("current", "true");
+			}
 
-		currentTab = tab;
-		tab.setAttribute("current", "true");
-		tabs.appendChild(tab);
+			elems[i].remove();
+			pages.splice(i, 1);
+		});
+
+		if (currentTabId >= 0)
+			socket.emit("focustab", currentTabId);
+		else
+			socket.emit("newtab");
+
+		message(null);
+		frame.autofocus = true;
+		frame.focus({ preventScroll: true });
 	}
 
-	// start socket.io connection
+	const location = new URL(window.location.href);
+	const buttons = ["left", "middle", "right", "back", "forward"];
+
+	// html element constants
+	const tabs = $("tabs");
+	const frame = $("frame");
+	const address = $("address");
+	const container = $("container");
+
+	/**
+	 * @typedef {{ url: string; title: string; favicon: string; }} PageInfo
+	 * @type {PageInfo[]}
+	 */
+	const pages = [];
+	const connectOptions = {
+		width: document.documentElement.clientWidth,
+		height: document.documentElement.clientHeight,
+		touch: window.navigator.maxTouchPoints > 0,
+		tor: location.searchParams.get("t") === "true"
+	};
+
+	/**
+	 * @type {number}
+	 */
+	let currentTabId = -1;
+
 	/**
 	 * @type {import("socket.io-client").Socket}
 	 */
@@ -237,49 +334,40 @@
 		forceNew: true
 	});
 
-	window.socket = socket;
-
 	// connection error listeners
 	socket.io.on("error", (err) => message("Server connection error. Message: " + err.message));
-	socket.io.on("reconnect", () => message(null));
 	socket.io.on("reconnect_attempt", () => message("Reconnecting..."));
-	socket.io.on("reconnect_failed", () => message("Failed to reconnect"));
+	socket.io.on("reconnect_failed", () => message("Failed to reconnect."));
 
-	// wait for connection
+	// reconnect listener
+	socket.io.on("reconnect", () => {
+		message("Restoring session...");
+		startOrRestoreSession().then(() => {
+			message(null);
+		});
+	});
+
+	// wait for socket connection
 	message("Connecting to server...");
 	await new Promise((resolve) => {
-		socket.once("connect", resolve)
+		socket.once("connect", () => resolve(void 0));
 	});
 
 	// start new session
 	message("Requesting new session...");
-	socket.emit("request_new_session", {
-		width: document.documentElement.clientWidth,
-		height: document.documentElement.clientHeight,
-		touch: window.navigator.maxTouchPoints > 0,
-		url: location.searchParams.get("q") || "",
-		tor: location.searchParams.get("t") === "true"
-	});
-	const { width, height } = await new Promise(resolve => socket.once("session_ready", resolve));
+	await startOrRestoreSession();
 
-	container.style.width = width + "px";
-	container.style.height = height + "px";
-	frame.width = width;
-	frame.height = height;
-	frame.tabIndex = 0;
-	frame.autofocus = true;
-	frame.focus({ preventScroll: true });
-	message(null);
-
-	document.getElementById("back").onclick = () => socket.emit("goback");
-	document.getElementById("forward").onclick = () => socket.emit("goforward");
-	document.getElementById("refresh").onclick = () => socket.emit("refresh");
-	document.getElementById("new-tab").onclick = () => socket.emit("newtab");
-	document.getElementById("menu").onclick = () => socket.emit("sync");
+	$("menu").onclick = () => socket.emit("sync");
+	$("back").onclick = () => socket.emit("goback");
+	$("forward").onclick = () => socket.emit("goforward");
+	$("refresh").onclick = () => socket.emit("refresh");
+	$("new-tab").onclick = () => socket.emit("newtab");
 
 	address.onkeydown = (e) => {
 		if (e.key === "Enter") {
 			e.preventDefault();
+			e.stopPropagation();
+
 			frame.focus({ preventScroll: true });
 			socket.emit("navigate", rewriteURL(address.value, "https://www.google.com/search?q="));
 		}
@@ -297,40 +385,11 @@
 	frame.addEventListener("click", preventDefault, { passive: false });
 	frame.addEventListener("contextmenu", preventDefault, { passive: false });
 
-	socket.on("url", (url) => {
-		if (document.activeElement !== address)
-			address.value = url;
-	});
-	socket.on("frame", async (data) => {
-		frame.src = "data:image/jpeg;base64," + data;
+	setTimeout(() => {
+		const q = location.searchParams.get("q");
+		if (q != null && q.length > 0)
+			socket.emit("navigate", rewriteURL(q, "https://www.google.com/search?q="));
 
-		let tm = false;
-		setTimeout(() => {
-			tm = true;
-			socket.emit("sync");
-		}, 1000);
-
-		await frame.decode();
-		if (!tm)
-			socket.emit("sync");
-	});
-
-	socket.on("tabinfo", (data) => {
-		const tab = tabs.children[data.id];
-		tab.querySelector("div").textContent = data.title || "Untitled";
-		tab.querySelector("img").src = data.favicon || "/res/empty.ico";
-	});
-	socket.on("tabopen", () => guiNewTab());
-	socket.on("tabclose", (i) => {
-		const elems = tabs.children;
-		if (i > 1) {
-			const e = elems[i - 1];
-			currentTab = e;
-			e.setAttribute("current", "true");
-		}
-		elems[i].remove();
-	});
-
-	guiNewTab();
-	socket.emit("sync");
+		message(null);
+	}, 500);
 })();

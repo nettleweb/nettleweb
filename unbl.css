@@ -29,9 +29,9 @@ button[title]:active {
 #tabs {
 	position: relative;
 	display: flex;
-	width: fit-content;
+	width: auto;
 	height: 35px;
-	flex: 0 1;
+	max-width: calc(100% - 35px);
 	flex-direction: row;
 	flex-wrap: nowrap;
 }
@@ -48,14 +48,13 @@ button[title]:active {
 
 #tabs>div {
 	position: relative;
-	display: flex;
+	display: block;
 	width: 250px;
 	height: 35px;
 	flex: 0 1 250px;
-	flex-direction: row;
-	flex-wrap: nowrap;
 	border-left: 1px solid #c0c0c0;
 	border-right: 1px solid #c0c0c0;
+	overflow: hidden;
 }
 
 #tabs>div[current] {
@@ -63,36 +62,38 @@ button[title]:active {
 }
 
 #tabs>div>img {
-	position: relative;
+	position: absolute;
 	display: block;
 	width: 19px;
 	height: 19px;
-	padding: 8px;
-	flex: 0 0 19px;
+	left: 8px;
+	top: 8px;
 }
 
 #tabs>div>div {
-	position: relative;
+	position: absolute;
 	display: block;
-	width: 100%;
+	width: calc(100% - 70px);
 	height: 19px;
-	padding: 8px 0px;
-	flex: 0 1 100%;
+	left: 35px;
+	top: 8px;
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 19px;
-	text-overflow: ellipsis;
 	white-space: nowrap;
+	text-overflow: ellipsis;
+	letter-spacing: 0px;
 	overflow: hidden;
 	overflow-wrap: break-word;
 }
 
 #tabs>div>button {
-	position: relative;
+	position: absolute;
 	display: block;
 	width: 35px;
 	height: 35px;
-	flex: 0 0 35px;
+	top: 0px;
+	right: 0px;
 	background-image: url("res/close.svg");
 	background-size: 15px;
 }
