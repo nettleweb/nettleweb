@@ -87,6 +87,10 @@
 	overflow-y: auto;
 }
 
+#content>h1 {
+	display: none;
+}
+
 #content>div:not(#footer) {
 	position: relative;
 	display: none;
@@ -137,7 +141,7 @@
 	padding: 5px;
 }
 
-#text-body>* {
+#text-body>*, #footer-links>* {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -147,16 +151,12 @@
 	letter-spacing: 0px;
 }
 
-#text-body>h1 {
-	display: none;
-}
-
 #text-body>h2 {
 	font-size: 20px;
 	line-height: 28px;
 }
 
-#text-body>h3 {
+#text-body>h3, #footer-links>h3 {
 	font-size: 18px;
 	line-height: 28px;
 }
@@ -175,7 +175,7 @@
 	width: fit-content;
 }
 
-#text-body>.code {
+#text-body>code {
 	position: relative;
 	display: block;
 	width: calc(100% - 20px);
@@ -187,6 +187,30 @@
 	line-height: 10px;
 	letter-spacing: -1px;
 	overflow-wrap: break-word;
+}
+
+#text-body>button {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	padding: 15px 20px;
+	margin: 10px 15px;
+	color: #ffffff;
+	cursor: pointer;
+	outline: none;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	box-shadow: 2px 2px #808080;
+	background: #005a5a;
+}
+
+#text-body>button:focus {
+	border-color: #323232;
+}
+
+#text-body>button:active {
+	box-shadow: -2px -2px #808080;
 }
 
 #games-page>input {
@@ -689,24 +713,42 @@
 
 #footer {
 	position: relative;
-	display: flex;
+	display: block;
 	width: 760px;
 	height: fit-content;
-	margin: 20px auto;
-	padding: 0px 20px 40px;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	align-items: center;
-	justify-content: space-around;
+	margin: 40px auto 0px;
+	padding: 20px 20px 40px;
+	border-top: 1px solid #808080;
 }
 
-#footer>div {
+#footer-links {
 	position: relative;
 	display: block;
 	width: fit-content;
 	height: fit-content;
+	margin: 15px 0px;
+}
+
+#footer-base {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+	flex-direction: row;
+	flex-wrap: wrap;
 	color: #808080;
 	cursor: default;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#footer-base>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 5px;
 	font-size: 12px;
 	font-weight: 400;
 	text-align: center;
@@ -715,7 +757,7 @@
 }
 
 @media all and (max-width: 800px) {
-	#content>div:not(#footer), #footer {
+	#content>div {
 		width: calc(100% - 40px);
 	}
 

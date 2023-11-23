@@ -225,8 +225,18 @@
 			if (document.activeElement !== address)
 				address.value = url;
 		});
-		socket.on("frame", (data) => {
+		socket.on("frame", async (data) => {
+			if (decoding)
+				return;
+			decoding = true;
+
 			frame.src = "data:image/jpeg;base64," + data;
+			try {
+				await frame.decode();
+			} catch (err) {
+			}
+
+			decoding = false;
 		});
 		socket.on("tabinfo", (data) => {
 			const { id } = data;
@@ -293,6 +303,9 @@
 			socket.emit("newtab");
 
 		message(null);
+		decoding = false;
+		frame.loading = "eager";
+		frame.decoding = "async";
 		frame.autofocus = true;
 		frame.focus({ preventScroll: true });
 	}
@@ -322,6 +335,7 @@
 	 * @type {number}
 	 */
 	let currentTabId = -1;
+	let decoding = false;
 
 	/**
 	 * @type {import("socket.io-client").Socket}
