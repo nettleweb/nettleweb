@@ -1,0 +1,71 @@
+@import url("/common.css");
+
+body {
+	font-family: "Ubuntu Mono", monospace;
+	line-height: 1;
+	letter-spacing: 0px;
+}
+
+#container {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 20px auto;
+}
+
+#container>h1 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 10px;
+	margin: auto;
+	font-family: "Ubuntu", sans-serif;
+}
+
+#container button {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	padding: 2px;
+	margin: 0px 5px;
+	cursor: pointer;
+	outline: 1px solid #323232;
+	background: #a0a0a0;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+
+#container button:active {
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #ffffff;
+	border-bottom: 1px solid #ffffff;
+}
+
+#container input[type="number"] {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	padding: 2px;
+	margin: 0px 10px 0px 0px;
+	outline: 1px solid #323232;
+	background: #ffffff;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	border-right: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+
+#container>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px auto;
+}
