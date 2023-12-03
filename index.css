@@ -757,7 +757,7 @@
 }
 
 @media all and (max-width: 800px) {
-	#content>div {
+	#content>div:not(#footer), #footer {
 		width: calc(100% - 40px);
 	}
 
