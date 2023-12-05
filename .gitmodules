@@ -1,0 +1,3 @@
+[submodule "ext/webemu"]
+	path = ext/webemu
+	url = https://github.com/whitespider-dev/webemu
