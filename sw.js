@@ -45,6 +45,9 @@
 				return await optFetch(request);
 		}
 
+		if (url.pathname === "/manifest.json")
+			return await optFetch(request);
+
 		const cached = await caches.match(request, { cacheName });
 		if (cached != null)
 			return cached;
@@ -72,38 +75,6 @@
 	}
 
 	/**
-	 * @returns {Promise<boolean>}
-	 */
-	async function checkForUpdates() {
-		const mfReq = new Request("/manifest.json", {
-			cache: "no-cache",
-			method: "GET",
-			headers: {
-				"Accept": "application/json"
-			}
-		});
-
-		const oldMf = await caches.match(mfReq, { cacheName });
-		const newMf = await optFetch(mfReq);
-		if (!newMf.ok) {
-			console.error("Failed to fetch manifest.");
-			return false;
-		}
-
-		if (oldMf != null) {
-			const oldVersion = (await oldMf.json()).version;
-			const newVersion = (await newMf.clone().json()).version;
-
-			if (oldVersion === newVersion)
-				return false;
-		}
-
-		await caches.delete(cacheName);
-		await (await caches.open(cacheName)).put(mfReq, newMf);
-		return true;
-	}
-
-	/**
 	 * @param {ExtendableEvent} e 
 	 */
 	async function handleActivate(e) {
@@ -111,14 +82,6 @@
 		for (const k of await caches.keys()) {
 			if (k != cacheName)
 				await caches.delete(k);
-		}
-
-		if (await checkForUpdates()) {
-			console.log("Update available!");
-			for (const win of await self.clients.matchAll({ type: "window", includeUncontrolled: true })) {
-				await self.skipWaiting();
-				await win.navigate("/");
-			}
 		}
 	}
 
