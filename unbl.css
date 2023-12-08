@@ -175,6 +175,7 @@ button[title]:active {
 	border: none;
 	outline: none;
 	overflow: hidden;
+	image-rendering: pixelated;
 }
 
 #message {

@@ -1,1 +1,95 @@
-function KeyboardInputManager(){this.events={},this.listen()}KeyboardInputManager.prototype.on=function(t,e){this.events[t]||(this.events[t]=[]),this.events[t].push(e)},KeyboardInputManager.prototype.emit=function(t,e){var n=this.events[t];n&&n.forEach((function(t){t(e)}))},KeyboardInputManager.prototype.listen=function(){var t=this,e={38:0,39:1,40:2,37:3,75:0,76:1,74:2,72:3,87:0,68:1,83:2,65:3};document.addEventListener("keydown",(function(n){var a=n.altKey||n.ctrlKey||n.metaKey||n.shiftKey,i=e[n.which];a||(void 0!==i&&(n.preventDefault(),t.emit("move",i)),32===n.which&&t.restart.bind(t)(n))}));var n,a,i=document.getElementsByClassName("retry-button")[0];i.addEventListener("click",this.restart.bind(this)),i.addEventListener("touchend",this.restart.bind(this));var s=document.getElementsByClassName("game-container")[0];s.addEventListener("touchstart",(function(t){t.touches.length>1||(n=t.touches[0].clientX,a=t.touches[0].clientY,t.preventDefault())})),s.addEventListener("touchmove",(function(t){t.preventDefault()})),s.addEventListener("touchend",(function(e){if(!(e.touches.length>0)){var i=e.changedTouches[0].clientX-n,s=Math.abs(i),r=e.changedTouches[0].clientY-a,o=Math.abs(r);Math.max(s,o)>10&&t.emit("move",s>o?i>0?1:3:r>0?2:0)}}))},KeyboardInputManager.prototype.restart=function(t){t.preventDefault(),this.emit("restart")};
+function KeyboardInputManager() {
+  this.events = {};
+
+  this.listen();
+}
+
+KeyboardInputManager.prototype.on = function (event, callback) {
+  if (!this.events[event]) {
+    this.events[event] = [];
+  }
+  this.events[event].push(callback);
+};
+
+KeyboardInputManager.prototype.emit = function (event, data) {
+  var callbacks = this.events[event];
+  if (callbacks) {
+    callbacks.forEach(function (callback) {
+      callback(data);
+    });
+  }
+};
+
+KeyboardInputManager.prototype.listen = function () {
+  var self = this;
+
+  var map = {
+    38: 0, // Up
+    39: 1, // Right
+    40: 2, // Down
+    37: 3, // Left
+    75: 0, // vim keybindings
+    76: 1,
+    74: 2,
+    72: 3,
+    87: 0, // W
+    68: 1, // D
+    83: 2, // S
+    65: 3  // A
+  };
+
+  document.addEventListener("keydown", function (event) {
+    var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
+                    event.shiftKey;
+    var mapped    = map[event.which];
+
+    if (!modifiers) {
+      if (mapped !== undefined) {
+        event.preventDefault();
+        self.emit("move", mapped);
+      }
+
+      if (event.which === 32) self.restart.bind(self)(event);
+    }
+  });
+
+  var retry = document.getElementsByClassName("retry-button")[0];
+  retry.addEventListener("click", this.restart.bind(this));
+  retry.addEventListener("touchend", this.restart.bind(this));
+
+  // Listen to swipe events
+  var touchStartClientX, touchStartClientY;
+  var gameContainer = document.getElementsByClassName("game-container")[0];
+
+  gameContainer.addEventListener("touchstart", function (event) {
+    if (event.touches.length > 1) return;
+
+    touchStartClientX = event.touches[0].clientX;
+    touchStartClientY = event.touches[0].clientY;
+    event.preventDefault();
+  });
+
+  gameContainer.addEventListener("touchmove", function (event) {
+    event.preventDefault();
+  });
+
+  gameContainer.addEventListener("touchend", function (event) {
+    if (event.touches.length > 0) return;
+
+    var dx = event.changedTouches[0].clientX - touchStartClientX;
+    var absDx = Math.abs(dx);
+
+    var dy = event.changedTouches[0].clientY - touchStartClientY;
+    var absDy = Math.abs(dy);
+
+    if (Math.max(absDx, absDy) > 10) {
+      // (right : left) : (down : up)
+      self.emit("move", absDx > absDy ? (dx > 0 ? 1 : 3) : (dy > 0 ? 2 : 0));
+    }
+  });
+};
+
+KeyboardInputManager.prototype.restart = function (event) {
+  event.preventDefault();
+  this.emit("restart");
+};

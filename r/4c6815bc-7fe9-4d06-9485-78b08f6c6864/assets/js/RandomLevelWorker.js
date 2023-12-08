@@ -1,69 +1,748 @@
-function Distort(e,t){this.source=e,this.distort=t,this.getValue=function(e,t){return this.source.getValue(e+this.distort.getValue(e,t),t)}}function ImprovedNoise(e){var t=function(e){return e*e*e*(e*(6*e-15)+10)},n=function(e,t,n){return t+e*(n-t)},r=function(e,t,n,r){var a=(e&=15)<8?t:n,i=4>e?n:12!=e&&14!=e?r:t
-return(0==(1&e)?a:-a)+(0==(2&e)?i:-i)}
-this.p=[]
-for(var a=0;256>a;a++)this.p[a]=a
-for(var a=0;256>a;a++){var i=Math.round(e*(256-a))+a,s=this.p[a]
-this.p[a]=this.p[i],this.p[i]=s,this.p[a+256]=this.p[a]}this.getValue=function(e,a){var i=0,s=a,o=e,u=255&Math.floor(e),l=255&Math.floor(a),c=255&Math.floor(0)
-o-=Math.floor(o),s-=Math.floor(s),i=0-Math.floor(0)
-var h=t(o),_=t(s),f=t(i),d=this.p[u]+l,p=this.p[d]+c
-return d=this.p[d+1]+c,u=this.p[u+1]+l,l=this.p[u]+c,u=this.p[u+1]+c,n(f,n(_,n(h,r(this.p[p],o,s,i),r(this.p[l],o-1,s,i)),n(h,r(this.p[d],o,s-1,i),r(this.p[u],o-1,s-1,i))),n(_,n(h,r(this.p[p+1],o,s,i-1),r(this.p[l+1],o-1,s,i-1)),n(h,r(this.p[d+1],o,s-1,i-1),r(this.p[u+1],o-1,s-1,i-1))))}}function PerlinNoise(e,t){for(var n=[],t=8,r=0;8>r;++r)n[r]=new ImprovedNoise(e)
-this.getValue=function(e,r){for(var a=0,i=1,s=0;t>s;s++)a+=n[s].getValue(e*i,r*i)/i,i/=2
-return a}}function Random(e){this._seed=e%2147483647,this._seed<=0&&(this._seed+=2147483646)}function startGeneration(e){var t=new RandomLevel,n=e.worldSize,r=e.worldSize,a=64
-t.createLevel(e.seed,n,r,a)}Random.prototype.next=function(){return this._seed=16807*this._seed%2147483647},Random.prototype.nextInt=function(e){return Math.floor(this.nextFloat()*e)},Random.prototype.nextFloat=function(e,t){return(this.next()-1)/2147483646}
-var RandomLevel=function(){var e={string:"",percent:0,tiles:null}
-this.createLevel=function(t,n,r,a){var i=new Random(t)
-this.xSize=n,this.ySize=64,this.zSize=r,this.random=i.nextFloat(),this.tiles=[],this.fillQueue=[],this.grow=function(t){for(var n=this.xSize,r=this.zSize,a=this.ySize,i=new PerlinNoise(this.random,8),s=new PerlinNoise(this.random,8),o=0;n>o;++o){e.percent=100*o/(this.xSize-1),self.postMessage(e)
-for(var u=0;r>u;++u){var l,c,h=i.getValue(o,u)>8,_=s.getValue(o,u)>12,f=parseInt(((l=parseInt(t[o+u*n],10))*this.zSize+u)*this.xSize+o,10)
-if(7==(c=255&parseInt(this.tiles[((l+1)*this.zSize+u)*this.xSize+o],10))&&a/2-1>=l&&_&&(this.tiles[f]=12),0==c){var d=1
-a/2-1>=l&&h&&(d=11),this.tiles[f]=d}}}},this.melt=function(){for(var t=0,n=this.xSize*this.zSize*this.ySize/1e4,r=0;n>r;++r){r%100==0&&(e.percent=100*r/(n-1),self.postMessage(e))
-var a=16,s=i.nextInt(this.xSize),o=i.nextInt(this.ySize/2-4)+a,u=i.nextInt(this.zSize)
-0==this.tiles[(o*this.zSize+u)*this.xSize+s]&&(++t,this.floodFill(s,o,u,0,17))}},this.plant=function(t){for(var n=this.xSize,r=this.xSize*this.zSize/4e3,a=0;r>a;++a){e.percent=100*a/(r-1),self.postMessage(e)
-for(var s=i.nextInt(this.xSize),o=i.nextInt(this.zSize),u=0;20>u;++u)for(var l=s,c=o,h=0;20>h;++h)if(l+=i.nextInt(6)-i.nextInt(6),c+=i.nextInt(6)-i.nextInt(6),l>=0&&c>=0&&l<this.xSize&&c<this.zSize){var _,f,d,p=t[l+c*n]+1,v=i.nextInt(3)+4,m=!0
-for(_=p;p+1+v>=_;++_){var g=1
-for(_>=p+1+v-2&&(g=2),f=l-g;l+g>=f&&m;++f)for(d=c-g;c+g>=d&&m;++d)f>=0&&_>=0&&d>=0&&f<this.xSize&&_<this.ySize&&d<this.zSize?0!=(255&this.tiles[(_*this.zSize+d)*this.xSize+f])&&(m=!1):m=!1}if(m&&(_=(p*this.zSize+c)*this.xSize+l,1==(255&this.tiles[((p-1)*this.zSize+c)*this.xSize+l])&&p<this.ySize-v-1)){for(this.tiles[_-1*this.xSize*this.zSize]=3,f=p-3+v;p+v>=f;++f){d=f-(p+v)
-for(var y=parseInt(1-d/2,10),C=l-y;l+y>=C;++C)for(var S=parseInt(C-l,10),k=c-y;c+y>=k;++k){var I=parseInt(k-c,10);(Math.abs(S)!=y||Math.abs(I)!=y||0!=i.nextInt(2)&&0!=d)&&(this.tiles[(f*this.zSize+k)*this.xSize+C]=14)}}for(f=0;v>f;++f)this.tiles[_+f*this.xSize*this.zSize]=13}}}},this.placeOre=function(t,n,r,a){a=this.xSize
-for(var s=this.zSize,o=this.ySize,u=a*s*o/256/64*n/100,l=0;u>l;++l){e.percent=100*l/(u-1)/4+100*r/4,self.postMessage(e)
-for(var c=i.nextFloat()*a,h=i.nextFloat()*o,_=i.nextFloat()*s,f=parseInt(75*(i.nextFloat()+i.nextFloat())*n/100,10),d=3.141592653589793*i.nextFloat()*2,p=0,v=3.141592653589793*i.nextFloat()*2,m=0,g=0;f>g;++g){c+=Math.sin(d)*Math.cos(v),_+=Math.cos(d)*Math.cos(v),h+=Math.sin(v),d+=.2*p,p=(p*=.9)+(i.nextFloat()-i.nextFloat()),v=.5*(v+.5*m),m=(m*=.9)+(i.nextFloat()-i.nextFloat())
-for(var y=Math.sin(3.141592653589793*g/f)*n/100+1,C=Math.round(c-y);C<=Math.round(c+y);++C)for(var S=Math.round(h-y);S<=Math.round(h+y);++S)for(var k=Math.round(_-y);k<=Math.round(_+y);++k){var I=C-c,b=S-h,T=k-_
-if(y*y>I*I+b*b*2+T*T&&C>=1&&S>=1&&k>=1&&C<this.xSize-1&&S<this.ySize-1&&k<this.zSize-1){var G=parseInt((S*this.zSize+k)*this.xSize+C,10)
-2==this.tiles[G]&&(this.tiles[G]=t)}}}}},this.floodFill=function(e,t,r,i,s){for(var o=1,u=1;n>1<<o;)o++
-for(;a>1<<u;)u++
-var l=this.zSize-1,c=this.xSize-1,h=1
-this.fillQueue[0]=((t<<u)+r<<o)+e
-for(var _=0,f=this.xSize*this.zSize;h>0;){--h
-var d=this.fillQueue[h],p=d>>o&l,v=d>>o+u,m=0,g=0
-for(g=m=d&c;m>0&&0==this.tiles[d-1];--d)--m
-for(;g<this.xSize&&0==this.tiles[d+g-m];)++g
-var y=d>>o&l,C=d>>o+u;(y!=p||C!=v)&&console.log("hoooly fuck")
-var S=!1,k=!1,I=!1
-for(_+=g-m,m=m;g>m;++m){this.tiles[d]=s
-var b
-if(p>0&&((b=0==this.tiles[d-this.xSize])&&!S&&(this.fillQueue[h++]=d-this.xSize),S=b),p<this.zSize-1&&((b=0==this.tiles[d+this.xSize])&&!k&&(this.fillQueue[h++]=d+this.xSize),k=b),v>0){var T=this.tiles[d-f]
-17==s&&7==T&&(this.tiles[d-f]=2),(b=0==T)&&!I&&(this.fillQueue[h++]=d-f),I=b}++d}}return _},e.string="Raising.."
-var s,o,u=new Distort(new PerlinNoise(this.random,8),new PerlinNoise(this.random,8)),l=new Distort(new PerlinNoise(this.random,8),new PerlinNoise(this.random,8)),c=new PerlinNoise(this.random,8),h=[],_=1.3
-for(s=0;n>s;++s)for(e.percent=100*s/(n-1),self.postMessage(e),o=0;r>o;++o){var f=u.getValue(s*_,o*_)/8-8,d=l.getValue(s*_,o*_)/6+6
-c.getValue(s,o)/8>0&&(d=f)
-var p;(p=Math.max(f,d)/2)<0&&(p*=.8),h[s+o*n]=p}e.string="Eroding.."
-var v=h
-l=new Distort(new PerlinNoise(this.random,8),new PerlinNoise(this.random,8))
-var m,g,y,C,S=new Distort(new PerlinNoise(this.random,8),new PerlinNoise(this.random,8))
-for(m=0;n>m;++m)for(e.percent=100*m/(n-1),self.postMessage(e),g=0;r>g;++g){var k=l.getValue(m<<1,g<<1)/8
-y=S.getValue(m<<1,g<<1)>0?1:0,k>2&&(C=((v[m+g*n]-y)/2<<1)+y,v[m+g*n]=C)}e.string="Soiling..",v=h
-var I=this.xSize,b=this.zSize
-m=this.ySize
-var T,G,A=new PerlinNoise(this.random,8)
-for(s=0;I>s;++s)for(e.percent=100*s/(n-1),self.postMessage(e),o=0;b>o;++o)for(y=A.getValue(s,o)/24-4,T=(C=v[s+o*I]+m/2)+y,v[s+o*I]=Math.max(C,T),G=0;m>G;++G){var x=(G*r+o)*n+s,R=0
-C>=G&&(R=3),T>=G&&(R=2),this.tiles[x]=R}for(e.string="Carving..",b=this.xSize,m=this.zSize,g=this.ySize,s=b*m*g/256/64,o=0;s>o;++o){e.percent=100*o/(s-1)/4,self.postMessage(e)
-var E=i.nextFloat()*b,P=i.nextFloat()*g,M=i.nextFloat()*m
-G=75*(i.nextFloat()+i.nextFloat())
-for(var w=3.141592653589793*i.nextFloat()*2,O=0,D=3.141592653589793*i.nextFloat()*2,L=0,B=0;G>B;++B)if(E+=Math.sin(w)*Math.cos(D),M+=Math.cos(w)*Math.cos(D),P+=Math.sin(D),w+=.2*O,O=(O*=.9)+(i.nextFloat()-i.nextFloat()),D=.5*(D+.5*L),L=(L*=.9)+(i.nextFloat()-i.nextFloat()),i.nextFloat()>=.3)for(var F=E+4*i.nextFloat()-2,N=P+4*i.nextFloat()-2,H=M+4*i.nextFloat()-2,U=2.5*Math.sin(3.141592653589793*B/G)+1,W=parseInt(F-U,10);W<=parseInt(F+U,10);++W)for(var V=parseInt(N-U,10);V<=parseInt(N+U,10);++V)for(var j=H-U;H+U>=j;++j){var Y=W-F,X=V-N,z=j-H
-if(U*U>Y*Y+X*X*2+z*z&&W>=1&&V>=1&&j>=1&&n-1>W&&a-1>V&&r-1>j){var K=parseInt((V*r+j)*n+W,10)
-2==this.tiles[K]&&(this.tiles[K]=0)}}}this.placeOre(20,90,1,4),this.placeOre(19,70,2,4),this.placeOre(18,50,3,4),e.string="Watering.."
-var J=(i.nextFloat(),0)
-s=7
-var q=29
-for(n>=256&&(q=92),n>=512&&(q=219),o=0;n>o;++o)J=J+this.floodFill(o,a/2-1+q,0,0,s)+this.floodFill(o,a/2-1,r-1+q,0,s)
-for(o=0;r>o;++o)J=J+this.floodFill(0,a/2-1+q,o,0,s)+this.floodFill(n-1,a/2-1+q,o,0,s)
-for(o=n*r/200,y=0;o>y;++y)y%100==0&&(e.percent=100*y/(o-1),self.postMessage(e)),C=i.nextInt(n),T=a/2-1-i.nextInt(3)+q,G=i.nextInt(r),0==this.tiles[(T*r+G)*n+C]&&(J+=this.floodFill(C,T,G,0,s))
-e.percent=100,self.postMessage(e),e.string="Melting..",this.melt(),e.string="Growing..",this.grow(h),e.string="Planting..",this.plant(h),e.tiles=this.tiles,e.string="",self.postMessage(e)}}
-self.addEventListener("message",function(e){startGeneration(e.data)},!1)
+// World generation as a worker.
+function Distort (source, distort) {
+
+    this.source = source;
+    this.distort = distort;
+    
+    this.getValue = function(x, y) {
+        return this.source.getValue(x + this.distort.getValue(x, y), y);
+    }
+}
+
+function ImprovedNoise (random) {
+
+    var fadeCurve = function(d0) {
+        return d0 * d0 * d0 * (d0 * (d0 * 6.0 - 15.0) + 10.0);
+    }
+
+    var lerp = function(d0, d1, d2) {
+        return d1 + d0 * (d2 - d1);
+    }
+
+    var grad = function(i, d0, d1, d2) {
+        var d3 = (i &= 15) < 8 ? d0 : d1;
+        var d4 = i < 4 ? d1 : (i != 12 && i != 14 ? d2 : d0);
+
+        return ((i & 1) == 0 ? d3 : -d3) + ((i & 2) == 0 ? d4 : -d4);
+    }
+
+   	
+	this.p = [];
+
+    for (var i = 0; i < 256; i++) {
+        this.p[i] = i;
+    }
+
+    for (var i = 0; i < 256; i++) {
+        //var j = random.nextInt(256 - i) + i;
+        //var j = Math.round( Math.random() * 256-i ) + i;
+        var j = Math.round( random * (256-i) ) + i;
+
+        var tmp = this.p[i];
+        this.p[i] = this.p[j];
+        this.p[j] = tmp;
+
+        this.p[i + 256] = this.p[i];
+    }
+
+
+    this.getValue = function(d0, d1) {
+        var d2 = 0.0;
+        var d3 = d1;
+        var d4 = d0;
+        var i = Math.floor(d0) & 255;
+        var j = Math.floor(d1) & 255;
+        var k = Math.floor(0.0) & 255;
+
+        d4 -= Math.floor(d4);
+        d3 -= Math.floor(d3);
+        d2 = 0.0 - Math.floor(0.0);
+        var d5 = fadeCurve(d4);
+        var d6 = fadeCurve(d3);
+        var d7 = fadeCurve(d2);
+        var l = this.p[i] + j;
+        var i1 = this.p[l] + k;
+
+        l = this.p[l + 1] + k;
+        i = this.p[i + 1] + j;
+        j = this.p[i] + k;
+        i = this.p[i + 1] + k;
+        return lerp(d7, lerp(d6, lerp(d5, grad(this.p[i1], d4, d3, d2), grad(this.p[j], d4 - 1.0, d3, d2)), lerp(d5, grad(this.p[l], d4, d3 - 1.0, d2), grad(this.p[i], d4 - 1.0, d3 - 1.0, d2))), lerp(d6, lerp(d5, grad(this.p[i1 + 1], d4, d3, d2 - 1.0), grad(this.p[j + 1], d4 - 1.0, d3, d2 - 1.0)), lerp(d5, grad(this.p[l + 1], d4, d3 - 1.0, d2 - 1.0), grad(this.p[i + 1], d4 - 1.0, d3 - 1.0, d2 - 1.0))));
+    }
+
+}
+
+function PerlinNoise (random, levels) {
+
+    //var ImprovedNoise = require("./ImprovedNoise.js");
+
+    var noiseLevels = [];
+    var levels = 8;
+
+    for (var i = 0; i < 8; ++i) {
+        noiseLevels[i] = new ImprovedNoise(random);
+    }
+    
+    this.getValue = function(x, y) {
+        var value = 0;
+        var pow = 1;
+
+        for (var i = 0; i < levels; i++) {
+            value += noiseLevels[i].getValue(x * pow, y * pow) / pow;
+            pow /= 2;
+        }
+
+        return value;
+    }
+
+}
+
+/**
+ * Creates a pseudo-random value generator. The seed must be an integer.
+ *
+ * Uses an optimized version of the Park-Miller PRNG.
+ * http://www.firstpr.com.au/dsp/rand31/
+ */
+function Random(seed) {
+  this._seed = seed % 2147483647;
+  if (this._seed <= 0) this._seed += 2147483646;
+}
+
+/**
+ * Returns a pseudo-random value between 1 and 2^32 - 2.
+ */
+Random.prototype.next = function () {
+  return this._seed = this._seed * 16807 % 2147483647;
+};
+
+Random.prototype.nextInt = function (max) {
+    return Math.floor( this.nextFloat()*max );
+};
+
+/**
+ * Returns a pseudo-random floating point number in range [0, 1).
+ */
+Random.prototype.nextFloat = function (opt_minOrMax, opt_max) {
+  // We know that result of next() will be 1 to 2147483646 (inclusive).
+  return (this.next() - 1) / 2147483646;
+};
+
+
+var RandomLevel = function () {
+
+    var progress = {
+    	string: "",
+    	percent: 0,
+    	tiles: null        	
+    }
+
+    this.createLevel = function(seed, xSize, zSize, ySize) {
+        var random = new Random(seed);
+
+        // set world size properties
+        this.xSize = xSize;
+        this.ySize = 64;
+        this.zSize = zSize;
+
+        this.random = random.nextFloat();
+        this.tiles = [];
+        this.fillQueue = [];
+
+        // grow
+        this.grow = function(aint) {
+            var i = this.xSize;
+            var j = this.zSize;
+            var k = this.ySize;
+            var perlinnoise = new PerlinNoise(this.random, 8);
+            var perlinnoise1 = new PerlinNoise(this.random, 8);
+
+            for (var l = 0; l < i; ++l) {
+                //this.progress(l * 100 / (this.xSize - 1));
+                progress.percent = l * 100 / (this.xSize - 1);
+            	self.postMessage(progress);
+
+                for (var i1 = 0; i1 < j; ++i1) {
+                    var flag = perlinnoise.getValue( l, i1) > 8.0;
+                    var flag1 = perlinnoise1.getValue( l, i1) > 12.0;
+                    var j1;
+                    var k1 = parseInt( ((j1 = parseInt(aint[l + i1 * i],10)) * this.zSize + i1) * this.xSize + l, 10);
+                    var l1;
+                    // 7 waterid
+                    //if (((l1 = this.tiles[((j1 + 1) * this.zSize + i1) * this.xSize + l] & 255) == 7) && j1 <= k / 2 - 1 && flag1) {
+                    if (((l1 = parseInt(this.tiles[((j1 + 1) * this.zSize + i1) * this.xSize + l],10) & 255) == 7) && j1 <= k / 2 - 1 && flag1) {
+
+                        this.tiles[k1] = 12;//(byte) Tile.gravel.id;
+                    }
+
+                    if (l1 == 0) {
+                        var i2 = 1;//Tile.grass.id;
+
+                        if (j1 <= k / 2 - 1 && flag) {
+                            i2 = 11;//Tile.sand.id;
+                        }
+
+                        this.tiles[k1] = i2;
+                    }
+                }
+            }
+
+        }
+
+        // melt
+        this.melt = function() {
+            var i = 0;
+            var j = this.xSize * this.zSize * this.ySize / 10000;
+
+            for (var k = 0; k < j; ++k) {
+                if (k % 100 == 0) {
+                //    this.progress(k * 100 / (j - 1));
+                	progress.percent = k * 100 / (j - 1);
+  	                self.postMessage(progress);
+                }
+
+                var extray = 16;
+
+                var l = random.nextInt(this.xSize);
+                var i1 = random.nextInt(this.ySize / 2 - 4) + extray;
+                var j1 = random.nextInt(this.zSize);
+
+                if (this.tiles[(i1 * this.zSize + j1) * this.xSize + l] == 0) {
+                    ++i;
+                    //this.floodFill(l, i1, j1, 0, Tile.calmLava.id);
+                    this.floodFill(l, i1, j1, 0, 17);
+
+                }
+            }
+
+            //this.progress(100);
+            //System.out.println("LavaCount: " + i);
+            //console.log("LavaCount: " + i);
+        }
+
+        // plant
+        this.plant = function(aint) {
+            var i = this.xSize;
+            var j = this.xSize * this.zSize / 4000;
+
+            for (var k = 0; k < j; ++k) {
+                //this.progress(k * 100 / (j - 1));
+                progress.percent = k * 100 / (j - 1);
+                self.postMessage(progress);
+
+                var l = random.nextInt(this.xSize);
+                var i1 = random.nextInt(this.zSize);
+
+                for (var j1 = 0; j1 < 20; ++j1) {
+                    var k1 = l;
+                    var l1 = i1;
+
+                    for (var i2 = 0; i2 < 20; ++i2) {
+                        k1 += random.nextInt(6) - random.nextInt(6);
+                        l1 += random.nextInt(6) - random.nextInt(6);
+                        if (k1 >= 0 && l1 >= 0 && k1 < this.xSize && l1 < this.zSize) {
+                            var j2 = aint[k1 + l1 * i] + 1;
+                            var k2 = random.nextInt(3) + 4;
+                            var flag = true;
+
+                            var l2;
+                            var i3;
+                            var j3;
+
+                            for (l2 = j2; l2 <= j2 + 1 + k2; ++l2) {
+                                var b0 = 1;
+
+                                if (l2 >= j2 + 1 + k2 - 2) {
+                                    b0 = 2;
+                                }
+
+                                for (i3 = k1 - b0; i3 <= k1 + b0 && flag; ++i3) {
+                                    for (j3 = l1 - b0; j3 <= l1 + b0 && flag; ++j3) {
+                                        if (i3 >= 0 && l2 >= 0 && j3 >= 0 && i3 < this.xSize && l2 < this.ySize && j3 < this.zSize) {
+                                            if ((this.tiles[(l2 * this.zSize + j3) * this.xSize + i3] & 255) != 0) {
+                                                flag = false;
+                                            }
+                                        } else {
+                                            flag = false;
+                                        }
+                                    }
+                                }
+                            }
+
+                            if (flag) {
+                                l2 = (j2 * this.zSize + l1) * this.xSize + k1;
+                                if ((this.tiles[((j2 - 1) * this.zSize + l1) * this.xSize + k1] & 255) == 1 && j2 < this.ySize - k2 - 1) {
+                                    this.tiles[l2 - 1 * this.xSize * this.zSize] = 3;//(byte) Tile.dirt.id;
+
+                                    for (i3 = j2 - 3 + k2; i3 <= j2 + k2; ++i3) {
+                                        j3 = i3 - (j2 + k2);
+                                        var k3 = parseInt(1 - j3 / 2, 10);
+
+                                        for (var l3 = k1 - k3; l3 <= k1 + k3; ++l3) {
+                                            var i4 = parseInt(l3 - k1, 10);
+
+                                            for (var j4 = l1 - k3; j4 <= l1 + k3; ++j4) {
+                                                var k4 = parseInt(j4 - l1, 10);
+
+                                                if (Math.abs(i4) != k3 || Math.abs(k4) != k3 || random.nextInt(2) != 0 && j3 != 0) {
+                                                    this.tiles[(i3 * this.zSize + j4) * this.xSize + l3] = 14;//(byte) Tile.leaves.id;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    for (i3 = 0; i3 < k2; ++i3) {
+                                        this.tiles[l2 + i3 * this.xSize * this.zSize] = 13;//(byte) Tile.treeTrunk.id;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        // place ore
+        this.placeOre = function(tile, j, k, l) {
+            l = this.xSize;
+            var i1 = this.zSize;
+            var j1 = this.ySize;
+            var k1 = l * i1 * j1 / 256 / 64 * j / 100;
+
+            for (var l1 = 0; l1 < k1; ++l1) {
+                //this.progress(l1 * 100 / (k1 - 1) / 4 + k * 100 / 4);
+                progress.percent = l1 * 100 / (k1 - 1) / 4 + k * 100 / 4;
+                self.postMessage(progress);
+
+                var f = random.nextFloat() * l;
+                var f1 = random.nextFloat() * j1;
+                var f2 = random.nextFloat() * i1;
+                var i2 = parseInt( ((random.nextFloat() + random.nextFloat()) * 75.0 * j / 100.0) , 10);
+                var f3 = (random.nextFloat() * 3.141592653589793 * 2.0);
+                var f4 = 0.0;
+                var f5 = (random.nextFloat() * 3.141592653589793 * 2.0);
+                var f6 = 0.0;
+
+                for (var j2 = 0; j2 < i2; ++j2) {
+                    f = ( f + Math.sin(f3) * Math.cos(f5));
+                    f2 = ( f2 + Math.cos(f3) * Math.cos(f5));
+                    f1 = ( f1 + Math.sin(f5));
+                    f3 += f4 * 0.2;
+                    f4 = (f4 *= 0.9) + (random.nextFloat() - random.nextFloat());
+                    f5 = (f5 + f6 * 0.5) * 0.5;
+                    f6 = (f6 *= 0.9) + (random.nextFloat() - random.nextFloat());
+                    var f7 = (Math.sin(j2 * 3.141592653589793 / i2) * j / 100.0 + 1.0);
+
+                    for (var k2 = Math.round(f - f7); k2 <= Math.round(f + f7); ++k2) {
+                        for (var l2 = Math.round(f1 - f7); l2 <= Math.round(f1 + f7); ++l2) {
+                            for (var i3 = Math.round(f2 - f7); i3 <= Math.round(f2 + f7); ++i3) {
+                                var f8 = k2 - f;
+                                var f9 = l2 - f1;
+                                var f10 = i3 - f2;
+
+                                if (f8 * f8 + f9 * f9 * 2.0 + f10 * f10 < f7 * f7 && k2 >= 1 && l2 >= 1 && i3 >= 1 && k2 < this.xSize - 1 && l2 < this.ySize - 1 && i3 < this.zSize - 1) {
+                                    var j3 = parseInt( (l2 * this.zSize + i3) * this.xSize + k2 , 10);
+
+                                    //if (this.tiles[j3] == Tile.rock.id) {
+                                    if (this.tiles[j3] == 2) {
+                                        this.tiles[j3] = tile;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // floodfill
+        this.floodFill = function (xc, yc, zc, unused, tile) {
+            //ArrayList<int[]> fillBuffer = new ArrayList<>();
+            //console.log(yc)
+            //yc+=31
+
+            //var fillBuffer = [];
+
+            var wBits = 1;
+            var hBits = 1;
+
+            while (1 << wBits < xSize)
+                wBits++;
+            while (1 << hBits < ySize)
+                hBits++;
+
+            var zMask = this.zSize - 1;
+            var xMask = this.xSize - 1;
+            var count = 1;
+
+            this.fillQueue[0] = ((yc << hBits) + zc << wBits) + xc;
+
+            //console.log(this.fillQueue[0]);
+            var k2 = 0;
+
+
+            var offset = this.xSize * this.zSize;
+
+            while (count > 0) {
+                --count;
+                var val = this.fillQueue[count];
+                //if (count == 0 && fillBuffer.size() > 0) {
+                /*if (count == 0 && fillBuffer.length > 0) {
+                    //System.out.println("IT HAPPENED!");
+                    console.log("IT HAPPENED!");
+                    //this.fillQueue = fillBuffer.remove(fillBuffer.size() - 1);
+                    this.fillQueue = fillBuffer.slice(fillBuffer.length-1);
+
+                    count = this.fillQueue.length;
+                }*/
+
+                var z = val >> wBits & zMask;
+                var l2 = val >> wBits + hBits;
+
+                var i3 = 0;
+                var j3 = 0;
+
+                for (j3 = i3 = val & xMask; i3 > 0 && this.tiles[val - 1] == 0; --val) {
+                    --i3;
+                }
+
+                while (j3 < this.xSize && this.tiles[val + j3 - i3] == 0) {
+                    ++j3;
+                }
+
+                var k3 = val >> wBits & zMask;
+                var l3 = val >> wBits + hBits;
+
+                if (k3 != z || l3 != l2) {
+                    //System.out.println("hoooly fuck");
+                    console.log("hoooly fuck")
+                }
+
+                var flag = false;
+                var flag1 = false;
+                var flag2 = false;
+
+                k2 += (j3 - i3);
+
+                //console.log(k2)
+
+                for (i3 = i3; i3 < j3; ++i3) {
+                    //console.log(val)
+                    this.tiles[val] = tile;
+                    var flag3;
+
+                    if (z > 0) {
+                        if ((flag3 = this.tiles[val - this.xSize] == 0) && !flag) {
+                            //if (count == this.fillQueue.length) {
+                                //fillBuffer.add(this.fillQueue);
+                                //console.log("111");
+                                //fillBuffer.concat(this.fillQueue);
+                                //this.fillQueue = [];
+                                //count = 0;
+                            //}
+
+                            this.fillQueue[count++] = val - this.xSize;
+                        }
+
+                        flag = flag3;
+                    }
+
+                    if (z < this.zSize - 1) {
+                        if ((flag3 = this.tiles[val + this.xSize] == 0) && !flag1) {
+                            //if (count == this.fillQueue.length) {
+                                //fillBuffer.add(this.fillQueue);
+                                //console.log("222");
+                                //fillBuffer.concat(this.fillQueue);
+                                //this.fillQueue = [];
+                                //count = 0;
+                            //}
+
+                            this.fillQueue[count++] = val + this.xSize;
+                        }
+
+                        flag1 = flag3;
+                    }
+
+                    if (l2 > 0) {
+                        var b2 = this.tiles[val - offset];
+
+                        //if (( tile == Tile.lava.id || tile == Tile.calmLava.id) && (b2 == Tile.water.id || b2 == Tile.calmWater.id)) {
+                        if (( tile == 17) && (b2 == 7)) {
+                            this.tiles[val - offset] = 2;//Tile.rock.id;
+                        }
+
+                        if ((flag3 = b2 == 0) && !flag2) {
+                            //if (count == this.fillQueue.length) {
+                                //fillBuffer.add(this.fillQueue);
+                                //console.log("333");
+                                //fillBuffer.concat(this.fillQueue);
+                               // this.fillQueue = [];
+                                //count = 0;
+                            //}
+
+                            this.fillQueue[count++] = val - offset;
+                        }
+
+                        flag2 = flag3;
+                    }
+
+                    ++val;
+                }
+            }
+
+            return k2;
+        }
+
+
+
+
+
+
+        progress.string = "Raising..";
+
+        var distort = new Distort(new PerlinNoise(this.random, 8), new PerlinNoise(this.random, 8));
+        var distort1 = new Distort(new PerlinNoise(this.random, 8), new PerlinNoise(this.random, 8));
+        var perlinnoise = new PerlinNoise(this.random, 8);
+
+        // 256x256 array of world noise
+        var aint = [];
+
+        var f = 1.3;
+
+        var l;
+        var i1;
+
+        for (l = 0; l < xSize; ++l) {
+            progress.percent = l * 100 / (xSize - 1);
+            self.postMessage(progress);
+
+            for (i1 = 0; i1 < zSize; ++i1) {
+                var d0 = distort.getValue( ( l * f), ( i1 * f)) / 8.0 - 8.0;
+                var d1 = distort1.getValue( ( l * f), ( i1 * f)) / 6.0 + 6.0;
+
+                if (perlinnoise.getValue( l, i1) / 8.0 > 0.0) {
+                    d1 = d0;
+                }
+
+                var d2;
+
+                if ((d2 = Math.max(d0, d1) / 2.0) < 0.0) {
+                    d2 *= 0.8;
+                }
+
+                aint[l + i1 * xSize] = d2;
+            }
+        }
+
+
+        progress.string = "Eroding..";
+        //this.progressRenderer.progressStage("Eroding..");
+        var aint1 = aint;
+
+        distort1 = new Distort(new PerlinNoise(this.random, 8), new PerlinNoise(this.random, 8));
+        var distort2 = new Distort(new PerlinNoise(this.random, 8), new PerlinNoise(this.random, 8));
+
+        var j1;
+        var k1;
+        var l1;
+        var i2;
+
+        for (j1 = 0; j1 < xSize; ++j1) {
+            //progress(j1 * 100 / (xSize - 1));
+            progress.percent = j1 * 100 / (xSize - 1);
+            self.postMessage(progress);
+
+            for (k1 = 0; k1 < zSize; ++k1) {
+                var d3 = distort1.getValue( (j1 << 1), (k1 << 1)) / 8.0;
+
+                l1 = distort2.getValue( (j1 << 1), (k1 << 1)) > 0.0 ? 1 : 0;
+                if (d3 > 2.0) {
+                    i2 = ((aint1[j1 + k1 * xSize] - l1) / 2 << 1) + l1;
+                    aint1[j1 + k1 * xSize] = i2;
+                }
+            }
+        }
+
+
+        progress.string = "Soiling..";
+        //this.progressRenderer.progressStage("Soiling..");
+        aint1 = aint;
+        var j2 = this.xSize;
+        var k2 = this.zSize;
+
+        j1 = this.ySize;
+        var perlinnoise1 = new PerlinNoise(this.random, 8);
+
+        var l2;
+        var i3;
+
+        for (l = 0; l < j2; ++l) {
+            //progress(l * 100 / (xSize - 1));
+            progress.percent = l * 100 / (xSize - 1);
+            self.postMessage(progress);
+
+            for (i1 = 0; i1 < k2; ++i1) {
+                l1 = (perlinnoise1.getValue( l, i1) / 24.0) - 4;
+                l2 = (i2 = aint1[l + i1 * j2] + j1 / 2) + l1;
+                aint1[l + i1 * j2] = Math.max(i2, l2);
+
+                for (i3 = 0; i3 < j1; ++i3) {
+                    var j3 = (i3 * zSize + i1) * xSize + l;
+                    var k3 = 0;
+
+                    if (i3 <= i2) {
+                        k3 = 3;//Tile.dirt.id;
+                    }
+
+                    if (i3 <= l2) {
+                        k3 = 2;//Tile.rock.id;
+                    }
+
+                    this.tiles[j3] = k3;
+                }
+            }
+        }
+
+
+        progress.string = "Carving..";
+        //this.progressRenderer.progressStage("Carving..");
+
+        k2 = this.xSize;
+        j1 = this.zSize;
+        k1 = this.ySize;
+        l = k2 * j1 * k1 / 256 / 64;
+
+        for (i1 = 0; i1 < l; ++i1) {
+            //progress(i1 * 100 / (l - 1) / 4);
+            progress.percent = i1 * 100 / (l - 1) / 4;
+            self.postMessage(progress);
+
+            var f1 = random.nextFloat() * k2;
+            var f2 = random.nextFloat() * k1;
+            var f3 = random.nextFloat() * j1;
+
+            i3 = ((random.nextFloat() + random.nextFloat()) * 75.0);
+            var f4 = ( random.nextFloat() * 3.141592653589793 * 2.0);
+            var f5 = 0.0;
+            var f6 = ( random.nextFloat() * 3.141592653589793 * 2.0);
+            var f7 = 0.0;
+
+            for (var l3 = 0; l3 < i3; ++l3) {
+                f1 = ( f1 + Math.sin(f4) * Math.cos(f6));
+                f3 = ( f3 + Math.cos(f4) * Math.cos(f6));
+                f2 = ( f2 + Math.sin(f6));
+                f4 += f5 * 0.2;
+                f5 = (f5 *= 0.9) + (random.nextFloat() - random.nextFloat());
+                f6 = (f6 + f7 * 0.5) * 0.5;
+                f7 = (f7 *= 0.9) + (random.nextFloat() - random.nextFloat());
+                if (random.nextFloat() >= 0.3) {
+                    var f8 = f1 + random.nextFloat() * 4.0 - 2.0;
+                    var f9 = f2 + random.nextFloat() * 4.0 - 2.0;
+                    var f10 = f3 + random.nextFloat() * 4.0 - 2.0;
+                    var f11 = (Math.sin( l3 * 3.141592653589793 / i3) * 2.5 + 1.0);
+
+                    for (var i4 = parseInt( (f8 - f11), 10); i4 <= parseInt( (f8 + f11), 10); ++i4) {
+                        for (var j4 = parseInt( (f9 - f11), 10); j4 <= parseInt( (f9 + f11), 10); ++j4) {
+                            for (var k4 = (f10 - f11); k4 <= (f10 + f11); ++k4) {
+                                var f12 = i4 - f8;
+                                var f13 = j4 - f9;
+                                var f14 = k4 - f10;
+
+                                if (f12 * f12 + f13 * f13 * 2.0 + f14 * f14 < f11 * f11 && i4 >= 1 && j4 >= 1 && k4 >= 1 && i4 < xSize - 1 && j4 < ySize - 1 && k4 < zSize - 1) {
+                                    var l4 = parseInt( (j4 * zSize + k4) * xSize + i4 , 10);
+
+                                    //if (tiles[l4] == Tile.rock.id) {
+                                    if (this.tiles[l4] == 2) {
+                                        this.tiles[l4] = 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        this.placeOre(20, 90, 1, 4); // coal
+        this.placeOre(19, 70, 2, 4); // iron
+        this.placeOre(18, 50, 3, 4); // gold
+
+        progress.string = "Watering..";
+        //this.progressRenderer.progressStage("Watering..");
+        //long i5 = System.nanoTime();
+        var i5 = random.nextFloat();//Math.random();
+        var j5 = 0;
+
+        l = 7;//Tile.calmWater.id;
+        //this.progress(0);
+
+        // hack for floodfill to work...
+        var extray = 64-35;
+        if(xSize >= 256) extray = 128-36;
+        if(xSize >= 512) extray = 256-37;
+
+        //console.log(ySize / 2 - 1)
+
+        for (i1 = 0; i1 < xSize; ++i1) {
+            j5 = j5 + this.floodFill(i1, ySize / 2 - 1 + extray, 0, 0, l) + this.floodFill(i1, ySize / 2 - 1, zSize - 1 + extray, 0, l);
+        }
+
+        for (i1 = 0; i1 < zSize; ++i1) {
+            j5 = j5 + this.floodFill(0, ySize / 2 - 1 + extray, i1, 0, l) + this.floodFill(xSize - 1, ySize / 2 - 1 + extray, i1, 0, l);
+        }
+
+
+        i1 = xSize * zSize / 200;
+
+        for (l1 = 0; l1 < i1; ++l1) {
+            if (l1 % 100 == 0) {
+            //    progress(l1 * 100 / (i1 - 1));
+            	progress.percent = l1 * 100 / (i1 - 1);
+                self.postMessage(progress);
+            }
+
+            i2 = random.nextInt(xSize);
+            l2 = ySize / 2 - 1 - random.nextInt(3) + extray;
+            i3 = random.nextInt(zSize);
+            if (this.tiles[(l2 * zSize + i3) * xSize + i2] == 0) {
+                j5 += this.floodFill(i2, l2, i3, 0, l);
+            }
+        }
+            	
+        progress.percent = 100;
+        self.postMessage(progress);
+
+        progress.string = "Melting..";
+        //this.progressRenderer.progressStage("Melting..");
+        this.melt();
+        progress.string = "Growing..";
+        //this.progressRenderer.progressStage("Growing..");
+        this.grow(aint);
+        progress.string = "Planting..";
+        //this.progressRenderer.progressStage("Planting..");
+        this.plant(aint);
+
+        progress.tiles = this.tiles;
+        progress.string = "";
+        self.postMessage(progress);
+
+    }
+
+
+}
+
+function startGeneration (obj) { //{worldSize: worldSize, seed: props.seed, seedrandom: seedrandom}
+    var level = new RandomLevel();
+    
+    var width = obj.worldSize;
+    var depth = obj.worldSize;
+    var height = 64;
+
+    level.createLevel(obj.seed, width, depth, height);
+}
+
+// First function call here
+self.addEventListener('message', function(msgEvent) {
+    // msgEvent.data contains world size and seed
+    startGeneration(msgEvent.data)
+}, false);

@@ -1,1 +1,24 @@
-function UnityProgress(e,s){e.Module&&(e.logo||(e.logo=document.createElement("div"),e.logo.className="logo "+e.Module.splashScreenStyle,e.container.appendChild(e.logo)),e.progress||(e.progress=document.createElement("div"),e.progress.className="progress "+e.Module.splashScreenStyle,e.progress.empty=document.createElement("div"),e.progress.empty.className="empty",e.progress.appendChild(e.progress.empty),e.progress.full=document.createElement("div"),e.progress.full.className="full",e.progress.appendChild(e.progress.full),e.container.appendChild(e.progress)),e.progress.full.style.width=100*s+"%",e.progress.empty.style.width=100*(1-s)+"%",1==s&&(e.logo.style.display=e.progress.style.display="none"))}
+function UnityProgress(gameInstance, progress) {
+    if (!gameInstance.Module)
+      return;
+    if (!gameInstance.logo) {
+      gameInstance.logo = document.createElement("div");
+      gameInstance.logo.className = "logo " + gameInstance.Module.splashScreenStyle;
+      gameInstance.container.appendChild(gameInstance.logo);
+    }
+    if (!gameInstance.progress) {    
+      gameInstance.progress = document.createElement("div");
+      gameInstance.progress.className = "progress " + gameInstance.Module.splashScreenStyle;
+      gameInstance.progress.empty = document.createElement("div");
+      gameInstance.progress.empty.className = "empty";
+      gameInstance.progress.appendChild(gameInstance.progress.empty);
+      gameInstance.progress.full = document.createElement("div");
+      gameInstance.progress.full.className = "full";
+      gameInstance.progress.appendChild(gameInstance.progress.full);
+      gameInstance.container.appendChild(gameInstance.progress);
+    }
+    gameInstance.progress.full.style.width = (100 * progress) + "%";
+    gameInstance.progress.empty.style.width = (100 * (1 - progress)) + "%";
+    if (progress == 1)
+      gameInstance.logo.style.display = gameInstance.progress.style.display = "none";
+  }  

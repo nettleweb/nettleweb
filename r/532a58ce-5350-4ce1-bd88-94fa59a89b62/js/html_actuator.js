@@ -1,1 +1,124 @@
-function HTMLActuator(){this.tileContainer=document.querySelector(".tile-container"),this.scoreContainer=document.querySelector(".score-container"),this.bestContainer=document.querySelector(".best-container"),this.messageContainer=document.querySelector(".game-message"),this.score=0}HTMLActuator.prototype.actuate=function(t,e){var o=this;window.requestAnimationFrame((function(){o.clearContainer(o.tileContainer),t.cells.forEach((function(t){t.forEach((function(t){t&&o.addTile(t)}))})),o.updateScore(e.score),o.updateBestScore(e.bestScore),e.over&&o.message(!1),e.won&&o.message(!0)}))},HTMLActuator.prototype.restart=function(){this.clearMessage()},HTMLActuator.prototype.clearContainer=function(t){for(;t.firstChild;)t.removeChild(t.firstChild)},HTMLActuator.prototype.addTile=function(t){var e=this,o=document.createElement("div"),i=t.previousPosition||{x:t.x,y:t.y};positionClass=this.positionClass(i);var s=["tile","tile-"+t.value,positionClass];t.value>1048576&&(s=["tile","tile-1048576",positionClass]),this.applyClasses(o,s),o.textContent=t.value,t.previousPosition?window.requestAnimationFrame((function(){s[2]=e.positionClass({x:t.x,y:t.y}),e.applyClasses(o,s)})):t.mergedFrom?(s.push("tile-merged"),this.applyClasses(o,s),t.mergedFrom.forEach((function(t){e.addTile(t)}))):(s.push("tile-new"),this.applyClasses(o,s)),this.tileContainer.appendChild(o)},HTMLActuator.prototype.applyClasses=function(t,e){t.setAttribute("class",e.join(" "))},HTMLActuator.prototype.normalizePosition=function(t){return{x:t.x+1,y:t.y+1}},HTMLActuator.prototype.positionClass=function(t){return"tile-position-"+(t=this.normalizePosition(t)).x+"-"+t.y},HTMLActuator.prototype.updateScore=function(t){this.clearContainer(this.scoreContainer);var e=t-this.score;if(this.score=t,this.scoreContainer.textContent=this.score,e>0){var o=document.createElement("div");o.classList.add("score-addition"),o.textContent="+"+e,this.scoreContainer.appendChild(o)}},HTMLActuator.prototype.updateBestScore=function(t){this.bestContainer.textContent=t},HTMLActuator.prototype.message=function(t){var e=t?"game-won":"game-over",o=t?"You win!":"Game over!";this.messageContainer.classList.add(e),this.messageContainer.getElementsByTagName("p")[0].textContent=o},HTMLActuator.prototype.clearMessage=function(){this.messageContainer.classList.remove("game-won","game-over")};
+function HTMLActuator() {
+  this.tileContainer    = document.querySelector(".tile-container");
+  this.scoreContainer   = document.querySelector(".score-container");
+  this.bestContainer    = document.querySelector(".best-container");
+  this.messageContainer = document.querySelector(".game-message");
+
+  this.score = 0;
+}
+
+HTMLActuator.prototype.actuate = function (grid, metadata) {
+  var self = this;
+
+  window.requestAnimationFrame(function () {
+    self.clearContainer(self.tileContainer);
+
+    grid.cells.forEach(function (column) {
+      column.forEach(function (cell) {
+        if (cell) {
+          self.addTile(cell);
+        }
+      });
+    });
+
+    self.updateScore(metadata.score);
+    self.updateBestScore(metadata.bestScore);
+
+    if (metadata.over) self.message(false); // You lose
+    if (metadata.won) self.message(true); // You win!
+  });
+};
+
+HTMLActuator.prototype.restart = function () {
+  this.clearMessage();
+};
+
+HTMLActuator.prototype.clearContainer = function (container) {
+  while (container.firstChild) {
+    container.removeChild(container.firstChild);
+  }
+};
+
+HTMLActuator.prototype.addTile = function (tile) {
+  var self = this;
+
+  var element   = document.createElement("div");
+  var position  = tile.previousPosition || { x: tile.x, y: tile.y };
+  positionClass = this.positionClass(position);
+
+  // We can't use classlist because it somehow glitches when replacing classes
+  var classes = ["tile", "tile-" + tile.value, positionClass];
+  if (tile.value > 1048576)
+  classes = ["tile", "tile-" + 1048576, positionClass];
+  this.applyClasses(element, classes);
+
+  element.textContent = tile.value;
+
+  if (tile.previousPosition) {
+    // Make sure that the tile gets rendered in the previous position first
+    window.requestAnimationFrame(function () {
+      classes[2] = self.positionClass({ x: tile.x, y: tile.y });
+      self.applyClasses(element, classes); // Update the position
+    });
+  } else if (tile.mergedFrom) {
+    classes.push("tile-merged");
+    this.applyClasses(element, classes);
+
+    // Render the tiles that merged
+    tile.mergedFrom.forEach(function (merged) {
+      self.addTile(merged);
+    });
+  } else {
+    classes.push("tile-new");
+    this.applyClasses(element, classes);
+  }
+
+  // Put the tile on the board
+  this.tileContainer.appendChild(element);
+};
+
+HTMLActuator.prototype.applyClasses = function (element, classes) {
+  element.setAttribute("class", classes.join(" "));
+};
+
+HTMLActuator.prototype.normalizePosition = function (position) {
+  return { x: position.x + 1, y: position.y + 1 };
+};
+
+HTMLActuator.prototype.positionClass = function (position) {
+  position = this.normalizePosition(position);
+  return "tile-position-" + position.x + "-" + position.y;
+};
+
+HTMLActuator.prototype.updateScore = function (score) {
+  this.clearContainer(this.scoreContainer);
+
+  var difference = score - this.score;
+  this.score = score;
+
+  this.scoreContainer.textContent = this.score;
+
+  if (difference > 0) {
+    var addition = document.createElement("div");
+    addition.classList.add("score-addition");
+    addition.textContent = "+" + difference;
+
+    this.scoreContainer.appendChild(addition);
+  }
+};
+
+HTMLActuator.prototype.updateBestScore = function (bestScore) {
+  this.bestContainer.textContent = bestScore;
+};
+
+HTMLActuator.prototype.message = function (won) {
+  var type    = won ? "game-won" : "game-over";
+  var message = won ? "You win!" : "Game over!";
+
+  this.messageContainer.classList.add(type);
+  this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+};
+
+HTMLActuator.prototype.clearMessage = function () {
+  this.messageContainer.classList.remove("game-won", "game-over");
+};
