@@ -76,6 +76,16 @@
 	font-weight: 600;
 }
 
+#accn-btn::before {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	padding: 0px 5px;
+	content: "�";
+	border-left: 3px solid #808080;
+}
+
 #content {
 	position: absolute;
 	display: block;
