@@ -21,7 +21,8 @@
 		<div id="error">Error Message</div>
 		<noscript><div>Error: This page could not function unless JavaScript is supported and enabled in your browser.</div></noscript>
 		<div id="navigation-bar">
-			<a id="logo" href="/" target="_self" title="Home Page"></a>
+			<div id="logo"></div>
+			<div id="version"></div>
 			<div id="nav-bar">
 				<button id="home-btn" type="button" current="true">Home</button>
 				<button id="game-btn" type="button">Games</button>
@@ -39,16 +40,13 @@
 					<button id="h-apps-btn" type="button">Apps</button>
 					<button id="h-chat-btn" type="button">Chat</button>
 					<hr />
-					<p>WhiteSpider is a 100% free unblocked website designed for school or office users who are
+					<p>WhiteSpider is a 100% free + open source unblocked website designed for school or office users who are
 						restricted from accessing certain websites. We host and maintain this website because we believe
-						everyone should have the freedom to do whatever they like to do.</p>
-					<p>Due to lack of maintainers and financial support, it has not been updated in the recent months.
-						As a result, we are losing users and reputation currently, making the project more difficult to
-						continue.</p>
-					<p>Therefore if you are a developer and wish WhiteSpider to become more stable and featured
-						in the future, please consider contributing to the source code. (We really need maintainers currently)</p>
-					<p>If you are not good at coding but would like to make a contribution, you can share this website
-						with people around you, which would be helpful on increasing the clicking rate and search engine ranking.</p>
+						everyone should have the freedom to do whatever they like to do. (Disclaimer: The developers are not
+						responsible for issues caused by gaming in unauthorized periods, use it at your own risks.)</p>
+					<p>If you enjoy using this website, please <b>share it with your friends</b> or <b>give a star to the
+						<a href="https://github.com/whitespider-dev/whitespider" target="_blank" rel="noopener">official GitHub repository</a></b>.
+						It is the simplest way for you to do, and the easiest way for us to achieve a better popularity and Google search ranking.</p>
 					<hr />
 					<h2>Mirror Links</h2>
 					<h3>Google Sites Embed Mirrors</h3>
@@ -68,23 +66,26 @@
 					<a href="https://whitespider.dev/" target="_blank" rel="noopener">https://whitespider.dev/</a>
 					<a href="https://whitespider.eu.org/" target="_blank" rel="noopener">https://whitespider.eu.org/</a>
 					<br />
-					<p>Note: Using official mirror links is no longer recommended as they could easily get blocked.</p>
-					<p>As a workaround, we strongly recommend you to use data URL (for bypassing browser extensions) or
-						self host mirror links using <a href="https://sites.google.com/view/cbhk/embed-code">embed code</a> (Google Sites)
-						or <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+					<p>Notice: Using official mirror links is no longer recommended as they could easily get blocked. Consider using data URL
+						(see below) for bypassing browser extensions, or self-host a mirror link on <a href="https://pages.github.com/">GitHub Pages</a>
+						or another hosting provider that works for you. (Visit the
+						<a href="https://github.com/whitespider-dev/whitespider?tab=readme-ov-file#quick-deploy">repository home page</a>
+						for some quick deploy buttons)</p>
+					<p>For hosting on <a href="https://pages.github.com/">GitHub Pages</a>, it must be hosted on a root domain (xxx.github.io).
+						Otherwise some essential resources may fail to load.</p>
 					<p><strong>Important Notice: Do NOT trust mirror links shared by others online. Ads and malicious code could be
 						injected, putting you into security risks.</strong></p>
 					<hr />
 					<h2>Data URL</h2>
-					<p>Using a data URL is a new way of bypassing the restrictions set by browser extensions.</p>
-					<p>If you don't know how to use it, just copy and paste the code below to the address bar, and press enter.</p>
+					<p>The code below is a data URL of an embedded WhiteSpider mirror, it can be used to bypass most browser extensions on
+						running on Chromium-based browsers (including Chrome, Edge). However it cannot be used to bypass external network restrictions.</p>
 					<code>data:application/xhtml+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgaHRtbCBQVUJMSUMgIi0vL1czQy8vRFREIFhIVE1MIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi94aHRtbDExL0RURC94aHRtbDExLmR0ZCI+PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIGxhbmc9ImVuIj48aGVhZD48bWV0YSBodHRwLWVxdWl2PSJDb250ZW50LVR5cGUiIGNvbnRlbnQ9InRleHQvaHRtbDtjaGFyc2V0PXV0Zi04Ii8+PG1ldGEgaHR0cC1lcXVpdj0iUmVmZXJyZXItUG9saWN5IiBjb250ZW50PSJuby1yZWZlcnJlciIvPjxtZXRhIG5hbWU9InJlZmVycmVyIiBjb250ZW50PSJuby1yZWZlcnJlciIvPjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsaW5pdGlhbC1zY2FsZT0xIi8+PGxpbmsgcmVsPSJpY29uIiB0eXBlPSJpbWFnZS94LWljb24iIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vZmF2aWNvbi5pY28iLz48bGluayByZWw9InN0eWxlc2hlZXQiIHR5cGU9InRleHQvY3NzIiBocmVmPSJkYXRhOnRleHQvY3NzO2Jhc2U2NCxZbTlrZVN4bGJXSmxaSHR3YjNOcGRHbHZianBoWW5OdmJIVjBaVHRrYVhOd2JHRjVPbUpzYjJOck8zZHBaSFJvT2pFd01DVTdhR1ZwWjJoME9qRXdNQ1U3YldGeVoybHVPakJ3ZUR0d1lXUmthVzVuT2pCd2VEdGliM0prWlhJNmJtOXVaVHR2ZG1WeVpteHZkenBvYVdSa1pXNDdmUT09Ii8+PHRpdGxlPkdvb2dsZTwvdGl0bGU+PC9oZWFkPjxib2R5PjxlbWJlZCB0eXBlPSJ0ZXh0L3BsYWluIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI3NjgiIHNyYz0iaHR0cHM6Ly93aGl0ZXNwaWRlci5kZXYvIi8+PC9ib2R5PjwvaHRtbD4=</code>
-					<p>Data URLs work exactly the same as File or HTTP(S) URLs, which can be opened directly in a new tab. Unlike HTTP(S) URLs,
-						they are privileged in Chromium-based browsers (including Chrome, Edge), which means most browser extensions are
-						not allowed to modify the contents of these pages.</p>
+					<p>Data URLs work in the same way as HTTP(S) URLs, they can be opened directly in a new tab.
+						(Just copy and paste the code above into a new tab's address bar and press enter)</p>
 					<hr />
 					<h2>History Hiding</h2>
 					<p>Press <b>Ctrl+H</b> to toggle tab cloaking.</p>
+					<p>Press <b>Ctrl+B</b> to toggle content bluring.</p>
 					<p>Press <b>Ctrl+Q</b> to leave this page without history.</p>
 					<br />
 					<p>Note: The function provided above is a very basic way of hiding history, which might not work if the page is

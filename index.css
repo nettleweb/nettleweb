@@ -38,6 +38,21 @@
 	background-repeat: no-repeat;
 }
 
+#version {
+	position: absolute;
+	display: block;
+	width: 120px;
+	height: 30px;
+	top: 10px;
+	left: 220px;
+	color: #808080;
+	cursor: default;
+	font-size: 12px;
+	text-align: start;
+	line-height: 30px;
+	letter-spacing: 0px;
+}
+
 #nav-bar {
 	position: absolute;
 	display: block;
