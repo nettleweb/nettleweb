@@ -6,6 +6,7 @@
 	 * @type {ServiceWorkerGlobalScope}
 	 */
 	const self = _;
+	const origin = self.origin;
 	const hostname = self.location.hostname;
 	const cacheName = "167e1f07-b59a-4742-bb45-15cf3caabcce";
 
@@ -37,6 +38,9 @@
 				return await self.fetch(request);
 		}
 
+		if (url.origin !== origin || url.pathname === "/manifest.json")
+			return await optFetch(request);
+
 		switch (request.method) {
 			case "GET":
 			case "HEAD":
@@ -45,17 +49,17 @@
 				return await optFetch(request);
 		}
 
-		if (url.pathname === "/manifest.json")
-			return await optFetch(request);
-
 		const cached = await caches.match(request, { cacheName });
 		if (cached != null)
 			return cached;
 
-		const response = await e.preloadResponse || await optFetch(request);
+		const response = await (e.preloadResponse || optFetch(request));
 		if (hostname !== "localhost") {
-			const cache = await caches.open(cacheName);
-			await cache.put(request, response.clone());
+			try {
+				const cache = await caches.open(cacheName);
+				await cache.put(request, response.clone());
+			} catch (err) {
+			}
 		}
 		return response;
 	}
@@ -71,7 +75,21 @@
 	 */
 	async function handleInstall(e) {
 		const cache = await caches.open(cacheName);
-		await cache.addAll(["sw.js", "manifest.json"]);
+		await cache.addAll([
+			"",
+			"404.html",
+			"auth.xht",
+			"common.css",
+			"favicon.ico",
+			"index.css",
+			"index.html",
+			"main.js",
+			"player.html",
+			"sw.js",
+			"unbl.css",
+			"unbl.js",
+			"unbl.xht"
+		]);
 	}
 
 	/**
