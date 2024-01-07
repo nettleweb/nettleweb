@@ -24,6 +24,7 @@
 	height: 50px;
 	cursor: default;
 	user-select: none;
+	background: #f8f8f8;
 }
 
 #logo {
@@ -53,6 +54,10 @@
 	letter-spacing: 0px;
 }
 
+#side-menu, #hamb {
+	display: none;
+}
+
 #nav-bar {
 	position: absolute;
 	display: block;
@@ -68,14 +73,14 @@
 	width: fit-content;
 	height: 20px;
 	padding: 6px 0px 2px;
-	margin: 0px 10px;
+	margin: 0px 15px;
 	color: #808080;
 	border: none;
-	z-index: -10;
+	z-index: 10;
 	font-size: 14px;
 	text-align: center;
 	line-height: 20px;
-	letter-spacing: -1px;
+	letter-spacing: 0px;
 }
 
 #nav-bar>button:hover {
@@ -94,11 +99,83 @@
 #accn-btn::before {
 	position: relative;
 	display: inline-block;
-	width: fit-content;
-	height: fit-content;
-	padding: 0px 5px;
-	content: "�";
+	width: 3px;
+	height: 20px;
+	padding: 0px 10px;
+	content: "";
 	border-left: 3px solid #808080;
+	vertical-align: middle;
+}
+
+@media all and (max-width: 600px) {
+	#hamb {
+		position: relative;
+		display: block;
+		width: fit-content;
+		height: fit-content;
+		float: right;
+		padding: 24px 15px;
+	}
+
+	#hamb>div {
+		position: relative;
+		display: block;
+		width: 20px;
+		height: 2px;
+		margin: 0px 5px;
+		background: #303030;
+	}
+
+	#hamb>div::before,
+	#hamb>div::after {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background: #303030;
+		transition: all 0.2s ease-out;
+	}
+	
+	#hamb>div::before {
+		top: 6px;
+	}
+	
+	#hamb>div::after {
+		top: -6px;
+	}
+
+	#nav-bar {
+		display: none;
+		width: auto;
+		height: auto;
+		top: 50px;
+		right: 5px;
+		z-index: 2;
+		background: #c0c0c0;
+	}
+
+	#nav-bar>button {
+		display: block;
+	}
+
+	#side-menu:checked ~ #nav-bar {
+		display: block;
+	}
+
+	#side-menu:checked ~ #hamb>div {
+		background: rgba(0, 0, 0, 0);
+	}
+
+	#side-menu:checked ~ #hamb>div::before {
+		top: 0px;
+		transform: rotate(-45deg);
+	}
+
+	#side-menu:checked ~ #hamb>div::after {
+		top: 0px;
+		transform: rotate(45deg);
+	}
 }
 
 #content {
@@ -110,10 +187,6 @@
 	padding: 20px 10px;
 	overflow-x: hidden;
 	overflow-y: auto;
-}
-
-#content>h1 {
-	display: none;
 }
 
 #content>div:not(#footer) {
@@ -143,7 +216,7 @@
 	display: block;
 	width: 512px;
 	height: 128px;
-	margin: 120px auto 20px;
+	margin: 0px auto 30px;
 	background-image: url("res/logo.svg");
 	background-position: center;
 	background-size: contain;
@@ -158,49 +231,58 @@
 	}
 }
 
-#text-body {
+.text-body {
 	position: relative;
 	display: block;
-	width: calc(100% - 10px);
+	width: calc(100% - 12px);
 	height: fit-content;
 	padding: 5px;
+	border: 1px solid #c0c0c0;
+	background: #f0f0f0;
 }
 
-#text-body>*, #footer-links>* {
+.text-body>* {
 	position: relative;
 	display: block;
-	width: 100%;
+	width: fit-content;
 	height: fit-content;
 	margin: 10px 0px;
 	line-height: 1;
 	letter-spacing: 0px;
 }
 
-#text-body>h2 {
-	font-size: 20px;
-	line-height: 28px;
-}
-
-#text-body>h3, #footer-links>h3 {
+.text-body>h1 {
 	font-size: 18px;
-	line-height: 28px;
+	font-weight: 600;
+	line-height: 24px;
 }
 
-#text-body>hr {
-	margin: 3px 0px 10px;
+.text-body>h2 {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.text-body>h3 {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.text-body>hr {
+	width: 100%;
+	height: unset;
+	margin: 15px 0px 25px;
 	border: none;
 	border-bottom: 1px solid #c0c0c0;
 }
 
-#text-body>p {
+.text-body>p {
+	font-size: 14px;
 	line-height: 18px;
 }
 
-#text-body>a {
-	width: fit-content;
-}
-
-#text-body>code {
+.text-body>code {
 	position: relative;
 	display: block;
 	width: calc(100% - 20px);
@@ -214,58 +296,54 @@
 	overflow-wrap: break-word;
 }
 
-#text-body>button {
-	position: relative;
-	display: inline-block;
-	width: fit-content;
-	height: fit-content;
-	padding: 15px 20px;
-	margin: 10px 15px;
-	color: #ffffff;
-	cursor: pointer;
-	outline: none;
-	border: 1px solid #808080;
-	border-radius: 25px;
-	box-shadow: 2px 2px #808080;
-	background: #005a5a;
-}
-
-#text-body>button:focus {
-	border-color: #323232;
-}
-
-#text-body>button:active {
-	box-shadow: -2px -2px #808080;
-}
-
-#games-page>input {
+#game-search {
 	position: relative;
 	display: block;
-	width: 300px;
-	height: 20px;
-	margin: 10px auto 30px;
-	padding: 5px 10px;
-	outline: none;
-	line-height: 20px;
-	letter-spacing: 0px;
+	width: 350px;
+	height: 40px;
+	margin: 20px auto;
 	border: 1px solid #808080;
-	border-radius: 15px;
 }
 
-#games-page>input:focus {
-	border-color: #005a5a;
+#game-search>input {
+	position: absolute;
+	display: block;
+	width: 310px;
+	height: 20px;
+	top: 10px;
+	left: 10px;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#game-search>button {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	top: 10px;
+	right: 10px;
+	border: none;
+	outline: none;
+	background-image: url("res/search.svg");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 #game-container {
 	position: relative;
-	display: flex;
+	display: none;
 	width: 100%;
 	height: fit-content;
 	margin: 30px 0px;
 	flex-direction: row;
 	flex-wrap: wrap;
+	column-gap: 15px;
 	row-gap: 10px;
-	column-gap: 10px;
 }
 
 #game-container>div {
@@ -316,12 +394,13 @@
 #game-notice {
 	position: relative;
 	display: block;
-	width: 100%;
+	width: calc(100% - 10px);
 	height: fit-content;
 	margin: 30px 0px 10px;
 	color: #808080;
-	font-style: italic;
+	font-size: 13px;
 	line-height: 18px;
+	letter-spacing: 0px;
 }
 
 #game-disclaimer {
@@ -341,7 +420,7 @@
 	width: fit-content;
 	height: fit-content;
 	padding: 15px 20px;
-	margin: 10px;
+	margin: 10px 15px;
 	color: #ffffff;
 	cursor: pointer;
 	outline: none;
@@ -754,37 +833,21 @@
 
 #footer {
 	position: relative;
-	display: block;
+	display: flex;
 	width: 760px;
 	height: fit-content;
 	margin: 40px auto 0px;
 	padding: 20px 20px 40px;
-	border-top: 1px solid #808080;
-}
-
-#footer-links {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 15px 0px;
-}
-
-#footer-base {
-	position: relative;
-	display: flex;
-	width: 100%;
-	height: fit-content;
-	margin: 15px 0px;
 	flex-direction: row;
 	flex-wrap: wrap;
 	color: #808080;
 	cursor: default;
+	border-top: 1px solid #808080;
 	align-items: center;
 	justify-content: space-around;
 }
 
-#footer-base>div {
+#footer>div {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -798,8 +861,8 @@
 }
 
 @media all and (max-width: 800px) {
-	#content>div:not(#footer), #footer {
-		width: calc(100% - 40px);
+	#content>div {
+		width: calc(100% - 40px) !important;
 	}
 
 	#community-page>embed {

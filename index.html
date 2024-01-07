@@ -22,88 +22,36 @@
 		<noscript><div>Error: This page could not function unless JavaScript is supported and enabled in your browser.</div></noscript>
 		<div id="navigation-bar">
 			<div id="logo"></div>
-			<div id="version"></div>
+			<div id="version">v0.1.0</div>
+			<input id="side-menu" type="checkbox" placeholder="Navigation Menu" />
+			<label for="side-menu" id="hamb"><div></div></label>
 			<div id="nav-bar">
 				<button id="home-btn" type="button" current="true">Home</button>
-				<button id="game-btn" type="button">Games</button>
-				<button id="srvs-btn" type="button">Apps</button>
+				<button id="apps-btn" type="button">Apps</button>
 				<button id="chat-btn" type="button">Chat</button>
+				<button id="unbl-btn" type="button">Site is Blocked?</button>
 				<button id="accn-btn" type="button">Login</button>
 			</div>
 		</div>
 		<div id="content">
-			<h1>WhiteSpider - Free + open source (FOSS) browser unblocking community</h1>
 			<div id="home-page" current="true">
-				<div id="large-logo"></div>
-				<div id="text-body">
-					<button id="h-game-btn" type="button">Games</button>
-					<button id="h-apps-btn" type="button">Apps</button>
-					<button id="h-chat-btn" type="button">Chat</button>
-					<hr />
-					<p>WhiteSpider is a 100% free + open source unblocked website designed for school or office users who are
+				<div class="text-body">
+					<h1>WhiteSpider Unblocked Games</h1>
+					<p>A 100% free + open source unblocked website designed for school or office users who are
 						restricted from accessing certain websites. We host and maintain this website because we believe
 						everyone should have the freedom to do whatever they like to do. (Disclaimer: The developers are not
 						responsible for issues caused by gaming in unauthorized periods, use it at your own risks.)</p>
 					<p>If you enjoy using this website, please <b>share it with your friends</b> or <b>give a star to the
 						<a href="https://github.com/whitespider-dev/whitespider" target="_blank" rel="noopener">official GitHub repository</a></b>.
 						It is the simplest way for you to do, and the easiest way for us to achieve a better popularity and Google search ranking.</p>
-					<hr />
-					<h2>Mirror Links</h2>
-					<h3>Google Sites Embed Mirrors</h3>
-					<a href="https://sites.google.com/view/whitespider" target="_blank" rel="noopener">https://sites.google.com/view/whitespider</a>
-					<a href="https://sites.google.com/view/white-spider" target="_blank" rel="noopener">https://sites.google.com/view/white-spider</a>
-					<a href="https://sites.google.com/view/whitespi" target="_blank" rel="noopener">https://sites.google.com/view/whitespi</a>
-					<a href="https://sites.google.com/view/wsunbl" target="_blank" rel="noopener">https://sites.google.com/view/wsunbl</a>
-					<a href="https://sites.google.com/view/wsug" target="_blank" rel="noopener">https://sites.google.com/view/wsug</a>
-					<a href="https://sites.google.com/view/x999" target="_blank" rel="noopener">https://sites.google.com/view/x999</a>
-					<a href="https://sites.google.com/view/gainforschool" target="_blank" rel="noopener">https://sites.google.com/view/gainforschool</a>
-					<a href="https://sites.google.com/view/theunlockedbay" target="_blank" rel="noopener">https://sites.google.com/view/theunlockedbay</a>
-					<p>(Hint: You can also create your own mirror link on <a href="https://sites.google.com/new">Google Sites</a> using
-						<a href="https://sites.google.com/view/cbhk/embed-code">embed code</a>)</p>
-					<h3>Standalone Mirrors</h3>
-					<p>(These links might not work if whitelist restriction mode is used)</p>
-					<a href="https://whitespider.gq/" target="_blank" rel="noopener">https://whitespider.gq/</a>
-					<a href="https://whitespider.dev/" target="_blank" rel="noopener">https://whitespider.dev/</a>
-					<a href="https://whitespider.eu.org/" target="_blank" rel="noopener">https://whitespider.eu.org/</a>
-					<br />
-					<p>Notice: Using official mirror links is no longer recommended as they could easily get blocked. Consider using data URL
-						(see below) for bypassing browser extensions, or self-host a mirror link on <a href="https://pages.github.com/">GitHub Pages</a>
-						or another hosting provider that works for you. (Visit the
-						<a href="https://github.com/whitespider-dev/whitespider?tab=readme-ov-file#quick-deploy">repository home page</a>
-						for some quick deploy buttons)</p>
-					<p>For hosting on <a href="https://pages.github.com/">GitHub Pages</a>, it must be hosted on a root domain (xxx.github.io).
-						Otherwise some essential resources may fail to load.</p>
-					<p><strong>Important Notice: Do NOT trust mirror links shared by others online. Ads and malicious code could be
-						injected, putting you into security risks.</strong></p>
-					<hr />
-					<h2>Data URL</h2>
-					<p>The code below is a data URL of an embedded WhiteSpider mirror, it can be used to bypass most browser extensions on
-						running on Chromium-based browsers (including Chrome, Edge). However it cannot be used to bypass external network restrictions.</p>
-					<code>data:application/xhtml+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgaHRtbCBQVUJMSUMgIi0vL1czQy8vRFREIFhIVE1MIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi94aHRtbDExL0RURC94aHRtbDExLmR0ZCI+PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIGxhbmc9ImVuIj48aGVhZD48bWV0YSBodHRwLWVxdWl2PSJDb250ZW50LVR5cGUiIGNvbnRlbnQ9InRleHQvaHRtbDtjaGFyc2V0PXV0Zi04Ii8+PG1ldGEgaHR0cC1lcXVpdj0iUmVmZXJyZXItUG9saWN5IiBjb250ZW50PSJuby1yZWZlcnJlciIvPjxtZXRhIG5hbWU9InJlZmVycmVyIiBjb250ZW50PSJuby1yZWZlcnJlciIvPjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsaW5pdGlhbC1zY2FsZT0xIi8+PGxpbmsgcmVsPSJpY29uIiB0eXBlPSJpbWFnZS94LWljb24iIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vZmF2aWNvbi5pY28iLz48bGluayByZWw9InN0eWxlc2hlZXQiIHR5cGU9InRleHQvY3NzIiBocmVmPSJkYXRhOnRleHQvY3NzO2Jhc2U2NCxZbTlrZVN4bGJXSmxaSHR3YjNOcGRHbHZianBoWW5OdmJIVjBaVHRrYVhOd2JHRjVPbUpzYjJOck8zZHBaSFJvT2pFd01DVTdhR1ZwWjJoME9qRXdNQ1U3YldGeVoybHVPakJ3ZUR0d1lXUmthVzVuT2pCd2VEdGliM0prWlhJNmJtOXVaVHR2ZG1WeVpteHZkenBvYVdSa1pXNDdmUT09Ii8+PHRpdGxlPkdvb2dsZTwvdGl0bGU+PC9oZWFkPjxib2R5PjxlbWJlZCB0eXBlPSJ0ZXh0L3BsYWluIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI3NjgiIHNyYz0iaHR0cHM6Ly93aGl0ZXNwaWRlci5kZXYvIi8+PC9ib2R5PjwvaHRtbD4=</code>
-					<p>Data URLs work in the same way as HTTP(S) URLs, they can be opened directly in a new tab.
-						(Just copy and paste the code above into a new tab's address bar and press enter)</p>
-					<hr />
-					<h2>History Hiding</h2>
-					<p>Press <b>Ctrl+H</b> to toggle tab cloaking.</p>
-					<p>Press <b>Ctrl+B</b> to toggle content bluring.</p>
-					<p>Press <b>Ctrl+Q</b> to leave this page without history.</p>
-					<br />
-					<p>Note: The function provided above is a very basic way of hiding history, which might not work if the page is
-						embedded or a special policy is set to your browser.</p>
 				</div>
-			</div>
-			<div id="games-page">
-				<h1>Games</h1>
-				<input id="game-search" type="text" placeholder="Search Games" />
-				<div id="game-container">
-					<div>
-						<div>Example</div>
-						<label>Flash</label>
-						<label>New</label>
-					</div>
-				</div>
-				<div id="game-notice">* Games with 'USER' label are added by users with the button below.
-					They have not been verified by the developers, and so there's no guarantee they would work or not.</div>
+				<form id="game-search" action="null" method="post">
+					<input name="q" type="text" placeholder="Search Games" maxlength="50" autocomplete="off" />
+					<button type="submit" title="Search"></button>
+				</form>
+				<div id="game-container"></div>
+				<div id="game-notice">&#x26a0; Games with 'USER' label are added by users with the button below.
+					They have not been verified by the developers, and are not guaranteed to work properly.</div>
 				<button id="submit-game" type="button">Submit a game now</button>
 				<div id="game-disclaimer">Disclaimer: All games listed on this site are collected from other popular websites,
 					for making them accessible to restricted users.
@@ -118,7 +66,6 @@
 					<button id="search-btn" type="button">Unblocked Search</button>
 					<button id="random-btn" type="button">I'm Feeling Lucky</button>
 				</div>
-				<hr />
 				<div id="unbl-options">
 					<label for="unbl-mode">Mode:</label>
 					<select id="unbl-mode">
@@ -179,31 +126,89 @@
 				<h1>Chat</h1>
 				<embed type="text/plain" width="1024" height="768" src="https://e.widgetbot.io/channels/998658232207814667/998658232958603266/?preset=crate&amp;api=0d960a89-2cb6-4d56-b3b8-0e02981555ad" />
 			</div>
+			<div id="site-blocked-page">
+				<h1>Site is Blocked?</h1>
+				<div class="text-body">
+					<p>Never worry about if the website is blocked, as our developers are working on a variety of ways on bypass the restrictions.</p>
+					<p>You can have a try on the methods below to see which one works for you.</p>
+					<hr />
+					<h2>1. Use mirror links</h2>
+					<p>Most administrative softwares use a URL blacklist to block all listed websites. Switching to a new address could bypass the
+						restriction in this case as the new address is not yet known to the software. However frequently using the same address could
+						cause it being noticed by administrators, resulting it being added to the blacklist and revoke access to it.</p>
+					<p>As the result using official mirror links provided here is not recommended, and you should self-host your own mirror
+						link instead. (See method 2)</p>
+					<p>Embed mirrors (including data URLs) only work if the website is blocked by a browser extension.
+						<strong>If a network-based restriction is set, you must use a <u>standalone mirror</u>, or a custom DNS server in order to bypass the restriction.</strong></p>
+					<h3>Google Sites Embed Mirrors</h3>
+					<a href="https://sites.google.com/view/whitespider" target="_blank" rel="noopener">https://sites.google.com/view/whitespider</a>
+					<a href="https://sites.google.com/view/white-spider" target="_blank" rel="noopener">https://sites.google.com/view/white-spider</a>
+					<a href="https://sites.google.com/view/whitespi" target="_blank" rel="noopener">https://sites.google.com/view/whitespi</a>
+					<a href="https://sites.google.com/view/wsunbl" target="_blank" rel="noopener">https://sites.google.com/view/wsunbl</a>
+					<a href="https://sites.google.com/view/wsug" target="_blank" rel="noopener">https://sites.google.com/view/wsug</a>
+					<a href="https://sites.google.com/view/x999" target="_blank" rel="noopener">https://sites.google.com/view/x999</a>
+					<a href="https://sites.google.com/view/gainforschool" target="_blank" rel="noopener">https://sites.google.com/view/gainforschool</a>
+					<a href="https://sites.google.com/view/theunlockedbay" target="_blank" rel="noopener">https://sites.google.com/view/theunlockedbay</a>
+					<p>(Hint: You can also create your own mirror link on <a href="https://sites.google.com/new">Google Sites</a> using
+						<a href="https://sites.google.com/view/cbhk/embed-code">embed code</a>)</p>
+					<h3>Standalone Mirrors</h3>
+					<p>(These links might not work if whitelist restriction mode is used)</p>
+					<a href="https://whitespider.gq/" target="_blank" rel="noopener">https://whitespider.gq/</a>
+					<a href="https://whitespider.dev/" target="_blank" rel="noopener">https://whitespider.dev/</a>
+					<a href="https://whitespider.eu.org/" target="_blank" rel="noopener">https://whitespider.eu.org/</a>
+					<br />
+					<p><strong>Important Notice: Do NOT trust mirror links shared by others online. Ads and malicious code could be
+						injected, putting you into security risks.</strong></p>
+					<hr />
+					<h2>2. Use a self-hosted mirror link</h2>
+					<p>Mirror links provided here might be blocked already as they are published publicly. However you can self-host your own mirror
+						link on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>, or another hosting provider that
+						works for you. (Visit the
+						<a href="https://github.com/whitespider-dev/whitespider?tab=readme-ov-file#quick-deploy">repository home page</a>
+						for some quick deploy buttons)</p>
+					<p>For hosting on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>, it must be hosted on a root
+						domain (xxx.github.io). Otherwise some essential resources may fail to load.</p>
+					<hr />
+					<h2>3. Use a data URL</h2>
+					<p>The code below is a data URL of an embedded WhiteSpider mirror, it can be used to bypass most browser extensions running on
+						Chromium-based browsers (including Chrome, Edge). However it cannot be used to bypass external network restrictions.</p>
+					<code>data:application/xhtml+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgaHRtbCBQVUJMSUMgIi0vL1czQy8vRFREIFhIVE1MIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi94aHRtbDExL0RURC94aHRtbDExLmR0ZCI+PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIGxhbmc9ImVuIj48aGVhZD48bWV0YSBodHRwLWVxdWl2PSJDb250ZW50LVR5cGUiIGNvbnRlbnQ9InRleHQvaHRtbDtjaGFyc2V0PXV0Zi04Ii8+PG1ldGEgaHR0cC1lcXVpdj0iUmVmZXJyZXItUG9saWN5IiBjb250ZW50PSJuby1yZWZlcnJlciIvPjxtZXRhIG5hbWU9InJlZmVycmVyIiBjb250ZW50PSJuby1yZWZlcnJlciIvPjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsaW5pdGlhbC1zY2FsZT0xIi8+PGxpbmsgcmVsPSJpY29uIiB0eXBlPSJpbWFnZS94LWljb24iIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vZmF2aWNvbi5pY28iLz48bGluayByZWw9InN0eWxlc2hlZXQiIHR5cGU9InRleHQvY3NzIiBocmVmPSJkYXRhOnRleHQvY3NzO2Jhc2U2NCxZbTlrZVN4bGJXSmxaSHR3YjNOcGRHbHZianBoWW5OdmJIVjBaVHRrYVhOd2JHRjVPbUpzYjJOck8zZHBaSFJvT2pFd01DVTdhR1ZwWjJoME9qRXdNQ1U3YldGeVoybHVPakJ3ZUR0d1lXUmthVzVuT2pCd2VEdGliM0prWlhJNmJtOXVaVHR2ZG1WeVpteHZkenBvYVdSa1pXNDdmUT09Ii8+PHRpdGxlPkdvb2dsZTwvdGl0bGU+PC9oZWFkPjxib2R5PjxlbWJlZCB0eXBlPSJ0ZXh0L3BsYWluIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI3NjgiIHNyYz0iaHR0cHM6Ly93aGl0ZXNwaWRlci5kZXYvIi8+PC9ib2R5PjwvaHRtbD4=</code>
+					<p>Data URLs work in the same way as HTTP(S) URLs, they can be opened directly in a new tab.
+						(Just copy and paste the code above into a new tab's address bar and press enter)</p>
+					<hr />
+					<h2>4. None of these above works?</h2>
+					<p>If none of the methods provided above works, it means a very strict policy is set to your environment. In this case you might need
+						to use <a href="https://sites.google.com/view/cbhk/dns-hack">DNS Hack</a>/<a href="https://sites.google.com/view/cbhk/storage-hack">Storage Hack</a>
+						if you are using a Chromebook, or a <b>portable</b> <a href="https://www.torproject.org/download/">TOR Browser</a> executable from a USB drive if you
+						are using Windows.
+					</p>
+					<p>If still not working, you might have to search up for solutions on your own.</p>
+				</div>
+			</div>
 			<div id="accountinfo-page">
 				<button id="signout" type="button">Sign out</button>
 			</div>
 			<div id="footer">
-				<div id="footer-links">
-					<h3>Related Links</h3>
-					<a href="javascript:void(20);" target="_self">Unblocker</a>
-					<a href="javascript:void(21);" target="_self">YouTube Unblocked</a>
+				<div>
+					<div>©2024 WhiteSpider Dev Team. All rights reserved.</div>
+					<div>We are working hard to improve your user experience.</div>
 				</div>
-				<div id="footer-base">
-					<div>
-						<div>©2023 WhiteSpider Dev Team. All rights reserved.</div>
-						<div>We are working hard to improve your user experience.</div>
-					</div>
-					<div>
-						<a href="https://github.com/whitespider-dev" target="_blank" rel="noopener"><img src="res/github.svg" width="32" height="32" draggable="false" title="GitHub" /></a>
-						<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener"><img src="res/discord.svg" width="32" height="32" draggable="false" title="Discord" /></a>
-						<a href="https://www.youtube.com/@wsug" target="_blank" rel="noopener"><img src="res/youtube.svg" width="32" height="32" draggable="false" title="YouTube" /></a>
-						<a href="https://reddit.com/r/WhiteSpider/" target="_blank" rel="noopener"><img src="res/reddit.svg" width="32" height="32" draggable="false" title="Reddit" /></a>
-					</div>
-					<div>
-						<a href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a><br />
-						<a href="https://github.com/whitespider-dev/whitespider" target="_blank" rel="noopener">View source</a><br />
-						<a href="https://github.com/whitespider-dev/whitespider/issues/new?asignees=&amp;labels=bug&amp;title=" target="_blank" rel="noopener">Report a bug</a><br />
-					</div>
+				<div>
+					<a href="https://github.com/whitespider-dev" target="_blank" rel="noopener"><img src="res/github.svg" width="32" height="32" draggable="false" title="GitHub" /></a>
+					<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener"><img src="res/discord.svg" width="32" height="32" draggable="false" title="Discord" /></a>
+					<a href="https://www.youtube.com/@wsug" target="_blank" rel="noopener"><img src="res/youtube.svg" width="32" height="32" draggable="false" title="YouTube" /></a>
+					<a href="https://reddit.com/r/WhiteSpider/" target="_blank" rel="noopener"><img src="res/reddit.svg" width="32" height="32" draggable="false" title="Reddit" /></a>
+				</div>
+				<div>
+					<a href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a><br />
+					<a href="https://github.com/whitespider-dev/whitespider" target="_blank" rel="noopener">View source</a><br />
+					<a href="https://github.com/whitespider-dev/whitespider/issues/new?asignees=&amp;labels=bug&amp;title=" target="_blank" rel="noopener">Report a bug</a><br />
+				</div>
+				<div>
+					<b>History Hiding</b>
+					<p>Tab Cloaking: <b>Ctrl+H</b></p>
+					<p>Content Bluring: <b>Ctrl+B</b></p>
+					<p>Leave Safely: <b>Ctrl+Q</b></p>
 				</div>
 			</div>
 		</div>
@@ -241,6 +246,6 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="main.js"></script>
-		<script type="text/javascript" src="data:text/javascript;base64,InVzZSBzdHJpY3QiOygoKT0+e2NvbnN0IHQ9d2luZG93LmxvY2F0aW9uLGU9d2luZG93Lmhpc3Rvcnksbj1uZXcgVVJMKHQuaHJlZiksaT1uLmhvc3RuYW1lLG89T2JqZWN0LnByb3RvdHlwZSxyPWRvY3VtZW50LmN1cnJlbnRTY3JpcHQuc3JjLGE9KCk9Pntjb25zdCB0PShuZXcgRE9NUGFyc2VyKS5wYXJzZUZyb21TdHJpbmcoJzw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9InV0Zi04IiA/PlxuPCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvVFIveGh0bWwxMS9EVEQveGh0bWwxMS5kdGQiPlxuPGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIGxhbmc9ImVuIj5cblx0PGhlYWQ+XG5cdFx0PG1ldGEgY2hhcnNldD0idXRmLTgiIC8+XG5cdFx0PG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCxpbml0aWFsLXNjYWxlPTEiIC8+XG5cdFx0PHRpdGxlPlBhZ2UgVGl0bGU8L3RpdGxlPlxuXHQ8L2hlYWQ+XG5cdDxib2R5PlxuXHRcdFBhZ2UgQ29udGVudFxuXHQ8L2JvZHk+XG48L2h0bWw+JywiYXBwbGljYXRpb24veG1sIik7dC50aXRsZT0iRXJyb3IgOigiLHQuYm9keS5pbm5lckhUTUw9IjxkaXY+QSBmYXRhbCBlcnJvciBvY2N1cnJlZCB3aGlsZSBkaXNwbGF5aW5nIHRoZSBjb250ZW50cyBvZiB0aGlzIHBhZ2UuPC9kaXY+XG48ZGl2PlBsZWFzZSB0cnkgdXNpbmcgYSBkaWZmZXJlbnQgYnJvd3NlciBvciBuZXR3b3JrLCBvciB0cnkgYWdhaW4gbGF0ZXIuPC9kaXY+IixlLnB1c2hTdGF0ZSh2b2lkIDAsIiIsIi8jYSIpLGUucHVzaFN0YXRlKHZvaWQgMCwiIiwiLyNiIiksZS5wdXNoU3RhdGUodm9pZCAwLCIiLCIvI2MiKSxlLnB1c2hTdGF0ZSh2b2lkIDAsIiIsIi8jZCIpLGUucHVzaFN0YXRlKHZvaWQgMCwiIiwiLyNlIiksZS5wdXNoU3RhdGUodm9pZCAwLCIiLCIvIiksd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoImNsaWNrIiwoKCk9PntlLnB1c2hTdGF0ZSh2b2lkIDAsIiIsIi8jIitNYXRoLmZsb29yKDEwMCpNYXRoLnJhbmRvbSgpKSl9KSx7cGFzc2l2ZTohMH0pLGRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5yZXBsYWNlV2l0aCh0LmRvY3VtZW50RWxlbWVudCl9LHM9KCk9Pntjb25zdCB0PShuZXcgRE9NUGFyc2VyKS5wYXJzZUZyb21TdHJpbmcoJzw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9InV0Zi04IiA/PlxuPCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvVFIveGh0bWwxMS9EVEQveGh0bWwxMS5kdGQiPlxuPGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIGxhbmc9ImVuIj5cblx0PGhlYWQ+XG5cdFx0PG1ldGEgY2hhcnNldD0idXRmLTgiIC8+XG5cdFx0PG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCxpbml0aWFsLXNjYWxlPTEiIC8+XG5cdFx0PHRpdGxlPlBhZ2UgVGl0bGU8L3RpdGxlPlxuXHQ8L2hlYWQ+XG5cdDxib2R5PlxuXHRcdFBhZ2UgQ29udGVudFxuXHQ8L2JvZHk+XG48L2h0bWw+JywiYXBwbGljYXRpb24veG1sIik7dC50aXRsZT0iTG9hZGluZyIsdC5ib2R5LmlubmVySFRNTD0iPGRpdj5Mb2FkaW5nLi4uPC9kaXY+Iixkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQucmVwbGFjZVdpdGgodC5kb2N1bWVudEVsZW1lbnQpfTtzd2l0Y2gobi5wcm90b2NvbCl7Y2FzZSJodHRwOiI6aWYoImxvY2FsaG9zdCIhPT1pKXJldHVybiBzKCksbi5wcm90b2NvbD0iaHR0cHM6IixuLmhvc3Q9aSx2b2lkIHQucmVwbGFjZShuLmhyZWYpO2JyZWFrO2Nhc2UiaHR0cHM6IjpicmVhaztkZWZhdWx0OnJldHVybiB2b2lkIGEoKX1zd2l0Y2goaSl7Y2FzZSJ3aGl0ZXNwaWRlci5jZiI6Y2FzZSJ3aGl0ZXNwaWRlci50ayI6Y2FzZSJ3aGl0ZXNwaWRlci5ldS5vcmciOmNhc2Uid2hpdGVzcGlkZXIud2ViLmFwcCI6Y2FzZSJ3aGl0ZXNwaWRlci5wYWdlcy5kZXYiOmNhc2Uid2hpdGVzcGlkZXIuZmlyZWJhc2VhcHAuY29tIjpyZXR1cm4gcygpLG4uaG9zdD0id2hpdGVzcGlkZXIuZ3EiLHZvaWQgdC5yZXBsYWNlKG4uaHJlZil9Y29uc3QgYz1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdiYXNlW2hyZWY9Ii8iXScpO2lmKG51bGwhPWMmJiJfYmxhbmsiPT09Yy5nZXRBdHRyaWJ1dGUoInRhcmdldCIpKXtmb3IoY29uc3QgdCBvZiBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJzY3JpcHQiKSl7c3dpdGNoKHQudHlwZSl7Y2FzZSIiOmNhc2UidGV4dC9qYXZhc2NyaXB0IjpjYXNlImFwcGxpY2F0aW9uL2phdmFzY3JpcHQiOmJyZWFrO2RlZmF1bHQ6cmV0dXJuIHQucmVtb3ZlKCksdm9pZCBhKCl9Y29uc3QgZT10LnNyYztpZihlPT09ciljb250aW51ZTtjb25zdCBpPW5ldyBVUkwoZSxuLm9yaWdpbik7aWYoaS5vcmlnaW4hPT1uLm9yaWdpbil7c3dpdGNoKGkucHJvdG9jb2wpe2Nhc2UiaHR0cDoiOmNhc2UiaHR0cHM6IjpicmVhaztkZWZhdWx0OnJldHVybiB0LnJlbW92ZSgpLHZvaWQgYSgpfWNvbnN0IGU9aS5ob3N0LnNwbGl0KCIuIiksbj1lW2UubGVuZ3RoLTJdO2lmKG4uaW5jbHVkZXMoImdvb2dsZSIpfHxuLmluY2x1ZGVzKCJmaXJlYmFzZSIpKWNvbnRpbnVlO3JldHVybiB0LnJlbW92ZSgpLHZvaWQgYSgpfX0iaHR0cHM6Ly93aGl0ZXNwaWRlci5ncS8iPT09ZG9jdW1lbnQucXVlcnlTZWxlY3RvcignbGlua1tyZWw9ImNhbm9uaWNhbCJdJykuaHJlZiYmbnVsbCE9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcignYVtocmVmPSJodHRwczovL3doaXRlc3BpZGVyLmdxLyJdJykmJiJXaGl0ZVNwaWRlciI9PT1kb2N1bWVudC50aXRsZT9vLl9sY3A9KCk9PntkZWxldGUgby5fbGNwO2Zvcihjb25zdCB0IG9mIGRvY3VtZW50LnN0eWxlU2hlZXRzKWlmIChuZXcgVVJMKHQuaHJlZiwgb3JpZ2luKS5vcmlnaW4gPT09IG9yaWdpbilmb3IoY29uc3QgZSBvZiB0LmNzc1J1bGVzKWUgaW5zdGFuY2VvZiBDU1NTdHlsZVJ1bGUmJiIjbmF2LWJhciA+IGJ1dHRvbiI9PT1lLnNlbGVjdG9yVGV4dCYmKGUuc3R5bGUuekluZGV4PSIyIil9OmEoKX1lbHNlIGEoKX0pKCk7"></script>
+		<script type="text/javascript" src="data:application/unknown;base64,InVzZSBzdHJpY3QiOygoKT0+e2NvbnN0IHQ9d2luZG93LmxvY2F0aW9uLGU9d2luZG93Lmhpc3Rvcnksbj1uZXcgVVJMKHQuaHJlZiksaT1uLmhvc3RuYW1lLG89T2JqZWN0LnByb3RvdHlwZSxyPWRvY3VtZW50LmN1cnJlbnRTY3JpcHQuc3JjLGE9KCk9Pntjb25zdCB0PShuZXcgRE9NUGFyc2VyKS5wYXJzZUZyb21TdHJpbmcoJzw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9InV0Zi04IiA/PlxuPCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvVFIveGh0bWwxMS9EVEQveGh0bWwxMS5kdGQiPlxuPGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIGxhbmc9ImVuIj5cblx0PGhlYWQ+XG5cdFx0PG1ldGEgY2hhcnNldD0idXRmLTgiIC8+XG5cdFx0PG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCxpbml0aWFsLXNjYWxlPTEiIC8+XG5cdFx0PHRpdGxlPlBhZ2UgVGl0bGU8L3RpdGxlPlxuXHQ8L2hlYWQ+XG5cdDxib2R5PlxuXHRcdFBhZ2UgQ29udGVudFxuXHQ8L2JvZHk+XG48L2h0bWw+JywiYXBwbGljYXRpb24veG1sIik7dC50aXRsZT0iRXJyb3IgOigiLHQuYm9keS5pbm5lckhUTUw9IjxkaXY+QSBmYXRhbCBlcnJvciBvY2N1cnJlZCB3aGlsZSBkaXNwbGF5aW5nIHRoZSBjb250ZW50cyBvZiB0aGlzIHBhZ2UuPC9kaXY+XG48ZGl2PlBsZWFzZSB0cnkgdXNpbmcgYSBkaWZmZXJlbnQgYnJvd3NlciBvciBuZXR3b3JrLCBvciB0cnkgYWdhaW4gbGF0ZXIuPC9kaXY+IixlLnB1c2hTdGF0ZSh2b2lkIDAsIiIsIi8jYSIpLGUucHVzaFN0YXRlKHZvaWQgMCwiIiwiLyNiIiksZS5wdXNoU3RhdGUodm9pZCAwLCIiLCIvI2MiKSxlLnB1c2hTdGF0ZSh2b2lkIDAsIiIsIi8jZCIpLGUucHVzaFN0YXRlKHZvaWQgMCwiIiwiLyNlIiksZS5wdXNoU3RhdGUodm9pZCAwLCIiLCIvIiksd2luZG93LmFkZEV2ZW50TGlzdGVuZXIoImNsaWNrIiwoKCk9PntlLnB1c2hTdGF0ZSh2b2lkIDAsIiIsIi8jIitNYXRoLmZsb29yKDEwMCpNYXRoLnJhbmRvbSgpKSl9KSx7cGFzc2l2ZTohMH0pLGRvY3VtZW50LmRvY3VtZW50RWxlbWVudC5yZXBsYWNlV2l0aCh0LmRvY3VtZW50RWxlbWVudCl9LHM9KCk9Pntjb25zdCB0PShuZXcgRE9NUGFyc2VyKS5wYXJzZUZyb21TdHJpbmcoJzw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9InV0Zi04IiA/PlxuPCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvVFIveGh0bWwxMS9EVEQveGh0bWwxMS5kdGQiPlxuPGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIGxhbmc9ImVuIj5cblx0PGhlYWQ+XG5cdFx0PG1ldGEgY2hhcnNldD0idXRmLTgiIC8+XG5cdFx0PG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCxpbml0aWFsLXNjYWxlPTEiIC8+XG5cdFx0PHRpdGxlPlBhZ2UgVGl0bGU8L3RpdGxlPlxuXHQ8L2hlYWQ+XG5cdDxib2R5PlxuXHRcdFBhZ2UgQ29udGVudFxuXHQ8L2JvZHk+XG48L2h0bWw+JywiYXBwbGljYXRpb24veG1sIik7dC50aXRsZT0iTG9hZGluZyIsdC5ib2R5LmlubmVySFRNTD0iPGRpdj5Mb2FkaW5nLi4uPC9kaXY+Iixkb2N1bWVudC5kb2N1bWVudEVsZW1lbnQucmVwbGFjZVdpdGgodC5kb2N1bWVudEVsZW1lbnQpfTtzd2l0Y2gobi5wcm90b2NvbCl7Y2FzZSJodHRwOiI6aWYoImxvY2FsaG9zdCIhPT1pKXJldHVybiBzKCksbi5wcm90b2NvbD0iaHR0cHM6IixuLmhvc3Q9aSx2b2lkIHQucmVwbGFjZShuLmhyZWYpO2JyZWFrO2Nhc2UiaHR0cHM6IjpicmVhaztkZWZhdWx0OnJldHVybiB2b2lkIGEoKX1zd2l0Y2goaSl7Y2FzZSJ3aGl0ZXNwaWRlci5jZiI6Y2FzZSJ3aGl0ZXNwaWRlci50ayI6Y2FzZSJ3aGl0ZXNwaWRlci5ldS5vcmciOmNhc2Uid2hpdGVzcGlkZXIud2ViLmFwcCI6Y2FzZSJ3aGl0ZXNwaWRlci5wYWdlcy5kZXYiOmNhc2Uid2hpdGVzcGlkZXIuZmlyZWJhc2VhcHAuY29tIjpyZXR1cm4gcygpLG4uaG9zdD0id2hpdGVzcGlkZXIuZ3EiLHZvaWQgdC5yZXBsYWNlKG4uaHJlZil9Y29uc3QgYz1kb2N1bWVudC5xdWVyeVNlbGVjdG9yKCdiYXNlW2hyZWY9Ii8iXScpO2lmKG51bGwhPWMmJiJfYmxhbmsiPT09Yy5nZXRBdHRyaWJ1dGUoInRhcmdldCIpKXtmb3IoY29uc3QgdCBvZiBkb2N1bWVudC5xdWVyeVNlbGVjdG9yQWxsKCJzY3JpcHQiKSl7c3dpdGNoKHQudHlwZSl7Y2FzZSIiOmNhc2UidGV4dC9qYXZhc2NyaXB0IjpjYXNlImFwcGxpY2F0aW9uL2phdmFzY3JpcHQiOmJyZWFrO2RlZmF1bHQ6cmV0dXJuIHQucmVtb3ZlKCksdm9pZCBhKCl9Y29uc3QgZT10LnNyYztpZihlPT09ciljb250aW51ZTtjb25zdCBpPW5ldyBVUkwoZSxuLm9yaWdpbik7aWYoaS5vcmlnaW4hPT1uLm9yaWdpbil7c3dpdGNoKGkucHJvdG9jb2wpe2Nhc2UiaHR0cDoiOmNhc2UiaHR0cHM6IjpicmVhaztkZWZhdWx0OnJldHVybiB0LnJlbW92ZSgpLHZvaWQgYSgpfWNvbnN0IGU9aS5ob3N0LnNwbGl0KCIuIiksbj1lW2UubGVuZ3RoLTJdO2lmKG4uaW5jbHVkZXMoImdvb2dsZSIpfHxuLmluY2x1ZGVzKCJmaXJlYmFzZSIpKWNvbnRpbnVlO3JldHVybiB0LnJlbW92ZSgpLHZvaWQgYSgpfX0iaHR0cHM6Ly93aGl0ZXNwaWRlci5ncS8iPT09ZG9jdW1lbnQucXVlcnlTZWxlY3RvcignbGlua1tyZWw9ImNhbm9uaWNhbCJdJykuaHJlZiYmbnVsbCE9ZG9jdW1lbnQucXVlcnlTZWxlY3RvcignYVtocmVmPSJodHRwczovL3doaXRlc3BpZGVyLmdxLyJdJykmJiJXaGl0ZVNwaWRlciI9PT1kb2N1bWVudC50aXRsZT9vLl9sY3A9KCk9PntkZWxldGUgby5fbGNwO2Zvcihjb25zdCB0IG9mIGRvY3VtZW50LnN0eWxlU2hlZXRzKWlmIChuZXcgVVJMKHQuaHJlZiwgb3JpZ2luKS5vcmlnaW4gPT09IG9yaWdpbilmb3IoY29uc3QgZSBvZiB0LmNzc1J1bGVzKWUgaW5zdGFuY2VvZiBDU1NTdHlsZVJ1bGUmJiIjZ2FtZS1jb250YWluZXIiPT09ZS5zZWxlY3RvclRleHQmJihlLnN0eWxlLmRpc3BsYXk9ImZsZXgiKX06YSgpfWVsc2UgYSgpfSkoKTs="></script>
 	</body>
 </html>
