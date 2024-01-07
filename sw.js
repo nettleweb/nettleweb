@@ -18,7 +18,7 @@
 		try {
 			return await self.fetch(request);
 		} catch (err) {
-			return new Response(void 0, { status: 500 });
+			return Response.error();
 		}
 	}
 
@@ -39,21 +39,21 @@
 		}
 
 		if (url.origin !== origin || url.pathname === "/manifest.json")
-			return await optFetch(request);
+			return await self.fetch(request);
 
 		switch (request.method) {
 			case "GET":
 			case "HEAD":
 				break;
 			default:
-				return await optFetch(request);
+				return await self.fetch(request);
 		}
 
 		const cached = await caches.match(request, { cacheName });
 		if (cached != null)
 			return cached;
 
-		const response = await (e.preloadResponse || optFetch(request));
+		const response = await e.preloadResponse || await optFetch(request);
 		if (hostname !== "localhost") {
 			try {
 				const cache = await caches.open(cacheName);
@@ -85,7 +85,6 @@
 			"index.html",
 			"main.js",
 			"player.html",
-			"sw.js",
 			"unbl.css",
 			"unbl.js",
 			"unbl.xht"
