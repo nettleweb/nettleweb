@@ -75,20 +75,7 @@
 	 */
 	async function handleInstall(e) {
 		const cache = await caches.open(cacheName);
-		await cache.addAll([
-			"",
-			"404.html",
-			"auth.xht",
-			"common.css",
-			"favicon.ico",
-			"index.css",
-			"index.html",
-			"main.js",
-			"player.html",
-			"unbl.css",
-			"unbl.js",
-			"unbl.xht"
-		]);
+		await cache.addAll(["manifest.json", "sw.js",]);
 	}
 
 	/**
