@@ -328,7 +328,18 @@
 	/**
 	 * @type {import("socket.io-client").Socket}
 	 */
-	const socket = io(location.searchParams.get("sv") || "https://gq.whitespider.eu.org/", {
+	const socket = io((() => {
+		const url = (location.searchParams.get("sv") || "").trim();
+		if (url.length > 0 && url.startsWith("https://"))
+			return url;
+
+		// switch default server during night time
+		const hrs = new Date().getUTCHours();
+		if (hrs > 21 || hrs < 9)
+			return "https://gq.whitespider.eu.org/";
+		else
+			return "https://tk.whitespider.eu.org/";
+	})(), {
 		path: "/mortes/",
 		secure: true,
 		upgrade: true,
