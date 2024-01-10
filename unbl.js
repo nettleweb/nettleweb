@@ -335,7 +335,7 @@
 
 		// switch default server during night time
 		const hrs = new Date().getUTCHours();
-		if (hrs > 21 || hrs < 9)
+		if (hrs > 20 || hrs < 9)
 			return "https://gq.whitespider.eu.org/";
 		else
 			return "https://tk.whitespider.eu.org/";
