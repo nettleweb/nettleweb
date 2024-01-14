@@ -289,7 +289,7 @@
 	overflow-wrap: break-word;
 }
 
-#game-search {
+#game-search, #yt-search {
 	position: relative;
 	display: block;
 	width: 400px;
@@ -299,13 +299,13 @@
 }
 
 @media all and (max-width: 420px) {
-	#game-search {
+	#game-search, #yt-search {
 		width: calc(100% - 20px);
 		margin: 20px 10px;
 	}
 }
 
-#game-search>input {
+#game-search>input, #yt-search>input {
 	position: absolute;
 	display: block;
 	width: 310px;
@@ -319,7 +319,7 @@
 	letter-spacing: 0px;
 }
 
-#game-search>button {
+#game-search>button, #yt-search>button {
 	position: absolute;
 	display: block;
 	width: 20px;
@@ -589,65 +589,6 @@
 	margin: 10px 0px 30px;
 	border: none;
 	border-bottom: 1px solid #c0c0c0;
-}
-
-#yt-search-bar {
-	position: relative;
-	display: flex;
-	width: 500px;
-	height: 40px;
-	margin: 50px auto 10px;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	column-gap: 10px;
-}
-
-@media all and (max-width: 500px) {
-	#yt-search-bar {
-		width: 90%;
-	}
-}
-
-#yt-search-bar>input {
-	position: relative;
-	display: block;
-	width: calc(80% - 32px);
-	height: 30px;
-	padding: 4px 15px;
-	font-size: 16px;
-	line-height: 30px;
-	outline: none;
-	border: 1px solid #808080;
-	border-radius: 25px;
-}
-
-#yt-search-bar>input:focus {
-	border-color: #005a5a;
-}
-
-#yt-search-bar>button {
-	position: relative;
-	display: block;
-	width: calc(20% - 12px);
-	height: 38px;
-	cursor: pointer;
-	outline: none;
-	border: 1px solid #808080;
-	border-radius: 25px;
-	box-shadow: 2px 2px #808080;
-	background-color: #005a5a;
-	background-image: url("res/search-w.svg");
-	background-size: 24px 24px;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-#yt-search-bar>button:focus {
-	border-color: #303030;
-}
-
-#yt-search-bar>button:active {
-	box-shadow: -2px -2px #808080;
 }
 
 #yt-option-bar {
