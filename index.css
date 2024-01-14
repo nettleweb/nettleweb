@@ -39,17 +39,30 @@
 	background-repeat: no-repeat;
 }
 
-#version {
+#status {
 	position: absolute;
 	display: block;
 	width: 120px;
 	height: 30px;
 	top: 10px;
 	left: 220px;
+	cursor: default;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 30px;
+	letter-spacing: 0px;
+}
+
+#version {
+	position: absolute;
+	display: block;
+	width: 120px;
+	height: 30px;
+	top: 10px;
+	left: 350px;
 	color: #808080;
 	cursor: default;
 	font-size: 12px;
-	text-align: start;
 	line-height: 30px;
 	letter-spacing: 0px;
 }
@@ -198,7 +211,7 @@
 	margin: 10px auto 20px;
 }
 
-#content>div:not(#footer)[current] {
+#content>div:not(#footer)[current], #unbl-content[current] {
 	display: block;
 }
 
@@ -209,26 +222,6 @@
 	height: fit-content;
 	padding: 10px;
 	margin: 80px auto 40px;
-}
-
-#large-logo {
-	position: relative;
-	display: block;
-	width: 512px;
-	height: 128px;
-	margin: 0px auto 30px;
-	background-image: url("res/logo.svg");
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-}
-
-@media all and (max-width: 512px) {
-	#large-logo {
-		width: 100%;
-		height: unset;
-		aspect-ratio: 4/1;
-	}
 }
 
 .text-body {
@@ -299,10 +292,17 @@
 #game-search {
 	position: relative;
 	display: block;
-	width: 350px;
+	width: 400px;
 	height: 40px;
 	margin: 20px auto;
 	border: 1px solid #808080;
+}
+
+@media all and (max-width: 420px) {
+	#game-search {
+		width: calc(100% - 20px);
+		margin: 20px 10px;
+	}
 }
 
 #game-search>input {
@@ -342,7 +342,7 @@
 	margin: 30px 0px;
 	flex-direction: row;
 	flex-wrap: wrap;
-	column-gap: 15px;
+	column-gap: 12px;
 	row-gap: 10px;
 }
 
@@ -353,12 +353,20 @@
 	height: 140px;
 	flex: 0 0 140px;
 	cursor: pointer;
-	box-shadow: 2px 5px 5px #808080;
+	border: 1px solid #c0c0c0;
 	border-radius: 15px;
 	background-color: #f0f0f0;
 	background-position: 0px 0px;
 	background-size: 140px 105px;
 	background-repeat: no-repeat;
+}
+
+#game-container>div:hover {
+	border-color: #808080;
+}
+
+#game-container>div:active {
+	border-color: #303030;
 }
 
 #game-container>div>label {
@@ -431,11 +439,140 @@
 }
 
 #submit-game:focus {
-	border-color: #323232;
+	border-color: #303030;
 }
 
 #submit-game:active {
 	box-shadow: -2px -2px #808080;
+}
+
+#chatgpt-page>div {
+	border: 1px solid #c0c0c0;
+}
+
+#dialog {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: calc(100% - 50px);
+	background: #f8f8f8;
+	overflow-x: hidden;
+	overflow-y: auto;
+	
+}
+
+#dialog>div {
+	position: relative;
+	display: block;
+	width: calc(100% - 40px);
+	height: fit-content;
+	margin: 15px 0px;
+	padding: 10px 20px;
+}
+
+#dialog>div>img {
+	position: relative;
+	display: inline-block;
+	width: 36px;
+	height: 36px;
+	margin: 0px 15px 0px 5px;
+	user-select: none;
+	vertical-align: top;
+}
+
+#dialog>div>div {
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 60px);
+	height: fit-content;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	white-space: pre-wrap;
+	letter-spacing: 0px;
+	vertical-align: top;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+#dialog>span {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px auto;
+	padding: 5px;
+	color: #ff0000;
+	border: 1px solid #ff0000;
+	background: #ffc0c0;
+}
+
+#interface {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 50px;
+	bottom: 0px;
+	background: #f0f0f0;
+}
+
+#new-topic {
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 40px;
+	top: 3px;
+	left: 20px;
+	cursor: pointer;
+	box-shadow: 2px 2px #808080;
+	border-radius: 25px;
+	background-image: url("res/new-topic.svg");
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#new-topic:active {
+	box-shadow: -2px -2px #808080;
+}
+
+#chatgpt {
+	position: absolute;
+	display: block;
+	width: calc(100% - 90px);
+	height: 40px;
+	top: 5px;
+	left: 80px;
+	border: 1px solid #808080;
+}
+
+#chatgpt>input {
+	position: absolute;
+	display: block;
+	width: calc(100% - 50px);
+	height: 20px;
+	top: 10px;
+	left: 10px;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#chatgpt>button {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	top: 5px;
+	right: 10px;
+	border: none;
+	outline: none;
+	background-image: url("res/send.svg");
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
 }
 
 #services-page>h2 {
@@ -452,76 +589,6 @@
 	margin: 10px 0px 30px;
 	border: none;
 	border-bottom: 1px solid #c0c0c0;
-}
-
-#unbl-search {
-	position: relative;
-	display: block;
-	width: 500px;
-	height: 25px;
-	margin: 20px auto;
-	padding: 10px 25px;
-	font-size: 16px;
-	line-height: 25px;
-	outline: none;
-	border: 1px solid #808080;
-	border-radius: 25px;
-}
-
-#unbl-search:focus {
-	border-color: #005a5a;
-}
-
-@media all and (max-width: 552px) {
-	#unbl-search {
-		width: calc(100% - 52px);
-	}
-}
-
-#unbl-buttons, #unbl-options {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 20px auto;
-}
-
-#unbl-options>label {
-	position: relative;
-	display: inline-block;
-	width: fit-content;
-	height: fit-content;
-	padding: 0px 0px 0px 10px;
-	color: #808080;
-}
-
-#unbl-options>select, #unbl-options>input, #unbl-buttons>button {
-	position: relative;
-	display: inline-block;
-	width: fit-content;
-	height: fit-content;
-	margin: 5px;
-	padding: 5px;
-	outline: none;
-	border: 1px solid #808080;
-	border-radius: 25px;
-}
-
-#unbl-options>select:focus, #unbl-options>input:focus, #unbl-buttons>button:focus {
-	border-color: #005a5a;
-}
-
-#unbl-options>input:disabled {
-	border-color: #c0c0c0;
-	background: #f0f0f0;
-}
-
-#unbl-buttons>button:hover {
-	background: #f0f0f0;
-}
-
-#unbl-buttons>button:active {
-	background: #e0e0e0;
 }
 
 #yt-search-bar {
@@ -576,7 +643,7 @@
 }
 
 #yt-search-bar>button:focus {
-	border-color: #323232;
+	border-color: #303030;
 }
 
 #yt-search-bar>button:active {
@@ -822,13 +889,51 @@
 	letter-spacing: -1px;
 }
 
-#community-page>embed {
+#community-page>embed, #chatgpt-page>div {
 	position: relative;
 	display: block;
 	width: 120%;
 	height: unset;
 	margin: 10px -10%;
 	aspect-ratio: 16/9;
+}
+
+#settings-page>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px;
+}
+
+#settings-page>div>label {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 10px 0px 0px;
+	color: #808080;
+	line-height: 14px;
+	letter-spacing: 0px;
+	vertical-align: middle;
+}
+
+#settings-page>div>input, #settings-page>div>select {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	padding: 5px 10px;
+	outline: none;
+	line-height: 14px;
+	letter-spacing: 0px;
+	border: 1px solid #c0c0c0;
+	border-radius: 25px;
+	vertical-align: middle;
+}
+
+#settings-page>div>input:focus, #settings-page>div>select:focus {
+	border-color: #808080;
 }
 
 #footer {
@@ -865,11 +970,247 @@
 		width: calc(100% - 40px) !important;
 	}
 
-	#community-page>embed {
+	#community-page>embed, #chatgpt-page>div {
 		width: calc(100% + 10px);
 		margin: 10px -5px;
 		aspect-ratio: 9/18;
 	}
+}
+
+#settings {
+	position: absolute;
+	display: block;
+	width: 48px;
+	height: 48px;
+	right: 20px;
+	bottom: 22px;
+	cursor: pointer;
+	box-shadow: 2px 2px #808080;
+	border-radius: 25px;
+	background-image: url("res/settings.svg");
+	background-size: 48px 48px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#settings:active {
+	box-shadow: -2px -2px #808080;
+}
+
+#unbl-content {
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: calc(100% - 50px);
+	top: 50px;
+	overflow: hidden;
+}
+
+#tab-bar {
+	position: relative;
+	display: flex;
+	width: calc(100% - 10px);
+	height: 35px;
+	padding: 0px 5px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	background: #e0e0e0;
+}
+
+#tabs {
+	position: relative;
+	display: flex;
+	width: auto;
+	height: 35px;
+	max-width: calc(100% - 35px);
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+#new-tab {
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 35px;
+	flex: 0 0 35px;
+	border: none;
+	outline: none;
+	border-radius: 25px;
+	background-image: url("res/add.svg");
+	background-position: center;
+	background-size: 20px;
+	background-repeat: no-repeat;
+}
+
+#tabs>div {
+	position: relative;
+	display: block;
+	width: 250px;
+	height: 35px;
+	flex: 0 1 250px;
+	border-left: 1px solid #c0c0c0;
+	border-right: 1px solid #c0c0c0;
+	overflow: hidden;
+}
+
+#tabs>div[current] {
+	background: #f0f0f0;
+}
+
+#tabs>div>img {
+	position: absolute;
+	display: block;
+	width: 19px;
+	height: 19px;
+	left: 8px;
+	top: 8px;
+}
+
+#tabs>div>div {
+	position: absolute;
+	display: block;
+	width: calc(100% - 70px);
+	height: 19px;
+	left: 35px;
+	top: 8px;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 19px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	letter-spacing: 0px;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+#tabs>div>button {
+	position: absolute;
+	display: block;
+	width: 35px;
+	height: 35px;
+	top: 0px;
+	right: 0px;
+	border: none;
+	outline: none;
+	border-radius: 25px;
+	background-image: url("res/close.svg");
+	background-position: center;
+	background-size: 15px;
+	background-repeat: no-repeat;
+}
+
+#toolbar {
+	position: relative;
+	display: flex;
+	width: calc(100% - 20px);
+	height: 25px;
+	padding: 5px 10px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	column-gap: 10px;
+	background: #f0f0f0;
+	border-bottom: 1px solid #c0c0c0;
+}
+
+#back, #forward, #refresh, #menu {
+	position: relative;
+	display: block;
+	width: 25px;
+	height: 25px;
+	flex: 0 0 25px;
+	border: none;
+	outline: none;
+	border-radius: 25px;
+	background-position: center;
+	background-size: 20px;
+	background-repeat: no-repeat;
+}
+
+#back {
+	background-image: url("res/back.svg");
+}
+
+#forward {
+	background-image: url("res/forward.svg");
+}
+
+#refresh {
+	background-image: url("res/refresh.svg");
+}
+
+#menu {
+	background-image: url("res/menu.svg");
+}
+
+#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #menu:hover {
+	background-color: #d0d0d0;
+}
+
+#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #menu:active {
+	background-color: #c0c0c0;
+}
+
+#address {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 15px;
+	padding: 4px 15px;
+	flex: 0 1 100%;
+	line-height: 15px;
+	letter-spacing: 0px;
+	outline: none;
+	border: 1px solid #e0e0e0;
+	border-radius: 25px;
+	background: #ffffff;
+}
+
+#address:focus {
+	border-color: #808080;
+}
+
+#container {
+	position: relative;
+	display: block;
+	width: 1280px;
+	height: 720px;
+	margin: auto;
+	border: 1px solid #808080;
+	background: #ffffff;
+	image-rendering: pixelated;
+}
+
+#u-frame {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	border: none;
+	outline: none;
+	overflow: hidden;
+	image-rendering: pixelated;
+}
+
+#message {
+	position: absolute;
+	display: none;
+	width: calc(100% - 40px);
+	height: calc(100% - 40px);
+	padding: 20px;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	color: #ffffff;
+	cursor: default;
+	text-align: center;
+	line-height: 20px;
+	letter-spacing: 1px;
+	background: rgba(0, 0, 0, 0.7);
 }
 
 #frame-view, #video-frame {
@@ -1083,7 +1424,7 @@
 }
 
 #submit-game-frame>div>button:focus {
-	border-color: #323232;
+	border-color: #303030;
 }
 
 #submit-game-frame>div>button:active {
@@ -1093,12 +1434,12 @@
 #error-msg {
 	position: relative;
 	display: none;
-	width: 276px;
+	width: 278px;
 	height: fit-content;
 	padding: 10px;
 	margin: 10px 0px;
-	border: 2px solid #ff0000;
+	color: #ff0000;
+	border: 1px solid #ff0000;
 	border-radius: 10px;
-	line-height: 18px;
-	letter-spacing: 0px;
+	background: #ffc0c0;
 }

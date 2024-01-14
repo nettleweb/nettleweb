@@ -7,8 +7,8 @@
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta name="theme-color" content="#ffffff" />
-		<meta name="description" content="Free + Open Source Unblocked Games Website; 300+ HTML5, DOS, Flash Games for school; No Ads" />
-		<meta name="keywords" content="whitespider,unblocked,unlocked,unblocker,game,games,html5,flash,dos,chromehack,open source,free" />
+		<meta name="description" content="Free + open source unblocked games website; 400+ HTML5, DOS, Flash games for school; Free, No Ads" />
+		<meta name="keywords" content="whitespider,unblocked,unlocked,unblocker,proxy,games,html5,flash,dos,free,open source" />
 		<base href="/" target="_blank" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="index.css" />
@@ -22,11 +22,14 @@
 		<noscript><div>Error: This page could not function unless JavaScript is supported and enabled in your browser.</div></noscript>
 		<div id="navigation-bar">
 			<div id="logo"></div>
+			<div id="status"></div>
 			<div id="version">v0.1.0</div>
 			<input id="side-menu" type="checkbox" placeholder="Navigation Menu" />
 			<label for="side-menu" id="hamb"><div></div></label>
 			<div id="nav-bar">
 				<button id="home-btn" type="button" current="true">Home</button>
+				<button id="prox-btn" type="button">Unblocker</button>
+				<button id="chai-btn" type="button">ChatGPT</button>
 				<button id="apps-btn" type="button">Apps</button>
 				<button id="chat-btn" type="button">Chat</button>
 				<button id="unbl-btn" type="button">Site is Blocked?</button>
@@ -55,29 +58,26 @@
 				<button id="submit-game" type="button">Submit a game now</button>
 				<div id="game-disclaimer">Disclaimer: All games listed on this site are collected from other popular websites,
 					for making them accessible to restricted users.
-					If copyright violations occurred, please email <a href="mailto:admin@whitespider.gq">admin@whitespider.gq</a>.
+					If copyright violations occurred, please email <a href="mailto:admin@whitespider.dev">admin@whitespider.dev</a>.
 					We will resolve these issues as soon as possible.</div>
 			</div>
+			<div id="chatgpt-page">
+				<h1>ChatGPT</h1>
+				<div>
+					<div id="dialog"></div>
+					<div id="interface">
+						<div>
+							<button id="new-topic" type="button" title="New topic"></button>
+							<form id="chatgpt" action="None" method="post">
+								<input name="m" type="text" placeholder="Message" minlength="2" required="true" autocomplete="off" />
+								<button type="submit" title="Send"></button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div id="services-page">
-				<h1>Apps / Tools</h1>
-				<h2>Unblocker</h2>
-				<input id="unbl-search" type="text" placeholder="Search or Type a URL" />
-				<div id="unbl-buttons">
-					<button id="search-btn" type="button">Unblocked Search</button>
-					<button id="random-btn" type="button">I'm Feeling Lucky</button>
-				</div>
-				<div id="unbl-options">
-					<label for="unbl-mode">Mode:</label>
-					<select id="unbl-mode">
-						<option value="embed">Raw Embed</option>
-						<option value="puppeteer">Puppeteer</option>
-					</select>
-					<label for="use-tor">Use TOR:</label>
-					<input id="use-tor" type="checkbox" />
-					<label for="server-addr">Proxy Server:</label>
-					<input id="server-addr" type="text" placeholder=" (Default) " />
-				</div>
-				<hr />
+				<h1>Apps</h1>
 				<h2>YouTube Unblocked</h2>
 				<div id="yt-search-bar">
 					<input id="yt-search-input" type="text" value="" placeholder="Search Video or Paste YouTube Video URL" />
@@ -188,6 +188,29 @@
 			<div id="accountinfo-page">
 				<button id="signout" type="button">Sign out</button>
 			</div>
+			<div id="settings-page">
+				<h1>Settings</h1>
+				<div>
+					<label for="backend-url">Backend URL:</label>
+					<input id="backend-url" type="text" placeholder=" (Default) " />
+				</div>
+				<div>
+					<label for="theme">Theme:</label>
+					<select id="theme">
+						<option value="default">Default</option>
+						<option value="light">Light</option>
+					</select>
+				</div>
+				<div>
+					<label for="tab-cloaking">Tab Cloaking:</label>
+					<select id="tab-cloaking">
+						<option value="disabled">Disabled</option>
+						<option value="google">Google</option>
+						<option value="classroom">Classroom</option>
+					</select>
+				</div>
+				
+			</div>
 			<div id="footer">
 				<div>
 					<div>©2024 WhiteSpider Dev Team. All rights reserved.</div>
@@ -210,6 +233,24 @@
 					<p>Content Bluring: <b>Ctrl+B</b></p>
 					<p>Leave Safely: <b>Ctrl+Q</b></p>
 				</div>
+			</div>
+		</div>
+		<button id="settings" type="button" title="Settings"></button>
+		<div id="unbl-content">
+			<div id="tab-bar">
+				<div id="tabs"></div>
+				<button id="new-tab" type="button" title="New Tab"></button>
+			</div>
+			<div id="toolbar">
+				<button id="back" type="button" title="Back"></button>
+				<button id="forward" type="button" title="Forward"></button>
+				<button id="refresh" type="button" title="Refresh"></button>
+				<input id="address" type="text" placeholder="Search or Type a URL" spellcheck="false" />
+				<button id="menu" type="button" title="menu"></button>
+			</div>
+			<div id="container">
+				<img id="u-frame" width="1280" height="720" draggable="false" decoding="sync" loading="eager" tabindex="1" alt="Loading..." />
+				<div id="message">Error</div>
 			</div>
 		</div>
 		<div id="frame-view">
