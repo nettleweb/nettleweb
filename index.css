@@ -23,8 +23,9 @@
 	width: 100%;
 	height: 50px;
 	cursor: default;
-	user-select: none;
+	overflow: hidden;
 	background: #f8f8f8;
+	user-select: none;
 }
 
 #logo {
@@ -397,6 +398,68 @@
 	text-align: center;
 	line-height: 12px;
 	letter-spacing: 0px;
+}
+
+#game-navigator {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 30px auto;
+	border: 1px solid #303030;
+	background: #f0f0f0;
+}
+
+#game-navigator>button {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	outline: none;
+	vertical-align: top;
+	background-size: 30px 30px;
+	background-color: #c0c0c0;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	border-right: 1px solid #808080;
+	border-bottom: 1px solid #808080;
+}
+
+#game-navigator>button:disabled {
+	cursor: default;
+	filter: brightness(200%) contrast(40%);
+	border-color: #c0c0c0;
+}
+
+#game-navigator>button:not(:disabled):active {
+	border-top-color: #808080;
+	border-left-color: #808080;
+	border-right-color: #ffffff;
+	border-bottom-color: #ffffff;
+}
+
+#gnav-back {
+	background-image: url("res/back.svg");
+}
+
+#gnav-forward {
+	background-image: url("res/forward.svg");
+}
+
+#gnav-page-number {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 20px;
+	padding: 5px 10px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+	letter-spacing: 0px;
+	vertical-align: top;
 }
 
 #game-notice {
