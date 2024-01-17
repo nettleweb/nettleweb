@@ -1008,6 +1008,7 @@
 	height: calc(100% - 50px);
 	top: 50px;
 	overflow: hidden;
+	background: #ffffff;
 }
 
 #tab-bar {
@@ -1107,7 +1108,7 @@
 	position: relative;
 	display: flex;
 	width: calc(100% - 20px);
-	height: 25px;
+	height: 30px;
 	padding: 5px 10px;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -1116,18 +1117,18 @@
 	border-bottom: 1px solid #c0c0c0;
 }
 
-#back, #forward, #refresh, #menu {
+#back, #forward, #refresh {
 	position: relative;
 	display: block;
-	width: 25px;
-	height: 25px;
-	flex: 0 0 25px;
+	width: 30px;
+	height: 30px;
+	flex: 0 0 30px;
 	border: none;
 	outline: none;
 	border-radius: 25px;
-	background-position: center;
-	background-size: 20px;
+	background-size: 25px;
 	background-repeat: no-repeat;
+	background-position: center;
 }
 
 #back {
@@ -1142,15 +1143,11 @@
 	background-image: url("res/refresh.svg");
 }
 
-#menu {
-	background-image: url("res/menu.svg");
-}
-
-#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #menu:hover {
+#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover {
 	background-color: #d0d0d0;
 }
 
-#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #menu:active {
+#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active {
 	background-color: #c0c0c0;
 }
 
@@ -1158,18 +1155,57 @@
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 15px;
-	padding: 4px 15px;
+	height: 14px;
+	padding: 7px 15px;
 	flex: 0 1 100%;
+	border: 1px solid #c0c0c0;
+	border-radius: 25px;
+	outline: none;
+	background: #ffffff;
 	line-height: 15px;
 	letter-spacing: 0px;
-	outline: none;
-	border: 1px solid #e0e0e0;
-	border-radius: 25px;
-	background: #ffffff;
 }
 
 #address:focus {
+	border-color: #808080;
+}
+
+#mode {
+	position: relative;
+	display: block;
+	width: 200px;
+	height: 30px;
+	flex: 0 0 200px;
+}
+
+#mode>label {
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 20px;
+	top: 5px;
+	left: 0px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#mode>select {
+	position: absolute;
+	display: block;
+	width: 140px;
+	height: 24px;
+	padding: 2px 5px;
+	top: 0px;
+	left: 50px;
+	outline: none;
+	background: #ffffff;
+	line-height: 24px;
+	letter-spacing: 0px;
+	border: 1px solid #c0c0c0;
+	border-radius: 25px;
+}
+
+#mode>select:focus {
 	border-color: #808080;
 }
 

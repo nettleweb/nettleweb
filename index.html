@@ -103,8 +103,18 @@
 				<div id="yt-results"></div>
 				<button id="yt-load-more" type="button">Load More</button>
 				<div id="yt-api-info">
-					<p>Notice: YouTube Unblocked uses Google's free API to get search results, which is limited to 10000 anonymous requests per day.
-						Sign in with your Google account with the button in the navigation bar to unlock extra quotas.</p>
+					<p>Notice: YouTube Unblocked uses Google's free API to get search results, which is limited to 10000 requests per day.
+						When it reaches the limit, an error message like 'quota exceed' would be shown, and the search function would no longer work.</p>
+					<p>As a workaround for this error, we recommend you to create and use your own API key. To do so, follow the steps below:</p>
+					<p> - Login with your personal Google account and go to <a href="https://console.cloud.google.com/apis/dashboard">Google Cloud Console</a>.</p>
+					<p> - Create or select an existing project.</p>
+					<p> - In 'APIs & Services' section, click 'library'.</p>
+					<p> - Search for 'YouTube Data API v3' and enable it.</p>
+					<p> - Go back to 'APIs & Services' section, then click 'credentials'.</p>
+					<p> - Click 'create credentials' at the top and select 'API key'.</p>
+					<p> - Fill in your API key below to use it.</p>
+					<label for="yt-api-key">API Key: </label>
+					<input id="yt-api-key" type="text" placeholder=" (Default) " />
 				</div>
 				<hr />
 				<h2>Private Search</h2>
@@ -251,7 +261,13 @@
 				<button id="forward" type="button" title="Forward"></button>
 				<button id="refresh" type="button" title="Refresh"></button>
 				<input id="address" type="text" placeholder="Search or Type a URL" spellcheck="false" />
-				<button id="menu" type="button" title="menu"></button>
+				<div id="mode">
+					<label for="mode-select">Mode: </label>
+					<select id="mode-select">
+						<option value="raw-embed">Raw Embed</option>
+						<option value="puppeteer">Puppeteer</option>
+					</select>
+				</div>
 			</div>
 			<div id="container">
 				<img id="u-frame" width="1280" height="720" draggable="false" decoding="sync" loading="eager" tabindex="1" alt="Loading..." />
