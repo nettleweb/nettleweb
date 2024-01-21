@@ -27,7 +27,7 @@
 					return await self.fetch(request);
 			}
 
-			if (url.origin !== origin || url.pathname === "/manifest.json")
+			if (url.pathname === "/manifest.json")
 				return await self.fetch(request);
 
 			switch (request.method) {

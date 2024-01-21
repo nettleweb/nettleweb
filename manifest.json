@@ -1,35 +1,47 @@
 {
-	"background_color": "#ffffff",
+	"id": "whitespider",
+	"name": "WhiteSpider",
+	"version": "2.1.1",
+	"short_name": "WhiteSpider",
+	"categories": ["games"],
 	"description": "WhiteSpider GameHub - Free unblocked games",
+	"scope": "/",
 	"display": "fullscreen",
+	"start_url": "/",
+	"orientation": "any",
+	"theme_color": "#ffffff",
+	"background_color": "#ffffff",
+	"display_override": [
+		"fullscreen",
+		"minimal-ui",
+		"standalone",
+		"window-controls-overlay"
+	],
 	"icons": [
 		{
-			"sizes": "64x64",
-			"src": "res/logo64.png",
-			"type": "image/png"
+			"src": "/res/logo64.png",
+			"type": "image/png",
+			"sizes": "64x64"
 		},
 		{
-			"sizes": "128x128",
-			"src": "res/logo128.png",
-			"type": "image/png"
+			"src": "/res/logo128.png",
+			"type": "image/png",
+			"sizes": "128x128"
 		},
 		{
-			"sizes": "256x256",
-			"src": "res/logo256.png",
-			"type": "image/png"
+			"src": "/res/logo256.png",
+			"type": "image/png",
+			"sizes": "256x256"
 		},
 		{
-			"sizes": "512x512",
-			"src": "res/logo512.png",
-			"type": "image/png"
+			"src": "/res/logo512.png",
+			"type": "image/png",
+			"sizes": "512x512"
 		}
 	],
-	"manifest_version": 2,
-	"name": "Wh\u0456teSp\u0456der",
-	"orientation": "any",
-	"scope": "/",
-	"short_name": "WhiteSpider",
-	"start_url": "/",
-	"theme_color": "#ffffff",
-	"version": "2.1.0"
+	"serviceworker": {
+		"src": "/sw.js",
+		"scope": "/",
+		"use_cache": false
+	}
 }
