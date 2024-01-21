@@ -8,6 +8,7 @@
 	padding: 5px;
 	margin: 20px auto;
 	border: 3px solid #ff0000;
+	z-index: 10;
 	background: #ffffff;
 	line-height: 20px;
 	letter-spacing: 0px;
@@ -22,8 +23,9 @@
 	display: block;
 	width: 100%;
 	height: 50px;
+	top: 0px;
+	left: 0px;
 	cursor: default;
-	overflow: hidden;
 	background: #f8f8f8;
 	user-select: none;
 }
@@ -43,7 +45,7 @@
 #status {
 	position: absolute;
 	display: block;
-	width: 120px;
+	width: 100px;
 	height: 30px;
 	top: 10px;
 	left: 220px;
@@ -57,10 +59,10 @@
 #version {
 	position: absolute;
 	display: block;
-	width: 120px;
+	width: auto;
 	height: 30px;
 	top: 10px;
-	left: 350px;
+	left: 330px;
 	color: #808080;
 	cursor: default;
 	font-size: 12px;
@@ -81,31 +83,30 @@
 	padding: 10px;
 }
 
-#nav-bar>button {
+#nav-bar>button, #game-category>button {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
 	height: 20px;
-	padding: 6px 0px 2px;
+	padding: 5px 0px;
 	margin: 0px 15px;
 	color: #808080;
 	border: none;
-	z-index: 10;
 	font-size: 14px;
 	text-align: center;
 	line-height: 20px;
 	letter-spacing: 0px;
 }
 
-#nav-bar>button:hover {
+#nav-bar>button:hover, #game-category>button:hover {
 	color: #a0a0a0;
 }
 
-#nav-bar>button:active {
+#nav-bar>button:active, #game-category>button:active {
 	color: #c0c0c0;
 }
 
-#nav-bar>button[current] {
+#nav-bar>button[current], #game-category>button[current] {
 	color: #303030;
 	font-weight: 600;
 }
@@ -333,6 +334,17 @@
 	background-position: center;
 	background-size: contain;
 	background-repeat: no-repeat;
+}
+
+#game-category {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 30px 0px;
+	border: 1px solid #c0c0c0;
+	border-radius: 15px;
+	background: #f0f0f0;
 }
 
 #game-container {

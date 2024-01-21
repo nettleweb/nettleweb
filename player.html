@@ -11,64 +11,79 @@
 		<link rel="stylesheet" type="text/css" href="lib/jsdos/js-dos.css" />
 		<script type="text/javascript" src="lib/ruffle/ruffle.js"></script>
 		<script type="text/javascript" src="lib/jsdos/js-dos.js"></script>
-		<title>Frame0</title>
+		<title>WhiteSpider&#x2122;</title>
 		<style type="text/css">
 @import url("common.css");
 
-embed, ruffle-embed, ruffle-player {
+embed, ruffle-player {
 	position: absolute;
 	display: block;
 	width: 100%;
 	height: 100%;
 	border: none;
+	overflow: hidden;
 }
 
-#frame {
+body>div {
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
 }
 		</style>
 	</head>
 	<body>
 		<script type="text/javascript">
-"use strict";
-
 // <![CDATA[
-(() => {
+"use strict"; (() => {
 	const location = new URL(window.location.href);
+	const type = location.searchParams.get("type") || "";
 	const url = location.searchParams.get("url") || "";
 
-	if (url.length === 0) {
-		console.warn("No URL specified");
+	if (type.length === 0 || url.length === 0) {
+		console.error("Player: Missing required parameters.");
 		return;
 	}
 
-	switch (location.searchParams.get("type")) {
-		case "flash": {
-			const ruffle = window.RufflePlayer.newest();
-			const player = ruffle.createPlayer();
-			document.body.appendChild(player);
-			player.load(url);
+	window.focus();
+	emulators.pathPrefix = "/lib/jsdos/";
+	RufflePlayer.config = Object.freeze(Object.create(null));
+
+	switch (parseInt(type, 10)) {
+		case 1:
+			{
+				const player = RufflePlayer.newest().createPlayer();
+				document.body.appendChild(player);
+				player.load({
+					url: url,
+					scale: "showAll",
+					quality: "best",
+					autoplay: "auto",
+					logLevel: "warn",
+					letterbox: "on",
+					openUrlMode: "confirm",
+					upgradeToHttps: true,
+					backgroundColor: "#000000"
+				});
+			}
 			break;
-		}
-		case "dos": {
-			const frame = document.createElement("div");
-			frame.id = "frame";
-			document.body.appendChild(frame);
-			emulators.pathPrefix = "/lib/jsdos/";
-			Dos(frame).run(url);
+		case 2:
+			{
+				const frame = document.createElement("div");
+				document.body.appendChild(frame);
+			 	Dos(frame).run(url);
+			}
 			break;
-		}
-		default: {
-			const frame = document.createElement("embed");
-			frame.type = "text/plain";
-			frame.width = "1024";
-			frame.height = "768";
-			frame.src = url;
-			document.body.appendChild(frame);
+		default:
+			{
+				const frame = document.createElement("embed");
+				frame.type = "text/plain";
+				frame.width = "1024";
+				frame.height = "768";
+				frame.src = url;
+				document.body.appendChild(frame);
+			}
 			break;
-		}
 	}
 })();
 // ]]>
