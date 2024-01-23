@@ -12,14 +12,104 @@
                         width: 20,
                         height: 20,
                         viewBox: "0 0 20 20",
-                        className: e
+                        className: e,
+                        "aria-hidden": !0
                     }, i.createElement("path", {
                         d: "M4.09 4.22l.06-.07a.5.5 0 01.63-.06l.07.06L10 9.29l5.15-5.14a.5.5 0 01.63-.06l.07.06c.18.17.2.44.06.63l-.06.07L10.71 10l5.14 5.15c.18.17.2.44.06.63l-.06.07a.5.5 0 01-.63.06l-.07-.06L10 10.71l-5.15 5.14a.5.5 0 01-.63.06l-.07-.06a.5.5 0 01-.06-.63l.06-.07L9.29 10 4.15 4.85a.5.5 0 01-.06-.63l.06-.07-.06.07z",
                         fillRule: "nonzero"
                     }))
                 }
             },
-            37922: (e, t, s) => {
+            32301: (e, t, s) => {
+                function i(e) {
+                    ! function(e, t) {
+                        if (!e) {
+                            let e = "Assertion failed";
+                            t && (e = e + ": " + t);
+                            const s = new Error(e);
+                            throw function() {
+                                const e = this || self;
+                                return e.traceAssertionsForTesting, e
+                            }().traceAssertionsForTesting && console.warn(s.stack), s
+                        }
+                    }(!1, e || "Unreachable code hit")
+                }
+                s.d(t, {
+                    P2: () => i
+                })
+            },
+            85774: (e, t, s) => {
+                s.d(t, {
+                    yt: () => r
+                });
+                var i = s(87685);
+                let a = 1;
+
+                function o() {
+                    return a++
+                }
+                const n = {};
+
+                function r(e, t) {
+                    const s = Array.prototype.slice.call(arguments, 1),
+                        a = new i.h,
+                        r = e + "_" + o();
+                    return n[r] = a, /*chrome.send(e, [r].concat(s)), */ a.promise
+                }
+                const l = {};
+                window.cr = window.cr || {}, window.cr.webUIResponse = function(e, t, s) {
+                    const i = n[e];
+                    delete n[e], t ? i.resolve(s) : i.reject(s)
+                }, window.cr.webUIListenerCallback = function(e, t) {
+                    const s = l[e];
+                    if (!s) return;
+                    const i = Array.prototype.slice.call(arguments, 1);
+                    for (const e in s) s[e].apply(null, i)
+                };
+                /Mac/.test(navigator.platform), /Win/.test(navigator.platform), /Linux/.test(navigator.userAgent), /Android/.test(navigator.userAgent), /EdgiOS/.test(navigator.userAgent)
+            },
+            87685: (e, t, s) => {
+                s.d(t, {
+                    h: () => a
+                });
+                var i = s(32301),
+                    a = class {
+                        constructor() {
+                            this.resolve_, this.reject_, this.isFulfilled_ = !1, this.promise_ = new Promise(((e, t) => {
+                                this.resolve_ = t => {
+                                    e(t), this.isFulfilled_ = !0
+                                }, this.reject_ = e => {
+                                    t(e), this.isFulfilled_ = !0
+                                }
+                            }))
+                        }
+                        get isFulfilled() {
+                            return this.isFulfilled_
+                        }
+                        set isFulfilled(e) {
+                            (0, i.P2)()
+                        }
+                        get promise() {
+                            return this.promise_
+                        }
+                        set promise(e) {
+                            (0, i.P2)()
+                        }
+                        get resolve() {
+                            return this.resolve_
+                        }
+                        set resolve(e) {
+                            (0, i.P2)()
+                        }
+                        get reject() {
+                            return this.reject_
+                        }
+                        set reject(e) {
+                            (0, i.P2)()
+                        }
+                    }
+            },
+            82870: (e, t, s) => {
                 var i = s(73961),
                     a = s(89526),
                     o = s(87958),
@@ -56,7 +146,7 @@
                             width: "fit-content"
                         }
                     },
-                    v = {
+                    H = {
                         settingsHamburgerMenu: {
                             display: "block",
                             marginInlineStart: "auto",
@@ -135,28 +225,28 @@
                             marginBottom: "4px"
                         }
                     };
-                var x = s(71388),
-                    S = s(87841),
-                    C = s(92588),
-                    k = s(90305),
-                    T = s(2483),
-                    M = s(49838),
-                    I = s(99683),
-                    P = s(12994),
-                    E = s(73252),
-                    L = s(57880),
-                    z = s(18158),
-                    D = s(20917),
-                    _ = s(98401),
-                    O = s(37879),
-                    A = s(11754),
-                    R = s(37834),
-                    N = s(52502),
-                    H = s(57481),
-                    F = s(45191);
-                var B = s(14893);
+                var v = s(71388),
+                    V = s(87841),
+                    x = s(92588),
+                    M = s(90305),
+                    S = s(2483),
+                    C = s(49838),
+                    k = s(99683),
+                    Z = s(12994),
+                    T = s(73252),
+                    P = s(57880),
+                    E = s(18158),
+                    I = s(20917),
+                    L = s(98401),
+                    D = s(37879),
+                    _ = s(11754),
+                    z = s(37834),
+                    O = s(52502),
+                    R = s(57481),
+                    N = s(45191);
+                var A = s(14893);
 
-                function V(e) {
+                function F(e) {
                     return a.createElement("svg", {
                         "aria-hidden": "true",
                         width: 20,
@@ -168,7 +258,7 @@
                     }))
                 }
 
-                function Z(e) {
+                function B(e) {
                     return a.createElement("svg", {
                         width: 20,
                         height: 20,
@@ -181,25 +271,26 @@
                 }
                 var q = s(3117);
 
-                function G(e) {
+                function j(e) {
                     switch (e) {
                         case "timetrial":
                         case "SPEED":
-                            return j.TimeTrial;
+                            return G.TimeTrial;
                         case "BUOY":
                         case "zigzag":
-                            return j.ZigZag;
+                            return G.ZigZag;
                         case "CLASSIC":
                         case "endless":
                         default:
-                            return j.Endless
+                            return G.Endless
                     }
                 }
-                let j;
+                let G;
                 ! function(e) {
                     e.ZigZag = "zigzag", e.Endless = "endless", e.TimeTrial = "timetrial"
-                }(j || (j = {}));
-                const K = {
+                }(G || (G = {}));
+                var K = s(85774);
+                const U = {
                     ski: {
                         gradient: {
                             start: [244, 244, 244],
@@ -230,42 +321,36 @@
                     }
                 };
 
-                function U(e) {
-                    // return e in K ? e : "surf"
+                function W(e) {
+                    // return e in U ? e : "surf"
                     switch (e) {
                         case "surf":
-                            return e in K ? e : haha.surf;
+                            return e in K ? e : "surf";
                         case "ski":
-                            return e in K ? e : haha.ski;
+                            return e in K ? e : "ski";
                         default:
-                            return e in K ? e : haha.surf
+                            return e in K ? e : "surf"
                     }
                 }
-                
-                let haha;
-                ! function(e) {
-                    e.surf = "surf", e.ski = "ski"
-                }(haha || (haha = {}));
-                
-                var W = s(27670);
+                var $ = s(27670);
 
-                function $(e) {
+                function X(e) {
                     if ("number" != typeof e) return "----";
                     let t = 14,
                         s = 8;
                     return e < 0 && (e = 3599), e >= 3600 && (t = 12, s = 10), new Date(1e3 * e).toISOString().substr(t, s)
                 }
 
-                function X(e) {
+                function Y(e) {
                     navigator.clipboard.writeText(e)
                 }
-                class Y {
+                class J {
                     constructor() {
-                        if (this.localData = void 0, Y.offline) return Y.offline;
-                        Y.offline = this, this.loadData(), le.subscribe(this.loadData.bind(this))
+                        if (this.localData = void 0, J.offline) return J.offline;
+                        J.offline = this, this.loadData(), he.subscribe(this.loadData.bind(this))
                     }
                     loadData() {
-                        const e = le.getState();
+                        const e = he.getState();
                         this.localData = {
                             settings: {
                                 character: e.currentCharacter,
@@ -282,16 +367,16 @@
                         }
                     }
                     saveData(e) {
-                        le.dispatch(oe(e)), he.saveZigZagHighScore(e.zigzag_bestScore), he.saveEndlessHighScore(e.endless_bestScore), he.saveTimeTrialHighScore(e.timetrial_bestScore), he.saveGameMode(e.mode), he.saveHighVisibilityMode(e.highVisibilityMode), he.saveReducedSpeedMode(e.gameSpeed < se), he.saveDefaultCharacter(e.currentCharacter), he.saveDefaultTheme(e.theme)
+                        he.dispatch(ne(e)), ce.saveZigZagHighScore(e.zigzag_bestScore), ce.saveEndlessHighScore(e.endless_bestScore), ce.saveTimeTrialHighScore(e.timetrial_bestScore), ce.saveGameMode(e.mode), ce.saveHighVisibilityMode(e.highVisibilityMode), ce.saveReducedSpeedMode(e.gameSpeed < ie), ce.saveDefaultCharacter(e.currentCharacter), ce.saveDefaultTheme(e.theme)
                     }
                     resetData() {
-                        le.dispatch(ne()), he.resetAllStats()
+                        he.dispatch(re()), ce.resetAllStats()
                     }
                     getCommonStats(e, t) {
-                        const s = te.sys.game;
+                        const s = se.sys.game;
                         return {
                             gameMode: e,
-                            score: e === j.TimeTrial ? Math.floor(1e3 * t) : t,
+                            score: e === G.TimeTrial ? Math.floor(1e3 * t) : t,
                             konamiCodeUsed: s.cheat.used,
                             msftCodeUsed: s.cheat.lives,
                             edgeCodeUsed: s.cheat.boosts,
@@ -300,70 +385,59 @@
                         }
                     }
                     storeEndlessStats() {
-                        const e = te.sys.getCurrentScore(),
-                            t = te.sys.session.bestScore.endless,
-                            s = te.sys.game;
-                        he.recordGameEnd({
-                            ...this.getCommonStats(j.Endless, e),
+                        const e = se.sys.getCurrentScore(),
+                            t = se.sys.session.bestScore.endless,
+                            s = se.sys.game;
+                        ce.recordGameEnd({
+                            ...this.getCommonStats(G.Endless, e),
                             loseCondition: s.caught ? "kraken" : "lives",
                             dogCollected: s.friend
-                        }), !s.cheat.used && e > t && (te.sys.session.bestScore.endless = e, s.highScore = !0, this.saveData({
-                            ...le.getState(),
+                        }), !s.cheat.used && e > t && (se.sys.session.bestScore.endless = e, s.highScore = !0, this.saveData({
+                            ...he.getState(),
                             endless_bestScore: e
                         }))
                     }
                     storeTimeTrialStats() {
-                        const e = te.sys.getCurrentScore(),
-                            t = te.sys.session.bestScore.timetrial,
-                            s = te.sys.game;
-                        he.recordGameEnd({
-                            ...this.getCommonStats(j.TimeTrial, e),
+                        const e = se.sys.getCurrentScore(),
+                            t = se.sys.session.bestScore.timetrial,
+                            s = se.sys.game;
+                        ce.recordGameEnd({
+                            ...this.getCommonStats(G.TimeTrial, e),
                             livesCollected: s.lives.numCollected
-                        }), !s.cheat.used && (e < t || t < 0) && s.finish && (te.sys.session.bestScore.timetrial = e, s.highScore = !0, this.saveData({
-                            ...le.getState(),
+                        }), !s.cheat.used && (e < t || t < 0) && s.finish && (se.sys.session.bestScore.timetrial = e, s.highScore = !0, this.saveData({
+                            ...he.getState(),
                             timetrial_bestScore: e
                         }))
                     }
                     storeZigZagStreak() {
-                        const e = te.sys.getCurrentScore(),
-                            t = te.sys.session.bestScore.zigzag,
-                            s = te.sys.game;
-                        he.recordGameEnd(this.getCommonStats(j.ZigZag, e)), !s.cheat.used && e > t && (te.sys.session.bestScore.zigzag = e, s.highScore = !0, this.saveData({
-                            ...le.getState(),
+                        const e = se.sys.getCurrentScore(),
+                            t = se.sys.session.bestScore.zigzag,
+                            s = se.sys.game;
+                        ce.recordGameEnd(this.getCommonStats(G.ZigZag, e)), !s.cheat.used && e > t && (se.sys.session.bestScore.zigzag = e, s.highScore = !0, this.saveData({
+                            ...he.getState(),
                             zigzag_bestScore: e
                         }))
                     }
                 }
 
-                function _isIpad() {
-                    var isIpad = navigator.userAgent.toLowerCase().indexOf('ipad') !== -1;
-                    if (!isIpad && navigator.userAgent.match(/Mac/) && navigator.maxTouchPoints && navigator.maxTouchPoints > 2) {
-                        return true;
-                        }
-                    return isIpad;
+                function Q() {
+                    return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
                 }
-                
-                var IS_IOS = !!window.navigator.userAgent.match(/iP(hone|ad|od)/i) && !!window.navigator.userAgent.match(/Safari/i)
-                                || _isIpad() || /CriOS/.test(window.navigator.userAgent) || /FxiOS/.test(window.navigator.userAgent);
-                
-                function J() {
-                    return /Android/.test(navigator.userAgent) || IS_IOS
-                }
-                let Q, ee;
-                Y.offline = void 0,
+                let ee, te;
+                J.offline = void 0,
                     function(e) {
                         e.Menu = "menu", e.Play = "play", e.Pause = "pause", e.Over = "over"
-                    }(Q || (Q = {})),
+                    }(ee || (ee = {})),
                     function(e) {
                         e.Keyboard = "keyboard", e.Mouse = "mouse", e.Touch = "touch", e.Xbox = "xbox", e.Ps = "ps"
-                    }(ee || (ee = {}));
-                class te {
+                    }(te || (te = {}));
+                class se {
                     constructor() {
-                        if (this.session = void 0, this.game = void 0, te.sys) return te.sys;
-                        te.sys = this, this.defineSessionSettings(), this.resetGameData(), le.subscribe(this.loadSessionSettings.bind(this))
+                        if (this.session = void 0, this.game = void 0, se.sys) return se.sys;
+                        se.sys = this, this.defineSessionSettings(), this.resetGameData(), he.subscribe(this.loadSessionSettings.bind(this))
                     }
                     defineSessionSettings() {
-                        const e = le.getState();
+                        const e = he.getState();
                         this.session = {
                             settings: {
                                 mode: e.mode,
@@ -377,10 +451,10 @@
                                 timetrial: e.timetrial_bestScore,
                                 zigzag: e.zigzag_bestScore
                             },
-                            state: Q.Menu,
+                            state: ee.Menu,
                             flyoutActive: !1,
                             forcedColors: !1,
-                            inputType: J() ? ee.Touch : ee.Keyboard,
+                            inputType: Q() ? te.Touch : te.Keyboard,
                             w: 0,
                             h: 0,
                             x: 0,
@@ -388,7 +462,7 @@
                         }
                     }
                     saveSessionSettings() {
-                        Y.offline.saveData({
+                        J.offline.saveData({
                             mode: this.session.settings.mode,
                             theme: this.session.settings.theme,
                             currentCharacter: this.session.settings.character,
@@ -401,48 +475,48 @@
                         })
                     }
                     loadSessionSettings() {
-                        const e = le.getState();
+                        const e = he.getState();
                         this.session.settings.mode = e.mode, this.session.settings.theme = e.theme, this.session.settings.character = e.currentCharacter, this.session.settings.hitbox = e.highVisibilityMode, this.session.settings.gameSpeed = e.gameSpeed, this.session.bestScore.endless = e.endless_bestScore, this.session.bestScore.timetrial = e.timetrial_bestScore, this.session.bestScore.zigzag = e.zigzag_bestScore
                     }
                     saveGameStats() {
                         switch (this.session.settings.mode) {
-                            case j.Endless:
-                                Y.offline.storeEndlessStats();
+                            case G.Endless:
+                                J.offline.storeEndlessStats();
                                 break;
-                            case j.TimeTrial:
-                                Y.offline.storeTimeTrialStats();
+                            case G.TimeTrial:
+                                J.offline.storeTimeTrialStats();
                                 break;
-                            case j.ZigZag:
-                                Y.offline.storeZigZagStreak()
+                            case G.ZigZag:
+                                J.offline.storeZigZagStreak()
                         }
                     }
                     getCurrentScore() {
                         switch (this.session.settings.mode) {
-                            case j.Endless:
+                            case G.Endless:
                                 return Math.floor(this.game.dist.unit);
-                            case j.TimeTrial:
+                            case G.TimeTrial:
                                 return this.game.time.elapsed - 2 * this.game.coins;
-                            case j.ZigZag:
+                            case G.ZigZag:
                                 return this.game.gates
                         }
                     }
                     getCurrentScoreFormatted() {
                         const e = this.getCurrentScore();
                         switch (this.session.settings.mode) {
-                            case j.Endless:
-                            case j.ZigZag:
+                            case G.Endless:
+                            case G.ZigZag:
                                 return e.toString();
-                            case j.TimeTrial:
-                                return $(e)
+                            case G.TimeTrial:
+                                return X(e)
                         }
                     }
                     getHighScore(e) {
                         switch (e) {
-                            case j.Endless:
+                            case G.Endless:
                                 return Math.max(this.session.bestScore.endless, 0).toString();
-                            case j.TimeTrial:
-                                return $(this.session.bestScore.timetrial);
-                            case j.ZigZag:
+                            case G.TimeTrial:
+                                return X(this.session.bestScore.timetrial);
+                            case G.ZigZag:
                                 return Math.max(this.session.bestScore.zigzag, 0).toString()
                         }
                     }
@@ -501,31 +575,31 @@
                         return e[Math.floor(Math.random() * e.length)]
                     }
                 }
-                te.sys = void 0;
-                const se = 1,
-                    ie = {
-                        currentCharacter: re("lastSelectedPlayer"),
-                        highVisibilityMode: q.pz.getBoolean("highVisibilityActive"),
-                        gameSpeed: q.pz.getBoolean("reducedSpeedActive") ? .5 : se,
-                        mode: G(q.pz.getString("lastSelectedMode")),
-                        theme: U(q.pz.getString("lastSelectedTheme")),
-                        gameState: Q.Menu,
-                        endless_bestScore: re("endlessBestScore"),
-                        timetrial_bestScore: re("timetrialBestScore") < 0 ? -1 : re("timetrialBestScore") / 1e3,
-                        zigzag_bestScore: re("zigzagBestScore")
+                se.sys = void 0;
+                const ie = 1,
+                    ae = {
+                        currentCharacter: le("lastSelectedPlayer"),
+                        highVisibilityMode: q.p.getBoolean("highVisibilityActive"),
+                        gameSpeed: q.p.getBoolean("reducedSpeedActive") ? .5 : ie,
+                        mode: j(q.p.getString("lastSelectedMode")),
+                        theme: W(q.p.getString("lastSelectedTheme")),
+                        gameState: ee.Menu,
+                        endless_bestScore: le("endlessBestScore"),
+                        timetrial_bestScore: le("timetrialBestScore") < 0 ? -1 : le("timetrialBestScore") / 1e3,
+                        zigzag_bestScore: le("zigzagBestScore")
                     };
-                var ae;
+                var oe;
 
-                function oe(e) {
+                function ne(e) {
                     return {
-                        type: ae.UPDATE_STATS,
+                        type: oe.UPDATE_STATS,
                         ...e
                     }
                 }
 
-                function ne() {
+                function re() {
                     return {
-                        type: ae.RESET_STATS,
+                        type: oe.RESET_STATS,
                         endless_bestScore: -1,
                         zigzag_bestScore: -1,
                         timetrial_bestScore: -1,
@@ -534,14 +608,14 @@
                     }
                 }
 
-                function re(e) {
-                    return parseInt(q.pz.getValue(e))
+                function le(e) {
+                    return parseInt(q.p.getValue(e))
                 }! function(e) {
                     e.RESET_STATS = "RESET_STATS", e.UPDATE_GAME_STATE = "UPDATE_GAME_STATE", e.UPDATE_STATS = "UPDATE_STATS"
-                }(ae || (ae = {}));
-                const le = (0, W.MT)((function(e = ie, t) {
+                }(oe || (oe = {}));
+                const he = (0, $.MT)((function(e = ae, t) {
                     switch (t.type) {
-                        case ae.UPDATE_STATS: {
+                        case oe.UPDATE_STATS: {
                             const s = t;
                             return {
                                 ...e,
@@ -555,29 +629,29 @@
                                 timetrial_bestScore: e.timetrial_bestScore < 0 ? s.timetrial_bestScore : Math.min(e.timetrial_bestScore, s.timetrial_bestScore)
                             }
                         }
-                        case ae.UPDATE_GAME_STATE:
+                        case oe.UPDATE_GAME_STATE:
                             return {
                                 ...e, gameState: t.gameState
                             };
-                        case ae.RESET_STATS:
+                        case oe.RESET_STATS:
                             return {
                                 ...e, endless_bestScore: t.endless_bestScore, zigzag_bestScore: t.zigzag_bestScore, timetrial_bestScore: t.timetrial_bestScore, currentCharacter: t.currentCharacter, theme: t.theme
                             };
                         default:
                             return e
                     }
-                }), ie);
-                class he {
+                }), ae);
+                class ce {
                     static recordNewGame(e) {
                         switch (e) {
-                            case j.ZigZag:
-                                he.numZigZagGames += 1;
+                            case G.ZigZag:
+                                ce.numZigZagGames += 1;
                                 break;
-                            case j.Endless:
-                                he.numEndlessGames += 1;
+                            case G.Endless:
+                                ce.numEndlessGames += 1;
                                 break;
-                            case j.TimeTrial:
-                                he.numTimeTrialGames += 1
+                            case G.TimeTrial:
+                                ce.numTimeTrialGames += 1
                         }
                     }
                     static defaultStats() {
@@ -593,105 +667,105 @@
                         }
                     }
                     static async getAllStats() {
-                        // const e = await q.cr.sendWithPromise("get-stats");
-                        // return {
-                        //     ...e,
-                        //     timetrial_bestScore: e.timetrial_bestScore < 0 ? -1 : e.timetrial_bestScore / 1e3,
-                        //     gameSpeed: e.reducedSpeedMode ? .5 : se,
-                        //     mode: G(e.mode),
-                        //     theme: U(e.theme)
-                        // }
+                        /* const e = await (0, K.yt)("get-stats");
+                        return {
+                            ...e,
+                            timetrial_bestScore: e.timetrial_bestScore < 0 ? -1 : e.timetrial_bestScore / 1e3,
+                            gameSpeed: e.reducedSpeedMode ? .5 : ie,
+                            mode: j(e.mode),
+                            theme: W(e.theme)
+                        } */
                         return (
-                            JSON.parse(localStorage.getItem("surfstats")) || he.defaultStats()
+                            JSON.parse(localStorage.getItem("surfstats")) || ce.defaultStats()
                         );
                     }
                     static resetAllStats() {
-                        // q.e9.send("reset-stats")
+                        // q.e.send("reset-stats")
                         localStorage.removeItem("surfstats")
                     }
                     static saveEndlessHighScore(e) {
-                        // q.e9.send("set-high-score", [j.Endless, Math.floor(e)])
+                        // q.e.send("set-high-score", [G.Endless, Math.floor(e)])
                         localStorage.setItem("surfstats", JSON.stringify(Object.assign(Object.assign({}, JSON.parse(localStorage.getItem("surfstats"))), {
                             endless_bestScore: Math.floor(e)
                         })))
                     }
                     static saveZigZagHighScore(e) {
-                        // q.e9.send("set-high-score", [j.ZigZag, Math.floor(e)])
+                        // q.e.send("set-high-score", [G.ZigZag, Math.floor(e)])
                         localStorage.setItem("surfstats", JSON.stringify(Object.assign(Object.assign({}, JSON.parse(localStorage.getItem("surfstats"))), {
                             zigzag_bestScore: Math.floor(e)
                         })));
                     }
                     static saveTimeTrialHighScore(e) {
                         let t = e;
-                        // e > 0 && (t *= 1e3), q.e9.send("set-high-score", [j.TimeTrial, Math.floor(t)])
+                        // e > 0 && (t *= 1e3), q.e.send("set-high-score", [G.TimeTrial, Math.floor(t)])
                         e > 0 && (t *= 1e3), localStorage.setItem("surfstats", JSON.stringify(Object.assign(Object.assign({}, JSON.parse(localStorage.getItem("surfstats"))), {
                             timetrial_bestScore: Math.floor(t)
                         })))
                     }
                     static saveGameMode(e) {
-                        // q.e9.send("save-game-mode", [e])
+                        // q.e.send("save-game-mode", [e])
                         localStorage.setItem("surfstats", JSON.stringify(Object.assign(Object.assign({}, JSON.parse(localStorage.getItem("surfstats"))), {
                             mode: e
                         })))
                     }
                     static saveHighVisibilityMode(e) {
-                        // q.e9.send("save-high-visibility-mode", [e])
+                        // q.e.send("save-high-visibility-mode", [e])
                         localStorage.setItem("surfstats", JSON.stringify(Object.assign(Object.assign({}, JSON.parse(localStorage.getItem("surfstats"))), {
                             highVisibilityMode: e
                         })))
                     }
                     static saveReducedSpeedMode(e) {
-                        // q.e9.send("save-reduced-speed-mode", [e])
+                        // q.e.send("save-reduced-speed-mode", [e])
                         localStorage.setItem("surfstats", JSON.stringify(Object.assign(Object.assign({}, JSON.parse(localStorage.getItem("surfstats"))), {
                             reducedSpeedMode: e
                         })))
                     }
                     static saveDefaultCharacter(e) {
-                        // q.e9.send("save-selected-character", [e])
+                        // q.e.send("save-selected-character", [e])
                         localStorage.setItem("surfstats", JSON.stringify(Object.assign(Object.assign({}, JSON.parse(localStorage.getItem("surfstats"))), {
                             currentCharacter: e
                         })))
                     }
                     static saveDefaultTheme(e) {
-                        // q.e9.send("save-selected-theme", [e])
+                        // q.e.send("save-selected-theme", [e])
                         localStorage.setItem("surfstats", JSON.stringify(Object.assign(Object.assign({}, JSON.parse(localStorage.getItem("surfstats"))), {
                             theme: e
                         })))
                     }
                     static recordUnload() {
-                        const e = Math.floor(Date.now() - he.sessionStartTime) || 0,
+                        const e = Math.floor(Date.now() - ce.sessionStartTime) || 0,
                             t = {
-                                zigzagGamesPlayed: he.numZigZagGames,
-                                endlessGamesPlayed: he.numEndlessGames,
-                                timetrialGamesPlayed: he.numTimeTrialGames
+                                zigzagGamesPlayed: ce.numZigZagGames,
+                                endlessGamesPlayed: ce.numEndlessGames,
+                                timetrialGamesPlayed: ce.numTimeTrialGames
                             };
-                        /* q.e9.send("record-unload", [t, e]), */ he.numZigZagGames = 0, he.numEndlessGames = 0, he.numTimeTrialGames = 0, he.sessionStartTime = Date.now()
+                        /* q.e.send("record-unload", [t, e]),*/ ce.numZigZagGames = 0, ce.numEndlessGames = 0, ce.numTimeTrialGames = 0, ce.sessionStartTime = Date.now()
                     }
                     static recordGameEnd(e) {
                         const t = {
                             ...e,
                             score: Math.floor(e.score)
                         };
-                        // q.e9.send("record-game-end", [t])
+                        // q.e.send("record-game-end", [t])
                     }
                     static recordSharePopup() {
-                        // q.e9.send("record-share-popup")
+                        // q.e.send("record-share-popup")
                     }
                     static recordShareClick() {
-                        // q.e9.send("record-share-click")
+                        // q.e.send("record-share-click")
                     }
                     static startShare(e, t, s, i) {
-                        // q.e9.send("start-share", [e, t, s, i])
+                        // q.e.send("start-share", [e, t, s, i])
                     }
                     static async getPercentage(e, t) {
-                        // return (await q.cr.sendWithPromise("get-percentage", [e, t])).percentage
+                        // return (await (0, K.yt)("get-percentage", [e, t])).percentage
                     }
                 }
-                he.numTimeTrialGames = 0, he.numEndlessGames = 0, he.numZigZagGames = 0, he.sessionStartTime = Date.now();
-                class ce {
+                ce.numTimeTrialGames = 0, ce.numEndlessGames = 0, ce.numZigZagGames = 0, ce.sessionStartTime = Date.now();
+                class de {
                     constructor() {
-                        if (this.legend = void 0, this.spawnSingle = void 0, this.library = void 0, ce.sys) return ce.sys;
-                        ce.sys = this, this.defineLegend(), this.defineClusters()
+                        if (this.legend = void 0, this.spawnSingle = void 0, this.library = void 0, de.sys) return de.sys;
+                        de.sys = this, this.defineLegend(), this.defineClusters()
                     }
                     defineLegend() {
                         this.legend = {
@@ -5257,14 +5331,14 @@
                         }
                     }
                 }
-                ce.sys = null;
-                class de {
+                de.sys = null;
+                class pe {
                     constructor() {
-                        if (this.canvas = void 0, this.ctx = void 0, this.gradient = void 0, this.bg = void 0, this.offset = void 0, de.sys) return de.sys;
-                        de.sys = this
+                        if (this.canvas = void 0, this.ctx = void 0, this.gradient = void 0, this.bg = void 0, this.offset = void 0, pe.sys) return pe.sys;
+                        pe.sys = this
                     }
                     createBackground() {
-                        this.canvas = ge.sys.createNewCanvas(), this.ctx = this.canvas.getContext("2d"), this.gradient = ge.sys.createNew("div", document.body, "game-gradient"), this.bg = ge.sys.createNew("div", document.body, "game-bg"), this.offset = {
+                        this.canvas = ve.sys.createNewCanvas(), this.ctx = this.canvas.getContext("2d"), this.gradient = ve.sys.createNew("div", document.body, "game-gradient"), this.bg = ve.sys.createNew("div", document.body, "game-bg"), this.offset = {
                             x: 0,
                             y: 0
                         }
@@ -5274,52 +5348,52 @@
                     }
                     defineCanvas() {
                         const e = window.getComputedStyle(this.canvas.parentNode);
-                        te.sys.session.w = parseInt(e.getPropertyValue("width"), 10), te.sys.session.h = parseInt(e.getPropertyValue("height"), 10), this.canvas.style.width = te.sys.session.w + "px", this.canvas.style.height = te.sys.session.h + "px", this.canvas.width = te.sys.session.w, this.canvas.height = te.sys.session.h, te.sys.session.x = Math.floor(.5 * te.sys.session.w), te.sys.session.y = Math.floor(.4 * te.sys.session.h), this.ctx.imageSmoothingEnabled = !1
+                        se.sys.session.w = parseInt(e.getPropertyValue("width"), 10), se.sys.session.h = parseInt(e.getPropertyValue("height"), 10), this.canvas.style.width = se.sys.session.w + "px", this.canvas.style.height = se.sys.session.h + "px", this.canvas.width = se.sys.session.w, this.canvas.height = se.sys.session.h, se.sys.session.x = Math.floor(.5 * se.sys.session.w), se.sys.session.y = Math.floor(.4 * se.sys.session.h), this.ctx.imageSmoothingEnabled = !1
                     }
                     clearCanvas() {
-                        this.ctx.clearRect(0, 0, te.sys.session.w, te.sys.session.h)
+                        this.ctx.clearRect(0, 0, se.sys.session.w, se.sys.session.h)
                     }
                     drawFx(e = 0, t = 0, s = 0) {
-                        const i = be.sys.sheet.fx,
+                        const i = ge.sys.sheet.fx,
                             a = i.poseData.effect,
                             o = Math.floor(e * i.fps) % a.length;
-                        this.draw(pe.sys.objectsImg, i, t, s, a[o])
+                        this.draw(be.sys.objectsImg, i, t, s, a[o])
                     }
                     drawPlayerSprite(e, t = 0, s = 0, i = 0, a = 1) {
-                        const o = be.sys.sheet.player,
-                            n = te.sys.game.caught ? o.poseData.end : o.poseData[e],
+                        const o = ge.sys.sheet.player,
+                            n = se.sys.game.caught ? o.poseData.end : o.poseData[e],
                             r = Math.floor(t * o.fps) % 3;
-                        this.drawScaled(be.sys.playerSprite, o, s, i, {
+                        this.drawScaled(ge.sys.playerSprite, o, s, i, {
                             x: n,
                             y: o.mount[r]
                         }, a)
                     }
                     drawPlayerMenu(e, t, s = 0, i = 0, a = 1) {
-                        const o = be.sys.sheet.player,
+                        const o = ge.sys.sheet.player,
                             n = o.character[e],
                             r = o.poseData[t];
-                        this.drawScaled(pe.sys.playerImg, o, s, i, {
+                        this.drawScaled(be.sys.playerImg, o, s, i, {
                             x: r,
                             y: 0
-                        }, a), this.drawScaled(pe.sys.playerImg, o, s, i, {
+                        }, a), this.drawScaled(be.sys.playerImg, o, s, i, {
                             x: r,
                             y: n
                         }, a)
                     }
                     drawNpc(e, t, s, i) {
-                        const a = be.sys.sheet.npc,
+                        const a = ge.sys.sheet.npc,
                             o = {
                                 x: a.poseData[e],
                                 y: 64 * t
                             };
-                        this.draw(pe.sys.objectsImg, a, s, i, o)
+                        this.draw(be.sys.objectsImg, a, s, i, o)
                     }
                     drawLayer(e, t, s = 0, i = 0, a = 0, o = "looping", n) {
                         if ("hidden" === o) return;
-                        const r = be.sys.sheet[e],
+                        const r = ge.sys.sheet[e],
                             l = r.poseData[t] || [],
                             h = Math.floor(a * r.fps) % l.length;
-                        if (this.draw(pe.sys.objectsImg, r, s, i, l[h]), ("oneshot" === o || "ending" === o) && Math.ceil(a * r.fps) > l.length - 1) switch (o) {
+                        if (this.draw(be.sys.objectsImg, r, s, i, l[h]), ("oneshot" === o || "ending" === o) && Math.ceil(a * r.fps) > l.length - 1) switch (o) {
                             case "oneshot":
                                 n.anim = "paused";
                                 break;
@@ -5328,39 +5402,39 @@
                         }
                     }
                     drawShadow(e, t, s) {
-                        const i = de.sys.ctx;
+                        const i = pe.sys.ctx;
                         i.beginPath(), i.arc(e, t + s, 20 - s / 12, 0, 2 * Math.PI), i.fillStyle = "rgba(0,0,0," + (.6 - s / 200) + ")", i.fill()
                     }
                     drawBoost(e) {
-                        const t = de.sys.ctx;
-                        t.strokeStyle = "rgba(" + pe.sys.accent + ",0.5)", t.lineCap = "round", t.setLineDash([]), e.forEach((e => {
+                        const t = pe.sys.ctx;
+                        t.strokeStyle = "rgba(" + be.sys.accent + ",0.5)", t.lineCap = "round", t.setLineDash([]), e.forEach((e => {
                             const s = .5 - e.time;
                             t.lineWidth = 6 * s, t.beginPath(), t.moveTo(e.start.x, e.start.y), t.lineTo(e.end.x, e.end.y), t.stroke()
                         }))
                     }
                     drawShield(e, t) {
-                        const s = te.sys.game.shields.current / te.sys.game.shields.max / 2 + .5,
-                            i = Math.cos(4 * te.sys.game.time.elapsed) + 3,
-                            a = Math.cos(4 * (te.sys.game.time.elapsed + 2)) + 3,
+                        const s = se.sys.game.shields.current / se.sys.game.shields.max / 2 + .5,
+                            i = Math.cos(4 * se.sys.game.time.elapsed) + 3,
+                            a = Math.cos(4 * (se.sys.game.time.elapsed + 2)) + 3,
                             o = (32 + 4 * i) * s,
                             n = (50 + 5 * a) * s,
-                            r = de.sys.ctx;
-                        r.beginPath(), r.ellipse(e, t, o, .7 * o, 0, 0, 2 * Math.PI), r.strokeStyle = "rgba(" + pe.sys.accent + "," + (6 - i) / 4 + ")", r.lineWidth = 6 - i, r.stroke(), r.beginPath(), r.ellipse(e, t, n / 2, n / 2 * .7, 0, 0, 2 * Math.PI), r.fillStyle = "rgba(" + pe.sys.accent + "," + a / 8 + ")", r.fill()
+                            r = pe.sys.ctx;
+                        r.beginPath(), r.ellipse(e, t, o, .7 * o, 0, 0, 2 * Math.PI), r.strokeStyle = "rgba(" + be.sys.accent + "," + (6 - i) / 4 + ")", r.lineWidth = 6 - i, r.stroke(), r.beginPath(), r.ellipse(e, t, n / 2, n / 2 * .7, 0, 0, 2 * Math.PI), r.fillStyle = "rgba(" + be.sys.accent + "," + a / 8 + ")", r.fill()
                     }
                     drawPickup(e) {
                         if (e.time >= 1) return e.pickup = !1, void(e.sleep = !0);
                         const t = e.time % 1,
                             s = e.h / 2 * (t / 1.5 + .5),
                             i = e.h * Math.min(t, .5),
-                            a = de.sys.ctx;
-                        a.beginPath(), a.arc(e.x, e.y, s, 0, 2 * Math.PI), a.strokeStyle = "rgba(" + pe.sys.accent + "," + (1 - t) + ")", a.lineWidth = 6 * (1 - t), a.stroke(), a.beginPath(), a.arc(e.x, e.y, i, 0, 2 * Math.PI), a.strokeStyle = "rgba(" + pe.sys.accent + "," + (1 - 2 * t) + ")", a.lineWidth = 6 * (1 - 2 * t), a.stroke()
+                            a = pe.sys.ctx;
+                        a.beginPath(), a.arc(e.x, e.y, s, 0, 2 * Math.PI), a.strokeStyle = "rgba(" + be.sys.accent + "," + (1 - t) + ")", a.lineWidth = 6 * (1 - t), a.stroke(), a.beginPath(), a.arc(e.x, e.y, i, 0, 2 * Math.PI), a.strokeStyle = "rgba(" + be.sys.accent + "," + (1 - 2 * t) + ")", a.lineWidth = 6 * (1 - 2 * t), a.stroke()
                     }
                     drawHitbox(e, t) {
-                        const s = be.sys.sheet[e].str;
+                        const s = ge.sys.sheet[e].str;
                         if (void 0 === s) return;
                         const i = "crash" !== s;
-                        let a = pe.sys.hitbox[s];
-                        if (te.sys.session.forcedColors) switch (s) {
+                        let a = be.sys.hitbox[s];
+                        if (se.sys.session.forcedColors) switch (s) {
                             case "crash":
                                 a = "CanvasText";
                                 break;
@@ -5370,47 +5444,47 @@
                             case "avoid":
                                 a = "LinkText"
                         }
-                        const o = de.sys.ctx;
+                        const o = pe.sys.ctx;
                         o.beginPath(), o.lineWidth = 4, o.strokeStyle = a + "", i ? o.setLineDash([8]) : o.setLineDash([]), o.strokeRect(Math.floor(t.x) + 1, Math.floor(t.y) + 1, t.w - 2, t.h - 2)
                     }
                     drawBoundaries() {
-                        const e = te.sys.session.x - te.sys.game.dist.x,
-                            t = be.sys.boundary[te.sys.session.settings.mode],
-                            s = de.sys.ctx;
-                        s.beginPath(), s.rect(0, 0, e - t, te.sys.session.h), s.rect(e + t, 0, te.sys.session.w, te.sys.session.h), s.fillStyle = "rgba(" + pe.sys.boundary + ")", s.fill()
+                        const e = se.sys.session.x - se.sys.game.dist.x,
+                            t = ge.sys.boundary[se.sys.session.settings.mode],
+                            s = pe.sys.ctx;
+                        s.beginPath(), s.rect(0, 0, e - t, se.sys.session.h), s.rect(e + t, 0, se.sys.session.w, se.sys.session.h), s.fillStyle = "rgba(" + be.sys.boundary + ")", s.fill()
                     }
                     drawScaled(e, t, s, i, a, o = 1) {
-                        de.sys.ctx.drawImage(e, a.x, a.y, t.w, t.h, Math.floor(s - t.w / (2 / o)), Math.floor(i - t.h / (2 / o)), t.w * o, t.h * o)
+                        pe.sys.ctx.drawImage(e, a.x, a.y, t.w, t.h, Math.floor(s - t.w / (2 / o)), Math.floor(i - t.h / (2 / o)), t.w * o, t.h * o)
                     }
                     draw(e, t, s, i, a) {
-                        de.sys.ctx.drawImage(e, a.x, a.y, t.w, t.h, Math.floor(s - t.w / 2), Math.floor(i - t.h / 2), t.w, t.h)
+                        pe.sys.ctx.drawImage(e, a.x, a.y, t.w, t.h, Math.floor(s - t.w / 2), Math.floor(i - t.h / 2), t.w, t.h)
                     }
                 }
-                de.sys = null;
-                class pe {
+                pe.sys = null;
+                class be {
                     constructor() {
-                        if (this.objectsImg = null, this.playerImg = null, this.bgImg = null, this.bgSize = void 0, this.objectsTemp = null, this.playerTemp = null, this.bgTemp = null, this.gradient = void 0, this.hitbox = void 0, this.boundary = void 0, this.accent = void 0, pe.sys) return pe.sys;
-                        pe.sys = this, this.setupImages()
+                        if (this.objectsImg = null, this.playerImg = null, this.bgImg = null, this.bgSize = void 0, this.objectsTemp = null, this.playerTemp = null, this.bgTemp = null, this.gradient = void 0, this.hitbox = void 0, this.boundary = void 0, this.accent = void 0, be.sys) return be.sys;
+                        be.sys = this, this.setupImages()
                     }
                     setupImages() {
                         this.objectsImg = new Image, this.playerImg = new Image, this.bgImg = new Image, this.bgSize = 256
                     }
                     loadNewTheme(e) {
-                        const t = pe.allThemes[e];
+                        const t = be.allThemes[e];
                         this.objectsTemp = new Image, this.objectsTemp.src = t.folder + "/objects.png", this.playerTemp = new Image, this.playerTemp.src = t.folder + "/player.png", this.bgTemp = new Image, this.bgTemp.src = t.folder + "/bg.png"
                     }
                     setNewTheme(e) {
-                        const t = pe.allThemes[e];
-                        this.objectsImg.src = this.objectsTemp.src, this.playerImg.src = this.playerTemp.src, this.bgImg.src = this.bgTemp.src, this.gradient = t.gradient, this.hitbox = t.hitbox, this.boundary = t.boundary, this.accent = t.accent, de.sys.bg.style.backgroundImage = "url(" + this.bgImg.src + ")", de.sys.bg.style.backgroundSize = this.bgSize + "px " + this.bgSize + "px";
+                        const t = be.allThemes[e];
+                        this.objectsImg.src = this.objectsTemp.src, this.playerImg.src = this.playerTemp.src, this.bgImg.src = this.bgTemp.src, this.gradient = t.gradient, this.hitbox = t.hitbox, this.boundary = t.boundary, this.accent = t.accent, pe.sys.bg.style.backgroundImage = "url(" + this.bgImg.src + ")", pe.sys.bg.style.backgroundSize = this.bgSize + "px " + this.bgSize + "px";
                         const s = this.gradient.start.join(", "),
                             i = this.gradient.end.join(", ");
-                        de.sys.gradient.style.background = "linear-gradient(180deg, rgb(" + s + ") 0%, rgb(" + i + ") 100%)", te.sys.session.settings.theme = e, be.sys.createPlayerSprite(), te.sys.saveSessionSettings(), delete this.objectsTemp, delete this.playerTemp, delete this.bgTemp
+                        pe.sys.gradient.style.background = "linear-gradient(180deg, rgb(" + s + ") 0%, rgb(" + i + ") 100%)", se.sys.session.settings.theme = e, ge.sys.createPlayerSprite(), se.sys.saveSessionSettings(), delete this.objectsTemp, delete this.playerTemp, delete this.bgTemp
                     }
                 }
-                pe.sys = null, pe.allThemes = {
-                    ...K
+                be.sys = null, be.allThemes = {
+                    ...U
                 };
-                class be {
+                class ge {
                     constructor() {
                         if (this.playerSprite = new Image, this.sheet = {
                                 player: {
@@ -6433,28 +6507,28 @@
                                     }
                                 }
                             }, this.boundary = {
-                                [j.ZigZag]: 960,
-                                [j.TimeTrial]: 576,
-                                [j.Endless]: void 0
-                            }, this.characterList = void 0, this.selectionList = void 0, be.sys) return be.sys;
-                        be.sys = this, this.characterList = Object.keys(this.sheet.player.character), this.selectionList = ["player1", "player2", "player3", "player4", "player5", "player6", "player7"], !1 === q.pz.getBoolean("isLinuxTuxEnabled") && this.characterList.forEach(((e, t) => {
+                                [G.ZigZag]: 960,
+                                [G.TimeTrial]: 576,
+                                [G.Endless]: void 0
+                            }, this.characterList = void 0, this.selectionList = void 0, ge.sys) return ge.sys;
+                        ge.sys = this, this.characterList = Object.keys(this.sheet.player.character), this.selectionList = ["player1", "player2", "player3", "player4", "player5", "player6", "player7"], !1 === q.p.getBoolean("isLinuxTuxEnabled") && this.characterList.forEach(((e, t) => {
                             "linux" === e && this.characterList.splice(t, 1)
-                        })), !0 === q.pz.getBoolean("isLinuxTuxEnabled") && (this.selectionList = ["linux", "player1", "player2", "player3", "player4", "player5", "player6", "player7"])
+                        })), !0 === q.p.getBoolean("isLinuxTuxEnabled") && (this.selectionList = ["linux", "player1", "player2", "player3", "player4", "player5", "player6", "player7"])
                     }
                     createPlayerSprite() {
                         const e = 640,
                             t = document.createElement("canvas");
                         t.width = e, t.height = 192;
                         const s = t.getContext("2d");
-                        s.imageSmoothingEnabled = !1, s.drawImage(pe.sys.playerImg, 0, 0, e, 192, 0, 0, e, 192);
+                        s.imageSmoothingEnabled = !1, s.drawImage(be.sys.playerImg, 0, 0, e, 192, 0, 0, e, 192);
                         const i = document.createElement("canvas");
                         i.width = e, i.height = 64;
                         i.getContext("2d").imageSmoothingEnabled = !1;
-                        const a = be.sys.characterList[te.sys.session.settings.character],
+                        const a = ge.sys.characterList[se.sys.session.settings.character],
                             o = this.sheet.player.character[a];
-                        if (this.applyLayers(s, pe.sys.playerImg, o, e, 64), te.sys.game.friend) {
+                        if (this.applyLayers(s, be.sys.playerImg, o, e, 64), se.sys.game.friend) {
                             const t = this.sheet.player.friend;
-                            this.applyLayers(s, pe.sys.playerImg, t, e, 64)
+                            this.applyLayers(s, be.sys.playerImg, t, e, 64)
                         }
                         const n = new Image;
                         n.src = t.toDataURL("image/png"), (async () => {
@@ -6465,11 +6539,259 @@
                         e.drawImage(t, 0, s, i, a, 0, 0, i, a), e.drawImage(t, 0, s, i, a, 0, a, i, a), e.drawImage(t, 0, s, i, a, 0, 2 * a, i, a)
                     }
                 }
-                be.sys = null;
-                class ge {
+                ge.sys = null;
+                const ue = e => a.createElement("svg", {
+                        width: "20",
+                        height: "20",
+                        viewBox: "0 0 20 20",
+                        className: e.className,
+                        fill: "none",
+                        xmlns: "http://www.w3.org/2000/svg"
+                    }, a.createElement("path", {
+                        d: "M15.75 9.25C16.1297 9.25 16.4435 9.53215 16.4932 9.89823L16.5 10V15.25C16.5 16.7125 15.3583 17.9084 13.9175 17.995L13.75 18H6.25C4.78747 18 3.5916 16.8583 3.50502 15.4175L3.5 15.25V10C3.5 9.58579 3.83579 9.25 4.25 9.25C4.6297 9.25 4.94349 9.53215 4.99315 9.89823L5 10V15.25C5 15.8972 5.49187 16.4295 6.12219 16.4935L6.25 16.5H13.75C14.3972 16.5 14.9295 16.0081 14.9935 15.3778L15 15.25V10C15 9.58579 15.3358 9.25 15.75 9.25ZM5.22703 6.46231L9.46967 2.21967C9.73594 1.9534 10.1526 1.9292 10.4462 2.14705L10.5303 2.21967L14.773 6.46231C15.0659 6.7552 15.0659 7.23008 14.773 7.52297C14.5067 7.78924 14.09 7.81344 13.7964 7.59559L13.7123 7.52297L10.75 4.56V12.25C10.75 12.6297 10.4678 12.9435 10.1018 12.9932L10 13C9.6203 13 9.30651 12.7178 9.25685 12.3518L9.25 12.25V4.56L6.28769 7.52297C6.02142 7.78924 5.60476 7.81344 5.31115 7.59559L5.22703 7.52297C4.96076 7.2567 4.93656 6.84004 5.15441 6.54643L5.22703 6.46231L9.46967 2.21967L5.22703 6.46231Z",
+                        fill: "white"
+                    })),
+                    me = e => a.createElement("svg", {
+                        width: "32",
+                        height: "14",
+                        viewBox: "0 0 32 14",
+                        className: e.className,
+                        fill: "none",
+                        xmlns: "http://www.w3.org/2000/svg"
+                    }, a.createElement("g", {
+                        clipPath: "url(#clip0_351_34580)"
+                    }, a.createElement("path", {
+                        d: "M5.12549 5.75V4.1875H6.68799V5.75H5.12549ZM2.00049 12V1.0625H3.56299V2.625H5.12549V4.1875H3.56299V12H2.00049ZM8.25049 12V7.3125H6.68799V5.75H8.25049V1.0625H9.81299V12H8.25049ZM12.938 12V10.4375H19.188V12H12.938ZM11.3755 10.4375V5.75H12.938V7.3125H17.6255V5.75H19.188V8.875H12.938V10.4375H11.3755ZM12.938 5.75V4.1875H17.6255V5.75H12.938ZM20.7505 10.4375V4.1875H22.313V10.4375H20.7505ZM22.313 12V10.4375H23.8755V7.3125H25.438V10.4375H27.0005V4.1875H28.563V12H22.313Z",
+                        fill: "black"
+                    }), a.createElement("path", {
+                        d: "M5.12549 5.75H3.87549V7H5.12549V5.75ZM5.12549 4.1875V2.9375H3.87549V4.1875H5.12549ZM6.68799 4.1875H7.93799V2.9375H6.68799V4.1875ZM6.68799 5.75V7H7.93799V5.75H6.68799ZM2.00049 12H0.750488V13.25H2.00049V12ZM2.00049 1.0625V-0.1875H0.750488V1.0625H2.00049ZM3.56299 1.0625H4.81299V-0.1875H3.56299V1.0625ZM3.56299 2.625H2.31299V3.875H3.56299V2.625ZM5.12549 2.625H6.37549V1.375H5.12549V2.625ZM5.12549 4.1875V5.4375H6.37549V4.1875H5.12549ZM3.56299 4.1875V2.9375H2.31299V4.1875H3.56299ZM3.56299 12V13.25H4.81299V12H3.56299ZM8.25049 12H7.00049V13.25H8.25049V12ZM8.25049 7.3125H9.50049V6.0625H8.25049V7.3125ZM6.68799 7.3125H5.43799V8.5625H6.68799V7.3125ZM6.68799 5.75V4.5H5.43799V5.75H6.68799ZM8.25049 5.75V7H9.50049V5.75H8.25049ZM8.25049 1.0625V-0.1875H7.00049V1.0625H8.25049ZM9.81299 1.0625H11.063V-0.1875H9.81299V1.0625ZM9.81299 12V13.25H11.063V12H9.81299ZM6.37549 5.75V4.1875H3.87549V5.75H6.37549ZM5.12549 5.4375H6.68799V2.9375H5.12549V5.4375ZM5.43799 4.1875V5.75H7.93799V4.1875H5.43799ZM6.68799 4.5H5.12549V7H6.68799V4.5ZM3.25049 12V1.0625H0.750488V12H3.25049ZM2.00049 2.3125H3.56299V-0.1875H2.00049V2.3125ZM2.31299 1.0625V2.625H4.81299V1.0625H2.31299ZM3.56299 3.875H5.12549V1.375H3.56299V3.875ZM3.87549 2.625V4.1875H6.37549V2.625H3.87549ZM5.12549 2.9375H3.56299V5.4375H5.12549V2.9375ZM2.31299 4.1875V12H4.81299V4.1875H2.31299ZM3.56299 10.75H2.00049V13.25H3.56299V10.75ZM9.50049 12V7.3125H7.00049V12H9.50049ZM8.25049 6.0625H6.68799V8.5625H8.25049V6.0625ZM7.93799 7.3125V5.75H5.43799V7.3125H7.93799ZM6.68799 7H8.25049V4.5H6.68799V7ZM9.50049 5.75V1.0625H7.00049V5.75H9.50049ZM8.25049 2.3125H9.81299V-0.1875H8.25049V2.3125ZM8.56299 1.0625V12H11.063V1.0625H8.56299ZM9.81299 10.75H8.25049V13.25H9.81299V10.75ZM12.938 12H11.688V13.25H12.938V12ZM12.938 10.4375V9.1875H11.688V10.4375H12.938ZM19.188 10.4375H20.438V9.1875H19.188V10.4375ZM19.188 12V13.25H20.438V12H19.188ZM11.3755 10.4375H10.1255V11.6875H11.3755V10.4375ZM11.3755 5.75V4.5H10.1255V5.75H11.3755ZM12.938 5.75H14.188V4.5H12.938V5.75ZM12.938 7.3125H11.688V8.5625H12.938V7.3125ZM17.6255 7.3125V8.5625H18.8755V7.3125H17.6255ZM17.6255 5.75V4.5H16.3755V5.75H17.6255ZM19.188 5.75H20.438V4.5H19.188V5.75ZM19.188 8.875V10.125H20.438V8.875H19.188ZM12.938 8.875V7.625H11.688V8.875H12.938ZM12.938 10.4375V11.6875H14.188V10.4375H12.938ZM12.938 5.75H11.688V7H12.938V5.75ZM12.938 4.1875V2.9375H11.688V4.1875H12.938ZM17.6255 4.1875H18.8755V2.9375H17.6255V4.1875ZM17.6255 5.75V7H18.8755V5.75H17.6255ZM14.188 12V10.4375H11.688V12H14.188ZM12.938 11.6875H19.188V9.1875H12.938V11.6875ZM17.938 10.4375V12H20.438V10.4375H17.938ZM19.188 10.75H12.938V13.25H19.188V10.75ZM12.6255 10.4375V5.75H10.1255V10.4375H12.6255ZM11.3755 7H12.938V4.5H11.3755V7ZM11.688 5.75V7.3125H14.188V5.75H11.688ZM12.938 8.5625H17.6255V6.0625H12.938V8.5625ZM18.8755 7.3125V5.75H16.3755V7.3125H18.8755ZM17.6255 7H19.188V4.5H17.6255V7ZM17.938 5.75V8.875H20.438V5.75H17.938ZM19.188 7.625H12.938V10.125H19.188V7.625ZM11.688 8.875V10.4375H14.188V8.875H11.688ZM12.938 9.1875H11.3755V11.6875H12.938V9.1875ZM14.188 5.75V4.1875H11.688V5.75H14.188ZM12.938 5.4375H17.6255V2.9375H12.938V5.4375ZM16.3755 4.1875V5.75H18.8755V4.1875H16.3755ZM17.6255 4.5H12.938V7H17.6255V4.5ZM20.7505 10.4375H19.5005V11.6875H20.7505V10.4375ZM20.7505 4.1875V2.9375H19.5005V4.1875H20.7505ZM22.313 4.1875H23.563V2.9375H22.313V4.1875ZM22.313 10.4375V11.6875H23.563V10.4375H22.313ZM22.313 12H21.063V13.25H22.313V12ZM22.313 10.4375V9.1875H21.063V10.4375H22.313ZM23.8755 10.4375V11.6875H25.1255V10.4375H23.8755ZM23.8755 7.3125V6.0625H22.6255V7.3125H23.8755ZM25.438 7.3125H26.688V6.0625H25.438V7.3125ZM25.438 10.4375H24.188V11.6875H25.438V10.4375ZM27.0005 10.4375V11.6875H28.2505V10.4375H27.0005ZM27.0005 4.1875V2.9375H25.7505V4.1875H27.0005ZM28.563 4.1875H29.813V2.9375H28.563V4.1875ZM28.563 12V13.25H29.813V12H28.563ZM22.0005 10.4375V4.1875H19.5005V10.4375H22.0005ZM20.7505 5.4375H22.313V2.9375H20.7505V5.4375ZM21.063 4.1875V10.4375H23.563V4.1875H21.063ZM22.313 9.1875H20.7505V11.6875H22.313V9.1875ZM23.563 12V10.4375H21.063V12H23.563ZM22.313 11.6875H23.8755V9.1875H22.313V11.6875ZM25.1255 10.4375V7.3125H22.6255V10.4375H25.1255ZM23.8755 8.5625H25.438V6.0625H23.8755V8.5625ZM24.188 7.3125V10.4375H26.688V7.3125H24.188ZM25.438 11.6875H27.0005V9.1875H25.438V11.6875ZM28.2505 10.4375V4.1875H25.7505V10.4375H28.2505ZM27.0005 5.4375H28.563V2.9375H27.0005V5.4375ZM27.313 4.1875V12H29.813V4.1875H27.313ZM28.563 10.75H22.313V13.25H28.563V10.75Z",
+                        fill: "black"
+                    }), a.createElement("path", {
+                        d: "M5.12549 5.75V4.1875H6.68799V5.75H5.12549ZM2.00049 12V1.0625H3.56299V2.625H5.12549V4.1875H3.56299V12H2.00049ZM8.25049 12V7.3125H6.68799V5.75H8.25049V1.0625H9.81299V12H8.25049ZM12.938 12V10.4375H19.188V12H12.938ZM11.3755 10.4375V5.75H12.938V7.3125H17.6255V5.75H19.188V8.875H12.938V10.4375H11.3755ZM12.938 5.75V4.1875H17.6255V5.75H12.938ZM20.7505 10.4375V4.1875H22.313V10.4375H20.7505ZM22.313 12V10.4375H23.8755V7.3125H25.438V10.4375H27.0005V4.1875H28.563V12H22.313Z",
+                        fill: "black"
+                    }), a.createElement("path", {
+                        d: "M5.12549 5.75H3.87549V7H5.12549V5.75ZM5.12549 4.1875V2.9375H3.87549V4.1875H5.12549ZM6.68799 4.1875H7.93799V2.9375H6.68799V4.1875ZM6.68799 5.75V7H7.93799V5.75H6.68799ZM2.00049 12H0.750488V13.25H2.00049V12ZM2.00049 1.0625V-0.1875H0.750488V1.0625H2.00049ZM3.56299 1.0625H4.81299V-0.1875H3.56299V1.0625ZM3.56299 2.625H2.31299V3.875H3.56299V2.625ZM5.12549 2.625H6.37549V1.375H5.12549V2.625ZM5.12549 4.1875V5.4375H6.37549V4.1875H5.12549ZM3.56299 4.1875V2.9375H2.31299V4.1875H3.56299ZM3.56299 12V13.25H4.81299V12H3.56299ZM8.25049 12H7.00049V13.25H8.25049V12ZM8.25049 7.3125H9.50049V6.0625H8.25049V7.3125ZM6.68799 7.3125H5.43799V8.5625H6.68799V7.3125ZM6.68799 5.75V4.5H5.43799V5.75H6.68799ZM8.25049 5.75V7H9.50049V5.75H8.25049ZM8.25049 1.0625V-0.1875H7.00049V1.0625H8.25049ZM9.81299 1.0625H11.063V-0.1875H9.81299V1.0625ZM9.81299 12V13.25H11.063V12H9.81299ZM6.37549 5.75V4.1875H3.87549V5.75H6.37549ZM5.12549 5.4375H6.68799V2.9375H5.12549V5.4375ZM5.43799 4.1875V5.75H7.93799V4.1875H5.43799ZM6.68799 4.5H5.12549V7H6.68799V4.5ZM3.25049 12V1.0625H0.750488V12H3.25049ZM2.00049 2.3125H3.56299V-0.1875H2.00049V2.3125ZM2.31299 1.0625V2.625H4.81299V1.0625H2.31299ZM3.56299 3.875H5.12549V1.375H3.56299V3.875ZM3.87549 2.625V4.1875H6.37549V2.625H3.87549ZM5.12549 2.9375H3.56299V5.4375H5.12549V2.9375ZM2.31299 4.1875V12H4.81299V4.1875H2.31299ZM3.56299 10.75H2.00049V13.25H3.56299V10.75ZM9.50049 12V7.3125H7.00049V12H9.50049ZM8.25049 6.0625H6.68799V8.5625H8.25049V6.0625ZM7.93799 7.3125V5.75H5.43799V7.3125H7.93799ZM6.68799 7H8.25049V4.5H6.68799V7ZM9.50049 5.75V1.0625H7.00049V5.75H9.50049ZM8.25049 2.3125H9.81299V-0.1875H8.25049V2.3125ZM8.56299 1.0625V12H11.063V1.0625H8.56299ZM9.81299 10.75H8.25049V13.25H9.81299V10.75ZM12.938 12H11.688V13.25H12.938V12ZM12.938 10.4375V9.1875H11.688V10.4375H12.938ZM19.188 10.4375H20.438V9.1875H19.188V10.4375ZM19.188 12V13.25H20.438V12H19.188ZM11.3755 10.4375H10.1255V11.6875H11.3755V10.4375ZM11.3755 5.75V4.5H10.1255V5.75H11.3755ZM12.938 5.75H14.188V4.5H12.938V5.75ZM12.938 7.3125H11.688V8.5625H12.938V7.3125ZM17.6255 7.3125V8.5625H18.8755V7.3125H17.6255ZM17.6255 5.75V4.5H16.3755V5.75H17.6255ZM19.188 5.75H20.438V4.5H19.188V5.75ZM19.188 8.875V10.125H20.438V8.875H19.188ZM12.938 8.875V7.625H11.688V8.875H12.938ZM12.938 10.4375V11.6875H14.188V10.4375H12.938ZM12.938 5.75H11.688V7H12.938V5.75ZM12.938 4.1875V2.9375H11.688V4.1875H12.938ZM17.6255 4.1875H18.8755V2.9375H17.6255V4.1875ZM17.6255 5.75V7H18.8755V5.75H17.6255ZM14.188 12V10.4375H11.688V12H14.188ZM12.938 11.6875H19.188V9.1875H12.938V11.6875ZM17.938 10.4375V12H20.438V10.4375H17.938ZM19.188 10.75H12.938V13.25H19.188V10.75ZM12.6255 10.4375V5.75H10.1255V10.4375H12.6255ZM11.3755 7H12.938V4.5H11.3755V7ZM11.688 5.75V7.3125H14.188V5.75H11.688ZM12.938 8.5625H17.6255V6.0625H12.938V8.5625ZM18.8755 7.3125V5.75H16.3755V7.3125H18.8755ZM17.6255 7H19.188V4.5H17.6255V7ZM17.938 5.75V8.875H20.438V5.75H17.938ZM19.188 7.625H12.938V10.125H19.188V7.625ZM11.688 8.875V10.4375H14.188V8.875H11.688ZM12.938 9.1875H11.3755V11.6875H12.938V9.1875ZM14.188 5.75V4.1875H11.688V5.75H14.188ZM12.938 5.4375H17.6255V2.9375H12.938V5.4375ZM16.3755 4.1875V5.75H18.8755V4.1875H16.3755ZM17.6255 4.5H12.938V7H17.6255V4.5ZM20.7505 10.4375H19.5005V11.6875H20.7505V10.4375ZM20.7505 4.1875V2.9375H19.5005V4.1875H20.7505ZM22.313 4.1875H23.563V2.9375H22.313V4.1875ZM22.313 10.4375V11.6875H23.563V10.4375H22.313ZM22.313 12H21.063V13.25H22.313V12ZM22.313 10.4375V9.1875H21.063V10.4375H22.313ZM23.8755 10.4375V11.6875H25.1255V10.4375H23.8755ZM23.8755 7.3125V6.0625H22.6255V7.3125H23.8755ZM25.438 7.3125H26.688V6.0625H25.438V7.3125ZM25.438 10.4375H24.188V11.6875H25.438V10.4375ZM27.0005 10.4375V11.6875H28.2505V10.4375H27.0005ZM27.0005 4.1875V2.9375H25.7505V4.1875H27.0005ZM28.563 4.1875H29.813V2.9375H28.563V4.1875ZM28.563 12V13.25H29.813V12H28.563ZM22.0005 10.4375V4.1875H19.5005V10.4375H22.0005ZM20.7505 5.4375H22.313V2.9375H20.7505V5.4375ZM21.063 4.1875V10.4375H23.563V4.1875H21.063ZM22.313 9.1875H20.7505V11.6875H22.313V9.1875ZM23.563 12V10.4375H21.063V12H23.563ZM22.313 11.6875H23.8755V9.1875H22.313V11.6875ZM25.1255 10.4375V7.3125H22.6255V10.4375H25.1255ZM23.8755 8.5625H25.438V6.0625H23.8755V8.5625ZM24.188 7.3125V10.4375H26.688V7.3125H24.188ZM25.438 11.6875H27.0005V9.1875H25.438V11.6875ZM28.2505 10.4375V4.1875H25.7505V10.4375H28.2505ZM27.0005 5.4375H28.563V2.9375H27.0005V5.4375ZM27.313 4.1875V12H29.813V4.1875H27.313ZM28.563 10.75H22.313V13.25H28.563V10.75Z",
+                        fill: "black"
+                    }), a.createElement("path", {
+                        d: "M6.37549 5.75V4.1875H7.93799V5.75H6.37549ZM3.25049 12V1.0625H4.81299V2.625H6.37549V4.1875H4.81299V12H3.25049ZM9.50049 12V7.3125H7.93799V5.75H9.50049V1.0625H11.063V12H9.50049ZM14.188 12V10.4375H20.438V12H14.188ZM12.6255 10.4375V5.75H14.188V7.3125H18.8755V5.75H20.438V8.875H14.188V10.4375H12.6255ZM14.188 5.75V4.1875H18.8755V5.75H14.188ZM22.0005 10.4375V4.1875H23.563V10.4375H22.0005ZM23.563 12V10.4375H25.1255V7.3125H26.688V10.4375H28.2505V4.1875H29.813V12H23.563Z",
+                        fill: "black"
+                    }), a.createElement("path", {
+                        d: "M6.37549 5.75H5.12549V7H6.37549V5.75ZM6.37549 4.1875V2.9375H5.12549V4.1875H6.37549ZM7.93799 4.1875H9.18799V2.9375H7.93799V4.1875ZM7.93799 5.75V7H9.18799V5.75H7.93799ZM3.25049 12H2.00049V13.25H3.25049V12ZM3.25049 1.0625V-0.1875H2.00049V1.0625H3.25049ZM4.81299 1.0625H6.06299V-0.1875H4.81299V1.0625ZM4.81299 2.625H3.56299V3.875H4.81299V2.625ZM6.37549 2.625H7.62549V1.375H6.37549V2.625ZM6.37549 4.1875V5.4375H7.62549V4.1875H6.37549ZM4.81299 4.1875V2.9375H3.56299V4.1875H4.81299ZM4.81299 12V13.25H6.06299V12H4.81299ZM9.50049 12H8.25049V13.25H9.50049V12ZM9.50049 7.3125H10.7505V6.0625H9.50049V7.3125ZM7.93799 7.3125H6.68799V8.5625H7.93799V7.3125ZM7.93799 5.75V4.5H6.68799V5.75H7.93799ZM9.50049 5.75V7H10.7505V5.75H9.50049ZM9.50049 1.0625V-0.1875H8.25049V1.0625H9.50049ZM11.063 1.0625H12.313V-0.1875H11.063V1.0625ZM11.063 12V13.25H12.313V12H11.063ZM7.62549 5.75V4.1875H5.12549V5.75H7.62549ZM6.37549 5.4375H7.93799V2.9375H6.37549V5.4375ZM6.68799 4.1875V5.75H9.18799V4.1875H6.68799ZM7.93799 4.5H6.37549V7H7.93799V4.5ZM4.50049 12V1.0625H2.00049V12H4.50049ZM3.25049 2.3125H4.81299V-0.1875H3.25049V2.3125ZM3.56299 1.0625V2.625H6.06299V1.0625H3.56299ZM4.81299 3.875H6.37549V1.375H4.81299V3.875ZM5.12549 2.625V4.1875H7.62549V2.625H5.12549ZM6.37549 2.9375H4.81299V5.4375H6.37549V2.9375ZM3.56299 4.1875V12H6.06299V4.1875H3.56299ZM4.81299 10.75H3.25049V13.25H4.81299V10.75ZM10.7505 12V7.3125H8.25049V12H10.7505ZM9.50049 6.0625H7.93799V8.5625H9.50049V6.0625ZM9.18799 7.3125V5.75H6.68799V7.3125H9.18799ZM7.93799 7H9.50049V4.5H7.93799V7ZM10.7505 5.75V1.0625H8.25049V5.75H10.7505ZM9.50049 2.3125H11.063V-0.1875H9.50049V2.3125ZM9.81299 1.0625V12H12.313V1.0625H9.81299ZM11.063 10.75H9.50049V13.25H11.063V10.75ZM14.188 12H12.938V13.25H14.188V12ZM14.188 10.4375V9.1875H12.938V10.4375H14.188ZM20.438 10.4375H21.688V9.1875H20.438V10.4375ZM20.438 12V13.25H21.688V12H20.438ZM12.6255 10.4375H11.3755V11.6875H12.6255V10.4375ZM12.6255 5.75V4.5H11.3755V5.75H12.6255ZM14.188 5.75H15.438V4.5H14.188V5.75ZM14.188 7.3125H12.938V8.5625H14.188V7.3125ZM18.8755 7.3125V8.5625H20.1255V7.3125H18.8755ZM18.8755 5.75V4.5H17.6255V5.75H18.8755ZM20.438 5.75H21.688V4.5H20.438V5.75ZM20.438 8.875V10.125H21.688V8.875H20.438ZM14.188 8.875V7.625H12.938V8.875H14.188ZM14.188 10.4375V11.6875H15.438V10.4375H14.188ZM14.188 5.75H12.938V7H14.188V5.75ZM14.188 4.1875V2.9375H12.938V4.1875H14.188ZM18.8755 4.1875H20.1255V2.9375H18.8755V4.1875ZM18.8755 5.75V7H20.1255V5.75H18.8755ZM15.438 12V10.4375H12.938V12H15.438ZM14.188 11.6875H20.438V9.1875H14.188V11.6875ZM19.188 10.4375V12H21.688V10.4375H19.188ZM20.438 10.75H14.188V13.25H20.438V10.75ZM13.8755 10.4375V5.75H11.3755V10.4375H13.8755ZM12.6255 7H14.188V4.5H12.6255V7ZM12.938 5.75V7.3125H15.438V5.75H12.938ZM14.188 8.5625H18.8755V6.0625H14.188V8.5625ZM20.1255 7.3125V5.75H17.6255V7.3125H20.1255ZM18.8755 7H20.438V4.5H18.8755V7ZM19.188 5.75V8.875H21.688V5.75H19.188ZM20.438 7.625H14.188V10.125H20.438V7.625ZM12.938 8.875V10.4375H15.438V8.875H12.938ZM14.188 9.1875H12.6255V11.6875H14.188V9.1875ZM15.438 5.75V4.1875H12.938V5.75H15.438ZM14.188 5.4375H18.8755V2.9375H14.188V5.4375ZM17.6255 4.1875V5.75H20.1255V4.1875H17.6255ZM18.8755 4.5H14.188V7H18.8755V4.5ZM22.0005 10.4375H20.7505V11.6875H22.0005V10.4375ZM22.0005 4.1875V2.9375H20.7505V4.1875H22.0005ZM23.563 4.1875H24.813V2.9375H23.563V4.1875ZM23.563 10.4375V11.6875H24.813V10.4375H23.563ZM23.563 12H22.313V13.25H23.563V12ZM23.563 10.4375V9.1875H22.313V10.4375H23.563ZM25.1255 10.4375V11.6875H26.3755V10.4375H25.1255ZM25.1255 7.3125V6.0625H23.8755V7.3125H25.1255ZM26.688 7.3125H27.938V6.0625H26.688V7.3125ZM26.688 10.4375H25.438V11.6875H26.688V10.4375ZM28.2505 10.4375V11.6875H29.5005V10.4375H28.2505ZM28.2505 4.1875V2.9375H27.0005V4.1875H28.2505ZM29.813 4.1875H31.063V2.9375H29.813V4.1875ZM29.813 12V13.25H31.063V12H29.813ZM23.2505 10.4375V4.1875H20.7505V10.4375H23.2505ZM22.0005 5.4375H23.563V2.9375H22.0005V5.4375ZM22.313 4.1875V10.4375H24.813V4.1875H22.313ZM23.563 9.1875H22.0005V11.6875H23.563V9.1875ZM24.813 12V10.4375H22.313V12H24.813ZM23.563 11.6875H25.1255V9.1875H23.563V11.6875ZM26.3755 10.4375V7.3125H23.8755V10.4375H26.3755ZM25.1255 8.5625H26.688V6.0625H25.1255V8.5625ZM25.438 7.3125V10.4375H27.938V7.3125H25.438ZM26.688 11.6875H28.2505V9.1875H26.688V11.6875ZM29.5005 10.4375V4.1875H27.0005V10.4375H29.5005ZM28.2505 5.4375H29.813V2.9375H28.2505V5.4375ZM28.563 4.1875V12H31.063V4.1875H28.563ZM29.813 10.75H23.563V13.25H29.813V10.75Z",
+                        fill: "black"
+                    }), a.createElement("path", {
+                        d: "M5.12549 5.75V4.1875H6.68799V5.75H5.12549ZM2.00049 12V1.0625H3.56299V2.625H5.12549V4.1875H3.56299V12H2.00049ZM8.25049 12V7.3125H6.68799V5.75H8.25049V1.0625H9.81299V12H8.25049ZM12.938 12V10.4375H19.188V12H12.938ZM11.3755 10.4375V5.75H12.938V7.3125H17.6255V5.75H19.188V8.875H12.938V10.4375H11.3755ZM12.938 5.75V4.1875H17.6255V5.75H12.938ZM20.7505 10.4375V4.1875H22.313V10.4375H20.7505ZM22.313 12V10.4375H23.8755V7.3125H25.438V10.4375H27.0005V4.1875H28.563V12H22.313Z",
+                        fill: "url(#paint0_linear_351_34580)"
+                    }), a.createElement("path", {
+                        d: "M6.37549 5.75V4.1875H7.93799V5.75H6.37549ZM3.25049 12V1.0625H4.81299V2.625H6.37549V4.1875H4.81299V12H3.25049ZM9.50049 12V7.3125H7.93799V5.75H9.50049V1.0625H11.063V12H9.50049ZM14.188 12V10.4375H20.438V12H14.188ZM12.6255 10.4375V5.75H14.188V7.3125H18.8755V5.75H20.438V8.875H14.188V10.4375H12.6255ZM14.188 5.75V4.1875H18.8755V5.75H14.188ZM22.0005 10.4375V4.1875H23.563V10.4375H22.0005ZM23.563 12V10.4375H25.1255V7.3125H26.688V10.4375H28.2505V4.1875H29.813V12H23.563Z",
+                        fill: "url(#paint1_linear_351_34580)"
+                    }), a.createElement("rect", {
+                        x: "2.00049",
+                        y: "2.25",
+                        width: "1.25",
+                        height: "1.25",
+                        fill: "white"
+                    }), a.createElement("rect", {
+                        x: "2.00049",
+                        y: "3.5",
+                        width: "1.25",
+                        height: "1.25",
+                        fill: "white"
+                    }), a.createElement("rect", {
+                        x: "2.00049",
+                        y: "3.5",
+                        width: "1.25",
+                        height: "1.25",
+                        fill: "white"
+                    }), a.createElement("rect", {
+                        width: "1.25",
+                        height: "1.25",
+                        transform: "matrix(-1 0 0 1 7.00049 4.75)",
+                        fill: "white"
+                    }), a.createElement("rect", {
+                        width: "1.25",
+                        height: "1.25",
+                        transform: "matrix(-1 0 0 1 14.5005 4.75)",
+                        fill: "white"
+                    }), a.createElement("rect", {
+                        width: "1.25",
+                        height: "1.25",
+                        transform: "matrix(-1 0 0 1 13.2505 6)",
+                        fill: "white"
+                    }), a.createElement("rect", {
+                        width: "1.25",
+                        height: "1.25",
+                        transform: "matrix(-1 0 0 1 22.0005 4.75)",
+                        fill: "white"
+                    }), a.createElement("rect", {
+                        width: "1.25",
+                        height: "1.25",
+                        transform: "matrix(-1 0 0 1 22.0005 6)",
+                        fill: "white"
+                    }), a.createElement("rect", {
+                        width: "1.25",
+                        height: "1.25",
+                        transform: "matrix(-1 0 0 1 13.2505 7.25)",
+                        fill: "white"
+                    })), a.createElement("defs", null, a.createElement("linearGradient", {
+                        id: "paint0_linear_351_34580",
+                        x1: "2.00049",
+                        y1: "-0.950001",
+                        x2: "31.3485",
+                        y2: "13.2823",
+                        gradientUnits: "userSpaceOnUse"
+                    }, a.createElement("stop", {
+                        stopColor: "#D573C4"
+                    }), a.createElement("stop", {
+                        offset: "0.521932",
+                        stopColor: "#D573C4"
+                    }), a.createElement("stop", {
+                        offset: "1",
+                        stopColor: "#8B6AD4"
+                    })), a.createElement("linearGradient", {
+                        id: "paint1_linear_351_34580",
+                        x1: "3.25049",
+                        y1: "-0.950001",
+                        x2: "32.5985",
+                        y2: "13.2823",
+                        gradientUnits: "userSpaceOnUse"
+                    }, a.createElement("stop", {
+                        stopColor: "#D573C4"
+                    }), a.createElement("stop", {
+                        offset: "0.521932",
+                        stopColor: "#D573C4"
+                    }), a.createElement("stop", {
+                        offset: "1",
+                        stopColor: "#8B6AD4"
+                    })), a.createElement("clipPath", {
+                        id: "clip0_351_34580"
+                    }, a.createElement("rect", {
+                        width: "32",
+                        height: "14",
+                        fill: "white",
+                        transform: "translate(0.000488281)"
+                    })))),
+                    ye = () => {
+                        ce.startShare(q.p.getString("shareString"), "", "", q.p.getString("shareNewLinkMobile")), ce.recordShareClick()
+                    },
+                    fe = (0, d.ZP)({
+                        shareButton: {
+                            width: "113px",
+                            height: "32px",
+                            background: "#000000",
+                            boxSizing: "border-box",
+                            borderRadius: "4px"
+                        },
+                        shareButton_content: {
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center"
+                        },
+                        shareButton_icon: {
+                            display: "flex",
+                            fill: "#FFFFFF"
+                        },
+                        shareButton_shareText: {
+                            display: "flex",
+                            fontStyle: "normal",
+                            fontSize: "18px",
+                            color: "#FFFFFF",
+                            marginLeft: "7px",
+                            fontWeight: "550",
+                            lineHeight: "25px",
+                            height: "23px"
+                        }
+                    })((e => a.createElement("button", {
+                        className: e.managedClasses.shareButton,
+                        onClick: ye
+                    }, a.createElement("div", {
+                        className: e.managedClasses.shareButton_content
+                    }, a.createElement(ue, {
+                        className: e.managedClasses.shareButton_icon
+                    }), a.createElement("span", {
+                        className: e.managedClasses.shareButton_shareText
+                    }, q.p.getString("shareButtonString")))))),
+                    we = (0, d.ZP)({
+                        shareBestScore: {
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center"
+                        },
+                        shareBestScore_iconHidden: {
+                            visibility: "hidden"
+                        },
+                        shareBestScore_text: {
+                            fontSize: "12px",
+                            lineHeight: "14px",
+                            textAlign: "center",
+                            color: "#4E4E4E",
+                            marginLeft: "8px",
+                            marginRight: "8px"
+                        },
+                        shareBestScore_iconPlaceHolder: {
+                            width: "32px",
+                            height: "14px"
+                        }
+                    })((e => {
+                        const t = q.p.getStringF("bestScoreFlyout", e.bestScoreFormatted);
+                        return a.createElement("div", {
+                            className: e.managedClasses.shareBestScore
+                        }, a.createElement(me, {
+                            className: e.isNewRecords ? null : e.managedClasses.shareBestScore_iconHidden
+                        }), a.createElement("p", {
+                            className: e.managedClasses.shareBestScore_text
+                        }, t), a.createElement("div", {
+                            className: e.managedClasses.shareBestScore_iconPlaceHolder
+                        }))
+                    })),
+                    He = (0, d.ZP)({
+                        sharePopup: {
+                            backgroundColor: "rgba(255,255,255,0.6)",
+                            backdropFilter: "blur(32px)",
+                            boxShadow: "0px 16px 24px rgba(0,0,0,0.16)",
+                            borderRadius: "4px",
+                            padding: "12px 12px"
+                        },
+                        sharePopup_currentScore: {
+                            textAlign: "center",
+                            fontWeight: "500",
+                            fontSize: "30px",
+                            lineHeight: "32px",
+                            alignItems: "center",
+                            color: "#000000"
+                        },
+                        sharePopup_congrats: {
+                            marginTop: "4px",
+                            textAlign: "center",
+                            fontStyle: "normal",
+                            fontWeight: "500",
+                            fontSize: "14px",
+                            lineHeight: "16px",
+                            color: "#000000"
+                        },
+                        sharePopup_button: {
+                            marginTop: "10px"
+                        }
+                    })((e => {
+                        const t = e.percentage,
+                            s = Math.floor(100 * t) / 100,
+                            i = q.p.getStringF("congrats", s);
+                        return a.createElement("div", {
+                            className: e.managedClasses.sharePopup
+                        }, a.createElement(we, {
+                            bestScoreFormatted: e.bestScoreFormatted,
+                            isNewRecords: e.isNewRecords
+                        }), a.createElement("p", {
+                            className: e.managedClasses.sharePopup_currentScore
+                        }, e.currentScoreFormatted), a.createElement("p", {
+                            className: e.managedClasses.sharePopup_congrats
+                        }, i), a.createElement("div", {
+                            className: e.managedClasses.sharePopup_button
+                        }, a.createElement(fe, null)))
+                    }));
+                class ve {
                     constructor() {
-                        if (this.ui = void 0, this.tint = void 0, this.topui = void 0, this.livesDisplay = void 0, this.score = void 0, this.scoreIcon = void 0, this.scoreText = void 0, this.boostDisplay = void 0, this.title = void 0, this.subtitle = void 0, this.instruct = void 0, this.instructAction = void 0, this.instructContent = void 0, this.instructText = void 0, this.viewContainer = void 0, this.notify = void 0, this.notifyContent = void 0, this.notifyTimer = void 0, this.icons = void 0, this.share = void 0, this.shareContent = void 0, this.shareTextBestScore = void 0, this.shareTextNewScore = void 0, this.shareTextAchievement = void 0, this.shareAction = void 0, this.uiContainer = void 0, this.shareActionContainer = void 0, this.shareActionImage = void 0, this.shareActionText = void 0, this.selector = void 0, ge.sys) return ge.sys;
-                        ge.sys = this, this.defineIcons(), this.buildInterface(), this.notifyTimer = void 0, le.subscribe(this.updateScore.bind(this))
+                        if (this.ui = void 0, this.tint = void 0, this.topui = void 0, this.livesDisplay = void 0, this.score = void 0, this.scoreIcon = void 0, this.scoreText = void 0, this.boostDisplay = void 0, this.title = void 0, this.subtitle = void 0, this.instruct = void 0, this.instructAction = void 0, this.instructContent = void 0, this.instructText = void 0, this.viewContainer = void 0, this.notify = void 0, this.notifyContent = void 0, this.notifyTimer = void 0, this.icons = void 0, this.share = void 0, this.uiContainer = void 0, this.selector = void 0, ve.sys) return ve.sys;
+                        ve.sys = this, this.defineIcons(), this.buildInterface(), this.notifyTimer = void 0, he.subscribe(this.updateScore.bind(this))
                     }
                     buildInterface() {
                         this.ui = this.createNew("div", document.body, "game-ui"), this.tint = this.createNew("div", document.body, "game-tint"), this.topui = this.createNew("div", this.ui);
@@ -6481,12 +6803,10 @@
                         this.createIconSVG(s, "leftArrow", 44, 44);
                         const i = this.createNew("span", this.selector, "selector-right");
                         this.createIconSVG(i, "rightArrow", 44, 44), s.addEventListener("click", (function() {
-                            Te.sys.changeCharacter(-1)
+                            Ie.sys.changeCharacter(-1)
                         }), !1), i.addEventListener("click", (function() {
-                            Te.sys.changeCharacter(1)
-                        }), !1), this.viewContainer = this.createNew("div", this.ui, "view-container"), this.uiContainer = this.createNew("div", this.viewContainer, "ui-container"), this.instruct = this.createNew("div", this.uiContainer, "ui-instruct"), this.instructContent = this.createNew("div", this.instruct, "instruct-content"), this.instructAction = this.createNew("div", this.instructContent, "instruct-action"), this.instructText = this.createNew("p", this.instructContent, "instruct-text"), this.notify = this.createNew("div", this.ui, "ui-notify"), this.notifyContent = this.createNew("div", this.notify, "notify-content"), this.hideNotification(), this.share = this.createNew("div", this.uiContainer, "ui-share"), this.shareContent = this.createNew("div", this.share, "share-content"), this.shareTextBestScore = this.createNew("p", this.shareContent, "share-best-score"), this.shareTextBestScore.textContent = "Best score: 1000m", this.shareTextNewScore = this.createNew("p", this.shareContent, "share-new-score"), this.shareTextNewScore.textContent = "200m", this.shareTextAchievement = this.createNew("p", this.shareContent, "share-text"), this.shareTextAchievement.textContent = "You've won over 49% of global users", this.shareAction = this.createNew("button", this.shareContent, "share-action"), this.shareActionContainer = this.createNew("div", this.shareAction, "share-action-container"), this.createIconSVG(this.shareActionContainer, "share", 14, 16), this.shareActionText = this.createNew("span", this.shareActionContainer, "share-action-text"), this.shareAction.addEventListener("click", (() => {
-                            he.startShare(q.pz.getString("shareString"), "", "", q.pz.getString("shareNewLinkMobile")), he.recordShareClick()
-                        })), this.updateShare(), this.shareContent.classList.add("tinted")
+                            Ie.sys.changeCharacter(1)
+                        }), !1), this.viewContainer = this.createNew("div", this.ui, "view-container"), this.uiContainer = this.createNew("div", this.viewContainer, "ui-container"), this.instruct = this.createNew("div", this.uiContainer, "ui-instruct"), this.instructContent = this.createNew("div", this.instruct, "instruct-content"), this.instructAction = this.createNew("div", this.instructContent, "instruct-action"), this.instructText = this.createNew("p", this.instructContent, "instruct-text"), this.notify = this.createNew("div", this.ui, "ui-notify"), this.notifyContent = this.createNew("div", this.notify, "notify-content"), this.hideNotification(), this.share = this.createNew("div", this.uiContainer, "ui-share"), this.updateShare()
                     }
                     refreshDisplay() {
                         this.updateIcons(), this.updateScore(), this.checkHighScoreIcon()
@@ -6495,34 +6815,34 @@
                         this.tintScreen(), this.title.style.visibility = "hidden", this.subtitle.style.visibility = "hidden", this.selector.style.visibility = "hidden", this.instructContent.style.visibility = "hidden", this.hideSharePopup()
                     }
                     updateGameTitleUI() {
-                        const e = te.sys.session.settings.theme;
-                        this.title.style.removeProperty("visibility"), this.title.textContent = q.pz.getString(e + "Theme")
+                        const e = se.sys.session.settings.theme;
+                        this.title.style.removeProperty("visibility"), this.title.textContent = q.p.getString(e + "Theme")
                     }
                     updateGameModeUI() {
-                        const e = te.sys.session.settings.mode;
-                        this.subtitle.style.removeProperty("visibility"), this.subtitle.textContent = q.pz.getString(e + "Title"), this.updateScore()
+                        const e = se.sys.session.settings.mode;
+                        this.subtitle.style.removeProperty("visibility"), this.subtitle.textContent = q.p.getString(e + "Title"), this.updateScore()
                     }
                     updateInputTypeUI() {
-                        const e = te.sys.session.state;
-                        if (e === Q.Play) return;
-                        let t = te.sys.session.inputType.valueOf();
-                        switch (t === ee.Mouse && J() && (t = ee.Touch), t) {
-                            case ee.Mouse:
-                            case ee.Touch:
-                            case ee.Keyboard:
-                                this.instructAction.classList.add("outline"), this.instructAction.textContent = q.pz.getString(t + "Action");
+                        const e = se.sys.session.state;
+                        if (e === ee.Play) return;
+                        let t = se.sys.session.inputType.valueOf();
+                        switch (t === te.Mouse && Q() && (t = te.Touch), t) {
+                            case te.Mouse:
+                            case te.Touch:
+                            case te.Keyboard:
+                                this.instructAction.classList.add("outline"), this.instructAction.textContent = q.p.getString(t + "Action");
                                 break;
-                            case ee.Ps:
-                            case ee.Xbox: {
+                            case te.Ps:
+                            case te.Xbox: {
                                 const e = t + "Action";
                                 this.instructAction.classList.remove("outline"), this.instructAction.textContent = "", this.createIconSVG(this.instructAction, e, 32, 32);
                                 break
                             }
                         }
-                        this.instructText.textContent = q.pz.getString(e + "Info"), this.instructContent.style.removeProperty("visibility"), e !== Q.Menu ? this.instructContent.classList.add("tinted") : this.instructContent.classList.remove("tinted")
+                        this.instructText.textContent = q.p.getString(e + "Info"), this.instructContent.style.removeProperty("visibility"), e !== ee.Menu ? this.instructContent.classList.add("tinted") : this.instructContent.classList.remove("tinted")
                     }
                     tintScreen() {
-                        te.sys.session.state === Q.Pause ? this.tint.classList.add("visible") : this.tint.classList.remove("visible")
+                        se.sys.session.state === ee.Pause ? this.tint.classList.add("visible") : this.tint.classList.remove("visible")
                     }
                     showPauseScreen() {
                         this.tintScreen(), this.updateGameTitleUI(), this.updateGameModeUI(), this.updateInputTypeUI(), this.refreshDisplay()
@@ -6534,48 +6854,48 @@
                         this.showPauseScreen(), this.selector.style.removeProperty("visibility")
                     }
                     async updateAndShowNewShare() {
-                        await this.updateShare(), he.recordSharePopup(), this.showSharePopup()
+                        await this.updateShare(), ce.recordSharePopup(), this.showSharePopup()
                     }
                     sendNotification(e, t = 5e3) {
-                        const s = te.sys.session.settings.mode,
-                            i = te.sys.session.settings.theme,
-                            a = q.pz.getBoolean("isNewShare");
+                        const s = se.sys.session.settings.mode,
+                            i = se.sys.session.settings.theme,
+                            a = q.p.getBoolean("isNewShare");
                         switch (this.notifyContent.textContent = "", e) {
                             case "mode":
-                                this.notifyContent.textContent = q.pz.getStringF("gameMode", q.pz.getString(s + "Title"));
+                                this.notifyContent.textContent = q.p.getStringF("gameMode", q.p.getString(s + "Title"));
                                 break;
                             case "theme":
-                                this.notifyContent.textContent = q.pz.getStringF("theme", q.pz.getString(i + "Theme"));
+                                this.notifyContent.textContent = q.p.getStringF("theme", q.p.getString(i + "Theme"));
                                 break;
                             case "score": {
-                                const e = te.sys.getHighScore(s);
-                                this.notifyContent.textContent = q.pz.getStringF("newBestScore", q.pz.getString(s + "Descriptor"), e, q.pz.getString(s + "Unit")), this.createIconSVG(this.notifyContent, "star", 20, 20, "0 4px 0 0");
+                                const e = se.sys.getHighScore(s);
+                                this.notifyContent.textContent = q.p.getStringF("newBestScore", q.p.getString(s + "Descriptor"), e, q.p.getString(s + "Unit")), this.createIconSVG(this.notifyContent, "star", 20, 20, "0 4px 0 0");
                                 break
                             }
                             case "cheatcode":
-                                this.notifyContent.textContent = q.pz.getStringF("codeCheat", q.pz.getString("codeScoring"));
+                                this.notifyContent.textContent = q.p.getStringF("codeCheat", q.p.getString("codeScoring"));
                                 break;
                             case "code":
-                                this.notifyContent.textContent = q.pz.getString("code");
+                                this.notifyContent.textContent = q.p.getString("code");
                                 break;
                             case "cheat":
-                                this.notifyContent.textContent = q.pz.getString("codeScoring");
+                                this.notifyContent.textContent = q.p.getString("codeScoring");
                                 break;
                             case "share":
                                 if (a) return void this.updateAndShowNewShare();
-                                this.notifyContent.textContent = q.pz.getString("share"), this.createShareLink()
+                                this.notifyContent.textContent = q.p.getString("share"), this.createShareLink()
                         }
                         clearTimeout(this.notifyTimer), this.notifyTimer = window.setTimeout((function() {
-                            ge.sys.hideNotification()
+                            ve.sys.hideNotification()
                         }), t), this.showNotification()
                     }
                     createShareLink() {
                         const e = this.createNew("button", this.notifyContent, "notify-shareLink");
                         e.onclick = this.copyShareLink.bind(this);
-                        this.createNew("p", e, "notify-shareText").textContent = q.pz.getString("shareCopy"), this.createIconSVG(e, "link", 20, 20, "0 4px 0 0")
+                        this.createNew("p", e, "notify-shareText").textContent = q.p.getString("shareCopy"), this.createIconSVG(e, "link", 20, 20, "0 4px 0 0")
                     }
                     copyShareLink() {
-                        X(q.pz.getString("shareLinkGameOver")), this.notifyContent.textContent = q.pz.getString("shareLinkCopied")
+                        Y(q.p.getString("shareLinkGameOver")), this.notifyContent.textContent = q.p.getString("shareLinkCopied")
                     }
                     showNotification() {
                         this.notify.classList.add("visible")
@@ -6584,14 +6904,17 @@
                         this.notify.classList.remove("visible")
                     }
                     async updateShare() {
-                        const e = te.sys.session.settings.mode,
+                        const e = se.sys.session.settings.mode,
                             t = this.getHighScoreString(),
-                            s = te.sys.getCurrentScoreFormatted(),
-                            i = s + " " + q.pz.getString(e + "Unit"),
-                            a = await he.getPercentage(e, parseInt(s)),
-                            o = Math.floor(100 * a) / 100,
-                            n = q.pz.getStringF("congrats", o);
-                        this.shareTextBestScore.textContent = q.pz.getStringF("bestScoreFlyout", t), this.shareTextNewScore.textContent = i, this.shareTextAchievement.textContent = n, this.shareActionText.textContent = q.pz.getString("shareButtonString")
+                            s = se.sys.getCurrentScoreFormatted(),
+                            o = s + " " + q.p.getString(e + "Unit"),
+                            n = await ce.getPercentage(e, parseInt(s));
+                        i.render(a.createElement(He, {
+                            bestScoreFormatted: t,
+                            currentScoreFormatted: o,
+                            percentage: n,
+                            isNewRecords: se.sys.game.highScore
+                        }), this.share)
                     }
                     showSharePopup() {
                         this.share.classList.add("visible")
@@ -6600,40 +6923,40 @@
                         this.share.classList.remove("visible")
                     }
                     getHighScoreString() {
-                        return q.pz.getStringF("bestScoreMenuDisplay", te.sys.getHighScore(te.sys.session.settings.mode), q.pz.getString(te.sys.session.settings.mode + "Unit"))
+                        return q.p.getStringF("bestScoreMenuDisplay", se.sys.getHighScore(se.sys.session.settings.mode), q.p.getString(se.sys.session.settings.mode + "Unit"))
                     }
                     checkHighScoreIcon() {
-                        const e = te.sys.session.state;
-                        this.scoreIcon.textContent = "", (e === Q.Menu || te.sys.game.highScore) && this.createIconSVG(this.scoreIcon, "star", 20, 20)
+                        const e = se.sys.session.state;
+                        this.scoreIcon.textContent = "", (e === ee.Menu || se.sys.game.highScore) && this.createIconSVG(this.scoreIcon, "star", 20, 20)
                     }
                     updateScore() {
-                        const e = te.sys.session.settings.mode;
-                        if (te.sys.session.state === Q.Menu) {
-                            const t = te.sys.getHighScore(e);
-                            this.scoreText.textContent = q.pz.getStringF("bestScoreMenuDisplay", t, q.pz.getString(e + "Unit"))
+                        const e = se.sys.session.settings.mode;
+                        if (se.sys.session.state === ee.Menu) {
+                            const t = se.sys.getHighScore(e);
+                            this.scoreText.textContent = q.p.getStringF("bestScoreMenuDisplay", t, q.p.getString(e + "Unit"))
                         } else {
-                            const t = te.sys.getCurrentScoreFormatted();
-                            this.scoreText.textContent = t + " " + q.pz.getString(e + "Unit")
+                            const t = se.sys.getCurrentScoreFormatted();
+                            this.scoreText.textContent = t + " " + q.p.getString(e + "Unit")
                         }
                     }
                     updateIcons() {
                         const e = [],
                             t = [],
-                            s = te.sys.game.cheat;
+                            s = se.sys.game.cheat;
                         if (s.lives || s.safety) s.safety && e.push("shield"), e.push("life-full"), e.push("infinite");
                         else
-                            for (let t = 1; t <= te.sys.game.lives.max; t++) {
+                            for (let t = 1; t <= se.sys.game.lives.max; t++) {
                                 let s = "life-empty";
-                                t <= te.sys.game.shields.current ? s = "shield" : t <= te.sys.game.lives.current && (s = "life-full"), e.push(s)
+                                t <= se.sys.game.shields.current ? s = "shield" : t <= se.sys.game.lives.current && (s = "life-full"), e.push(s)
                             }
                         if (s.boosts) t.push("boost-full"), t.push("infinite");
                         else
-                            for (let e = 1; e <= te.sys.game.boosts.max; e++) {
-                                const s = e <= te.sys.game.boosts.current ? "boost-full" : "boost-empty";
+                            for (let e = 1; e <= se.sys.game.boosts.max; e++) {
+                                const s = e <= se.sys.game.boosts.current ? "boost-full" : "boost-empty";
                                 t.push(s)
                             }
                         this.livesDisplay.textContent = "", this.boostDisplay.textContent = "";
-                        const i = "url(" + pe.sys.objectsImg.src + ")";
+                        const i = "url(" + be.sys.objectsImg.src + ")";
                         e.forEach((e => {
                             this.createNew("div", this.livesDisplay, void 0, e).style.backgroundImage = i
                         })), t.forEach((e => {
@@ -6649,8 +6972,8 @@
                     defineIcons() {
                         this.icons = {
                             share: {
-                                path: "M12.75 7.25C13.1297 7.25 13.4435 7.53215 13.4932 7.89823L13.5 8V13.25C13.5 14.7125 12.3583 15.9084 10.9175 15.995L10.75 16H3.25C1.78747 16 0.591596 14.8583 0.505019 13.4175L0.5 13.25V8C0.5 7.58579 0.835786 7.25 1.25 7.25C1.6297 7.25 1.94349 7.53215 1.99315 7.89823L2 8V13.25C2 13.8972 2.49187 14.4295 3.12219 14.4935L3.25 14.5H10.75C11.3972 14.5 11.9295 14.0081 11.9935 13.3778L12 13.25V8C12 7.58579 12.3358 7.25 12.75 7.25ZM2.22703 4.46231L6.46967 0.21967C6.73594 -0.0465967 7.1526 -0.0708026 7.44621 0.147052L7.53033 0.21967L11.773 4.46231C12.0659 4.7552 12.0659 5.23008 11.773 5.52297C11.5067 5.78924 11.09 5.81344 10.7964 5.59559L10.7123 5.52297L7.75 2.56V10.25C7.75 10.6297 7.46785 10.9435 7.10177 10.9932L7 11C6.6203 11 6.30651 10.7178 6.25685 10.3518L6.25 10.25V2.56L3.28769 5.52297C3.02142 5.78924 2.60476 5.81344 2.31115 5.59559L2.22703 5.52297C1.96076 5.2567 1.93656 4.84004 2.15441 4.54643L2.22703 4.46231L6.46967 0.21967L2.22703 4.46231Z",
-                                viewbox: "0 0 14 16"
+                                path: "M15.75 9.25C16.1297 9.25 16.4435 9.53215 16.4932 9.89823L16.5 10V15.25C16.5 16.7125 15.3583 17.9084 13.9175 17.995L13.75 18H6.25C4.78747 18 3.5916 16.8583 3.50502 15.4175L3.5 15.25V10C3.5 9.58579 3.83579 9.25 4.25 9.25C4.6297 9.25 4.94349 9.53215 4.99315 9.89823L5 10V15.25C5 15.8972 5.49187 16.4295 6.12219 16.4935L6.25 16.5H13.75C14.3972 16.5 14.9295 16.0081 14.9935 15.3778L15 15.25V10C15 9.58579 15.3358 9.25 15.75 9.25ZM5.22703 6.46231L9.46967 2.21967C9.73594 1.9534 10.1526 1.9292 10.4462 2.14705L10.5303 2.21967L14.773 6.46231C15.0659 6.7552 15.0659 7.23008 14.773 7.52297C14.5067 7.78924 14.09 7.81344 13.7964 7.59559L13.7123 7.52297L10.75 4.56V12.25C10.75 12.6297 10.4678 12.9435 10.1018 12.9932L10 13C9.6203 13 9.30651 12.7178 9.25685 12.3518L9.25 12.25V4.56L6.28769 7.52297C6.02142 7.78924 5.60476 7.81344 5.31115 7.59559L5.22703 7.52297C4.96076 7.2567 4.93656 6.84004 5.15441 6.54643L5.22703 6.46231L9.46967 2.21967L5.22703 6.46231Z",
+                                viewbox: "0 0 20 20"
                             },
                             leftArrow: {
                                 path: "M12.2676 15.793C11.9677 16.0787 11.493 16.0672 11.2073 15.7672L6.20597 10.5168C5.93004 10.2271 5.93004 9.77187 6.20597 9.4822L11.2073 4.23173C11.493 3.93181 11.9677 3.92028 12.2676 4.20597C12.5676 4.49166 12.5791 4.96639 12.2934 5.26631L7.78483 9.99949L12.2934 14.7327C12.5791 15.0326 12.5676 15.5073 12.2676 15.793Z",
@@ -6687,13 +7010,13 @@
                         return document.body.insertAdjacentElement("beforeend", e), e.id = "game-canvas", e
                     }
                 }
-                ge.sys = null;
-                class ue {
+                ve.sys = null;
+                class Ve {
                     constructor(e, t, s) {
                         this.type = void 0, this.x = void 0, this.y = void 0, this.w = void 0, this.h = void 0, this.hit = void 0, this.fx = void 0, this.hitbox = void 0, this.type = e, this.x = t, this.y = s, this.reset()
                     }
                     reset() {
-                        const e = be.sys.sheet[this.type];
+                        const e = ge.sys.sheet[this.type];
                         this.w = e.w, this.h = e.h, this.fx = e.fx, this.hit = !1, this.hitbox = {
                             x: this.x - this.w / 2 + e.hitbox.x,
                             y: this.y - this.h / 2 + e.hitbox.y,
@@ -6710,7 +7033,7 @@
                     update() {}
                     draw() {}
                 }
-                class me extends ue {
+                class xe extends Ve {
                     constructor(e, t, s, i) {
                         super(e, t, s), this.pose = void 0, this.time = void 0, this.sleep = void 0, this.anim = void 0, this.pickup = void 0, this.decor = void 0, this.gateId = void 0, this.pose = i, this.reset()
                     }
@@ -6718,13 +7041,13 @@
                         super.reset(), this.time = 0, this.sleep = !1, this.anim = "looping", this.pickup = !1, this.decor = void 0, this.gateId = void 0
                     }
                     update() {
-                        "paused" !== this.anim && (this.time += te.sys.game.time.loop)
+                        "paused" !== this.anim && (this.time += se.sys.game.time.loop)
                     }
                     draw() {
-                        this.pickup ? de.sys.drawPickup(this) : (void 0 !== this.fx && "hidden" !== this.anim && de.sys.drawFx(this.time, this.x, this.y + this.fx), de.sys.drawLayer(this.type, this.pose, this.x, this.y, this.time, this.anim, this), void 0 !== this.decor && de.sys.drawLayer("wallDecor", this.decor, this.x, this.y - 24))
+                        this.pickup ? pe.sys.drawPickup(this) : (void 0 !== this.fx && "hidden" !== this.anim && pe.sys.drawFx(this.time, this.x, this.y + this.fx), pe.sys.drawLayer(this.type, this.pose, this.x, this.y, this.time, this.anim, this), void 0 !== this.decor && pe.sys.drawLayer("wallDecor", this.decor, this.x, this.y - 24))
                     }
                 }
-                class ye extends me {
+                class Me extends xe {
                     constructor(e, t, s, i) {
                         super(e, t, s, i), this.angle = void 0, this.speed = null, this.objectsHit = void 0, this.timer = null, this.style = void 0, this.state = void 0, this.reset()
                     }
@@ -6737,7 +7060,7 @@
                         }, this.timer = {
                             crash: 0,
                             dir: 0
-                        }, this.style = te.sys.rand(0, 3), this.changeState("crash"), this.resume()
+                        }, this.style = se.sys.rand(0, 3), this.changeState("crash"), this.resume()
                     }
                     update() {
                         super.update(), this.isCrashed() || (this.updateDirection(), this.updateSpeed(), this.updatePosition())
@@ -6753,7 +7076,7 @@
                         this.speed.raw *= .5
                     }
                     isCrashed() {
-                        return !(this.timer.crash <= 0) && (this.timer.crash -= te.sys.game.time.loop * te.sys.game.time.scale, !(this.timer.crash <= 0) || (this.resume(), !1))
+                        return !(this.timer.crash <= 0) && (this.timer.crash -= se.sys.game.time.loop * se.sys.game.time.scale, !(this.timer.crash <= 0) || (this.resume(), !1))
                     }
                     changeState(e) {
                         if (this.state === e) return;
@@ -6771,16 +7094,16 @@
                         this.pose = e, this.angle = t * Math.PI / 180, "crash" === e && (this.timer.crash += 1.5, this.speed.raw = 0)
                     }
                     updateDirection() {
-                        if (this.timer.dir -= te.sys.game.time.loop * te.sys.game.time.scale, this.timer.dir <= 0) {
-                            this.timer.dir = te.sys.rand(50, 200) / 100;
+                        if (this.timer.dir -= se.sys.game.time.loop * se.sys.game.time.scale, this.timer.dir <= 0) {
+                            this.timer.dir = se.sys.rand(50, 200) / 100;
                             const e = "left" === this.state ? "right" : "left";
                             this.changeState(e)
                         }
                     }
                     updateSpeed() {
                         const e = this.speed,
-                            t = e.accel * te.sys.game.time.scale;
-                        this.speed.raw = e.raw <= e.max ? e.raw += t : e.raw -= t, this.speed.current = e.raw * te.sys.game.time.scale
+                            t = e.accel * se.sys.game.time.scale;
+                        this.speed.raw = e.raw <= e.max ? e.raw += t : e.raw -= t, this.speed.current = e.raw * se.sys.game.time.scale
                     }
                     updatePosition() {
                         const e = this.speed.current * -Math.cos(this.angle),
@@ -6788,10 +7111,10 @@
                         this.shift(e, t)
                     }
                     draw() {
-                        de.sys.drawNpc(this.pose, this.style, this.x, this.y)
+                        pe.sys.drawNpc(this.pose, this.style, this.x, this.y)
                     }
                 }
-                class fe extends me {
+                class Se extends xe {
                     constructor(e, t, s, i) {
                         super(e, t, s, i), this.angle = void 0, this.dist = void 0, this.speed = null, this.objectsHit = void 0, this.timer = null, this.state = void 0, this.reset()
                     }
@@ -6808,10 +7131,10 @@
                     }
                     updateEnding() {
                         const e = {
-                            x: te.sys.session.x - this.x,
-                            y: te.sys.session.y - 64 - this.y
+                            x: se.sys.session.x - this.x,
+                            y: se.sys.session.y - 64 - this.y
                         };
-                        if (Math.hypot(e.x, e.y) < 8) this.shift(e.x, e.y), this.changeState("end"), te.sys.game.caught = !0;
+                        if (Math.hypot(e.x, e.y) < 8) this.shift(e.x, e.y), this.changeState("end"), se.sys.game.caught = !0;
                         else {
                             const t = Math.atan2(e.y, e.x),
                                 s = Math.cos(t),
@@ -6832,7 +7155,7 @@
                         this.hit = !0
                     }
                     isCrashed() {
-                        return !(this.timer.crash <= 0) && (this.timer.crash -= te.sys.game.time.loop * te.sys.game.time.scale, !(this.timer.crash <= 0) || (this.resume(), !1))
+                        return !(this.timer.crash <= 0) && (this.timer.crash -= se.sys.game.time.loop * se.sys.game.time.scale, !(this.timer.crash <= 0) || (this.resume(), !1))
                     }
                     changeState(e) {
                         if (this.state !== e) {
@@ -6852,67 +7175,67 @@
                         }
                     }
                     updateDirection() {
-                        if (this.dist = Math.hypot(te.sys.session.x - this.x, te.sys.session.y - this.y), this.timer.dir -= te.sys.game.time.loop * te.sys.game.time.scale, this.timer.dir <= 0) {
-                            this.timer.dir += te.sys.rand(25, 100) / 100 * (this.dist / te.sys.session.y);
-                            const e = te.sys.session.x - this.x,
-                                t = te.sys.session.y - this.y,
+                        if (this.dist = Math.hypot(se.sys.session.x - this.x, se.sys.session.y - this.y), this.timer.dir -= se.sys.game.time.loop * se.sys.game.time.scale, this.timer.dir <= 0) {
+                            this.timer.dir += se.sys.rand(25, 100) / 100 * (this.dist / se.sys.session.y);
+                            const e = se.sys.session.x - this.x,
+                                t = se.sys.session.y - this.y,
                                 s = 180 * Math.atan2(t, e) / Math.PI;
                             this.angle = s * Math.PI / 180
                         }
                     }
                     updateSpeed() {
                         const e = this.speed,
-                            t = e.accel * te.sys.game.time.scale,
-                            s = this.y >= te.sys.session.y;
-                        e.raw < e.max && !s ? this.speed.raw += t : s ? this.speed.raw -= t : this.speed.raw = e.max, this.speed.current = e.raw * te.sys.game.time.scale
+                            t = e.accel * se.sys.game.time.scale,
+                            s = this.y >= se.sys.session.y;
+                        e.raw < e.max && !s ? this.speed.raw += t : s ? this.speed.raw -= t : this.speed.raw = e.max, this.speed.current = e.raw * se.sys.game.time.scale
                     }
                     updatePosition() {
-                        const e = this.dist / te.sys.session.y * 15,
+                        const e = this.dist / se.sys.session.y * 15,
                             t = Math.cos(16 * this.time) * e * Math.PI / 180,
                             s = this.speed.current * Math.cos(this.angle + t),
                             i = this.speed.current * Math.sin(this.angle + t);
                         this.shift(s, i)
                     }
                     draw() {
-                        de.sys.drawLayer(this.type, this.pose, this.x, this.y, this.time, this.anim, this)
+                        pe.sys.drawLayer(this.type, this.pose, this.x, this.y, this.time, this.anim, this)
                     }
                 }
-                class we {
+                class Ce {
                     constructor() {
-                        if (this.pressed = void 0, we.sys) return we.sys;
-                        we.sys = this, window.addEventListener("keydown", (e => we.sys.onKeydown(e)), !1), window.addEventListener("keyup", (e => we.sys.onKeyup(e)), !1), this.pressed = {}
+                        if (this.pressed = void 0, Ce.sys) return Ce.sys;
+                        Ce.sys = this, window.addEventListener("keydown", (e => Ce.sys.onKeydown(e)), !1), window.addEventListener("keyup", (e => Ce.sys.onKeyup(e)), !1), this.pressed = {}
                     }
                     onKeydown(e) {
                         const t = e.key.toLowerCase();
-                        if (Ce.sys.changeInputMethod(ee.Keyboard), !this.pressed[t]) {
+                        if (Pe.sys.changeInputMethod(te.Keyboard), !this.pressed[t]) {
                             switch (this.pressed[t] = !0, t) {
                                 case "arrowdown":
                                 case "s":
-                                    Ce.sys.routeInput(Se.Down);
+                                    Pe.sys.routeInput(Te.Down);
                                     break;
                                 case "arrowleft":
                                 case "a":
-                                    Ce.sys.routeInput(Se.Left);
+                                    Pe.sys.routeInput(Te.Left);
                                     break;
                                 case "arrowright":
                                 case "d":
-                                    Ce.sys.routeInput(Se.Right);
+                                    Pe.sys.routeInput(Te.Right);
                                     break;
                                 case "arrowup":
                                 case "w":
-                                    Ce.sys.routeInput(Se.Stop);
+                                    Pe.sys.routeInput(Te.Stop);
                                     break;
                                 case "enter":
                                 case " ":
-                                    Ce.sys.routeInput(Se.Toggle);
+                                    Pe.sys.routeInput(Te.Toggle);
                                     break;
                                 case "escape":
-                                    Ce.sys.routeInput(Se.Settings, !1, !1);
+                                    Pe.sys.routeInput(Te.Settings, !1, !1);
                                     break;
                                 case "f":
-                                    Ce.sys.routeInput(Se.Boost, !1, !1)
+                                    Pe.sys.routeInput(Te.Boost, !1, !1)
                             }
-                            Ce.sys.checkCheatCode(t)
+                            Pe.sys.checkCheatCode(t)
                         }
                     }
                     onKeyup(e) {
@@ -6920,46 +7243,46 @@
                         delete this.pressed[t]
                     }
                 }
-                we.sys = null;
-                class ve {
+                Ce.sys = null;
+                class ke {
                     constructor() {
-                        if (this.mousePos = void 0, ve.sys) return ve.sys;
-                        ve.sys = this, window.addEventListener("click", (function(e) {
-                            ve.sys.onClick(e)
+                        if (this.mousePos = void 0, ke.sys) return ke.sys;
+                        ke.sys = this, window.addEventListener("click", (function(e) {
+                            ke.sys.onClick(e)
                         }), !1), window.addEventListener("mousemove", (function(e) {
-                            ve.sys.onMouseMove(e)
+                            ke.sys.onMouseMove(e)
                         }), !1), window.addEventListener("contextmenu", (function(e) {
-                            ve.sys.onContextMenu(e)
+                            ke.sys.onContextMenu(e)
                         }), !1), this.reset()
                     }
                     reset() {
                         this.mousePos = void 0
                     }
                     onClick(e) {
-                        if (te.sys.session.flyoutActive) return;
-                        Ce.sys.changeInputMethod(ee.Mouse);
-                        const t = ge.sys.selector || null;
-                        t && t.contains(e.target) || Ce.sys.routeInput(Se.Toggle)
+                        if (se.sys.session.flyoutActive) return;
+                        Pe.sys.changeInputMethod(te.Mouse);
+                        const t = ve.sys.selector || null;
+                        t && t.contains(e.target) || Pe.sys.routeInput(Te.Toggle)
                     }
                     onMouseMove(e) {
-                        if (te.sys.session.state === Q.Play) {
-                            const t = this.checkAngle(te.sys.session, e);
-                            this.mousePos !== t && (this.mousePos = t, Ce.sys.routeInput(t, !0, !1))
+                        if (se.sys.session.state === ee.Play) {
+                            const t = this.checkAngle(se.sys.session, e);
+                            this.mousePos !== t && (this.mousePos = t, Pe.sys.routeInput(t, !0, !1))
                         }
                     }
                     onContextMenu(e) {
-                        e.preventDefault(), te.sys.session.state === Q.Play && Ce.sys.routeInput(Se.Boost, !1, !1)
+                        e.preventDefault(), se.sys.session.state === ee.Play && Pe.sys.routeInput(Te.Boost, !1, !1)
                     }
                     checkAngle(e, t) {
                         const s = 180 * Math.atan2(e.y - t.clientY, e.x - t.clientX) / Math.PI;
-                        return s <= 0 && s >= -55 ? Se.Left : s >= -180 && s <= -125 ? Se.Right : s < -55 && s > -75 ? Se.DownLeft : s > -125 && s < -105 ? Se.DownRight : s > 0 && s < 180 ? Se.Stop : Se.Down
+                        return s <= 0 && s >= -55 ? Te.Left : s >= -180 && s <= -125 ? Te.Right : s < -55 && s > -75 ? Te.DownLeft : s > -125 && s < -105 ? Te.DownRight : s > 0 && s < 180 ? Te.Stop : Te.Down
                     }
                 }
-                ve.sys = null;
-                class xe {
+                ke.sys = null;
+                class Ze {
                     constructor() {
-                        if (this.swipeStart = void 0, this.swipeDelta = void 0, this.touchData = void 0, this.touchPos = void 0, xe.sys) return xe.sys;
-                        xe.sys = this, window.addEventListener("touchstart", (e => xe.sys.onTouchStart(e)), !1), window.addEventListener("touchmove", (e => xe.sys.onTouchMove(e)), !1), window.addEventListener("touchend", (e => xe.sys.onTouchEnd(e)), !1), this.reset()
+                        if (this.swipeStart = void 0, this.swipeDelta = void 0, this.touchData = void 0, this.touchPos = void 0, Ze.sys) return Ze.sys;
+                        Ze.sys = this, window.addEventListener("touchstart", (e => Ze.sys.onTouchStart(e)), !1), window.addEventListener("touchmove", (e => Ze.sys.onTouchMove(e)), !1), window.addEventListener("touchend", (e => Ze.sys.onTouchEnd(e)), !1), this.reset()
                     }
                     reset() {
                         this.swipeStart = 0, this.swipeDelta = 400, this.touchData = {
@@ -6974,7 +7297,7 @@
                         }
                     }
                     onTouchStart(e) {
-                        if (!this.interact(e) && (Ce.sys.changeInputMethod(ee.Touch), e.targetTouches)) {
+                        if (!this.interact(e) && (Pe.sys.changeInputMethod(te.Touch), e.targetTouches)) {
                             const t = e.targetTouches[0];
                             this.swipeStart = Date.now(), this.touchPos = void 0, this.touchData = {
                                 down: {
@@ -6994,9 +7317,9 @@
                         if (this.touchData.move = {
                                 x: t.clientX,
                                 y: t.clientY
-                            }, te.sys.session.state === Q.Play && Date.now() - this.swipeStart > 80) {
-                            const e = this.checkAngle(te.sys.session, this.touchData.move);
-                            this.touchPos !== e && (this.touchPos = e, Ce.sys.routeInput(e, !0, !1))
+                            }, se.sys.session.state === ee.Play && Date.now() - this.swipeStart > 80) {
+                            const e = this.checkAngle(se.sys.session, this.touchData.move);
+                            this.touchPos !== e && (this.touchPos = e, Pe.sys.routeInput(e, !0, !1))
                         }
                     }
                     onTouchEnd(e) {
@@ -7005,48 +7328,48 @@
                             s = this.touchData.move.y - this.touchData.down.y;
                         if (this.touchPos = void 0, Math.abs(t) < 10 && Math.abs(s) < 10) {
                             const e = {
-                                    x: te.sys.session.x,
-                                    y: te.sys.session.y
+                                    x: se.sys.session.x,
+                                    y: se.sys.session.y
                                 },
                                 t = this.checkAngle(e, this.touchData.down);
-                            te.sys.session.state === Q.Menu ? t === Se.Left || t === Se.Right ? Ce.sys.routeInput(t, !0, !1) : Ce.sys.routeInput(Se.Toggle) : Ce.sys.routeInput(t, !0, !0), Ce.sys.checkCheatCode(t)
+                            se.sys.session.state === ee.Menu ? t === Te.Left || t === Te.Right ? Pe.sys.routeInput(t, !0, !1) : Pe.sys.routeInput(Te.Toggle) : Pe.sys.routeInput(t, !0, !0), Pe.sys.checkCheatCode(t)
                         } else if (Date.now() - this.swipeStart <= this.swipeDelta) {
                             let e = this.checkAngle(this.touchData.down, this.touchData.move);
-                            if (te.sys.session.state === Q.Menu) switch (e) {
-                                case Se.Right:
-                                    e = Se.Left;
+                            if (se.sys.session.state === ee.Menu) switch (e) {
+                                case Te.Right:
+                                    e = Te.Left;
                                     break;
-                                case Se.Left:
-                                    e = Se.Right
+                                case Te.Left:
+                                    e = Te.Right
                             }
-                            const t = e === Se.Down;
-                            Ce.sys.routeInput(e, !1, t)
+                            const t = e === Te.Down;
+                            Pe.sys.routeInput(e, !1, t)
                         }
                     }
                     checkAngle(e, t) {
                         const s = 180 * Math.atan2(e.y - t.y, e.x - t.x) / Math.PI;
-                        return s <= 30 && s >= -55 ? Se.Left : s >= 150 || s >= -180 && s <= -125 ? Se.Right : s < -55 && s > -75 ? Se.DownLeft : s > -125 && s < -105 ? Se.DownRight : s > 30 && s < 150 ? Se.Stop : Se.Down
+                        return s <= 30 && s >= -55 ? Te.Left : s >= 150 || s >= -180 && s <= -125 ? Te.Right : s < -55 && s > -75 ? Te.DownLeft : s > -125 && s < -105 ? Te.DownRight : s > 30 && s < 150 ? Te.Stop : Te.Down
                     }
                     interact(e) {
                         const t = e.target;
-                        return !(!te.sys.session.flyoutActive && !t.closest("button")) || (e.cancelable && e.preventDefault(), !1)
+                        return !(!se.sys.session.flyoutActive && !t.closest("button")) || (e.cancelable && e.preventDefault(), !1)
                     }
                 }
-                let Se;
-                xe.sys = null,
+                let Te;
+                Ze.sys = null,
                     function(e) {
                         e.Settings = "settings", e.Left = "left", e.Right = "right", e.Down = "down", e.Stop = "stop", e.DownLeft = "downleft", e.DownRight = "downright", e.Boost = "boost", e.Toggle = "toggle", e.Reset = "reset"
-                    }(Se || (Se = {}));
-                class Ce {
+                    }(Te || (Te = {}));
+                class Pe {
                     constructor() {
-                        if (this.codes = void 0, this.lastTime = void 0, this.thisTime = void 0, this.lastInput = void 0, this.lastInputTime = void 0, this.doubleDelta = void 0, this.codesPossible = void 0, Ce.sys) return Ce.sys;
-                        Ce.sys = this, new ke, new we, new ve, new xe, this.defineCodes(), this.reset()
+                        if (this.codes = void 0, this.lastTime = void 0, this.thisTime = void 0, this.lastInput = void 0, this.lastInputTime = void 0, this.doubleDelta = void 0, this.codesPossible = void 0, Pe.sys) return Pe.sys;
+                        Pe.sys = this, new Ee, new Ce, new ke, new Ze, this.defineCodes(), this.reset()
                     }
                     reset() {
-                        ke.sys.reset(), ve.sys.reset(), xe.sys.reset(), this.lastTime = 0, this.thisTime = 0, this.lastInput = void 0, this.lastInputTime = Date.now(), this.doubleDelta = 300, this.codesPossible = []
+                        Ee.sys.reset(), ke.sys.reset(), Ze.sys.reset(), this.lastTime = 0, this.thisTime = 0, this.lastInput = void 0, this.lastInputTime = Date.now(), this.doubleDelta = 300, this.codesPossible = []
                     }
                     update() {
-                        ke.sys.update()
+                        Ee.sys.update()
                     }
                     defineCodes() {
                         this.codes = {
@@ -7067,28 +7390,28 @@
                         }
                     }
                     routeInput(e, t = !1, s = !0) {
-                        if (te.sys.session.flyoutActive) return void(e === Se.Settings && this.inputSettings());
-                        const i = te.sys.session.inputType;
+                        if (se.sys.session.flyoutActive) return void(e === Te.Settings && this.inputSettings());
+                        const i = se.sys.session.inputType;
                         let a = !1;
-                        if (s && (a = this.registerDoubleInput(e)), i !== ee.Mouse && i !== ee.Touch || e !== Se.Toggle || a)
-                            if (i !== ee.Keyboard && i !== ee.Touch || e !== Se.Down || t || !a ? i === ee.Touch && a && (e = Se.Toggle) : e = Se.Boost, te.sys.session.state !== Q.Menu || e !== Se.Left && e !== Se.Right) switch (e) {
-                                case Se.Toggle:
+                        if (s && (a = this.registerDoubleInput(e)), i !== te.Mouse && i !== te.Touch || e !== Te.Toggle || a)
+                            if (i !== te.Keyboard && i !== te.Touch || e !== Te.Down || t || !a ? i === te.Touch && a && (e = Te.Toggle) : e = Te.Boost, se.sys.session.state !== ee.Menu || e !== Te.Left && e !== Te.Right) switch (e) {
+                                case Te.Toggle:
                                     this.inputToggle();
                                     break;
-                                case Se.Settings:
+                                case Te.Settings:
                                     this.inputSettings();
                                     break;
-                                case Se.Reset:
-                                    Pe.sys.changeGameState(Q.Menu);
+                                case Te.Reset:
+                                    _e.sys.changeGameState(ee.Menu);
                                     break;
                                 default:
-                                    Te.sys.routeAction(e, t)
+                                    Ie.sys.routeAction(e, t)
                             } else switch (e) {
-                                case Se.Left:
-                                    Te.sys.changeCharacter(-1);
+                                case Te.Left:
+                                    Ie.sys.changeCharacter(-1);
                                     break;
-                                case Se.Right:
-                                    Te.sys.changeCharacter(1)
+                                case Te.Right:
+                                    Ie.sys.changeCharacter(1)
                             }
                     }
                     registerDoubleInput(e) {
@@ -7097,19 +7420,19 @@
                         return this.thisTime - this.lastTime <= this.doubleDelta && this.lastInput === e && (t = !0, e = void 0), this.lastTime = this.thisTime, this.lastInput = e, t
                     }
                     changeInputMethod(e) {
-                        te.sys.session.inputType === e || this.lastInputTime + 100 > Date.now() || (this.lastInputTime = Date.now(), te.sys.session.inputType = e, ge.sys.updateInputTypeUI())
+                        se.sys.session.inputType === e || this.lastInputTime + 100 > Date.now() || (this.lastInputTime = Date.now(), se.sys.session.inputType = e, ve.sys.updateInputTypeUI())
                     }
                     inputToggle() {
-                        const e = te.sys.session.state;
-                        e === Q.Play ? Pe.sys.changeGameState(Q.Pause) : e === Q.Pause || e === Q.Menu ? Pe.sys.changeGameState(Q.Play) : e === Q.Over && Pe.sys.changeGameState(Q.Menu)
+                        const e = se.sys.session.state;
+                        e === ee.Play ? _e.sys.changeGameState(ee.Pause) : e === ee.Pause || e === ee.Menu ? _e.sys.changeGameState(ee.Play) : e === ee.Over && _e.sys.changeGameState(ee.Menu)
                     }
                     inputSettings() {
-                        te.sys.session.state === Q.Play && Pe.sys.changeGameState(Q.Pause), document.dispatchEvent(new CustomEvent(Ke))
+                        se.sys.session.state === ee.Play && _e.sys.changeGameState(ee.Pause), document.dispatchEvent(new CustomEvent(Qe))
                     }
                     checkCheatCode(e) {
-                        const t = te.sys.session.inputType;
-                        if (te.sys.session.state !== Q.Menu) return;
-                        const s = t === ee.Keyboard ? this.codes.keyboard : this.codes.directional;
+                        const t = se.sys.session.inputType;
+                        if (se.sys.session.state !== ee.Menu) return;
+                        const s = t === te.Keyboard ? this.codes.keyboard : this.codes.directional;
                         this.codesPossible = this.codesPossible.filter((t => e === s[t.idx][t.pos])), s.filter((t => e === t[0])).forEach((e => {
                             this.codesPossible.push({
                                 idx: s.indexOf(e),
@@ -7129,39 +7452,39 @@
                                         this.cheat("safety"), t = "cheatcode";
                                         break;
                                     case 3:
-                                        Te.sys.changeCharacter(7, !0);
+                                        Ie.sys.changeCharacter(7, !0);
                                         break;
                                     case 4:
-                                        Te.sys.scale = 2
+                                        Ie.sys.scale = 2
                                 }
-                                ge.sys.sendNotification(t)
+                                ve.sys.sendNotification(t)
                             }
                         }))
                     }
                     cheat(e, t = !0) {
-                        const s = te.sys.game.cheat;
-                        if (t && te.sys.session.state === Q.Menu) switch (s.used = !0, s[e] = !0, e) {
+                        const s = se.sys.game.cheat;
+                        if (t && se.sys.session.state === ee.Menu) switch (s.used = !0, s[e] = !0, e) {
                             case "lives":
                             case "boosts":
-                                te.sys.game[e].current = 3;
+                                se.sys.game[e].current = 3;
                                 break;
                             case "safety":
-                                Te.sys.collectFriend()
+                                Ie.sys.collectFriend()
                         } else switch (s[e] = !1, e) {
                             case "boosts":
-                                te.sys.game[e].current = 0;
+                                se.sys.game[e].current = 0;
                                 break;
                             case "safety":
-                                Te.sys.removeFriend()
+                                Ie.sys.removeFriend()
                         }
-                        s.lives || s.boosts || s.safety || (s.used = !1), ge.sys.updateIcons()
+                        s.lives || s.boosts || s.safety || (s.used = !1), ve.sys.updateIcons()
                     }
                 }
-                Ce.sys = null;
-                class ke {
+                Pe.sys = null;
+                class Ee {
                     constructor() {
-                        if (this.indexList = void 0, this.buttonMap = void 0, this.last = void 0, this.vib = void 0, this.vibCurrent = void 0, this.timer = void 0, this.linkedPad = void 0, ke.sys) return ke.sys;
-                        ke.sys = this, window.addEventListener("gamepadconnected", (e => ke.sys.onGamepadConnected(e))), window.addEventListener("gamepaddisconnected", (e => ke.sys.onGamepadDisconnected(e))), this.indexList = [], this.buttonMap = ["a", "b", "x", "y", "lb", "rb", "lt", "rt", "select", "start", "lstick", "rstick", "up", "down", "left", "right", "home", "touchpad"], this.linkedPad = {
+                        if (this.indexList = void 0, this.buttonMap = void 0, this.last = void 0, this.vib = void 0, this.vibCurrent = void 0, this.timer = void 0, this.linkedPad = void 0, Ee.sys) return Ee.sys;
+                        Ee.sys = this, window.addEventListener("gamepadconnected", (e => Ee.sys.onGamepadConnected(e))), window.addEventListener("gamepaddisconnected", (e => Ee.sys.onGamepadDisconnected(e))), this.indexList = [], this.buttonMap = ["a", "b", "x", "y", "lb", "rb", "lt", "rt", "select", "start", "lstick", "rstick", "up", "down", "left", "right", "home", "touchpad"], this.linkedPad = {
                             index: void 0,
                             pad: void 0,
                             pressed: {}
@@ -7223,8 +7546,8 @@
                         this.vibCurrent = this.vib[e], this.timer = this.vibCurrent.dur
                     }
                     vibrateController() {
-                        const e = te.sys.session.inputType;
-                        if (e === ee.Xbox || e === ee.Ps) {
+                        const e = se.sys.session.inputType;
+                        if (e === te.Xbox || e === te.Ps) {
                             const e = this.vibCurrent,
                                 t = this.timer / e.dur;
                             this.linkedPad.pad.vibrationActuator.playEffect("dual-rumble", {
@@ -7236,17 +7559,17 @@
                         }
                     }
                     onGamepadConnected(e) {
-                        ke.sys.indexList.push(e.gamepad.index)
+                        Ee.sys.indexList.push(e.gamepad.index)
                     }
                     onGamepadDisconnected(e) {
-                        const t = ke.sys.indexList.indexOf(e.gamepad.index);
-                        t > -1 && ke.sys.indexList.splice(t, 1), this.linkedPad = {
+                        const t = Ee.sys.indexList.indexOf(e.gamepad.index);
+                        t > -1 && Ee.sys.indexList.splice(t, 1), this.linkedPad = {
                             index: void 0,
                             pad: void 0,
                             pressed: {}
                         };
-                        const s = te.sys.session.inputType;
-                        s !== ee.Xbox && s !== ee.Ps || Ce.sys.changeInputMethod(ee.Keyboard)
+                        const s = se.sys.session.inputType;
+                        s !== te.Xbox && s !== te.Ps || Pe.sys.changeInputMethod(te.Keyboard)
                     }
                     setController(e, t) {
                         this.linkedPad = {
@@ -7273,11 +7596,11 @@
                                 }
                     }
                     checkVibrations() {
-                        this.vibrateController(), this.timer -= 1e3 * te.sys.game.time.loop, this.timer <= 0 && this.setVibration()
+                        this.vibrateController(), this.timer -= 1e3 * se.sys.game.time.loop, this.timer <= 0 && this.setVibration()
                     }
                     changeControllerType(e) {
-                        const t = e.id.toLowerCase().includes("054c") ? ee.Ps : ee.Xbox;
-                        Ce.sys.changeInputMethod(t)
+                        const t = e.id.toLowerCase().includes("054c") ? te.Ps : te.Xbox;
+                        Pe.sys.changeInputMethod(t)
                     }
                     checkJoysticks(e) {
                         const t = .5,
@@ -7286,34 +7609,34 @@
                             a = e.axes[1] > t || e.axes[3] > t,
                             o = e.axes[1] < -.5 || e.axes[3] < -.5;
                         let n;
-                        if (s || i || o || a ? (this.changeControllerType(e), !o || s || i ? !a || s || i ? !i || o || a ? !s || o || a ? s && o ? n = Se.Right : s && a ? n = Se.DownRight : i && o ? n = Se.Left : i && a && (n = Se.DownLeft) : n = Se.Right : n = Se.Left : n = Se.Down : n = Se.Stop) : this.last = void 0, this.last === n) return null;
+                        if (s || i || o || a ? (this.changeControllerType(e), !o || s || i ? !a || s || i ? !i || o || a ? !s || o || a ? s && o ? n = Te.Right : s && a ? n = Te.DownRight : i && o ? n = Te.Left : i && a && (n = Te.DownLeft) : n = Te.Right : n = Te.Left : n = Te.Down : n = Te.Stop) : this.last = void 0, this.last === n) return null;
                         if (this.last = n, n)
-                            if (te.sys.session.flyoutActive) switch (n) {
-                                case Se.Stop:
+                            if (se.sys.session.flyoutActive) switch (n) {
+                                case Te.Stop:
                                     this.focusNextElement(-1);
                                     break;
-                                case Se.Down:
+                                case Te.Down:
                                     this.focusNextElement(1)
-                            } else Ce.sys.routeInput(n, !0, !1);
+                            } else Pe.sys.routeInput(n, !0, !1);
                         return n
                     }
                     checkButtons(e) {
                         function t(e) {
                             return "object" == typeof e ? e.pressed : 1 === e
                         }
-                        if (t(e.buttons[4]) && t(e.buttons[5])) return Ce.sys.routeInput(Se.Reset), this.linkedPad.pressed.lb = !0, this.linkedPad.pressed.rb = !0, null;
+                        if (t(e.buttons[4]) && t(e.buttons[5])) return Pe.sys.routeInput(Te.Reset), this.linkedPad.pressed.lb = !0, this.linkedPad.pressed.rb = !0, null;
                         let s;
                         const i = e.buttons.length;
                         for (let a = 0; a < i; a++)
                             if (t(e.buttons[a])) {
                                 if (this.linkedPad.pressed[this.buttonMap[a]]) return null;
-                                if (this.linkedPad.pressed[this.buttonMap[a]] = !0, this.changeControllerType(e), te.sys.session.flyoutActive && ["a", "b", "up", "down"].includes(this.buttonMap[a])) {
+                                if (this.linkedPad.pressed[this.buttonMap[a]] = !0, this.changeControllerType(e), se.sys.session.flyoutActive && ["a", "b", "up", "down"].includes(this.buttonMap[a])) {
                                     switch (this.buttonMap[a]) {
                                         case "a":
                                             document.activeElement.click();
                                             break;
                                         case "b":
-                                            Ce.sys.routeInput(Se.Settings, !1, !1);
+                                            Pe.sys.routeInput(Te.Settings, !1, !1);
                                             break;
                                         case "up":
                                             this.focusNextElement(-1);
@@ -7325,37 +7648,37 @@
                                 }
                                 switch (this.buttonMap[a]) {
                                     case "a":
-                                        s = Se.Toggle;
+                                        s = Te.Toggle;
                                         break;
                                     case "lb":
-                                        s = Se.Left;
+                                        s = Te.Left;
                                         break;
                                     case "rb":
-                                        s = Se.Right;
+                                        s = Te.Right;
                                         break;
                                     case "lt":
                                     case "rt":
-                                        s = Se.Boost;
+                                        s = Te.Boost;
                                         break;
                                     case "up":
-                                        s = Se.Stop;
+                                        s = Te.Stop;
                                         break;
                                     case "down":
-                                        s = Se.Down;
+                                        s = Te.Down;
                                         break;
                                     case "left":
-                                        s = Se.Left;
+                                        s = Te.Left;
                                         break;
                                     case "right":
-                                        s = Se.Right;
+                                        s = Te.Right;
                                         break;
                                     case "select":
                                     case "start":
                                     case "home":
                                     case "touchpad":
-                                        s = Se.Settings
+                                        s = Te.Settings
                                 }
-                                Ce.sys.routeInput(s, !1, !1), Ce.sys.checkCheatCode(s)
+                                Pe.sys.routeInput(s, !1, !1), Pe.sys.checkCheatCode(s)
                             } else this.linkedPad.pressed[this.buttonMap[a]] = !1;
                         return s
                     }
@@ -7365,11 +7688,11 @@
                         (t[s + e] || t[0]).focus()
                     }
                 }
-                ke.sys = null;
-                class Te extends me {
+                Ee.sys = null;
+                class Ie extends xe {
                     constructor(e, t, s, i) {
-                        if (super(e, t, s, i), this.speed = void 0, this.timer = void 0, this.dist = void 0, this.angle = void 0, this.dir = void 0, this.scale = void 0, this.swapped = void 0, this.trick = void 0, this.shadow = void 0, this.boostFx = void 0, this.previousGate = void 0, this.skins = void 0, Te.sys) return Te.sys;
-                        Te.sys = this, this.reset()
+                        if (super(e, t, s, i), this.speed = void 0, this.timer = void 0, this.dist = void 0, this.angle = void 0, this.dir = void 0, this.scale = void 0, this.swapped = void 0, this.trick = void 0, this.shadow = void 0, this.boostFx = void 0, this.previousGate = void 0, this.skins = void 0, Ie.sys) return Ie.sys;
+                        Ie.sys = this, this.reset()
                     }
                     reset() {
                         super.reset(), this.speed = {
@@ -7389,55 +7712,55 @@
                             render: [],
                             zoom: [.2, .5, 1, .5, .2],
                             poses: ["left", "left", "left", "downleft", "down", "downright", "right", "right", "right", "downright", "down", "downleft"]
-                        }, this.changeCharacter(te.sys.session.settings.character, !0)
+                        }, this.changeCharacter(se.sys.session.settings.character, !0)
                     }
                     move() {}
                     unlockForNewGame() {
-                        this.changeDirection("down"), ke.sys.setVibration("big")
+                        this.changeDirection("down"), Ee.sys.setVibration("big")
                     }
                     update() {
                         super.update(), this.speed.x = this.speed.current * -Math.cos(this.angle), this.speed.y = this.speed.current * -Math.sin(this.angle), this.checkBoundaries(), this.updateTrackers(), this.updateBoostFx(), "stop" === this.dir || this.timer.crash || this.updateSpeed()
                     }
                     checkBoundaries() {
-                        const e = te.sys.game.dist,
-                            t = te.sys.session.settings.mode;
+                        const e = se.sys.game.dist,
+                            t = se.sys.session.settings.mode;
                         switch (t) {
-                            case j.TimeTrial:
-                            case j.ZigZag:
-                                Math.abs(e.x) > be.sys.boundary[t] && this.bounce();
+                            case G.TimeTrial:
+                            case G.ZigZag:
+                                Math.abs(e.x) > ge.sys.boundary[t] && this.bounce();
                                 break;
-                            case j.Endless:
-                                e.y < 8e3 && e.x < -6400 && !Me.sys.swapBuilt && Me.sys.buildSwap(), !te.sys.game.highScore && e.unit > te.sys.session.bestScore.endless && !te.sys.game.cheat.used && (te.sys.game.highScore = !0, ge.sys.refreshDisplay(), e.unit > 100 && ge.sys.sendNotification("score"))
+                            case G.Endless:
+                                e.y < 8e3 && e.x < -6400 && !Le.sys.swapBuilt && Le.sys.buildSwap(), !se.sys.game.highScore && e.unit > se.sys.session.bestScore.endless && !se.sys.game.cheat.used && (se.sys.game.highScore = !0, ve.sys.refreshDisplay(), e.unit > 100 && ve.sys.sendNotification("score"))
                         }
                     }
                     changeCharacter(e, t = !1) {
-                        const s = be.sys.characterList[te.sys.session.settings.character];
+                        const s = ge.sys.characterList[se.sys.session.settings.character];
                         let i, a;
-                        t && (i = be.sys.characterList[e], be.sys.selectionList.includes(i) || be.sys.selectionList.push(i), a = be.sys.selectionList.indexOf(i));
-                        const o = be.sys.selectionList;
-                        t || (a = (o.length + be.sys.selectionList.indexOf(s) + e) % o.length, i = be.sys.selectionList[a]), this.skins.render = [];
+                        t && (i = ge.sys.characterList[e], ge.sys.selectionList.includes(i) || ge.sys.selectionList.push(i), a = ge.sys.selectionList.indexOf(i));
+                        const o = ge.sys.selectionList;
+                        t || (a = (o.length + ge.sys.selectionList.indexOf(s) + e) % o.length, i = ge.sys.selectionList[a]), this.skins.render = [];
                         const n = this.skins.zoom.length;
                         for (let e = 0; e < n; e++) {
                             const t = (o.length + a + (e - Math.floor(n / 2))) % o.length;
-                            this.skins.render[e] = be.sys.selectionList[t]
+                            this.skins.render[e] = ge.sys.selectionList[t]
                         }
-                        te.sys.session.settings.character = be.sys.characterList.indexOf(i), te.sys.saveSessionSettings(), be.sys.createPlayerSprite(), ke.sys.setVibration("small")
+                        se.sys.session.settings.character = ge.sys.characterList.indexOf(i), se.sys.saveSessionSettings(), ge.sys.createPlayerSprite(), Ee.sys.setVibration("small")
                     }
                     routeAction(e, t = !1) {
-                        if (!(te.sys.session.state !== Q.Play || this.timer.crash || "bounce" in this.dist || "air" in this.dist && e !== Se.Down)) switch (e) {
-                            case Se.Stop:
+                        if (!(se.sys.session.state !== ee.Play || this.timer.crash || "bounce" in this.dist || "air" in this.dist && e !== Te.Down)) switch (e) {
+                            case Te.Stop:
                                 this.stop();
                                 break;
-                            case Se.Down:
+                            case Te.Down:
                                 this.down();
                                 break;
-                            case Se.Left:
-                            case Se.Right:
-                            case Se.DownLeft:
-                            case Se.DownRight:
+                            case Te.Left:
+                            case Te.Right:
+                            case Te.DownLeft:
+                            case Te.DownRight:
                                 this.changeDirection(e, t);
                                 break;
-                            case Se.Boost:
+                            case Te.Boost:
                                 this.boost()
                         }
                     }
@@ -7469,35 +7792,35 @@
                         this.swapped && (e = "stop" === e ? "crash" : "chase"), this.pose = e
                     }
                     updateTrackers() {
-                        this.timer.crash && (this.timer.crash -= te.sys.game.time.loop * te.sys.game.time.scale, this.timer.crash < 0 && (this.timer.crash = void 0, this.stop(), ve.sys.reset()));
+                        this.timer.crash && (this.timer.crash -= se.sys.game.time.loop * se.sys.game.time.scale, this.timer.crash < 0 && (this.timer.crash = void 0, this.stop(), ke.sys.reset()));
                         for (const e in this.dist) this.dist[e] -= this.speed.current, this.dist[e] <= 0 && (delete this.dist[e], this.endDistTracker(e))
                     }
                     updateSpeed() {
                         let e = 1;
                         const t = this.speed;
                         ("air" in this.dist || "boost" in this.dist) && (e = 8), this.setMinPlayerSpeed();
-                        const s = t.accel * e * te.sys.game.time.scale;
-                        this.speed.raw = t.raw <= t.max ? t.raw += s : t.raw -= s, this.speed.current = t.raw * te.sys.game.time.scale
+                        const s = t.accel * e * se.sys.game.time.scale;
+                        this.speed.raw = t.raw <= t.max ? t.raw += s : t.raw -= s, this.speed.current = t.raw * se.sys.game.time.scale
                     }
                     stop() {
-                        this.changeDirection("stop"), this.stopPlayerSpeed(), ke.sys.setVibration("tiny")
+                        this.changeDirection("stop"), this.stopPlayerSpeed(), Ee.sys.setVibration("tiny")
                     }
                     down() {
-                        "air" in this.dist ? (this.trick = this.trick % 2 + 1, 1 === this.trick ? this.changePose("air1") : this.changePose("air2"), ke.sys.setVibration("small")) : this.changeDirection("down")
+                        "air" in this.dist ? (this.trick = this.trick % 2 + 1, 1 === this.trick ? this.changePose("air1") : this.changePose("air2"), Ee.sys.setVibration("small")) : this.changeDirection("down")
                     }
                     slow() {
-                        this.speed.raw *= .7, ke.sys.setVibration("slow")
+                        this.speed.raw *= .7, Ee.sys.setVibration("slow")
                     }
                     crash() {
                         if ("immune" in this.dist) return;
-                        const e = te.sys.game.cheat;
-                        te.sys.game.friend && !e.safety && (this.removeFriend(), Me.sys.buildCrashedFriend(this.x + 48 * (Math.random() - .5), this.y + 32)), e.lives || e.safety || (te.sys.game.lives.current -= 1), ge.sys.refreshDisplay(), te.sys.game.lives.current <= 0 ? this.lose() : (this.timer.crash = 1, this.stopPlayerSpeed(), this.dist.immune = 96, this.changePose("crash"), ke.sys.setVibration("crash"))
+                        const e = se.sys.game.cheat;
+                        se.sys.game.friend && !e.safety && (this.removeFriend(), Le.sys.buildCrashedFriend(this.x + 48 * (Math.random() - .5), this.y + 32)), e.lives || e.safety || (se.sys.game.lives.current -= 1), ve.sys.refreshDisplay(), se.sys.game.lives.current <= 0 ? this.lose() : (this.timer.crash = 1, this.stopPlayerSpeed(), this.dist.immune = 96, this.changePose("crash"), Ee.sys.setVibration("crash"))
                     }
                     air(e) {
-                        this.timer.crash || (this.changeDirection("down"), "boost" in this.dist && (this.dist.boost += e), this.dist.air = e, this.trick = te.sys.rand(1, 2), this.speed.max = this.speed.base + this.speed.airAdd, this.shadow = 0, this.down(), ke.sys.setVibration("ramp"))
+                        this.timer.crash || (this.changeDirection("down"), "boost" in this.dist && (this.dist.boost += e), this.dist.air = e, this.trick = se.sys.rand(1, 2), this.speed.max = this.speed.base + this.speed.airAdd, this.shadow = 0, this.down(), Ee.sys.setVibration("ramp"))
                     }
                     boost(e = !1) {
-                        !e && (te.sys.game.boosts.current <= 0 || "boost" in this.dist) || (e || te.sys.game.cheat.boosts || (te.sys.game.boosts.current -= 1), this.dist.boost = 2e3, this.speed.max = this.speed.base + this.speed.boostAdd, ge.sys.refreshDisplay(), ke.sys.setVibration("boost"))
+                        !e && (se.sys.game.boosts.current <= 0 || "boost" in this.dist) || (e || se.sys.game.cheat.boosts || (se.sys.game.boosts.current -= 1), this.dist.boost = 2e3, this.speed.max = this.speed.base + this.speed.boostAdd, ve.sys.refreshDisplay(), Ee.sys.setVibration("boost"))
                     }
                     bounce() {
                         this.spin(), this.dist.bounce = 32
@@ -7505,16 +7828,16 @@
                     endDistTracker(e) {
                         switch (e) {
                             case "air":
-                                this.dist.immune = 256, ve.sys.reset(), "boost" in this.dist || (this.speed.max = this.speed.base), this.down(), ke.sys.setVibration("slow");
+                                this.dist.immune = 256, ke.sys.reset(), "boost" in this.dist || (this.speed.max = this.speed.base), this.down(), Ee.sys.setVibration("slow");
                                 break;
                             case "boost":
-                                this.speed.max = this.speed.base, ke.sys.setVibration("tiny")
+                                this.speed.max = this.speed.base, Ee.sys.setVibration("tiny")
                         }
                     }
                     swap() {
-                        this.removeFriend(!0), this.swapped = !0, this.changePose("chase"), this.speed.base += 3, this.speed.max = this.speed.base, this.hitbox.x -= 32, this.hitbox.y -= 32, this.hitbox.w += 64, this.hitbox.h += 64, Me.sys.top.filter((e => "lure" === e.type)).forEach((e => {
-                            Me.sys.buildObject("foe", e.x, e.y, "chase"), e.sleep = !0
-                        })), te.sys.game.cheat.used = !0, ge.sys.sendNotification("cheat"), ke.sys.setVibration("big")
+                        this.removeFriend(!0), this.swapped = !0, this.changePose("chase"), this.speed.base += 3, this.speed.max = this.speed.base, this.hitbox.x -= 32, this.hitbox.y -= 32, this.hitbox.w += 64, this.hitbox.h += 64, Le.sys.top.filter((e => "lure" === e.type)).forEach((e => {
+                            Le.sys.buildObject("foe", e.x, e.y, "chase"), e.sleep = !0
+                        })), se.sys.game.cheat.used = !0, ve.sys.sendNotification("cheat"), Ee.sys.setVibration("big")
                     }
                     spin() {
                         const e = Math.random() > .5;
@@ -7530,37 +7853,37 @@
                             default:
                                 this.changeDirection(e ? "left" : "right", !0)
                         }
-                        this.speed.raw *= .9, ke.sys.setVibration("slow")
+                        this.speed.raw *= .9, Ee.sys.setVibration("slow")
                     }
                     collectBoost() {
-                        te.sys.game.boosts.current < te.sys.game.boosts.max && (te.sys.game.boosts.current += 1, ge.sys.refreshDisplay()), ke.sys.setVibration("pickup")
+                        se.sys.game.boosts.current < se.sys.game.boosts.max && (se.sys.game.boosts.current += 1, ve.sys.refreshDisplay()), Ee.sys.setVibration("pickup")
                     }
                     collectLife() {
-                        te.sys.game.lives.current < te.sys.game.lives.max && (te.sys.game.lives.current += 1, ge.sys.refreshDisplay()), ke.sys.setVibration("pickup")
+                        se.sys.game.lives.current < se.sys.game.lives.max && (se.sys.game.lives.current += 1, ve.sys.refreshDisplay()), Ee.sys.setVibration("pickup")
                     }
                     collectCoin() {
-                        te.sys.game.coins += 1, ke.sys.setVibration("pickup")
+                        se.sys.game.coins += 1, Ee.sys.setVibration("pickup")
                     }
                     collectFriend() {
-                        te.sys.game.friend = !0, be.sys.createPlayerSprite(), te.sys.session.settings.mode === j.Endless && (te.sys.game.shields.current = te.sys.game.shields.max, ge.sys.refreshDisplay()), ke.sys.setVibration("pickup")
+                        se.sys.game.friend = !0, ge.sys.createPlayerSprite(), se.sys.session.settings.mode === G.Endless && (se.sys.game.shields.current = se.sys.game.shields.max, ve.sys.refreshDisplay()), Ee.sys.setVibration("pickup")
                     }
                     removeFriend(e = !1) {
-                        !te.sys.game.friend || te.sys.game.cheat.safety || e || (te.sys.game.friend = !1, be.sys.createPlayerSprite(), te.sys.game.shields.current = 0, ge.sys.refreshDisplay())
+                        !se.sys.game.friend || se.sys.game.cheat.safety || e || (se.sys.game.friend = !1, ge.sys.createPlayerSprite(), se.sys.game.shields.current = 0, ve.sys.refreshDisplay())
                     }
                     useShield() {
-                        te.sys.game.cheat.safety || (te.sys.game.shields.current -= 1, ge.sys.refreshDisplay(), ke.sys.setVibration("small"))
+                        se.sys.game.cheat.safety || (se.sys.game.shields.current -= 1, ve.sys.refreshDisplay(), Ee.sys.setVibration("small"))
                     }
                     lose() {
-                        te.sys.game.lives.current = 0, te.sys.game.shields.current = 0, this.dist.immune = 0, this.stopPlayerSpeed(), this.changePose("crash"), this.boostFx = [], Pe.sys.changeGameState(Q.Over), ke.sys.setVibration("big")
+                        se.sys.game.lives.current = 0, se.sys.game.shields.current = 0, this.dist.immune = 0, this.stopPlayerSpeed(), this.changePose("crash"), this.boostFx = [], _e.sys.changeGameState(ee.Over), Ee.sys.setVibration("big")
                     }
                     finishline() {
-                        te.sys.game.finish = !0, this.stopPlayerSpeed(), this.changePose("stop"), this.boostFx = [], Pe.sys.changeGameState(Q.Over), ke.sys.setVibration("big")
+                        se.sys.game.finish = !0, this.stopPlayerSpeed(), this.changePose("stop"), this.boostFx = [], _e.sys.changeGameState(ee.Over), Ee.sys.setVibration("big")
                     }
                     passGate(e) {
-                        e - 1 === this.previousGate && (te.sys.game.gates += 1), this.previousGate = e, te.sys.saveGameStats(), ge.sys.refreshDisplay(), ke.sys.setVibration("small")
+                        e - 1 === this.previousGate && (se.sys.game.gates += 1), this.previousGate = e, se.sys.saveGameStats(), ve.sys.refreshDisplay(), Ee.sys.setVibration("small")
                     }
                     failGate(e) {
-                        te.sys.game.highScore && (ge.sys.sendNotification("score"), te.sys.game.highScore = !1), te.sys.game.gates = 0, this.previousGate = e, ge.sys.refreshDisplay(), ke.sys.setVibration("slow")
+                        se.sys.game.highScore && (ve.sys.sendNotification("score"), se.sys.game.highScore = !1), se.sys.game.gates = 0, this.previousGate = e, ve.sys.refreshDisplay(), Ee.sys.setVibration("slow")
                     }
                     stopPlayerSpeed() {
                         this.speed.current = 0, this.speed.raw = 0, this.speed.max = 0, this.speed.x = 0, this.speed.y = 0
@@ -7570,7 +7893,7 @@
                     }
                     updateBoostFx() {
                         if (this.boostFx.length > 0 && (this.boostFx.forEach((e => {
-                                e.start.x -= .8 * this.speed.x, e.end.x -= this.speed.x, e.start.y -= .8 * this.speed.y, e.end.y -= this.speed.y, e.time += te.sys.game.time.loop
+                                e.start.x -= .8 * this.speed.x, e.end.x -= this.speed.x, e.start.y -= .8 * this.speed.y, e.end.y -= this.speed.y, e.time += se.sys.game.time.loop
                             })), this.boostFx = this.boostFx.filter((e => e.time < .5))), "boost" in this.dist && this.speed.current > 0) {
                             const e = 16 - 32 * Math.random();
                             this.boostFx.push({
@@ -7587,11 +7910,11 @@
                         }
                     }
                     renderCharacterSelection() {
-                        const e = te.sys.game.time.elapsed,
+                        const e = se.sys.game.time.elapsed,
                             t = this.skins.render.length,
                             s = Math.floor(t / 2),
-                            i = Math.floor(e * be.sys.sheet.player.fps) % this.skins.poses.length,
-                            a = de.sys.ctx;
+                            i = Math.floor(e * ge.sys.sheet.player.fps) % this.skins.poses.length,
+                            a = pe.sys.ctx;
                         a.save();
                         for (let o = 0; o < t; o++) {
                             let t = 80,
@@ -7600,27 +7923,27 @@
                             let l = this.skins.poses[i];
                             o !== s - 1 && o !== s + 1 || (t = 96), a.globalAlpha = r;
                             const h = this.skins.render[o];
-                            if (o !== s) l = "down", de.sys.drawPlayerMenu(h, l, te.sys.session.x + t * (o - s), te.sys.session.y, n + r);
+                            if (o !== s) l = "down", pe.sys.drawPlayerMenu(h, l, se.sys.session.x + t * (o - s), se.sys.session.y, n + r);
                             else {
                                 n = this.scale;
-                                te.sys.game.shields.current / te.sys.game.shields.max > 0 && de.sys.drawShield(this.x, this.y + 16), de.sys.drawPlayerSprite(l, e, te.sys.session.x + t * (o - s), te.sys.session.y, n + r)
+                                se.sys.game.shields.current / se.sys.game.shields.max > 0 && pe.sys.drawShield(this.x, this.y + 16), pe.sys.drawPlayerSprite(l, e, se.sys.session.x + t * (o - s), se.sys.session.y, n + r)
                             }
                         }
                         a.restore()
                     }
                     draw() {
-                        if (this.boostFx.length > 0 && de.sys.drawBoost(this.boostFx), this.swapped) de.sys.drawLayer("foe", this.pose, this.x, this.y, this.time, this.anim);
+                        if (this.boostFx.length > 0 && pe.sys.drawBoost(this.boostFx), this.swapped) pe.sys.drawLayer("foe", this.pose, this.x, this.y, this.time, this.anim);
                         else {
-                            const e = te.sys.game.time.elapsed;
-                            te.sys.game.shields.current / te.sys.game.shields.max > 0 && de.sys.drawShield(this.x, this.y + 16), "air" in this.dist && (this.dist.air < 256 ? this.shadow = this.dist.air / 4 : this.shadow < 64 ? this.shadow += 3 * te.sys.game.time.scale : this.shadow = 64, de.sys.drawShadow(this.x, this.y + 16, this.shadow)), "immune" in this.dist && (de.sys.ctx.save(), de.sys.ctx.globalAlpha = Math.floor(4 * e) % 2 == 0 ? .4 : .7), de.sys.drawPlayerSprite(this.pose, e, this.x, this.y, this.scale), "immune" in this.dist && de.sys.ctx.restore()
+                            const e = se.sys.game.time.elapsed;
+                            se.sys.game.shields.current / se.sys.game.shields.max > 0 && pe.sys.drawShield(this.x, this.y + 16), "air" in this.dist && (this.dist.air < 256 ? this.shadow = this.dist.air / 4 : this.shadow < 64 ? this.shadow += 3 * se.sys.game.time.scale : this.shadow = 64, pe.sys.drawShadow(this.x, this.y + 16, this.shadow)), "immune" in this.dist && (pe.sys.ctx.save(), pe.sys.ctx.globalAlpha = Math.floor(4 * e) % 2 == 0 ? .4 : .7), pe.sys.drawPlayerSprite(this.pose, e, this.x, this.y, this.scale), "immune" in this.dist && pe.sys.ctx.restore()
                         }
                     }
                 }
-                Te.sys = null;
-                class Me {
+                Ie.sys = null;
+                class Le {
                     constructor() {
-                        if (this.all = void 0, this.top = void 0, this.btm = void 0, this.npc = void 0, this.foe = void 0, this.endingFoe = void 0, this.swapBuilt = void 0, this.sleeping = void 0, this.prevClusters = void 0, this.startingObjects = void 0, this.endless = void 0, this.timetrial = void 0, this.zigzag = void 0, this.grid = void 0, Me.sys) return Me.sys;
-                        Me.sys = this, new ce, new Te("player", te.sys.session.x, te.sys.session.y, "down"), this.reset(), this.createSleepingObjects()
+                        if (this.all = void 0, this.top = void 0, this.btm = void 0, this.npc = void 0, this.foe = void 0, this.endingFoe = void 0, this.swapBuilt = void 0, this.sleeping = void 0, this.prevClusters = void 0, this.startingObjects = void 0, this.endless = void 0, this.timetrial = void 0, this.zigzag = void 0, this.grid = void 0, Le.sys) return Le.sys;
+                        Le.sys = this, new de, new Ie("player", se.sys.session.x, se.sys.session.y, "down"), this.reset(), this.createSleepingObjects()
                     }
                     reset() {
                         void 0 === this.sleeping ? this.sleeping = [] : this.sleeping = this.sleeping.concat(this.top).concat(this.btm).concat(this.npc).concat(this.foe), this.grid = {
@@ -7686,10 +8009,10 @@
                             },
                             counter: 0,
                             clusterList: ["small1", "small2", "small3", "small4", "small5", "small6", "small7", "small8", "small9", "small10", "small11", "small12", "small13", "small14", "small15", "small16"]
-                        }, this.all = [], this.top = [], this.btm = [], this.npc = [], this.foe = [], this.prevClusters = [], this.swapBuilt = !1, this.endingFoe = void 0, this.calcClusterSlots(), Te.sys.reset(), this.all.push(Te.sys)
+                        }, this.all = [], this.top = [], this.btm = [], this.npc = [], this.foe = [], this.prevClusters = [], this.swapBuilt = !1, this.endingFoe = void 0, this.calcClusterSlots(), Ie.sys.reset(), this.all.push(Ie.sys)
                     }
                     calcClusterSlots() {
-                        this.grid.slots = 2 * Math.ceil((te.sys.session.h - te.sys.session.y) / this.grid.gap) + 3
+                        this.grid.slots = 2 * Math.ceil((se.sys.session.h - se.sys.session.y) / this.grid.gap) + 3
                     }
                     createSleepingObjects() {
                         this.startingObjects = {
@@ -7725,46 +8048,46 @@
                             }
                     }
                     createNpc() {
-                        const e = te.sys.rand(1, 13),
-                            t = (Math.random() / 2 + .25) * te.sys.session.w,
-                            s = e < Te.sys.speed.raw ? te.sys.session.h + 24 : -24;
+                        const e = se.sys.rand(1, 13),
+                            t = (Math.random() / 2 + .25) * se.sys.session.w,
+                            s = e < Ie.sys.speed.raw ? se.sys.session.h + 24 : -24;
                         this.buildObject("npc", t, s, "left").speed.max = e
                     }
                     createFoe() {
-                        const e = (Math.random() / 2 + .25) * te.sys.session.w;
-                        this.buildObject("foe", e, -32, "chase").speed.raw = Te.sys.speed.raw + 1
+                        const e = (Math.random() / 2 + .25) * se.sys.session.w;
+                        this.buildObject("foe", e, -32, "chase").speed.raw = Ie.sys.speed.raw + 1
                     }
                     buildStartScene() {
-                        switch (te.sys.session.settings.mode) {
-                            case j.Endless:
+                        switch (se.sys.session.settings.mode) {
+                            case G.Endless:
                                 this.createEndlessStart();
                                 break;
-                            case j.TimeTrial:
+                            case G.TimeTrial:
                                 this.createTimeTrialAct();
                                 break;
-                            case j.ZigZag:
+                            case G.ZigZag:
                                 this.createZigZagStart()
                         }
                     }
                     update() {
-                        switch (this.putToSleep(), te.sys.session.settings.mode) {
-                            case j.Endless:
+                        switch (this.putToSleep(), se.sys.session.settings.mode) {
+                            case G.Endless:
                                 this.updateEndlessMode();
                                 break;
-                            case j.TimeTrial:
+                            case G.TimeTrial:
                                 this.updateTimeTrialMode();
                                 break;
-                            case j.ZigZag:
+                            case G.ZigZag:
                                 this.updateZigZagMode()
                         }
                         this.mergeAll()
                     }
                     nextReady(e, t = !0) {
                         let s;
-                        return s = t ? te.sys.game.dist.unit : te.sys.game.dist.y + (te.sys.session.h - te.sys.session.y), e.next < s && (e.next += e.inc, !0)
+                        return s = t ? se.sys.game.dist.unit : se.sys.game.dist.y + (se.sys.session.h - se.sys.session.y), e.next < s && (e.next += e.inc, !0)
                     }
                     calcSpawnHeight(e) {
-                        return e - te.sys.game.dist.y + te.sys.session.y
+                        return e - se.sys.game.dist.y + se.sys.session.y
                     }
                     updateEndlessMode() {
                         this.nextReady(this.endless.row, !1) && this.createEndlessRow(), this.nextReady(this.endless.foe) && this.createFoe(), this.nextReady(this.endless.npc) && this.createNpc()
@@ -7776,10 +8099,10 @@
                         this.nextReady(this.zigzag.row, !1) && this.createZigZagGate()
                     }
                     createEndlessStart() {
-                        this.buildCluster("endlessStarts", te.sys.session.x, te.sys.session.y + 128)
+                        this.buildCluster("endlessStarts", se.sys.session.x, se.sys.session.y + 128)
                     }
                     createEndlessRow() {
-                        const e = Te.sys,
+                        const e = Ie.sys,
                             t = this.endless,
                             s = this.calcSpawnHeight(t.row.next),
                             i = Math.floor(this.grid.slots / 2);
@@ -7789,13 +8112,13 @@
                             if (0 === a)
                                 if (i = 0, o = 0, "air" in e.dist) n = "allPassive";
                                 else {
-                                    if (this.nextReady(t.checkpoint)) return void this.buildCheckpoint(te.sys.session.x, s);
+                                    if (this.nextReady(t.checkpoint)) return void this.buildCheckpoint(se.sys.session.x, s);
                                     this.nextReady(t.life) ? n = "endlessLives" : this.nextReady(t.friend) ? n = "endlessFriends" : this.nextReady(t.boost) ? n = "endlessBoosts" : this.nextReady(t.ramp) ? n = "endlessRamps" : this.nextReady(t.lure) && (n = "endlessLures")
                                 }
-                            else i = te.sys.rand(-20, 20) * this.grid.size, o = te.sys.rand(0, 32) * this.grid.size;
+                            else i = se.sys.rand(-20, 20) * this.grid.size, o = se.sys.rand(0, 32) * this.grid.size;
                             let r = 0;
                             "left" === e.dir || "downleft" === e.dir ? r = -this.grid.gap / 4 : "right" !== e.dir && "downright" !== e.dir || (r = this.grid.gap / 4);
-                            const l = te.sys.session.x + a * this.grid.gap + i + r,
+                            const l = se.sys.session.x + a * this.grid.gap + i + r,
                                 h = s + o;
                             this.buildCluster(n, l, h), this.buildEndlessRandomSnags(l, h)
                         }
@@ -7811,33 +8134,33 @@
                             o = a.length;
                         for (let s = 0; s < o; s++) {
                             if (Math.random() < .33) continue;
-                            const i = a[s][0] + te.sys.rand(-8, 8) * this.grid.size,
-                                o = a[s][1] + te.sys.rand(-8, 8) * this.grid.size;
+                            const i = a[s][0] + se.sys.rand(-8, 8) * this.grid.size,
+                                o = a[s][1] + se.sys.rand(-8, 8) * this.grid.size;
                             let n = "snag";
-                            Math.random() < .5 && (n = te.sys.randIndex(Object.keys(ce.sys.spawnSingle)));
-                            const r = ce.sys.spawnSingle[n],
-                                l = te.sys.randIndex(r);
+                            Math.random() < .5 && (n = se.sys.randIndex(Object.keys(de.sys.spawnSingle)));
+                            const r = de.sys.spawnSingle[n],
+                                l = se.sys.randIndex(r);
                             this.buildObject(n, e + i, t + o, l)
                         }
                     }
                     createTimeTrialAct() {
                         const e = this.timetrial.clusterList[this.timetrial.counter],
-                            t = te.sys.session.x - te.sys.game.dist.x,
+                            t = se.sys.session.x - se.sys.game.dist.x,
                             s = this.calcSpawnHeight(this.timetrial.row.next);
                         this.buildCluster("timetrialScenes", t, s, e), this.timetrial.counter += 1
                     }
                     createZigZagStart() {
-                        this.buildCluster("zigzagGates", te.sys.session.x, te.sys.session.y + 512, "gateFirst"), this.zigzag.counter += 1
+                        this.buildCluster("zigzagGates", se.sys.session.x, se.sys.session.y + 512, "gateFirst"), this.zigzag.counter += 1
                     }
                     createZigZagGate() {
-                        const e = te.sys.session.x - te.sys.game.dist.x,
+                        const e = se.sys.session.x - se.sys.game.dist.x,
                             t = this.calcSpawnHeight(this.zigzag.row.next),
                             s = this.zigzag.counter % 2 != 0;
                         s ? this.buildCluster("zigzagGates", e - 320, t, "gateLeft") : this.buildCluster("zigzagGates", e + 320, t, "gateRight"), this.zigzag.counter += 1, this.createGateClusters(e, t, s)
                     }
                     createGateClusters(e, t, s) {
                         const i = s ? e + 64 : e - 64;
-                        this.buildCluster("allNormal", i, t - 128, te.sys.randIndex(this.zigzag.clusterList));
+                        this.buildCluster("allNormal", i, t - 128, se.sys.randIndex(this.zigzag.clusterList));
                         const a = t + .5 * this.zigzag.row.inc;
                         if (this.buildCluster("zigzagGateScenes", e, a), this.nextReady(this.zigzag.life)) this.buildObject("life", e, a, "life");
                         else if (this.nextReady(this.zigzag.boost)) this.buildObject("boost", e, a, "boost");
@@ -7847,7 +8170,7 @@
                             this.buildObject(t, e, a, t + "1")
                         }
                         const o = t + .25 * this.zigzag.row.inc;
-                        this.buildCluster("allNormal", e - 560, o + te.sys.rand(0, 32) * this.grid.size, te.sys.randIndex(this.zigzag.clusterList)), this.buildCluster("allNormal", e + 560, o + te.sys.rand(0, 32) * this.grid.size, te.sys.randIndex(this.zigzag.clusterList))
+                        this.buildCluster("allNormal", e - 560, o + se.sys.rand(0, 32) * this.grid.size, se.sys.randIndex(this.zigzag.clusterList)), this.buildCluster("allNormal", e + 560, o + se.sys.rand(0, 32) * this.grid.size, se.sys.randIndex(this.zigzag.clusterList))
                     }
                     confirmGate(e) {
                         this.all.filter((t => t.gateId === e)).forEach((e => {
@@ -7861,10 +8184,10 @@
                     }
                     buildCluster(e, t, s, i) {
                         if (!i) {
-                            const t = Object.keys(ce.sys.library[e]).filter((e => !this.prevClusters.includes(e)));
-                            i = te.sys.randIndex(t)
+                            const t = Object.keys(de.sys.library[e]).filter((e => !this.prevClusters.includes(e)));
+                            i = se.sys.randIndex(t)
                         }
-                        const a = ce.sys.library[e][i];
+                        const a = de.sys.library[e][i];
                         this.prevClusters.unshift(i), this.prevClusters.length > 14 && this.prevClusters.pop();
                         for (const e in a)
                             if (a.hasOwnProperty(e)) {
@@ -7875,10 +8198,10 @@
                                     let n;
                                     if (o.length > 2) {
                                         const t = o[2];
-                                        n = "string" == typeof t ? te.sys.randIndex(ce.sys.legend[e][t]) : t[0]
+                                        n = "string" == typeof t ? se.sys.randIndex(de.sys.legend[e][t]) : t[0]
                                     } else {
-                                        const t = this.randKey(ce.sys.legend[e], !0);
-                                        n = te.sys.randIndex(ce.sys.legend[e][t])
+                                        const t = this.randKey(de.sys.legend[e], !0);
+                                        n = se.sys.randIndex(de.sys.legend[e][t])
                                     }
                                     const r = t + o[0] * this.grid.size,
                                         l = s + o[1] * this.grid.size;
@@ -7896,20 +8219,20 @@
                         }
                     }
                     buildCrashedFriend(e, t) {
-                        this.buildObject("friend", e, t, "crash").hit = !0, this.endless.friend.next = te.sys.game.dist.unit + this.endless.friend.inc
+                        this.buildObject("friend", e, t, "crash").hit = !0, this.endless.friend.next = se.sys.game.dist.unit + this.endless.friend.inc
                     }
                     buildCheckpoint(e, t) {
-                        this.endless.row.next += this.endless.row.inc, this.top = this.sleep(this.top, -64, te.sys.session.h + 64), this.buildCluster("endlessCheckpoints", e, t)
+                        this.endless.row.next += this.endless.row.inc, this.top = this.sleep(this.top, -64, se.sys.session.h + 64), this.buildCluster("endlessCheckpoints", e, t)
                     }
                     buildSwap() {
-                        this.swapBuilt = !0, this.endless.row.next += 1280, this.top = this.sleep(this.top, -64, te.sys.session.h + 64), this.buildCluster("endlessSwap", te.sys.session.x - (te.sys.session.h - te.sys.session.y) - 256, te.sys.session.h + 256)
+                        this.swapBuilt = !0, this.endless.row.next += 1280, this.top = this.sleep(this.top, -64, se.sys.session.h + 64), this.buildCluster("endlessSwap", se.sys.session.x - (se.sys.session.h - se.sys.session.y) - 256, se.sys.session.h + 256)
                     }
                     buildObject(e, t, s, i) {
-                        t = Math.floor(t) + (te.sys.game.dist.x - Math.floor(te.sys.game.dist.x)), s = Math.floor(s) + (te.sys.game.dist.y - Math.floor(te.sys.game.dist.y));
+                        t = Math.floor(t) + (se.sys.game.dist.x - Math.floor(se.sys.game.dist.x)), s = Math.floor(s) + (se.sys.game.dist.y - Math.floor(se.sys.game.dist.y));
                         let a = this.wake(e, t, s, i);
                         switch (a || (a = this.createObject(e, t, s, i)), a.type) {
                             case "wall":
-                                !["f1", "f2", "f3"].includes(i) && Math.random() < .5 && (a.decor = te.sys.randIndex(["a", "b", "c", "d", "e", "f", "g", "h"]));
+                                !["f1", "f2", "f3"].includes(i) && Math.random() < .5 && (a.decor = se.sys.randIndex(["a", "b", "c", "d", "e", "f", "g", "h"]));
                                 break;
                             case "ambient":
                                 a.anim = "hidden";
@@ -7920,7 +8243,7 @@
                                 a.gateId = this.zigzag.counter
                         }
                         a.time = Math.random();
-                        switch (be.sys.sheet[e].group) {
+                        switch (ge.sys.sheet[e].group) {
                             case "top":
                                 this.top.push(a);
                                 break;
@@ -7939,13 +8262,13 @@
                         switch (e) {
                             case "gate":
                             case "swap":
-                                return new ue(e, t, s);
+                                return new Ve(e, t, s);
                             case "foe":
-                                return new fe(e, t, s, i);
+                                return new Se(e, t, s, i);
                             case "npc":
-                                return new ye(e, t, s, i);
+                                return new Me(e, t, s, i);
                             default:
-                                return new me(e, t, s, i)
+                                return new xe(e, t, s, i)
                         }
                     }
                     mergeAll() {
@@ -7954,7 +8277,7 @@
                         function t(e, t) {
                             return e.hitbox.y + e.hitbox.h - (t.hitbox.y + t.hitbox.h)
                         }
-                        "air" in Te.sys.dist ? (e.sort(((e, s) => t(e, s))), e.push(Te.sys)) : (e.push(Te.sys), e.sort(((e, s) => t(e, s)))), this.all = this.btm.concat(e)
+                        "air" in Ie.sys.dist ? (e.sort(((e, s) => t(e, s))), e.push(Ie.sys)) : (e.push(Ie.sys), e.sort(((e, s) => t(e, s)))), this.all = this.btm.concat(e)
                     }
                     wake(e, t, s, i) {
                         let a;
@@ -7969,7 +8292,7 @@
                         return null
                     }
                     putToSleep() {
-                        this.top = this.sleep(this.top), this.btm = this.sleep(this.btm), this.npc = this.sleep(this.npc, -64, te.sys.session.h + 64), this.foe = this.sleep(this.foe, -256)
+                        this.top = this.sleep(this.top), this.btm = this.sleep(this.btm), this.npc = this.sleep(this.npc, -64, se.sys.session.h + 64), this.foe = this.sleep(this.foe, -256)
                     }
                     sleep(e, t = -64, s = 1e4) {
                         function i(e) {
@@ -7979,24 +8302,24 @@
                         return this.sleeping = this.sleeping.concat(a), e.filter((e => i(e)))
                     }
                 }
-                Me.sys = null;
-                class Ie {
+                Le.sys = null;
+                class De {
                     constructor() {
-                        if (Ie.sys) return Ie.sys;
-                        Ie.sys = this
+                        if (De.sys) return De.sys;
+                        De.sys = this
                     }
                     update() {
                         this.checkCollisions()
                     }
                     checkCollisions() {
-                        const e = Te.sys,
+                        const e = Ie.sys,
                             t = "air" in e.dist,
                             s = "boost" in e.dist,
-                            i = this.filterVisible(Me.sys.top.concat(Me.sys.btm)),
+                            i = this.filterVisible(Le.sys.top.concat(Le.sys.btm)),
                             a = i.length;
 
                         function o(e, t) {
-                            if (!(e.y < 16) && Ie.sys.collision(t, e) && !t.objectsHit.includes(e)) switch (t.objectsHit.push(e), e.type) {
+                            if (!(e.y < 16) && De.sys.collision(t, e) && !t.objectsHit.includes(e)) switch (t.objectsHit.push(e), e.type) {
                                 case "wall":
                                 case "snag":
                                 case "snagsml":
@@ -8011,9 +8334,9 @@
                         }
                         for (let n = 0; n < a; n++) {
                             const a = i[n];
-                            if (!this.collision(e, a) || a.hit || t) "gate" === a.type && !a.hit && a.y < e.y ? (e.failGate(a.gateId), Me.sys.denyGate(a.gateId), a.hit = !0) : "ambient" === a.type && "hidden" === a.anim && a.y + 32 < e.y ? (a.anim = "oneshot", a.time = 0) : "lure" === a.type && a.hit && a.y + 192 < e.y && (Me.sys.buildObject("foe", a.x, a.y + 32, "chase"), a.sleep = !0);
+                            if (!this.collision(e, a) || a.hit || t) "gate" === a.type && !a.hit && a.y < e.y ? (e.failGate(a.gateId), Le.sys.denyGate(a.gateId), a.hit = !0) : "ambient" === a.type && "hidden" === a.anim && a.y + 32 < e.y ? (a.anim = "oneshot", a.time = 0) : "lure" === a.type && a.hit && a.y + 192 < e.y && (Le.sys.buildObject("foe", a.x, a.y + 32, "chase"), a.sleep = !0);
                             else {
-                                if (a.hit = !0, e.swapped) return "lure" === a.type && Me.sys.buildObject("foe", a.x, a.y, "chase"), void(a.sleep = !0);
+                                if (a.hit = !0, e.swapped) return "lure" === a.type && Le.sys.buildObject("foe", a.x, a.y, "chase"), void(a.sleep = !0);
                                 switch (a.type) {
                                     case "wall":
                                     case "snag":
@@ -8039,7 +8362,7 @@
                                         e.collectBoost(), this.collectAnim(a);
                                         break;
                                     case "ramp":
-                                        s && te.sys.session.settings.mode !== j.TimeTrial ? e.air(1600) : te.sys.session.settings.mode === j.TimeTrial ? e.air(576) : e.air(1080);
+                                        s && se.sys.session.settings.mode !== G.TimeTrial ? e.air(1600) : se.sys.session.settings.mode === G.TimeTrial ? e.air(576) : e.air(1080);
                                         break;
                                     case "life":
                                         e.collectLife(), this.collectAnim(a);
@@ -8052,49 +8375,49 @@
                                         break;
                                     case "gate": {
                                         e.passGate(a.gateId);
-                                        const t = Me.sys.buildObject("ambient", e.x, e.y);
-                                        t.hit = !0, this.collectAnim(t), Me.sys.confirmGate(a.gateId);
+                                        const t = Le.sys.buildObject("ambient", e.x, e.y);
+                                        t.hit = !0, this.collectAnim(t), Le.sys.confirmGate(a.gateId);
                                         break
                                     }
                                     case "finish":
                                         e.finishline();
                                         break;
                                     case "checkpoint":
-                                        Me.sys.npc.forEach((e => {
+                                        Le.sys.npc.forEach((e => {
                                             e.crash()
-                                        })), Me.sys.foe.forEach((e => {
+                                        })), Le.sys.foe.forEach((e => {
                                             e.crash()
-                                        })), te.sys.saveGameStats(), e.boost(!0);
+                                        })), se.sys.saveGameStats(), e.boost(!0);
                                         break;
                                     case "swap":
                                         e.swap()
                                 }
                             }
-                            Me.sys.npc.forEach((e => {
+                            Le.sys.npc.forEach((e => {
                                 o(a, e)
-                            })), Me.sys.foe.forEach((e => {
+                            })), Le.sys.foe.forEach((e => {
                                 o(a, e)
                             }))
                         }
-                        const n = Me.sys.foe.length,
-                            r = Me.sys.npc.length;
+                        const n = Le.sys.foe.length,
+                            r = Le.sys.npc.length;
                         for (let t = 0; t < n; t++) {
-                            const s = Me.sys.foe[t];
-                            this.collision(s, e) && !s.hit && s.timer.crash <= 0 && (te.sys.game.shields.current > 0 ? (s.crash(), e.useShield()) : e.swapped ? s.crash() : (s.ending(), Me.sys.endingFoe = s, e.lose()));
+                            const s = Le.sys.foe[t];
+                            this.collision(s, e) && !s.hit && s.timer.crash <= 0 && (se.sys.game.shields.current > 0 ? (s.crash(), e.useShield()) : e.swapped ? s.crash() : (s.ending(), Le.sys.endingFoe = s, e.lose()));
                             for (let e = 0; e < r; e++) {
-                                const t = Me.sys.npc[e];
+                                const t = Le.sys.npc[e];
                                 this.collision(s, t) && t.timer.crash <= 0 && t.crash()
                             }
                         }
                         if (!t)
                             for (let t = 0; t < r; t++) {
-                                const i = Me.sys.npc[t];
-                                this.collision(i, e) && i.timer.crash <= 0 && (s || e.swapped ? i.crash() : te.sys.game.shields.current > 0 ? (i.crash(), e.useShield()) : e.crash())
+                                const i = Le.sys.npc[t];
+                                this.collision(i, e) && i.timer.crash <= 0 && (s || e.swapped ? i.crash() : se.sys.game.shields.current > 0 ? (i.crash(), e.useShield()) : e.crash())
                             }
                     }
                     filterVisible(e) {
                         return e.filter((e => function(e) {
-                            return e.y > -64 && e.y < te.sys.session.h + 64 && e.x > -64 && e.x < te.sys.session.w + 64 || "gate" === e.type
+                            return e.y > -64 && e.y < se.sys.session.h + 64 && e.x > -64 && e.x < se.sys.session.w + 64 || "gate" === e.type
                         }(e)))
                     }
                     collectAnim(e) {
@@ -8104,122 +8427,122 @@
                         return !(t.hitbox.x + t.hitbox.w < e.hitbox.x) && (!(e.hitbox.x + e.hitbox.w < t.hitbox.x) && (!(t.hitbox.y + t.hitbox.h < e.hitbox.y) && !(e.hitbox.y + e.hitbox.h < t.hitbox.y)))
                     }
                 }
-                Ie.sys = null;
-                class Pe {
+                De.sys = null;
+                class _e {
                     constructor() {
-                        if (Pe.sys) return Pe.sys;
-                        Pe.sys = this, new te, new Y, new Ce, new pe, new be, new de, new Me, new Ie, new ge, de.sys.createBackground(), this.updateTheme(te.sys.session.settings.theme, !1), this.reflowCanvas(), this.changeGameState(Q.Menu)
+                        if (_e.sys) return _e.sys;
+                        _e.sys = this, new se, new J, new Pe, new be, new ge, new pe, new Le, new De, new ve, pe.sys.createBackground(), this.updateTheme(se.sys.session.settings.theme, !1), this.reflowCanvas(), this.changeGameState(ee.Menu)
                     }
                     gameLoop(e) {
-                        if (Ce.sys.update(), te.sys.session.state !== Q.Pause) switch (te.sys.update(e), te.sys.session.state) {
-                            case Q.Play:
+                        if (Pe.sys.update(), se.sys.session.state !== ee.Pause) switch (se.sys.update(e), se.sys.session.state) {
+                            case ee.Play:
                                 this.updatePlay();
                                 break;
-                            case Q.Menu:
+                            case ee.Menu:
                                 this.updateMenu();
                                 break;
-                            case Q.Over:
+                            case ee.Over:
                                 this.updateOver()
                         }
                     }
                     changeGameState(e) {
-                        const t = te.sys.session.state;
-                        switch (te.sys.session.state = e, e) {
-                            case Q.Pause:
+                        const t = se.sys.session.state;
+                        switch (se.sys.session.state = e, e) {
+                            case ee.Pause:
                                 this.triggerPause();
                                 break;
-                            case Q.Play:
+                            case ee.Play:
                                 this.triggerPlay(t);
                                 break;
-                            case Q.Menu:
+                            case ee.Menu:
                                 this.triggerMenu();
                                 break;
-                            case Q.Over:
+                            case ee.Over:
                                 this.triggerOver()
                         }
-                        this.checkForcedColors(), le.dispatch(function(e) {
+                        this.checkForcedColors(), he.dispatch(function(e) {
                             return {
-                                type: ae.UPDATE_GAME_STATE,
+                                type: oe.UPDATE_GAME_STATE,
                                 gameState: e
                             }
                         }(e))
                     }
                     triggerMenu() {
-                        ge.sys.hideNotification(), ge.sys.hideSharePopup(), te.sys.saveGameStats(), te.sys.resetGameData(), de.sys.defineCanvas(), de.sys.clearCanvas(), Me.sys.reset(), ge.sys.showMenuScreen(), Ce.sys.reset()
+                        ve.sys.hideNotification(), ve.sys.hideSharePopup(), se.sys.saveGameStats(), se.sys.resetGameData(), pe.sys.defineCanvas(), pe.sys.clearCanvas(), Le.sys.reset(), ve.sys.showMenuScreen(), Pe.sys.reset()
                     }
                     triggerPlay(e) {
-                        e === Q.Menu && this.triggerStart(), ge.sys.hideOverlayUI(), ge.sys.refreshDisplay()
+                        e === ee.Menu && this.triggerStart(), ve.sys.hideOverlayUI(), ve.sys.refreshDisplay()
                     }
                     triggerStart() {
-                        te.sys.game.time.elapsed = 0, Te.sys.unlockForNewGame(), Me.sys.buildStartScene(), ge.sys.hideNotification()
+                        se.sys.game.time.elapsed = 0, Ie.sys.unlockForNewGame(), Le.sys.buildStartScene(), ve.sys.hideNotification()
                     }
                     triggerPause() {
-                        ge.sys.showPauseScreen()
+                        ve.sys.showPauseScreen()
                     }
                     triggerOver() {
-                        Me.sys.all.forEach((e => {
+                        Le.sys.all.forEach((e => {
                             "ending" === e.anim && (e.sleep = !0)
-                        })), ge.sys.showOverScreen(), (te.sys.session.settings.mode !== j.TimeTrial || te.sys.game.finish) && te.sys.saveGameStats();
-                        const e = q.pz.getBoolean("isNewShare") ? "share" : te.sys.game.highScore ? "score" : "share";
-                        ge.sys.sendNotification(e, 1e4)
+                        })), ve.sys.showOverScreen(), (se.sys.session.settings.mode !== G.TimeTrial || se.sys.game.finish) && se.sys.saveGameStats();
+                        const e = q.p.getBoolean("isNewShare") ? "share" : se.sys.game.highScore ? "score" : "share";
+                        ve.sys.sendNotification(e, 1e4)
                     }
                     updateMenu() {
                         this.render()
                     }
                     updatePlay() {
-                        Ie.sys.update(), Me.sys.update(), Me.sys.all.forEach((e => {
+                        De.sys.update(), Le.sys.update(), Le.sys.all.forEach((e => {
                             e.update()
-                        })), Me.sys.all.forEach((e => {
-                            e.move(Te.sys.speed)
-                        })), ge.sys.updateScore(), te.sys.updateDistances(Te.sys.speed.x, Te.sys.speed.y), de.sys.updateBackground(0, 0, Te.sys.speed), this.render()
+                        })), Le.sys.all.forEach((e => {
+                            e.move(Ie.sys.speed)
+                        })), ve.sys.updateScore(), se.sys.updateDistances(Ie.sys.speed.x, Ie.sys.speed.y), pe.sys.updateBackground(0, 0, Ie.sys.speed), this.render()
                     }
                     updateOver() {
-                        const e = Me.sys.endingFoe;
+                        const e = Le.sys.endingFoe;
                         e && e.hit && "paused" !== e.anim && (e.update(), this.render())
                     }
                     updateMode() {
-                        ge.sys.updateGameModeUI(), ge.sys.sendNotification("mode")
+                        ve.sys.updateGameModeUI(), ve.sys.sendNotification("mode")
                     }
                     updateTheme(e, t = !1) {
-                        pe.sys.loadNewTheme(e), (async () => {
-                            await pe.sys.objectsTemp.decode(), await pe.sys.playerTemp.decode(), await pe.sys.bgTemp.decode(), pe.sys.setNewTheme(e), ge.sys.updateIcons(), ge.sys.updateGameTitleUI(), t && ge.sys.sendNotification("theme")
+                        be.sys.loadNewTheme(e), (async () => {
+                            await be.sys.objectsTemp.decode(), await be.sys.playerTemp.decode(), await be.sys.bgTemp.decode(), be.sys.setNewTheme(e), ve.sys.updateIcons(), ve.sys.updateGameTitleUI(), t && ve.sys.sendNotification("theme")
                         })()
                     }
                     reflowCanvas() {
-                        te.sys.session.state === Q.Play && this.changeGameState(Q.Pause);
-                        const e = te.sys.session.x,
-                            t = te.sys.session.y;
-                        de.sys.defineCanvas();
-                        const s = te.sys.session.x - e,
-                            i = te.sys.session.y - t;
-                        Me.sys.calcClusterSlots(), Me.sys.all.forEach((e => {
+                        se.sys.session.state === ee.Play && this.changeGameState(ee.Pause);
+                        const e = se.sys.session.x,
+                            t = se.sys.session.y;
+                        pe.sys.defineCanvas();
+                        const s = se.sys.session.x - e,
+                            i = se.sys.session.y - t;
+                        Le.sys.calcClusterSlots(), Le.sys.all.forEach((e => {
                             e.shift(s, i)
-                        })), de.sys.updateBackground(s, i, {
+                        })), pe.sys.updateBackground(s, i, {
                             x: 0,
                             y: 0
                         }), this.render()
                     }
                     checkForcedColors() {
                         const e = window.matchMedia("(forced-colors:active)");
-                        te.sys.session.forcedColors = e.matches
+                        se.sys.session.forcedColors = e.matches
                     }
                     render() {
-                        if (de.sys.clearCanvas(), te.sys.session.state === Q.Menu) return void Te.sys.renderCharacterSelection();
-                        const e = Me.sys.all.filter((function(e) {
-                            return e.x > -96 && e.x < te.sys.session.w + 96 && e.y < te.sys.session.h + 96
+                        if (pe.sys.clearCanvas(), se.sys.session.state === ee.Menu) return void Ie.sys.renderCharacterSelection();
+                        const e = Le.sys.all.filter((function(e) {
+                            return e.x > -96 && e.x < se.sys.session.w + 96 && e.y < se.sys.session.h + 96
                         }));
                         e.forEach((e => {
                             e.draw()
-                        })), te.sys.session.settings.hitbox && e.forEach((e => {
-                            de.sys.drawHitbox(e.type, e.hitbox)
-                        })), te.sys.session.settings.mode !== j.Endless && de.sys.drawBoundaries()
+                        })), se.sys.session.settings.hitbox && e.forEach((e => {
+                            pe.sys.drawHitbox(e.type, e.hitbox)
+                        })), se.sys.session.settings.mode !== G.Endless && pe.sys.drawBoundaries()
                     }
                 }
-                Pe.sys = null;
-                var Ee = s(325),
-                    Le = s(33832);
+                _e.sys = null;
+                var ze = s(325),
+                    Oe = s(33832);
 
-                function ze(e) {
+                function Re(e) {
                     return a.createElement("svg", {
                         className: e,
                         xmlns: "https://www.w3.org/2000/svg",
@@ -8231,7 +8554,7 @@
                     }))
                 }
 
-                function De(e) {
+                function Ne(e) {
                     return a.createElement("svg", {
                         className: e,
                         xmlns: "https://www.w3.org/2000/svg",
@@ -8243,7 +8566,7 @@
                     }))
                 }
 
-                function _e(e) {
+                function Ae(e) {
                     return a.createElement("svg", {
                         className: e,
                         xmlns: "https://www.w3.org/2000/svg",
@@ -8255,7 +8578,7 @@
                     }))
                 }
 
-                function Oe(e) {
+                function Fe(e) {
                     return a.createElement("svg", {
                         className: e,
                         xmlns: "https://www.w3.org/2000/svg",
@@ -8267,8 +8590,8 @@
                     }))
                 }
 
-                function Ae() {
-                    return (Ae = Object.assign || function(e) {
+                function Be() {
+                    return (Be = Object.assign || function(e) {
                         for (var t = 1; t < arguments.length; t++) {
                             var s = arguments[t];
                             for (var i in s) Object.prototype.hasOwnProperty.call(s, i) && (e[i] = s[i])
@@ -8277,10 +8600,10 @@
                     }).apply(this, arguments)
                 }
 
-                function Re(e) {
+                function qe(e) {
                     e.stopPropagation()
                 }
-                class Ne extends A.Z {
+                class je extends _.Z {
                     constructor(...e) {
                         super(...e), this.handledProps = {
                             managedClasses: void 0
@@ -8290,16 +8613,16 @@
                             ["touch", a.createRef()],
                             ["controller", a.createRef()]
                         ]), this.state = {
-                            selectedInput: J() ? "touch" : "keyboard"
-                        }, this.renderHowToPlayContent = () => a.createElement(a.Fragment, null, a.createElement(S.nv, {
+                            selectedInput: Q() ? "touch" : "keyboard"
+                        }, this.renderHowToPlayContent = () => a.createElement(a.Fragment, null, a.createElement(V.nv, {
                             className: this.props.managedClasses.howToPlayModal_paragraph
-                        }, a.createElement("strong", null, q.pz.getString("endlessModeTitleInline")), " ", q.pz.getString("howToPlayEndless")), a.createElement(S.nv, {
+                        }, a.createElement("strong", null, q.p.getString("endlessModeTitleInline")), " ", q.p.getString("howToPlayEndless")), a.createElement(V.nv, {
                             className: this.props.managedClasses.howToPlayModal_paragraph
-                        }, a.createElement("strong", null, q.pz.getString("timetrialModeTitleInline")), " ", q.pz.getString("howToPlayTimeTrial")), a.createElement(S.nv, {
+                        }, a.createElement("strong", null, q.p.getString("timetrialModeTitleInline")), " ", q.p.getString("howToPlayTimeTrial")), a.createElement(V.nv, {
                             className: this.props.managedClasses.howToPlayModal_paragraph
-                        }, a.createElement("strong", null, q.pz.getString("zigzagModeTitleInline")), " ", q.pz.getString("howToPlayZigZag")), this.renderInputSection()), this.onInputIconKeydown = e => {
+                        }, a.createElement("strong", null, q.p.getString("zigzagModeTitleInline")), " ", q.p.getString("howToPlayZigZag")), this.renderInputSection()), this.onInputIconKeydown = e => {
                             let t = this.state.selectedInput;
-                            if (e.keyCode === Le.mW.arrowLeft || e.keyCode === Le.mW.arrowUp) switch (this.state.selectedInput) {
+                            if (e.keyCode === Oe.mW.arrowLeft || e.keyCode === Oe.mW.arrowUp) switch (this.state.selectedInput) {
                                 case "keyboard":
                                     return;
                                 case "mouse":
@@ -8311,7 +8634,7 @@
                                 case "controller":
                                     t = "touch"
                             } else {
-                                if (e.keyCode !== Le.mW.arrowRight && e.keyCode !== Le.mW.arrowDown) return;
+                                if (e.keyCode !== Oe.mW.arrowRight && e.keyCode !== Oe.mW.arrowDown) return;
                                 switch (this.state.selectedInput) {
                                     case "keyboard":
                                         t = "mouse";
@@ -8332,8 +8655,8 @@
                         }
                     }
                     render() {
-                        return a.createElement(Ee.S, Ae({}, this.unhandledProps(), {
-                            onKeyDown: Re,
+                        return a.createElement(ze.S, Be({}, this.unhandledProps(), {
+                            onKeyDown: qe,
                             content: this.renderHowToPlayContent
                         }))
                     }
@@ -8388,7 +8711,7 @@
                             d: "M15.65 7.85a.5.5 0 01.7-.7l2.5 2.5c.2.2.2.5 0 .7l-2.5 2.5a.5.5 0 01-.7-.7l1.64-1.65H13.5a.5.5 0 010-1h3.8l-1.65-1.65z"
                         }), a.createElement("path", {
                             d: "M7.85 15.65a.5.5 0 00-.7.7l2.5 2.5c.2.2.5.2.7 0l2.5-2.5a.5.5 0 00-.7-.7l-1.65 1.64V13.5a.5.5 0 00-1 0v3.8l-1.65-1.65z"
-                        })))), q.pz.getString(o)), a.createElement("li", {
+                        })))), q.p.getString(o)), a.createElement("li", {
                             className: i
                         }, a.createElement("div", {
                             "aria-hidden": !0,
@@ -8403,7 +8726,7 @@
                             }, a.createElement("path", {
                                 d: "M9.28568 2.52142C9.38509 2.21078 9.67385 2 10 2H18.75C18.998 2 19.23 2.12264 19.3697 2.32761C19.5094 2.53258 19.5388 2.79337 19.4481 3.02424L17.1004 8.99999H22.25C22.5476 8.99999 22.8171 9.17598 22.9367 9.44849C23.0564 9.72101 23.0035 10.0385 22.8021 10.2576L8.55213 25.7576C8.32001 26.0101 7.94619 26.0729 7.64426 25.9102C7.34233 25.7476 7.18921 25.4008 7.2724 25.0681L9.53942 16H6C5.76052 16 5.53543 15.8856 5.39423 15.6922C5.25303 15.4987 5.2127 15.2495 5.28569 15.0214L9.28568 2.52142Z"
                             }))
-                        }(t)), q.pz.getString(n)), a.createElement("li", {
+                        }(t)), q.p.getString(n)), a.createElement("li", {
                             className: i
                         }, a.createElement("div", {
                             "aria-hidden": !0,
@@ -8417,23 +8740,23 @@
                             }, a.createElement("path", {
                                 d: "M3.07 9.05a7 7 0 0112.55-3.22l.13.17H12.5a.5.5 0 100 1h4a.5.5 0 00.5-.5v-4a.5.5 0 00-1 0v2.2a8 8 0 101.99 4.77.5.5 0 00-1 .08 7 7 0 11-13.92-.5z"
                             }))
-                        }(t)), q.pz.getString(r)));
+                        }(t)), q.p.getString(r)));
                         var l
                     }
                     renderInputIcons() {
-                        const e = (J() ? [
-                            [ze, "touch"]
+                        const e = (Q() ? [
+                            [Re, "touch"]
                         ] : [
-                            [De, "keyboard"],
-                            [_e, "mouse"],
-                            [ze, "touch"],
-                            [Oe, "controller"]
+                            [Ne, "keyboard"],
+                            [Ae, "mouse"],
+                            [Re, "touch"],
+                            [Fe, "controller"]
                         ]).map((e => {
                             const t = e[0],
                                 s = e[1],
                                 i = this.state.selectedInput === s;
                             let o = this.props.managedClasses.howToPlayModal_inputButton;
-                            return i && (o += ` ${this.props.managedClasses.howToPlayModal_inputButton__selected}`), a.createElement(T.XC, {
+                            return i && (o += ` ${this.props.managedClasses.howToPlayModal_inputButton__selected}`), a.createElement(S.XC, {
                                 role: "radio",
                                 key: s,
                                 innerRef: this.inputRefMap.get(s),
@@ -8452,16 +8775,16 @@
                         }, e)
                     }
                 }
-                var He = s(53363),
-                    Fe = s(58934);
-                const Be = {
+                var Ge = s(53363),
+                    Ke = s(58934);
+                const Ue = {
                         howToPlayModal: {},
                         howToPlayModal_bulletedList: {
                             listStyle: "none",
                             color: b.CH
                         },
                         howToPlayModal_listItem: {
-                            ...(0, He.Sh)("t7"),
+                            ...(0, Ge.Sh)("t7"),
                             display: "flex",
                             alignItems: "center",
                             marginBottom: "0.25em"
@@ -8479,7 +8802,7 @@
                         },
                         howToPlayModal_inputButton: {},
                         howToPlayModal_inputButton__selected: {
-                            backgroundColor: Fe.Ob
+                            backgroundColor: Ke.Ob
                         },
                         howToPlayModal_inputButtonGroup: {
                             display: "flex",
@@ -8492,10 +8815,10 @@
                             marginBottom: "0.5em"
                         }
                     },
-                    Ve = (0, d.ZP)(Be)(Ne);
+                    We = (0, d.ZP)(Ue)(je);
 
-                function Ze() {
-                    return (Ze = Object.assign || function(e) {
+                function $e() {
+                    return ($e = Object.assign || function(e) {
                         for (var t = 1; t < arguments.length; t++) {
                             var s = arguments[t];
                             for (var i in s) Object.prototype.hasOwnProperty.call(s, i) && (e[i] = s[i])
@@ -8504,16 +8827,16 @@
                     }).apply(this, arguments)
                 }
 
-                function qe(e) {
+                function Xe(e) {
                     e.stopPropagation()
                 }
-                const Ge = "#38c2ee",
-                    je = {
+                const Ye = "#38c2ee",
+                    Je = {
                         ...l.fn,
-                        neutralPalette: (0, H.D)((0, N.in)(Ge))
+                        neutralPalette: (0, R.D)((0, O.in)(Ye))
                     },
-                    Ke = "toggleSettingsMenu";
-                class Ue extends A.Z {
+                    Qe = "toggleSettingsMenu";
+                class et extends _.Z {
                     constructor(e) {
                         super(e), this.handledProps = {
                             setModal: void 0,
@@ -8529,106 +8852,106 @@
                             zigzag_bestScore: void 0
                         }, this.buttonRef = a.createRef(), this.onHighVisiblityModeChange = () => {
                             const e = !this.props.highVisibilityMode;
-                            he.saveHighVisibilityMode(e), this.props.dispatch(oe({
-                                ...le.getState(),
+                            ce.saveHighVisibilityMode(e), this.props.dispatch(ne({
+                                ...he.getState(),
                                 highVisibilityMode: e
-                            })), te.sys.session.settings.hitbox = e, Pe.sys.render()
+                            })), se.sys.session.settings.hitbox = e, _e.sys.render()
                         }, this.onReducedSpeedModeChange = () => {
-                            const e = this.props.gameSpeed === se ? .5 : se;
-                            he.saveReducedSpeedMode(e !== se), this.props.dispatch(oe({
-                                ...le.getState(),
+                            const e = this.props.gameSpeed === ie ? .5 : ie;
+                            ce.saveReducedSpeedMode(e !== ie), this.props.dispatch(ne({
+                                ...he.getState(),
                                 gameSpeed: e
                             }))
                         }, this.onGameModeChange = e => {
-                            this.props.dispatch(oe({
-                                ...le.getState(),
+                            this.props.dispatch(ne({
+                                ...he.getState(),
                                 mode: e
-                            })), Pe.sys.changeGameState(Q.Menu), Pe.sys.updateMode(), he.saveGameMode(e)
+                            })), _e.sys.changeGameState(ee.Menu), _e.sys.updateMode(), ce.saveGameMode(e)
                         }, this.onThemeChange = e => {
-                            this.props.dispatch(oe({
-                                ...le.getState(),
+                            this.props.dispatch(ne({
+                                ...he.getState(),
                                 theme: e
-                            })), Pe.sys.changeGameState(Q.Menu), Pe.sys.updateTheme(e, t = !0), he.saveDefaultTheme(e)
+                            })), _e.sys.updateTheme(e, t = !0), ce.saveDefaultTheme(e)
                         }, this.onNewGameClick = () => {
-                            Pe.sys.changeGameState(Q.Menu)
+                            _e.sys.changeGameState(ee.Menu)
                         }, this.copyShareLinkToClipboard = () => {
-                            X(q.pz.getString("shareLinkFlyout")), this.setState({
+                            Y(q.p.getString("shareLinkFlyout")), this.setState({
                                 shareLinkCopied: !0
                             })
                         }, this.onHamburgerMenuClick = e => {
                             "function" == typeof this.props.onClick && this.props.onClick(e), this.toggleSettingsMenu()
                         }, this.toggleSettingsMenu = () => {
-                            this.state.menuOpen || this.props.gameState !== Q.Play || Pe.sys.changeGameState(Q.Pause), this.setState({
+                            this.state.menuOpen || this.props.gameState !== ee.Play || _e.sys.changeGameState(ee.Pause), this.setState({
                                 menuOpen: !this.state.menuOpen,
                                 shareLinkCopied: !1
-                            }), te.sys.session.flyoutActive = !te.sys.session.flyoutActive
+                            }), se.sys.session.flyoutActive = !se.sys.session.flyoutActive
                         }, this.dismissMenu = () => {
                             this.setState({
                                 menuOpen: !1,
                                 shareLinkCopied: !1
-                            }), te.sys.session.flyoutActive = !1
+                            }), se.sys.session.flyoutActive = !1
                         }, this.closeModal = () => {
                             this.props.setModal(null)
                         }, this.openHowToPlayModal = () => {
-                            this.props.setModal(a.createElement(Ve, {
-                                onClick: qe,
-                                label: q.pz.getString("howToPlayDialogTitle"),
+                            this.props.setModal(a.createElement(We, {
+                                onClick: Xe,
+                                label: q.p.getString("howToPlayDialogTitle"),
                                 accept: this.closeModal,
-                                acceptMessage: q.pz.getString("close"),
+                                acceptMessage: q.p.getString("close"),
                                 dismiss: this.closeModal,
-                                closeButtonToolTip: q.pz.getString("close")
+                                closeButtonToolTip: q.p.getString("close")
                             }))
                         }, this.startShare = () => {
-                            he.startShare(q.pz.getString("highScoreShareTitle"), q.pz.getString("highScoreShareSubtitle"), q.pz.getString("highScoreNotification"), q.pz.getString("shareLinkGameOver"))
+                            ce.startShare(q.p.getString("highScoreShareTitle"), q.p.getString("highScoreShareSubtitle"), q.p.getString("highScoreNotification"), q.p.getString("shareLinkGameOver"))
                         }, this.openGameCreditsModal = () => {
-                            this.props.setModal(a.createElement(Ee.S, {
-                                onClick: qe,
-                                label: q.pz.getString("gameCreditsDialogTitle"),
+                            this.props.setModal(a.createElement(ze.S, {
+                                onClick: Xe,
+                                label: q.p.getString("gameCreditsDialogTitle"),
                                 accept: this.closeModal,
-                                acceptMessage: q.pz.getString("close"),
+                                acceptMessage: q.p.getString("close"),
                                 dismiss: this.closeModal,
-                                closeButtonToolTip: q.pz.getString("close"),
+                                closeButtonToolTip: q.p.getString("close"),
                                 content: this.getGameCreditsModalBody
                             }))
-                        }, this.getGameCreditsModalBody = () => a.createElement(a.Fragment, null, a.createElement(S.nv, null, "Parker Young, Scott Porterfield, Patrick Evan Little, Connor Smith, William Devereux, Adina Shanholtz, Ray Rivers, 陈嘉钰, 傅远, 胡雨阳, 郑俊豪"), a.createElement(C.X6, {
+                        }, this.getGameCreditsModalBody = () => a.createElement(a.Fragment, null, a.createElement(V.nv, null, "Parker Young, Scott Porterfield, Patrick Evan Little, Connor Smith, William Devereux, Adina Shanholtz, Ray Rivers, 陈嘉钰, 傅远, 胡雨阳, 郑俊豪"), a.createElement(x.X6, {
                             className: this.props.managedClasses.settingsHamburgerMenu_creditsTable_specialThanks,
-                            size: k.Gm._7,
-                            tag: k.lb.h3
-                        }, q.pz.getString("specialThanks")), a.createElement(S.nv, null, "Jonathan Merrin, Charles Duval, Addison Kaufmann, Rachel Weil, Joseph Oak, Amanda Velasco Gallardo, Ramya Challa, Chris Pirih")), this.confirmResetStats = () => {
-                            this.props.setModal(a.createElement(F.Z, {
-                                title: q.pz.getString("resetAllStatsDialogTitle"),
-                                closeButtonTooltip: q.pz.getString("close"),
-                                dialogText: q.pz.getString("resetAllStatsDialogText"),
-                                confirmText: q.pz.getString("resetAllStats"),
-                                rejectText: q.pz.getString("cancel"),
+                            size: M.Gm._7,
+                            tag: M.lb.h3
+                        }, q.p.getString("specialThanks")), a.createElement(V.nv, null, "Jonathan Merrin, Charles Duval, Addison Kaufmann, Rachel Weil, Joseph Oak, Amanda Velasco Gallardo, Ramya Challa, Chris Pirih")), this.confirmResetStats = () => {
+                            this.props.setModal(a.createElement(N.Z, {
+                                title: q.p.getString("resetAllStatsDialogTitle"),
+                                closeButtonTooltip: q.p.getString("close"),
+                                dialogText: q.p.getString("resetAllStatsDialogText"),
+                                confirmText: q.p.getString("resetAllStats"),
+                                rejectText: q.p.getString("cancel"),
                                 handleConfirm: this.resetStats,
                                 handleReject: this.closeModal,
-                                onClick: qe
+                                onClick: Xe
                             }))
                         }, this.resetStats = () => {
-                            this.props.dispatch(ne()), he.resetAllStats(), ge.sys.refreshDisplay(), this.closeModal()
+                            this.props.dispatch(re()), ce.resetAllStats(), ve.sys.refreshDisplay(), this.closeModal()
                         }, this.state = {
                             menuOpen: !1,
                             shareLinkCopied: !1
                         }
                     }
                     componentDidMount() {
-                        document.addEventListener(Ke, this.toggleSettingsMenu)
+                        document.addEventListener(Qe, this.toggleSettingsMenu)
                     }
                     componentWillUnmount() {
-                        document.removeEventListener(Ke, this.toggleSettingsMenu)
+                        document.removeEventListener(Qe, this.toggleSettingsMenu)
                     }
                     render() {
                         return a.createElement(a.Fragment, null, a.createElement(n.h, {
-                            designSystem: je
-                        }, a.createElement(x.ZP, {
-                            value: Ge,
+                            designSystem: Je
+                        }, a.createElement(v.ZP, {
+                            value: Ye,
                             tag: null,
                             drawBackground: !1
-                        }, a.createElement(T.XC, Ze({}, this.unhandledProps(), {
+                        }, a.createElement(S.XC, $e({}, this.unhandledProps(), {
                             ref: this.buttonRef,
                             onClick: this.onHamburgerMenuClick,
-                            className: (0, R.A)(this.props.managedClasses.settingsHamburgerMenu)
+                            className: (0, z.A)(this.props.managedClasses.settingsHamburgerMenu)
                         }), (e = this.props.managedClasses.settingsHamburgerMenu_settingsButton, a.createElement("svg", {
                             width: 24,
                             height: 24,
@@ -8641,29 +8964,29 @@
                         var e
                     }
                     getHighScoreString() {
-                        return q.pz.getStringF("bestScoreMenuDisplay", te.sys.getHighScore(te.sys.session.settings.mode), q.pz.getString(te.sys.session.settings.mode + "Unit"))
+                        return q.p.getStringF("bestScoreMenuDisplay", se.sys.getHighScore(se.sys.session.settings.mode), q.p.getString(se.sys.session.settings.mode + "Unit"))
                     }
                     renderMenu() {
                         const e = this.getHighScoreString();
-                        return a.createElement(M.zg, {
+                        return a.createElement(C.zg, {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout,
                             width: "280px",
                             height: "fit-content",
-                            defaultVerticalPosition: I._k.bottom,
-                            defaultHorizontalPosition: I.xN.left,
-                            verticalPositioningMode: I.Lc.adjacent,
+                            defaultVerticalPosition: k._k.bottom,
+                            defaultHorizontalPosition: k.xN.left,
+                            verticalPositioningMode: k.Lc.adjacent,
                             visible: this.state.menuOpen,
                             anchor: this.buttonRef,
                             onDismiss: this.dismissMenu,
-                            onClick: qe
-                        }, this.renderCloseButton(), a.createElement(P.Of, {
+                            onClick: Xe
+                        }, this.renderCloseButton(), a.createElement(Z.Of, {
                             jssStyleSheet: f,
                             onClick: this.onNewGameClick
-                        }, q.pz.getString("newGame")), a.createElement(E.iz, {
+                        }, q.p.getString("newGame")), a.createElement(T.iz, {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_divider
-                        }), this.renderThemePicker(), a.createElement(E.iz, {
+                        }), this.renderThemePicker(), a.createElement(T.iz, {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_divider
-                        }), this.renderGameModePicker(), a.createElement(S.nv, {
+                        }), this.renderGameModePicker(), a.createElement(V.nv, {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_score
                         }, (t = this.props.managedClasses.settingsHamburgerMenu_flyout_scoreStar, a.createElement("svg", {
                             width: 20,
@@ -8672,81 +8995,81 @@
                             className: t
                         }, a.createElement("path", {
                             d: "M9.1 2.9a1 1 0 011.8 0l1.93 3.91 4.31.63a1 1 0 01.56 1.7l-3.13 3.05.74 4.3a1 1 0 01-1.45 1.05L10 15.51l-3.86 2.03a1 1 0 01-1.45-1.05l.74-4.3L2.3 9.14a1 1 0 01.56-1.7l4.31-.63L9.1 2.9z"
-                        }))), q.pz.getStringF("bestScoreFlyout", e)), a.createElement(E.iz, {
+                        }))), q.p.getStringF("bestScoreFlyout", e)), a.createElement(T.iz, {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_divider
-                        }), this.renderShareSection(), this.renderStartShare(), a.createElement(E.iz, {
+                        }), this.renderShareSection(), this.renderStartShare(), a.createElement(T.iz, {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_divider
-                        }), this.renderToggleSection(), a.createElement(E.iz, {
+                        }), this.renderToggleSection(), a.createElement(T.iz, {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_divider
                         }), this.renderButtonSection());
                         var t
                     }
                     renderCloseButton() {
-                        return a.createElement(T.XC, {
+                        return a.createElement(S.XC, {
                             className: this.props.managedClasses.settingsHamburgerMenu_closeButton,
-                            title: q.pz.getString("close"),
+                            title: q.p.getString("close"),
                             onClick: this.dismissMenu
-                        }, (0, B.p)(this.props.managedClasses.settingsHamburgerMenu_closeButton_icon))
+                        }, (0, A.p)(this.props.managedClasses.settingsHamburgerMenu_closeButton_icon))
                     }
                     renderThemePicker() {
-                        const e = q.pz.getString("surfTheme"),
-                            t = q.pz.getString("skiTheme"),
+                        const e = q.p.getString("surfTheme"),
+                            t = q.p.getString("skiTheme"),
                             i = this.props.theme,
-                            o = this.props.gameState === Q.Pause || this.props.gameState === Q.Play;
-                        return a.createElement(a.Fragment, null, a.createElement(L.__, {
+                            o = this.props.gameState === Q.Play;
+                        return a.createElement(a.Fragment, null, a.createElement(P.__, {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_label
-                        }, o ? q.pz.getString("themeSelectLabelDisabled") : q.pz.getString("themeSelectLabel")), a.createElement(z.Ph, {
+                        }, q.p.getString("themeSelectLabel")), a.createElement(E.Ph, {
                             jssStyleSheet: u.O0,
                             menu: u.gj,
                             onValueChange: this.onThemeChange,
                             selectedItems: [i],
                             disabled: o
-                        }, a.createElement(D.$m, {
-                            id: haha.surf,
-                            value: haha.surf,
+                        }, a.createElement(I.$m, {
+                            id: "surf",
+                            value: "surf",
                             displayString: e
-                        }), a.createElement(D.$m, {
-                            id: haha.ski,
-                            value: haha.ski,
+                        }), a.createElement(I.$m, {
+                            id: "ski",
+                            value: "ski",
                             displayString: t
                         })))
                     }
                     renderGameModePicker() {
-                        const e = q.pz.getString("zigzagTitle"),
-                            t = q.pz.getString("endlessTitle"),
-                            s = q.pz.getString("timetrialTitle"),
+                        const e = q.p.getString("zigzagTitle"),
+                            t = q.p.getString("endlessTitle"),
+                            s = q.p.getString("timetrialTitle"),
                             i = this.props.mode,
-                            o = this.props.gameState === Q.Pause || this.props.gameState === Q.Play;
-                        return a.createElement(a.Fragment, null, a.createElement(L.__, {
+                            o = this.props.gameState === ee.Pause || this.props.gameState === ee.Play;
+                        return a.createElement(a.Fragment, null, a.createElement(P.__, {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_label
-                        }, o ? q.pz.getString("gameModeSelectLabelDisabled") : q.pz.getString("gameModeSelectLabel")), a.createElement(z.Ph, {
+                        }, o ? q.p.getString("gameModeSelectLabelDisabled") : q.p.getString("gameModeSelectLabel")), a.createElement(E.Ph, {
                             jssStyleSheet: u.O0,
                             menu: u.gj,
                             onValueChange: this.onGameModeChange,
                             selectedItems: [i],
                             disabled: o
-                        }, a.createElement(D.$m, {
-                            id: j.Endless,
-                            value: j.Endless,
+                        }, a.createElement(I.$m, {
+                            id: G.Endless,
+                            value: G.Endless,
                             displayString: t
-                        }), a.createElement(D.$m, {
-                            id: j.TimeTrial,
-                            value: j.TimeTrial,
+                        }), a.createElement(I.$m, {
+                            id: G.TimeTrial,
+                            value: G.TimeTrial,
                             displayString: s
-                        }), a.createElement(D.$m, {
-                            id: j.ZigZag,
-                            value: j.ZigZag,
+                        }), a.createElement(I.$m, {
+                            id: G.ZigZag,
+                            value: G.ZigZag,
                             displayString: e
                         })))
                     }
                     renderToggleSection() {
-                        const e = q.pz.getString("on"),
-                            t = q.pz.getString("off");
+                        const e = q.p.getString("on"),
+                            t = q.p.getString("off");
                         return a.createElement(a.Fragment, null, a.createElement("div", {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_toggleRow
-                        }, a.createElement(L.__, {
+                        }, a.createElement(P.__, {
                             htmlFor: "highVisibilityMode"
-                        }, q.pz.getString("highVisiblityModeToggleLabel")), a.createElement(_.ZD, {
+                        }, q.p.getString("highVisiblityModeToggleLabel")), a.createElement(L.ZD, {
                             jssStyleSheet: y,
                             inputId: "highVisibilityMode",
                             selectedMessage: e,
@@ -8755,58 +9078,58 @@
                             onChange: this.onHighVisiblityModeChange
                         })), a.createElement("div", {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_toggleRow
-                        }, a.createElement(L.__, {
+                        }, a.createElement(P.__, {
                             htmlFor: "reducedSpeedMode"
-                        }, q.pz.getString("reducedSpeedModeToggleLabel")), a.createElement(_.ZD, {
+                        }, q.p.getString("reducedSpeedModeToggleLabel")), a.createElement(L.ZD, {
                             jssStyleSheet: y,
                             inputId: "reducedSpeedMode",
                             defaultChecked: !0,
                             selectedMessage: e,
                             unselectedMessage: t,
-                            selected: this.props.gameSpeed !== se,
+                            selected: this.props.gameSpeed !== ie,
                             onChange: this.onReducedSpeedModeChange
                         })))
                     }
                     renderShareSection() {
                         return a.createElement(a.Fragment, null, a.createElement("div", {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_shareRow
-                        }, a.createElement(L.__, {
+                        }, a.createElement(P.__, {
                             htmlFor: "shareButton"
-                        }, q.pz.getString("share")), a.createElement(O.ER, {
+                        }, q.p.getString("share")), a.createElement(D.ER, {
                             id: "shareButton",
                             jssStyleSheet: w,
                             onClick: this.copyShareLinkToClipboard,
-                            beforeContent: this.state.shareLinkCopied ? V : Z
-                        }, this.state.shareLinkCopied ? q.pz.getString("shareLinkCopied") : q.pz.getString("shareCopy"))))
+                            beforeContent: this.state.shareLinkCopied ? F : B
+                        }, this.state.shareLinkCopied ? q.p.getString("shareLinkCopied") : q.p.getString("shareCopy"))))
                     }
                     renderStartShare() {
-                        return q.pz.getBoolean("isDebugMode") && J() ? a.createElement("div", null, a.createElement(P.Of, {
+                        return q.p.getBoolean("isDebugMode") && Q() ? a.createElement("div", null, a.createElement(Z.Of, {
                             jssStyleSheet: w,
                             onClick: this.startShare
-                        }, q.pz.getString("startShare"))) : a.createElement(a.Fragment, null)
+                        }, q.p.getString("startShare"))) : a.createElement(a.Fragment, null)
                     }
                     renderButtonSection() {
                         return a.createElement("div", {
                             className: this.props.managedClasses.settingsHamburgerMenu_flyout_buttonSection
-                        }, a.createElement(P.Of, {
+                        }, a.createElement(Z.Of, {
                             jssStyleSheet: w,
                             onClick: this.openHowToPlayModal
-                        }, q.pz.getString("howToPlayButton")), a.createElement(P.Of, {
+                        }, q.p.getString("howToPlayButton")), a.createElement(Z.Of, {
                             jssStyleSheet: w,
                             onClick: this.openGameCreditsModal
-                        }, q.pz.getString("gameCreditsButton")), a.createElement(P.Of, {
+                        }, q.p.getString("gameCreditsButton")), a.createElement(Z.Of, {
                             jssStyleSheet: w,
                             onClick: this.confirmResetStats
-                        }, q.pz.getString("resetAllStats")))
+                        }, q.p.getString("resetAllStats")))
                     }
                 }
-                const We = (0, o.$j)((function(e) {
+                const tt = (0, o.$j)((function(e) {
                     return e
-                }))((0, d.ZP)(v)(Ue));
+                }))((0, d.ZP)(H)(et));
 
-                function $e() {
+                function st() {
                     const [e, t] = a.useState(null);
-                    return a.createElement(a.Fragment, null, a.createElement(We, {
+                    return a.createElement(a.Fragment, null, a.createElement(tt, {
                         setModal: t
                     }), a.createElement(r.f, {
                         modal: e,
@@ -8814,27 +9137,27 @@
                     }))
                 }
                 window.addEventListener("beforeunload", (() => {
-                    he.recordUnload()
+                    ce.recordUnload()
                 })), window.addEventListener("pagehide", (() => {
-                    he.recordUnload()
+                    ce.recordUnload()
                 })), window.addEventListener("blur", (() => {
-                    he.recordUnload()
+                    ce.recordUnload()
                 })), async function() {
-                    const e = await he.getAllStats();
-                    le.dispatch(oe({
+                    const e = await ce.getAllStats();
+                    he.dispatch(ne({
                                 zigzag_bestScore: e.zigzag_bestScore,
                                 endless_bestScore: e.endless_bestScore,
                                 highVisibilityMode: e.highVisibilityMode,
                                 currentCharacter: e.currentCharacter,
                                 timetrial_bestScore: e.timetrial_bestScore < 0 ? -1 : e.timetrial_bestScore / 1e3,
-                                gameSpeed: e.reducedSpeedMode ? .5 : se,
+                                gameSpeed: e.reducedSpeedMode ? .5 : ie,
                                 mode: e.mode,
                                 theme: e.theme
                             }))
                 }().then((() => {
                     (0, c.s)(Error),
                     function() {
-                        const e = new Pe;
+                        const e = new _e;
                         let t = window.performance.now();
                         const s = () => {
                             requestAnimationFrame(s);
@@ -8858,10 +9181,10 @@
                     function() {
                         const e = document.getElementById("hamburger-container");
                         e.style.zIndex = h._p.CONTEXT_MENU.toString(), i.render(a.createElement(o.zt, {
-                            store: le
+                            store: he
                         }, a.createElement(n.h, {
                             designSystem: l.fn
-                        }, a.createElement($e, null))), e)
+                        }, a.createElement(st, null))), e)
                     }()
                 }))
             },
@@ -10403,6 +10726,6 @@
             s = self.webpackChunkedge_common = self.webpackChunkedge_common || [];
         s.forEach(t.bind(null, 0)), s.push = t.bind(null, s.push.bind(s))
     })();
-    var a = i.O(void 0, [7692, 3197], (() => i(37922)));
+    var a = i.O(void 0, [7692, 3197], (() => i(82870)));
     a = i.O(a)
 })();

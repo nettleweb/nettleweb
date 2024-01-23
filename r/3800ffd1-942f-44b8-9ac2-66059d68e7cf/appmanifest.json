@@ -2,7 +2,7 @@
 	"name": "Let's Surf",
 	"short_name": "Let's Surf",
 	"description": "An offline game from Microsoft Edge",
-	"version": "1.51",
+	"version": "1.7",
 	"start_url": "index.html",
 	"display": "fullscreen",
 	"orientation": "any",

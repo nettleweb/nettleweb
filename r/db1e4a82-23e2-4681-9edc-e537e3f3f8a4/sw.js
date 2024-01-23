@@ -153,11 +153,11 @@ function fetchWithBypass(request, bypassCache)
 	if (bypassCache)
 	{
 		return fetch(request.url, {
+            method: 'GET',
 			headers: request.headers,
-			mode: request.mode,
+			mode: request.mode == 'navigate' ? 'cors' : request.mode,
 			credentials: request.credentials,
-			redirect: request.redirect,
-			cache: "no-store"
+			redirect: request.redirect
 		});
 	}
 	else

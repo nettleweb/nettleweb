@@ -1,0 +1,103 @@
+function a(e) {
+            return new Promise((function(t) {
+                DracoDecoderModule({
+                    wasmBinary: e
+                }).then((function(e) {
+                    t({
+                        module: e
+                    })
+                }))
+            }))
+        }function s(e, t, n, i, r) {
+            var o = new e.DecoderBuffer;
+            o.Init(t, t.byteLength);
+            var a, s, c = new e.Decoder;
+            try {
+                var l = c.GetEncodedGeometryType(o);
+                switch (l) {
+                    case e.TRIANGULAR_MESH:
+                        a = new e.Mesh, s = c.DecodeBufferToMesh(o, a);
+                        break;
+                    case e.POINT_CLOUD:
+                        a = new e.PointCloud, s = c.DecodeBufferToPointCloud(o, a);
+                        break;
+                    default:
+                        throw new Error("Invalid geometry type " + l)
+                }
+                if (!s.ok() || !a.ptr) throw new Error(s.error_msg());
+                var u = a.num_points();
+                if (l === e.TRIANGULAR_MESH) {
+                    var h = a.num_faces(),
+                        d = new e.DracoInt32Array;
+                    try {
+                        for (var p = new Uint32Array(3 * h), f = 0; f < h; f++) {
+                            c.GetFaceFromMesh(a, f, d);
+                            var m = 3 * f;
+                            p[m + 0] = d.GetValue(0), p[m + 1] = d.GetValue(1), p[m + 2] = d.GetValue(2)
+                        }
+                        i(p)
+                    } finally {
+                        e.destroy(d)
+                    }
+                }
+                var g = function(t, n) {
+                    var i = new e.DracoFloat32Array;
+                    try {
+                        c.GetAttributeFloatForAllPoints(a, n, i);
+                        var o = n.num_components();
+                        if ("color" === t && 3 === o) {
+                            for (var s = new Float32Array(4 * u), l = 0, h = 0; l < s.length; l += 4, h += o) s[l + 0] = i.GetValue(h + 0), s[l + 1] = i.GetValue(h + 1), s[l + 2] = i.GetValue(h + 2), s[l + 3] = 1;
+                            r(t, s)
+                        } else {
+                            for (s = new Float32Array(u * o), l = 0; l < s.length; l++) s[l] = i.GetValue(l);
+                            r(t, s)
+                        }
+                    } finally {
+                        e.destroy(i)
+                    }
+                };
+                if (n)
+                    for (var b in n) {
+                        var _ = n[b];
+                        g(b, c.GetAttributeByUniqueId(a, _))
+                    } else {
+                        var v = {
+                            position: "POSITION",
+                            normal: "NORMAL",
+                            color: "COLOR",
+                            uv: "TEX_COORD"
+                        };
+                        for (var b in v) {
+                            if (-1 !== (_ = c.GetAttributeId(a, e[v[b]]))) g(b, c.GetAttribute(a, _))
+                        }
+                    }
+            } finally {
+                a && e.destroy(a), e.destroy(c), e.destroy(o)
+            }
+        }(function c() {
+            var e;
+            onmessage = function(t) {
+                var n = t.data;
+                switch (n.id) {
+                    case "init":
+                        var i = n.decoder;
+                        i.url && (importScripts(i.url), e = a(i.wasmBinary)), postMessage("done");
+                        break;
+                    case "decodeMesh":
+                        if (!e) throw new Error("Draco decoder module is not available");
+                        e.then((function(e) {
+                            s(e.module, n.dataView, n.attributes, (function(e) {
+                                postMessage({
+                                    id: "indices",
+                                    value: e
+                                }, [e.buffer])
+                            }), (function(e, t) {
+                                postMessage({
+                                    id: e,
+                                    value: t
+                                }, [t.buffer])
+                            })), postMessage("done")
+                        }))
+                }
+            }
+        })()
