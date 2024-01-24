@@ -1,6 +1,7 @@
-/404.html		/			301
-/unblocker		/unbl.xht	301
-/unblocker/		/unbl.xht	301
+/404.html		/		301
+/unbl.xht		/		391
+/unblocker		/		301
+/unblocker/		/		301
 
 /terms			/stub.txt	302
 /privacy		/stub.txt	302
