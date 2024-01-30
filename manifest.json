@@ -1,7 +1,7 @@
 {
 	"id": "whitespider",
 	"name": "WhiteSpider",
-	"version": "2.1.4",
+	"version": "2.2.0",
 	"short_name": "WhiteSpider",
 	"categories": ["games"],
 	"description": "WhiteSpider GameHub - Free unblocked games",
@@ -19,14 +19,29 @@
 	],
 	"icons": [
 		{
+			"src": "/res/logo48.png",
+			"type": "image/png",
+			"sizes": "48x48"
+		},
+		{
 			"src": "/res/logo64.png",
 			"type": "image/png",
 			"sizes": "64x64"
 		},
 		{
+			"src": "/res/logo96.png",
+			"type": "image/png",
+			"sizes": "96x96"
+		},
+		{
 			"src": "/res/logo128.png",
 			"type": "image/png",
 			"sizes": "128x128"
+		},
+		{
+			"src": "/res/logo192.png",
+			"type": "image/png",
+			"sizes": "192x192"
 		},
 		{
 			"src": "/res/logo256.png",

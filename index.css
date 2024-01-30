@@ -92,6 +92,7 @@
 	margin: 0px 15px;
 	color: #808080;
 	border: none;
+	z-index: -2;
 	font-size: 14px;
 	text-align: center;
 	line-height: 20px;
@@ -109,6 +110,19 @@
 #nav-bar>button[current], #game-category>button[current] {
 	color: #303030;
 	font-weight: 600;
+}
+
+#game-category>button[unread]::after {
+	position: relative;
+	display: inline-block;
+	width: 5px;
+	height: 5px;
+	margin: 0px 2px;
+	top: 0px;
+	content: "";
+	background: #ff0000;
+	border-radius: 5px;
+	vertical-align: top;
 }
 
 #accn-btn::before {
