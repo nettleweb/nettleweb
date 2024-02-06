@@ -1,13 +1,11 @@
 # WhiteSpider
 <a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">![Discord Shield](https://discordapp.com/api/guilds/998658232207814667/widget.png?style=shield)</a> ![Current Version](https://img.shields.io/github/manifest-json/v/chromehackteam/whitespider) <br/>
-A free open source website with 400+ unblocked games + unblockers. <br />
-<a href="https://whitespider.dev/" target="_blank" rel="noopener">Main Link</a> | <a href="https://sites.google.com/view/whitespider/" target="_blank" rel="noopener">Google Sites version</a> | <a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">Discord</a><br />
+A free open source unblocked website with 400+ games + unblockers + ChatGPT. <br />
+<a href="https://whitespider.dev/" target="_blank" rel="noopener">Main Link</a> | <a href="https://sites.google.com/view/wsug-mirrors/" target="_blank" rel="noopener">Mirror Links</a> | <a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">Discord</a> | <a href="https://github.com/whitespider-dev/whitespider-backend/tree/%81%d3Q%f0%8b%7B%bd%d1" target="_blank" rel="noopener">Backend Repo</a><br />
 
 <br /><div><b>
 Please also give a star if you fork, it helps ranking on Google.
 </b></div><br />
-
-
 
 ## Features
  - 400+ unblocked games
