@@ -1,7 +1,7 @@
 {
 	"id": "whitespider",
 	"name": "WhiteSpider",
-	"version": "2.3.0",
+	"version": "2.3.1",
 	"short_name": "WhiteSpider",
 	"categories": ["games"],
 	"description": "WhiteSpider GameHub - Free unblocked games",
@@ -9,12 +9,12 @@
 	"display": "fullscreen",
 	"start_url": "/",
 	"orientation": "any",
-	"theme_color": "#ffffff",
+	"theme_color": "#005a5a",
 	"background_color": "#ffffff",
 	"display_override": [
 		"fullscreen",
-		"minimal-ui",
 		"standalone",
+		"minimal-ui",
 		"window-controls-overlay"
 	],
 	"icons": [
