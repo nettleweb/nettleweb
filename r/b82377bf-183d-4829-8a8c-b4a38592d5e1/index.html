@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<base href="." target="_blank" />
+		<title>Plants VS Zombies</title>
+		<script type="text/javascript" src="/lib/ruffle/ruffle.js"></script>
+		<style type="text/css">
+@import url("/common.css");
+
+ruffle-player {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	overflow: hidden;
+}
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">// <![CDATA[
+"use strict"; (() => {
+const player = RufflePlayer.newest().createPlayer();
+document.body.appendChild(player);
+player.load({
+	url: "pvz_9_15.swf",
+	scale: "showAll",
+	quality: "best",
+	autoplay: "auto",
+	logLevel: "warn",
+	letterbox: "on",
+	openUrlMode: "confirm",
+	upgradeToHttps: true,
+	// backgroundColor: "#000000"
+});
+})(); // ]]>
+		</script>
+	</body>
+</html>

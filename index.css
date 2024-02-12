@@ -5,11 +5,13 @@
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	padding: 5px;
+	padding: 10px;
 	margin: 20px auto;
-	border: 3px solid #ff0000;
+	color: #ff0000;
+	border: 1px solid #ff0000;
+	border-radius: 10px;
 	z-index: 10;
-	background: #ffffff;
+	background: #ffe0e0;
 	line-height: 20px;
 	letter-spacing: 0px;
 }
@@ -37,9 +39,9 @@
 	height: 50px;
 	left: 10px;
 	background-image: url("res/logo.svg");
-	background-position: center;
-	background-size: contain;
+	background-size: 200px 50px;
 	background-repeat: no-repeat;
+	background-position: 0px 0px;
 }
 
 #status {
@@ -155,15 +157,14 @@
 		background: #303030;
 	}
 
-	#hamb>div::before,
-	#hamb>div::after {
+	#hamb>div::before, #hamb>div::after {
 		position: absolute;
 		display: block;
 		width: 100%;
 		height: 100%;
 		content: "";
 		background: #303030;
-		transition: all 0.2s ease-out;
+		transition: transform 0.2s ease-out;
 	}
 	
 	#hamb>div::before {
@@ -325,7 +326,7 @@
 #game-search>input, #yt-search>input {
 	position: absolute;
 	display: block;
-	width: 310px;
+	width: calc(100% - 52px);
 	height: 20px;
 	top: 10px;
 	left: 10px;
@@ -346,9 +347,9 @@
 	border: none;
 	outline: none;
 	background-image: url("res/search.svg");
-	background-position: center;
-	background-size: contain;
+	background-size: 18px;
 	background-repeat: no-repeat;
+	background-position: center;
 }
 
 #game-category {
@@ -548,7 +549,6 @@
 	background: #f8f8f8;
 	overflow-x: hidden;
 	overflow-y: auto;
-	
 }
 
 #dialog>div {
@@ -706,7 +706,7 @@
 	border: 1px solid #d0d0d0;
 }
 
-#yt-option-bar>input:focus, #yt-option-bar>select:focus, #yt-load-more {
+#yt-option-bar>input:focus, #yt-option-bar>select:focus {
 	border-color: #005a5a;
 }
 
@@ -753,7 +753,6 @@
 	width: 100%;
 	height: fit-content;
 	margin: 10px 0px;
-	color: #303030;
 	font-weight: 600;
 	line-height: 18px;
 }
@@ -1069,9 +1068,9 @@
 	outline: none;
 	border-radius: 25px;
 	background-image: url("res/add.svg");
-	background-position: center;
-	background-size: 20px;
+	background-size: 24px;
 	background-repeat: no-repeat;
+	background-position: center;
 }
 
 #tabs>div {
@@ -1126,9 +1125,9 @@
 	outline: none;
 	border-radius: 25px;
 	background-image: url("res/close.svg");
-	background-position: center;
-	background-size: 15px;
+	background-size: 20px;
 	background-repeat: no-repeat;
+	background-position: center;
 }
 
 #toolbar {
@@ -1153,7 +1152,7 @@
 	border: none;
 	outline: none;
 	border-radius: 25px;
-	background-size: 25px;
+	background-size: 24px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -1417,7 +1416,7 @@
 	height: fit-content;
 	padding: 20px;
 	margin: 70px auto;
-	border: 1px solid #ffffff;
+	border: 1px solid #808080;
 	border-radius: 10px;
 	background: #ffffff;
 }
@@ -1508,5 +1507,5 @@
 	color: #ff0000;
 	border: 1px solid #ff0000;
 	border-radius: 10px;
-	background: #ffc0c0;
+	background: #ffe0e0;
 }

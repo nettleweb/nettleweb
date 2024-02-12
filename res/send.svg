@@ -4,7 +4,7 @@
    viewBox="0 0 48 48"
    width="48"
    version="1.1"
-   id="svg2789"
+   id="svg4"
    sodipodi:docname="send.svg"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -12,9 +12,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs2793" />
+     id="defs8" />
   <sodipodi:namedview
-     id="namedview2791"
+     id="namedview6"
      pagecolor="#ffffff"
      bordercolor="#666666"
      borderopacity="1.0"
@@ -24,16 +24,16 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="12.536414"
-     inkscape:cx="30.391466"
-     inkscape:cy="24.8875"
+     inkscape:cx="23.052844"
+     inkscape:cy="23.930288"
      inkscape:window-width="1920"
      inkscape:window-height="1030"
      inkscape:window-x="0"
      inkscape:window-y="27"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg2789" />
+     inkscape:current-layer="svg4" />
   <path
      d="M 6,40 V 8 L 44,24 Z M 10,34 33.7,24 10,14 v 7 l 12,3 -12,3 z m 0,0 V 14 Z"
-     id="path2787"
+     id="path2"
      style="stroke-width:0.0499999;fill:#333333" />
 </svg>

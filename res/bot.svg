@@ -24,7 +24,7 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="12.536414"
-     inkscape:cx="34.539383"
+     inkscape:cx="34.61915"
      inkscape:cy="22.414703"
      inkscape:window-width="1920"
      inkscape:window-height="1030"
@@ -32,6 +32,12 @@
      inkscape:window-y="27"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4" />
+  <circle
+     style="fill:#ffffff;stroke-width:3;paint-order:markers fill stroke"
+     id="path216"
+     cx="24"
+     cy="24"
+     r="24" />
   <path
      id="path230"
      style="fill:#008000;stroke-width:3;paint-order:markers fill stroke"

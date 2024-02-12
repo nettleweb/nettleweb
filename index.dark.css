@@ -1,0 +1,106 @@
+body {
+	color: #e0e0e0;
+	background: #202020;
+}
+
+option {
+	background: #404040;
+}
+
+.text-body, #game-category, #game-navigator {
+	border-color: #606060;
+	background: #404040;
+}
+
+#navigation-bar {
+	background: #404040;
+}
+
+#nav-bar>button[current], #game-category>button[current] {
+	color: #ffffff;
+}
+
+#hamb>div, #hamb>div::before, #hamb>div::after {
+	background: #ffffff;
+}
+
+#game-search>button, #yt-search>button {
+	background-image: url("res/search-w.svg");
+}
+
+#game-container>div {
+	border-color: #606060;
+	background-color: #404040;
+}
+
+#game-container>div>div {
+	color: #e0e0e0;
+}
+
+#dialog {
+	background: #202020;
+}
+
+#interface {
+	background: #404040;
+}
+
+#chatgpt>button {
+	background-image: url("res/send-w.svg");
+}
+
+#yt-load-more:hover {
+	background: #505050;
+}
+
+#yt-load-more:active {
+	background: #606060;
+}
+
+#unbl-content {
+	background: #202020;
+}
+
+#tab-bar {
+	background: #303030;
+}
+
+#tabs>div[current], #toolbar {
+	background: #404040;
+}
+
+#new-tab {
+	background-image: url("res/add-w.svg");
+}
+
+#tabs>div>button {
+	background-image: url("res/close-w.svg");
+}
+
+#back {
+	background-image: url("res/back-w.svg");
+}
+
+#forward {
+	background-image: url("res/forward-w.svg");
+}
+
+#refresh {
+	background-image: url("res/refresh-w.svg");
+}
+
+#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover {
+	background-color: #505050;
+}
+
+#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active {
+	background-color: #606060;
+}
+
+#address, #mode>select {
+	background: #202020;
+}
+
+#submit-game-frame>div {
+	background: #404040;
+}
