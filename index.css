@@ -477,7 +477,7 @@
 	background-image: url("res/forward.svg");
 }
 
-#gnav-page-number {
+#game-navigator>div {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -488,6 +488,23 @@
 	line-height: 20px;
 	letter-spacing: 0px;
 	vertical-align: top;
+}
+
+#game-navigator>div>input {
+	position: relative;
+	display: inline;
+	width: 40px;
+	height: fit-content;
+	border: none;
+	outline: none;
+	font-size: 12px;
+	text-align: end;
+	line-height: 20px;
+	border-bottom: 1px solid #808080;
+}
+
+#game-navigator>div>input:focus {
+	border-bottom: 1px solid #303030;
 }
 
 #game-notice {

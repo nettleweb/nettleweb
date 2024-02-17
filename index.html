@@ -17,7 +17,7 @@
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta name="keywords" content="whitespider,unblocked,unlocked,unblocker,proxy,games,html5,flash,dos,free,open source" />
-		<meta name="description" content="Free + open source unblocked games website; 400+ HTML5, DOS, Flash games for school; Free, No Ads" />
+		<meta name="description" content="Free + open source unblocked games website; 400+ HTML5, DOS, Flash games for school; Free unblocked games" />
 		<meta name="theme-color" content="#005a5a" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -69,7 +69,8 @@
 				</form>
 				<div id="game-category">
 					<button type="button" match="all" current="true">All</button>
-					<button type="button" match="new">New</button>
+					<button type="button" match="new">&#x1f389;New</button>
+					<button type="button" match="hot">&#x1f525;Hot</button>
 					<button type="button" match="html5">HTML5</button>
 					<button type="button" match="flash">Flash</button>
 					<button type="button" match="dos">DOS</button>
@@ -81,7 +82,7 @@
 				<div id="game-container"></div>
 				<div id="game-navigator">
 					<button id="gnav-back" type="button" disabled="true" title="Previous page"></button>
-					<div id="gnav-page-number">Page: 0/0</div>
+					<div>Page: <input id="gnav-page-no" type="number" value="0" min="1" max="999" maxlength="3" placeholder="1" /> / <span id="gnav-page-count">0</span></div>
 					<button id="gnav-forward" type="button" disabled="true" title="Next page"></button>
 				</div>
 				<div id="game-notice">&#x26a0; Games with a 'USER' label were added by users with the button below.
