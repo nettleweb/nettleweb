@@ -1,41 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="48"
-   height="48"
-   viewBox="0 0 48 48"
-   fill="none"
-   version="1.1"
-   id="svg435"
-   sodipodi:docname="facebook.svg"
-   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <defs
-     id="defs439" />
-  <sodipodi:namedview
-     id="namedview437"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="true"
-     inkscape:deskcolor="#d1d1d1"
-     showgrid="false"
-     inkscape:zoom="12.536414"
-     inkscape:cx="26.323317"
-     inkscape:cy="27.120993"
-     inkscape:window-width="1920"
-     inkscape:window-height="1030"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg435" />
-  <path
-     d="M 40,24.097457 C 40,15.206161 32.837467,8 24,8 15.162533,8 8,15.206161 8,24.097457 8,32.133642 13.85,38.792691 21.5,40 V 28.750628 H 17.437467 V 24.097457 H 21.5 v -3.546471 c 0,-4.033822 2.387533,-6.262917 6.043733,-6.262917 1.75,0 3.581267,0.314403 3.581267,0.314403 v 3.961484 h -2.018733 c -1.987534,0 -2.606267,1.241919 -2.606267,2.515228 v 3.018273 h 4.437467 l -0.709334,4.653171 H 26.5 V 40 C 34.15,38.792691 40,32.133642 40,24.097457 Z"
-     fill="#1877F2"
-     id="path431"
-     style="fill:#808080;stroke-width:0.668694" />
+	xmlns="http://www.w3.org/2000/svg"
+	width="48"
+	height="48"
+	viewBox="0 0 48 48">
+	<path
+		d="M 40,24.097457 C 40,15.206161 32.837467,8 24,8 15.162533,8 8,15.206161 8,24.097457 8,32.133642 13.85,38.792691 21.5,40 V 28.750628 H 17.437467 V 24.097457 H 21.5 v -3.546471 c 0,-4.033822 2.387533,-6.262917 6.043733,-6.262917 1.75,0 3.581267,0.314403 3.581267,0.314403 v 3.961484 h -2.018733 c -1.987534,0 -2.606267,1.241919 -2.606267,2.515228 v 3.018273 h 4.437467 l -0.709334,4.653171 H 26.5 V 40 C 34.15,38.792691 40,32.133642 40,24.097457 Z"
+		style="fill:#808080" />
 </svg>

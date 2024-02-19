@@ -28,7 +28,7 @@
 	top: 0px;
 	left: 0px;
 	cursor: default;
-	background: #f8f8f8;
+	background: #f0f0f0;
 	user-select: none;
 }
 
@@ -384,10 +384,10 @@
 	cursor: pointer;
 	border: 1px solid #c0c0c0;
 	border-radius: 15px;
-	background-color: #f0f0f0;
-	background-position: 0px 0px;
 	background-size: 140px 105px;
+	background-color: #f0f0f0;
 	background-repeat: no-repeat;
+	background-position: 0px 0px;
 }
 
 #game-container>div:hover {
@@ -563,7 +563,7 @@
 	display: block;
 	width: 100%;
 	height: calc(100% - 50px);
-	background: #f8f8f8;
+	background: #f0f0f0;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
@@ -611,7 +611,7 @@
 	padding: 5px;
 	color: #ff0000;
 	border: 1px solid #ff0000;
-	background: #ffc0c0;
+	background: #ffe0e0;
 }
 
 #interface {
@@ -620,27 +620,31 @@
 	width: 100%;
 	height: 50px;
 	bottom: 0px;
-	background: #f0f0f0;
+	background: #e0e0e0;
 }
 
-#new-topic {
+#delmsg {
 	position: absolute;
 	display: block;
 	width: 40px;
 	height: 40px;
-	top: 3px;
+	top: 5px;
 	left: 20px;
 	cursor: pointer;
-	box-shadow: 2px 2px #808080;
+	border: none;
 	border-radius: 25px;
-	background-image: url("res/new-topic.svg");
-	background-size: 40px 40px;
+	background-image: url("res/delete.svg");
+	background-size: 30px 30px;
 	background-repeat: no-repeat;
-	background-position: 0px 0px;
+	background-position: center;
 }
 
-#new-topic:active {
-	box-shadow: -2px -2px #808080;
+#delmsg:hover {
+	background-color: #d0d0d0;
+}
+
+#delmsg:active {
+	background-color: #c0c0c0;
 }
 
 #chatgpt {
@@ -677,9 +681,9 @@
 	border: none;
 	outline: none;
 	background-image: url("res/send.svg");
-	background-size: 30px 30px;
+	background-size: 24px 24px;
 	background-repeat: no-repeat;
-	background-position: 0px 0px;
+	background-position: center;
 }
 
 #services-page>h2 {
@@ -1169,7 +1173,7 @@
 	border: none;
 	outline: none;
 	border-radius: 25px;
-	background-size: 24px;
+	background-size: 24px 24px;
 	background-repeat: no-repeat;
 	background-position: center;
 }

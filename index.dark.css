@@ -45,6 +45,10 @@ option {
 	background: #404040;
 }
 
+#delmsg {
+	background-image: url("res/delete-w.svg");
+}
+
 #chatgpt>button {
 	background-image: url("res/send-w.svg");
 }
@@ -89,11 +93,11 @@ option {
 	background-image: url("res/refresh-w.svg");
 }
 
-#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover {
+#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #delmsg:hover {
 	background-color: #505050;
 }
 
-#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active {
+#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #delmsg:active {
 	background-color: #606060;
 }
 
