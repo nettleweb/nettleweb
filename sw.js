@@ -1,13 +1,10 @@
 /// <reference lib="WebWorker" />
-((_) => {
-	"use strict";
-
+"use strict"; ((_) => {
 	/**
 	 * @type {ServiceWorkerGlobalScope}
 	 */
 	const self = _;
-	const origin = self.origin;
-	const hostname = self.location.hostname;
+	const origin = self.location.origin;
 	const cacheName = "167e1f07-b59a-4742-bb45-15cf3caabcce";
 
 	/**
@@ -15,45 +12,36 @@
 	 * @returns {Promise<Response>}
 	 */
 	async function handleFetch(e) {
-		try {
-			const request = e.request;
-			const url = new URL(request.url);
-
-			switch (url.protocol) {
-				case "http:":
-				case "https:":
-					break;
-				default:
-					return await self.fetch(request);
-			}
-
-			if (url.pathname === "/manifest.json")
-				return await self.fetch(request);
-
-			switch (request.method) {
-				case "GET":
-				case "HEAD":
-					break;
-				default:
-					return await self.fetch(request);
-			}
-
-			const cached = await caches.match(request, { cacheName });
-			if (cached != null)
-				return cached;
-
-			const response = await e.preloadResponse || await self.fetch(request);
-			if (hostname !== "localhost") {
-				try {
-					const cache = await caches.open(cacheName);
-					await cache.put(request, response.clone());
-				} catch (err) {
-				}
-			}
-			return response;
-		} catch (err) {
-			return Response.error();
+		const request = e.request;
+		switch (request.method) {
+			case "GET":
+			case "HEAD":
+				break;
+			default:
+				return await fetch(request);
 		}
+
+		const url = new URL(request.url);
+		switch (url.protocol) {
+			case "http:":
+			case "https:":
+				break;
+			default:
+				return await fetch(request);
+		}
+
+		if (url.origin === origin && url.pathname === "/manifest.json")
+			return await fetch(request);
+
+		const response = await caches.match(request, { cacheName }) || await e.preloadResponse || await self.fetch(request);
+		if (origin !== "http://localhost:8000") {
+			try {
+				const cache = await caches.open(cacheName);
+				await cache.put(request, response.clone());
+			} catch (err) {
+			}
+		}
+		return response;
 	}
 
 	/**
