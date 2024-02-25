@@ -6,11 +6,10 @@
 		<meta http-equiv="Referrer-Policy" content="no-referrer" />
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<base href="/"/>
+		<base href="/" target="_blank" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="lib/jsdos/js-dos.css" />
-		<script type="text/javascript" src="lib/ruffle/ruffle.js"></script>
-		<script type="text/javascript" src="lib/jsdos/js-dos.js"></script>
+		<link rel="stylesheet" type="text/css" href="lib/emulatorjs/emulator.min.css" />
 		<title>WhiteSpider&#x2122;</title>
 		<style type="text/css">
 @import url("common.css");
@@ -33,60 +32,6 @@ body>div {
 		</style>
 	</head>
 	<body>
-		<script type="text/javascript">
-// <![CDATA[
-"use strict"; (() => {
-	const location = new URL(window.location.href);
-	const type = location.searchParams.get("type") || "";
-	const url = location.searchParams.get("url") || "";
-
-	if (type.length === 0 || url.length === 0) {
-		console.error("Player: Missing required parameters.");
-		return;
-	}
-
-	window.focus();
-	emulators.pathPrefix = "/lib/jsdos/";
-	RufflePlayer.config = Object.freeze(Object.create(null));
-
-	switch (parseInt(type, 10)) {
-		case 1:
-			{
-				const player = RufflePlayer.newest().createPlayer();
-				document.body.appendChild(player);
-				player.load({
-					url: url,
-					scale: "showAll",
-					quality: "best",
-					autoplay: "auto",
-					logLevel: "warn",
-					letterbox: "on",
-					openUrlMode: "confirm",
-					upgradeToHttps: true,
-					// backgroundColor: "#000000"
-				});
-			}
-			break;
-		case 2:
-			{
-				const frame = document.createElement("div");
-				document.body.appendChild(frame);
-			 	Dos(frame).run(url);
-			}
-			break;
-		default:
-			{
-				const frame = document.createElement("embed");
-				frame.type = "text/plain";
-				frame.width = "1024";
-				frame.height = "768";
-				frame.src = url;
-				document.body.appendChild(frame);
-			}
-			break;
-	}
-})();
-// ]]>
-		</script>
+		<script type="text/javascript" src="player.js"></script>
 	</body>
 </html>

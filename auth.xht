@@ -5,7 +5,7 @@
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 		<meta http-equiv="Referrer-Policy" content="no-referrer" />
 		<meta name="referrer" content="no-referrer" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />>
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<base href="/" target="_blank" />
 		<title>Loading...</title>
 	</head>
@@ -14,17 +14,17 @@
 		<script type="text/javascript">
 // <![CDATA[
 "use strict"; (() => {
-	const url = new URL(window.location.href);
 	const win = window.opener;
-
-	if (win == null) {
+	if (win == null || typeof win !== "object") {
 		console.error("Failed to access window opener.");
 		return;
 	}
 
 	win.focus();
-	win.postMessage(url.hash);
-	self.close();
+	win.postMessage(window.location.hash);
+
+	window.stop();
+	window.close();
 })();
 // ]]>
 		</script>

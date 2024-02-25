@@ -50,6 +50,7 @@
 				<button id="accn-btn" type="button">Login</button>
 			</div>
 		</div>
+		<div id="loading">Loading...</div>
 		<div id="content">
 			<div id="home-page" current="true">
 				<div class="text-body">
@@ -84,6 +85,9 @@
 					<button id="gnav-back" type="button" disabled="true" title="Previous page"></button>
 					<div>Page: <input id="gnav-page-no" type="number" value="0" min="1" max="999" maxlength="3" placeholder="1" /> / <span id="gnav-page-count">0</span></div>
 					<button id="gnav-forward" type="button" disabled="true" title="Next page"></button>
+				</div>
+				<div id="game-widget">
+					<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="8757025012" data-ad-format="auto" data-full-width-responsive="true"></ins>
 				</div>
 				<div id="game-notice">&#x26a0; Games with a 'USER' label were added by users with the button below.
 					They have not been verified by the developers, and are not guaranteed to work properly.</div>
@@ -150,7 +154,76 @@
 					<div class="gcse-search"></div>
 				</div>
 				<hr />
-				<h2>WebEMU (32-bit PC Emulator)</h2>
+				<h2>Game Emulator</h2>
+				<div id="gamemu-options">
+					<div>
+						<label for="emulator">Emulator:</label>
+						<select id="emulator">
+							<option value="1">Ruffle</option>
+							<option value="2">JS-DOS</option>
+							<option value="4">EmulatorJS</option>
+						</select>
+					</div>
+					<div>
+						<label for="core">System:</label>
+						<select id="core">
+							<optgroup label="Nintendo">
+								<option value="n64">N64</option>
+								<option value="nds">NDS</option>
+								<option value="nes">NES/Famicom</option>
+								<option value="snes">SNES</option>
+								<option value="gb">Game Boy</option>
+								<option value="gba">Game Boy Advance</option>
+								<option value="vb">Virtual Boy</option>
+							</optgroup>
+							<optgroup label="Sega">
+								<option value="sega32x">32X</option>
+								<option value="segaCD">CD</option>
+								<option value="segaGG">Game Gear</option>
+								<option value="segaMD">Mega Drive</option>
+								<option value="segaMS">Master System</option>
+								<option value="segaSaturn">Saturn</option>
+							</optgroup>
+							<optgroup label="Atari">
+								<option value="atari2600">2600</option>
+								<option value="atari5200">5200</option>
+								<option value="atari7800">7800</option>
+								<option value="jaguar">Jaguar</option>
+								<option value="lynx">Lynx</option>
+							</optgroup>
+							<optgroup label="Commodore">
+								<option value="c64">C64</option>
+								<option value="c128">C128</option>
+								<option value="amiga">Amiga</option>
+								<option value="pet">PET</option>
+								<option value="plus4">Plus/4</option>
+								<option value="vic20">VIC-20</option>
+							</optgroup>
+							<optgroup label="Other">
+								<option value="3do">3DO</option>
+								<option value="arcade">Arcade</option>
+								<option value="coleco">ColecoVision</option>
+								<option value="psx">PS1</option>
+								<option value="mame2003">MAME 2003</option>
+							</optgroup>
+							<option value="pce">NEC TurboGrafx-16/SuperGrafx/PC Engine</option>
+							<option value="pcfx">NEC PC-FX</option>
+							<option value="ngp">SNK NeoGeo Pocket</option>
+							<option value="ws">Bandai WonderSwan</option>
+						</select>
+					</div>
+					<div>
+						<label for="bios">BIOS:</label>
+						<input id="bios" type="file" />
+					</div>
+					<div>
+						<label for="game-rom">Game ROM:</label>
+						<input id="game-rom" type="file" />
+					</div>
+				</div>
+				<button id="startemu" type="button">Start Emulation</button>
+				<hr />
+				<h2>PC Emulator (32-bit)</h2>
 				<div id="webemu-container">
 					<embed type="text/plain" width="1024" height="768" src="ext/webemu/index.xht" />
 				</div>
@@ -254,7 +327,16 @@
 					</select>
 				</div>
 			</div>
-			<div id="footer">
+			<span id="left-side-widget">
+				<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="7455551633" data-ad-format="auto" data-full-width-responsive="true"></ins>
+			</span>
+			<span id="right-side-widget">
+				<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="3528749066" data-ad-format="auto" data-full-width-responsive="true"></ins>
+			</span>
+			<span id="bottom-widget">
+				<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="5345722600" data-ad-format="auto" data-full-width-responsive="true"></ins>
+			</span>
+			<span id="footer">
 				<div>
 					<div>©2024 WhiteSpider Dev Team. All rights reserved.</div>
 					<div>We are working hard to improve your user experience.</div>
@@ -272,7 +354,7 @@
 					<a href="https://github.com/whitespider-dev/whitespider/issues/new?asignees=&amp;labels=bug&amp;title=" target="_blank" rel="noopener">Report a bug</a><br />
 					<a href="mailto:support@whitespider.dev" target="_blank" rel="noopener">Contact us</a>
 				</div>
-			</div>
+			</span>
 		</div>
 		<button id="settings" type="button" title="Settings"></button>
 		<div id="unbl-content">
@@ -334,6 +416,5 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="main.js"></script>
-		<script type="text/javascript" src="data:text/javascript;base64,InVzZSBzdHJpY3QiOyh0PT57Y29uc3RbZSxpLHJdPW5ldyB0LkZ1bmN0aW9uKCcidXNlIHN0cmljdCI7cmV0dXJuWygpPT52b2lkIDAsKCk9PiJhdXRvIiwoLi4uYXJncyk9PmNvbnNvbGUubG9nKC4uLmFyZ3MpXTsnKS5hcHBseSh2b2lkIDAsW10pLG49dC5sb2NhdGlvbixvPXQuZG9jdW1lbnQscz1uZXcgdC5VUkwobi5ocmVmKSxhPXMuaG9zdG5hbWUsYz1zLm9yaWdpbixsPSgpPT57cigiJWNWTSBEZWFkISIsImNvbG9yOiNmZmY7Zm9udC1zaXplOjE0cHg7Zm9udC1zdHlsZTpub3JtYWw7YmFja2dyb3VuZDojZjAwO2ZvbnQtd2VpZ2h0OjYwMDtsaW5lLWhlaWdodDoxNHB4O2xldHRlci1zcGFjaW5nOjBweDsiKTtjb25zdCB0PShuZXcgRE9NUGFyc2VyKS5wYXJzZUZyb21TdHJpbmcoJzw/eG1sIHZlcnNpb249IjEuMCIgZW5jb2Rpbmc9InV0Zi04IiA/PlxuPCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBYSFRNTCAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvVFIveGh0bWwxMS9EVEQveGh0bWwxMS5kdGQiPlxuPGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIGxhbmc9ImVuIj5cblx0PGhlYWQ+XG5cdFx0PG1ldGEgY2hhcnNldD0idXRmLTgiIC8+XG5cdFx0PG1ldGEgbmFtZT0idmlld3BvcnQiIGNvbnRlbnQ9IndpZHRoPWRldmljZS13aWR0aCxpbml0aWFsLXNjYWxlPTEiIC8+XG5cdFx0PHRpdGxlPlBhZ2UgVGl0bGU8L3RpdGxlPlxuXHQ8L2hlYWQ+XG5cdDxib2R5PlxuXHRcdFBhZ2UgQ29udGVudFxuXHQ8L2JvZHk+XG48L2h0bWw+JywiYXBwbGljYXRpb24veGh0bWwreG1sIik7dC50aXRsZT0iRXJyb3IgOigiO2NvbnN0IGU9dC5ib2R5O2UuaW5uZXJIVE1MPSI8ZGl2PkEgZmF0YWwgZXJyb3Igb2NjdXJyZWQgd2hpbGUgZGlzcGxheWluZyB0aGUgY29udGVudHMgb2YgdGhpcyBwYWdlLjwvZGl2PlxuPGRpdj5QbGVhc2UgdHJ5IHVzaW5nIGEgZGlmZmVyZW50IGJyb3dzZXIgb3IgbmV0d29yaywgb3IgdHJ5IGFnYWluIGxhdGVyLjwvZGl2PlxuIjtjb25zdCBpPXQuY3JlYXRlRWxlbWVudCgiYnV0dG9uIik7aS5zZXRBdHRyaWJ1dGUoImlkIiwiX19yYnRuIiksaS5zZXRBdHRyaWJ1dGUoInR5cGUiLCJidXR0b24iKSxpLnNldEF0dHJpYnV0ZSgidGl0bGUiLCJSZXRyeSIpLGkudGV4dENvbnRlbnQ9IlJldHJ5IixpLmFkZEV2ZW50TGlzdGVuZXIoImNsaWNrIiwoKCk9Pm4ucmVwbGFjZSgiaHR0cHM6Ly93aGl0ZXNwaWRlci5kZXYvIikpLHtwYXNzaXZlOiEwfSksZS5hcHBlbmRDaGlsZChpKSxvLmRvY3VtZW50RWxlbWVudC5yZXBsYWNlV2l0aCh0LmRvY3VtZW50RWxlbWVudCl9O3N3aXRjaChyKCIlY1doaXRlU3BpZGVyLmRldiIsInBvc2l0aW9uOnJlbGF0aXZlO2Rpc3BsYXk6YmxvY2s7d2lkdGg6Zml0LWNvbnRlbnQ7aGVpZ2h0OmZpdC1jb250ZW50O3BhZGRpbmc6NXB4O21hcmdpbjoxMHB4IGF1dG87Y29sb3I6I2ZmZjtib3JkZXI6M3B4IHNvbGlkICMwMDhhOGE7Zm9udC1zaXplOjI0cHg7Zm9udC1zdHlsZTpub3JtYWw7YmFja2dyb3VuZDojMDAzYTNhO2ZvbnQtd2VpZ2h0OjYwMDtsaW5lLWhlaWdodDoyNHB4O2xldHRlci1zcGFjaW5nOjBweDsiKSxzLnByb3RvY29sKXtjYXNlImh0dHA6IjppZigibG9jYWxob3N0IiE9PWEpcmV0dXJuIHMucHJvdG9jb2w9Imh0dHBzOiIscy5wYXRobmFtZT0iLyIscy5ob3N0PWEsdm9pZCBuLnJlcGxhY2Uocy5ocmVmKTticmVhaztjYXNlImh0dHBzOiI6YnJlYWs7ZGVmYXVsdDpyZXR1cm4gdm9pZCBsKCl9c3dpdGNoKGEpe2Nhc2Uid2hpdGVzcGlkZXIuY2YiOmNhc2Uid2hpdGVzcGlkZXIudGsiOmNhc2Uid2hpdGVzcGlkZXIud2ViLmFwcCI6Y2FzZSJ3aGl0ZXNwaWRlci5wYWdlcy5kZXYiOmNhc2Uid2hpdGVzcGlkZXIuZmlyZWJhc2VhcHAuY29tIjpyZXR1cm4gcy5ob3N0PSJ3aGl0ZXNwaWRlci5kZXYiLHMucGF0aG5hbWU9Ii8iLHZvaWQgbi5yZXBsYWNlKHMuaHJlZil9Y29uc3QgZD1vLmhlYWQucXVlcnlTZWxlY3RvcignYmFzZVtocmVmPSIvIl0nKTtpZihudWxsIT1kJiYiX2JsYW5rIj09PWQuZ2V0QXR0cmlidXRlKCJ0YXJnZXQiKSl7Zm9yKGNvbnN0IHQgb2Ygby5xdWVyeVNlbGVjdG9yQWxsKCJzY3JpcHQiKSl7c3dpdGNoKHQuZ2V0QXR0cmlidXRlKCJ0eXBlIikpe2Nhc2UiIjpjYXNlInRleHQvamF2YXNjcmlwdCI6Y2FzZSJhcHBsaWNhdGlvbi9qYXZhc2NyaXB0IjpicmVhaztkZWZhdWx0OnJldHVybiB0LnJlbW92ZSgpLHZvaWQgbCgpfWNvbnN0IGU9dC5nZXRBdHRyaWJ1dGUoInNyYyIpfHwiIjtpZigwPT09ZS5sZW5ndGh8fHQudGV4dENvbnRlbnQpcmV0dXJuIHQucmVtb3ZlKCksdm9pZCBsKCk7aWYoZSE9PW8uY3VycmVudFNjcmlwdC5zcmMpe2NvbnN0IGk9bmV3IFVSTChlLGMpO2lmKGkub3JpZ2luIT09Yyl7aWYoImh0dHBzOiI9PT1pLnByb3RvY29sKXtjb25zdCB0PWkuaG9zdC5zcGxpdCgiLiIpLGU9dC5sZW5ndGg7aWYoImNvbSI9PT10W2UtMV0pe2NvbnN0IGk9dFtlLTJdO2lmKGkuaW5kZXhPZigiZ29vZ2xlIik+PTB8fGkuaW5kZXhPZigiZmlyZWJhc2UiKT49MCljb250aW51ZX19cmV0dXJuIHQucmVtb3ZlKCksdm9pZCBsKCl9fX0iaHR0cHM6Ly93aGl0ZXNwaWRlci5kZXYvIiE9PW8ucXVlcnlTZWxlY3RvcignbGlua1tyZWw9ImNhbm9uaWNhbCInKS5nZXRBdHRyaWJ1dGUoImhyZWYiKXx8bnVsbD09by5xdWVyeVNlbGVjdG9yKCdhW2hyZWY9Imh0dHBzOi8vd2hpdGVzcGlkZXIuZGV2LyInKXx8bnVsbD09by5xdWVyeVNlbGVjdG9yKCdhW2hyZWY9Imh0dHBzOi8vZ2l0aHViLmNvbS93aGl0ZXNwaWRlci1kZXYiJyl8fCJXaGl0ZVNwaWRlciIhPT1vLnRpdGxlP2woKTp0WyJ4eiB6XHVkODAwXHVkODEyIl09KCk9PntkZWxldGUgdFsieHogelx1ZDgwMFx1ZDgxMiJdO2NvbnN0IGU9cy5vcmlnaW47Zm9yKGNvbnN0IHQgb2Ygby5zdHlsZVNoZWV0cylpZihuZXcgVVJMKHQuaHJlZixlKS5vcmlnaW49PT1lKWZvcihjb25zdCBlIG9mIHQuY3NzUnVsZXMpaWYoZSBpbnN0YW5jZW9mIENTU1N0eWxlUnVsZSlzd2l0Y2goZS5zZWxlY3RvclRleHQpe2Nhc2UiI2dhbWUtY29udGFpbmVyIjplLnN0eWxlLnNldFByb3BlcnR5KCJkaXNwbGF5IiwiZmxleCIpO2JyZWFrO2Nhc2UiI25hdi1iYXIgPiBidXR0b24sICNnYW1lLWNhdGVnb3J5ID4gYnV0dG9uIjplLnN0eWxlLnJlbW92ZVByb3BlcnR5KCJ6LWluZGV4Iil9cigiJWNQYWdlIFZlcmlmaWVkISIsImNvbG9yOiNmZmY7Zm9udC1zaXplOjE0cHg7Zm9udC1zdHlsZTpub3JtYWw7YmFja2dyb3VuZDojMDgwO2ZvbnQtd2VpZ2h0OjYwMDtsaW5lLWhlaWdodDoxNHB4O2xldHRlci1zcGFjaW5nOjBweDsiKX19ZWxzZSBsKCl9KSh3aW5kb3cpOw=="></script>
 	</body>
 </html>

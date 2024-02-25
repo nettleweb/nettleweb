@@ -3,7 +3,7 @@ body {
 	background: #202020;
 }
 
-option {
+option, optgroup {
 	background: #404040;
 }
 
