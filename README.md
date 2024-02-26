@@ -1,6 +1,6 @@
 # WhiteSpider
 <a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">![Discord Shield](https://discordapp.com/api/guilds/998658232207814667/widget.png?style=shield)</a> ![Current Version](https://img.shields.io/github/manifest-json/v/whitespider-dev/whitespider) <br/>
-WhiteSpider (aka WhiteSpider Unblocked Games or WSUG) is a FOSS (free open-source software) unblocked website designed for school or office users who are restricted from accessing certain websites. It has more than 500 HTML5, Flash and DOS games, with also <b>unblocker</b>, <b>unblocked YouTube</b> and <b>unblocked ChatGPT</b>. <br />
+WhiteSpider (aka WhiteSpider Unblocked Games or WSUG) is a FOSS (free open-source software) unblocked website designed for school or office users who are restricted from accessing certain websites. It has more than 500 HTML5, Flash and DOS games, with also <b>emulators</b>, <b>unblockers</b>, <b>unblocked YouTube</b> and <b>unblocked ChatGPT</b>. <br />
 
 WhiteSpider is, and will always be, free and open-source. You can however show us your care by <b>clicking on the star button</b> at the top right corner. It would have a significant effect on this project's future development. <br />
 
@@ -58,5 +58,6 @@ Data URLs work in the same way as HTTP(S) or file URLs, they can be opened direc
 ## Credits
 - <a href="https://github.com/ruffle-rs/ruffle/" target="_blank" rel="noopener">Ruffle</a> - Flash emulator that runs in browsers.
 - <a href="https://github.com/caiiiycuk/js-dos" target="_blank" rel="noopener">JS-DOS</a> - DOS emulator that runs in browsers.
+- <a href="https://github.com/EmulatorJS/EmulatorJS" target="_blank" rel="noopener">EmulatorJS</a> - Game emulator for many platforms, runs fully in browsers.
 - <a href="https://github.com/puppeteer/puppeteer" target="_blank" rel="noopener">Puppeteer</a> - which made the unblocker possible.
-- <a href="https://github.com/nomic-ai/gpt4all" target="_blank" rel="noopener">GPT4All</a> - an open-source implementation of large language models.
+- <del><a href="https://github.com/nomic-ai/gpt4all" target="_blank" rel="noopener">GPT4All</a> - an open-source implementation of large language models.</del> (switched to <a href="https://github.com/withcatai/node-llama-cpp" target="_blank" rel="noopener">node-llama-cpp</a> due to token stream support and higher performance)
