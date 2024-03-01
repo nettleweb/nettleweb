@@ -268,14 +268,30 @@
 #banner {
 	position: relative;
 	display: block;
-	width: calc(100% - 20px);
+	width: 100%;
 	height: unset;
-	padding: 0px 10px;
-	aspect-ratio: 2/1;
-	background-image: url("res/banner.svg");
+	margin: 0px 0px 50px;
+	aspect-ratio: 4/1;
+	background-image: url("res/logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
+}
+
+#banner::after {
+	position: absolute;
+	display: block;
+	width: 200px;
+	height: 36px;
+	right: 30px;
+	bottom: 0px;
+	content: "Unblocked Games";
+	color: #808080;
+	font-size: 24px;
+	font-style: italic;
+	font-weight: 600;
+	line-height: 36px;
+	letter-spacing: 0px;
 }
 
 .text-body {
