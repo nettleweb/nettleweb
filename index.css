@@ -221,6 +221,10 @@
 	letter-spacing: 0px;
 }
 
+#loading>* {
+	margin: 15px 0px;
+}
+
 #loading::after {
 	position: absolute;
 	display: block;
