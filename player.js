@@ -45,15 +45,17 @@
 				rp.config = Object.create(null);
 				const frame = rp.newest().createPlayer();
 				document.body.appendChild(frame);
-				frame.load({
+				await frame.load({
 					url: url,
+					wmode: "opaque",
 					scale: "showAll",
 					quality: "best",
 					autoplay: "auto",
 					logLevel: "warn",
 					letterbox: "on",
 					openUrlMode: "confirm",
-					upgradeToHttps: true
+					upgradeToHttps: true,
+					warnOnUnsupportedContent: true
 				});
 			}
 			break;
