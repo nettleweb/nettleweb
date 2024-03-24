@@ -361,6 +361,36 @@
 	overflow-wrap: break-word;
 }
 
+.pri-button {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 10px 20px;
+	color: #ffffff;
+	cursor: pointer;
+	outline: none;
+	text-align: center;
+	font-weight: 500;
+	line-height: 18px;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	background-color: #006060;
+}
+
+.pri-button:not(:disabled):hover {
+	background-color: #005050;
+}
+
+.pri-button:not(:disabled):active {
+	background-color: #004040;
+}
+
+.pri-button:disabled {
+	cursor: default;
+	background-color: #808080;
+}
+
 #game-search, #yt-search {
 	position: relative;
 	display: block;
@@ -593,28 +623,8 @@
 	line-height: 16px;
 }
 
-#submit-game, #startemu {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	padding: 10px 20px;
+#submit-game {
 	margin: 15px 20px;
-	color: #ffffff;
-	cursor: pointer;
-	outline: none;
-	border: 1px solid #808080;
-	border-radius: 25px;
-	box-shadow: 2px 2px #808080;
-	background: #005a5a;
-}
-
-#submit-game:focus, #startemu:focus {
-	border-color: #303030;
-}
-
-#submit-game:active, #startemu:active {
-	box-shadow: -2px -2px #808080;
 }
 
 #chatgpt-page>div {
@@ -700,14 +710,6 @@
 	background-size: 30px 30px;
 	background-repeat: no-repeat;
 	background-position: center;
-}
-
-#delmsg:hover {
-	background-color: #d0d0d0;
-}
-
-#delmsg:active {
-	background-color: #c0c0c0;
 }
 
 #chatgpt {
@@ -1026,7 +1028,15 @@
 	margin: 10px -20px;
 }
 
-#settings-page>div, #gamemu-options>div {
+#accountinfo-page>button {
+	position: relative;
+	display: block;
+	width: 100px;
+	height: 20px;
+	margin: 15px 10px;
+}
+
+#settings-page>div, #uploadgames-page>div, #gamemu-options>div {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -1034,7 +1044,7 @@
 	margin: 10px 0px;
 }
 
-#settings-page>div>label, #gamemu-options>div>label {
+#settings-page>div>label, #uploadgames-page>div>label, #gamemu-options>div>label {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -1046,7 +1056,7 @@
 	vertical-align: middle;
 }
 
-#settings-page>div>input, #settings-page>div>select, #gamemu-options>div>select {
+#settings-page>div>input[type="text"], #settings-page>div>select, #uploadgames-page>div>input[type="text"], #uploadgames-page>div>select, #gamemu-options>div>select {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -1060,7 +1070,7 @@
 	vertical-align: middle;
 }
 
-#settings-page>div>input:focus, #settings-page>div>select:focus, #gamemu-options>div>select:focus {
+#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #gamemu-options>div>select:focus {
 	border-color: #808080;
 }
 
@@ -1303,11 +1313,11 @@
 	background-image: url("res/refresh.svg");
 }
 
-#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover {
+#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #delmsg:hover {
 	background-color: #d0d0d0;
 }
 
-#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active {
+#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #delmsg:active {
 	background-color: #c0c0c0;
 }
 
@@ -1614,22 +1624,6 @@
 	height: 18px;
 	padding: 5px;
 	margin: 0px 15px;
-	color: #ffffff;
-	cursor: pointer;
-	outline: none;
-	line-height: 18px;
-	border: 1px solid #808080;
-	border-radius: 10px;
-	box-shadow: 2px 2px #808080;
-	background: #005a5a;
-}
-
-#submit-game-frame>div>button:focus {
-	border-color: #303030;
-}
-
-#submit-game-frame>div>button:active {
-	box-shadow: -2px -2px #808080;
 }
 
 #error-msg {

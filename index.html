@@ -80,7 +80,7 @@
 				</div>
 				<div id="game-notice">&#x26a0; Games with a 'USER' label were added by users with the button below.
 					They have not been verified by the developers, and are not guaranteed to work properly.</div>
-				<button id="submit-game" type="button">Submit a game now</button>
+				<button id="submit-game" type="button" class="pri-button">Submit a game now</button>
 				<div id="game-disclaimer">Disclaimer: All games listed on this site are collected from other popular websites,
 					for making them accessible to restricted users.
 					If copyright violations occurred, please email <a href="mailto:admin@whitespider.dev">admin@whitespider.dev</a>.
@@ -155,7 +155,7 @@
 						<select id="emulator">
 							<option value="1">Ruffle</option>
 							<option value="2">JS-DOS</option>
-							<option value="4">EmulatorJS</option>
+							<option value="4" selected="true">EmulatorJS</option>
 						</select>
 					</div>
 					<div>
@@ -164,7 +164,7 @@
 							<optgroup label="Nintendo">
 								<option value="n64">N64</option>
 								<option value="nds">NDS</option>
-								<option value="nes">NES/Famicom</option>
+								<option value="nes" selected="true">NES/Famicom</option>
 								<option value="snes">SNES</option>
 								<option value="gb">Game Boy</option>
 								<option value="gba">Game Boy Advance</option>
@@ -208,14 +208,14 @@
 					</div>
 					<div>
 						<label for="bios">BIOS:</label>
-						<input id="bios" type="file" />
+						<input id="bios" type="file" accept="*/*" />
 					</div>
 					<div>
 						<label for="game-rom">Game ROM:</label>
-						<input id="game-rom" type="file" />
+						<input id="game-rom" type="file" accept="*/*" />
 					</div>
 				</div>
-				<button id="startemu" type="button">Start Emulation</button>
+				<button id="startemu" type="button" class="pri-button">Start Emulation</button>
 				<hr />
 				<h2>PC Emulator (32-bit)</h2>
 				<div id="webemu-container">
@@ -300,8 +300,38 @@
 					<p><a href="https://sites.google.com/view/cbhk/" target="_blank" rel="noopener">Click here</a> for more methods to bypass restrictions.</p>
 				</div>
 			</div>
+			<div id="uploadgames-page">
+				<h1>Upload Games</h1>
+				<div>
+					<label for="game-name">Name:</label>
+					<input id="game-name" type="text" placeholder="Example" />
+				</div>
+				<div>
+					<label for="game-type">Type:</label>
+					<select id="game-type">
+						<option value="html5">HTML5</option>
+						<option value="flash">Flash</option>
+						<option value="dos">DOS</option>
+					</select>
+				</div>
+				<div>
+					<label for="game-file">File:</label>
+					<input id="game-file" type="file" accept=".zip" />
+				</div>
+				<div>
+					<label for="game-labels">Labels (separated by comma):</label>
+					<input id="game-labels" type="text" placeholder="label1,label2,label3" />
+				</div>
+				<div>
+					<label for="game-description">Description (optional):</label>
+					<input id="game-description" type="text" placeholder="Game Description" />
+				</div>
+				<button id="upload" type="button" class="pri-button">Upload</button>
+			</div>
 			<div id="accountinfo-page">
-				<button id="signout" type="button">Sign out</button>
+				<h1>My Account</h1>
+				<button id="uploadgames" type="button" class="pri-button">Upload Games</button>
+				<button id="signout" type="button" class="pri-button">Sign out</button>
 			</div>
 			<div id="settings-page">
 				<h1>Settings</h1>
@@ -412,8 +442,8 @@
 					the game info after submitting.</div>
 				<hr />
 				<span id="error-msg">Error: Error</span>
-				<button id="cancel" type="button">Cancel</button>
-				<button id="submit" type="button">Submit</button>
+				<button id="cancel" type="button" class="pri-button">Cancel</button>
+				<button id="submit" type="button" class="pri-button">Submit</button>
 			</div>
 		</div>
 		<script type="text/javascript" src="main.js"></script>
