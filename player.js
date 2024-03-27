@@ -38,7 +38,7 @@
 	}
 
 	switch (parseInt(url === "/" ? "0" : options.get("type") || "0", 10)) {
-		case 1:
+		case 2:
 			{
 				await loadJS("/lib/ruffle/ruffle.js");
 				const rp = window.RufflePlayer;
@@ -59,7 +59,7 @@
 				});
 			}
 			break;
-		case 2:
+		case 3:
 			{
 				await loadJS("lib/jsdos/js-dos.js");
 				const frame = document.createElement("div");

@@ -78,9 +78,6 @@
 				<div id="game-widget">
 					<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="8757025012" data-ad-format="auto" data-full-width-responsive="true"></ins>
 				</div>
-				<div id="game-notice">&#x26a0; Games with a 'USER' label were added by users with the button below.
-					They have not been verified by the developers, and are not guaranteed to work properly.</div>
-				<button id="submit-game" type="button" class="pri-button">Submit a game now</button>
 				<div id="game-disclaimer">Disclaimer: All games listed on this site are collected from other popular websites,
 					for making them accessible to restricted users.
 					If copyright violations occurred, please email <a href="mailto:admin@whitespider.dev">admin@whitespider.dev</a>.
@@ -326,6 +323,17 @@
 					<label for="game-description">Description (optional):</label>
 					<input id="game-description" type="text" placeholder="Game Description" />
 				</div>
+				<div class="text-body">
+					<div>Notice</div>
+					<p>Your game will be reviewed by the administrators before becoming visible to the public. This process could
+						take 5-10 days, or even longer in some cases.</p>
+					<p>In order to pass the review, you must ensure that your submission meets the following conditions:</p>
+					<p>1. All information of the game are filled correctly, and have a reliable source unless you are the author.</p>
+					<p>2. The game uploaded would not cause copyright infringement in any form.</p>
+					<p>3. The game is not duplicated with one that already exists on the site.</p>
+					<p>We might also edit or delete certain information based on our needs.</p>
+				</div>
+				<div id="upload-message"></div>
 				<button id="upload" type="button" class="pri-button">Upload</button>
 			</div>
 			<div id="accountinfo-page">
@@ -391,13 +399,13 @@
 		<div id="unbl-content">
 			<div id="tab-bar">
 				<div id="tabs"></div>
-				<button id="new-tab" type="button" title="New Tab"></button>
+				<button id="new-tab" type="button" title="New tab"></button>
 			</div>
 			<div id="toolbar">
 				<button id="back" type="button" title="Back"></button>
 				<button id="forward" type="button" title="Forward"></button>
 				<button id="refresh" type="button" title="Refresh"></button>
-				<input id="address" type="text" placeholder="Search or Type a URL" spellcheck="false" />
+				<input id="address" type="text" placeholder="Search or type a URL" spellcheck="false" />
 				<div id="mode">
 					<label for="mode-select">Mode: </label>
 					<select id="mode-select">
@@ -413,38 +421,35 @@
 				<div id="message">Error</div>
 			</div>
 		</div>
+		<div id="game-frame">
+			<div id="game">
+				<div id="player"></div>
+				<div class="text-body">
+					<h2 id="name">Example</h2>
+					<div>
+						<span>Type:</span>
+						<span id="type">HTML5</span>
+					</div>
+					<div>
+						<span>Tags:</span>
+						<span id="tags">example,game</span>
+					</div>
+					<hr />
+					<h3>About this game</h3>
+					<div id="desc">Example</div>
+					<hr />
+					<h3>Keyboard input not working?</h3>
+					<div>Click anywhere inside the game's frame to focus it, then keyboard input should function properly.</div>
+					<div>If you have other issues with this game, please send a feedback with the link in the footer.</div>
+				</div>
+			</div>
+			<button id="game-close" type="button" title="Close"></button>
+			<button id="game-newtab" type="button" title="Open in new tab"></button>
+		</div>
 		<div id="frame-view">
 			<div id="frame"></div>
 			<button id="frame-close" type="button" title="Close"></button>
-			<button id="frame-newtab" type="button" title="Open in New Tab"></button>
-		</div>
-		<div id="video-frame">
-			<div id="video"></div>
-			<button id="video-close" type="button" title="Close"></button>
-			<button id="video-fullscreen" type="button" title="Enter Fullscreen"></button>
-		</div>
-		<div id="submit-game-frame">
-			<div>
-				<h3>Submit a game</h3>
-				<label for="game-name">Game Name:</label>
-				<input id="game-name" type="text" value="" placeholder="Example" />
-				<label for="game-url">Game URL:</label>
-				<input id="game-url" type="text" value="" placeholder="https://example.io/" />
-				<hr />
-				<div>Before you click the 'submit' button, please read through the rules below:</div>
-				<div>1. The game URL must be a valid HTML page. Other contents (eg. SWF file) are not allowed.</div>
-				<div>2. The page must be able to embed with a '&#60;embed&#62;' or '&#60;iframe&#62;' tag. (without a 'X-Frame-Options' header)</div>
-				<div>3. The game must be able to play within the frame. If you are unsure, test it with Google Sites' embed function before submitting here.</div>
-				<div>4. No copyright violations.</div>
-				<div>Failure to follow the rules above may result your game being removed by the administrators, or being permanently banned from submitting games.</div>
-				<hr />
-				<div>Once your game is submitted successfully, it will be displayed beneath the preloaded games with a 'USER' label. You cannot edit or remove
-					the game info after submitting.</div>
-				<hr />
-				<span id="error-msg">Error: Error</span>
-				<button id="cancel" type="button" class="pri-button">Cancel</button>
-				<button id="submit" type="button" class="pri-button">Submit</button>
-			</div>
+			<button id="frame-newtab" type="button" title="Open in new tab"></button>
 		</div>
 		<script type="text/javascript" src="main.js"></script>
 	</body>

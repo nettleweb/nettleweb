@@ -105,6 +105,10 @@ option, optgroup {
 	background: #202020;
 }
 
+#game {
+	background: #404040;
+}
+
 #submit-game-frame>div {
 	background: #404040;
 }

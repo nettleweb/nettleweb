@@ -276,7 +276,7 @@
 	height: unset;
 	margin: 0px 0px 50px;
 	aspect-ratio: 4/1;
-	background-image: url("res/logo.svg");
+	background-image: url("res/site-logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -491,7 +491,7 @@
 	border-color: #303030;
 }
 
-#game-container>div>label {
+#game-container>div>span {
 	position: relative;
 	display: block;
 	width: 45px;
@@ -600,18 +600,6 @@
 	border-bottom: 1px solid #303030;
 }
 
-#game-notice {
-	position: relative;
-	display: block;
-	width: calc(100% - 10px);
-	height: fit-content;
-	margin: 30px 0px 10px;
-	color: #808080;
-	font-size: 13px;
-	line-height: 18px;
-	letter-spacing: 0px;
-}
-
 #game-disclaimer {
 	position: relative;
 	display: block;
@@ -621,10 +609,6 @@
 	color: #808080;
 	font-size: 12px;
 	line-height: 16px;
-}
-
-#submit-game {
-	margin: 15px 20px;
 }
 
 #chatgpt-page>div {
@@ -1028,6 +1012,20 @@
 	margin: 10px -20px;
 }
 
+#upload-message {
+	position: relative;
+	display: none;
+	width: calc(100% - 20px);
+	height: fit-content;
+	padding: 10px;
+	margin: 15px 0px;
+	color: #808080;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
 #accountinfo-page>button {
 	position: relative;
 	display: block;
@@ -1185,7 +1183,7 @@
 	position: relative;
 	display: flex;
 	width: calc(100% - 10px);
-	height: 35px;
+	height: 36px;
 	padding: 0px 5px;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -1195,24 +1193,26 @@
 #tabs {
 	position: relative;
 	display: flex;
-	width: auto;
-	height: 35px;
-	max-width: calc(100% - 35px);
+	width: fit-content;
+	height: 34px;
+	margin: 2px 0px 0px;
 	flex-direction: row;
 	flex-wrap: nowrap;
+	max-width: calc(100% - 36px);
 }
 
 #new-tab {
 	position: relative;
 	display: block;
-	width: 35px;
-	height: 35px;
-	flex: 0 0 35px;
+	width: 30px;
+	height: 30px;
+	margin: 3px;
+	flex: 0 0 30px;
 	border: none;
 	outline: none;
 	border-radius: 25px;
 	background-image: url("res/add.svg");
-	background-size: 24px;
+	background-size: 24px 24px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -1221,7 +1221,7 @@
 	position: relative;
 	display: block;
 	width: 250px;
-	height: 35px;
+	height: 34px;
 	flex: 0 1 250px;
 	border-left: 1px solid #c0c0c0;
 	border-right: 1px solid #c0c0c0;
@@ -1235,22 +1235,22 @@
 #tabs>div>img {
 	position: absolute;
 	display: block;
-	width: 19px;
-	height: 19px;
-	left: 8px;
-	top: 8px;
+	width: 20px;
+	height: 20px;
+	left: 7px;
+	top: 7px;
 }
 
 #tabs>div>div {
 	position: absolute;
 	display: block;
-	width: calc(100% - 70px);
-	height: 19px;
-	left: 35px;
-	top: 8px;
+	width: calc(100% - 68px);
+	height: 20px;
+	left: 34px;
+	top: 7px;
 	font-size: 12px;
 	font-weight: 400;
-	line-height: 19px;
+	line-height: 20px;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	letter-spacing: 0px;
@@ -1261,15 +1261,15 @@
 #tabs>div>button {
 	position: absolute;
 	display: block;
-	width: 35px;
-	height: 35px;
-	top: 0px;
-	right: 0px;
+	width: 30px;
+	height: 30px;
+	top: 2px;
+	right: 2px;
 	border: none;
 	outline: none;
 	border-radius: 25px;
 	background-image: url("res/close.svg");
-	background-size: 20px;
+	background-size: 20px 20px;
 	background-repeat: no-repeat;
 	background-position: center;
 }
@@ -1423,7 +1423,7 @@
 	background: rgba(0, 0, 0, 0.7);
 }
 
-#frame-view, #video-frame {
+#frame-view, #game-frame {
 	position: absolute;
 	display: none;
 	width: 100%;
@@ -1432,9 +1432,9 @@
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
-	overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: auto;
 	background: rgba(0, 0, 0, 0.7);
-	user-select: none;
 }
 
 #frame {
@@ -1449,192 +1449,95 @@
 	background: #ffffff;
 }
 
+#frame>embed, #frame>iframe, #player>embed {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+#frame-close, #frame-newtab, #game-close, #game-newtab {
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 0px;
+}
+
+#frame-close, #game-close {
+	top: 20px;
+	right: 20px;
+	background-image: url("res/close-w.svg");
+}
+
+#frame-newtab {
+	right: 20px;
+	bottom: 20px;
+	background-image: url("res/newtab-w.svg");
+}
+
+#game-newtab {
+	top: 20px;
+	right: 80px;
+	background-image: url("res/newtab-w.svg");
+}
+
+#game {
+	position: relative;
+	display: block;
+	width: 1280px;
+	height: fit-content;
+	margin: 80px auto;
+	background: #ffffff;
+}
+
+#game>.text-body {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	padding: 5px 10px 15px;
+}
+
+#player {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: unset;
+	overflow: hidden;
+	aspect-ratio: 16/9;
+}
+
 @media (max-width: 1300px) and (orientation: landscape) {
 	#frame {
 		width: 90%;
 		height: unset;
 		aspect-ratio: 16/9;
 	}
+
+	#game {
+		width: 90%;
+	}
 }
 
 @media (max-width: 1300px) and (orientation: portrait) {
 	#frame {
-		width: 90%;
-		height: unset;
-		aspect-ratio: 9/16;
-	}
-}
-
-#frame>embed {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	border: none;
-}
-
-#frame-close, #video-close {
-	position: absolute;
-	display: block;
-	width: 48px;
-	height: 48px;
-	top: 20px;
-	right: 20px;
-	cursor: pointer;
-	border: none;
-	outline: none;
-	background-image: url("res/close-w.svg");
-	background-size: 48px 48px;
-	background-repeat: no-repeat;
-	background-position: 0px 0px;
-}
-
-#frame-newtab, #video-fullscreen {
-	position: absolute;
-	display: block;
-	width: 48px;
-	height: 48px;
-	right: 20px;
-	bottom: 20px;
-	cursor: pointer;
-	border: none;
-	outline: none;
-	background-size: 48px 48px;
-	background-color: rgba(0, 0, 0, 0.7);
-	background-repeat: no-repeat;
-	background-position: 0px 0px;
-}
-
-#frame-newtab {
-	background-image: url("res/newtab-w.svg");
-}
-
-#video-fullscreen {
-	background-image: url("res/fullscreen-w.svg");
-}
-
-#video {
-	position: absolute;
-	display: block;
-	width: 800px;
-	height: 600px;
-	top: 50%;
-	left: 50%;
-	overflow: hidden;
-	transform: translate(-50%, -50%);
-	background: #000000;
-}
-
-@media all and (max-width: 850px) {
-	#video {
 		width: 95%;
 		height: unset;
 		aspect-ratio: 4/3;
 	}
-}
 
-#video>iframe {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	border: none;
-}
+	#game {
+		width: 95%;
+	}
 
-#submit-game-frame {
-	position: absolute;
-	display: none;
-	width: 100%;
-	height: 100%;
-	left: 0px;
-	top: 0px;
-	right: 0px;
-	bottom: 0px;
-	overflow: hidden;
-	background: rgba(0, 0, 0, 0.7);
-}
-
-#submit-game-frame>div {
-	position: relative;
-	display: block;
-	width: 300px;
-	height: fit-content;
-	padding: 20px;
-	margin: 70px auto;
-	border: 1px solid #808080;
-	border-radius: 10px;
-	background: #ffffff;
-}
-
-#submit-game-frame>div>h3 {
-	position: relative;
-	display: block;
-	width: 300px;
-	height: 24px;
-	margin: 10px 0px;
-	font-size: 18px;
-	text-align: center;
-	line-height: 24px;
-}
-
-#submit-game-frame>div>label {
-	position: relative;
-	display: block;
-	width: 300px;
-	height: 18px;
-	margin: 5px 0px 2px;
-	line-height: 18px;
-}
-
-#submit-game-frame>div>input {
-	position: relative;
-	display: block;
-	width: 288px;
-	height: 18px;
-	padding: 3px 5px;
-	outline: none;
-	line-height: 18px;
-	border: 1px solid #808080;
-	border-radius: 10px;
-}
-
-#submit-game-frame>div>input:focus {
-	border-color: #005a5a;
-}
-
-#submit-game-frame>div>hr {
-	margin: 10px 0px;
-	border: 1px solid #808080;
-}
-
-#submit-game-frame>div>div {
-	position: relative;
-	display: block;
-	width: 300px;
-	height: fit-content;
-	margin: 5px 0px;
-	font-size: 12px;
-	line-height: 18px;
-}
-
-#submit-game-frame>div>button {
-	position: relative;
-	display: inline-block;
-	width: 100px;
-	height: 18px;
-	padding: 5px;
-	margin: 0px 15px;
-}
-
-#error-msg {
-	position: relative;
-	display: none;
-	width: 278px;
-	height: fit-content;
-	padding: 10px;
-	margin: 10px 0px;
-	color: #ff0000;
-	border: 1px solid #ff0000;
-	border-radius: 10px;
-	background: #ffe0e0;
+	#player {
+		aspect-ratio: 9/16;
+	}
 }
