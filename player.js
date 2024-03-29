@@ -38,7 +38,7 @@
 	}
 
 	switch (parseInt(url === "/" ? "0" : options.get("type") || "0", 10)) {
-		case 2:
+		case "flash":
 			{
 				await loadJS("/lib/ruffle/ruffle.js");
 				const rp = window.RufflePlayer;
@@ -59,7 +59,7 @@
 				});
 			}
 			break;
-		case 3:
+		case "dos":
 			{
 				await loadJS("lib/jsdos/js-dos.js");
 				const frame = document.createElement("div");
@@ -68,7 +68,7 @@
 			 	window.Dos(frame).run(url);
 			}
 			break;
-		case 4:
+		case "emu":
 			{
 				await loadJS("lib/emulatorjs/emulator.min.js");
 				document.body.appendChild(document.createElement("div"));

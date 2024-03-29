@@ -150,9 +150,9 @@
 					<div>
 						<label for="emulator">Emulator:</label>
 						<select id="emulator">
-							<option value="1">Ruffle</option>
-							<option value="2">JS-DOS</option>
-							<option value="4" selected="true">EmulatorJS</option>
+							<option value="flash">Ruffle</option>
+							<option value="dos">JS-DOS</option>
+							<option value="emu" selected="true">EmulatorJS</option>
 						</select>
 					</div>
 					<div>
@@ -338,8 +338,33 @@
 			</div>
 			<div id="accountinfo-page">
 				<h1>My Account</h1>
-				<button id="uploadgames" type="button" class="pri-button">Upload Games</button>
-				<button id="signout" type="button" class="pri-button">Sign out</button>
+				<div class="text-body">
+					<div>
+						<span>Avatar:</span>
+						<img id="ac-avatar" width="50" height="50" draggable="false" alt="Avatar" />
+						<button id="ac-av-edit" type="button" title="Change avatar"></button>
+					</div>
+					<div>
+						<span>Username:</span>
+						<span id="ac-username"></span>
+						<button id="ac-un-edit" type="button" title="Change username"></button>
+					</div>
+					<div>
+						<span>Email:</span>
+						<span id="ac-email"></span>
+					</div>
+					<div>
+						<span>Membership:</span>
+						<span id="ac-vip"></span>
+					</div>
+					<hr />
+					<h2>Functions</h2>
+					<button id="ug" type="button" class="pri-button">Upload Game</button>
+					<hr />
+					<h2>Destructive Zone</h2>
+					<button id="so" type="button" class="pri-button">Sign Out</button>
+					<button id="da" type="button" class="pri-button" disabled="true">Delete Account</button>
+				</div>
 			</div>
 			<div id="settings-page">
 				<h1>Settings</h1>
@@ -433,6 +458,14 @@
 					<div>
 						<span>Tags:</span>
 						<span id="tags">example,game</span>
+					</div>
+					<div>
+						<span>Date Added:</span>
+						<span id="date">01/01/2023</span>
+					</div>
+					<div>
+						<span>Uploaded by:</span>
+						<span id="user">Anonymous</span>
 					</div>
 					<hr />
 					<h3>About this game</h3>
