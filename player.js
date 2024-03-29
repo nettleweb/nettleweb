@@ -37,7 +37,7 @@
 		});
 	}
 
-	switch (parseInt(url === "/" ? "0" : options.get("type") || "0", 10)) {
+	switch (options.get("type") || "") {
 		case "flash":
 			{
 				await loadJS("/lib/ruffle/ruffle.js");
