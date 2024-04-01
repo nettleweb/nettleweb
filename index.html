@@ -339,15 +339,17 @@
 			<div id="accountinfo-page">
 				<h1>My Account</h1>
 				<div class="text-body">
+					<h2>Public Profile</h2>
+					<div id="ac-prof" class="profile"></div>
+					<hr />
+					<h2>Account Information</h2>
 					<div>
-						<span>Avatar:</span>
-						<img id="ac-avatar" width="50" height="50" draggable="false" alt="Avatar" />
-						<button id="ac-av-edit" type="button" title="Change avatar"></button>
+						<span>UID:</span>
+						<span id="ac-uid"></span>
 					</div>
 					<div>
-						<span>Username:</span>
-						<span id="ac-username"></span>
-						<button id="ac-un-edit" type="button" title="Change username"></button>
+						<span>Name:</span>
+						<span id="ac-name"></span>
 					</div>
 					<div>
 						<span>Email:</span>
@@ -355,7 +357,7 @@
 					</div>
 					<div>
 						<span>Membership:</span>
-						<span id="ac-vip"></span>
+						<span id="ac-membership"></span>
 					</div>
 					<hr />
 					<h2>Functions</h2>
@@ -446,6 +448,7 @@
 				<div id="message">Error</div>
 			</div>
 		</div>
+		<div id="widget"></div>
 		<div id="game-frame">
 			<div id="game">
 				<div id="player"></div>
