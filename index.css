@@ -673,99 +673,200 @@
 	line-height: 16px;
 }
 
-#chatgpt-page>div {
-	border: 1px solid #c0c0c0;
-}
-
-#dialog {
+#history {
 	position: absolute;
 	display: block;
-	width: 100%;
-	height: calc(100% - 50px);
-	background: #f0f0f0;
-	overflow-x: hidden;
-	overflow-y: auto;
-}
-
-#dialog>div {
-	position: relative;
-	display: block;
-	width: calc(100% - 40px);
-	height: fit-content;
-	margin: 15px 0px;
-	padding: 10px 20px;
-}
-
-#dialog>div>img {
-	position: relative;
-	display: inline-block;
-	width: 36px;
-	height: 36px;
-	margin: 0px 15px 0px 5px;
-	user-select: none;
-	vertical-align: top;
-}
-
-#dialog>div>div {
-	position: relative;
-	display: inline-block;
-	width: calc(100% - 60px);
-	height: fit-content;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 18px;
-	white-space: pre-wrap;
-	letter-spacing: 0px;
-	vertical-align: top;
-	overflow: hidden;
-	overflow-wrap: break-word;
-}
-
-#dialog>span {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 15px auto;
-	padding: 5px;
-	color: #ff0000;
-	border: 1px solid #ff0000;
-	background: #ffe0e0;
-}
-
-#interface {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 50px;
-	bottom: 0px;
+	width: 200px;
+	height: 100%;
 	background: #e0e0e0;
 }
 
-#delmsg {
+#new-chat {
+	position: absolute;
+	display: block;
+	width: 120px;
+	height: 20px;
+	top: 0px;
+	left: 0px;
+	padding: 10px 0px 10px 40px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	text-align: start;
+	line-height: 20px;
+	letter-spacing: 0px;
+	background-image: url("res/new-chat.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 8px 8px;
+}
+
+#close-sm {
 	position: absolute;
 	display: block;
 	width: 40px;
 	height: 40px;
-	top: 5px;
-	left: 20px;
-	cursor: pointer;
+	top: 0px;
+	right: 0px;
 	border: none;
-	border-radius: 25px;
-	background-image: url("res/delete.svg");
-	background-size: 30px 30px;
+	cursor: pointer;
+	outline: none;
+	border-left: 1px solid #a0a0a0;
+	background-image: url("res/close.svg");
+	background-size: 24px 24px;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-position: 8px 8px;
+}
+
+#new-chat:hover, #open-sm:hover, #close-sm:hover, #history>div>div:hover {
+	background-color: #d0d0d0;
+}
+
+#new-chat:active, #open-sm:active, #close-sm:active, #history>div>div:active {
+	background-color: #c0c0c0;
+}
+
+#history>div {
+	position: absolute;
+	display: block;
+	width: 180px;
+	height: calc(100% - 41px);
+	left: 0px;
+	bottom: 0px;
+	padding: 0px 10px;
+	border-top: 1px solid #a0a0a0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#history>div>div {
+	position: relative;
+	display: block;
+	width: 180px;
+	height: 40px;
+	cursor: pointer;
+}
+
+#history>div>div[current] {
+	background-color: #c0c0c0;
+}
+
+#history>div>div>div {
+	position: absolute;
+	display: block;
+	width: 135px;
+	height: 20px;
+	top: 10px;
+	left: 5px;
+	white-space: pre;
+	line-height: 20px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+#history>div>div>button {
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 40px;
+	top: 0px;
+	right: 0px;
+	border: none;
+	outline: none;
+	background-image: url("res/delete.svg");
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: 10px 10px;
+}
+
+#cg-chat {
+	position: absolute;
+	display: block;
+	width: calc(100% - 200px);
+	height: 100%;
+	top: 0px;
+	right: 0px;
+	background: #f0f0f0;
+}
+
+#cg-messages {
+	position: absolute;
+	display: block;
+	width: calc(100% - 40px);
+	height: calc(100% - 50px);
+	padding: 0px 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#cg-messages>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+}
+
+#cg-messages>div>img {
+	position: relative;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin: 0px 15px 0px 5px;
+	padding: 4px;
+	vertical-align: top;
+}
+
+#cg-messages>div>div {
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 60px);
+	height: fit-content;
+	font-weight: 400;
+	line-height: 20px;
+	white-space: pre-wrap;
+	vertical-align: top;
+	letter-spacing: 0px;
+}
+
+#cg-interface {
+	position: absolute;
+	display: flex;
+	width: calc(100% - 10px);
+	height: 40px;
+	padding: 5px;
+	left: 0px;
+	bottom: 0px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+
+#open-sm {
+	position: relative;
+	display: none;
+	width: 40px;
+	height: 40px;
+	margin: 0px 5px 0px 0px;
+	flex: 0 0 40px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	border-radius: 25px;
+	background-image: url("res/menu.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 8px 8px;
 }
 
 #chatgpt {
-	position: absolute;
+	position: relative;
 	display: block;
-	width: calc(100% - 90px);
+	width: 100%;
 	height: 40px;
-	top: 5px;
-	left: 80px;
+	margin: -1px 0px 0px;
 	border: 1px solid #808080;
+	flex: 0 1 100%;
 }
 
 #chatgpt>input {
@@ -1071,7 +1172,8 @@
 	display: block;
 	width: 800px;
 	height: 600px;
-	margin: 10px -20px;
+	margin: 10px -21px;
+	border: 1px solid #c0c0c0;
 }
 
 #upload-message {

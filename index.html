@@ -97,12 +97,17 @@
 			<div id="chatgpt-page">
 				<h1>ChatGPT</h1>
 				<div>
-					<div id="dialog"></div>
-					<div id="interface">
-						<div>
-							<button id="delmsg" type="button" title="Delete messages"></button>
+					<div id="history">
+						<button id="new-chat" type="button">New chat</button>
+						<button id="close-sm" type="button" title="Close"></button>
+						<div></div>
+					</div>
+					<div id="cg-chat">
+						<div id="cg-messages"></div>
+						<div id="cg-interface">
+							<button id="open-sm" type="button" title="Menu"></button>
 							<form id="chatgpt" action="None" method="post">
-								<input name="m" type="text" placeholder="Message" minlength="2" required="true" autocomplete="off" />
+								<input name="m" type="text" placeholder="Message" minlength="2" maxlength="8000" required="true" autocomplete="off" />
 								<button type="submit" title="Send"></button>
 							</form>
 						</div>
