@@ -285,11 +285,11 @@
 #banner::after {
 	position: absolute;
 	display: block;
-	width: 200px;
+	width: 270px;
 	height: 36px;
 	right: 30px;
 	bottom: 0px;
-	content: "Unblocked Games";
+	content: "Free Online Games";
 	color: #808080;
 	font-size: 24px;
 	font-style: italic;
