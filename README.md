@@ -1,7 +1,7 @@
 <a href="https://whitespider.dev/" target="_blank" rel="noopener"><img src="https://whitespider.dev/res/logo.svg" width="1024" height="256" align="center" draggable="false" alt="WhiteSpider Logo" /></a><br />
 
 # WhiteSpider
-<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">![Discord Shield](https://discordapp.com/api/guilds/998658232207814667/widget.png?style=shield)</a> ![Current Version](https://img.shields.io/github/manifest-json/v/whitespider-dev/whitespider) <br/>
+<a href="https://discord.gg/djdH3kVd4v" target="_blank" rel="noopener">![Discord Shield](https://discordapp.com/api/guilds/998658232207814667/widget.png?style=shield)</a> ![Current Version](https://img.shields.io/github/manifest-json/v/whitespider-dev/whitespider) <br/>
 WhiteSpider (aka WhiteSpider Unblocked Games) is a FOSS (free open-source software) unblocked website designed for school or office users who are restricted from accessing certain websites. It has more than 500 HTML5, Flash and DOS games, with also <b>emulators</b>, <b>unblockers</b>, <b>unblocked YouTube</b> and <b>unblocked ChatGPT</b>. <br />
 
 WhiteSpider is, and will always be, free and open-source. You can however show us your care by <b>clicking on the star button</b> at the top right corner. It would have a significant effect on this project's future development. <br />
