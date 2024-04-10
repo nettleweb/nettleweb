@@ -37,28 +37,40 @@ option, optgroup {
 	color: #e0e0e0;
 }
 
-#dialog {
-	background: #202020;
-}
-
-#interface {
+#history, #sidemenu, #header {
 	background: #404040;
 }
 
-#delmsg {
+#new-chat {
+	background-image: url("res/new-chat-w.svg");
+}
+
+#cg-close {
+	background-image: url("res/close-w.svg");
+}
+
+#history>div>div>button {
 	background-image: url("res/delete-w.svg");
 }
 
-#chatgpt>button {
+#cg-chat, #chat {
+	background: #202020;
+}
+
+#chatgpt>button, #sendmsg>button {
 	background-image: url("res/send-w.svg");
 }
 
-#yt-load-more:hover {
+#server-name, #account {
 	background: #505050;
 }
 
-#yt-load-more:active {
-	background: #606060;
+#server-name>button {
+	background-image: url("res/close-w.svg");
+}
+
+#menu {
+	background-image: url("res/menu-w.svg");
 }
 
 #unbl-content {
@@ -93,12 +105,12 @@ option, optgroup {
 	background-image: url("res/refresh-w.svg");
 }
 
-#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #delmsg:hover {
-	background-color: #505050;
+#yt-load-more:hover, #new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #delmsg:hover, #new-chat:hover, #cg-close:hover, #menu:hover, #history>div>div:hover, #channels>div:hover {
+	background-color: #606060;
 }
 
-#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #delmsg:active {
-	background-color: #606060;
+#yt-load-more:active, #new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #delmsg:active, #new-chat:active, #cg-close:active, #menu:active, #history>div>div:active, #history>div>div[current], #channels>div:active, #channels>div[current] {
+	background-color: #808080;
 }
 
 #address, #mode>select {

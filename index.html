@@ -99,19 +99,19 @@
 				<div>
 					<div id="history">
 						<button id="new-chat" type="button">New chat</button>
-						<button id="close-sm" type="button" title="Close"></button>
+						<button id="cg-close" type="button" title="Close"></button>
 						<div></div>
 					</div>
 					<div id="cg-chat">
 						<div id="cg-messages"></div>
 						<div id="cg-interface">
-							<button id="open-sm" type="button" title="Menu"></button>
 							<form id="chatgpt" action="None" method="post">
 								<input name="m" type="text" placeholder="Message" minlength="2" maxlength="8000" required="true" autocomplete="off" />
 								<button type="submit" title="Send"></button>
 							</form>
 						</div>
 					</div>
+					<button id="cg-menu" type="button" title="Menu"></button>
 				</div>
 			</div>
 			<div id="services-page">
@@ -241,7 +241,46 @@
 			</div>
 			<div id="community-page">
 				<h1>Chat</h1>
-				<embed type="text/plain" width="1024" height="768" src="https://e.widgetbot.io/channels/998658232207814667/998658232958603266?api=3b1b9ecd-b2ee-4c3f-8996-f04e0aad3279" />
+				<div>
+					<div id="sidemenu">
+						<div id="server-name">
+							<img src="res/logo2.svg" width="50" height="50" loading="lazy" decoding="async" draggable="false" alt="Logo" />
+							<div>WhiteSpider</div>
+							<button id="close-sm" type="button" title="Close"></button>
+						</div>
+						<div id="channels">
+							<span>Text Channels</span>
+							<div id="998658232958603266">General</div>
+							<div id="1209591140622274622">General 2</div>
+							<div id="1213592305911730266">General 3</div>
+							<div id="1220426757547753583">Bots</div>
+							<span>Support</span>
+							<div id="1116079679766548571">Test</div>
+							<div id="1217881844939358429">Report Bugs</div>
+							<span>Other</span>
+							<div id="1217225586779357305">Developers Only</div>
+							<div id="1213589965888426065">NSFW</div>
+						</div>
+						<div id="account">
+							<div id="chat-profile"></div>
+							<button id="chat-login" class="pri-button" type="button">Login</button>
+						</div>
+					</div>
+					<div id="chat">
+						<div id="header">
+							<button id="menu" type="button" title="Menu"></button>
+							<div id="channel-name">General</div>
+							<button id="discord" class="pri-button" type="button">Open chat in Discord</button>
+						</div>
+						<div id="messages"></div>
+						<div id="interface">
+							<form id="sendmsg" action="None" method="post">
+								<input name="m" type="text" placeholder="Message" minlength="2" maxlength="1000" required="true" autocomplete="off" />
+								<button type="submit" title="Send"></button>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="site-blocked-page">
 				<h1>Site is Blocked?</h1>
@@ -412,12 +451,12 @@
 					<div>We are working hard to improve your user experience.</div>
 				</div>
 				<div>
-					<a href="https://github.com/whitespider-dev" target="_blank" rel="noopener"><img src="res/github.svg" width="36" height="36" draggable="false" title="GitHub" /></a>
-					<a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener"><img src="res/discord.svg" width="36" height="36" draggable="false" title="Discord" /></a>
-					<a href="https://www.reddit.com/r/WhiteSpider/" target="_blank" rel="noopener"><img src="res/reddit.svg" width="36" height="36" draggable="false" title="Reddit" /></a>
-					<a href="https://www.youtube.com/@whitespider-dev" target="_blank" rel="noopener"><img src="res/youtube.svg" width="36" height="36" draggable="false" title="YouTube" /></a>
-					<a href="https://www.facebook.com/whitespider.dev" target="_blank" rel="noopener"><img src="res/facebook.svg" width="36" height="36" draggable="false" title="Facebook" /></a>
-					<a href="https://www.instagram.com/whitespiderdev" target="_blank" rel="noopener"><img src="res/instagram.svg" width="36" height="36" draggable="false" title="Instagram" /></a>
+					<a href="https://github.com/whitespider-dev" target="_blank" rel="noopener"><img src="res/github.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" title="GitHub" /></a>
+					<a href="https://discord.gg/djdH3kVd4v" target="_blank" rel="noopener"><img src="res/discord.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" title="Discord" /></a>
+					<a href="https://www.reddit.com/r/WhiteSpider/" target="_blank" rel="noopener"><img src="res/reddit.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" title="Reddit" /></a>
+					<a href="https://www.youtube.com/@whitespider-dev" target="_blank" rel="noopener"><img src="res/youtube.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" title="YouTube" /></a>
+					<a href="https://www.facebook.com/whitespider.dev" target="_blank" rel="noopener"><img src="res/facebook.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" title="Facebook" /></a>
+					<a href="https://www.instagram.com/whitespiderdev" target="_blank" rel="noopener"><img src="res/instagram.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" title="Instagram" /></a>
 				</div>
 				<div>
 					<a href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a><br />
@@ -477,7 +516,7 @@
 					</div>
 					<hr />
 					<h3>About this game</h3>
-					<div id="desc">Example</div>
+					<p id="desc">Example</p>
 					<hr />
 					<h3>Keyboard input not working?</h3>
 					<div>Click anywhere inside the game's frame to focus it, then keyboard input should function properly.</div>

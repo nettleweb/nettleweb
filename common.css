@@ -89,6 +89,12 @@ a {
 	text-decoration: underline;
 }
 
+hr {
+	margin: 20px 0px;
+	border: none;
+	border-bottom: 1px solid #808080;
+}
+
 .adsbygoogle {
 	position: relative;
 	display: block;

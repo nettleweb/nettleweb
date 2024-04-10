@@ -335,16 +335,12 @@
 }
 
 .text-body>hr {
-	width: 100%;
-	height: unset;
-	margin: 25px 0px;
-	border: none;
 	border-bottom: 1px solid #c0c0c0;
 }
 
 .text-body>p {
 	font-size: 14px;
-	line-height: 18px;
+	line-height: 20px;
 }
 
 .text-body>code {
@@ -673,39 +669,41 @@
 	line-height: 16px;
 }
 
-#history {
+#history, #sidemenu {
 	position: absolute;
 	display: block;
 	width: 200px;
 	height: 100%;
 	background: #e0e0e0;
+	border-right: 1px solid #a0a0a0;
 }
 
 #new-chat {
 	position: absolute;
 	display: block;
-	width: 120px;
-	height: 20px;
+	width: 110px;
+	height: 25px;
 	top: 0px;
 	left: 0px;
-	padding: 10px 0px 10px 40px;
+	padding: 10px 0px 10px 45px;
 	border: none;
 	cursor: pointer;
 	outline: none;
+	font-size: 12px;
 	text-align: start;
-	line-height: 20px;
+	line-height: 25px;
 	letter-spacing: 0px;
 	background-image: url("res/new-chat.svg");
 	background-size: 24px 24px;
 	background-repeat: no-repeat;
-	background-position: 8px 8px;
+	background-position: 10px 10px;
 }
 
-#close-sm {
+#cg-close {
 	position: absolute;
 	display: block;
-	width: 40px;
-	height: 40px;
+	width: 45px;
+	height: 45px;
 	top: 0px;
 	right: 0px;
 	border: none;
@@ -715,25 +713,25 @@
 	background-image: url("res/close.svg");
 	background-size: 24px 24px;
 	background-repeat: no-repeat;
-	background-position: 8px 8px;
+	background-position: 10px 10px;
 }
 
-#new-chat:hover, #open-sm:hover, #close-sm:hover, #history>div>div:hover {
+#new-chat:hover, #cg-menu:hover, #cg-close:hover, #menu:hover, #history>div>div:hover, #channels>div:hover {
 	background-color: #d0d0d0;
 }
 
-#new-chat:active, #open-sm:active, #close-sm:active, #history>div>div:active {
+#new-chat:active, #cg-menu:active, #cg-close:active, #menu:active, #history>div>div:active, #history>div>div[current], #channels>div:active, #channels>div[current] {
 	background-color: #c0c0c0;
 }
 
-#history>div {
+#history>div, #channels {
 	position: absolute;
 	display: block;
-	width: 180px;
-	height: calc(100% - 41px);
+	width: 184px;
+	height: calc(100% - 56px);
+	padding: 5px 8px;
+	top: 45px;
 	left: 0px;
-	bottom: 0px;
-	padding: 0px 10px;
 	border-top: 1px solid #a0a0a0;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -742,24 +740,21 @@
 #history>div>div {
 	position: relative;
 	display: block;
-	width: 180px;
-	height: 40px;
+	width: 184px;
+	height: 35px;
 	cursor: pointer;
-}
-
-#history>div>div[current] {
-	background-color: #c0c0c0;
 }
 
 #history>div>div>div {
 	position: absolute;
 	display: block;
-	width: 135px;
-	height: 20px;
-	top: 10px;
+	width: 139px;
+	height: 25px;
+	top: 5px;
 	left: 5px;
+	font-size: 13px;
 	white-space: pre;
-	line-height: 20px;
+	line-height: 25px;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	overflow-wrap: break-word;
@@ -768,29 +763,37 @@
 #history>div>div>button {
 	position: absolute;
 	display: block;
-	width: 40px;
-	height: 40px;
+	width: 35px;
+	height: 35px;
 	top: 0px;
 	right: 0px;
 	border: none;
 	outline: none;
 	background-image: url("res/delete.svg");
-	background-size: 20px 20px;
+	background-size: 24px 24px;
 	background-repeat: no-repeat;
-	background-position: 10px 10px;
+	background-position: 5px 6px;
 }
 
-#cg-chat {
+#history>div>div>button:hover {
+	background-color: #ff8080;
+}
+
+#history>div>div>button:active {
+	background-color: #ff0000;
+}
+
+#cg-chat, #chat {
 	position: absolute;
 	display: block;
-	width: calc(100% - 200px);
+	width: calc(100% - 201px);
 	height: 100%;
 	top: 0px;
 	right: 0px;
 	background: #f0f0f0;
 }
 
-#cg-messages {
+#cg-messages, #messages {
 	position: absolute;
 	display: block;
 	width: calc(100% - 40px);
@@ -800,7 +803,7 @@
 	overflow-y: auto;
 }
 
-#cg-messages>div {
+#cg-messages>div, #messages>div {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -808,7 +811,7 @@
 	margin: 15px 0px;
 }
 
-#cg-messages>div>img {
+#cg-messages>div>img, #messages>div>img {
 	position: relative;
 	display: inline-block;
 	width: 32px;
@@ -818,7 +821,7 @@
 	vertical-align: top;
 }
 
-#cg-messages>div>div {
+#cg-messages>div>div, #messages>div>div {
 	position: relative;
 	display: inline-block;
 	width: calc(100% - 60px);
@@ -830,46 +833,26 @@
 	letter-spacing: 0px;
 }
 
-#cg-interface {
+#cg-interface, #interface {
 	position: absolute;
-	display: flex;
+	display: block;
 	width: calc(100% - 10px);
 	height: 40px;
 	padding: 5px;
 	left: 0px;
 	bottom: 0px;
-	flex-direction: row;
-	flex-wrap: nowrap;
 }
 
-#open-sm {
-	position: relative;
-	display: none;
-	width: 40px;
-	height: 40px;
-	margin: 0px 5px 0px 0px;
-	flex: 0 0 40px;
-	border: none;
-	cursor: pointer;
-	outline: none;
-	border-radius: 25px;
-	background-image: url("res/menu.svg");
-	background-size: 24px 24px;
-	background-repeat: no-repeat;
-	background-position: 8px 8px;
-}
-
-#chatgpt {
+#chatgpt, #sendmsg {
 	position: relative;
 	display: block;
 	width: 100%;
 	height: 40px;
 	margin: -1px 0px 0px;
 	border: 1px solid #808080;
-	flex: 0 1 100%;
 }
 
-#chatgpt>input {
+#chatgpt>input, #sendmsg>input {
 	position: absolute;
 	display: block;
 	width: calc(100% - 50px);
@@ -883,7 +866,7 @@
 	letter-spacing: 0px;
 }
 
-#chatgpt>button {
+#chatgpt>button, #sendmsg>button {
 	position: absolute;
 	display: block;
 	width: 30px;
@@ -898,6 +881,24 @@
 	background-position: center;
 }
 
+#cg-menu {
+	position: absolute;
+	display: none;
+	width: 48px;
+	height: 48px;
+	top: 10px;
+	left: 10px;
+	cursor: pointer;
+	outline: none;
+	border: 1px solid #a0a0a0;
+	border-radius: 25px;
+	background-image: url("res/menu.svg");
+	background-size: 36px 36px;
+	background-color: #f0f0f0;
+	background-repeat: no-repeat;
+	background-position: 6px 6px;
+}
+
 #services-page>h2 {
 	position: relative;
 	display: block;
@@ -910,7 +911,6 @@
 
 #services-page>hr {
 	margin: 10px 0px 30px;
-	border: none;
 	border-bottom: 1px solid #c0c0c0;
 }
 
@@ -1167,13 +1167,205 @@
 	letter-spacing: -1px;
 }
 
-#community-page>embed, #chatgpt-page>div {
+#community-page>div, #chatgpt-page>div {
 	position: relative;
 	display: block;
 	width: 800px;
 	height: 600px;
 	margin: 10px -21px;
-	border: 1px solid #c0c0c0;
+	border: 1px solid #808080;
+}
+
+#server-name {
+	position: absolute;
+	display: block;
+	width: 200px;
+	height: 45px;
+	background: linear-gradient(to bottom, #a0a0a0, #e0e0e0);
+	border-bottom: 1px solid #a0a0a0;
+}
+
+#server-name>img {
+	position: absolute;
+	display: block;
+	width: 25px;
+	height: 25px;
+	top: 10px;
+	left: 10px;
+}
+
+#server-name>div {
+	position: absolute;
+	display: block;
+	width: 110px;
+	height: 25px;
+	top: 10px;
+	left: 45px;
+	font-weight: 600;
+	line-height: 25px;
+	letter-spacing: 0px;
+}
+
+#server-name>button {
+	position: absolute;
+	display: block;
+	width: 25px;
+	height: 25px;
+	top: 10px;
+	right: 10px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	background-image: url("res/close.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 1px;
+}
+
+#channels {
+	height: calc(100% - 106px);
+}
+
+#channels>span {
+	position: relative;
+	display: block;
+	width: 184px;
+	height: 16px;
+	margin: 20px 0px 5px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16px;
+	border-bottom: 1px solid #a0a0a0;
+}
+
+#channels>div {
+	position: relative;
+	display: block;
+	width: 176px;
+	height: 25px;
+	padding: 5px 4px;
+	cursor: pointer;
+	font-size: 13px;
+	line-height: 25px;
+	letter-spacing: 0px;
+}
+
+#account {
+	position: absolute;
+	display: block;
+	width: 200px;
+	height: 50px;
+	left: 0px;
+	bottom: 0px;
+	background: #d8d8d8;
+}
+
+#chat-profile {
+	position: absolute;
+	display: none;
+	width: 180px;
+	height: 40px;
+	padding: 5px 10px;
+}
+
+#chat-profile>img {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	vertical-align: top;
+	background: #ffffff;
+}
+
+#chat-profile>div {
+	position: relative;
+	display: inline-block;
+	width: 123px;
+	height: 20px;
+	margin: 10px 0px 10px 10px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0px;
+	vertical-align: middle;
+}
+
+#chat-login {
+	position: relative;
+	display: block;
+	width: 160px;
+	height: 26px;
+	margin: 6px 20px;
+	padding: 5px 0px;
+}
+
+#header {
+	position: relative;
+	display: flex;
+	width: calc(100% - 10px);
+	height: 35px;
+	padding: 5px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	background: #e0e0e0;
+	border-bottom: 1px solid #a0a0a0;
+}
+
+#header>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 25px;
+	padding: 5px 10px;
+	flex: 0 1 100%;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 25px;
+	letter-spacing: 0px;
+}
+
+#menu {
+	position: relative;
+	display: none;
+	width: 35px;
+	height: 35px;
+	flex: 0 0 35px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	border-radius: 35px;
+	background-image: url("res/menu.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+}
+
+#discord {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: 25px;
+	padding: 5px 20px;
+	flex: 0 0 auto;
+	line-height: 25px;
+}
+
+#messages {
+	height: calc(100% - 96px);
+}
+
+#messages>div>div>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 0px 10px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0px;
 }
 
 #upload-message {
@@ -1309,10 +1501,14 @@
 		width: calc(100% - 40px);
 	}
 
-	#community-page>embed, #chatgpt-page>div {
+	#chatgpt-page>div, #community-page>div {
 		width: calc(100% + 10px);
 		margin: 10px -5px;
 		aspect-ratio: 9/18;
+	}
+
+	#discord {
+		display: none;
 	}
 }
 
@@ -1330,6 +1526,7 @@
 	right: 20px;
 	bottom: 22px;
 	cursor: pointer;
+	outline: none;
 	box-shadow: 2px 2px #808080;
 	border-radius: 25px;
 	background-image: url("res/settings.svg");
@@ -1486,11 +1683,11 @@
 	background-image: url("res/refresh.svg");
 }
 
-#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #delmsg:hover {
+#new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover {
 	background-color: #d0d0d0;
 }
 
-#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #delmsg:active {
+#new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active {
 	background-color: #c0c0c0;
 }
 
