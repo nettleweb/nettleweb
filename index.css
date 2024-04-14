@@ -1886,7 +1886,7 @@
 	background: #ffffff;
 }
 
-#frame>embed, #frame>iframe, #player>embed {
+#frame>*, #player>* {
 	position: absolute;
 	display: block;
 	width: 100%;

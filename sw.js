@@ -31,18 +31,24 @@
 		}
 
 		if (url.origin === origin && url.pathname === "/manifest.json") {
-			return await fetch(request);
+			return await fetch(url, {
+				body: null,
+				mode: "same-origin",
+				cache: "no-cache",
+				method: request.method,
+				headers: request.headers
+			});
 		}
 
-		const response = await caches.match(request, { cacheName }) || await e.preloadResponse || await fetch(request);
+		const res = await caches.match(request, { cacheName }) || await e.preloadResponse || await fetch(request);
 		if (origin !== "http://localhost:8000") {
 			try {
-				const cache = await caches.open(cacheName);
-				await cache.put(request, response.clone());
+				await (await caches.open(cacheName)).put(request, res.clone());
 			} catch (err) {
+				// ignore
 			}
 		}
-		return response;
+		return res;
 	}
 
 	/**
