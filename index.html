@@ -255,7 +255,6 @@
 							<div id="1213592305911730266">General 3</div>
 							<div id="1220426757547753583">Bots</div>
 							<span>Support</span>
-							<div id="1116079679766548571">Test</div>
 							<div id="1217881844939358429">Report Bugs</div>
 							<span>Other</span>
 							<div id="1217225586779357305">Developers Only</div>
@@ -382,7 +381,17 @@
 			</div>
 			<div id="accountinfo-page">
 				<h1>My Account</h1>
-				<div class="text-body">
+				<div id="login-dialog">
+					<h2>Login</h2>
+					<input id="username" type="text" placeholder="Username" minlength="4" maxlength="20" spellcheck="false" autocomplete="off" />
+					<input id="password" type="password" placeholder="Password" minlength="8" maxlength="30" spellcheck="false" autocomplete="off" />
+					<input id="c-password" type="password" placeholder="Confirm password" minlength="8" maxlength="30" spellcheck="false" autocomplete="off" />
+					<input id="2fa-otp" type="text" placeholder="2FA One time password" minlength="6" maxlength="6" spellcheck="false" autocomplete="off" />
+					<button id="login" type="button" class="pri-button">Login</button>
+					<div id="register">Register</div>
+					<div id="login-google">Sign in with Google</div>
+				</div>
+				<div id="account-settings" class="text-body">
 					<h2>Public Profile</h2>
 					<div id="ac-prof" class="profile"></div>
 					<hr />
@@ -403,6 +412,10 @@
 						<span>Membership:</span>
 						<span id="ac-membership"></span>
 					</div>
+					<hr />
+					<h2>Security</h2>
+					<button id="cp" type="button" class="pri-button">Change Password</button>
+					<button id="fa" type="button" class="pri-button">Enable 2FA</button>
 					<hr />
 					<h2>Functions</h2>
 					<button id="ug" type="button" class="pri-button">Upload Game</button>

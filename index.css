@@ -404,7 +404,6 @@
 	width: 50px;
 	height: 50px;
 	margin: 10px;
-	cursor: pointer;
 	border: 1px solid #808080;
 	border-radius: 25px;
 	vertical-align: top;
@@ -1384,12 +1383,78 @@
 	letter-spacing: 0px;
 }
 
-#accountinfo-page>button {
+#login-dialog {
 	position: relative;
 	display: block;
-	width: 100px;
+	width: 280px;
+	height: fit-content;
+	margin: 30px auto;
+	padding: 10px;
+	border: 1px solid #808080;
+	border-radius: 10px;
+}
+
+#login-dialog>h2 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 20px auto;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#login-dialog>input {
+	position: relative;
+	display: block;
+	width: 258px;
 	height: 20px;
-	margin: 15px 10px;
+	margin: 10px 0px;
+	padding: 5px 10px;
+	border: 1px solid #c0c0c0;
+	border-radius: 10px;
+	outline: none;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#login-dialog>input:focus {
+	border-color: #808080;
+}
+
+#login-dialog>button {
+	position: relative;
+	display: block;
+	width: 238px;
+	height: 20px;
+	margin: 10px 0px;
+	padding: 5px 20px;
+}
+
+#login-dialog>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 5px;
+	color: #8080ff;
+	cursor: pointer;
+	line-height: 20px;
+	letter-spacing: 0px;
+	text-decoration: underline;
+}
+
+#account-settings {
+	display: none;
+}
+
+#account-settings>button {
+	position: relative;
+	display: block;
+	width: 120px;
+	height: 20px;
+	padding: 5px 20px;
 }
 
 #ac-avatar {
