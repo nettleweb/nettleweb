@@ -390,46 +390,66 @@
 .profile {
 	position: relative;
 	display: block;
-	width: calc(100% - 22px);
-	height: fit-content;
-	padding: 10px;
+	width: calc(100% - 2px);
+	height: 90px;
 	border: 1px solid #808080;
 	border-radius: 10px;
 	background: #ffffff;
 }
 
-.profile>img {
-	position: relative;
-	display: inline-block;
-	width: 50px;
-	height: 50px;
-	margin: 10px;
+.profile>button {
+	position: absolute;
+	display: block;
+	width: 48px;
+	height: 48px;
+	top: 15px;
+	left: 15px;
 	border: 1px solid #808080;
 	border-radius: 25px;
-	vertical-align: top;
+	cursor: pointer;
+	outline: none;
+	background-image: url("res/edit.svg");
+	background-size: 24px 24px;
+	background-color: #c0c0c0;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.profile>button>img {
+	position: absolute;
+	display: block;
+	width: 48px;
+	height: 48px;
+	top: 0px;
+	left: 0px;
 	background: #ffffff;
+	border-radius: 25px;
+}
+
+.profile>button:hover>img {
+	display: none;
 }
 
 .profile>div {
-	position: relative;
-	display: inline-block;
-	width: calc(100% - 80px);
-	height: fit-content;
-	margin: 15px 4px;
-	vertical-align: top;
+	position: absolute;
+	display: block;
+	width: calc(100% - 100px);
+	height: 24px;
+	top: 15px;
+	left: 90px;
 }
 
 .profile>div>div {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
-	height: fit-content;
+	height: 24px;
 	color: #000000;
 	font-size: 13px;
 	font-weight: 600;
-	line-height: 18px;
+	line-height: 24px;
 	letter-spacing: 0px;
-	vertical-align: middle;
+	vertical-align: top;
 }
 
 .profile>div>button {
@@ -437,15 +457,35 @@
 	display: inline-block;
 	width: 24px;
 	height: 24px;
-	margin: 0px 0px 0px 15px;
+	margin: 0px 0px 0px 10px;
 	cursor: pointer;
 	border: none;
 	outline: none;
-	vertical-align: middle;
+	vertical-align: top;
 	background-image: url("res/edit.svg");
 	background-size: 24px 24px;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
+}
+
+div.user[vip]::after {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 8px;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+div.user[vip="gold"]::after {
+	content: "\01f451";
+}
+
+div.user[vip="diamond"]::after {
+	content: "\01f48e";
 }
 
 #game-search, #yt-search {
