@@ -387,93 +387,12 @@
 	background-color: #808080;
 }
 
-.profile {
-	position: relative;
-	display: block;
-	width: calc(100% - 2px);
-	height: 90px;
-	border: 1px solid #808080;
-	border-radius: 10px;
-	background: #ffffff;
-}
-
-.profile>button {
-	position: absolute;
-	display: block;
-	width: 48px;
-	height: 48px;
-	top: 15px;
-	left: 15px;
-	border: 1px solid #808080;
-	border-radius: 25px;
-	cursor: pointer;
-	outline: none;
-	background-image: url("res/edit.svg");
-	background-size: 24px 24px;
-	background-color: #c0c0c0;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-.profile>button>img {
-	position: absolute;
-	display: block;
-	width: 48px;
-	height: 48px;
-	top: 0px;
-	left: 0px;
-	background: #ffffff;
-	border-radius: 25px;
-}
-
-.profile>button:hover>img {
-	display: none;
-}
-
-.profile>div {
-	position: absolute;
-	display: block;
-	width: calc(100% - 100px);
-	height: 24px;
-	top: 15px;
-	left: 90px;
-}
-
-.profile>div>div {
-	position: relative;
-	display: inline-block;
-	width: fit-content;
-	height: 24px;
-	color: #000000;
-	font-size: 13px;
-	font-weight: 600;
-	line-height: 24px;
-	letter-spacing: 0px;
-	vertical-align: top;
-}
-
-.profile>div>button {
-	position: relative;
-	display: inline-block;
-	width: 24px;
-	height: 24px;
-	margin: 0px 0px 0px 10px;
-	cursor: pointer;
-	border: none;
-	outline: none;
-	vertical-align: top;
-	background-image: url("res/edit.svg");
-	background-size: 24px 24px;
-	background-repeat: no-repeat;
-	background-position: 0px 0px;
-}
-
 div.user[vip]::after {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
 	height: fit-content;
-	margin: 0px 8px;
+	margin: 0px 5px;
 	font-size: 16px;
 	line-height: 20px;
 	letter-spacing: 0px;
@@ -869,6 +788,8 @@ div.user[vip="diamond"]::after {
 	height: fit-content;
 	font-weight: 400;
 	line-height: 20px;
+	overflow: hidden;
+	overflow-wrap: break-word;
 	white-space: pre-wrap;
 	vertical-align: top;
 	letter-spacing: 0px;
@@ -1208,7 +1129,7 @@ div.user[vip="diamond"]::after {
 	letter-spacing: -1px;
 }
 
-#community-page>div, #chatgpt-page>div {
+#community-page>div, #cg-frame {
 	position: relative;
 	display: block;
 	width: 800px;
@@ -1489,21 +1410,143 @@ div.user[vip="diamond"]::after {
 	display: none;
 }
 
-#account-settings>button {
+#account-settings>button, #profile-page>div>button {
 	position: relative;
 	display: block;
 	width: 120px;
 	height: 20px;
+	margin: 15px 0px;
 	padding: 5px 20px;
 }
 
-#ac-avatar {
+#ac-prof {
 	position: relative;
 	display: block;
-	width: 50px;
-	height: 50px;
-	margin: 15px;
+	width: calc(100% - 2px);
+	height: 90px;
 	border: 1px solid #808080;
+	border-radius: 10px;
+	background: #ffffff;
+}
+
+#ch-avatar {
+	position: absolute;
+	display: block;
+	width: 48px;
+	height: 48px;
+	top: 15px;
+	left: 15px;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	cursor: pointer;
+	outline: none;
+	background-image: url("res/edit.svg");
+	background-size: 24px 24px;
+	background-color: #c0c0c0;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#ch-avatar>img {
+	position: absolute;
+	display: block;
+	width: 48px;
+	height: 48px;
+	top: 0px;
+	left: 0px;
+	background: #ffffff;
+	border-radius: 25px;
+}
+
+#ch-avatar:hover>img {
+	display: none;
+}
+
+#ac-prof>div {
+	position: absolute;
+	display: block;
+	width: calc(100% - 100px);
+	height: 24px;
+	top: 15px;
+	left: 90px;
+}
+
+#ac-un {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 24px;
+	margin: 0px 5px;
+	color: #000000;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#ac-edit {
+	position: relative;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 0px 5px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	vertical-align: top;
+	background-image: url("res/edit.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#ac-link, #ulink {
+	position: relative;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 0px 5px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	vertical-align: top;
+	background-image: url("res/link.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#profile-page>div {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	padding: 10px;
+	margin: 20px 0px;
+}
+
+#avatar {
+	position: relative;
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	vertical-align: top;
+}
+
+#userid {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 24px;
+	margin: 0px 5px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+	vertical-align: top;
 }
 
 #settings-page>div, #uploadgames-page>div, #gamemu-options>div {
@@ -1982,6 +2025,13 @@ div.user[vip="diamond"]::after {
 	padding: 5px 10px 15px;
 }
 
+#game>.text-body>span {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+}
+
 #player {
 	position: relative;
 	display: block;
@@ -1989,6 +2039,31 @@ div.user[vip="diamond"]::after {
 	height: unset;
 	overflow: hidden;
 	aspect-ratio: 16/9;
+}
+
+#name {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 15px 5px 10px;
+	vertical-align: top;
+}
+
+#glink {
+	position: relative;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 10px 0px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	vertical-align: top;
+	background-image: url("res/link.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
 }
 
 #user {

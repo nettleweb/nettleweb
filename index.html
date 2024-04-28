@@ -42,7 +42,6 @@
 			<div id="nav-bar">
 				<button id="home-btn" type="button" current="true">Home</button>
 				<button id="prox-btn" type="button">Unblocker</button>
-				<button id="chai-btn" type="button">ChatGPT</button>
 				<button id="apps-btn" type="button">Apps</button>
 				<button id="chat-btn" type="button">Chat</button>
 				<button id="unbl-btn" type="button">Site is Blocked?</button>
@@ -94,9 +93,10 @@
 					<p><a href="https://github.com/whitespider-dev#whitespider" target="_blank" rel="noopener">Learn more</a></p>
 				</div>
 			</div>
-			<div id="chatgpt-page">
-				<h1>ChatGPT</h1>
-				<div>
+			<div id="services-page">
+				<h1>Apps</h1>
+				<h2>ChatGPT</h2>
+				<div id="cg-frame">
 					<div id="history">
 						<button id="new-chat" type="button">New chat</button>
 						<button id="cg-close" type="button" title="Close"></button>
@@ -113,9 +113,7 @@
 					</div>
 					<button id="cg-menu" type="button" title="Menu"></button>
 				</div>
-			</div>
-			<div id="services-page">
-				<h1>Apps</h1>
+				<hr />
 				<h2>YouTube Unblocked</h2>
 				<form id="yt-search" action="None" method="post">
 					<input name="q" type="text" placeholder="Search Video or Paste YouTube Video URL" maxlength="50" autocomplete="off" />
@@ -226,7 +224,6 @@
 				<hr />
 				<h2>Private Search</h2>
 				<div id="search-container">
-					<script type="text/javascript" src="https://cse.google.com/cse.js?cx=6505c81d738124627"></script>
 					<div class="gcse-search"></div>
 				</div>
 				<hr />
@@ -393,7 +390,16 @@
 				</div>
 				<div id="account-settings" class="text-body">
 					<h2>Public Profile</h2>
-					<div id="ac-prof" class="profile"></div>
+					<div id="ac-prof">
+						<button id="ch-avatar" type="button" title="Change avatar">
+							<img width="48" height="48" loading="eager" decoding="sync" draggable="false" alt="Avatar" />
+						</button>
+						<div>
+							<div id="ac-un" class="user"></div>
+							<button id="ac-edit" type="button" title="Change username"></button>
+							<button id="ac-link" type="button" title="Get link"></button>
+						</div>
+					</div>
 					<hr />
 					<h2>Account Information</h2>
 					<div>
@@ -423,6 +429,17 @@
 					<h2>Destructive Zone</h2>
 					<button id="so" type="button" class="pri-button">Sign Out</button>
 					<button id="da" type="button" class="pri-button" disabled="true">Delete Account</button>
+				</div>
+			</div>
+			<div id="profile-page">
+				<div>
+					<img id="avatar" width="48" height="48" loading="eager" decoding="sync" draggable="false" alt="Avatar" />
+					<div id="userid" class="user"></div>
+					<div id="ulink"></div>
+				</div>
+				<div>
+					<button id="dm" type="button" class="pri-button">Message</button>
+					<button id="af" type="button" class="pri-button">Add Friend</button>
 				</div>
 			</div>
 			<div id="settings-page">
@@ -510,6 +527,8 @@
 				<div id="player"></div>
 				<div class="text-body">
 					<h2 id="name">Example</h2>
+					<button id="glink" type="button" title="Get link"></button>
+					<br />
 					<div>
 						<span>Type:</span>
 						<span id="type">HTML5</span>

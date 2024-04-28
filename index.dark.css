@@ -121,6 +121,6 @@ option, optgroup {
 	background: #404040;
 }
 
-#submit-game-frame>div {
-	background: #404040;
+#glink, #ulink {
+	background-image: url("res/link-w.svg");
 }
