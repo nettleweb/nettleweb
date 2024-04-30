@@ -1,7 +1,7 @@
 {
 	"id": "whitespider",
 	"name": "WhiteSpider",
-	"version": "4.3.1",
+	"version": "4.3.2",
 	"short_name": "WhiteSpider",
 	"categories": ["games"],
 	"description": "WhiteSpider GameHub - Play 1000+ free online classic, HTML5, DOS, Flash, games.",
@@ -52,6 +52,12 @@
 			"src": "/res/logo512.png",
 			"type": "image/png",
 			"sizes": "512x512"
+		},
+		{
+			"src": "/res/logo-opaque.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "maskable"
 		}
 	],
 	"serviceworker": {
