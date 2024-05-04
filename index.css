@@ -247,6 +247,10 @@
 	overflow-y: auto;
 }
 
+#content>h1 {
+	display: none;
+}
+
 #content>div {
 	position: relative;
 	display: none;
@@ -260,13 +264,16 @@
 	display: block;
 }
 
-#content>div>h1 {
+#content>div>h2 {
 	position: relative;
 	display: block;
 	width: fit-content;
 	height: fit-content;
 	padding: 10px;
-	margin: 80px auto 40px;
+	margin: 80px auto 60px;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 40px;
 }
 
 #banner {
@@ -316,12 +323,6 @@
 	letter-spacing: 0px;
 }
 
-.text-body>h1 {
-	font-size: 18px;
-	font-weight: 600;
-	line-height: 24px;
-}
-
 .text-body>h2 {
 	font-size: 18px;
 	font-weight: 600;
@@ -329,7 +330,19 @@
 }
 
 .text-body>h3 {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.text-body>h4 {
 	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.text-body>h5 {
+	font-size: 14px;
 	font-weight: 600;
 	line-height: 24px;
 }
@@ -351,7 +364,7 @@
 	padding: 10px;
 	outline: none;
 	font-size: 10px;
-	font-family: monospace;
+	font-family: "Ubuntu Mono", monospace;
 	line-height: 10px;
 	letter-spacing: -1px;
 	overflow-wrap: break-word;
@@ -861,7 +874,7 @@ div.user[vip="diamond"]::after {
 	background-position: 6px 6px;
 }
 
-#services-page>h2 {
+#services-page>h3 {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -1355,7 +1368,7 @@ div.user[vip="diamond"]::after {
 	border-radius: 10px;
 }
 
-#login-dialog>h2 {
+#login-dialog>h3 {
 	position: relative;
 	display: block;
 	width: fit-content;
