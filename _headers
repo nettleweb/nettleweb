@@ -9,7 +9,7 @@
 	! Content-Security-Policy
 	Content-Security-Policy: base-uri 'self'; font-src 'self'; media-src 'self'; manifest-src 'self'; form-action 'self'; fenced-frame-src 'self'; connect-src 'self' blob:; sandbox allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts; upgrade-insecure-requests
 
-/d/*/
+/r/*/
 	! Content-Security-Policy
 	Content-Security-Policy: base-uri 'self'; font-src 'self'; media-src 'self'; manifest-src 'self'; form-action 'self'; fenced-frame-src 'self'; connect-src 'self' blob:; sandbox allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts; upgrade-insecure-requests
 

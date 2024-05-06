@@ -419,7 +419,7 @@ div.user[vip="diamond"]::after {
 	row-gap: 10px;
 }
 
-#game-container>div {
+#game-container>a {
 	position: relative;
 	display: block;
 	width: 140px;
@@ -428,21 +428,23 @@ div.user[vip="diamond"]::after {
 	cursor: pointer;
 	border: 1px solid #c0c0c0;
 	border-radius: 15px;
+	text-decoration: none;
 	background-size: 140px 105px;
 	background-color: #f0f0f0;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
 }
 
-#game-container>div:hover {
+#game-container>a:hover {
 	border-color: #808080;
 }
 
-#game-container>div:active {
+#game-container>a:active {
 	border-color: #303030;
+	text-decoration: underline;
 }
 
-#game-container>div>span {
+#game-container>a>span {
 	position: relative;
 	display: block;
 	width: 45px;
@@ -458,7 +460,7 @@ div.user[vip="diamond"]::after {
 	text-transform: uppercase;
 }
 
-#game-container>div>div {
+#game-container>a>div {
 	position: absolute;
 	display: block;
 	width: 130px;
@@ -1436,7 +1438,7 @@ div.user[vip="diamond"]::after {
 	background-position: 0px 0px;
 }
 
-#ac-link, #ulink {
+#ac-link {
 	position: relative;
 	display: inline-block;
 	width: 24px;
@@ -1956,27 +1958,10 @@ div.user[vip="diamond"]::after {
 
 #name {
 	position: relative;
-	display: inline-block;
+	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: 10px 15px 5px 10px;
-	vertical-align: top;
-}
-
-#glink {
-	position: relative;
-	display: inline-block;
-	width: 24px;
-	height: 24px;
-	margin: 10px 0px;
-	border: none;
-	cursor: pointer;
-	outline: none;
-	vertical-align: top;
-	background-image: url("res/link.svg");
-	background-size: 24px 24px;
-	background-repeat: no-repeat;
-	background-position: 0px 0px;
+	margin: 10px 5px;
 }
 
 #user {
@@ -1984,6 +1969,7 @@ div.user[vip="diamond"]::after {
 	display: block;
 	width: fit-content;
 	height: fit-content;
+	cursor: pointer;
 }
 
 #user>img {
