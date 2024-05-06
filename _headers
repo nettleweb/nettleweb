@@ -3,9 +3,13 @@
 	Referrer-Policy: no-referrer
 	Permissions-Policy: camera=(), microphone=(), geolocation=(), accelerometer=(), display-capture=(), browsing-topics=(), screen-wake-lock=()
 	X-Content-Type-Options: nosniff
-	Content-Security-Policy: base-uri 'self'; font-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; worker-src 'self'; manifest-src 'self'; form-action 'self'; fenced-frame-src 'self'; script-src-elem 'self' https://*.google.com https://www.googletagmanager.com; script-src-attr 'self'; style-src-elem 'self' 'unsafe-inline' https://*.google.com; style-src-attr 'self'; sandbox allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts; upgrade-insecure-requests
+	Content-Security-Policy: base-uri 'self'; font-src 'self'; media-src 'self'; style-src 'self'; script-src 'self'; worker-src 'self'; manifest-src 'self'; form-action 'self'; fenced-frame-src 'self'; script-src-elem 'self' https://*.google.com https://*.firebaseio.com https://www.googletagmanager.com; script-src-attr 'self'; style-src-elem 'self' 'unsafe-inline' https://*.google.com; style-src-attr 'self' 'unsafe-inline'; sandbox allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts; upgrade-insecure-requests
 
 /player
+	! Content-Security-Policy
+	Content-Security-Policy: base-uri 'self'; font-src 'self'; media-src 'self'; manifest-src 'self'; form-action 'self'; fenced-frame-src 'self'; connect-src 'self' blob:; sandbox allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts; upgrade-insecure-requests
+
+/d/*/
 	! Content-Security-Policy
 	Content-Security-Policy: base-uri 'self'; font-src 'self'; media-src 'self'; manifest-src 'self'; form-action 'self'; fenced-frame-src 'self'; connect-src 'self' blob:; sandbox allow-forms allow-modals allow-pointer-lock allow-popups allow-same-origin allow-scripts; upgrade-insecure-requests
 

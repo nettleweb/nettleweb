@@ -10,25 +10,6 @@
 	</head>
 	<body>
 		<div>Loading...</div>
-		<script type="text/javascript">
-// <![CDATA[
-"use strict"; (() => {
-	const win = window.opener;
-	const hash = window.location.hash;
-
-	if (win != null) {
-		win.postMessage(hash);
-		win.focus();
-
-		document.body.innerHTML = "You may close this window now.";
-		window.stop();
-		window.close();
-	} else {
-		window.localStorage.setItem("_cre_", hash);
-		window.location.replace("/");
-	}
-})();
-// ]]>
-		</script>
+		<script type="text/javascript" src="auth.js" async="true" defer="true"></script>
 	</body>
 </html>
