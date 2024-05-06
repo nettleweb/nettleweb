@@ -1,7 +1,9 @@
 /404.html / 301
-/unbl.xht / 391
+/unbl.xht / 301
 /unblocker / 301
 /unblocker/ / 301
 
-/terms /terms.txt 302
-/privacy /privacy.txt 302
+/terms /terms.txt 301
+/terms/ /terms.txt 301
+/privacy /privacy.txt 301
+/privacy/ /privacy.txt 301

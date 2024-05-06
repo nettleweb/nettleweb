@@ -137,76 +137,6 @@
 	vertical-align: middle;
 }
 
-@media all and (max-width: 600px) {
-	#hamb {
-		position: relative;
-		display: block;
-		width: fit-content;
-		height: fit-content;
-		float: right;
-		padding: 24px 15px;
-	}
-
-	#hamb>div {
-		position: relative;
-		display: block;
-		width: 20px;
-		height: 2px;
-		margin: 0px 5px;
-		background: #303030;
-	}
-
-	#hamb>div::before, #hamb>div::after {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-		content: "";
-		background: #303030;
-		transition: transform 0.2s ease-out;
-	}
-	
-	#hamb>div::before {
-		top: 6px;
-	}
-	
-	#hamb>div::after {
-		top: -6px;
-	}
-
-	#nav-bar {
-		display: none;
-		width: auto;
-		height: auto;
-		top: 50px;
-		right: 5px;
-		z-index: 2;
-		background: #c0c0c0;
-	}
-
-	#nav-bar>button {
-		display: block;
-	}
-
-	#side-menu:checked ~ #nav-bar {
-		display: block;
-	}
-
-	#side-menu:checked ~ #hamb>div {
-		background: rgba(0, 0, 0, 0);
-	}
-
-	#side-menu:checked ~ #hamb>div::before {
-		top: 0px;
-		transform: rotate(-45deg);
-	}
-
-	#side-menu:checked ~ #hamb>div::after {
-		top: 0px;
-		transform: rotate(45deg);
-	}
-}
-
 #loading {
 	position: absolute;
 	display: block;
@@ -279,10 +209,9 @@
 #banner {
 	position: relative;
 	display: block;
-	width: 100%;
-	height: unset;
-	margin: 0px 0px 50px;
-	aspect-ratio: 4/1;
+	width: 512px;
+	height: 128px;
+	margin: 10px auto 50px;
 	background-image: url("res/logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -292,16 +221,16 @@
 #banner::after {
 	position: absolute;
 	display: block;
-	width: 270px;
-	height: 36px;
-	right: 30px;
+	width: 240px;
+	height: 30px;
+	right: 0px;
 	bottom: 0px;
 	content: "Free Online Games";
 	color: #808080;
-	font-size: 24px;
+	font-size: 20px;
 	font-style: italic;
 	font-weight: 600;
-	line-height: 36px;
+	line-height: 30px;
 	letter-spacing: 0px;
 }
 
@@ -427,13 +356,6 @@ div.user[vip="diamond"]::after {
 	height: 40px;
 	margin: 20px auto;
 	border: 1px solid #808080;
-}
-
-@media all and (max-width: 420px) {
-	#game-search, #yt-search {
-		width: calc(100% - 20px);
-		margin: 20px 10px;
-	}
 }
 
 #game-search>input, #yt-search>input {
@@ -1659,28 +1581,6 @@ div.user[vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-@media all and (max-width: 800px) {
-	#content>div, #bottom-widget, #footer {
-		width: calc(100% - 40px);
-	}
-
-	#chatgpt-page>div, #community-page>div {
-		width: calc(100% + 10px);
-		margin: 10px -5px;
-		aspect-ratio: 9/18;
-	}
-
-	#discord {
-		display: none;
-	}
-}
-
-@media all and (min-width: 1100px) {
-	#left-side-widget, #right-side-widget {
-		display: block;
-	}
-}
-
 #settings {
 	position: absolute;
 	display: block;
@@ -2109,6 +2009,111 @@ div.user[vip="diamond"]::after {
 	line-height: 20px;
 	letter-spacing: 0px;
 	vertical-align: top;
+}
+
+@media all and (max-width: 600px) {
+	#hamb {
+		position: relative;
+		display: block;
+		width: fit-content;
+		height: fit-content;
+		float: right;
+		padding: 24px 15px;
+	}
+
+	#hamb>div {
+		position: relative;
+		display: block;
+		width: 20px;
+		height: 2px;
+		margin: 0px 5px;
+		background: #303030;
+	}
+
+	#hamb>div::before, #hamb>div::after {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background: #303030;
+		transition: transform 0.2s ease-out;
+	}
+	
+	#hamb>div::before {
+		top: 6px;
+	}
+	
+	#hamb>div::after {
+		top: -6px;
+	}
+
+	#nav-bar {
+		display: none;
+		width: auto;
+		height: auto;
+		top: 50px;
+		right: 5px;
+		z-index: 2;
+		background: #c0c0c0;
+	}
+
+	#nav-bar>button {
+		display: block;
+	}
+
+	#side-menu:checked ~ #nav-bar {
+		display: block;
+	}
+
+	#side-menu:checked ~ #hamb>div {
+		background: rgba(0, 0, 0, 0);
+	}
+
+	#side-menu:checked ~ #hamb>div::before {
+		top: 0px;
+		transform: rotate(-45deg);
+	}
+
+	#side-menu:checked ~ #hamb>div::after {
+		top: 0px;
+		transform: rotate(45deg);
+	}
+
+	#banner {
+		width: 100%;
+		height: unset;
+		aspect-ratio: 4/1;
+	}
+}
+
+@media all and (max-width: 420px) {
+	#game-search, #yt-search {
+		width: calc(100% - 20px);
+		margin: 20px 10px;
+	}
+}
+
+@media all and (max-width: 800px) {
+	#content>div, #bottom-widget, #footer {
+		width: calc(100% - 40px);
+	}
+
+	#chatgpt-page>div, #community-page>div {
+		width: calc(100% + 10px);
+		margin: 10px -5px;
+		aspect-ratio: 9/18;
+	}
+
+	#discord {
+		display: none;
+	}
+}
+
+@media all and (min-width: 1100px) {
+	#left-side-widget, #right-side-widget {
+		display: block;
+	}
 }
 
 @media (max-width: 1300px) and (orientation: landscape) {
