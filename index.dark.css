@@ -28,12 +28,12 @@ option, optgroup {
 	background-image: url("res/search-w.svg");
 }
 
-#game-container>div {
+#game-container>a {
 	border-color: #606060;
 	background-color: #404040;
 }
 
-#game-container>div>div {
+#game-container>a>div {
 	color: #e0e0e0;
 }
 
