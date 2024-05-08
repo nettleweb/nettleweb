@@ -164,7 +164,7 @@
 	width: 100%;
 	height: 1000px;
 	padding: 20px 0px;
-	top: 0px;
+	top: 200px;
 	left: 0px;
 	content: "Loading...";
 	font-size: 16px;
@@ -176,7 +176,7 @@
 
 #content {
 	position: absolute;
-	display: none;
+	display: block;
 	width: calc(100% - 20px);
 	height: calc(100% - 90px);
 	bottom: 0px;
@@ -335,10 +335,15 @@ div.user[vip="diamond"]::after {
 	width: 512px;
 	height: 128px;
 	margin: 20px auto 50px;
-	background-image: url("res/logo.svg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
+}
+
+#banner>img {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
 }
 
 #banner::after {
@@ -417,9 +422,9 @@ div.user[vip="diamond"]::after {
 
 #game-container {
 	position: relative;
-	display: flex;
+	display: block;
 	width: 100%;
-	height: fit-content;
+	height: 3030px;
 	margin: 30px 0px;
 	flex-direction: row;
 	flex-wrap: wrap;
