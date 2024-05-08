@@ -142,28 +142,36 @@
 	display: block;
 	width: 100%;
 	height: 20px;
-	top: 60px;
+	top: 50px;
 	left: 0px;
-	background: #ffffff;
-	text-align: center;
-	line-height: 20px;
-	font-weight: 500;
-	letter-spacing: 0px;
+	z-index: 5;
 }
 
-#loading>* {
-	margin: 15px 0px;
+#loading::before {
+	position: absolute;
+	display: block;
+	width: 50%;
+	height: 50px;
+	top: -50px;
+	right: 0px;
+	content: "";
+	background: #f0f0f0;
 }
 
 #loading::after {
 	position: absolute;
 	display: block;
-	width: 50%;
-	height: 50px;
-	top: -60px;
-	right: 0px;
-	content: "";
-	background: #f0f0f0;
+	width: 100%;
+	height: 1000px;
+	padding: 20px 0px;
+	top: 0px;
+	left: 0px;
+	content: "Loading...";
+	font-size: 16px;
+	background: #ffffff;
+	text-align: center;
+	line-height: 24px;
+	letter-spacing: 0px;
 }
 
 #content {
@@ -204,34 +212,6 @@
 	font-size: 24px;
 	font-weight: 600;
 	line-height: 40px;
-}
-
-#banner {
-	position: relative;
-	display: block;
-	width: 512px;
-	height: 128px;
-	margin: 10px auto 50px;
-	background-image: url("res/logo.svg");
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-#banner::after {
-	position: absolute;
-	display: block;
-	width: 240px;
-	height: 30px;
-	right: 0px;
-	bottom: 0px;
-	content: "Free Online Games";
-	color: #808080;
-	font-size: 20px;
-	font-style: italic;
-	font-weight: 600;
-	line-height: 30px;
-	letter-spacing: 0px;
 }
 
 .text-body {
@@ -347,6 +327,39 @@ div.user[vip="gold"]::after {
 
 div.user[vip="diamond"]::after {
 	content: "\01f48e";
+}
+
+#banner {
+	position: relative;
+	display: block;
+	width: 512px;
+	height: 128px;
+	margin: 20px auto 50px;
+}
+
+#banner>img {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	object-position: center;
+}
+
+#banner::after {
+	position: absolute;
+	display: block;
+	width: 240px;
+	height: 30px;
+	right: 0px;
+	bottom: 0px;
+	content: "Free Online Games";
+	color: #808080;
+	font-size: 20px;
+	font-style: italic;
+	font-weight: 600;
+	line-height: 30px;
+	letter-spacing: 0px;
 }
 
 #game-search, #yt-search {
@@ -742,7 +755,7 @@ div.user[vip="diamond"]::after {
 	bottom: 0px;
 }
 
-#chatgpt, #sendmsg {
+#chatgpt, #interface>div {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -751,7 +764,7 @@ div.user[vip="diamond"]::after {
 	border: 1px solid #808080;
 }
 
-#chatgpt>input, #sendmsg>input {
+#chatgpt>input {
 	position: absolute;
 	display: block;
 	width: calc(100% - 50px);
@@ -765,7 +778,7 @@ div.user[vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#chatgpt>button, #sendmsg>button {
+#chatgpt>button {
 	position: absolute;
 	display: block;
 	width: 30px;
@@ -968,7 +981,7 @@ div.user[vip="diamond"]::after {
 	border: 1px solid #808080;
 }
 
-#search-container, #gamemu-options {
+#gamemu-options {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -993,11 +1006,20 @@ div.user[vip="diamond"]::after {
 	overflow: hidden;
 }
 
-#webemu-container>embed {
+#webemu-container>embed, #search-container>embed {
 	position: relative;
 	display: block;
 	width: 100%;
 	height: 100%;
+}
+
+#search-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: unset;
+	margin: 10px 0px;
+	aspect-ratio: 4/3;
 }
 
 #console {
@@ -1251,6 +1273,23 @@ div.user[vip="diamond"]::after {
 	line-height: 25px;
 }
 
+#picker {
+	position: absolute;
+	display: none;
+	width: 400px;
+	height: 400px;
+	right: 0px;
+	bottom: 50px;
+}
+
+#picker>* {
+	position: absolute;
+	display: block;
+	width: 400px;
+	height: 400px;
+	overflow: hidden;
+}
+
 #messages {
 	height: calc(100% - 96px);
 }
@@ -1278,12 +1317,50 @@ div.user[vip="diamond"]::after {
 	object-position: 0px 0px;
 }
 
-#messages>div>div>audio {
-	position: relative;
+#sendmsg {
+	position: absolute;
 	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 10px 5px;
+	width: calc(100% - 90px);
+	height: 20px;
+	top: 10px;
+	left: 10px;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#emoji {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	top: 5px;
+	right: 10px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-image: url("res/emoji.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#ufile {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	top: 5px;
+	right: 50px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-image: url("res/add-file.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 #upload-message {
@@ -2104,14 +2181,20 @@ div.user[vip="diamond"]::after {
 		width: calc(100% - 40px);
 	}
 
-	#chatgpt-page>div, #community-page>div {
+	#discord {
+		display: none;
+	}
+}
+
+@media (max-width: 800px) and (orientation: portrait) {
+	#community-page>div, #cg-frame {
 		width: calc(100% + 10px);
 		margin: 10px -5px;
 		aspect-ratio: 9/18;
 	}
 
-	#discord {
-		display: none;
+	#search-container {
+		aspect-ratio: 9/18;
 	}
 }
 

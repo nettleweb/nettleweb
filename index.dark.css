@@ -57,7 +57,7 @@ option, optgroup {
 	background: #202020;
 }
 
-#chatgpt>button, #sendmsg>button {
+#chatgpt>button {
 	background-image: url("res/send-w.svg");
 }
 
@@ -71,6 +71,14 @@ option, optgroup {
 
 #menu {
 	background-image: url("res/menu-w.svg");
+}
+
+#emoji {
+	background-image: url("res/emoji-w.svg");
+}
+
+#ufile {
+	background-image: url("res/add-file-w.svg");
 }
 
 #unbl-content {

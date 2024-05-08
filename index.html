@@ -48,11 +48,13 @@
 				<button id="accn-btn" type="button">Login</button>
 			</div>
 		</div>
-		<div id="loading">Loading...</div>
+		<div id="loading"></div>
 		<div id="content">
 			<h1>Play 2000+ free online classic, HTML5, DOS, Flash, games at WhiteSpider!</h1>
 			<div id="home-page" current="true">
-				<div id="banner"></div>
+				<div id="banner">
+					<img src="res/logo.svg" width="512" height="128" loading="lazy" decoding="async" draggable="false" alt="WhiteSpider Logo" />
+				</div>
 				<form id="game-search" action="null" method="post">
 					<input name="q" type="text" placeholder="Search Games" maxlength="50" autocomplete="off" />
 					<button type="submit" title="Search"></button>
@@ -226,7 +228,7 @@
 				<hr />
 				<h3>Private Search</h3>
 				<div id="search-container">
-					<div class="gcse-search"></div>
+					<embed type="text/plain" width="1024" height="768" src="cse.html" />
 				</div>
 				<hr />
 				<h3>Debug Console (for advanced users only)</h3>
@@ -254,10 +256,11 @@
 							<div id="1213592305911730266">General 3</div>
 							<div id="1220426757547753583">Bots</div>
 							<span>Support</span>
+							<div id="1116079679766548571" q="true">Test</div>
 							<div id="1217881844939358429">Report Bugs</div>
 							<span>Other</span>
 							<div id="1217225586779357305">Developers Only</div>
-							<div id="1213589965888426065">NSFW&#x1f51e;</div>
+							<div id="1213589965888426065" q="true">NSFW&#x1f51e;</div>
 						</div>
 						<div id="account">
 							<div id="chat-profile"></div>
@@ -272,11 +275,13 @@
 						</div>
 						<div id="messages"></div>
 						<div id="interface">
-							<form id="sendmsg" action="None" method="post">
-								<input name="m" type="text" placeholder="Message" minlength="2" maxlength="1000" required="true" autocomplete="off" />
-								<button type="submit" title="Send"></button>
-							</form>
+							<div>
+								<input id="sendmsg" type="text" placeholder="Message" minlength="2" maxlength="1000" />
+								<button id="ufile" type="button" title="Upload file"></button>
+								<button id="emoji" type="button" title="Add emoji"></button>
+							</div>
 						</div>
+						<div id="picker"></div>
 					</div>
 				</div>
 			</div>
@@ -567,6 +572,6 @@
 			<button id="frame-close" type="button" title="Close"></button>
 			<button id="frame-newtab" type="button" title="Open in new tab"></button>
 		</div>
-		<script type="text/javascript" src="main.js" async="true" defer="true"></script>
+		<script type="text/javascript" src="main.js"></script>
 	</body>
 </html>
