@@ -335,15 +335,10 @@ div.user[vip="diamond"]::after {
 	width: 512px;
 	height: 128px;
 	margin: 20px auto 50px;
-}
-
-#banner>img {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	object-position: center;
+	background-image: url("res/logo.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 #banner::after {
