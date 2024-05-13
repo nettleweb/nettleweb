@@ -1,2 +1,8 @@
 User-agent: *
-Disallow: 
+Disallow: /lib/
+Disallow: /res/
+Disallow: /d/
+Disallow: /e/
+Disallow: /r/
+
+Sitemap: https://whitespider.dev/sitemap.txt
