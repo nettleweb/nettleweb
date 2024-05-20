@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta http-equiv="Referrer-Policy" content="no-referrer" />
+		<meta name="referrer" content="no-referrer" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="index.css" />
+		<title>WebEMU</title>
+	</head>
+	<body>
+		<div id="container">
+			<div id="frame">
+				<div id="control-bar">
+					<button id="run" type="button" title="Start"></button>
+					<button id="pause" type="button" title="Pause" disabled="true"></button>
+					<button id="save" type="button" title="Save State" disabled="true"></button>
+					<button id="restore" type="button" title="Restore State" disabled="true"></button>
+					<button id="fullscreen" type="button" title="Enter Fullscreen" disabled="true"></button>
+					<button id="screenshot" type="button" title="Take Screenshot" disabled="true"></button>
+					<button id="settings" type="button" title="Settings"></button>
+				</div>
+				<div id="content">
+					<div id="message">Error:</div>
+					<div id="viewport">
+						<div></div>
+						<canvas></canvas>
+					</div>
+					<div id="options">
+						<label for="preset">Preset:</label>
+						<select id="preset">
+							<option value="msdos">MS-DOS</option>
+							<option value="freedos">FreeDOS</option>
+							<option value="win95">Windows 95</option>
+							<option value="win98">Windows 98</option>
+							<option value="linux2.6.34">Linux 2.6.34</option>
+							<option value="linux3.18.0">Linux 3.18.0</option>
+							<option value="linux4.16.13">Linux 4.16.13</option>
+							<option value="deb12">Debian 12 (Minimal)</option>
+							<option value="custom">Custom</option>
+						</select>
+						<div id="custom-options">
+							<h4>Storage Devices</h4>
+							<label for="cdrom">CD-ROM (ISO):</label>
+							<input id="cdrom" type="file" />
+							<br />
+							<label for="hda">Hard Disk:</label>
+							<input id="hda" type="file" />
+							<br />
+							<label for="fda">Floppy Disk:</label>
+							<input id="fda" type="file" />
+							<hr />
+							<h4>Memory</h4>
+							<label for="ram">RAM:</label>
+							<input id="ram" type="number" min="32" max="8192" value="512" />
+							<span>MB</span>
+							<br />
+							<label for="vga-ram">VGA RAM:</label>
+							<input id="vga-ram" type="number" min="8" max="128" value="16" />
+							<span>MB</span>
+							<hr />
+							<h4>Boot Options</h4>
+							<label for="boot-order">Boot Order:</label>
+							<select id="boot-order">
+								<option value="213">CD, Floppy, Hard Disk</option>
+								<option value="123">CD, Hard Disk, Floppy</option>
+								<option value="231">Floppy, CD, Hard Disk</option>
+								<option value="321">Floppy, Hard Disk, CD</option>
+								<option value="312">Hard Disk, Floppy, CD</option>
+								<option value="132">Hard Disk, CD, Floppy</option>
+							</select>
+							<br />
+							<h5>Direct Kernel Boot</h5>
+							<label for="kernel-image">Kernel Image:</label>
+							<input id="kernel-image" type="file" />
+							<br />
+							<label for="initrd-image">Initrd Image:</label>
+							<input id="initrd-image" type="file" />
+							<br />
+							<label for="kernel-args">Kernel Args:</label>
+							<input id="kernel-args" type="text" placeholder=" (unset) " spellcheck="false" />
+							<hr />
+							<h4>Advanced Options</h4>
+							<label for="initial-state">Initial State:</label>
+							<input id="initial-state" type="file" />
+							<br />
+							<label for="network-proxy">Network Proxy:</label>
+							<input id="network-proxy" type="text" placeholder=" (unset) " spellcheck="false" />
+							<br />
+							<label for="disable-audio">Disable Audio:</label>
+							<input id="disable-audio" type="checkbox" />
+							<br />
+							<label for="disable-mouse">Disable Mouse:</label>
+							<input id="disable-mouse" type="checkbox" />
+							<br />
+							<label for="disable-keyboard">Disable Keyboard:</label>
+							<input id="disable-keyboard" type="checkbox" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<input id="fileupload" type="file" title="Upload File" />
+		<script type="text/javascript" src="libv86.js"></script>
+		<script type="text/javascript" src="main.js"></script>
+	</body>
+</html>

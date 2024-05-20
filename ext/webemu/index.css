@@ -1,0 +1,254 @@
+@import url("/common.css");
+
+#container {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 20px;
+	margin: 40px auto;
+}
+
+#frame {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 20px;
+	cursor: default;
+	overflow: hidden;
+	overflow-wrap: break-word;
+	border: 2px solid #005a5a;
+	border-radius: 25px;
+	background-color: #f0f0f0;
+}
+
+#control-bar {
+	position: relative;
+	display: flex;
+	width: 1018px;
+	height: 40px;
+	padding: 5px;
+	margin: 0px 0px 5px;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	border: 1px solid #c0c0c0;
+}
+
+#control-bar>button {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 30px;
+	padding: 5px;
+	margin: 0px 8px;
+	flex: 0 0 30px;
+	border: none;
+	border-radius: 25px;
+	background-position: center;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+#control-bar>button:not(:disabled):hover {
+	background-color: #d0d0d0;
+}
+
+#control-bar>button:not(:disabled):active {
+	background-color: #c0c0c0;
+}
+
+#run {
+	background-image: url("res/start.svg");
+}
+
+#pause {
+	background-image: url("res/pause.svg");
+}
+
+#pause[ed] {
+	background-color: #c0c0c0;
+}
+
+#save {
+	background-image: url("res/save.svg");
+}
+
+#restore {
+	background-image: url("res/restore.svg");
+}
+
+#fullscreen {
+	background-image: url("res/fullscreen.svg");
+}
+
+#screenshot {
+	background-image: url("res/screenshot.svg");
+}
+
+#settings {
+	position: absolute !important;
+	right: 0px;
+	background-image: url("res/settings.svg");
+}
+
+#settings[ed] {
+	background-color: #c0c0c0;
+}
+
+#fileupload {
+	display: none;
+}
+
+#content {
+	position: relative;
+	display: block;
+	width: 1024px;
+	height: 768px;
+	padding: 2px;
+	margin: 15px 0px 0px;
+	border: 1px solid #808080;
+}
+
+#message {
+	position: relative;
+	display: none;
+	width: 980px;
+	height: fit-content;
+	padding: 10px;
+	margin: 10px;
+	z-index: 2;
+	font-weight: 400;
+	line-height: 18px;
+	border: 2px solid #ff0000;
+	border-radius: 10px;
+	background-color: #ffffff;
+}
+
+#viewport {
+	position: absolute;
+	display: block;
+	width: 1024px;
+	height: 768px;
+	top: 2px;
+	left: 2px;
+	right: 2px;
+	bottom: 2px;
+	overflow: auto;
+	background: #000000;
+}
+
+#viewport>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 5px;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: 300;
+	font-family: "Ubuntu Mono", monospace;
+	line-height: 14px;
+	white-space: pre;
+	letter-spacing: 0px;
+}
+
+#options {
+	position: absolute;
+	display: none;
+	width: 1004px;
+	height: 748px;
+	padding: 10px;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: #ffffff;
+}
+
+#options hr {
+	margin: 15px 0px;
+	border: none;
+	border-bottom: 1px solid #808080;
+}
+
+#options h4 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 16px;
+}
+
+#options h5 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 14px;
+}
+
+#options label {
+	position: relative;
+	display: inline-block;
+	width: 25%;
+	height: 14px;
+	margin: 10px 0px;
+	font-weight: 400;
+	line-height: 14px;
+	text-overflow: ellipsis;
+}
+
+#options input, #options select {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px;
+	outline: none;
+}
+
+#options select {
+	border: 1px solid #808080;
+}
+
+#options select:focus {
+	border-color: #005a5a;
+}
+
+#options input[type="number"] {
+	width: 60px;
+	padding: 2px 3px;
+	border: 1px solid #808080;
+}
+
+#options input[type="number"]:focus {
+	border-color: #005a5a;
+}
+
+#options input[type="text"] {
+	padding: 2px 3px;
+	border: 1px solid #808080;
+}
+
+#options input[type="text"]:focus {
+	border-color: #005a5a;
+}
+
+#custom-options {
+	position: relative;
+	display: none;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+	padding: 15px 0px;
+	border-top: 1px solid #808080;
+}

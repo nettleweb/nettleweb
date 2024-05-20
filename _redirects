@@ -1,9 +1,13 @@
-/404.html / 301
-/unbl.xht / 301
-/unblocker / 301
-/unblocker/ / 301
-
 /terms /terms.txt 301
 /terms/ /terms.txt 301
 /privacy /privacy.txt 301
 /privacy/ /privacy.txt 301
+
+/cse /ext/cse/ 301
+/emu /ext/emu/ 301
+/webemu /ext/webemu/index.xht 301
+/console /ext/console/index.xht 301
+/jsconsole /ext/console/index.xht 301
+
+/ext/webemu/ /ext/webemu/index.xht 301
+/ext/console/ /ext/console/index.xht 301

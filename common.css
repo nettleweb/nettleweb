@@ -1,25 +1,11 @@
 @font-face {
-	font-family: "Ubuntu";
-	font-style: normal;
-	font-weight: normal;
-	font-stretch: normal;
-	src: url("res/ubuntu.woff2") format("woff2");
-}
-
-@font-face {
-	font-family: "Ubuntu Condensed";
-	font-style: normal;
-	font-weight: normal;
-	font-stretch: normal;
-	src: url("res/ubuntu-condensed.woff2") format("woff2");
-}
-
-@font-face {
 	font-family: "Ubuntu Mono";
-	font-style: normal;
-	font-weight: normal;
-	font-stretch: normal;
-	src: url("res/ubuntu-mono.woff2") format("woff2");
+	src: url("res/mono.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Ubuntu";
+	src: url("res/ubuntu.woff2") format("woff2");
 }
 
 * {
@@ -63,7 +49,7 @@ body {
 	height: 100%;
 	font-size: 14px;
 	font-style: normal;
-	font-family: "Ubuntu", sans-serif;
+	font-family: "ubuntu", sans-serif;
 	font-weight: 500;
 	overflow: hidden;
 	color: #303030;
@@ -73,9 +59,9 @@ body {
 
 input, select, option, textarea, button {
 	font-size: inherit;
+	font-style: inherit;
 	font-family: inherit;
 	font-weight: inherit;
-	font-style: inherit;
 	font-stretch: inherit;
 	font-variant: inherit;
 	color: inherit;

@@ -1,0 +1,141 @@
+@import url("/common.css");
+
+#error, noscript>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 10px;
+	margin: 20px auto;
+	color: #ff0000;
+	border: 1px solid #ff0000;
+	border-radius: 10px;
+	z-index: 10;
+	background: #ffe0e0;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#error {
+	display: none;
+}
+
+#console {
+	position: absolute;
+	display: block;
+	width: calc(100% - 32px);
+	height: calc(100% - 32px);
+	padding: 15px;
+	color: #303030;
+	border: 1px solid #303030;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 500;
+	font-family: "Ubuntu Mono", monospace;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: #ffffff;
+}
+
+#output {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+}
+
+#output>span {
+	position: relative;
+	display: inline;
+	width: fit-content;
+	height: fit-content;
+	tab-size: 4;
+	font-size: 14px;
+	line-height: 20px;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+	letter-spacing: 0px;
+}
+
+#output>span button {
+	position: relative;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	vertical-align: top;
+	background-size: 18px 18px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#output>span span {
+	position: relative;
+	display: inline;
+	width: fit-content;
+	height: fit-content;
+	line-height: 18px;
+	vertical-align: top;
+}
+
+#output>div::before {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	top: 0px;
+	left: -20px;
+	color: #808080;
+	cursor: default;
+	content: "-> ";
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#output>div, #input>div {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	margin: 2px 0px 2px 20px;
+	overflow: unset;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#output>div .ace_cursor {
+	display: none !important;
+}
+
+.ace_hidden-cursors {
+	display: none !important;
+}
+
+#output>hr {
+	margin: 3px 0px;
+	border: none;
+	border-bottom: 1px solid #808080;
+}
+
+#input {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 3px 0px;
+}
+
+#input>span {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	color: #808080;
+	cursor: default;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}

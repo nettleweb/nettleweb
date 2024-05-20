@@ -16,6 +16,10 @@ option, optgroup {
 	background: #404040;
 }
 
+#nav-bar>button, #game-category>button {
+	color: #d0d0d0;
+}
+
 #nav-bar>button[current], #game-category>button[current] {
 	color: #ffffff;
 }
@@ -31,10 +35,6 @@ option, optgroup {
 #game-container>a {
 	border-color: #606060;
 	background-color: #404040;
-}
-
-#game-container>a>div {
-	color: #e0e0e0;
 }
 
 #history, #sidemenu, #header {
