@@ -1,7 +1,5 @@
 User-agent: *
 Disallow: /lib/
-Disallow: /res/
-Disallow: /d/
 Disallow: /e/
 Disallow: /r/
 
