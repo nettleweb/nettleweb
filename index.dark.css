@@ -121,14 +121,35 @@ option, optgroup {
 	background-color: #808080;
 }
 
-#address, #mode>select {
+#address, #mode>select, #ac-prof {
 	background: #202020;
+}
+
+#ac-edit {
+	background-image: url("res/edit-w.svg");
+}
+
+#ac-link {
+	background-image: url("res/link-w.svg");
+}
+
+#install {
+	border: 1px solid #00c0c0;
+	background: #202020;
+}
+
+#install:hover {
+	background: #303030;
+}
+
+#install:active {
+	background: #404040;
+}
+
+#install>span {
+	color: #00c0c0;
 }
 
 #game {
 	background: #404040;
-}
-
-#glink, #ulink {
-	background-image: url("res/link-w.svg");
 }

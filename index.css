@@ -1394,7 +1394,6 @@ div.user[vip="diamond"]::after {
 	height: 90px;
 	border: 1px solid #808080;
 	border-radius: 10px;
-	background: #ffffff;
 }
 
 #ch-avatar {
@@ -1445,7 +1444,6 @@ div.user[vip="diamond"]::after {
 	width: fit-content;
 	height: 24px;
 	margin: 0px 5px;
-	color: #000000;
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 24px;
@@ -2074,6 +2072,20 @@ div.user[vip="diamond"]::after {
 	line-height: 20px;
 	letter-spacing: 0px;
 	vertical-align: top;
+}
+
+#dlink, #ecode {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	padding: 10px;
+	outline: 1px solid #808080;
+	font-size: 13px;
+	font-weight: 400;
+	font-family: "Ubuntu Mono", monospace;
+	line-height: 18px;
+	letter-spacing: 0px;
 }
 
 @media all and (max-width: 600px) {
