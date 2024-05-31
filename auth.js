@@ -1,17 +1,21 @@
 "use strict";
 
 (() => {
-	const win = window.opener;
-	const hash = window.location.hash;
+	const { opener, location } = window;
+	const { hash, search } = location;
 
-	if (win != null) {
-		win.postMessage(hash);
-		win.focus();
-
-		window.stop();
-		window.close();
+	if (hash.length > 0) {
+		if (opener != null) {
+			opener.postMessage(hash);
+			opener.focus();
+			window.close();
+		} else {
+			localStorage.setItem("_cre_", hash);
+			location.replace("/");
+		}
 	} else {
-		window.localStorage.setItem("_cre_", hash);
-		window.location.replace("/");
+		const url = new URLSearchParams(search).get("url");
+		if (url != null && url.length > 0)
+			location.replace(url);
 	}
 })();

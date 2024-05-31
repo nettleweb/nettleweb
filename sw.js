@@ -76,8 +76,28 @@
 		}
 	}
 
+	async function handlePaymentRequest(e) {
+		let resolve, reject;
+		e.respondWith(new Promise((res, rej) => {
+			resolve = res;
+			reject = rej;
+		}));
+
+		/**
+		 * @type {WindowClient | null}
+		 */
+		const client = await e.openWindow("/auth.html?url=" + encodeURIComponent(e.methodData[0].data[0]));
+		if (client == null || client.type !== "window") {
+			reject("Error: Failed to open payment window");
+			return;
+		}
+		client.postMessage("dummy");
+	}
+
 	self.addEventListener("fetch", (e) => e.respondWith(handleFetch(e)), { passive: true });
 	self.addEventListener("message", (e) => e.waitUntil(handleMessage(e)), { passive: true });
 	self.addEventListener("install", (e) => e.waitUntil(handleInstall(e)), { passive: true });
 	self.addEventListener("activate", (e) => e.waitUntil(handleActivate(e)), { passive: true });
+	self.addEventListener("canmakepayment", (e) => e.respondWith(Promise.resolve(true)), { passive: true });
+	self.addEventListener("paymentrequest", (e) => e.waitUntil(handlePaymentRequest(e)), { passive: true });
 })(self);

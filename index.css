@@ -2089,6 +2089,21 @@ div.user[vip="diamond"]::after {
 }
 
 @media all and (max-width: 600px) {
+	#banner {
+		width: 100%;
+		height: unset;
+		aspect-ratio: 4/1;
+	}
+}
+
+@media all and (max-width: 420px) {
+	#game-search, #yt-search {
+		width: calc(100% - 20px);
+		margin: 20px 10px;
+	}
+}
+
+@media all and (max-width: 800px) {
 	#hamb {
 		position: relative;
 		display: block;
@@ -2126,13 +2141,15 @@ div.user[vip="diamond"]::after {
 	}
 
 	#nav-bar {
+		position: absolute;
 		display: none;
 		width: auto;
 		height: auto;
 		top: 50px;
 		right: 5px;
+		border: 1px solid #808080;
 		z-index: 2;
-		background: #c0c0c0;
+		background: #d0d0d0;
 	}
 
 	#nav-bar>button {
@@ -2156,40 +2173,20 @@ div.user[vip="diamond"]::after {
 		top: 0px;
 		transform: rotate(45deg);
 	}
-
-	#banner {
-		width: 100%;
-		height: unset;
-		aspect-ratio: 4/1;
-	}
 }
 
-@media all and (max-width: 420px) {
-	#game-search, #yt-search {
-		width: calc(100% - 20px);
-		margin: 20px 10px;
-	}
-}
-
-@media all and (max-width: 800px) {
+@media all and (max-width: 850px) {
 	#content>div, #bottom-widget, #footer {
 		width: calc(100% - 40px);
 	}
 
-	#discord {
-		display: none;
-	}
-}
-
-@media (max-width: 800px) and (orientation: portrait) {
 	#community-page>div, #cg-frame {
 		width: calc(100% + 10px);
 		margin: 10px -5px;
-		aspect-ratio: 9/18;
 	}
 
-	#search-container, #console-container {
-		aspect-ratio: 9/18;
+	#discord {
+		display: none;
 	}
 }
 
@@ -2199,15 +2196,13 @@ div.user[vip="diamond"]::after {
 	}
 }
 
-@media (max-width: 1300px) and (orientation: landscape) {
-	#frame {
-		width: 90%;
-		height: unset;
-		aspect-ratio: 16/9;
+@media (max-width: 850px) and (orientation: portrait) {
+	#community-page>div, #cg-frame {
+		aspect-ratio: 9/18;
 	}
 
-	#game {
-		width: 90%;
+	#search-container, #console-container {
+		aspect-ratio: 9/18;
 	}
 }
 
@@ -2224,5 +2219,17 @@ div.user[vip="diamond"]::after {
 
 	#player {
 		aspect-ratio: 9/16;
+	}
+}
+
+@media (max-width: 1300px) and (orientation: landscape) {
+	#frame {
+		width: 90%;
+		height: unset;
+		aspect-ratio: 16/9;
+	}
+
+	#game {
+		width: 90%;
 	}
 }

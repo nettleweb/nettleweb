@@ -153,3 +153,9 @@ option, optgroup {
 #game {
 	background: #404040;
 }
+
+@media all and (max-width: 800px) {
+	#nav-bar {
+		background: #404040;
+	}
+}
