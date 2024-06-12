@@ -74,7 +74,7 @@
 				<div id="game-container"></div>
 				<div id="game-navigator">
 					<button id="gnav-back" type="button" disabled="true" title="Previous page"></button>
-					<div>Page: <input id="gnav-page-no" type="number" value="0" min="1" max="999" maxlength="3" placeholder="1" /> / <span id="gnav-page-count">0</span></div>
+					<div>Page: <input id="gnav-page-no" type="number" value="0" min="1" max="999" placeholder="1" autocomplete="off" /> / <span id="gnav-page-count">0</span></div>
 					<button id="gnav-forward" type="button" disabled="true" title="Next page"></button>
 				</div>
 				<div id="game-widget">
@@ -125,7 +125,7 @@
 				</form>
 				<div id="yt-option-bar">
 					<label for="yt-max-results">Results:</label>
-					<input id="yt-max-results" type="number" min="1" max="30" value="10" placeholder="10" />
+					<input id="yt-max-results" type="number" value="10" min="1" max="30" placeholder="10" autocomplete="off" />
 					<label for="yt-order">Order:</label>
 					<select id="yt-order">
 						<option value="date">Date</option>
@@ -149,7 +149,7 @@
 					<p> - Click 'create credentials' at the top and select 'API key'.</p>
 					<p> - Fill in your API key below to use it.</p>
 					<label for="yt-api-key">API Key: </label>
-					<input id="yt-api-key" type="text" placeholder=" (Default) " />
+					<input id="yt-api-key" type="text" placeholder=" (Default) " spellcheck="false" autocomplete="off" />
 				</div>
 				<hr />
 				<h3>Game Emulator</h3>
@@ -272,7 +272,7 @@
 						<div id="messages"></div>
 						<div id="interface">
 							<div>
-								<input id="sendmsg" type="text" placeholder="Message" minlength="2" maxlength="1000" />
+								<input id="sendmsg" type="text" placeholder="Message" minlength="2" maxlength="1000" required="true" autocomplete="off" />
 								<button id="ufile" type="button" title="Upload file"></button>
 								<button id="emoji" type="button" title="Add emoji"></button>
 							</div>
@@ -379,7 +379,7 @@
 				<h2>Upload Game</h2>
 				<div>
 					<label for="game-name">Name:</label>
-					<input id="game-name" type="text" placeholder="Example" />
+					<input id="game-name" type="text" placeholder="Example" minlength="1" maxlength="256" required="true" autocomplete="off" />
 				</div>
 				<div>
 					<label for="game-type">Type:</label>
@@ -395,11 +395,11 @@
 				</div>
 				<div>
 					<label for="game-labels">Labels (separated by comma):</label>
-					<input id="game-labels" type="text" placeholder="label1,label2,label3" />
+					<input id="game-labels" type="text" placeholder="label1,label2,label3" autocomplete="off" />
 				</div>
 				<div>
 					<label for="game-description">Description (optional):</label>
-					<input id="game-description" type="text" placeholder="Game Description" />
+					<input id="game-description" type="text" placeholder="Game Description" autocomplete="off" />
 				</div>
 				<div class="text-body">
 					<h3>Notice</h3>
@@ -428,16 +428,7 @@
 			</div>
 			<div id="accountinfo-page">
 				<h2>My Account</h2>
-				<div id="login-dialog">
-					<h3>Login</h3>
-					<input id="username" type="text" placeholder="Username" minlength="4" maxlength="20" spellcheck="false" autocomplete="off" />
-					<input id="password" type="password" placeholder="Password" minlength="8" maxlength="30" spellcheck="false" autocomplete="off" />
-					<input id="c-password" type="password" placeholder="Confirm password" minlength="8" maxlength="30" spellcheck="false" autocomplete="off" />
-					<input id="2fa-otp" type="text" placeholder="2FA One time password" minlength="6" maxlength="6" spellcheck="false" autocomplete="off" />
-					<button id="login" type="button" class="pri-button">Login</button>
-					<div id="register">Register</div>
-					<div id="login-google">Sign in with Google</div>
-				</div>
+				<div id="login-dialog"></div>
 				<div id="account-settings" class="text-body">
 					<h3>Public Profile</h3>
 					<div id="ac-prof">
@@ -471,7 +462,6 @@
 					<hr />
 					<h3>Security</h3>
 					<button id="cp" type="button" class="pri-button">Change Password</button>
-					<button id="fa" type="button" class="pri-button">Enable 2FA</button>
 					<hr />
 					<h3>Functions</h3>
 					<button id="ug" type="button" class="pri-button">Upload Game</button>
@@ -495,7 +485,7 @@
 				<h2>Settings</h2>
 				<div>
 					<label for="backend-url">Backend URL:</label>
-					<input id="backend-url" type="text" placeholder=" (Default) " />
+					<input id="backend-url" type="text" placeholder=" (Default) " spellcheck="false" autocomplete="off" />
 				</div>
 				<div>
 					<label for="theme">Theme:</label>
@@ -555,7 +545,7 @@
 				<button id="back" type="button" title="Back"></button>
 				<button id="forward" type="button" title="Forward"></button>
 				<button id="refresh" type="button" title="Refresh"></button>
-				<input id="address" type="text" placeholder="Search or type a URL" spellcheck="false" />
+				<input id="address" type="text" placeholder="Search or type a URL" spellcheck="false" autocomplete="off" />
 				<div id="mode">
 					<label for="mode-select">Mode: </label>
 					<select id="mode-select">

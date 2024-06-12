@@ -1374,6 +1374,14 @@ div.user[vip="diamond"]::after {
 	text-decoration: underline;
 }
 
+#login-dialog>span {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px;
+}
+
 #account-settings {
 	display: none;
 }
