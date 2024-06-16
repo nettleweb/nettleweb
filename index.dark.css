@@ -113,11 +113,11 @@ option, optgroup {
 	background-image: url("res/refresh-w.svg");
 }
 
-#yt-load-more:hover, #new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #delmsg:hover, #new-chat:hover, #cg-close:hover, #menu:hover, #history>div>div:hover, #channels>div:hover {
+#yt-load-more:hover, #new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #delmsg:hover, #new-chat:hover, #cg-close:hover, #menu:hover, #history>div>div:hover, #channels>div:hover, #account-settings input~button:hover {
 	background-color: #606060;
 }
 
-#yt-load-more:active, #new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #delmsg:active, #new-chat:active, #cg-close:active, #menu:active, #history>div>div:active, #history>div>div[current], #channels>div:active, #channels>div[current] {
+#yt-load-more:active, #new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #delmsg:active, #new-chat:active, #cg-close:active, #menu:active, #history>div>div:active, #history>div>div[current], #channels>div:active, #channels>div[current], #account-settings input~button:active {
 	background-color: #808080;
 }
 
@@ -125,7 +125,15 @@ option, optgroup {
 	background: #202020;
 }
 
-#ac-edit {
+#account-settings .tick {
+	background-image: url("res/tick-w.svg");
+}
+
+#account-settings .cross {
+	background-image: url("res/close-w.svg");
+}
+
+#ac-edit, #ac-name-edit, #ac-email-edit {
 	background-image: url("res/edit-w.svg");
 }
 

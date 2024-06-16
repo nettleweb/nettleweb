@@ -442,6 +442,11 @@
 						</div>
 					</div>
 					<hr />
+					<h3>My Games</h3>
+					<div id="ac-games"></div>
+					<hr />
+					<h3>Membership</h3>
+					<hr />
 					<h3>Account Information</h3>
 					<div>
 						<span>UID:</span>
@@ -450,10 +455,12 @@
 					<div>
 						<span>Name:</span>
 						<span id="ac-name"></span>
+						<button id="ac-name-edit" type="button" title="Change name"></button>
 					</div>
 					<div>
 						<span>Email:</span>
 						<span id="ac-email"></span>
+						<button id="ac-email-edit" type="button" title="Change email"></button>
 					</div>
 					<div>
 						<span>Membership:</span>
@@ -475,11 +482,13 @@
 				<div>
 					<img id="avatar" width="48" height="48" loading="eager" decoding="sync" draggable="false" alt="Avatar" />
 					<div id="userid" class="user"></div>
+					<span>
+						<button id="dm" type="button" class="pri-button">Message</button>
+						<button id="af" type="button" class="pri-button">Add Friend</button>
+					</span>
 				</div>
-				<div>
-					<button id="dm" type="button" class="pri-button">Message</button>
-					<button id="af" type="button" class="pri-button">Add Friend</button>
-				</div>
+				<h3>Games</h3>
+				<span id="pf-games"></span>
 			</div>
 			<div id="settings-page">
 				<h2>Settings</h2>

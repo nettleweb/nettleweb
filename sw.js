@@ -6,6 +6,20 @@
 	const self = _;
 	const origin = self.location.origin;
 	const cacheName = "167e1f07-b59a-4742-bb45-15cf3caabcce";
+	const errorResponse = Response.error();
+
+	/**
+	 * 
+	 * @param {Request} request 
+	 * @returns {Promise<Response>}
+	 */
+	async function optFetch(request) {
+		try {
+			return await self.fetch(request);
+		} catch (err) {
+			return errorResponse;
+		}
+	}
 
 	/**
 	 * @param {FetchEvent} e 
@@ -18,7 +32,7 @@
 			case "HEAD":
 				break;
 			default:
-				return await fetch(request);
+				return await optFetch(request);
 		}
 
 		const url = new URL(request.url);
@@ -27,11 +41,11 @@
 			case "https:":
 				break;
 			default:
-				return await fetch(request);
+				return await optFetch(request);
 		}
 
 		if (url.origin === origin && url.pathname === "/manifest.json") {
-			return await fetch(url, {
+			return await optFetch(url, {
 				body: null,
 				mode: "same-origin",
 				cache: "no-cache",
@@ -40,7 +54,7 @@
 			});
 		}
 
-		const res = await caches.match(request, { cacheName }) || await e.preloadResponse || await fetch(request);
+		const res = await caches.match(request, { cacheName }) || await e.preloadResponse || await optFetch(request);
 		if (origin !== "http://localhost:8000") {
 			try {
 				await (await caches.open(cacheName)).put(request, res.clone());
