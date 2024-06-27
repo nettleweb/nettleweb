@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+	<title>WhiteSpider</title>
+	<foreignObject x="10" y="10" width="1260" height="700">
+		<embed xmlns="http://www.w3.org/1999/xhtml" src="https://whitespider.dev/" type="text/plain" width="1260" height="700" />
+	</foreignObject>
+</svg>
