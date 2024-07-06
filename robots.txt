@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /r/
 
-Sitemap: https://whitespider.dev/sitemap.txt
+Sitemap: https://nettleweb.com/sitemap.txt

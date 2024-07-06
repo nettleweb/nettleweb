@@ -107,7 +107,7 @@
 	color: #c0c0c0;
 }
 
-#nav-bar>button[current], #game-category>button[current] {
+#nav-bar>button[data-current], #game-category>button[data-current] {
 	color: #303030;
 	font-weight: 600;
 }
@@ -175,7 +175,7 @@
 
 #content {
 	position: absolute;
-	display: block;
+	display: none;
 	width: calc(100% - 20px);
 	height: calc(100% - 90px);
 	bottom: 0px;
@@ -197,7 +197,7 @@
 	margin: 10px auto 20px;
 }
 
-#content>div[current], #unbl-content[current] {
+#content>div[data-current], #unbl-content[data-current] {
 	display: block;
 }
 
@@ -219,6 +219,7 @@
 	width: calc(100% - 20px);
 	height: fit-content;
 	padding: 10px;
+	outline: 1px solid #e0e0e0;
 }
 
 .text-body>* {
@@ -295,15 +296,15 @@
 	line-height: 18px;
 	border: 1px solid #808080;
 	border-radius: 25px;
-	background-color: #006060;
+	background-color: #004080;
 }
 
 .pri-button:not(:disabled):hover {
-	background-color: #005050;
+	background-color: #0050a0;
 }
 
 .pri-button:not(:disabled):active {
-	background-color: #004040;
+	background-color: #0060c0;
 }
 
 .pri-button:disabled {
@@ -337,15 +338,10 @@ div.user[vip="diamond"]::after {
 	width: 512px;
 	height: 128px;
 	margin: 20px auto 50px;
-}
-
-#banner>img {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	object-position: center;
+	background-image: url("res/logo.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 #banner::after {
@@ -355,7 +351,7 @@ div.user[vip="diamond"]::after {
 	height: 30px;
 	right: 0px;
 	bottom: 0px;
-	content: "Free Online Games";
+	content: "More than just games!";
 	color: #808080;
 	font-size: 20px;
 	font-style: italic;
@@ -413,20 +409,11 @@ div.user[vip="diamond"]::after {
 	background: #f0f0f0;
 }
 
-#game-widget {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 200px;
-	margin: 30px 0px;
-	overflow: hidden;
-}
-
 #game-container {
 	position: relative;
 	display: block;
 	width: calc(100% + 12px);
-	height: 3040px;
+	height: fit-content;
 	margin: 30px 0px;
 }
 
@@ -563,6 +550,15 @@ div.user[vip="diamond"]::after {
 	border-bottom: 1px solid #303030;
 }
 
+#game-widget {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 200px;
+	margin: 30px 0px;
+	overflow: hidden;
+}
+
 #game-disclaimer {
 	position: relative;
 	display: block;
@@ -571,241 +567,7 @@ div.user[vip="diamond"]::after {
 	margin: 20px 0px;
 	color: #808080;
 	font-size: 12px;
-	line-height: 16px;
-}
-
-#history, #sidemenu {
-	position: absolute;
-	display: block;
-	width: 200px;
-	height: 100%;
-	background: #e0e0e0;
-	border-right: 1px solid #a0a0a0;
-}
-
-#new-chat {
-	position: absolute;
-	display: block;
-	width: 110px;
-	height: 25px;
-	top: 0px;
-	left: 0px;
-	padding: 10px 0px 10px 45px;
-	border: none;
-	cursor: pointer;
-	outline: none;
-	font-size: 12px;
-	text-align: start;
-	line-height: 25px;
-	letter-spacing: 0px;
-	background-image: url("res/new-chat.svg");
-	background-size: 24px 24px;
-	background-repeat: no-repeat;
-	background-position: 10px 10px;
-}
-
-#cg-close {
-	position: absolute;
-	display: block;
-	width: 45px;
-	height: 45px;
-	top: 0px;
-	right: 0px;
-	border: none;
-	cursor: pointer;
-	outline: none;
-	border-left: 1px solid #a0a0a0;
-	background-image: url("res/close.svg");
-	background-size: 24px 24px;
-	background-repeat: no-repeat;
-	background-position: 10px 10px;
-}
-
-#new-chat:hover, #cg-menu:hover, #cg-close:hover, #menu:hover, #history>div>div:hover, #channels>div:hover {
-	background-color: #d0d0d0;
-}
-
-#new-chat:active, #cg-menu:active, #cg-close:active, #menu:active, #history>div>div:active, #history>div>div[current], #channels>div:active, #channels>div[current] {
-	background-color: #c0c0c0;
-}
-
-#history>div, #channels {
-	position: absolute;
-	display: block;
-	width: 184px;
-	height: calc(100% - 56px);
-	padding: 5px 8px;
-	top: 45px;
-	left: 0px;
-	border-top: 1px solid #a0a0a0;
-	overflow-x: hidden;
-	overflow-y: auto;
-}
-
-#history>div>div {
-	position: relative;
-	display: block;
-	width: 184px;
-	height: 35px;
-	cursor: pointer;
-}
-
-#history>div>div>div {
-	position: absolute;
-	display: block;
-	width: 139px;
-	height: 25px;
-	top: 5px;
-	left: 5px;
-	font-size: 13px;
-	white-space: pre;
-	line-height: 25px;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	overflow-wrap: break-word;
-}
-
-#history>div>div>button {
-	position: absolute;
-	display: block;
-	width: 35px;
-	height: 35px;
-	top: 0px;
-	right: 0px;
-	border: none;
-	outline: none;
-	background-image: url("res/delete.svg");
-	background-size: 24px 24px;
-	background-repeat: no-repeat;
-	background-position: 5px 6px;
-}
-
-#history>div>div>button:hover {
-	background-color: #ff8080;
-}
-
-#history>div>div>button:active {
-	background-color: #ff0000;
-}
-
-#cg-chat, #chat {
-	position: absolute;
-	display: block;
-	width: calc(100% - 201px);
-	height: 100%;
-	top: 0px;
-	right: 0px;
-	background: #f0f0f0;
-}
-
-#cg-messages, #messages {
-	position: absolute;
-	display: block;
-	width: calc(100% - 40px);
-	height: calc(100% - 50px);
-	padding: 0px 20px;
-	overflow-x: hidden;
-	overflow-y: auto;
-}
-
-#cg-messages>div, #messages>div {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 15px 0px;
-}
-
-#cg-messages>div>img, #messages>div>img {
-	position: relative;
-	display: inline-block;
-	width: 32px;
-	height: 32px;
-	margin: 0px 15px 0px 5px;
-	border: 1px solid #ffffff;
-	border-radius: 25px;
-	vertical-align: top;
-	background: #ffffff;
-}
-
-#cg-messages>div>div, #messages>div>div {
-	position: relative;
-	display: inline-block;
-	width: calc(100% - 60px);
-	height: fit-content;
-	font-weight: 400;
-	line-height: 20px;
-	overflow: hidden;
-	overflow-wrap: break-word;
-	white-space: pre-wrap;
-	vertical-align: top;
-	letter-spacing: 0px;
-}
-
-#cg-interface, #interface {
-	position: absolute;
-	display: block;
-	width: calc(100% - 10px);
-	height: 40px;
-	padding: 5px;
-	left: 0px;
-	bottom: 0px;
-}
-
-#chatgpt, #interface>div {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 40px;
-	margin: -1px 0px 0px;
-	border: 1px solid #808080;
-}
-
-#chatgpt>input {
-	position: absolute;
-	display: block;
-	width: calc(100% - 50px);
-	height: 20px;
-	top: 10px;
-	left: 10px;
-	border: none;
-	outline: none;
-	font-size: 14px;
-	line-height: 20px;
-	letter-spacing: 0px;
-}
-
-#chatgpt>button {
-	position: absolute;
-	display: block;
-	width: 30px;
-	height: 30px;
-	top: 5px;
-	right: 10px;
-	border: none;
-	outline: none;
-	background-image: url("res/send.svg");
-	background-size: 24px 24px;
-	background-repeat: no-repeat;
-	background-position: center;
-}
-
-#cg-menu {
-	position: absolute;
-	display: none;
-	width: 48px;
-	height: 48px;
-	top: 10px;
-	left: 10px;
-	cursor: pointer;
-	outline: none;
-	border: 1px solid #a0a0a0;
-	border-radius: 25px;
-	background-image: url("res/menu.svg");
-	background-size: 36px 36px;
-	background-color: #f0f0f0;
-	background-repeat: no-repeat;
-	background-position: 6px 6px;
+	line-height: 18px;
 }
 
 #services-page>h3 {
@@ -813,13 +575,14 @@ div.user[vip="diamond"]::after {
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: 10px 0px 15px;
+	margin: 15px 0px;
 	font-size: 18px;
 	line-height: 24px;
+	letter-spacing: 0px;
 }
 
 #services-page>hr {
-	margin: 10px 0px 30px;
+	margin: 20px 0px;
 	border-bottom: 1px solid #c0c0c0;
 }
 
@@ -1019,7 +782,7 @@ div.user[vip="diamond"]::after {
 	aspect-ratio: 4/3;
 }
 
-#community-page>div, #cg-frame {
+#community-page>div, #game {
 	position: relative;
 	display: block;
 	width: 800px;
@@ -1028,54 +791,142 @@ div.user[vip="diamond"]::after {
 	border: 1px solid #808080;
 }
 
-#server-name {
+#sidemenu {
 	position: absolute;
 	display: block;
 	width: 200px;
-	height: 45px;
-	background: linear-gradient(to bottom, #a0a0a0, #e0e0e0);
-	border-bottom: 1px solid #a0a0a0;
+	height: 100%;
+	background: #e0e0e0;
+	border-right: 1px solid #a0a0a0;
 }
 
-#server-name>img {
+#chatmode {
 	position: absolute;
 	display: block;
-	width: 25px;
-	height: 25px;
-	top: 10px;
-	left: 10px;
+	width: 200px;
+	height: 80px;
+	background: #d8d8d8;
 }
 
-#server-name>div {
+#chatmode>button {
 	position: absolute;
 	display: block;
-	width: 110px;
-	height: 25px;
-	top: 10px;
-	left: 45px;
-	font-weight: 600;
-	line-height: 25px;
-	letter-spacing: 0px;
-}
-
-#server-name>button {
-	position: absolute;
-	display: block;
-	width: 25px;
-	height: 25px;
-	top: 10px;
-	right: 10px;
-	border: none;
+	width: 50px;
+	height: 24px;
+	padding: 26px 0px 0px;
+	color: #303030;
 	cursor: pointer;
+	border: none;
 	outline: none;
-	background-image: url("res/close.svg");
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 24px;
+	border-radius: 10px;
 	background-size: 24px 24px;
 	background-repeat: no-repeat;
-	background-position: 0px 1px;
+	background-position: 13px 4px;
 }
 
-#channels {
-	height: calc(100% - 106px);
+#chatmode>button[data-current] {
+	cursor: default;
+	filter: invert(19%) sepia(21%) saturate(6764%) hue-rotate(193deg) brightness(95%) contrast(105%);
+	font-weight: 600;
+}
+
+#global {
+	top: 15px;
+	left: 15px;
+	background-image: url("res/global.svg");
+}
+
+#friends {
+	top: 15px;
+	left: 70px;
+	background-image: url("res/friends.svg");
+}
+
+#chatgpt {
+	top: 15px;
+	left: 125px;
+	background-image: url("res/gpt.svg");
+}
+
+#channels, #msglist, #history {
+	position: absolute;
+	display: none;
+	width: 184px;
+	height: calc(100% - 130px);
+	top: 80px;
+	left: 0px;
+	padding: 0px 8px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#history>div {
+	position: relative;
+	display: block;
+	width: 184px;
+	height: 35px;
+	cursor: pointer;
+}
+
+#history>div>div {
+	position: absolute;
+	display: block;
+	width: 139px;
+	height: 25px;
+	top: 5px;
+	left: 5px;
+	font-size: 13px;
+	white-space: pre;
+	line-height: 25px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+#history>div>button {
+	position: absolute;
+	display: block;
+	width: 35px;
+	height: 35px;
+	top: 0px;
+	right: 0px;
+	border: none;
+	outline: none;
+	background-image: url("res/delete.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 5px 6px;
+}
+
+#history>div>button:hover {
+	background-color: #ff8080;
+}
+
+#history>div>button:active {
+	background-color: #ff0000;
+}
+
+#newchat {
+	position: relative;
+	display: block;
+	width: 140px;
+	height: 15px;
+	margin: 5px 0px 0px;
+	padding: 10px 9px 10px 35px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	font-size: 13px;
+	text-align: start;
+	line-height: 15px;
+	letter-spacing: 0px;
+	background-image: url("res/new-chat.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 5px 6px;
 }
 
 #channels>span {
@@ -1100,6 +951,14 @@ div.user[vip="diamond"]::after {
 	font-size: 13px;
 	line-height: 25px;
 	letter-spacing: 0px;
+}
+
+#channels>div:hover, #history>div:hover, #newchat:hover, #toggle:hover, #chatmode>button:not([data-current]):hover {
+	background-color: #d0d0d0;
+}
+
+#channels>div:active, #channels>div[data-current], #history>div:active, #history>div[data-current], #newchat:active, #toggle:active, #chatmode>button:not([data-current]):active {
+	background-color: #c0c0c0;
 }
 
 #account {
@@ -1153,6 +1012,16 @@ div.user[vip="diamond"]::after {
 	padding: 5px 0px;
 }
 
+#chat {
+	position: absolute;
+	display: block;
+	width: calc(100% - 201px);
+	height: 100%;
+	top: 0px;
+	right: 0px;
+	background: #f0f0f0;
+}
+
 #header {
 	position: relative;
 	display: flex;
@@ -1174,13 +1043,16 @@ div.user[vip="diamond"]::after {
 	flex: 0 1 100%;
 	font-size: 13px;
 	font-weight: 600;
+	white-space: pre;
 	line-height: 25px;
-	letter-spacing: 0px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	overflow-wrap: break-word;
 }
 
-#menu {
+#toggle {
 	position: relative;
-	display: none;
+	display: block;
 	width: 35px;
 	height: 35px;
 	flex: 0 0 35px;
@@ -1192,6 +1064,10 @@ div.user[vip="diamond"]::after {
 	background-size: 24px 24px;
 	background-repeat: no-repeat;
 	background-position: 5px 5px;
+}
+
+#toggle[title="Close"] {
+	background-image: url("res/back.svg");
 }
 
 #discord {
@@ -1222,7 +1098,47 @@ div.user[vip="diamond"]::after {
 }
 
 #messages {
+	position: absolute;
+	display: block;
+	width: calc(100% - 40px);
 	height: calc(100% - 96px);
+	padding: 0px 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#messages>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+}
+
+#messages>div>img {
+	position: relative;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin: 0px 15px 0px 5px;
+	border: 1px solid #ffffff;
+	border-radius: 25px;
+	vertical-align: top;
+	background: #ffffff;
+}
+
+#messages>div>div {
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 60px);
+	height: fit-content;
+	font-weight: 400;
+	line-height: 20px;
+	overflow: hidden;
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
+	vertical-align: top;
+	letter-spacing: 0px;
 }
 
 #messages>div>div>div {
@@ -1258,6 +1174,25 @@ div.user[vip="diamond"]::after {
 	margin: 5px 5px 15px;
 	object-fit: contain;
 	object-position: 0px 0px;
+}
+
+#interface {
+	position: absolute;
+	display: block;
+	width: calc(100% - 10px);
+	height: 40px;
+	padding: 5px;
+	left: 0px;
+	bottom: 0px;
+}
+
+#interface>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: -1px 0px 0px;
+	border: 1px solid #808080;
 }
 
 #sendmsg {
@@ -1749,7 +1684,7 @@ div.user[vip="diamond"]::after {
 	padding: 5px;
 	left: 10px;
 	bottom: 10px;
-	border: 1px solid #006060;
+	border: 1px solid #004080;
 	border-radius: 25px;
 	cursor: pointer;
 	outline: none;
@@ -1783,7 +1718,7 @@ div.user[vip="diamond"]::after {
 	display: inline-block;
 	width: fit-content;
 	height: 18px;
-	color: #006060;
+	color: #004080;
 	line-height: 18px;
 	letter-spacing: 0px;
 	vertical-align: top;
@@ -1869,7 +1804,7 @@ div.user[vip="diamond"]::after {
 	overflow: hidden;
 }
 
-#tabs>div[current] {
+#tabs>div[data-current] {
 	background: #f0f0f0;
 }
 
@@ -2064,7 +1999,7 @@ div.user[vip="diamond"]::after {
 	background: rgba(0, 0, 0, 0.7);
 }
 
-#frame-view, #game-frame {
+#frame-view {
 	position: absolute;
 	display: none;
 	width: 100%;
@@ -2098,7 +2033,7 @@ div.user[vip="diamond"]::after {
 	border: none;
 }
 
-#frame-close, #frame-newtab, #game-close, #game-newtab {
+#frame-close, #frame-newtab {
 	position: absolute;
 	display: block;
 	width: 40px;
@@ -2111,7 +2046,7 @@ div.user[vip="diamond"]::after {
 	background-position: 0px;
 }
 
-#frame-close, #game-close {
+#frame-close {
 	top: 20px;
 	right: 20px;
 	background-image: url("res/close-w.svg");
@@ -2123,43 +2058,70 @@ div.user[vip="diamond"]::after {
 	background-image: url("res/newtab-w.svg");
 }
 
-#game-newtab {
-	top: 20px;
-	right: 80px;
+#player {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#player>iframe {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	overflow: hidden;
+}
+
+#controller {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 30px;
+	bottom: 0px;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+#hide, #newtab, #fullscreen {
+	position: absolute;
+	display: block;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#hide {
+	top: 3px;
+	left: 3px;
+	background-image: url("res/close-w.svg");
+}
+
+#newtab {
+	top: 3px;
+	right: 33px;
 	background-image: url("res/newtab-w.svg");
 }
 
-#game {
-	position: relative;
-	display: block;
-	width: 1280px;
-	height: fit-content;
-	margin: 80px auto;
-	background: #ffffff;
+#fullscreen {
+	top: 3px;
+	right: 3px;
+	background-image: url("res/fullscreen-w.svg");
 }
 
-#game>.text-body {
+#game-page>.text-body {
 	position: relative;
 	display: block;
-	width: calc(100% - 20px);
+	width: calc(100% - 10px);
 	height: fit-content;
-	padding: 5px 10px 15px;
-}
-
-#game>.text-body>span {
-	position: relative;
-	display: inline-block;
-	width: fit-content;
-	height: fit-content;
-}
-
-#player {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: unset;
-	overflow: hidden;
-	aspect-ratio: 16/9;
+	margin: 10px 0px 20px;
+	padding: 5px;
 }
 
 #name {
@@ -2167,7 +2129,7 @@ div.user[vip="diamond"]::after {
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: 10px 5px;
+	margin: 10px 0px;
 }
 
 #user {
@@ -2309,7 +2271,7 @@ div.user[vip="diamond"]::after {
 		width: calc(100% - 40px);
 	}
 
-	#community-page>div, #cg-frame {
+	#community-page>div, #game {
 		width: calc(100% + 10px);
 		margin: 10px -5px;
 	}
@@ -2326,11 +2288,7 @@ div.user[vip="diamond"]::after {
 }
 
 @media (max-width: 850px) and (orientation: portrait) {
-	#community-page>div, #cg-frame {
-		aspect-ratio: 9/18;
-	}
-
-	#search-container, #console-container {
+	#community-page>div, #game, #search-container, #console-container {
 		aspect-ratio: 9/18;
 	}
 }
@@ -2339,14 +2297,6 @@ div.user[vip="diamond"]::after {
 	#frame {
 		width: 95%;
 		height: unset;
-		aspect-ratio: 4/3;
-	}
-
-	#game {
-		width: 95%;
-	}
-
-	#player {
 		aspect-ratio: 9/16;
 	}
 }
@@ -2356,9 +2306,5 @@ div.user[vip="diamond"]::after {
 		width: 90%;
 		height: unset;
 		aspect-ratio: 16/9;
-	}
-
-	#game {
-		width: 90%;
 	}
 }

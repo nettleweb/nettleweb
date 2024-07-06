@@ -1,15 +1,15 @@
 {
-	"id": "whitespider",
-	"name": "WhiteSpider",
-	"version": "4.7.2",
-	"short_name": "WhiteSpider",
-	"categories": ["games"],
-	"description": "Play 2000+ free online classic, HTML5, DOS, Flash, games at WhiteSpider!",
+	"id": "nettleweb",
+	"name": "NettleWeb",
+	"version": "5.0.0-alpha1",
+	"short_name": "NettleWeb",
+	"categories": ["games", "social"],
+	"description": "Play 2000+ free online classic, HTML5, DOS, Flash, games at NettleWeb!",
 	"scope": "/",
 	"display": "fullscreen",
 	"start_url": "/",
 	"orientation": "any",
-	"theme_color": "#005a5a",
+	"theme_color": "#004080",
 	"background_color": "#ffffff",
 	"display_override": [
 		"fullscreen",
@@ -54,9 +54,15 @@
 			"sizes": "512x512"
 		},
 		{
-			"src": "/res/logo-opaque.png",
-			"type": "image/png",
-			"sizes": "512x512",
+			"src": "/res/logo2.svg",
+			"type": "image/svg+xml",
+			"sizes": "any",
+			"purpose": "any"
+		},
+		{
+			"src": "/res/logo3.svg",
+			"type": "image/svg+xml",
+			"sizes": "any",
 			"purpose": "maskable"
 		}
 	],

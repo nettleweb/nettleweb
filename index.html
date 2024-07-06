@@ -2,33 +2,37 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 	<!--
- __          __ _      _  _          _____         _      _             
- \ \        / /| |    (_)| |        / ____|       (_)    | |            
-  \ \  /\  / / | |__   _ | |_  ___ | (___   _ __   _   __| |  ___  _ __ 
-   \ \/  \/ /  | '_ \ | || __|/ _ \ \___ \ | '_ \ | | / _` | / _ \| '__|
-    \  /\  /   | | | || || |_|  __/ ____) || |_) || || (_| ||  __/| |   
-     \/  \/    |_| |_||_| \__|\___||_____/ | .__/ |_| \__,_| \___||_|   
-                                           | |                          
-                                           |_| https://whitespider.dev/ 
+
+$$\   $$\            $$\     $$\     $$\           $$\      $$\           $$\
+$$$\  $$ |           $$ |    $$ |    $$ |          $$ | $\  $$ |          $$ |
+$$$$\ $$ | $$$$$$\ $$$$$$\ $$$$$$\   $$ | $$$$$$\  $$ |$$$\ $$ | $$$$$$\  $$$$$$$\
+$$ $$\$$ |$$  __$$\\_$$  _|\_$$  _|  $$ |$$  __$$\ $$ $$ $$\$$ |$$  __$$\ $$  __$$\
+$$ \$$$$ |$$$$$$$$ | $$ |    $$ |    $$ |$$$$$$$$ |$$$$  _$$$$ |$$$$$$$$ |$$ |  $$ |
+$$ |\$$$ |$$   ____| $$ |$$\ $$ |$$\ $$ |$$   ____|$$$  / \$$$ |$$   ____|$$ |  $$ |
+$$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$$  |
+\__|  \__| \_______|  \____/  \____/ \__| \_______|\__/     \__| \_______|\_______/
+
+                               https://nettleweb.com/
+
 	-->
 	<head>
 		<meta charset="utf-8" />
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="keywords" content="whitespider,free,online,game,games,html,html5,flash,dos,emulator,unblocked,unlocked,unblocker,proxy,chatgpt,youtube" />
+		<meta name="keywords" content="nettleweb,free,online,game,games,html,html5,flash,dos,emulator,unblocked,unlocked,unblocker,proxy,chat,chatgpt,youtube" />
 		<meta name="description" content="Join our free online gaming platform and play 2000+ HTML5, DOS, Flash, classic games. Build a community and connect with other gamers!" />
-		<meta name="theme-color" content="#005a5a" />
+		<meta name="theme-color" content="#004080" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<base href="/" target="_blank" />
 		<link rel="icon" type="image/x-icon" href="favicon.ico" />
 		<link rel="manifest" type="application/json" href="manifest.json" />
 		<link rel="stylesheet" type="text/css" href="index.css" />
-		<link rel="apple-touch-icon" type="image/png" href="res/logo-opaque.png" />
+		<link rel="apple-touch-icon" type="image/svg+xml" href="res/logo3.svg" />
 		<link rel="privacy-policy" type="text/plain" href="privacy.txt" />
 		<link rel="terms-of-service" type="text/plain" href="terms.txt" />
-		<link rel="canonical" href="https://whitespider.dev/" />
-		<title>WhiteSpider</title>
+		<link rel="canonical" href="https://nettleweb.com/" />
+		<title>NettleWeb</title>
 	</head>
 	<body>
 		<div id="error">Error Message</div>
@@ -40,7 +44,7 @@
 			<input id="side-menu" type="checkbox" placeholder="Navigation Menu" />
 			<label for="side-menu" id="hamb"><div></div></label>
 			<div id="nav-bar">
-				<button id="home-btn" type="button" current="true">Home</button>
+				<button id="home-btn" type="button" data-current="true">Home</button>
 				<button id="prox-btn" type="button">Unblocker</button>
 				<button id="apps-btn" type="button">Apps</button>
 				<button id="chat-btn" type="button">Chat</button>
@@ -50,26 +54,24 @@
 		</div>
 		<div id="loading"></div>
 		<div id="content">
-			<h1>Play 2000+ free online classic, HTML5, DOS, Flash, games at WhiteSpider!</h1>
-			<div id="home-page" current="true">
-				<div id="banner">
-					<img src="res/logo.svg" width="512" height="128" loading="eager" decoding="sync" draggable="false" alt="WhiteSpider Logo" />
-				</div>
+			<h1>NettleWeb - 2000+ free online classic, HTML5, DOS, Flash, games</h1>
+			<div id="home-page" data-current="true">
+				<div id="banner"></div>
 				<form id="game-search" action="null" method="post">
 					<input name="q" type="text" placeholder="Search Games" maxlength="50" autocomplete="off" />
 					<button type="submit" title="Search"></button>
 				</form>
 				<div id="game-category">
-					<button type="button" match="all" current="true">All</button>
-					<button type="button" match="new">&#x1f389;New</button>
-					<button type="button" match="hot">&#x1f525;Hot</button>
-					<button type="button" match="html5">HTML5</button>
-					<button type="button" match="flash">Flash</button>
-					<button type="button" match="dos">DOS</button>
-					<button type="button" match="cards">Cards</button>
-					<button type="button" match="puzzles">Puzzles</button>
-					<button type="button" match="mahjong">Mahjong</button>
-					<button type="button" match="classic">Classic</button>
+					<button type="button" data-match="all" data-current="true">All</button>
+					<button type="button" data-match="new">&#x1f389;New</button>
+					<button type="button" data-match="hot">&#x1f525;Hot</button>
+					<button type="button" data-match="html5">HTML5</button>
+					<button type="button" data-match="flash">Flash</button>
+					<button type="button" data-match="dos">DOS</button>
+					<button type="button" data-match="cards">Cards</button>
+					<button type="button" data-match="puzzles">Puzzles</button>
+					<button type="button" data-match="mahjong">Mahjong</button>
+					<button type="button" data-match="classic">Classic</button>
 				</div>
 				<div id="game-container"></div>
 				<div id="game-navigator">
@@ -80,44 +82,24 @@
 				<div id="game-widget">
 					<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="8757025012" data-ad-format="auto" data-full-width-responsive="true"></ins>
 				</div>
-				<div id="game-disclaimer">Disclaimer: All games listed on this site were uploaded by users, not directly related to WhiteSpider Dev.
-					If copyright infringement occurred, please <a href="mailto:admin@whitespider.dev" target="_blank" rel="noopener">email us</a>.
+				<div id="game-disclaimer">Disclaimer: All games listed on this site were uploaded by users, not directly related to NettleWeb.
+					If copyright infringement occurred, please <a href="mailto:support@nettleweb.com" target="_blank" rel="noopener">email us</a>.
 					We will take the corresponding actions as soon as possible.</div>
 				<div class="text-body">
-					<h2>About WhiteSpider</h2>
-					<p>WhiteSpider is a new, modern, free online gaming platform. It offers over 2000 HTML5, Flash, DOS, and classic games for free.
+					<h2>About us</h2>
+					<p>NettleWeb is a new, modern, free online gaming platform. It offers over 2000 HTML5, Flash, DOS, and classic games for free.
 						With such a wide range of games, you'll never run out of options and can always find something new and exciting to play.</p>
 					<p>Apart from playing and sharing games, we also aim to build a community within this website. With our in-site chat feature,
 						you can engage in real-time conversations, share gaming tips, and collaborate on multiplayer games.</p>
 					<p>Although WhiteSpider has already achieved a certain size in terms of storage and the amount of traffic received, it is
 						still under the stage of heavy construction. A significant amount of games will be added, and more features will be
 						introduced in the future, so don't panic if you found something missing.</p>
-					<p>You could follow our social media in order to get the latest updates by clicking the links in the footer.
-						You may also <a href="https://forms.gle/VA2iMuz5JpQNV3xV6">write a feedback</a> about your experience on the website,
-						as it helps us to release more useful updates.</p>
+					<p><a href="https://forms.gle/VA2iMuz5JpQNV3xV6">Writing a useful feedback</a> about your experience would also contribute
+						to the website's development.</p>
 				</div>
 			</div>
 			<div id="services-page">
 				<h2>Apps</h2>
-				<h3>ChatGPT</h3>
-				<div id="cg-frame">
-					<div id="history">
-						<button id="new-chat" type="button">New chat</button>
-						<button id="cg-close" type="button" title="Close"></button>
-						<div></div>
-					</div>
-					<div id="cg-chat">
-						<div id="cg-messages"></div>
-						<div id="cg-interface">
-							<form id="chatgpt" action="None" method="post">
-								<input name="m" type="text" placeholder="Message" minlength="2" maxlength="8000" required="true" autocomplete="off" />
-								<button type="submit" title="Send"></button>
-							</form>
-						</div>
-					</div>
-					<button id="cg-menu" type="button" title="Menu"></button>
-				</div>
-				<hr />
 				<h3>YouTube Unblocked</h3>
 				<form id="yt-search" action="None" method="post">
 					<input name="q" type="text" placeholder="Search Video or Paste YouTube Video URL" maxlength="50" autocomplete="off" />
@@ -240,23 +222,15 @@
 				<h2>Chat</h2>
 				<div>
 					<div id="sidemenu">
-						<div id="server-name">
-							<img src="res/logo2.svg" width="50" height="50" loading="lazy" decoding="async" draggable="false" alt="Logo" />
-							<div>WhiteSpider</div>
-							<button id="close-sm" type="button" title="Close"></button>
+						<div id="chatmode">
+							<button id="global" type="button">Global</button>
+							<button id="friends" type="button">Friends</button>
+							<button id="chatgpt" type="button">ChatGPT</button>
 						</div>
-						<div id="channels">
-							<span>Text Channels</span>
-							<div id="998658232958603266">General</div>
-							<div id="1209591140622274622">General 2</div>
-							<div id="1213592305911730266">General 3</div>
-							<div id="1220426757547753583">Bots</div>
-							<span>Support</span>
-							<div id="1217881844939358429">Report Bugs</div>
-							<span>Other</span>
-							<div id="1239930931364495370" q="true">Music</div>
-							<div id="1239931008267321355" q="true">Manga</div>
-							<div id="1213589965888426065" q="true">NSFW&#x1f51e;</div>
+						<div id="channels"></div>
+						<div id="msglist"></div>
+						<div id="history">
+							<button id="newchat" type="button">New chat</button>
 						</div>
 						<div id="account">
 							<div id="chat-profile"></div>
@@ -265,7 +239,7 @@
 					</div>
 					<div id="chat">
 						<div id="header">
-							<button id="menu" type="button" title="Menu"></button>
+							<button id="toggle" type="button" title="Close"></button>
 							<div id="channel-name">General</div>
 							<button id="discord" class="pri-button" type="button">Open chat in Discord</button>
 						</div>
@@ -311,7 +285,8 @@
 					<h5>Standalone Mirrors</h5>
 					<p>(These links might not work if whitelist restriction mode is used)</p>
 					<a href="https://wsug.gq/" target="_blank" rel="noopener">https://wsug.gq/</a>
-					<a href="https://whitesp.eu.org" target="_blank" rel="noopener">https://whitesp.eu.org/</a>
+					<a href="https://nettleweb.com/" target="_blank" rel="noopener">https://nettleweb.com/</a>
+					<a href="https://whitesp.eu.org/" target="_blank" rel="noopener">https://whitesp.eu.org/</a>
 					<a href="https://whitespider.dev/" target="_blank" rel="noopener">https://whitespider.dev/</a>
 					<a href="https://whitespider.eu.org/" target="_blank" rel="noopener">https://whitespider.eu.org/</a>
 					<p><strong>Important Notice: Do NOT trust mirror links shared by others online. Ads and malicious code could be
@@ -478,6 +453,45 @@
 					<button id="da" type="button" class="pri-button" disabled="true">Delete Account</button>
 				</div>
 			</div>
+			<div id="game-page">
+				<div id="game">
+					<div id="player"></div>
+					<div id="controller">
+						<button id="hide" type="button" title="Hide controller"></button>
+						<button id="newtab" type="button" title="Open in new tab"></button>
+						<button id="fullscreen" type="button" title="Enter fullscreen"></button>
+					</div>
+				</div>
+				<div class="text-body">
+					<h3 id="name"></h3>
+					<div>
+						<span>Type:</span>
+						<span id="type"></span>
+					</div>
+					<div>
+						<span>Tags:</span>
+						<span id="tags"></span>
+					</div>
+					<div>
+						<span>Date Added:</span>
+						<span id="date"></span>
+					</div>
+					<div>Uploaded by:</div>
+					<div id="user"></div>
+					<hr />
+					<h4>About this game</h4>
+					<div id="desc"></div>
+					<hr />
+					<h4>Add to your website</h4>
+					<div>Direct Link:</div>
+					<div id="dlink"></div>
+					<div>Embed Code:</div>
+					<div id="ecode"></div>
+					<hr />
+					<h4>Comments</h4>
+					<div>Coming soon!</div>
+				</div>
+			</div>
 			<div id="profile-page">
 				<div>
 					<img id="avatar" width="48" height="48" loading="eager" decoding="sync" draggable="false" alt="Avatar" />
@@ -525,21 +539,20 @@
 			</span>
 			<span id="footer">
 				<div>
-					<div>©2024 WhiteSpider Development Team. All rights reserved.</div>
+					<div>&copy;2024 nettleweb.com; All rights reserved.</div>
 					<div>We are working hard to improve your user experience.</div>
 				</div>
 				<div>
-					<a href="https://github.com/whitespider-dev" target="_blank" rel="noopener"><img src="res/github.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" alt="GitHub" title="GitHub" /></a>
+					<a href="https://github.com/nettleweb" target="_blank" rel="noopener"><img src="res/github.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" alt="GitHub" title="GitHub" /></a>
 					<a href="https://discord.gg/djdH3kVd4v" target="_blank" rel="noopener"><img src="res/discord.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" alt="Discord" title="Discord" /></a>
-					<a href="https://www.reddit.com/r/WhiteSpider/" target="_blank" rel="noopener"><img src="res/reddit.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" alt="Reddit" title="Reddit" /></a>
-					<a href="https://www.youtube.com/@whitespider-dev" target="_blank" rel="noopener"><img src="res/youtube.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" alt="YouTube" title="YouTube" /></a>
-					<a href="https://www.facebook.com/whitespider.dev" target="_blank" rel="noopener"><img src="res/facebook.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" alt="Facebook" title="Facebook" /></a>
-					<a href="https://www.instagram.com/whitespiderdev" target="_blank" rel="noopener"><img src="res/instagram.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" alt="Instagram" title="Instagram" /></a>
+					<a href="https://www.youtube.com/@nettleweb" target="_blank" rel="noopener"><img src="res/youtube.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" alt="YouTube" title="YouTube" /></a>
+					<a href="https://www.facebook.com/nettleweb" target="_blank" rel="noopener"><img src="res/facebook.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" alt="Facebook" title="Facebook" /></a>
+					<a href="https://www.instagram.com/nettleweb" target="_blank" rel="noopener"><img src="res/instagram.svg" width="36" height="36" loading="lazy" decoding="async" draggable="false" alt="Instagram" title="Instagram" /></a>
 				</div>
 				<div>
 					<a href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a><br />
-					<a href="mailto:support@whitespider.dev" target="_blank" rel="noopener">Contact us</a><br />
-					<a href="https://github.com/whitespider-dev/whitespider/issues/new?asignees=&amp;labels=bug&amp;title=" target="_blank" rel="noopener">Report a bug</a><br />
+					<a href="mailto:support@nettleweb.com" target="_blank" rel="noopener">Contact us</a><br />
+					<a href="https://github.com/nettleweb/whitespider/issues/new" target="_blank" rel="noopener">Report a bug</a><br />
 				</div>
 			</span>
 		</div>
@@ -565,48 +578,9 @@
 				</div>
 			</div>
 			<div id="container">
-				<canvas id="u-frame" width="1280" height="720" tabindex="1">
-					<div>Loading...</div>
-				</canvas>
+				<canvas id="u-frame" width="1280" height="720" tabindex="1"></canvas>
 				<div id="message">Error</div>
 			</div>
-		</div>
-		<div id="game-frame">
-			<div id="game">
-				<div id="player"></div>
-				<div class="text-body">
-					<h3 id="name"></h3>
-					<br />
-					<div>
-						<span>Type:</span>
-						<span id="type"></span>
-					</div>
-					<div>
-						<span>Tags:</span>
-						<span id="tags"></span>
-					</div>
-					<div>
-						<span>Date Added:</span>
-						<span id="date"></span>
-					</div>
-					<div>Uploaded by:</div>
-					<div id="user"></div>
-					<hr />
-					<h4>About this game</h4>
-					<div id="desc"></div>
-					<hr />
-					<h4>Add to your website</h4>
-					<div>Direct Link:</div>
-					<div id="dlink"></div>
-					<div>Embed Code:</div>
-					<div id="ecode"></div>
-					<hr />
-					<h4>Comments</h4>
-					<div>Coming soon!</div>
-				</div>
-			</div>
-			<button id="game-close" type="button" title="Close"></button>
-			<button id="game-newtab" type="button" title="Open in new tab"></button>
 		</div>
 		<div id="frame-view">
 			<div id="frame"></div>

@@ -7,6 +7,10 @@ option, optgroup {
 	background: #404040;
 }
 
+#logo, #banner {
+	background-image: url("res/logo-w.svg");
+}
+
 .text-body, #game-category, #game-navigator {
 	border-color: #606060;
 	background: #404040;
@@ -16,11 +20,11 @@ option, optgroup {
 	background: #404040;
 }
 
-#nav-bar>button, #game-category>button {
+#version, #nav-bar>button, #game-category>button {
 	color: #d0d0d0;
 }
 
-#nav-bar>button[current], #game-category>button[current] {
+#nav-bar>button[data-current], #game-category>button[data-current] {
 	color: #ffffff;
 }
 
@@ -37,40 +41,48 @@ option, optgroup {
 	background-color: #404040;
 }
 
-#history, #sidemenu, #header {
+#sidemenu, #header {
 	background: #404040;
 }
 
-#new-chat {
-	background-image: url("res/new-chat-w.svg");
-}
-
-#cg-close {
-	background-image: url("res/close-w.svg");
-}
-
-#history>div>div>button {
-	background-image: url("res/delete-w.svg");
-}
-
-#cg-chat, #chat {
-	background: #202020;
-}
-
-#chatgpt>button {
-	background-image: url("res/send-w.svg");
-}
-
-#server-name, #account {
+#chatmode, #account {
 	background: #505050;
 }
 
-#server-name>button {
-	background-image: url("res/close-w.svg");
+#chatmode>button {
+	color: #ffffff;
 }
 
-#menu {
+#global {
+	background-image: url("res/global-w.svg");
+}
+
+#friends {
+	background-image: url("res/friends-w.svg");
+}
+
+#chatgpt {
+	background-image: url("res/gpt-w.svg");
+}
+
+#toggle {
 	background-image: url("res/menu-w.svg");
+}
+
+#toggle[title="Close"] {
+	background-image: url("res/back-w.svg");
+}
+
+#newchat {
+	background-image: url("res/new-chat-w.svg");
+}
+
+#history>div>button {
+	background-image: url("res/delete-w.svg");
+}
+
+#chat {
+	background: #202020;
 }
 
 #emoji {
@@ -89,7 +101,7 @@ option, optgroup {
 	background: #303030;
 }
 
-#tabs>div[current], #toolbar {
+#tabs>div[data-current], #toolbar {
 	background: #404040;
 }
 
@@ -113,11 +125,11 @@ option, optgroup {
 	background-image: url("res/refresh-w.svg");
 }
 
-#yt-load-more:hover, #new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #delmsg:hover, #new-chat:hover, #cg-close:hover, #menu:hover, #history>div>div:hover, #channels>div:hover, #account-settings input~button:hover {
+#yt-load-more:hover, #new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #chatmode>button:not([data-current]):hover, #toggle:hover, #newchat:hover, #history>div:hover, #channels>div:hover, #account-settings input~button:hover {
 	background-color: #606060;
 }
 
-#yt-load-more:active, #new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #delmsg:active, #new-chat:active, #cg-close:active, #menu:active, #history>div>div:active, #history>div>div[current], #channels>div:active, #channels>div[current], #account-settings input~button:active {
+#yt-load-more:active, #new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #chatmode>button:not([data-current]):active, #toggle:active, #newchat:active, #history>div:active, #history>div>[data-current], #channels>div:active, #channels>div[data-current], #account-settings input~button:active {
 	background-color: #808080;
 }
 
@@ -142,24 +154,16 @@ option, optgroup {
 }
 
 #install {
-	border: 1px solid #00c0c0;
-	background: #202020;
+	filter: brightness(200%);
+	background: #101010;
 }
 
 #install:hover {
-	background: #303030;
+	background: #202020;
 }
 
 #install:active {
-	background: #404040;
-}
-
-#install>span {
-	color: #00c0c0;
-}
-
-#game {
-	background: #404040;
+	background: #303030;
 }
 
 @media all and (max-width: 800px) {
