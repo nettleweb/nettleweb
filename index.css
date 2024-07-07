@@ -360,6 +360,30 @@ div.user[vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
+#notice {
+	position: relative;
+	display: none;
+	width: calc(100% - 32px);
+	height: fit-content;
+	margin: 20px 0px;
+	padding: 10px 15px;
+	color: #808000;
+	border: 1px solid #808000;
+	border-radius: 10px;
+	background: #ffffe0;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#notice::before {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	padding: 0px 5px 0px 0px;
+	content: "\01f4e2";
+}
+
 #game-search, #yt-search {
 	position: relative;
 	display: block;
