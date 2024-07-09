@@ -59,7 +59,7 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 				<div id="banner"></div>
 				<div id="notice"></div>
 				<form id="game-search" action="null" method="post">
-					<input name="q" type="text" placeholder="Search Games" maxlength="50" autocomplete="off" />
+					<input name="q" type="text" maxlength="50" placeholder="Search Games" autocomplete="off" />
 					<button type="submit" title="Search"></button>
 				</form>
 				<div id="game-category">
@@ -76,9 +76,9 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 				</div>
 				<div id="game-container"></div>
 				<div id="game-navigator">
-					<button id="gnav-back" type="button" disabled="true" title="Previous page"></button>
-					<div>Page: <input id="gnav-page-no" type="number" value="0" min="1" max="999" placeholder="1" autocomplete="off" /> / <span id="gnav-page-count">0</span></div>
-					<button id="gnav-forward" type="button" disabled="true" title="Next page"></button>
+					<button id="gnav-back" type="button" title="Previous page" disabled=""></button>
+					<div>Page: <input id="gnav-page-no" type="number" min="1" max="999" value="0" placeholder="1" autocomplete="off" /> / <span id="gnav-page-count">0</span></div>
+					<button id="gnav-forward" type="button" title="Next page" disabled=""></button>
 				</div>
 				<div id="game-widget">
 					<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="8757025012" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -87,12 +87,12 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 					If copyright infringement occurred, please <a href="mailto:support@nettleweb.com" target="_blank" rel="noopener">email us</a>.
 					We will take the corresponding actions as soon as possible.</div>
 				<div class="text-body">
-					<h2>About us</h2>
+					<h2>About</h2>
 					<p>NettleWeb is a new, modern, free online gaming platform. It offers over 2000 HTML5, Flash, DOS, and classic games for free.
 						With such a wide range of games, you'll never run out of options and can always find something new and exciting to play.</p>
 					<p>Apart from playing and sharing games, we also aim to build a community within this website. With our in-site chat feature,
 						you can engage in real-time conversations, share gaming tips, and collaborate on multiplayer games.</p>
-					<p>Although WhiteSpider has already achieved a certain size in terms of storage and the amount of traffic received, it is
+					<p>Although NettleWeb has already achieved a certain size in terms of storage and the amount of traffic received, it is
 						still under the stage of heavy construction. A significant amount of games will be added, and more features will be
 						introduced in the future, so don't panic if you found something missing.</p>
 					<p><a href="https://forms.gle/VA2iMuz5JpQNV3xV6">Writing a useful feedback</a> about your experience would also contribute
@@ -103,12 +103,12 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 				<h2>Apps</h2>
 				<h3>YouTube Unblocked</h3>
 				<form id="yt-search" action="None" method="post">
-					<input name="q" type="text" placeholder="Search Video or Paste YouTube Video URL" maxlength="50" autocomplete="off" />
+					<input name="q" type="text" maxlength="50" placeholder="Search Video or Paste YouTube Video URL" autocomplete="off" />
 					<button type="submit" title="Search"></button>
 				</form>
 				<div id="yt-option-bar">
 					<label for="yt-max-results">Results:</label>
-					<input id="yt-max-results" type="number" value="10" min="1" max="30" placeholder="10" autocomplete="off" />
+					<input id="yt-max-results" type="number" min="1" max="30" value="10" placeholder="10" autocomplete="off" />
 					<label for="yt-order">Order:</label>
 					<select id="yt-order">
 						<option value="date">Date</option>
@@ -132,7 +132,7 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 					<p> - Click 'create credentials' at the top and select 'API key'.</p>
 					<p> - Fill in your API key below to use it.</p>
 					<label for="yt-api-key">API Key: </label>
-					<input id="yt-api-key" type="text" placeholder=" (Default) " spellcheck="false" autocomplete="off" />
+					<input id="yt-api-key" type="text" spellcheck="false" placeholder=" (Default) " autocomplete="off" />
 				</div>
 				<hr />
 				<h3>Game Emulator</h3>
@@ -247,7 +247,7 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 						<div id="messages"></div>
 						<div id="interface">
 							<div>
-								<input id="sendmsg" type="text" placeholder="Message" minlength="1" maxlength="1000" required="true" autocomplete="off" />
+								<input id="sendmsg" type="text" required="" minlength="1" maxlength="1000" placeholder="Message" autocomplete="off" />
 								<button id="ufile" type="button" title="Upload file"></button>
 								<button id="emoji" type="button" title="Add emoji"></button>
 							</div>
@@ -273,6 +273,7 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 						<strong>If a network-based restriction is set, you must use a <u>standalone mirror</u>, or a custom DNS server
 						in order to bypass the restriction.</strong></p>
 					<h5>Google Sites Embed Mirrors</h5>
+					<a href="https://sites.google.com/view/nettleweb" target="_blank" rel="noopener">https://sites.google.com/view/nettleweb</a>
 					<a href="https://sites.google.com/view/whitespider" target="_blank" rel="noopener">https://sites.google.com/view/whitespider</a>
 					<a href="https://sites.google.com/view/white-spider" target="_blank" rel="noopener">https://sites.google.com/view/white-spider</a>
 					<a href="https://sites.google.com/view/whitespi" target="_blank" rel="noopener">https://sites.google.com/view/whitespi</a>
@@ -285,24 +286,23 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 						<a href="https://sites.google.com/view/cbhk/embed-code">embed code</a>)</p>
 					<h5>Standalone Mirrors</h5>
 					<p>(These links might not work if whitelist restriction mode is used)</p>
-					<a href="https://wsug.gq/" target="_blank" rel="noopener">https://wsug.gq/</a>
 					<a href="https://nettleweb.com/" target="_blank" rel="noopener">https://nettleweb.com/</a>
-					<a href="https://whitesp.eu.org/" target="_blank" rel="noopener">https://whitesp.eu.org/</a>
-					<a href="https://whitespider.dev/" target="_blank" rel="noopener">https://whitespider.dev/</a>
-					<a href="https://whitespider.eu.org/" target="_blank" rel="noopener">https://whitespider.eu.org/</a>
+					<a href="https://nettleweb.github.io/" target="_blank" rel="noopener">https://nettleweb.github.io/</a>
+					<a href="https://nettleweb.vercel.app/" target="_blank" rel="noopener">https://nettleweb.vercel.app/</a>
+					<a href="https://nettleweb.netlify.app/" target="_blank" rel="noopener">https://nettleweb.netlify.app/</a>
 					<p><strong>Important Notice: Do NOT trust mirror links shared by others online. Ads and malicious code could be
 						injected, putting you into security risks.</strong></p>
 					<h5>Date URLs</h5>
-					<p>The code below is a data URL of an embedded WhiteSpider mirror, it can be used to bypass most browser extensions running on
+					<p>The code below is a data URL of an embedded mirror link, it can be used to bypass most browser extensions running on
 						Chromium-based browsers (including Chrome, Edge). However it cannot be used to bypass external network restrictions.</p>
-					<code>data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiID8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCI+Cgk8dGl0bGU+V2hpdGVTcGlkZXI8L3RpdGxlPgoJPGZvcmVpZ25PYmplY3QgeD0iMTAiIHk9IjEwIiB3aWR0aD0iMTI2MCIgaGVpZ2h0PSI3MDAiPgoJCTxlbWJlZCB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbCIgc3JjPSJodHRwczovL3doaXRlc3BpZGVyLmRldi8iIHR5cGU9InRleHQvcGxhaW4iIHdpZHRoPSIxMjYwIiBoZWlnaHQ9IjcwMCIgLz4KCTwvZm9yZWlnbk9iamVjdD4KPC9zdmc+</code>
+					<code>data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiID8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCI+Cgk8dGl0bGU+R29vZ2xlPC90aXRsZT4KCTxmb3JlaWduT2JqZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCI+CgkJPGVtYmVkIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzcmM9Imh0dHBzOi8vbmV0dGxld2ViLmNvbS8iIHR5cGU9InRleHQvcGxhaW4iIHdpZHRoPSIxMjYwIiBoZWlnaHQ9IjcwMCIgLz4KCTwvZm9yZWlnbk9iamVjdD4KPC9zdmc+</code>
 					<p>Data URLs work in the same way as HTTP(S) URLs, they can be opened directly in a new tab.
 						(Just copy and paste the code above into a new tab's address bar and press enter)</p>
 					<h4>2. Use a self-hosted mirror link</h4>
 					<p>Mirror links provided here might be blocked already as they are published publicly. However you can self-host your own mirror
 						link on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>, or another hosting provider that
 						works for you. (Visit the
-						<a href="https://github.com/whitespider-dev/whitespider?tab=readme-ov-file#quick-deploy" target="_blank" rel="noopener">repository home page</a>
+						<a href="https://github.com/nettleweb/nettleweb?tab=readme-ov-file#quick-deploy" target="_blank" rel="noopener">repository home page</a>
 						for some quick deploy buttons)</p>
 					<p>For hosting on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>, it must be hosted on a root
 						domain (xxx.github.io). Otherwise some essential resources may fail to load.</p>
@@ -355,7 +355,7 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 				<h2>Upload Game</h2>
 				<div>
 					<label for="game-name">Name:</label>
-					<input id="game-name" type="text" placeholder="Example" minlength="1" maxlength="256" required="true" autocomplete="off" />
+					<input id="game-name" type="text" required="" minlength="1" maxlength="256" placeholder="Example" autocomplete="off" />
 				</div>
 				<div>
 					<label for="game-type">Type:</label>
@@ -367,15 +367,15 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 				</div>
 				<div>
 					<label for="game-file">File:</label>
-					<input id="game-file" type="file" accept=".zip" />
+					<input id="game-file" type="file" accept=".zip" required="" />
 				</div>
 				<div>
-					<label for="game-labels">Labels (separated by comma):</label>
-					<input id="game-labels" type="text" placeholder="label1,label2,label3" autocomplete="off" />
+					<label for="game-tags">Tags:</label>
+					<input id="game-tags" type="text" required="" minlength="1" maxlength="300" placeholder="action,arcade,classic" autocomplete="off" />
 				</div>
 				<div>
-					<label for="game-description">Description (optional):</label>
-					<input id="game-description" type="text" placeholder="Game Description" autocomplete="off" />
+					<label for="game-desc">Description (optional):</label>
+					<textarea id="game-desc" cols="100" rows="20" wrap="hard" maxlength="5000" placeholder="Something about this game..." autocomplete="off"></textarea>
 				</div>
 				<div class="text-body">
 					<h3>Notice</h3>
@@ -482,6 +482,24 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 					<hr />
 					<h4>About this game</h4>
 					<p id="desc"></p>
+					<button id="edit" type="button" class="pri-button">Edit Game Info</button>
+					<div id="editor">
+						<h4>Edit Game Info</h4>
+						<div>
+							<label for="e-name">Name:</label>
+							<input id="e-name" type="text" required="" minlength="1" maxlength="256" placeholder="Example" autocomplete="off" />
+						</div>
+						<div>
+							<label for="e-tags">Tags:</label>
+							<input id="e-tags" type="text" required="" minlength="1" maxlength="300" placeholder="action,arcade,classic" autocomplete="off" />
+						</div>
+						<div>
+							<label for="e-desc">Description:</label>
+							<textarea id="e-desc" cols="100" rows="20" wrap="hard" maxlength="5000" placeholder="Something about this game..." autocomplete="off"></textarea>
+						</div>
+						<button id="e-canc" type="button" class="pri-button">Cancel</button>
+						<button id="e-subm" type="button" class="pri-button">Submit</button>
+					</div>
 					<hr />
 					<h4>Add to your website</h4>
 					<div>Direct Link:</div>
@@ -489,8 +507,8 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 					<div>Embed Code:</div>
 					<div id="ecode"></div>
 					<hr />
-					<h4>Comments</h4>
-					<div>Coming soon!</div>
+					<h4>Games to play next</h4>
+					<div id="s-games"></div>
 				</div>
 			</div>
 			<div id="profile-page">
@@ -509,7 +527,7 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 				<h2>Settings</h2>
 				<div>
 					<label for="backend-url">Backend URL:</label>
-					<input id="backend-url" type="text" placeholder=" (Default) " spellcheck="false" autocomplete="off" />
+					<input id="backend-url" type="text" spellcheck="false" placeholder=" (Default) " autocomplete="off" />
 				</div>
 				<div>
 					<label for="theme">Theme:</label>
@@ -554,6 +572,8 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 					<a href="https://docs.google.com/forms/d/e/1FAIpQLSfm3Fzhp1R4GCidei6l-FEA2yujuXuUBf_Sd50EJ5J7GN02oQ/viewform?embedded=true" target="_blank" rel="noopener">Feedback</a><br />
 					<a href="mailto:support@nettleweb.com" target="_blank" rel="noopener">Contact us</a><br />
 					<a href="https://github.com/nettleweb/nettleweb/issues/new" target="_blank" rel="noopener">Report a bug</a><br />
+					<a href="/privacy.txt" target="_blank" rel="noopener">Privacy Policy</a><br />
+					<a href="/terms.txt" target="_blank" rel="noopener">Terms of Service</a>
 				</div>
 			</span>
 		</div>
@@ -568,7 +588,7 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 				<button id="back" type="button" title="Back"></button>
 				<button id="forward" type="button" title="Forward"></button>
 				<button id="refresh" type="button" title="Refresh"></button>
-				<input id="address" type="text" placeholder="Search or type a URL" spellcheck="false" autocomplete="off" />
+				<input id="address" type="text" spellcheck="false" placeholder="Search or type a URL" autocomplete="off" />
 				<div id="mode">
 					<label for="mode-select">Mode: </label>
 					<select id="mode-select">

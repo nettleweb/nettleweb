@@ -312,6 +312,60 @@
 	background-color: #808080;
 }
 
+.game {
+	position: relative;
+	display: inline-block;
+	width: 140px;
+	height: 140px;
+	margin: 0px 12px 10px 0px;
+	cursor: pointer;
+	border: 1px solid #a0a0a0;
+	border-radius: 15px;
+	vertical-align: top;
+	text-decoration: none;
+	background-size: 140px 105px;
+	background-color: #f0f0f0;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+.game:hover {
+	border-color: #808080;
+}
+
+.game:active {
+	border-color: #303030;
+}
+
+.game>span {
+	position: relative;
+	display: block;
+	width: 45px;
+	height: 16px;
+	margin: 5px 2px 2px 88px;
+	padding: 2px 5px;
+	color: #ffffff;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16px;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+
+.game>div {
+	position: absolute;
+	display: block;
+	width: 130px;
+	height: 25px;
+	padding: 5px;
+	top: 105px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 12px;
+	letter-spacing: 0px;
+}
+
 div.user[vip]::after {
 	position: relative;
 	display: inline-block;
@@ -439,60 +493,6 @@ div.user[vip="diamond"]::after {
 	width: calc(100% + 12px);
 	height: fit-content;
 	margin: 30px 0px;
-}
-
-#game-container>a, #ac-games>a, #pf-games>a {
-	position: relative;
-	display: inline-block;
-	width: 140px;
-	height: 140px;
-	margin: 0px 12px 10px 0px;
-	cursor: pointer;
-	border: 1px solid #a0a0a0;
-	border-radius: 15px;
-	vertical-align: top;
-	text-decoration: none;
-	background-size: 140px 105px;
-	background-color: #f0f0f0;
-	background-repeat: no-repeat;
-	background-position: 0px 0px;
-}
-
-#game-container>a:hover, #ac-games>a:hover, #pf-games>a:hover {
-	border-color: #808080;
-}
-
-#game-container>a:active, #ac-games>a:active, #pf-games>a:active {
-	border-color: #303030;
-}
-
-#game-container>a>span, #ac-games>a>span, #pf-games>a>span {
-	position: relative;
-	display: block;
-	width: 45px;
-	height: 16px;
-	margin: 5px 2px 2px 88px;
-	padding: 2px 5px;
-	color: #ffffff;
-	text-align: center;
-	font-size: 12px;
-	font-weight: 600;
-	line-height: 16px;
-	border-radius: 5px;
-	text-transform: uppercase;
-}
-
-#game-container>a>div, #ac-games>a>div, #pf-games>a>div {
-	position: absolute;
-	display: block;
-	width: 130px;
-	height: 25px;
-	padding: 5px;
-	top: 105px;
-	font-size: 12px;
-	text-align: center;
-	line-height: 12px;
-	letter-spacing: 0px;
 }
 
 #game-navigator {
@@ -1603,7 +1603,7 @@ div.user[vip="diamond"]::after {
 	line-height: 24px;
 }
 
-#settings-page>div, #uploadgames-page>div, #gamemu-options>div {
+#settings-page>div, #uploadgames-page>div, #gamemu-options>div, #editor>div {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -1611,7 +1611,7 @@ div.user[vip="diamond"]::after {
 	margin: 10px 0px;
 }
 
-#settings-page>div>label, #uploadgames-page>div>label, #gamemu-options>div>label {
+#settings-page>div>label, #uploadgames-page>div>label, #gamemu-options>div>label, #editor>div>label {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -1623,7 +1623,22 @@ div.user[vip="diamond"]::after {
 	vertical-align: middle;
 }
 
-#settings-page>div>input[type="text"], #settings-page>div>select, #uploadgames-page>div>input[type="text"], #uploadgames-page>div>select, #gamemu-options>div>select {
+#uploadgames-page>div>textarea, #editor>div>textarea {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 10px 0px;
+	padding: 10px;
+	border: 1px solid #c0c0c0;
+	border-radius: 10px;
+	outline: none;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0px;
+}
+
+#settings-page>div>input[type="text"], #settings-page>div>select, #uploadgames-page>div>input[type="text"], #uploadgames-page>div>select, #gamemu-options>div>select, #editor>div>input[type="text"] {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -1637,7 +1652,7 @@ div.user[vip="diamond"]::after {
 	vertical-align: middle;
 }
 
-#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #gamemu-options>div>select:focus {
+#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #uploadgames-page>div>textarea:focus, #gamemu-options>div>select:focus {
 	border-color: #808080;
 }
 
@@ -2189,6 +2204,26 @@ div.user[vip="diamond"]::after {
 	vertical-align: top;
 }
 
+#editor {
+	position: relative;
+	display: none;
+	width: calc(100% - 20px);
+	height: fit-content;
+	margin: 15px 0px;
+	padding: 10px;
+	outline: 1px solid #808080;
+}
+
+#editor>button {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 5px;
+	padding: 5px 15px;
+	vertical-align: top;
+}
+
 #dlink, #ecode {
 	position: relative;
 	display: block;
@@ -2201,6 +2236,18 @@ div.user[vip="diamond"]::after {
 	font-family: "Ubuntu Mono", monospace;
 	line-height: 18px;
 	letter-spacing: 0px;
+}
+
+#s-games {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+}
+
+#s-games>.game {
+	margin: 0px 8px 0px 0px;
 }
 
 @media all and (max-width: 600px) {
