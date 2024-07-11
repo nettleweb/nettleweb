@@ -1,17 +1,17 @@
-<a href="https://whitespider.dev/" target="_blank" rel="noopener"><img src="https://whitespider.dev/res/logo.svg" width="1024" height="256" align="center" draggable="false" alt="WhiteSpider Logo" /></a><br />
+<div align="center"><a href="https://nettleweb.com/" target="_blank" rel="noopener nofollow"><img src="https://nettleweb.com/res/logo.svg" width="768" height="256" draggable="false" alt="NettleWeb Logo" /></a></div>
 
-<embed type="text/plain" width="1024" height="768" src="https://whitespider.dev/" /><br />
+# NettleWeb
+[![Discord Shield](https://img.shields.io/discord/998658232207814667?style=for-the-badge&logo=Discord&logoColor=%23ffffff&label=Discord&labelColor=%23303030&color=%23004080
+)](https://discord.gg/djdH3kVd4v) [![Version](https://img.shields.io/github/manifest-json/v/nettleweb/nettleweb?style=for-the-badge&label=Version&labelColor=%23303030)](https://nettleweb.com/) [![Last Update](https://img.shields.io/github/last-commit/nettleweb/nettleweb?style=for-the-badge&label=Last%20Update&labelColor=%23303030&color=%23004080)](https://nettleweb.com/)
 
-# WhiteSpider
-<a href="https://discord.gg/djdH3kVd4v" target="_blank" rel="noopener">![Discord Shield](https://discordapp.com/api/guilds/998658232207814667/widget.png?style=shield)</a> ![Current Version](https://img.shields.io/github/manifest-json/v/whitespider-dev/whitespider) <br/>
-WhiteSpider (aka WhiteSpider Unblocked Games) is a FOSS (free open-source software) unblocked website designed for school or office users who are restricted from accessing certain websites. It has more than 2000 HTML5, Flash and DOS games, with also <b>emulators</b>, <b>unblockers</b>, <b>unblocked YouTube</b> and <b>unblocked ChatGPT</b>. <br />
+NettleWeb (formerly WhiteSpider) is a free, open-source unblocked gaming platform designed for school or office users who are restricted from certain websites. It has now included more than 2500 HTML5, Flash, DOS and classic games, with additional **unblockers**, **emulators**, **unblocked YouTube** and **unblocked ChatGPT**.
 
-WhiteSpider is, and will always be, free and open-source. You can however show us your care by <b>clicking on the star button</b> at the top right corner. It would have a significant effect on this project's future development. <br />
+NettleWeb is, and will always be, free and open-source. You can however show us your care by clicking on the **star** button at the top right corner. It would have a significant effect on this project's future development. <br />
 
-<a href="https://whitespider.dev/" target="_blank" rel="noopener">Main Link</a> | <a href="https://sites.google.com/view/wsug-mirrors/" target="_blank" rel="noopener">Mirror Links</a> | <a href="https://discord.gg/MWCNr2ANEz" target="_blank" rel="noopener">Discord</a> | <a href="https://github.com/whitespider-dev/whitespider-backend/tree/%81%d3Q%f0%8b%7B%bd%d1" target="_blank" rel="noopener">Backend Repo</a><br />
+[Main Link](https://nettleweb.com/) | [Mirror 1](https://nettleweb.pages.dev/) | [Mirror 2](https://nettleweb.github.io) | [Discord](https://discord.gg/djdH3kVd4v)
 
 ## Features
-- 2000+ free unblocked games
+- 2500+ free unblocked games
 - Dynamic server switching
 - Unblocked YouTube
 - Unblocked ChatGPT
@@ -22,54 +22,51 @@ WhiteSpider is, and will always be, free and open-source. You can however show u
 - Clean UI
 
 ## Mirror Links
-- https://wsug.gq/
-- https://whitesp.eu.org/
-- https://whspi.github.io/
-- https://whitespider.dev/
-- https://whitespider.eu.org/
-
-Notice: Using official mirror links is no longer recommended as they could easily get blocked. Please consider using data URL (see below) for bypassing browser extensions, or self-host a mirror link for bypassing external network restrictions. (See below)
+Mirror links have been removed from this section, because they could easily get blocked once listed. Please consider using data URL for bypassing browser extensions, or self-host a mirror link for bypassing external network restrictions. (See below for instructions)
 
 ## Self Hosting
+If the main link is not working properly, you could self-host your own mirror link by following the instructions below.
+
+Note: If you see a 'disconnected' message showing in the header of your self-hosted mirror website, it means that the default backend server has been restricted. Games would still be able to play as normal, but you would not be able to access certain features such as unblocker. In this case, using a backend mirror might help. For detailed instructions, please join our Discord server by following the link above.
 
 #### GitHub Pages
 1. Click on the fork button at the top right corner to fork this repository.
-2. Rename it to `your-username.github.io` where `your-username` is your actual GitHub username. 
-3. Open your forked respository, then go to settings->pages. Select branch 'Main' and click save.
+2. Rename it to `username.github.io` where `username` is your actual GitHub username.
+3. Open your forked repository, then go to settings->pages. Select branch 'Main' and click save.
 
-Note: Due to resource linkage, you <b>cannot</b> host it in non-root locations like `username.github.io/project-name`. Otherwise some essential resources might fail to load.
+Note: Due to resource linkage, hosting the website at non-root locations like `username.github.io/project` is **not supported** at this moment.
 
 #### Other Hosting Providers
-[![Deploy to Heroku](https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg)](https://heroku.com/deploy/?template=https://github.com/whitespider-dev/whitespider)
-[![Run on Replit](https://binbashbanana.github.io/deploy-buttons/buttons/remade/replit.svg)](https://replit.com/github/whitespider-dev/whitespider)
-[![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/whitespider-dev/whitespider)
-[![Deploy to IBM Cloud](https://binbashbanana.github.io/deploy-buttons/buttons/remade/ibmcloud.svg)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/whitespider-dev/whitespider)
-[![Deploy to Amplify Console](https://binbashbanana.github.io/deploy-buttons/buttons/remade/amplifyconsole.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/whitespider-dev/whitespider)
-[![Run on Google Cloud](https://binbashbanana.github.io/deploy-buttons/buttons/remade/googlecloud.svg)](https://deploy.cloud.run/?git_repo=https://github.com/whitespider-dev/whitespider)
-[![Deploy to Oracle Cloud](https://binbashbanana.github.io/deploy-buttons/buttons/remade/oraclecloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/whitespider-dev/whitespider/archive/refs/heads/main.zip)
-[![Deploy on Railway](https://binbashbanana.github.io/deploy-buttons/buttons/remade/railway.svg)](https://railway.app/new/template?template=https://github.com/whitespider-dev/whitespider)
-[![Deploy to Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/whitespider-dev/whitespider)
-[![Deploy to Netlify](https://binbashbanana.github.io/deploy-buttons/buttons/remade/netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/whitespider-dev/whitespider)
-[![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/whitespider-dev/whitespider&branch=Main&name=whitespider)
-[![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://render.com/deploy?repo=https://github.com/whitespider-dev/whitespider)
-[![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/whitespider-dev/whitespider)
+[![Deploy to Heroku](https://binbashbanana.github.io/deploy-buttons/buttons/remade/heroku.svg)](https://heroku.com/deploy/?template=https://github.com/nettleweb/nettleweb)
+[![Run on Replit](https://binbashbanana.github.io/deploy-buttons/buttons/remade/replit.svg)](https://replit.com/github/nettleweb/nettleweb)
+[![Remix on Glitch](https://binbashbanana.github.io/deploy-buttons/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/nettleweb/nettleweb)
+[![Deploy to IBM Cloud](https://binbashbanana.github.io/deploy-buttons/buttons/remade/ibmcloud.svg)](https://cloud.ibm.com/devops/setup/deploy?repository=https://github.com/nettleweb/nettleweb)
+[![Deploy to Amplify Console](https://binbashbanana.github.io/deploy-buttons/buttons/remade/amplifyconsole.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/nettleweb/nettleweb)
+[![Run on Google Cloud](https://binbashbanana.github.io/deploy-buttons/buttons/remade/googlecloud.svg)](https://deploy.cloud.run/?git_repo=https://github.com/nettleweb/nettleweb)
+[![Deploy to Oracle Cloud](https://binbashbanana.github.io/deploy-buttons/buttons/remade/oraclecloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/nettleweb/nettleweb/archive/refs/heads/main.zip)
+[![Deploy on Railway](https://binbashbanana.github.io/deploy-buttons/buttons/remade/railway.svg)](https://railway.app/new/template?template=https://github.com/nettleweb/nettleweb)
+[![Deploy to Vercel](https://binbashbanana.github.io/deploy-buttons/buttons/remade/vercel.svg)](https://vercel.com/new/clone?repository-url=https://github.com/nettleweb/nettleweb)
+[![Deploy to Netlify](https://binbashbanana.github.io/deploy-buttons/buttons/remade/netlify.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/nettleweb/nettleweb)
+[![Deploy to Koyeb](https://binbashbanana.github.io/deploy-buttons/buttons/remade/koyeb.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/nettleweb/nettleweb&branch=Main&name=nettleweb)
+[![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://render.com/deploy?repo=https://github.com/nettleweb/nettleweb)
+[![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/nettleweb/nettleweb)
 
 ## Data URL
-The code below is a data URL of an embedded WhiteSpider mirror, it can be used to bypass most browser extensions on Chrome and Edge. However it might <b>not</b> work if there is an external network restriction.
+The code below is a data URL of an embedded NettleWeb mirror, it can bypass most restrictions set by browser extensions on Chrome and Edge. However it **cannot** be used to bypass external network restriction.
 ```
-data:application/xhtml+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IURPQ1RZUEUgaHRtbCBQVUJMSUMgIi0vL1czQy8vRFREIFhIVE1MIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9UUi94aHRtbDExL0RURC94aHRtbDExLmR0ZCI+PGh0bWwgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGh0bWwiIGxhbmc9ImVuIj48aGVhZD48bWV0YSBodHRwLWVxdWl2PSJDb250ZW50LVR5cGUiIGNvbnRlbnQ9InRleHQvaHRtbDtjaGFyc2V0PXV0Zi04Ii8+PG1ldGEgaHR0cC1lcXVpdj0iUmVmZXJyZXItUG9saWN5IiBjb250ZW50PSJuby1yZWZlcnJlciIvPjxtZXRhIG5hbWU9InJlZmVycmVyIiBjb250ZW50PSJuby1yZWZlcnJlciIvPjxtZXRhIG5hbWU9InZpZXdwb3J0IiBjb250ZW50PSJ3aWR0aD1kZXZpY2Utd2lkdGgsaW5pdGlhbC1zY2FsZT0xIi8+PGxpbmsgcmVsPSJpY29uIiB0eXBlPSJpbWFnZS94LWljb24iIGhyZWY9Imh0dHBzOi8vd3d3Lmdvb2dsZS5jb20vZmF2aWNvbi5pY28iLz48bGluayByZWw9InN0eWxlc2hlZXQiIHR5cGU9InRleHQvY3NzIiBocmVmPSJkYXRhOnRleHQvY3NzO2Jhc2U2NCxZbTlrZVN4bGJXSmxaSHR3YjNOcGRHbHZianBoWW5OdmJIVjBaVHRrYVhOd2JHRjVPbUpzYjJOck8zZHBaSFJvT2pFd01DVTdhR1ZwWjJoME9qRXdNQ1U3YldGeVoybHVPakJ3ZUR0d1lXUmthVzVuT2pCd2VEdGliM0prWlhJNmJtOXVaVHR2ZG1WeVpteHZkenBvYVdSa1pXNDdmUT09Ii8+PHRpdGxlPkdvb2dsZTwvdGl0bGU+PC9oZWFkPjxib2R5PjxlbWJlZCB0eXBlPSJ0ZXh0L3BsYWluIiB3aWR0aD0iMTAyNCIgaGVpZ2h0PSI3NjgiIHNyYz0iaHR0cHM6Ly93aGl0ZXNwaWRlci5kZXYvIi8+PC9ib2R5PjwvaHRtbD4=
+data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiID8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCI+Cgk8dGl0bGU+R29vZ2xlPC90aXRsZT4KCTxmb3JlaWduT2JqZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCI+CgkJPGVtYmVkIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzcmM9Imh0dHBzOi8vbmV0dGxld2ViLmNvbS8iIHR5cGU9InRleHQvcGxhaW4iIHdpZHRoPSIxMjYwIiBoZWlnaHQ9IjcwMCIgLz4KCTwvZm9yZWlnbk9iamVjdD4KPC9zdmc+
 ```
 Data URLs work in the same way as HTTP(S) or file URLs, they can be opened directly in a new tab. (Just copy and paste the code above into a new tab's address bar and press enter)
 
 ## FAQ
-This section has been moved to the FAQ page on the <a href="https://whitespider.dev/" target="_blank" rel="noopener">website</a>.
+This section has been moved to the FAQ page on the [website](https://nettleweb.com/).
 
 ## License
 See `LICENSE.md` for more information.
 
 ## Credits
-- <a href="https://github.com/ruffle-rs/ruffle/" target="_blank" rel="noopener">Ruffle</a> - Flash emulator that runs in browsers.
-- <a href="https://github.com/caiiiycuk/js-dos" target="_blank" rel="noopener">JS-DOS</a> - DOS emulator that runs in browsers.
-- <a href="https://github.com/EmulatorJS/EmulatorJS" target="_blank" rel="noopener">EmulatorJS</a> - Game emulator for many platforms, runs fully in browsers.
-- <a href="https://github.com/puppeteer/puppeteer" target="_blank" rel="noopener">Puppeteer</a> - which made the unblocker possible.
-- <del><a href="https://github.com/nomic-ai/gpt4all" target="_blank" rel="noopener">GPT4All</a> - an open-source implementation of large language models.</del> (switched to <a href="https://github.com/withcatai/node-llama-cpp" target="_blank" rel="noopener">node-llama-cpp</a> due to token stream support and higher performance)
+- [Ruffle](https://github.com/ruffle-rs/ruffle) - Flash emulator that runs in browsers.
+- [JS-DOS](https://github.com/caiiiycuk/js-dos) - DOS emulator that runs in browsers.
+- [EmulatorJS](https://github.com/EmulatorJS/EmulatorJS) - Game emulators that runs fully in browsers.
+- [Puppeteer](https://github.com/puppeteer/puppeteer) - Node.js API for Chrome, which made the unblocker possible.
+- [node-llama-cpp](https://github.com/withcatai/node-llama-cpp) - Node.js bindings for `llama.cpp`, which made the unblocked ChatGPT possible.
