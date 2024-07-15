@@ -35,11 +35,11 @@
 #logo {
 	position: absolute;
 	display: block;
-	width: 200px;
+	width: 150px;
 	height: 50px;
-	left: 10px;
+	left: 20px;
 	background-image: url("res/logo.svg");
-	background-size: 200px 50px;
+	background-size: 150px 50px;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
 }
@@ -50,7 +50,7 @@
 	width: 100px;
 	height: 30px;
 	top: 10px;
-	left: 220px;
+	left: 190px;
 	cursor: default;
 	font-size: 14px;
 	font-weight: 600;
@@ -64,7 +64,7 @@
 	width: auto;
 	height: 30px;
 	top: 10px;
-	left: 330px;
+	left: 300px;
 	color: #606060;
 	cursor: default;
 	font-size: 12px;
@@ -402,15 +402,15 @@ div.user[vip="diamond"]::after {
 	position: absolute;
 	display: block;
 	width: 240px;
-	height: 30px;
+	height: 24px;
 	right: 0px;
 	bottom: 0px;
-	content: "More than just games!";
 	color: #808080;
-	font-size: 20px;
+	content: "More than just games!";
+	font-size: 18px;
 	font-style: italic;
 	font-weight: 600;
-	line-height: 30px;
+	line-height: 24px;
 	letter-spacing: 0px;
 }
 
@@ -1652,7 +1652,7 @@ div.user[vip="diamond"]::after {
 	vertical-align: middle;
 }
 
-#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #uploadgames-page>div>textarea:focus, #gamemu-options>div>select:focus {
+#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #uploadgames-page>div>textarea:focus, #gamemu-options>div>select:focus, #editor>div>input[type="text"]:focus, #editor>div>textarea:focus {
 	border-color: #808080;
 }
 
@@ -2254,7 +2254,7 @@ div.user[vip="diamond"]::after {
 	#banner {
 		width: 100%;
 		height: unset;
-		aspect-ratio: 4/1;
+		aspect-ratio: 3/1;
 	}
 }
 

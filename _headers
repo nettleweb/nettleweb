@@ -1,7 +1,7 @@
 /*
 	! Access-Control-Allow-Origin
 	Referrer-Policy: no-referrer
-	Permissions-Policy: camera=(), bluetooth=(), gyroscope=(), microphone=(), geolocation=(), local-fonts=(), accelerometer=(), browsing-topics=(), display-capture=(), screen-wake-lock=()
+	Permissions-Policy: camera=(), gyroscope=(), microphone=(), geolocation=(), local-fonts=(), accelerometer=(), browsing-topics=(), display-capture=(), screen-wake-lock=()
 	X-Content-Type-Options: nosniff
 	Content-Security-Policy: base-uri 'self'; font-src 'self'; style-src 'self'; script-src 'self'; worker-src 'self'; form-action 'self'; manifest-src 'self'; fenced-frame-src 'self'; media-src 'self' https://cdn.discordapp.com; script-src-elem 'self' https://*.google.com https://*.firebaseio.com https://www.googletagmanager.com; script-src-attr 'self'; style-src-elem 'self' 'unsafe-inline'; style-src-attr 'self' 'unsafe-inline'; sandbox allow-forms allow-popups allow-scripts allow-same-origin; upgrade-insecure-requests
 	Cross-Origin-Opener-Policy: same-origin
