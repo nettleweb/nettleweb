@@ -16,6 +16,11 @@
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+::selection {
+	color: #ffffff;
+	background: #004080;
+}
+
 ::-webkit-scrollbar {
 	width: 10px;
 }

@@ -887,6 +887,13 @@ div.user[vip="diamond"]::after {
 	overflow-y: auto;
 }
 
+#msglist>div {
+	position: relative;
+	display: block;
+	width: 184px;
+	
+}
+
 #history>div {
 	position: relative;
 	display: block;
