@@ -623,13 +623,13 @@ div.user[vip="diamond"]::after {
 	display: inline-block;
 	width: fit-content;
 	height: 24px;
-	margin: 0px 2px 0px 8px;
+	margin: 0px 5px;
 	color: #808080;
 	line-height: 24px;
 	vertical-align: top;
 }
 
-#yt-option-bar>input, #yt-option-bar>select {
+#yt-option-bar>select {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -641,45 +641,52 @@ div.user[vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#yt-option-bar>input:focus, #yt-option-bar>select:focus {
+#yt-option-bar>select:focus {
 	border-color: #808080;
 }
 
 #yt-results {
 	position: relative;
 	display: block;
-	width: calc(100% - 40px);
+	width: calc(100% - 20px);
 	height: fit-content;
 	margin: 10px auto;
-	padding: 20px;
+	padding: 10px;
 }
 
 #yt-results>div {
 	position: relative;
-	display: flex;
+	display: block;
 	width: calc(100% - 20px);
 	height: fit-content;
 	margin: 10px 0px;
 	padding: 10px;
 	cursor: pointer;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	column-gap: 10px;
+}
+
+#yt-results>div:hover {
+	background: #f8f8f8;
+}
+
+#yt-results>div:active {
+	background: #f0f0f0;
 }
 
 #yt-results>div>img {
 	position: relative;
-	display: block;
+	display: inline-block;
 	width: 160px;
 	height: 90px;
-	flex: 0 0 160px;
+	margin: 0px 10px 0px 0px;
+	vertical-align: top;
 }
 
 #yt-results>div>div {
 	position: relative;
-	display: block;
+	display: inline-block;
 	width: calc(100% - 170px);
 	height: fit-content;
+	vertical-align: top;
 }
 
 #yt-results>div>div>.title {
@@ -687,9 +694,10 @@ div.user[vip="diamond"]::after {
 	display: block;
 	width: 100%;
 	height: fit-content;
-	margin: 10px 0px;
+	margin: 0px 0px 10px;
 	font-weight: 600;
 	line-height: 18px;
+	letter-spacing: 0px;
 }
 
 #yt-results>div>div>.desc {
@@ -698,9 +706,9 @@ div.user[vip="diamond"]::after {
 	width: 100%;
 	height: fit-content;
 	margin: 10px 0px 5px;
-	color: #808080;
-	font-weight: 400;
+	color: #606060;
 	line-height: 16px;
+	letter-spacing: 0px;
 }
 
 #yt-results>div>div>.time {
@@ -709,10 +717,10 @@ div.user[vip="diamond"]::after {
 	width: 100%;
 	height: fit-content;
 	margin: 5px 0px;
-	color: #c0c0c0;
+	color: #808080;
 	font-size: 12px;
-	font-weight: 400;
 	line-height: 14px;
+	letter-spacing: 0px;
 }
 
 #yt-load-more {
@@ -734,35 +742,6 @@ div.user[vip="diamond"]::after {
 
 #yt-load-more:active {
 	background: #e0e0e0;
-}
-
-#yt-api-info {
-	position: relative;
-	display: block;
-	width: calc(100% - 10px);
-	height: fit-content;
-	padding: 5px;
-	margin: 20px 0px 10px;
-	color: #808080;
-}
-
-#yt-api-info>p {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	font-size: 12px;
-	font-weight: 400;
-	line-height: 18px;
-}
-
-#yt-api-info>input {
-	position: relative;
-	display: inline-block;
-	width: fit-content;
-	height: fit-content;
-	outline: none;
-	border: 1px solid #808080;
 }
 
 #gamemu-options {
