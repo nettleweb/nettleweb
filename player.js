@@ -15,6 +15,18 @@
 	win.stop();
 	win.focus();
 
+	if (win === (win.parent || win)) {
+		const e = doc.createElement("embed");
+		e.type = "text/plain";
+		e.width = "1024";
+		e.height = "768";
+		e.src = url;
+		doc.body.appendChild(e);
+
+		win.history.replaceState(void 0, "", "/");
+		return;
+	}
+
 	if (url === "/")
 		win.history.replaceState(void 0, "", "/");
 
@@ -85,7 +97,7 @@
 				frame.type = "text/plain";
 				frame.width = "1024";
 				frame.height = "768";
-				frame.src = win === (win.parent || win) ? "/" : url;
+				frame.src = url;
 				doc.body.appendChild(frame);
 			}
 			break;
