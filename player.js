@@ -1,50 +1,47 @@
-"use strict"; (async () => {
+"use strict"; (async ({ window: win, document: doc }) => {
 	await new Promise(resolve => {
 		const timer = setInterval(() => {
-			if (document.readyState === "complete") {
+			if (doc.readyState === "complete") {
 				clearInterval(timer);
 				resolve();
 			}
 		}, 50);
 	});
 
-	const options = new URLSearchParams(window.location.search);
-	const url = options.get("url") || "/";
-	const name = options.get("name") || "";
-	const bios = options.get("bios") || "";
+	const opt = new URLSearchParams(win.location.search);
+	const url = opt.get("url") || "/";
+	const bios = opt.get("bios") || "";
 
-	window.stop();
-	window.focus();
+	win.stop();
+	win.focus();
 
 	if (url === "/")
-		window.history.replaceState(void 0, "", "/");
-	if (name.length > 0)
-		document.title = name + " - WhiteSpider";
+		win.history.replaceState(void 0, "", "/");
 
 	/**
 	 * @param {string} url 
 	 */
 	function loadJS(url) {
 		return new Promise((resolve, reject) => {
-			const elem = document.createElement("script");
+			const elem = doc.createElement("script");
 			elem.type = "text/javascript";
 			elem.src = url;
 			elem.async = true;
 			elem.defer = true;
 			elem.onload = resolve;
 			elem.onerror = reject;
-			document.body.appendChild(elem);
+			doc.body.appendChild(elem);
 		});
 	}
 
-	switch (options.get("type") || "") {
+	switch (opt.get("type") || "") {
 		case "flash":
 			{
 				await loadJS("/lib/ruffle/ruffle.js");
-				const rp = window.RufflePlayer;
+				const rp = win.RufflePlayer;
 				rp.config = Object.create(null);
 				const frame = rp.newest().createPlayer();
-				document.body.appendChild(frame);
+				doc.body.appendChild(frame);
 				await frame.load({
 					url: url,
 					wmode: "opaque",
@@ -62,43 +59,44 @@
 		case "dos":
 			{
 				await loadJS("lib/jsdos/js-dos.js");
-				const frame = document.createElement("div");
-				document.body.appendChild(frame);
-				window.emulators.pathPrefix = "/lib/jsdos/";
-			 	window.Dos(frame).run(url);
+				const frame = doc.createElement("div");
+				doc.body.appendChild(frame);
+				win.emulators.pathPrefix = "/lib/jsdos/";
+				win.Dos(frame).run(url);
 			}
 			break;
 		case "emu":
 			{
 				await loadJS("lib/emulatorjs/emulator.min.js");
-				document.body.appendChild(document.createElement("div"));
-				new window.EmulatorJS("body>div", {
-					system: options.get("core") || "",
+				doc.body.appendChild(doc.createElement("div"));
+				new win.EmulatorJS("body>div", {
+					system: opt.get("core") || "",
 					gameUrl: url,
 					biosUrl: bios,
 					dataPath: "/lib/emulatorjs/",
-					gameName: name,
+					gameName: "NettleWeb",
 					startOnLoad: true
 				});
 			}
 			break;
 		default:
 			{
-				const frame = document.createElement("embed");
+				const frame = doc.createElement("embed");
 				frame.type = "text/plain";
 				frame.width = "1024";
 				frame.height = "768";
-				frame.src = url;
-				document.body.appendChild(frame);
+				frame.src = win === (win.parent || win) ? "/" : url;
+				doc.body.appendChild(frame);
 			}
 			break;
 	}
 
 	setTimeout(() => {
-		window.focus();
+		win.focus();
+
 		if (url.startsWith("blob:"))
 			URL.revokeObjectURL(url);
 		if (bios.startsWith("blob:"))
 			URL.revokeObjectURL(bios);
 	}, 5000);
-})();
+})(window);
