@@ -2261,16 +2261,17 @@ div.user[vip="diamond"]::after {
 		padding: 24px 15px;
 	}
 
-	#hamb>div {
+	#hamb>span {
 		position: relative;
 		display: block;
 		width: 20px;
 		height: 2px;
 		margin: 0px 5px;
+		color: rgba(0, 0, 0, 0);
 		background: #303030;
 	}
 
-	#hamb>div::before, #hamb>div::after {
+	#hamb>span::before, #hamb>span::after {
 		position: absolute;
 		display: block;
 		width: 100%;
@@ -2280,11 +2281,11 @@ div.user[vip="diamond"]::after {
 		transition: transform 0.2s ease-out;
 	}
 	
-	#hamb>div::before {
+	#hamb>span::before {
 		top: 6px;
 	}
 	
-	#hamb>div::after {
+	#hamb>span::after {
 		top: -6px;
 	}
 
@@ -2308,16 +2309,16 @@ div.user[vip="diamond"]::after {
 		display: block;
 	}
 
-	#side-menu:checked ~ #hamb>div {
+	#side-menu:checked ~ #hamb>span {
 		background: rgba(0, 0, 0, 0);
 	}
 
-	#side-menu:checked ~ #hamb>div::before {
+	#side-menu:checked ~ #hamb>span::before {
 		top: 0px;
 		transform: rotate(-45deg);
 	}
 
-	#side-menu:checked ~ #hamb>div::after {
+	#side-menu:checked ~ #hamb>span::after {
 		top: 0px;
 		transform: rotate(45deg);
 	}
