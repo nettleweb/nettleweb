@@ -20,6 +20,31 @@
 	display: none;
 }
 
+#overlay {
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 99999;
+	background: #ffffff;
+	pointer-events: none;
+}
+
+#overlay[data-x] {
+	display: block;
+}
+
+#overlay>iframe {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	overflow: hidden;
+}
+
 #navigation-bar {
 	position: absolute;
 	display: block;

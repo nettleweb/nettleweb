@@ -36,6 +36,7 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 	</head>
 	<body>
 		<div id="error">Error Message</div>
+		<div id="overlay"></div>
 		<noscript><div>Error: This page could not function unless JavaScript is supported and enabled in your browser.</div></noscript>
 		<div id="navigation-bar">
 			<div id="logo"></div>
@@ -528,6 +529,16 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 						<option value="classroom">Classroom</option>
 					</select>
 				</div>
+				<div>
+					<label for="stealth-mode">Stealth Mode:</label>
+					<select id="stealth-mode">
+						<option value="disabled">Disabled</option>
+						<option value="blank">Blank</option>
+						<option value="google">Google</option>
+					</select>
+				</div>
+				<div>Note: Stealth mode will hide this page's content once it lost focus. Clicking anywhere within the page will restore the hidden content.
+					For better content hiding, combine stealth mode with tab cloaking.</div>
 			</div>
 			<span id="left-side-widget">
 				<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="7455551633" data-ad-format="auto" data-full-width-responsive="true"></ins>
