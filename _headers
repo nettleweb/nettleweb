@@ -5,7 +5,6 @@
 	X-Content-Type-Options: nosniff
 	Content-Security-Policy: base-uri 'self'; font-src 'self'; style-src 'self'; script-src 'self'; worker-src 'self'; form-action 'self'; manifest-src 'self'; fenced-frame-src 'self'; media-src 'self' https://cdn.discordapp.com; style-src-elem 'self'; style-src-attr 'self'; script-src-elem 'self' https://*.google.com https://*.firebaseio.com https://www.googletagmanager.com; script-src-attr 'self'; sandbox allow-forms allow-popups allow-scripts allow-same-origin allow-pointer-lock; upgrade-insecure-requests
 	Cross-Origin-Opener-Policy: same-origin
-	Cross-Origin-Resource-Policy: same-origin
 	Cross-Origin-Embedder-Policy: credentialless
 
 /r/*/
@@ -29,9 +28,6 @@
 	! Content-Security-Policy
 	Content-Type: application/xhtml+xml
 	Content-Security-Policy: img-src 'self'; base-uri 'self'; font-src 'self'; child-src 'self'; frame-src 'self'; media-src 'self'; style-src 'self'; script-src 'self' 'unsafe-eval'; worker-src 'self'; form-action 'self'; manifest-src 'self'; style-src-elem 'self' 'unsafe-inline'; style-src-attr 'self' 'unsafe-inline'; script-src-elem 'self'; script-src-attr 'self'; sandbox allow-popups allow-scripts allow-same-origin; upgrade-insecure-requests
-
-/frame.css
-	! Cross-Origin-Resource-Policy
 
 /res/pay.json
 	Link: </res/pay.json>; rel="payment-method-manifest"
