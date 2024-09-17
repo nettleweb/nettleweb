@@ -28,7 +28,7 @@ option, optgroup {
 	color: #ffffff;
 }
 
-#hamb>div, #hamb>div::before, #hamb>div::after {
+#hamb>span, #hamb>span::before, #hamb>span::after {
 	background: #ffffff;
 }
 
@@ -39,6 +39,14 @@ option, optgroup {
 #game-container>a {
 	border-color: #606060;
 	background-color: #404040;
+}
+
+#yt-results>div>div>.desc {
+	color: #c0c0c0;
+}
+
+#yt-results>div>div>.time {
+	color: #a0a0a0;
 }
 
 #sidemenu, #header {
@@ -125,11 +133,11 @@ option, optgroup {
 	background-image: url("res/refresh-w.svg");
 }
 
-#yt-load-more:hover, #new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #chatmode>button:not([data-current]):hover, #toggle:hover, #newchat:hover, #history>div:hover, #channels>div:hover, #account-settings input~button:hover {
+#yt-load-more:hover, #yt-results>div:hover, #new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #chatmode>button:not([data-current]):hover, #toggle:hover, #newchat:hover, #history>div:hover, #channels>div:hover, #account-settings input~button:hover {
 	background-color: #606060;
 }
 
-#yt-load-more:active, #new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #chatmode>button:not([data-current]):active, #toggle:active, #newchat:active, #history>div:active, #history>div>[data-current], #channels>div:active, #channels>div[data-current], #account-settings input~button:active {
+#yt-load-more:active, #yt-results>div:active, #new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #chatmode>button:not([data-current]):active, #toggle:active, #newchat:active, #history>div:active, #history>div>[data-current], #channels>div:active, #channels>div[data-current], #account-settings input~button:active {
 	background-color: #808080;
 }
 
