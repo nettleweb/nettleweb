@@ -3,31 +3,14 @@
 	Referrer-Policy: no-referrer
 	Permissions-Policy: camera=(), gyroscope=(), microphone=(), geolocation=(), local-fonts=(), accelerometer=(), browsing-topics=(), display-capture=(), screen-wake-lock=()
 	X-Content-Type-Options: nosniff
-	Content-Security-Policy: base-uri 'self'; font-src 'self'; style-src 'self'; script-src 'self'; worker-src 'self'; form-action 'self'; manifest-src 'self'; fenced-frame-src 'self'; media-src 'self' https://cdn.discordapp.com; style-src-elem 'self' 'unsafe-inline'; style-src-attr 'self' 'unsafe-inline'; script-src-elem 'self' https://*.google.com https://*.firebaseio.com https://www.googletagmanager.com; script-src-attr 'self'; sandbox allow-forms allow-popups allow-scripts allow-same-origin allow-pointer-lock; upgrade-insecure-requests
 	Cross-Origin-Opener-Policy: same-origin
 	Cross-Origin-Embedder-Policy: credentialless
 
-/r/*/
-	! Content-Security-Policy
-	Content-Security-Policy: base-uri 'self'; font-src 'self'; media-src 'self'; form-action 'self'; connect-src 'self' blob:; manifest-src 'self'; sandbox allow-forms allow-modals allow-popups allow-scripts allow-same-origin allow-pointer-lock; upgrade-insecure-requests
-
-/ext/cse/
-	! Content-Security-Policy
-	Content-Security-Policy: base-uri 'self'; font-src 'self'; media-src 'self'; form-action 'self'; connect-src 'self' blob:; manifest-src 'self'; sandbox allow-forms allow-modals allow-popups allow-scripts allow-same-origin allow-pointer-lock; upgrade-insecure-requests
-
-/ext/emu/
-	! Content-Security-Policy
-	Content-Security-Policy: base-uri 'self'; font-src 'self'; media-src 'self'; form-action 'self'; connect-src 'self' blob:; manifest-src 'self'; sandbox allow-forms allow-modals allow-popups allow-scripts allow-same-origin allow-pointer-lock; upgrade-insecure-requests
-
 /ext/webemu/
-	! Content-Security-Policy
 	Content-Type: application/xhtml+xml
-	Content-Security-Policy: img-src 'self'; base-uri 'self'; font-src 'self'; child-src 'self'; frame-src 'self'; media-src 'self'; style-src 'self'; script-src 'self' 'unsafe-eval'; worker-src 'self' blob:; form-action 'self'; manifest-src 'self'; style-src-elem 'self'; style-src-attr 'self'; script-src-elem 'self' blob:; script-src-attr 'self'; sandbox allow-popups allow-scripts allow-downloads allow-same-origin allow-pointer-lock; upgrade-insecure-requests
 
 /ext/console/
-	! Content-Security-Policy
 	Content-Type: application/xhtml+xml
-	Content-Security-Policy: img-src 'self'; base-uri 'self'; font-src 'self'; child-src 'self'; frame-src 'self'; media-src 'self'; style-src 'self'; script-src 'self' 'unsafe-eval'; worker-src 'self'; form-action 'self'; manifest-src 'self'; style-src-elem 'self' 'unsafe-inline'; style-src-attr 'self' 'unsafe-inline'; script-src-elem 'self'; script-src-attr 'self'; sandbox allow-popups allow-scripts allow-same-origin; upgrade-insecure-requests
 
 /res/pay.json
 	Link: </res/pay.json>; rel="payment-method-manifest"
