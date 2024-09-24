@@ -17,5 +17,7 @@
 		const url = new URLSearchParams(search).get("url");
 		if (url != null && url.length > 0)
 			location.replace(url);
+		else
+			location.replace("/");
 	}
 })();
