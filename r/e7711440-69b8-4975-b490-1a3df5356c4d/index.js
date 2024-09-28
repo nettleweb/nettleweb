@@ -11,17 +11,17 @@
 		});
 	}
 
-	const his = win.history;
 	const body = doc.body;
-
 	win.stop();
 	win.focus();
-	his.scrollRestoration = "manual";
-	his.replaceState(void 0, "", "/");
-
 	body.id = "game_frame";
 	body.innerHTML = "Loading...";
 
+	win.onclick = (e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		win.focus();
+	};
 	win.eaglercraftXOpts = {
 		demoMode: false,
 		worldsDB: "worlds0o0o00o",
