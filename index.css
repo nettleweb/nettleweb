@@ -351,7 +351,7 @@
 	margin: 0px 12px 10px 0px;
 	cursor: pointer;
 	border: 1px solid #a0a0a0;
-	border-radius: 15px;
+	border-radius: 10px;
 	vertical-align: top;
 	text-decoration: none;
 	background-size: 140px 105px;
@@ -415,6 +415,10 @@ div.user[vip="gold"]::after {
 
 div.user[vip="diamond"]::after {
 	content: "\01f48e";
+}
+
+.noscroll {
+	overflow: hidden;
 }
 
 #banner {
@@ -514,8 +518,42 @@ div.user[vip="diamond"]::after {
 	height: fit-content;
 	margin: 30px 0px;
 	border: 1px solid #a0a0a0;
-	border-radius: 15px;
+	border-radius: 10px;
 	background: #f0f0f0;
+}
+
+#game-category>div {
+	position: absolute;
+	display: block;
+	width: 140px;
+	height: 24px;
+	top: 3px;
+	right: 10px;
+}
+
+#game-category>div>label {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 24px;
+	font-size: 12px;
+	line-height: 24px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#game-category>div>select {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 18px;
+	padding: 2px;
+	border: 1px solid #808080;
+	outline: none;
+	font-size: 12px;
+	line-height: 22px;
+	letter-spacing: 0px;
+	vertical-align: top;
 }
 
 #game-container {
@@ -641,6 +679,28 @@ div.user[vip="diamond"]::after {
 	border-bottom: 1px solid #c0c0c0;
 }
 
+#services-page>div>h3 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 0px 15px;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#yt-container, #gamemu-container, #search-container {
+	position: relative;
+	display: block;
+	width: calc(100% - 30px);
+	height: fit-content;
+	margin: 20px 0px;
+	padding: 15px;
+	border: 1px solid #808080;
+	border-radius: 15px;
+}
+
 #yt-option-bar {
 	position: relative;
 	display: block;
@@ -679,10 +739,9 @@ div.user[vip="diamond"]::after {
 #yt-results {
 	position: relative;
 	display: block;
-	width: calc(100% - 20px);
+	width: 100%;
 	height: fit-content;
-	margin: 10px auto;
-	padding: 10px;
+	margin: 20px 0px;
 }
 
 #yt-results>div {
@@ -759,7 +818,7 @@ div.user[vip="diamond"]::after {
 	display: none;
 	width: fit-content;
 	height: fit-content;
-	margin: 30px auto;
+	margin: 20px auto 10px;
 	padding: 10px 15px;
 	cursor: pointer;
 	outline: none;
@@ -780,7 +839,7 @@ div.user[vip="diamond"]::after {
 	display: block;
 	width: 100%;
 	height: fit-content;
-	margin: 10px 0px;
+	margin: 15px 0px;
 }
 
 #gamemu-options>div>select {
@@ -792,7 +851,7 @@ div.user[vip="diamond"]::after {
 	display: block;
 	width: fit-content;
 	height: fit-content;
-	margin: 20px 0px;
+	margin: 20px 0px 10px;
 }
 
 #webemu-container>embed, #console-container>embed {
@@ -810,14 +869,6 @@ div.user[vip="diamond"]::after {
 	margin: 0px -220px;
 	z-index: 100;
 	overflow: hidden;
-}
-
-#search-container {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: auto;
-	margin: 10px 0px 15px;
 }
 
 #console-container {
@@ -2153,7 +2204,7 @@ div.user[vip="diamond"]::after {
 	background: rgba(0, 0, 0, 0.7);
 }
 
-#hide, #newtab, #fullscreen {
+#hide, #lock, #newtab, #fullscreen {
 	position: absolute;
 	display: block;
 	width: 24px;
@@ -2170,6 +2221,12 @@ div.user[vip="diamond"]::after {
 	top: 3px;
 	left: 3px;
 	background-image: url("res/close-w.svg");
+}
+
+#lock {
+	top: 3px;
+	right: 63px;
+	background-image: url("res/lock-open-w.svg");
 }
 
 #newtab {
