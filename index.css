@@ -867,11 +867,10 @@ div.user[vip="diamond"]::after {
 	width: 1200px;
 	height: 1000px;
 	margin: 0px -220px;
-	z-index: 100;
 	overflow: hidden;
 }
 
-#console-container {
+#calc-container, #console-container {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -2446,7 +2445,7 @@ div.user[vip="diamond"]::after {
 }
 
 @media (max-width: 850px) and (orientation: portrait) {
-	#community-page>div, #game, #search-container, #console-container {
+	#community-page>div, #game, #calc-container, #console-container {
 		aspect-ratio: 9/18;
 	}
 }
