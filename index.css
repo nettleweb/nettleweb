@@ -201,10 +201,10 @@
 #content {
 	position: absolute;
 	display: none;
-	width: calc(100% - 20px);
+	width: calc(100% - 40px);
 	height: calc(100% - 90px);
 	bottom: 0px;
-	padding: 20px 10px;
+	padding: 20px 20px;
 	overflow-x: hidden;
 	overflow-y: auto;
 }
@@ -216,9 +216,8 @@
 #content>div {
 	position: relative;
 	display: none;
-	width: 760px;
+	width: 800px;
 	height: fit-content;
-	padding: 20px;
 	margin: 10px auto 20px;
 }
 
@@ -346,15 +345,15 @@
 .game {
 	position: relative;
 	display: inline-block;
-	width: 140px;
-	height: 140px;
-	margin: 0px 12px 10px 0px;
+	width: 144px;
+	height: 144px;
+	margin: 0px 15px 15px 0px;
 	cursor: pointer;
 	border: 1px solid #a0a0a0;
 	border-radius: 10px;
 	vertical-align: top;
 	text-decoration: none;
-	background-size: 140px 105px;
+	background-size: 144px 108px;
 	background-color: #f0f0f0;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
@@ -387,13 +386,13 @@
 .game>div {
 	position: absolute;
 	display: block;
-	width: 130px;
-	height: 25px;
-	padding: 5px;
-	top: 105px;
+	width: 134px;
+	height: 30px;
+	padding: 3px 5px;
+	top: 108px;
 	font-size: 12px;
 	text-align: center;
-	line-height: 12px;
+	line-height: 14px;
 	letter-spacing: 0px;
 }
 
@@ -884,7 +883,7 @@ div.user[vip="diamond"]::after {
 	display: block;
 	width: 800px;
 	height: 600px;
-	margin: 10px -21px;
+	margin: 10px -1px;
 	border: 1px solid #808080;
 }
 
@@ -2343,8 +2342,15 @@ div.user[vip="diamond"]::after {
 	}
 }
 
-@media all and (max-width: 420px) {
-	#game-search, #yt-search {
+@media all and (max-width: 450px) {
+	#game-search {
+		width: calc(100% - 20px);
+		margin: 20px 10px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	#yt-search {
 		width: calc(100% - 20px);
 		margin: 20px 10px;
 	}
@@ -2425,7 +2431,7 @@ div.user[vip="diamond"]::after {
 
 @media all and (max-width: 850px) {
 	#content>div, #bottom-widget, #footer {
-		width: calc(100% - 40px);
+		width: 100%;
 	}
 
 	#community-page>div, #game {
