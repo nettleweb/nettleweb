@@ -1,94 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us"><head><link href="cdn.jsdelivr.net-gh-mistirk-googleapis@499ff451605f5a085318b5d6252b4e1d93f456d1-grafeas-v1-style.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport">
+    <title>Time Shooter 2</title>
+    
+  </head><body class="dark" dir="ltr">
+    <div class="unity-desktop" id="unity-container">
+      <canvas id="unity-canvas"></canvas>
+    </div>
+    <div id="loading-cover" style="display:none;">
+      <div id="unity-loading-bar">
+        <div id="unity-logo"><img src="cdn.jsdelivr.net-gh-mistirk-googleapis@499ff451605f5a085318b5d6252b4e1d93f456d1-grafeas-v1-logo.png"></div>
+        <div id="unity-progress-bar-empty" style="display: none;">
+          <div id="unity-progress-bar-full"></div>
+        </div>
+        <div class="spinner"></div>
+      </div>
+    </div>
+    <div id="unity-fullscreen-button" style="display: none;"></div>
+    <script>
+      const hideFullScreenButton = "1";
+      const buildUrl = "cdn.jsdelivr.net-gh-mistirk-googleapis@499ff451605f5a085318b5d6252b4e1d93f456d1-grafeas-v1-";
+      const loaderUrl = buildUrl + "ts2.loader.js";
+      const config = {
+        dataUrl: buildUrl + "ts2.data",
+        frameworkUrl: buildUrl + "ts2.framework.js",
+        codeUrl: buildUrl + "ts2.wasm",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "GoGoMan",
+        productName: "Time Shooter 2",
+        productVersion: "0.1",
+      };
 
-<head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MY0THGFRYS"></script>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3054952862534774" crossorigin="anonymous"></script>
-    <title>
-        Time Shooter 2 - Sten Unblocked
-    </title>
-      <meta charset="UTF-8">
-    <link rel="icon" href="../stennerela.jpg">
-  <meta name="description" content="Time Shooter 2 (TS2) is a unblocked first-person shooter game where time stands still until you move. Plan your shots and moves carefully. Dodge enemy fire in epic slo-mo combat and make your way around the map using time to your advantage. This game is unblocked by Sten Unblocked, also known as Stens Unblocked.">
-  <meta name="keywords" content="time shooter 2, time shooter 2 unblocked, time shooter 2 sten unblocked, sten unblocked, unblocked games, stens unblocked, ts2 sten unblocked">
-  <meta name="author" content="Sten">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      const container = document.querySelector("#unity-container");
+      const canvas = document.querySelector("#unity-canvas");
+      const loadingCover = document.querySelector("#loading-cover");
+      const progressBarEmpty = document.querySelector("#unity-progress-bar-empty");
+      const progressBarFull = document.querySelector("#unity-progress-bar-full");
+      const fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      const spinner = document.querySelector('.spinner');
 
-<style>
-html, body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-}
-center {
-    position: absolute;
-    top: 0;
-    width:100%;
-    height:100%;
-}
-iframe {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 0;
-    margin: 0;
-    border: none;
-    width: 50%;
-    height: 80%;
-    z-index: 1;
-    user-select: none;
-}
-.fullScreen {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: none;
-    z-index:9999;
-}
-.scrollbar-hidden::-webkit-scrollbar {
-  display: none;
-}
+      const canFullscreen = (function() {
+        for (const key of [
+            'exitFullscreen',
+            'webkitExitFullscreen',
+            'webkitCancelFullScreen',
+            'mozCancelFullScreen',
+            'msExitFullscreen',
+          ]) {
+          if (key in document) {
+            return true;
+          }
+        }
+        return false;
+      }());
 
-html {
-    overflow: scroll;
-    overflow-x: hidden;
-}
-::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
-/* Optional: show position indicator in red */
-::-webkit-scrollbar-thumb {
-    background: #FF0000;
-}
-div {
-    margin: 8px 8px 8px 8px;
-}
-h3{
-    z-index:52;
-}
-</style>
-</head>
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        config.devicePixelRatio = 1;
+      }
+      canvas.style.background = "url('" + buildUrl + "ts2.jpg') center / cover";
+      loadingCover.style.display = "";
 
-<body>
-<iframe src="ts2.html" id="frame"></iframe>
-<div>
-<h3 style="font-size:20px;font-family:Arial;"><a href="../index.html">Sten Unblocked</a></h3>
-<h3 style="font-size:20px;font-family:Arial;"><a id="likes" href="#" onclick="like()">Loading likes...</a></h3></div>
-</body>
-<script>
-var game = "/time-shooter-2/";
-</script>
-<script src="../stenunblockedmain.js"></script>
-<script src="../fullscreen.js"></script>
-</html>
+      const script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          spinner.style.display = "none";
+          progressBarEmpty.style.display = "";
+          progressBarFull.style.width = `${100 * progress}%`;
+        }).then((unityInstance) => {
+          loadingCover.style.display = "none";
+          if (canFullscreen) {
+            if (!hideFullScreenButton) {
+              fullscreenButton.style.display = "";
+            }
+            fullscreenButton.onclick = () => {
+              unityInstance.SetFullscreen(1);
+            };
+          }
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script>
+  
+
+
+<script>gadgets.util.runOnLoadHandlers();</script><script>window.google.csi.tickDl();
+</script></body></html>

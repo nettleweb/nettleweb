@@ -46,7 +46,6 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 			<label for="side-menu" id="hamb"><span>Menu</span></label>
 			<div id="nav-bar">
 				<button id="home-btn" type="button" data-current="true">Home</button>
-				<button id="prox-btn" type="button">Proxy</button>
 				<button id="apps-btn" type="button">Apps</button>
 				<button id="chat-btn" type="button">Chat</button>
 				<button id="unbl-btn" type="button">FAQs</button>
@@ -107,6 +106,37 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 			</div>
 			<div id="services-page">
 				<h2>Apps</h2>
+				<div id="ub-container">
+					<h3>Unblocker</h3>
+					<input id="addr" type="text" spellcheck="false" placeholder="Search or type a URL" autocomplete="off" />
+					<div id="ub-option-bar">
+						<label for="ub-mode">Mode:</label>
+						<select id="ub-mode">
+							<option value="puppeteer">Puppeteer</option>
+							<option value="raw-embed">Raw Embed</option>
+							<option value="raw-embed-v2">Raw Embed V2</option>
+							<option value="prq-embed">PRQ Embed (Test Only)</option>
+						</select>
+					</div>
+					<div id="ub-shortcuts">
+						<div id="ub-google">
+							<img src="res/icons/google.svg" width="48" height="48" loading="lazy" decoding="async" alt="Google" />
+							<div>Google</div>
+						</div>
+						<div id="ub-discord">
+							<img src="res/icons/discord.svg" width="48" height="48" loading="lazy" decoding="async" alt="Discord" />
+							<div>Discord</div>
+						</div>
+						<div id="ub-facebook">
+							<img src="res/icons/facebook.svg" width="48" height="48" loading="lazy" decoding="async" alt="Facebook" />
+							<div>Facebook</div>
+						</div>
+						<div id="ub-instagram">
+							<img src="res/icons/instagram.svg" width="48" height="48" loading="lazy" decoding="async" alt="Instagram" />
+							<div>Instagram</div>
+						</div>
+					</div>
+				</div>
 				<div id="yt-container">
 					<h3>YouTube Unblocked</h3>
 					<form id="yt-search" action="None" method="post">
@@ -584,31 +614,6 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 		</div>
 		<button id="install" type="button"><span>Install App</span></button>
 		<button id="settings" type="button" title="Settings"></button>
-		<div id="unbl-content">
-			<div id="tab-bar">
-				<div id="tabs"></div>
-				<button id="new-tab" type="button" title="New tab"></button>
-			</div>
-			<div id="toolbar">
-				<button id="back" type="button" title="Back"></button>
-				<button id="forward" type="button" title="Forward"></button>
-				<button id="refresh" type="button" title="Refresh"></button>
-				<input id="address" type="text" spellcheck="false" placeholder="Search or type a URL" autocomplete="off" />
-				<div id="mode">
-					<label for="mode-select">Mode: </label>
-					<select id="mode-select">
-						<option value="raw-embed-v2">Raw Embed V2</option>
-						<option value="raw-embed">Raw Embed</option>
-						<option value="prq-embed">PRQ Embed</option>
-						<option value="puppeteer">Puppeteer</option>
-					</select>
-				</div>
-			</div>
-			<div id="container">
-				<canvas id="u-frame" width="1280" height="720" tabindex="1"></canvas>
-				<div id="message">Error</div>
-			</div>
-		</div>
 		<div id="frame-view">
 			<div id="frame"></div>
 			<button id="frame-close" type="button" title="Close"></button>
