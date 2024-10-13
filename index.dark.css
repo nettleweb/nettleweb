@@ -3,7 +3,7 @@ body {
 	background: #202020;
 }
 
-option, optgroup {
+option, optgroup, #navigation-bar {
 	background: #404040;
 }
 
@@ -11,12 +11,8 @@ option, optgroup {
 	background-image: url("res/logo-w.svg");
 }
 
-.text-body, #game-category, #game-navigator {
+#game-category, #game-navigator {
 	border-color: #606060;
-	background: #404040;
-}
-
-#navigation-bar {
 	background: #404040;
 }
 
@@ -24,7 +20,7 @@ option, optgroup {
 	color: #d0d0d0;
 }
 
-#nav-bar>button[data-current], #game-category>button[data-current] {
+#nav-bar>button[data-current], #game-category>button[data-current], #chatmode>button {
 	color: #ffffff;
 }
 
@@ -57,10 +53,6 @@ option, optgroup {
 	background: #505050;
 }
 
-#chatmode>button {
-	color: #ffffff;
-}
-
 #global {
 	background-image: url("res/global-w.svg");
 }
@@ -89,7 +81,7 @@ option, optgroup {
 	background-image: url("res/delete-w.svg");
 }
 
-#chat {
+#chat, #ac-prof {
 	background: #202020;
 }
 
@@ -101,48 +93,20 @@ option, optgroup {
 	background-image: url("res/add-file-w.svg");
 }
 
-#unbl-content {
-	background: #202020;
-}
-
-#tab-bar {
-	background: #303030;
-}
-
-#tabs>div[data-current], #toolbar {
+#yt-load-more:hover, #yt-results>div:hover, #ub-shortcuts>div:hover {
 	background: #404040;
 }
 
-#new-tab {
-	background-image: url("res/add-w.svg");
+#yt-load-more:active, #yt-results>div:active, #ub-shortcuts>div:active {
+	background: #606060;
 }
 
-#tabs>div>button {
-	background-image: url("res/close-w.svg");
-}
-
-#back {
-	background-image: url("res/back-w.svg");
-}
-
-#forward {
-	background-image: url("res/forward-w.svg");
-}
-
-#refresh {
-	background-image: url("res/refresh-w.svg");
-}
-
-#yt-load-more:hover, #yt-results>div:hover, #new-tab:hover, #tabs>div>button:hover, #back:hover, #forward:hover, #refresh:hover, #chatmode>button:not([data-current]):hover, #toggle:hover, #newchat:hover, #history>div:hover, #channels>div:hover, #account-settings input~button:hover {
+#chatmode>button:not([data-current]):hover, #toggle:hover, #newchat:hover, #history>div:hover, #channels>div:hover, #account-settings input~button:hover {
 	background-color: #606060;
 }
 
-#yt-load-more:active, #yt-results>div:active, #new-tab:active, #tabs>div>button:active, #back:active, #forward:active, #refresh:active, #chatmode>button:not([data-current]):active, #toggle:active, #newchat:active, #history>div:active, #history>div>[data-current], #channels>div:active, #channels>div[data-current], #account-settings input~button:active {
+#chatmode>button:not([data-current]):active, #toggle:active, #newchat:active, #history>div:active, #history>div>[data-current], #channels>div:active, #channels>div[data-current], #account-settings input~button:active {
 	background-color: #808080;
-}
-
-#address, #mode>select, #ac-prof {
-	background: #202020;
 }
 
 #account-settings .tick {

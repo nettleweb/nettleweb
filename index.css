@@ -367,13 +367,23 @@
 	border-color: #303030;
 }
 
+.game>img {
+	position: absolute;
+	display: block;
+	width: 24px;
+	height: 24px;
+	top: 2px;
+	left: 2px;
+}
+
 .game>span {
-	position: relative;
+	position: absolute;
 	display: block;
 	width: 45px;
 	height: 16px;
-	margin: 5px 2px 2px 88px;
 	padding: 2px 5px;
+	top: 2px;
+	right: -5px;
 	color: #ffffff;
 	text-align: center;
 	font-size: 12px;
@@ -715,8 +725,8 @@ div.user[vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#addr:focus {
-	border-color: #c0c0c0;
+#addr:focus, #ub-option-bar>select:focus, #yt-option-bar>select:focus {
+	border-color: #808080;
 }
 
 #ub-option-bar, #yt-option-bar {
@@ -750,10 +760,6 @@ div.user[vip="diamond"]::after {
 	line-height: 20px;
 	letter-spacing: 0px;
 	vertical-align: top;
-}
-
-#ub-option-bar>select:focus, #yt-option-bar>select:focus {
-	border-color: #808080;
 }
 
 #ub-shortcuts {
