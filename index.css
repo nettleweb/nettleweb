@@ -110,7 +110,7 @@
 	padding: 10px;
 }
 
-#nav-bar>button, #game-category>button {
+#nav-bar>button, #game-category>button, #item-category>button {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -124,30 +124,17 @@
 	letter-spacing: 0px;
 }
 
-#nav-bar>button:hover, #game-category>button:hover {
+#nav-bar>button:hover, #game-category>button:hover, #item-category>button:hover {
 	color: #a0a0a0;
 }
 
-#nav-bar>button:active, #game-category>button:active {
+#nav-bar>button:active, #game-category>button:active, #item-category>button:active {
 	color: #c0c0c0;
 }
 
-#nav-bar>button[data-current], #game-category>button[data-current] {
+#nav-bar>button[data-current], #game-category>button[data-current], #item-category>button[data-current] {
 	color: #303030;
 	font-weight: 600;
-}
-
-#game-category>button[unread]::after {
-	position: relative;
-	display: inline-block;
-	width: 5px;
-	height: 5px;
-	margin: 0px 2px;
-	top: 0px;
-	content: "";
-	background: #ff0000;
-	border-radius: 5px;
-	vertical-align: top;
 }
 
 #accn-btn::before {
@@ -209,10 +196,6 @@
 	overflow-y: auto;
 }
 
-#content>h1 {
-	display: none;
-}
-
 #content>div {
 	position: relative;
 	display: none;
@@ -221,7 +204,7 @@
 	margin: 10px auto 20px;
 }
 
-#content>div[data-current], #unbl-content[data-current] {
+#content>div[data-current] {
 	display: block;
 }
 
@@ -359,11 +342,11 @@
 	background-position: 0px 0px;
 }
 
-.game:hover {
+.game:hover, .item:hover {
 	border-color: #808080;
 }
 
-.game:active {
+.game:active, .item:active {
 	border-color: #303030;
 }
 
@@ -393,7 +376,7 @@
 	text-transform: uppercase;
 }
 
-.game>div {
+.game>div, .item>div {
 	position: absolute;
 	display: block;
 	width: 134px;
@@ -402,6 +385,36 @@
 	top: 108px;
 	font-size: 12px;
 	text-align: center;
+	line-height: 14px;
+	letter-spacing: 0px;
+}
+
+.item {
+	position: relative;
+	display: inline-block;
+	width: 144px;
+	height: 164px;
+	margin: 0px 15px 15px 0px;
+	cursor: pointer;
+	border: 1px solid #a0a0a0;
+	border-radius: 10px;
+	vertical-align: top;
+	text-decoration: none;
+	background-size: 144px 108px;
+	background-color: #f0f0f0;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+.item>span {
+	position: absolute;
+	display: block;
+	width: 134px;
+	height: 14px;
+	padding: 3px 5px;
+	top: 144px;
+	text-align: center;
+	font-weight: 600;
 	line-height: 14px;
 	letter-spacing: 0px;
 }
@@ -426,16 +439,12 @@ div.user[vip="diamond"]::after {
 	content: "\01f48e";
 }
 
-.noscroll {
-	overflow: hidden;
-}
-
 #banner {
 	position: relative;
 	display: block;
 	width: 512px;
 	height: 128px;
-	margin: 20px auto 50px;
+	margin: 30px auto 50px;
 	background-image: url("res/logo.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -482,7 +491,57 @@ div.user[vip="diamond"]::after {
 	content: "\01f4e2";
 }
 
-#game-search, #yt-search {
+#menu {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 40px 0px;
+}
+
+#menu>div {
+	position: relative;
+	display: inline-block;
+	width: 180px;
+	height: 180px;
+	margin: 10px 15px 10px 0px;
+	cursor: pointer;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	vertical-align: top;
+}
+
+#menu>div:hover {
+	background: #f8f8f8;
+}
+
+#menu>div:active {
+	background: #f0f0f0;
+}
+
+#menu>div>img {
+	position: absolute;
+	display: block;
+	width: 96px;
+	height: 96px;
+	top: 15px;
+	left: 42px;
+}
+
+#menu>div>div {
+	position: absolute;
+	display: block;
+	width: 140px;
+	height: 36px;
+	top: 115px;
+	left: 20px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 36px;
+	letter-spacing: 0px;
+}
+
+#game-search, #item-search, #yt-search, #search {
 	position: relative;
 	display: block;
 	width: 400px;
@@ -491,7 +550,7 @@ div.user[vip="diamond"]::after {
 	border: 1px solid #808080;
 }
 
-#game-search>input, #yt-search>input {
+#game-search>input, #item-search>input, #yt-search>input, #search>input {
 	position: absolute;
 	display: block;
 	width: calc(100% - 52px);
@@ -505,7 +564,7 @@ div.user[vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#game-search>button, #yt-search>button {
+#game-search>button, #item-search>button, #yt-search>button, #search>button {
 	position: absolute;
 	display: block;
 	width: 20px;
@@ -520,7 +579,7 @@ div.user[vip="diamond"]::after {
 	background-position: center;
 }
 
-#game-category {
+#game-category, #item-category {
 	position: relative;
 	display: block;
 	width: calc(100% - 2px);
@@ -531,7 +590,7 @@ div.user[vip="diamond"]::after {
 	background: #f0f0f0;
 }
 
-#game-category>div {
+#game-category>div, #item-category>div {
 	position: absolute;
 	display: block;
 	width: 140px;
@@ -540,7 +599,7 @@ div.user[vip="diamond"]::after {
 	right: 10px;
 }
 
-#game-category>div>label {
+#game-category>div>label, #item-category>div>label {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -551,7 +610,7 @@ div.user[vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#game-category>div>select {
+#game-category>div>select, #item-category>div>select {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -565,7 +624,7 @@ div.user[vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#game-container {
+#game-container, #item-container {
 	position: relative;
 	display: block;
 	width: calc(100% + 12px);
@@ -573,7 +632,7 @@ div.user[vip="diamond"]::after {
 	margin: 30px 0px;
 }
 
-#game-navigator {
+#game-navigator, #item-navigator {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -583,46 +642,46 @@ div.user[vip="diamond"]::after {
 	background: #f0f0f0;
 }
 
-#game-navigator>button {
+#game-navigator>button, #item-navigator>button {
 	position: relative;
 	display: inline-block;
 	width: 30px;
 	height: 30px;
 	cursor: pointer;
 	outline: none;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	border-right: 1px solid #808080;
+	border-bottom: 1px solid #808080;
 	vertical-align: top;
 	background-size: 30px 30px;
 	background-color: #c0c0c0;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
-	border-top: 1px solid #ffffff;
-	border-left: 1px solid #ffffff;
-	border-right: 1px solid #808080;
-	border-bottom: 1px solid #808080;
 }
 
-#game-navigator>button:disabled {
+#game-navigator>button:disabled, #item-navigator>button:disabled {
 	cursor: default;
 	filter: brightness(200%) contrast(40%);
 	border-color: #c0c0c0;
 }
 
-#game-navigator>button:not(:disabled):active {
+#game-navigator>button:not(:disabled):active, #item-navigator>button:not(:disabled):active {
 	border-top-color: #808080;
 	border-left-color: #808080;
 	border-right-color: #ffffff;
 	border-bottom-color: #ffffff;
 }
 
-#gnav-back {
+#gnav-back, #nav-back {
 	background-image: url("res/back.svg");
 }
 
-#gnav-forward {
+#gnav-forward, #nav-forward {
 	background-image: url("res/forward.svg");
 }
 
-#game-navigator>div {
+#game-navigator>div, #item-navigator>div {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -635,7 +694,7 @@ div.user[vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#game-navigator>div>input {
+#game-navigator>div>input, #item-navigator>div>input {
 	position: relative;
 	display: inline;
 	width: 40px;
@@ -648,7 +707,7 @@ div.user[vip="diamond"]::after {
 	border-bottom: 1px solid #808080;
 }
 
-#game-navigator>div>input:focus {
+#game-navigator>div>input:focus, #item-navigator>div>input:focus {
 	border-bottom: 1px solid #303030;
 }
 
@@ -661,7 +720,7 @@ div.user[vip="diamond"]::after {
 	overflow: hidden;
 }
 
-#game-disclaimer {
+#game-disclaimer, #item-disclaimer {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -699,7 +758,7 @@ div.user[vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#ub-container, #yt-container, #gamemu-container, #search-container {
+#ub-container, #yt-container, #gamemu-container {
 	position: relative;
 	display: block;
 	width: calc(100% - 30px);
@@ -921,7 +980,7 @@ div.user[vip="diamond"]::after {
 	margin: 20px 0px 10px;
 }
 
-#webemu-container>embed, #console-container>embed {
+#calc-container>embed, #webemu-container>embed, #console-container>embed {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -2157,7 +2216,7 @@ div.user[vip="diamond"]::after {
 }
 
 @media all and (max-width: 450px) {
-	#game-search {
+	#search, #game-search {
 		width: calc(100% - 20px);
 		margin: 20px 10px;
 	}

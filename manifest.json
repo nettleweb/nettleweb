@@ -1,10 +1,10 @@
 {
 	"id": "nettleweb",
 	"name": "NettleWeb",
-	"version": "5.5.4",
+	"version": "6.0.0-alpha1",
 	"short_name": "NettleWeb",
 	"categories": ["games", "social"],
-	"description": "Play 2000+ free online classic, HTML5, DOS, Flash, games at NettleWeb!",
+	"description": "Play 3000+ free online HTML5, Flash and classic DOS games. Shop within our online store, and engage in real-time chat with our community. A one-stop platform for gaming, shopping, and socializing.",
 	"scope": "/",
 	"display": "fullscreen",
 	"start_url": "/",

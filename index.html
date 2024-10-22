@@ -19,8 +19,8 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 		<meta charset="utf-8" />
 		<meta name="referrer" content="no-referrer" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<meta name="keywords" content="nettleweb,free,online,game,games,html,html5,flash,dos,emulator,unblocked,unlocked,unblocker,proxy,chat,chatgpt,youtube" />
-		<meta name="description" content="Play over 3000 HTML5, Flash, and classic DOS games online, plus console game emulators and a community-driven game sharing platform. Join the ultimate gaming experience on NettleWeb!" />
+		<meta name="keywords" content="nettleweb,free,online,game,games,html,html5,flash,dos,n64,nes,snes,classic,emulator,chat,store,chatgpt" />
+		<meta name="description" content="Play 3000+ free online HTML5, Flash and classic DOS games. Shop within our online store, and engage in real-time chat with our community. A one-stop platform for gaming, shopping, and socializing." />
 		<meta name="theme-color" content="#004080" />
 		<meta name="mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -46,6 +46,8 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 			<label for="side-menu" id="hamb"><span>Menu</span></label>
 			<div id="nav-bar">
 				<button id="home-btn" type="button" data-current="true">Home</button>
+				<button id="game-btn" type="button">Games</button>
+				<button id="comm-btn" type="button">Store</button>
 				<button id="apps-btn" type="button">Apps</button>
 				<button id="chat-btn" type="button">Chat</button>
 				<button id="unbl-btn" type="button">FAQs</button>
@@ -54,539 +56,56 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 		</div>
 		<div id="loading"></div>
 		<div id="content">
-			<h1>NettleWeb - Free online classic, HTML5, DOS, Flash, games!</h1>
-			<div id="home-page" data-current="true">
-				<div id="banner"></div>
-				<div id="notice"></div>
-				<form id="game-search" action="null" method="post">
-					<input name="q" type="text" maxlength="50" placeholder="Search Games" autocomplete="off" />
-					<button type="submit" title="Search"></button>
-				</form>
-				<div id="game-category">
-					<button type="button" data-match="all" data-current="true">All</button>
-					<button type="button" data-match="html5">HTML5</button>
-					<button type="button" data-match="flash">Flash</button>
-					<button type="button" data-match="dos">DOS</button>
-					<button type="button" data-match="cards">Cards</button>
-					<button type="button" data-match="puzzles">Puzzles</button>
-					<button type="button" data-match="mahjong">Mahjong</button>
-					<button type="button" data-match="classic">Classic</button>
-					<div>
-						<label for="game-sort">Sort by:</label>
-						<select id="game-sort">
-							<option value="n">Name</option>
-							<option value="p">Popularity</option>
-							<option value="d">Date Added</option>
-						</select>
-					</div>
-				</div>
-				<div id="game-container"></div>
-				<div id="game-navigator">
-					<button id="gnav-back" type="button" title="Previous page" disabled=""></button>
-					<div>Page: <input id="gnav-page-no" type="number" min="1" max="999" value="0" placeholder="1" autocomplete="off" /> / <span id="gnav-page-count">0</span></div>
-					<button id="gnav-forward" type="button" title="Next page" disabled=""></button>
-				</div>
-				<div id="game-widget">
-					<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="8757025012" data-ad-format="auto" data-full-width-responsive="true"></ins>
-				</div>
-				<div id="game-disclaimer">Disclaimer: All games within this website were uploaded by users, not directly provided by NettleWeb nor its owners.
-					If you believe any of the contents shown here has violated your rights, please <a href="mailto:support@nettleweb.com" target="_blank" rel="noopener">email us</a>
-					to let us know. We will take the corresponding actions as soon as possible.
-				</div>
-				<div class="text-body">
-					<h2>Welcome to NettleWeb: Your Ultimate Gaming Hub!</h2>
-					<p>Explore over 3000 HTML5, Flash, and classic DOS games, all playable in your browser. Our vast collection includes a wide range
-						of genres, from classic arcade titles to modern web-based games. Plus, with our easy-to-use game uploading and sharing features,
-						you can play and share games with the community like never before.</p>
-					<p>And that's not all! NettleWeb also offers a range of console game emulators, so you can relive classic gaming experiences on your PC.
-						Join our community today and discover a new world of gaming possibilities!</p>
-					<p>If you enjoy this website, don't forget to <a href="https://forms.gle/VA2iMuz5JpQNV3xV6">submit a feedback</a>.
-						It will help us to release more useful features and updates, and make our community better.</p>
-				</div>
-			</div>
-			<div id="services-page">
-				<h2>Apps</h2>
-				<div id="ub-container">
-					<h3>Unblocker</h3>
-					<input id="addr" type="text" spellcheck="false" placeholder="Search or type a URL" autocomplete="off" />
-					<div id="ub-option-bar">
-						<label for="ub-mode">Mode:</label>
-						<select id="ub-mode">
-							<option value="puppeteer">Puppeteer</option>
-							<option value="raw-embed">Raw Embed</option>
-							<option value="raw-embed-v2">Raw Embed V2</option>
-							<option value="prq-embed">PRQ Embed (Test Only)</option>
-						</select>
-					</div>
-					<div id="ub-shortcuts">
-						<div id="ub-google">
-							<img src="res/icons/google.svg" width="48" height="48" loading="lazy" decoding="async" draggable="false" alt="Google" />
-							<div>Google</div>
-						</div>
-						<div id="ub-discord">
-							<img src="res/icons/discord.svg" width="48" height="48" loading="lazy" decoding="async" draggable="false" alt="Discord" />
-							<div>Discord</div>
-						</div>
-						<div id="ub-facebook">
-							<img src="res/icons/facebook.svg" width="48" height="48" loading="lazy" decoding="async" draggable="false" alt="Facebook" />
-							<div>Facebook</div>
-						</div>
-						<div id="ub-instagram">
-							<img src="res/icons/instagram.svg" width="48" height="48" loading="lazy" decoding="async" draggable="false" alt="Instagram" />
-							<div>Instagram</div>
-						</div>
-					</div>
-				</div>
-				<div id="yt-container">
-					<h3>YouTube Unblocked</h3>
-					<form id="yt-search" action="None" method="post">
-						<input name="q" type="text" maxlength="50" placeholder="Search Video or Paste YouTube Video URL" autocomplete="off" />
-						<button type="submit" title="Search"></button>
-					</form>
-					<div id="yt-option-bar">
-						<label for="yt-server">Stream Server:</label>
-						<select id="yt-server">
-							<option value="official">Official</option>
-							<option value="piped">Piped</option>
-							<option value="piped2">Piped Mirror</option>
-						</select>
-					</div>
-					<div id="yt-results"></div>
-					<button id="yt-load-more" type="button">Load More</button>
-				</div>
-				<div id="gamemu-container">
-					<h3>Game Emulator</h3>
-					<div id="gamemu-options">
-						<div>
-							<label for="emulator">Emulator:</label>
-							<select id="emulator">
-								<option value="flash">Ruffle</option>
-								<option value="dos">JS-DOS</option>
-								<option value="emu" selected="">EmulatorJS</option>
-							</select>
-						</div>
-						<div>
-							<label for="core">System:</label>
-							<select id="core">
-								<optgroup label="Nintendo">
-									<option value="n64">N64</option>
-									<option value="nds">NDS</option>
-									<option value="nes" selected="">NES/Famicom</option>
-									<option value="snes">SNES</option>
-									<option value="gb">Game Boy</option>
-									<option value="gba">Game Boy Advance</option>
-									<option value="vb">Virtual Boy</option>
-								</optgroup>
-								<optgroup label="Sega">
-									<option value="sega32x">32X</option>
-									<option value="segaCD">CD</option>
-									<option value="segaGG">Game Gear</option>
-									<option value="segaMD">Mega Drive</option>
-									<option value="segaMS">Master System</option>
-									<option value="segaSaturn">Saturn</option>
-								</optgroup>
-								<optgroup label="Atari">
-									<option value="atari2600">2600</option>
-									<option value="atari5200">5200</option>
-									<option value="atari7800">7800</option>
-									<option value="jaguar">Jaguar</option>
-									<option value="lynx">Lynx</option>
-								</optgroup>
-								<optgroup label="Commodore">
-									<option value="c64">C64</option>
-									<option value="c128">C128</option>
-									<option value="amiga">Amiga</option>
-									<option value="pet">PET</option>
-									<option value="plus4">Plus/4</option>
-									<option value="vic20">VIC-20</option>
-								</optgroup>
-								<optgroup label="Other">
-									<option value="3do">3DO</option>
-									<option value="arcade">Arcade</option>
-									<option value="coleco">ColecoVision</option>
-									<option value="psx">PS1</option>
-									<option value="mame2003">MAME 2003</option>
-								</optgroup>
-								<option value="pce">NEC TurboGrafx-16/SuperGrafx/PC Engine</option>
-								<option value="pcfx">NEC PC-FX</option>
-								<option value="ngp">SNK NeoGeo Pocket</option>
-								<option value="ws">Bandai WonderSwan</option>
-							</select>
-						</div>
-						<div>
-							<label for="bios">BIOS:</label>
-							<input id="bios" type="file" accept="*/*" />
-						</div>
-						<div>
-							<label for="game-rom">Game ROM:</label>
-							<input id="game-rom" type="file" accept="*/*" />
-						</div>
-					</div>
-					<button id="startemu" type="button" class="pri-button">Start Emulator</button>
-				</div>
-				<div id="search-container">
-					<h3>Private Search</h3>
-					<div class="gcse-search"></div>
-				</div>
-				<hr />
-				<h3>Graphing Calculator</h3>
-				<div id="calc-container"></div>
-				<hr />
-				<h3>PC Emulator (32-bit)</h3>
-				<div id="webemu-container">
-					<embed type="text/plain" width="1024" height="768" src="ext/webemu/" />
-				</div>
-				<hr />
-				<h3>Debug Console</h3>
-				<div id="console-container">
-					<embed type="text/plain" width="1024" height="768" src="ext/console/" />
-				</div>
-			</div>
-			<div id="community-page">
-				<h2>Chat</h2>
+			<div id="content-page">
+				<!-- Dummy contents for attracting search engines - PLEASE DO NOT EDIT! -->
+
+				<img src="res/logo.svg" width="192" height="64" loading="lazy" decoding="async" draggable="false" alt="Logo" />
+				<h1>NettleWeb - A one-stop platform for gaming, shopping, and socializing</h1>
+
+				<!-- Some random AI generated shit -->
+				<p>Play over 3000 HTML5, Flash, and classic DOS games online, plus console game emulators and a community-driven game sharing platform. Join the ultimate gaming experience on NettleWeb!</p>
+				<p>Our vast collection includes a wide range of genres, from classic arcade titles to modern web-based games. Plus, with our easy-to-use game uploading and sharing features, you can play and share games with the community like never before.</p>
+				<p>And that's not all! NettleWeb also offers a range of console game emulators, so you can relive classic gaming experiences on your PC. Join our community today and discover a new world of gaming possibilities!</p>
+				<p>NettleWeb's vast library is home to games across all genres—action, adventure, puzzle, sports, and more. With HTML5, Flash, and DOS games, players can dive into everything from retro classics to innovative new titles that run seamlessly on modern browsers. For those who love console games, NettleWeb also includes a selection of emulators, offering a smooth gaming experience that captures the charm of your favorite consoles.</p>
+
 				<div>
-					<div id="sidemenu">
-						<div id="chatmode">
-							<button id="global" type="button">Global</button>
-							<button id="friends" type="button">Friends</button>
-							<button id="chatgpt" type="button">ChatGPT</button>
-						</div>
-						<div id="channels"></div>
-						<div id="msglist"></div>
-						<div id="history">
-							<button id="newchat" type="button">New chat</button>
-						</div>
-						<div id="account">
-							<div id="chat-profile"></div>
-							<button id="chat-login" class="pri-button" type="button">Login</button>
-						</div>
-					</div>
-					<div id="chat">
-						<div id="header">
-							<button id="toggle" type="button" title="Close"></button>
-							<div id="channel-name">General</div>
-							<button id="discord" class="pri-button" type="button">Open chat in Discord</button>
-						</div>
-						<div id="messages"></div>
-						<div id="interface">
-							<div>
-								<input id="sendmsg" type="text" required="" minlength="1" maxlength="1000" placeholder="Message" autocomplete="off" />
-								<button id="ufile" type="button" title="Upload file"></button>
-								<button id="emoji" type="button" title="Add emoji"></button>
-							</div>
-						</div>
-						<div id="picker"></div>
-					</div>
+					<a href="/games">Games</a>
+					<a href="/store">Store</a>
+					<a href="/chat">Chat</a>
 				</div>
-			</div>
-			<div id="site-blocked-page">
-				<h2>FAQs</h2>
-				<div class="text-body">
-					<p>Notice: This page is outdated, and might no longer be relevant to certains features.</p>
-					<h3>The website is blocked, how can I access it?</h3>
-					<p>There are many ways to access a restricted website, since most administrative softwares (aka 'blockers') are buggy.
-						However you should always follow the network policy, as misusing could lead to unwanted consequences.</p>
-					<p>You can have a try on the methods below to see which one works for you.</p>
-					<h4>1. Use mirror links</h4>
-					<p>Most blockers use a URL blacklist to restrict listed websites. Switching to a new address could bypass the
-						restriction in this case as the new address is not yet known. However frequently using the same address could
-						cause it being noticed by administrators, resulting it being added to the blacklist and revoke access to it.</p>
-					<p>As the result using official mirror links provided here is not recommended, and you should self-host your own mirror
-						link instead. (See method 2)</p>
-					<p>Note: Embed mirrors (including data URLs) only work if the website is blocked by a browser extension.
-						<strong>If a network-based restriction is set, you must use a <u>standalone mirror</u>, or a custom DNS server
-						in order to bypass the restriction.</strong></p>
-					<h5>Google Sites Embed Mirrors</h5>
-					<a href="https://sites.google.com/view/nettleweb" target="_blank" rel="noopener">https://sites.google.com/view/nettleweb</a>
-					<a href="https://sites.google.com/view/whitespider" target="_blank" rel="noopener">https://sites.google.com/view/whitespider</a>
-					<a href="https://sites.google.com/view/white-spider" target="_blank" rel="noopener">https://sites.google.com/view/white-spider</a>
-					<a href="https://sites.google.com/view/whitespi" target="_blank" rel="noopener">https://sites.google.com/view/whitespi</a>
-					<a href="https://sites.google.com/view/wsunbl" target="_blank" rel="noopener">https://sites.google.com/view/wsunbl</a>
-					<a href="https://sites.google.com/view/wsug" target="_blank" rel="noopener">https://sites.google.com/view/wsug</a>
-					<a href="https://sites.google.com/view/x999" target="_blank" rel="noopener">https://sites.google.com/view/x999</a>
-					<a href="https://sites.google.com/view/gainforschool" target="_blank" rel="noopener">https://sites.google.com/view/gainforschool</a>
-					<a href="https://sites.google.com/view/theunlockedbay" target="_blank" rel="noopener">https://sites.google.com/view/theunlockedbay</a>
-					<p>(Hint: You can also create your own mirror link on <a href="https://sites.google.com/new">Google Sites</a> using
-						<a href="https://sites.google.com/view/cbhk/embed-code">embed code</a>)</p>
-					<h5>Standalone Mirrors</h5>
-					<p>(These links might not work if whitelist restriction mode is used)</p>
-					<a href="https://nettleweb.com/" target="_blank" rel="noopener">https://nettleweb.com/</a>
-					<a href="https://nettleweb.github.io/" target="_blank" rel="noopener">https://nettleweb.github.io/</a>
-					<a href="https://nettleweb.vercel.app/" target="_blank" rel="noopener">https://nettleweb.vercel.app/</a>
-					<a href="https://nettleweb.netlify.app/" target="_blank" rel="noopener">https://nettleweb.netlify.app/</a>
-					<p><strong>Important Notice: Do NOT trust mirror links shared by others online. Ads and malicious code could be
-						injected, putting you into security risks.</strong></p>
-					<h5>Date URLs</h5>
-					<p>The code below is a data URL of an embedded mirror link, it can be used to bypass most browser extensions running on
-						Chromium-based browsers (including Chrome, Edge). However it cannot be used to bypass external network restrictions.</p>
-					<code>data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiID8+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTI4MCIgaGVpZ2h0PSI3MjAiIHZpZXdCb3g9IjAgMCAxMjgwIDcyMCI+Cgk8dGl0bGU+R29vZ2xlPC90aXRsZT4KCTxmb3JlaWduT2JqZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMjgwIiBoZWlnaHQ9IjcyMCI+CgkJPGVtYmVkIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hodG1sIiBzcmM9Imh0dHBzOi8vbmV0dGxld2ViLmNvbS8iIHR5cGU9InRleHQvcGxhaW4iIHdpZHRoPSIxMjYwIiBoZWlnaHQ9IjcwMCIgLz4KCTwvZm9yZWlnbk9iamVjdD4KPC9zdmc+</code>
-					<p>Data URLs work in the same way as HTTP(S) URLs, they can be opened directly in a new tab.
-						(Just copy and paste the code above into a new tab's address bar and press enter)</p>
-					<h4>2. Use a self-hosted mirror link</h4>
-					<p>Mirror links provided here might be blocked already as they are published publicly. However you can self-host your own mirror
-						link on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>, or another hosting provider that
-						works for you. (Visit the
-						<a href="https://github.com/nettleweb/nettleweb?tab=readme-ov-file#quick-deploy" target="_blank" rel="noopener">repository home page</a>
-						for some quick deploy buttons)</p>
-					<p>For hosting on <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>, it must be hosted on a root
-						domain (xxx.github.io). Otherwise some essential resources may fail to load.</p>
-					<h4>None of the methods works?</h4>
-					<p>If none of the methods above work properly, it means a very strict policy is set in your network environment. In this case, you
-						might need to search for solutions on your own.</p>
-					<p>If you are using a managed Chromebook,
-						<a href="https://sites.google.com/view/cbhk/force-unenroll-managed-device" target="_blank" rel="noopener">bypassing enterprise enrollment</a>
-						would allow you to remove the network restrictions.</p>
-					<br />
-					<hr />
-					<h3>How can I enable sounds in the unblocker?</h3>
-					<p>Unfortunately, there is no way to enable sounds in Puppeteer mode due to a limitation of
-						<a href="https://github.com/puppeteer/puppeteer" target="_blank" rel="noopener">puppeteer</a>.</p>
-					<p>However you can use the Raw Embed mode to make sounds work and improve the frame rate, but this method only works if the website supports
-						embed via an <code>&lt;iframe&gt;</code> tag, and is restricted by browser extensions. (same limitations as embed mirrors described above)</p>
-					<br />
-					<hr />
-					<h3>How to upload a game to the website?</h3>
-					<p>Uploading a game to this website is not a complicated process. You can do so by following the steps below:</p>
-					<p>1. Login to your account with the button on the top right corner, create one if you don't have one already.</p>
-					<p>2. Go to the account page and click 'upload game' button under the 'functions' section.</p>
-					<p>3. Follow the instructions to finish uploading the game.</p>
-					<p>Successfully uploading a certain amount of games would award you a membership within the website. (See below for more details)</p>
-					<br />
-					<hr />
-					<h3>What is the membership in my account page? Why are there some users with a badge next to their names? How can I get one on my profile?</h3>
-					<p>There are two types of badges available, the diamond badge (&#x1f48e;) and the gold badge (&#x1f451;), which represent two
-						levels of membership for a user.</p>
-					<p>Every registered user on this website starts without any membership, and therefore you will see 'Membership: None'
-						under the 'account information' section in the account page.</p>
-					<p>In order to become a gold or a diamond member, you will need to level up your membership (aka promote).</p>
-					<p>For becoming a <strong>gold member</strong>, you must have done one of the following tasks:</p>
-					<p> - Uploaded at least 200 games onto the website. The game only counts when it passed the review.</p>
-					<p> - Made at least one major contribution to the website.</p>
-					<p>For becoming a <strong>diamond member</strong>, you must have done one of the following tasks:</p>
-					<p> - Uploaded at least 1000 games onto the website and passed the review for all of them.</p>
-					<p> - Made at least 10 major contributions to the website.</p>
-					<br />
-					<p>Please note that the badges are given out manually by the administrators. If you did not receive one but have met the requirement,
-						please let us know using the 'contact us' button in the footer.</p>
-					<br />
-					<hr />
-					<h3>Where can I find the source of the games?</h3>
-					<p>All games on this website (except those labeled as 'original') were uploaded by users. We do not disclose any
-						of these information as part of our <a href="/terms.txt" target="_blank" rel="noopener">Terms of Service</a>.</p>
-				</div>
-			</div>
-			<div id="uploadgames-page">
-				<h2>Upload Game</h2>
-				<div>
-					<label for="game-name">Name:</label>
-					<input id="game-name" type="text" required="" minlength="1" maxlength="256" placeholder="Example" autocomplete="off" />
-				</div>
-				<div>
-					<label for="game-type">Type:</label>
-					<select id="game-type">
-						<option value="html5">HTML5</option>
-						<option value="flash">Flash</option>
-						<option value="dos">DOS</option>
-					</select>
-				</div>
-				<div>
-					<label for="game-file">File:</label>
-					<input id="game-file" type="file" accept=".zip" required="" />
-				</div>
-				<div>
-					<label for="game-tags">Tags:</label>
-					<input id="game-tags" type="text" required="" minlength="1" maxlength="300" placeholder="action,arcade,classic" autocomplete="off" />
-				</div>
-				<div>
-					<label for="game-desc">Description (optional):</label>
-					<textarea id="game-desc" cols="100" rows="20" wrap="hard" maxlength="5000" placeholder="Something about this game..." autocomplete="off"></textarea>
-				</div>
-				<div class="text-body">
-					<h3>Notice</h3>
-					<p>Your game will be reviewed by the administrators before becoming visible to the public. This process could
-						take 3-5 days, or even longer in some cases.</p>
-					<p>In order to pass the review, you must ensure that your submission meets the following conditions:</p>
-					<p>1. All information of the game are filled correctly, and have a reliable source unless you are the author.</p>
-					<p>2. The game uploaded would not cause copyright infringement in any form.</p>
-					<p>3. The game is not duplicated with one that already exists on the site.</p>
-					<p>We might also edit or delete certain information based on our needs.</p>
-					<h4>HTML5 games</h4>
-					<p>The game file must be a valid ZIP file with a file named exactly `index.html` inside. The file will be used
-						as the game's entry.</p>
-					<h4>Flash games</h4>
-					<p>The game file must be a valid SWF file. Both AVM1 and AVM2 are supported.</p>
-					<p>The game must not contain a site lock, or any settings preventing it from running on other websites.</p>
-					<h4>DOS games</h4>
-					<p>The game file must be a JS-DOS bundle. If you have a ZIP file, you can convert it into a JS-DOS bundle via the
-						<a href="https://dos.zone/studio/" target="_blank" rel="noopener">DOS Zone Studio</a>.</p>
-					<h4>Other emulator-based games</h4>
-					<p>Other emulator-based games, such as N64, NES, SNES, are not yet supported to be added here. However you can still
-						play them with the game emulator under the 'apps' page.</p>
-				</div>
-				<div id="upload-message"></div>
-				<button id="upload" type="button" class="pri-button">Upload</button>
-			</div>
-			<div id="accountinfo-page">
-				<h2>My Account</h2>
-				<div id="login-dialog"></div>
-				<div id="account-settings" class="text-body">
-					<h3>Public Profile</h3>
-					<div id="ac-prof">
-						<button id="ch-avatar" type="button" title="Change avatar">
-							<img width="48" height="48" loading="eager" decoding="sync" draggable="false" alt="Avatar" />
-						</button>
-						<div>
-							<div id="ac-un" class="user"></div>
-							<button id="ac-edit" type="button" title="Change username"></button>
-							<button id="ac-link" type="button" title="Get link"></button>
-						</div>
-					</div>
-					<hr />
-					<h3>My Games</h3>
-					<div id="ac-games"></div>
-					<hr />
-					<h3>Membership</h3>
-					<hr />
-					<h3>Account Information</h3>
-					<div>
-						<span>UID:</span>
-						<span id="ac-uid"></span>
-					</div>
-					<div>
-						<span>Name:</span>
-						<span id="ac-name"></span>
-						<button id="ac-name-edit" type="button" title="Change name"></button>
-					</div>
-					<div>
-						<span>Email:</span>
-						<span id="ac-email"></span>
-						<button id="ac-email-edit" type="button" title="Change email"></button>
-					</div>
-					<div>
-						<span>Membership:</span>
-						<span id="ac-membership"></span>
-					</div>
-					<hr />
-					<h3>Security</h3>
-					<button id="cp" type="button" class="pri-button">Change Password</button>
-					<hr />
-					<h3>Functions</h3>
-					<button id="ug" type="button" class="pri-button">Upload Game</button>
-					<hr />
-					<h3>Destructive Zone</h3>
-					<button id="so" type="button" class="pri-button">Sign Out</button>
-					<button id="da" type="button" class="pri-button" disabled="">Delete Account</button>
-				</div>
-			</div>
-			<div id="game-page">
-				<div id="game">
-					<div id="player"></div>
-					<div id="controller">
-						<button id="hide" type="button" title="Hide controller"></button>
-						<button id="lock" type="button" title="Enable scroll lock"></button>
-						<button id="newtab" type="button" title="Open in new tab"></button>
-						<button id="fullscreen" type="button" title="Enter fullscreen"></button>
-					</div>
-				</div>
-				<div class="text-body">
-					<h3 id="name"></h3>
-					<div>
-						<span>Type:</span>
-						<span id="type"></span>
-					</div>
-					<div>
-						<span>Tags:</span>
-						<span id="tags"></span>
-					</div>
-					<div>
-						<span>Date Added:</span>
-						<span id="date"></span>
-					</div>
-					<div>Uploaded by:</div>
-					<div id="user"></div>
-					<hr />
-					<h4>About this game</h4>
-					<p id="desc"></p>
-					<button id="edit" type="button" class="pri-button">Edit Game Info</button>
-					<div id="editor">
-						<h4>Edit Game Info</h4>
-						<div>
-							<label for="e-name">Name:</label>
-							<input id="e-name" type="text" required="" minlength="1" maxlength="256" placeholder="Example" autocomplete="off" />
-						</div>
-						<div>
-							<label for="e-tags">Tags:</label>
-							<input id="e-tags" type="text" required="" minlength="1" maxlength="300" placeholder="action,arcade,classic" autocomplete="off" />
-						</div>
-						<div>
-							<label for="e-desc">Description:</label>
-							<textarea id="e-desc" cols="100" rows="20" wrap="hard" maxlength="5000" placeholder="Something about this game..." autocomplete="off"></textarea>
-						</div>
-						<button id="e-canc" type="button" class="pri-button">Cancel</button>
-						<button id="e-subm" type="button" class="pri-button">Submit</button>
-					</div>
-					<hr />
-					<h4>Add to your website</h4>
-					<div>Direct Link:</div>
-					<div id="dlink"></div>
-					<div>Embed Code:</div>
-					<div id="ecode"></div>
-					<hr />
-					<h4>Games to play next</h4>
-					<div id="s-games"></div>
-				</div>
-			</div>
-			<div id="profile-page">
-				<div>
-					<img id="avatar" width="48" height="48" loading="eager" decoding="sync" draggable="false" alt="Avatar" />
-					<div id="userid" class="user"></div>
-					<span>
-						<button id="dm" type="button" class="pri-button">Message</button>
-						<button id="af" type="button" class="pri-button">Add Friend</button>
-					</span>
-				</div>
-				<h3>Games</h3>
-				<span id="pf-games"></span>
-			</div>
-			<div id="settings-page">
-				<h2>Settings</h2>
-				<div>
-					<label for="backend-url">Backend URL:</label>
-					<input id="backend-url" type="text" spellcheck="false" placeholder=" (Default) " autocomplete="off" />
-				</div>
-				<div>
-					<label for="theme">Theme:</label>
-					<select id="theme">
-						<option value="default">Default</option>
-						<option value="light">Light</option>
-						<option value="dark">Dark</option>
-					</select>
-				</div>
-				<div>
-					<label for="tab-cloaking">Tab Cloaking:</label>
-					<select id="tab-cloaking">
-						<option value="disabled">Disabled</option>
-						<option value="empty">Empty</option>
-						<option value="google">Google</option>
-						<option value="classroom">Classroom</option>
-					</select>
-				</div>
-				<div>
-					<label for="stealth-mode">Stealth Mode:</label>
-					<select id="stealth-mode">
-						<option value="disabled">Disabled</option>
-						<option value="blank">Blank</option>
-						<option value="google">Google</option>
-					</select>
-				</div>
-				<div>Note: Stealth mode will hide this page's content once it lost focus. Clicking anywhere within the page will restore the hidden content.
-					For better content hiding, combine stealth mode with tab cloaking.</div>
+
+				<h2>Games</h2>
+				<h3>Popular Games</h3>
+				<ul>
+					<li><a href="https://nettleweb.com/lolbxgrt">2048</a></li>
+					<li><a href="https://nettleweb.com/lhf6jyzb">Slope</a></li>
+					<li><a href="https://nettleweb.com/ljspbuqz">Tetris</a></li>
+					<li><a href="https://nettleweb.com/lm5wdxm0">Tunnel Rush</a></li>
+					<li><a href="https://nettleweb.com/lmknavnm">Google Snake</a></li>
+					<li><a href="https://nettleweb.com/lt9q9tac">Happy Wheels</a></li>
+					<li><a href="https://nettleweb.com/llilsihd">Cookie Clicker</a></li>
+					<li><a href="https://nettleweb.com/lmn8r4jk">Plants vs Zombies</a></li>
+				</ul>
+				<h3>Newly Added Games</h3>
+				<ul>
+					<li><a href="https://nettleweb.com/m0y5v3sj">EaglercraftX 1.8</a></li>
+				</ul>
+
+				<h2>Mirror Links</h2>
+				<p>In case that this website is blocked, using a mirror link listed below could help. Most blockers use a URL blacklist to restrict listed websites. Switching to a new address could bypass the restriction in this case as the new address is not yet known. However frequently using the same address could cause it being noticed by administrators, resulting it being added to the blacklist and revoke access to it.</p>
+				<ul>
+					<li><a href="https://nettleweb.com/">https://nettleweb.com/</a></li>
+					<li><a href="https://nettleweb.github.io/">https://nettleweb.github.io/</a></li>
+					<li><a href="https://nettleweb.vercel.app/">https://nettleweb.vercel.app/</a></li>
+					<li><a href="https://nettleweb.netlify.app/">https://nettleweb.netlify.app/</a></li>
+				</ul>
+
 			</div>
 			<span id="left-side-widget">
-				<!-- <ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="7455551633" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+				<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="7455551633" data-ad-format="auto" data-full-width-responsive="true"></ins>
 			</span>
 			<span id="right-side-widget">
-				<!-- <ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="3528749066" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+				<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="3528749066" data-ad-format="auto" data-full-width-responsive="true"></ins>
 			</span>
 			<span id="bottom-widget">
 				<ins class="adsbygoogle" data-ad-client="ca-pub-7505521340110301" data-ad-slot="5345722600" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -619,6 +138,6 @@ $$ | \$$ |\$$$$$$$\  \$$$$  |\$$$$  |$$ |\$$$$$$$\ $$  /   \$$ |\$$$$$$$\ $$$$$$
 			<button id="frame-close" type="button" title="Close"></button>
 			<button id="frame-newtab" type="button" title="Open in new tab"></button>
 		</div>
-		<script type="text/javascript" src="main.js"></script>
+		<script type="text/javascript" src="main.js" blocking="render"></script>
 	</body>
 </html>
