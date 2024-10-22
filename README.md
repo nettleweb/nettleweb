@@ -1,6 +1,6 @@
 <div align="center"><a href="https://nettleweb.com/" target="_blank" rel="noopener nofollow"><img src="https://nettleweb.com/res/logo.svg" width="768" height="256" draggable="false" alt="NettleWeb Logo" /></a></div>
 
-# NettleWeb
+# NettleWeb.
 [![Discord Shield](https://img.shields.io/discord/998658232207814667?style=for-the-badge&logo=Discord&logoColor=%23ffffff&label=Discord&labelColor=%23303030&color=%23004080
 )](https://discord.gg/djdH3kVd4v) [![Version](https://img.shields.io/github/manifest-json/v/nettleweb/nettleweb?style=for-the-badge&label=Version&labelColor=%23303030)](https://nettleweb.com/) [![Last Update](https://img.shields.io/github/last-commit/nettleweb/nettleweb?style=for-the-badge&label=Last%20Update&labelColor=%23303030&color=%23004080)](https://nettleweb.com/)
 
