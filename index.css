@@ -459,7 +459,7 @@ div.user[vip="diamond"]::after {
 	right: 0px;
 	bottom: 0px;
 	color: #808080;
-	content: "More than just games!";
+	content: "Your ultimate internet hub!";
 	font-size: 18px;
 	font-style: italic;
 	font-weight: 600;
@@ -538,6 +538,100 @@ div.user[vip="diamond"]::after {
 	font-size: 18px;
 	text-align: center;
 	line-height: 36px;
+	letter-spacing: 0px;
+}
+
+#discover {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 40px 0px;
+}
+
+#discover>h3, #services-page>h3 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+	font-size: 18px;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#discover>hr, #services-page>hr {
+	margin: 20px 0px;
+	border-bottom: 1px solid #c0c0c0;
+}
+
+#headlines, #yt-results {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 20px 0px;
+}
+
+#headlines>div, #yt-results>div {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	margin: 10px 0px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+#headlines>div>img, #yt-results>div>img {
+	position: relative;
+	display: inline-block;
+	width: 160px;
+	height: 90px;
+	margin: 0px 10px 0px 0px;
+	object-fit: cover;
+	vertical-align: top;
+}
+
+#headlines>div>div, #yt-results>div>div {
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 170px);
+	height: fit-content;
+	vertical-align: top;
+}
+
+#headlines>div>div>.title, #yt-results>div>div>.title {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 0px 0px 10px;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#headlines>div>div>.desc, #yt-results>div>div>.desc {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 10px 0px 5px;
+	color: #606060;
+	line-height: 16px;
+	letter-spacing: 0px;
+}
+
+#headlines>div>div>.time, #yt-results>div>div>.time {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 5px 0px;
+	color: #808080;
+	font-size: 12px;
+	line-height: 14px;
 	letter-spacing: 0px;
 }
 
@@ -731,22 +825,6 @@ div.user[vip="diamond"]::after {
 	line-height: 18px;
 }
 
-#services-page>h3 {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 15px 0px;
-	font-size: 18px;
-	line-height: 24px;
-	letter-spacing: 0px;
-}
-
-#services-page>hr {
-	margin: 20px 0px;
-	border-bottom: 1px solid #c0c0c0;
-}
-
 #services-page>div>h3 {
 	position: relative;
 	display: block;
@@ -840,11 +918,11 @@ div.user[vip="diamond"]::after {
 	border-radius: 25px;
 }
 
-#ub-shortcuts>div:hover, #yt-results>div:hover {
+#ub-shortcuts>div:hover, #headlines>div:hover, #yt-results>div:hover {
 	background: #f8f8f8;
 }
 
-#ub-shortcuts>div:active, #yt-results>div:active {
+#ub-shortcuts>div:active, #headlines>div:active, #yt-results>div:active {
 	background: #f0f0f0;
 }
 
@@ -866,75 +944,6 @@ div.user[vip="diamond"]::after {
 	left: 10px;
 	font-size: 12px;
 	text-align: center;
-	line-height: 14px;
-	letter-spacing: 0px;
-}
-
-#yt-results {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 20px 0px;
-}
-
-#yt-results>div {
-	position: relative;
-	display: block;
-	width: calc(100% - 20px);
-	height: fit-content;
-	margin: 10px 0px;
-	padding: 10px;
-	cursor: pointer;
-}
-
-#yt-results>div>img {
-	position: relative;
-	display: inline-block;
-	width: 160px;
-	height: 90px;
-	margin: 0px 10px 0px 0px;
-	vertical-align: top;
-}
-
-#yt-results>div>div {
-	position: relative;
-	display: inline-block;
-	width: calc(100% - 170px);
-	height: fit-content;
-	vertical-align: top;
-}
-
-#yt-results>div>div>.title {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 0px 0px 10px;
-	font-weight: 600;
-	line-height: 18px;
-	letter-spacing: 0px;
-}
-
-#yt-results>div>div>.desc {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 10px 0px 5px;
-	color: #606060;
-	line-height: 16px;
-	letter-spacing: 0px;
-}
-
-#yt-results>div>div>.time {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 5px 0px;
-	color: #808080;
-	font-size: 12px;
 	line-height: 14px;
 	letter-spacing: 0px;
 }

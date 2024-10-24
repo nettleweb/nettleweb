@@ -1,23 +1,19 @@
-"use strict";
-
-(() => {
-	const { opener, location } = window;
-	const { hash, search } = location;
+"use strict"; ((win) => {
+	const loc = win.location;
+	const url = new URL(loc.href);
+	const hash = url.hash;
 
 	if (hash.length > 0) {
-		if (opener != null) {
-			opener.postMessage(hash);
-			opener.focus();
-			window.close();
-		} else {
-			localStorage.setItem("_cre_", hash);
-			location.replace("/");
-		}
+		const token = new URLSearchParams(hash).get("access_token");
+		if (token != null && token.length > 0) {
+			win.localStorage.setItem("_cre_", token);
+			loc.replace("/");
+		} else console.error("Error: Access token not specified");
 	} else {
-		const url = new URLSearchParams(search).get("url");
-		if (url != null && url.length > 0)
-			location.replace(url);
+		const purl = url.searchParams.get("url");
+		if (purl != null && purl.length > 0)
+			loc.replace(purl);
 		else
-			location.replace("/");
+			loc.replace("/");
 	}
-})();
+})(window);
