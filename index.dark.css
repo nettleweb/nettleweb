@@ -11,7 +11,7 @@ option, optgroup, #navigation-bar {
 	background-image: url("res/logo-w.svg");
 }
 
-#game-category, #game-navigator {
+#game-category, #game-navigator, #item-navigator {
 	border-color: #606060;
 	background: #404040;
 }
@@ -28,7 +28,7 @@ option, optgroup, #navigation-bar {
 	background: #ffffff;
 }
 
-#game-search>button, #yt-search>button {
+#game-search>button, #item-search>button, #yt-search>button, #search>button {
 	background-image: url("res/search-w.svg");
 }
 
@@ -37,11 +37,11 @@ option, optgroup, #navigation-bar {
 	background-color: #404040;
 }
 
-#yt-results>div>div>.desc {
+#yt-results>div>div>.desc, #headlines>div>div>.desc {
 	color: #c0c0c0;
 }
 
-#yt-results>div>div>.time {
+#yt-results>div>div>.time,#headlines>div>div>.time {
 	color: #a0a0a0;
 }
 
@@ -93,11 +93,11 @@ option, optgroup, #navigation-bar {
 	background-image: url("res/add-file-w.svg");
 }
 
-#yt-load-more:hover, #yt-results>div:hover, #ub-shortcuts>div:hover {
+#yt-load-more:hover, #menu>div:hover, #headlines>div:hover, #ub-shortcuts>div:hover, #yt-results>div:hover {
 	background: #404040;
 }
 
-#yt-load-more:active, #yt-results>div:active, #ub-shortcuts>div:active {
+#yt-load-more:active, #menu>div:active, #headlines>div:active, #ub-shortcuts>div:active, #yt-results>div:active {
 	background: #606060;
 }
 

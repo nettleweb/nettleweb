@@ -511,11 +511,11 @@ div.user[vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#menu>div:hover {
+#menu>div:hover, #headlines>div:hover, #ub-shortcuts>div:hover, #yt-results>div:hover {
 	background: #f8f8f8;
 }
 
-#menu>div:active {
+#menu>div:active, #headlines>div:active, #ub-shortcuts>div:active, #yt-results>div:active {
 	background: #f0f0f0;
 }
 
@@ -916,14 +916,6 @@ div.user[vip="diamond"]::after {
 	margin: 0px 10px 10px 0px;
 	cursor: pointer;
 	border-radius: 25px;
-}
-
-#ub-shortcuts>div:hover, #headlines>div:hover, #yt-results>div:hover {
-	background: #f8f8f8;
-}
-
-#ub-shortcuts>div:active, #headlines>div:active, #yt-results>div:active {
-	background: #f0f0f0;
 }
 
 #ub-shortcuts>div>img {
@@ -2225,7 +2217,7 @@ div.user[vip="diamond"]::after {
 }
 
 @media all and (max-width: 450px) {
-	#search, #game-search {
+	#search, #game-search, #item-search {
 		width: calc(100% - 20px);
 		margin: 20px 10px;
 	}
