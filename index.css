@@ -565,6 +565,22 @@ div.user[vip="diamond"]::after {
 	border-bottom: 1px solid #c0c0c0;
 }
 
+#weather {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100px;
+	margin: 15px 0px;
+}
+
+#weather>embed, #calc-container>embed, #webemu-container>embed, #console-container>embed {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
 #headlines, #yt-results {
 	position: relative;
 	display: block;
@@ -629,7 +645,7 @@ div.user[vip="diamond"]::after {
 	width: 100%;
 	height: fit-content;
 	margin: 5px 0px;
-	color: #808080;
+	color: #707070;
 	font-size: 12px;
 	line-height: 14px;
 	letter-spacing: 0px;
@@ -970,13 +986,6 @@ div.user[vip="diamond"]::after {
 	width: fit-content;
 	height: fit-content;
 	margin: 20px 0px 10px;
-}
-
-#calc-container>embed, #webemu-container>embed, #console-container>embed {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 100%;
 }
 
 #webemu-container {
@@ -2179,11 +2188,9 @@ div.user[vip="diamond"]::after {
 	margin: 0px 8px 0px 0px;
 }
 
-@media all and (max-width: 600px) {
-	#banner {
-		width: 100%;
-		height: unset;
-		aspect-ratio: 3/1;
+@media all and (max-width: 379px)  {
+	#weather {
+		height: 430px;
 	}
 }
 
@@ -2198,6 +2205,14 @@ div.user[vip="diamond"]::after {
 	#yt-search {
 		width: calc(100% - 20px);
 		margin: 20px 10px;
+	}
+}
+
+@media all and (max-width: 600px) {
+	#banner {
+		width: 100%;
+		height: unset;
+		aspect-ratio: 3/1;
 	}
 }
 
@@ -2271,6 +2286,12 @@ div.user[vip="diamond"]::after {
 	#side-menu:checked ~ #hamb>span::after {
 		top: 0px;
 		transform: rotate(45deg);
+	}
+}
+
+@media (min-width: 380px) and (max-width: 820px)  {
+	#weather {
+		height: 180px;
 	}
 }
 

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="browser.css">
+    <script src="config.js"></script>
+    <!-- <script>
+      // Old variables
+      var globhomepg = 'https://google.com';
+    </script> -->
+    <script src="popup.js"></script>
+    <script src="tabs.js"></script>
+    <script src="browser.js"></script>
+    <script src="browser_main.js"></script>
+    <!-- <script src="readme.js"></script> -->
+  </head>
+  <body>
+    <!-- Image elements -->
+    <div id="images" style="display:none;">
+      <img id="d-dino.png" src="images/d-dino.png">
+      <img id="d-cactus.png" src="images/d-cactus.png">
+      <img id="d-wall.png" src="images/d-wall.png">
+      <img id="d-spike.png" src="images/d-spike.png">
+    </div>
+    <!-- Controls -->
+    <div id="controls">
+
+      <div id="tab-controls" style="image-rendering:pixelated; background-color:#505a64; height:35px; display:block;">
+        <ul id="tab-container" style="margin-top: 8px;">
+          <li id="new-tab"><a href="#new-tab">&#5161;</a></li>
+        </ul>
+        <img src="images/icon.png" style="float:right; image-rendering:auto;" width="20px" height="20px">
+        <!-- When non-default bg, add: background-color:rgb(0,0,0,0.7);-->
+        <span id="br-name" style="float:right; font-size: 12px; text-align:right;">
+          VOLTAIRE BROWSER
+          <br> e
+        </span>
+      </div>
+
+      <!-- <div id="website-controls">
+        <ul id="website-container">
+        </ul>
+      </div> -->
+
+      <div id="browser-controls" style="margin-top:0px; display:flex;">
+        <button id="bkm" title="Bookmarks" style="margin-left:0px;"><img src="images/ic-bkm.png" class="ico" width="20px;" height="20px;"></button>
+        <span>| </span>
+        <button id="back" title="Back" style="margin-left:0px;"><img src="images/ic-back.png" class="ico" width="20px;" height="20px;"></button> <!-- &#9664; -->
+        <button id="forward" title="Forward"><img src="images/ic-forward.png" class="ico" width="20px;" height="20px;"></button> <!-- &#9654; -->
+        <span>| </span>
+        <button id="home" title="Search" style="margin-left:0px;"><img src="images/ic-search.png" class="ico" width="20px;" height="20px;"></button> <!-- &#8962, &#x1F50E; --> <!-- Search -->
+        <button id="yt" title="YouTube"><img src="images/ic-yt.png" class="ico" width="20px;" height="20px;"></button> <!-- YT -->
+        <button id="discord" title="Discord (Unblocked)"><img src="images/ic-discord.png" class="ico" width="20px;" height="20px;"></button> <!-- Disc. -->
+        <button id="remote" title="Chrome Remote Desktop"><img src="images/ic-remote.png" class="ico" width="20px;" height="20px;"></button> <!-- Remote desktop -->
+        <!-- <button id="croxy" title="CroxyProxy (For advanced unblocking)"><img src="images/ic-croxy.png" class="ico" width="20px;" height="20px;"></button> --> <!-- CroxyProxy -->
+        <!--<button id="reload" title="Click to Reload">&#21325;</button>-->
+        <span>| </span>
+        <button id="reload" title="Reload" style="margin-left:0px;" class="waves-effect waves-light btn"><img src="images/ic-reload.png" class="ico" width="20px;" height="20px;"></button> <!-- &#10227; -->
+        <!--
+        &#8962 = home
+        &#x1F50E = search
+
+        <button id="reload" title="Reload">&#10227;</button>-->
+        <!-- <button id="terminate" title="Simulate Crash">&#9760;</button> -->
+
+        <form id="location-form" autocomplete="off">
+          <div id="center-column">
+            <input id="location" type="text" value="" placeholder="https://... or Google search">
+          </div>
+          <button id="gobutton" type="submit" title="Go" style="margin-left:0px; margin-right:0px;"><img src="images/ic-forward.png" class="ico" width="20px;" height="20px;"></button>
+        </form>
+      </div>
+
+    </div>
+
+    <div id="content-container" style="z-index:0;">
+      <!-- <span>Content goes here</span> -->
+    </div>
+
+    <!-- Status var -->
+    <div style="position:absolute; right:51px; bottom:0px; z-index:5;">
+      <span id="status">Status: normal</span>
+    </div>
+    <!-- Inspect page -->
+    <div style="position:absolute; width:52px; right:0px; bottom:0px; z-index:5;">
+      <button id="inspect" title="Inspect Page" style="margin-left:5px; display:inline;"><img src="images/ic-search.png" class="ico" width="20px;" height="20px;"></button> <!-- Inspect -->
+      <button id="menu" title="Menu" style="margin-left:-2px; display:inline;"><img src="images/ic-menu.png" class="ico" width="20px;" height="20px;"></button> <!-- Zoom/pan menu -->
+    </div>
+
+    <!-- Inspect box -->
+    <div id="inspectbox" style="display:none; background-color: #1e252c; padding:6px; position:absolute; width:300px; right:0px; bottom:30px; z-index:5">
+      <span style="font-size:16px;">Find on page</span>
+      <button id="inspectclose" style="float:right; font-weight:bold; color:#00b7ff">&#10005;</button>
+      <hr>
+      <!-- Options -->
+      <input type="text" id="inspect-input" placeholder="Find on page...">
+      <span id="inspect-results">Results: 0</span>
+      <br><br>
+      <span id="inspect-results">*This feature is unfinished and still has bugs.</span>
+      <br>
+      <!-- <span id="inspect-html" style="font-size:11px; font-family:Courier">HTML content goes here<br>(Inspect Page is unfinished; check my site for more info)</span> -->
+    </div>
+
+    <!-- Bookmarks box -->
+    <div id="bkmbox" style="display:none; background-color: #1e252c; padding:6px; position:absolute; width:500px; left:0px; top:70px; z-index:5">
+      <span style="font-size:16px;">Bookmarks</span>
+      <button id="bkmclose" style="float:right; font-weight:bold; color:#00b7ff">&#10005;</button>
+      <hr>
+      <!-- Bookmarks list -->
+      <div id="bkmlistbox">
+        <!-- <span>&nbsp;<button>X</button>&nbsp;&nbsp;&nbsp;<a onclick="document.getElementById('location').value = 'https://google.com'; document.getElementById('gobutton').click();">https://google.com</a></span> -->
+        <!-- <span>&nbsp;<button>X</button>&nbsp;&nbsp;&nbsp;<a onclick="document.getElementById('location').value = 'https://google.com'; document.getElementById('gobutton').click();">https://google.com</a></span> -->
+      </div>
+      <br>
+      <span><a id="addbkm">Add bookmark to this page</a></span>
+    </div>
+
+    <!-- Settings box -->
+    <div id="settingsbox" style="display:none; background-color: #1e252c; padding:6px; position:absolute; width:300px; right:0px; top:70px; z-index:5">
+      <span style="font-size:16px;">Settings and Info</span>
+      <button id="settingsclose" style="float:right; font-weight:bold; color:#00b7ff">&#10005;</button>
+      <hr>
+      <!-- Settings -->
+      <span>Default homepage:</span>
+      <br>
+      <input type="text" id="def-homepg" value="https://google.com/" placeholder="https://...">
+      <br>
+      <span>Background theme:</span>
+      <br>
+      <select id="bgSelect">
+        <!-- <option value="">Default Dark</option>
+        <option value="">Default Blue</option> -->
+      </select>
+      <br>
+      <span>__</span> <!-- More options coming soon -->
+      <br>
+      <span><a id="resetdata">Reset all data</a></span>
+      <br>
+      <span style="color:red" id="errtxt"></span>
+      <hr>
+      <!-- Info -->
+      <span style="font-size:16px;">Info</span>
+      <br>
+      <span>
+        Voltaire Browser: a fully functional unblocked browser app for Chromebooks by Cadecraft.
+        <br><br><a id="lk-yt">YouTube channel</a>
+        <br><a id="lk-site">My website</a>
+        <br><a id="lk-git-repo">GitHub Repository</a>
+        <br><br>Check the Chrome Extensions page on my website for the latest version and future updates of Voltaire Browser.
+        Feel free to join the Discord server (<a id="lk-discord">https://discord.gg/wahdQHBs4Z</a>)<!-- or fill out the <a id="lk-form">Optional usage form</a> --> to give me feedback or suggestions.
+      </span>
+    </div>
+
+    <!-- Reset data prompt -->
+    <div id="resetdataprompt" style="display:none; background-color: #1e252c; padding:6px; position:absolute; width:200px; right:320px; top:170px; z-index:5">
+      <span>Are you sure? All bookmarks and preferences will be cleared! (restart to take effect)
+        <br>
+        <a id="lk-reset-cancel">Cancel</a>
+        <br><br>
+        <a id="lk-reset-clear" class="reda">Reset all data</a>
+      </span>
+    </div>
+
+    <!-- Menu box -->
+    <div id="menubox" style="display:none; background-color: #1e252c; padding:6px; position:absolute; width:220px; right:0px; bottom:30px; z-index:5">
+      <span style="font-size:16px;">View</span>
+      <!-- View -->
+      <button id="menuclose" style="float:right; font-weight:bold; color:#00b7ff">&#10005;</button>
+      <hr>
+      <span>
+        <a id="zoomin">Zoom in</a> | <a id="zoomout">Zoom out</a>
+        <br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="p-u">&#8593;</a>
+        <br><a id="p-l">&#8592;</a>&nbsp;&nbsp;&nbsp;&nbsp;<a id="p-r">&#8594;</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="p-res">Reset</a>
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a id="p-d">&#8595;</a>
+        <br>
+        <a id="fullscreens">Fullscreen</a>
+      </span>
+      <br>
+      <hr>
+      <!-- Dino game -->
+      <span style="font-size:12px;">Dinosaur Game</span>
+      <br>
+      <canvas id="dinocanvas" style="display:inline; width:200px; height:auto; margin-left:10px; image-rendering:pixelated;">
+      </canvas>
+    </div>
+
+    <!-- Discord alert -->
+    <div id="discalbox" style="display:none; background-color: #1e252c; padding:6px; position:absolute; width:300px; right:0px; bottom:30px; z-index:5">
+      <span style="font-size:16px;">Have an error/still blocked?</span>
+      <button id="discalclose" style="float:right; font-weight:bold; color:#00b7ff">&#10005;</button>
+      <hr>
+      <!-- Details -->
+      <span>
+        If not, then disregard this message.
+        If so, consider using a proxy service such as <a id="lk-croxy">https://croxyproxy.com/</a>,
+        enter <span style="color:#00b7ff;" id="discurl">discord.com/login</span>,
+        and then click "<span style="color:#00b7ff;">Permalink</span>" at the top. It should have copied to clipboard, <span style="color:#00b7ff;">Paste</span> the link here:
+        <br>
+        <input type="text" id="discpermbox" placeholder="Paste permalink here">
+        <br><br>It should fix the error for 3 hours (if the error remains, simply use the above method to access Discord).
+        <hr>
+        <br>Wondering why? I use CroxyProxy permalinks to unblock Discord, which die in 3 hours.<!-- <a id="lk-secretprompt">Click here for a secret.</a> -->
+      </span>
+    </div>
+
+    <!-- Secret prompt -->
+    <div id="secretprompt" style="display:none; background-color: #1e252c; padding:6px; position:absolute; width:200px; right:370px; bottom:30px; z-index:5">
+      <span><span id="secret-msg">I have a useful secret~ Promise you won't tell anyone? (doing so may compromise the discord unblocking system)</span>
+        <br>
+        <a id="lk-secret-cancel">Cancel</a>
+        <br><br>
+        <a id="lk-secret-show">Promise! (Show secret)</a>
+      </span>
+    </div>
+
+    <!-- Help menu -->
+    <div id="helpbox" style="display:none; background-color: #1e252c; padding:6px; position:absolute; width:500px; height:400px; right:0px; top:70px; z-index:4">
+      <span style="font-size:16px;">Help</span>
+      <button id="helpclose" style="float:right; font-weight:bold; color:#00b7ff">&#10005;</button>
+      <hr>
+      <!-- Image -->
+      <img src="images/help_v2.png" width="100%">
+      <span>
+        More questions? Join the Discord server (<a id="lk-discord2">https://discord.gg/wahdQHBs4Z</a>)
+      </span>
+    </div>
+
+  </body>
+</html>

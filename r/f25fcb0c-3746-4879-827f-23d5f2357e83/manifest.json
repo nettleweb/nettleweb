@@ -1,0 +1,32 @@
+{
+	"app": {
+		"background": {
+			"scripts": ["main.js"]
+		}
+	},
+	"manifest_version": 3,
+	"name": "Voltaire Browser",
+	"version": "0.0.9.8",
+
+	"description": "A fully functional unblocked browser app for Chromebooks by Cadecraft. Features: bookmarks, fast google search, quick links, tab management, and efficient loading.",
+	"icons": {
+		"16": "images/icon.png",
+		"32": "images/icon.png",
+		"48": "images/icon.png",
+		"128":"images/icon.png"
+		},
+	
+	"permissions": [
+		"contextMenus",
+		"storage",
+		"notifications",
+		"system.network",
+		"clipboardRead",
+		"clipboardWrite",
+		"desktopCapture",
+		"webview",
+		"fullscreen",
+		"audioCapture",
+		"fileSystem"
+	]
+}
