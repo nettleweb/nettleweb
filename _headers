@@ -4,7 +4,6 @@
 	Permissions-Policy: camera=(), gyroscope=(), microphone=(), geolocation=(), local-fonts=(), magnetometer=(), accelerometer=(), idle-detection=(), storage-access=(), browsing-topics=(), display-capture=(), encrypted-media=(), compute-pressure=(), window-management=(), xr-spatial-tracking=(), attribution-reporting=()
 	X-Content-Type-Options: nosniff
 	Cross-Origin-Opener-Policy: same-origin
-	Cross-Origin-Resource-Policy: same-origin
 	Cross-Origin-Embedder-Policy: credentialless
 
 /ext/webemu/
@@ -15,4 +14,3 @@
 
 /res/pay.json
 	Link: </res/pay.json>; rel="payment-method-manifest"
-	Cross-Origin-Resource-Policy: cross-origin

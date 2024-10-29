@@ -1736,7 +1736,6 @@ div.user[vip="diamond"]::after {
 	width: 100%;
 	height: fit-content;
 	margin: 20px 0px;
-	overflow: auto;
 }
 
 #ac-orders>table, #s-orders>table {
@@ -1940,7 +1939,7 @@ div.user[vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#settings-page>div>input[type="text"], #settings-page>div>select, #uploadgames-page>div>input[type="text"], #uploadgames-page>div>select, #gamemu-options>div>select, #editor>div>input[type="text"], #a-product>div>input[type="text"], #a-product>div>input[type="number"] {
+#settings-page>div>input[type="text"], #settings-page>div>select, #uploadgames-page>div>input[type="text"], #uploadgames-page>div>select, #gamemu-options>div>select, #editor>div>input[type="text"], #a-product>div>input[type="text"], #a-product>div>input[type="number"], #payi>select {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -1954,7 +1953,7 @@ div.user[vip="diamond"]::after {
 	vertical-align: middle;
 }
 
-#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #uploadgames-page>div>textarea:focus, #gamemu-options>div>select:focus, #editor>div>input[type="text"]:focus, #editor>div>textarea:focus, #a-product>div>input[type="text"]:focus, #a-product>div>input[type="number"]:focus, #a-product>div>textarea:focus, #payi>textarea:focus {
+#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #uploadgames-page>div>textarea:focus, #gamemu-options>div>select:focus, #editor>div>input[type="text"]:focus, #editor>div>textarea:focus, #a-product>div>input[type="text"]:focus, #a-product>div>input[type="number"]:focus, #a-product>div>textarea:focus, #payi>select:focus, #payi>textarea:focus {
 	border-color: #808080;
 }
 
@@ -2304,10 +2303,12 @@ div.user[vip="diamond"]::after {
 	position: relative;
 	display: flex;
 	width: 100%;
-	height: 300px;
-	gap: 15px;
+	height: 320px;
+	gap: 10px;
 	flex-wrap: nowrap;
-	flex-direction: column;
+	flex-direction: row;
+	overflow-x: auto;
+	overflow-y: hidden;
 }
 
 #previews>img {
