@@ -32,7 +32,7 @@ option, optgroup, #navigation-bar {
 	background-image: url("res/search-w.svg");
 }
 
-#game-container>a, #item-container>div {
+.game, .item {
 	border-color: #606060;
 	background-color: #404040;
 }
