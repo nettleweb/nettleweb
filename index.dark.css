@@ -11,16 +11,16 @@ option, optgroup, #navigation-bar {
 	background-image: url("res/logo-w.svg");
 }
 
-#game-category, #game-navigator, #item-navigator {
+#game-category, #game-navigator, #item-category, #item-navigator {
 	border-color: #606060;
 	background: #404040;
 }
 
-#version, #nav-bar>button, #game-category>button {
+#version, #nav-bar>button, #game-category>button, #item-category>button {
 	color: #d0d0d0;
 }
 
-#nav-bar>button[data-current], #game-category>button[data-current], #chatmode>button {
+#nav-bar>button[data-current], #game-category>button[data-current], #item-category>button[data-current], #chatmode>button {
 	color: #ffffff;
 }
 
@@ -32,7 +32,7 @@ option, optgroup, #navigation-bar {
 	background-image: url("res/search-w.svg");
 }
 
-#game-container>a {
+.game, .item {
 	border-color: #606060;
 	background-color: #404040;
 }

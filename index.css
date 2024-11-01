@@ -549,7 +549,7 @@ div.user[vip="diamond"]::after {
 	margin: 40px 0px;
 }
 
-#discover>h3, #services-page>h3 {
+#discover>h3, #services-page>h3, #store-manager-page-1>h3, #store-manager-page-2>h3 {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -560,7 +560,7 @@ div.user[vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#discover>hr, #services-page>hr {
+#discover>hr, #services-page>hr, #store-manager-page-1>hr, #store-manager-page-2>hr {
 	margin: 20px 0px;
 	border-bottom: 1px solid #c0c0c0;
 }
@@ -821,7 +821,7 @@ div.user[vip="diamond"]::after {
 	border-bottom: 1px solid #303030;
 }
 
-#game-disclaimer, #item-disclaimer {
+#game-disclaimer, #item-disclaimer, #idisc {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -1560,7 +1560,7 @@ div.user[vip="diamond"]::after {
 	display: none;
 }
 
-#account-settings>button {
+#account-settings>button, #purchase-page>button {
 	position: relative;
 	display: block;
 	width: 120px;
@@ -1719,7 +1719,7 @@ div.user[vip="diamond"]::after {
 	background-position: 0px 0px;
 }
 
-#ac-games, #pf-games {
+#ac-games, #pf-games, #s-products, #pf-items {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -1728,6 +1728,28 @@ div.user[vip="diamond"]::after {
 	max-height: 640px;
 	overflow-x: hidden;
 	overflow-y: auto;
+}
+
+#ac-orders, #s-orders {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 20px 0px;
+}
+
+#ac-orders>table, #s-orders>table {
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	border: 2px solid #303030;
+}
+
+#ac-orders>table th, #ac-orders>table td, #s-orders>table th, #s-orders>table td {
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	border: 1px solid #808080;
 }
 
 #ac-name-edit, #ac-email-edit {
@@ -1810,7 +1832,113 @@ div.user[vip="diamond"]::after {
 	line-height: 24px;
 }
 
-#settings-page>div, #uploadgames-page>div, #gamemu-options>div, #editor>div {
+#purchase-page>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 70px;
+	margin: 15px 0px;
+}
+
+#purchase-page>div>img {
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 50px;
+	top: 10px;
+	left: 10px;
+	object-fit: cover;
+	object-position: center;
+}
+
+#purchase-page>div>div {
+	position: absolute;
+	display: block;
+	width: calc(100% - 114px);
+	height: 32px;
+	top: 10px;
+	left: 70px;
+	font-size: 14px;
+	line-height: 16px;
+	letter-spacing: 0px;
+}
+
+#purchase-page>div>span {
+	position: absolute;
+	display: block;
+	width: calc(100% - 114px);
+	height: 18px;
+	top: 42px;
+	left: 70px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#purchase-page>div>button {
+	position: absolute;
+	display: block;
+	width: 24px;
+	height: 24px;
+	top: 18px;
+	right: 10px;
+	border: 2px solid #303030;
+	cursor: pointer;
+	outline: none;
+	background-image: url("res/close.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#purchase-page>span {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#purchase-page>form {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	margin: 15px 0px;
+	padding: 10px;
+}
+
+#purchase-page>form>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+}
+
+#purchase-page>form>fieldset {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+	border: 1px solid #808080;
+}
+
+#purchase-page>form>fieldset>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 5px;
+}
+
+#settings-page>div, #uploadgames-page>div, #gamemu-options>div, #editor>div, #a-product>div, #payi {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -1818,7 +1946,7 @@ div.user[vip="diamond"]::after {
 	margin: 10px 0px;
 }
 
-#settings-page>div>label, #uploadgames-page>div>label, #gamemu-options>div>label, #editor>div>label {
+#settings-page>div>label, #uploadgames-page>div>label, #gamemu-options>div>label, #editor>div>label, #a-product>label, #payi>label {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -1830,7 +1958,7 @@ div.user[vip="diamond"]::after {
 	vertical-align: middle;
 }
 
-#uploadgames-page>div>textarea, #editor>div>textarea {
+#uploadgames-page>div>textarea, #editor>div>textarea, #a-product>div>textarea, #payi>textarea {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -1845,7 +1973,7 @@ div.user[vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#settings-page>div>input[type="text"], #settings-page>div>select, #uploadgames-page>div>input[type="text"], #uploadgames-page>div>select, #gamemu-options>div>select, #editor>div>input[type="text"] {
+#settings-page>div>input[type="text"], #settings-page>div>select, #uploadgames-page>div>input[type="text"], #uploadgames-page>div>select, #gamemu-options>div>select, #editor>div>input[type="text"], #a-product>div>input[type="text"], #a-product>div>input[type="number"], #payi>select {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -1859,7 +1987,7 @@ div.user[vip="diamond"]::after {
 	vertical-align: middle;
 }
 
-#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #uploadgames-page>div>textarea:focus, #gamemu-options>div>select:focus, #editor>div>input[type="text"]:focus, #editor>div>textarea:focus {
+#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #uploadgames-page>div>textarea:focus, #gamemu-options>div>select:focus, #editor>div>input[type="text"]:focus, #editor>div>textarea:focus, #a-product>div>input[type="text"]:focus, #a-product>div>input[type="number"]:focus, #a-product>div>textarea:focus, #payi>select:focus, #payi>textarea:focus {
 	border-color: #808080;
 }
 
@@ -1967,8 +2095,25 @@ div.user[vip="diamond"]::after {
 	background-position: 0px 0px;
 }
 
-#settings:active {
+#settings:active, #checkout:active {
 	box-shadow: -2px -2px #808080;
+}
+
+#checkout {
+	position: absolute;
+	display: none;
+	width: 48px;
+	height: 48px;
+	right: 78px;
+	bottom: 22px;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 2px 2px #808080;
+	border-radius: 25px;
+	background-image: url("res/checkout.svg");
+	background-size: 48px 48px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
 }
 
 #frame-view {
@@ -2109,7 +2254,7 @@ div.user[vip="diamond"]::after {
 	margin: 10px 0px;
 }
 
-#user {
+#user, #seller {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -2117,7 +2262,7 @@ div.user[vip="diamond"]::after {
 	cursor: pointer;
 }
 
-#user>img {
+#user>img, #seller>img {
 	position: relative;
 	display: inline-block;
 	width: 32px;
@@ -2129,7 +2274,7 @@ div.user[vip="diamond"]::after {
 	background: #ffffff;
 }
 
-#user>div {
+#user>div, #seller>div {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -2186,6 +2331,38 @@ div.user[vip="diamond"]::after {
 
 #s-games>.game {
 	margin: 0px 8px 0px 0px;
+}
+
+#previews {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 320px;
+	gap: 10px;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+#previews>img {
+	position: relative;
+	display: block;
+	width: 400px;
+	height: 300px;
+	flex: 300px 0 0;
+	object-fit: cover;
+	object-position: center;
+}
+
+#ibuy, #iadd {
+	position: relative;
+	display: inline-block;
+	width: calc(50% - 45px);
+	height: 20px;
+	margin: 20px 10px;
+	padding: 5px 0px;
+	vertical-align: top;
 }
 
 @media all and (max-width: 379px)  {
