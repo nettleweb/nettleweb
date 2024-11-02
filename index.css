@@ -220,6 +220,17 @@
 	line-height: 40px;
 }
 
+#s-content {
+	position: absolute;
+	display: block;
+	width: calc(100% - 40px);
+	height: calc(100% - 90px);
+	bottom: 0px;
+	padding: 20px 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
 .adsbygoogle {
 	position: absolute;
 	display: block;
@@ -279,6 +290,17 @@
 .text-body>p {
 	font-size: 14px;
 	line-height: 20px;
+}
+
+.text-body>ul {
+	position: relative;
+	display: block;
+	width: calc(100% - 10px);
+	height: fit-content;
+	margin: 15px 0px;
+	padding: 5px;
+	line-height: 20px;
+	letter-spacing: 0px;
 }
 
 .text-body>code {
