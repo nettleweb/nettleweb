@@ -1,0 +1,148 @@
+html, body {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	color: #333;
+	margin: 0;
+	padding: 8px;
+	box-sizing: border-box;
+	font-family: temple-run-small-caps, Arial, Helvetica, sans-serif;
+}
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	-webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+	-o-user-select: none;
+}
+
+a {
+	color: rgb(0,100,200);
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:visited {
+	color: rgb(0,80,160);
+}
+
+label {
+	display: block;
+}
+
+input, button, select, textarea {
+	font-family: inherit;
+	font-size: inherit;
+	padding: 0.4em;
+	margin: 0 0 0.5em 0;
+	box-sizing: border-box;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+input:disabled {
+	color: #ccc;
+}
+
+input[type="range"] {
+	height: 0;
+}
+
+button {
+	color: #333;
+	background-color: #f4f4f4;
+	outline: none;
+}
+
+button:disabled {
+	color: #999;
+}
+
+button:not(:disabled):active {
+	background-color: #ddd;
+}
+
+button:focus {
+	border-color: #666;
+}
+
+/* span {
+	-webkit-text-stroke-width: 1.0px;
+  -webkit-text-stroke-color: black;
+} */
+
+.overlay-container {
+	background-color: transparent;
+	margin: auto;
+	padding:0;
+	left:0;
+	right:0;
+	top:0;
+	bottom: 0;
+	position: absolute;
+	text-align: center;
+	/* max-width: 1024px;
+	max-height: 576px;
+	min-width: 640px;
+	min-height: 360px; */
+}
+
+.button-container {
+	margin: 0 auto;
+	position: absolute;
+	width: 100%;
+	bottom: 2px;
+	display: flex;
+	justify-content: space-between;
+	overflow: unset;
+}
+
+@font-face {
+  font-family: 'temple-run-small-caps';
+  src: url("./fonts/temple-run-small-caps.eot");
+  src: url("./fonts/temple-run-small-caps.eot?#iefix") format('embedded-opentype'),
+      url("./fonts/temple-run-small-caps.woff2") format('woff2'),
+      url("./fonts/temple-run-small-caps.woff") format('woff'),
+      url("./fonts/temple-run-small-caps.ttf") format('truetype'),
+      url("./fonts/temple-run-small-caps.svg#temple-run-small-caps") format('svg') ;
+}
+
+.label {
+	display: block;
+	text-transform: uppercase;
+	background: linear-gradient(to bottom, #fcfa61 0%,#fcfa61 19%,#faf55f 23%,#f0dd54 36%,#d39a35 66%,#cb872c 78%,#ca842b 80%,#ca842b 100%);
+	/*https://colorzilla.com/gradient-editor*/
+	/*linear-gradient(to bottom, #fcfa61 20%, #e0b743 45%, #d2892d 90%); /*linear-gradient(to bottom, #fcfa61 15%, #d5913a 65%, #f5905c 85%)*/;
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-size: 24px;
+	font-weight: 100;
+	-webkit-text-stroke-width: 1.0px;
+  -webkit-text-stroke-color: black;
+}
+
+.label.medium {
+	font-size: 14px;
+}
+
+.label.small {
+	font-size: 10px;
+}
+
+.subheader {
+	font-size: 12px;
+	color: #4F291C;
+	/* font-family: Arial, Helvetica, sans-serif; */
+}
