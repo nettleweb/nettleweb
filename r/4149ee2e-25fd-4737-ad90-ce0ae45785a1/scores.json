@@ -1,0 +1,28 @@
+{
+  "Timestamp": {
+    "value": "2021-07-24T00:00:00.000Z"
+  },
+  "RecordCountTotal": 0,
+  "GlobalScoresTotal": [
+    {
+      "TeamId": 0,
+      "GlobalScore": 0,
+      "RecordCount": 0
+    },
+    {
+      "TeamId": 1,
+      "GlobalScore": 0,
+      "RecordCount": 0
+    },
+    {
+      "TeamId": 2,
+      "GlobalScore": 0,
+      "RecordCount": 0
+    },
+    {
+      "TeamId": 3,
+      "GlobalScore": 0,
+      "RecordCount": 0
+    }
+  ]
+}

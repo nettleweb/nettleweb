@@ -441,7 +441,7 @@
 	letter-spacing: 0px;
 }
 
-div.user[vip]::after {
+div.user[data-vip]::after {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -453,11 +453,11 @@ div.user[vip]::after {
 	vertical-align: top;
 }
 
-div.user[vip="gold"]::after {
+div.user[data-vip="gold"]::after {
 	content: "\01f451";
 }
 
-div.user[vip="diamond"]::after {
+div.user[data-vip="diamond"]::after {
 	content: "\01f48e";
 }
 
@@ -1113,7 +1113,33 @@ div.user[vip="diamond"]::after {
 	position: relative;
 	display: block;
 	width: 184px;
-	
+	height: 42px;
+	cursor: pointer;
+}
+
+#msglist>div>img {
+	position: absolute;
+	display: block;
+	width: 32px;
+	height: 32px;
+	top: 4px;
+	left: 5px;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	background-color: #ffffff;
+}
+
+#msglist>div>div {
+	position: absolute;
+	display: block;
+	width: 130px;
+	height: 24px;
+	top: 9px;
+	left: 49px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
 }
 
 #history>div {
@@ -1206,11 +1232,11 @@ div.user[vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#channels>div:hover, #history>div:hover, #newchat:hover, #toggle:hover, #chatmode>button:not([data-current]):hover {
+#channels>div:hover, #msglist>div:hover, #history>div:hover, #newchat:hover, #toggle:hover, #chatmode>button:not([data-current]):hover {
 	background-color: #d0d0d0;
 }
 
-#channels>div:active, #channels>div[data-current], #history>div:active, #history>div[data-current], #newchat:active, #toggle:active, #chatmode>button:not([data-current]):active {
+#channels>div:active, #channels>div[data-current], #msglist>div:active, #msglist>div[data-current], #history>div:active, #history>div[data-current], #newchat:active, #toggle:active, #chatmode>button:not([data-current]):active {
 	background-color: #c0c0c0;
 }
 
@@ -1240,7 +1266,7 @@ div.user[vip="diamond"]::after {
 	border: 1px solid #808080;
 	border-radius: 25px;
 	vertical-align: top;
-	background: #ffffff;
+	background-color: #ffffff;
 }
 
 #chat-profile>div {
@@ -1625,15 +1651,15 @@ div.user[vip="diamond"]::after {
 	background-position: center;
 }
 
-#account-settings input~button:focus {
+#account-settings input~button:focus, #ac-friends>div>button:focus {
 	border-color: #808080;
 }
 
-#account-settings input~button:hover {
+#account-settings input~button:hover, #ac-friends>div>button:hover {
 	background-color: #d0d0d0;
 }
 
-#account-settings input~button:active {
+#account-settings input~button:active, #ac-friends>div>button:active {
 	background-color: #c0c0c0;
 }
 
@@ -1643,6 +1669,10 @@ div.user[vip="diamond"]::after {
 
 #account-settings .cross {
 	background-image: url("res/close.svg");
+}
+
+#account-settings .message {
+	background-image: url("res/new-chat.svg");
 }
 
 #ac-prof {
@@ -1741,11 +1771,11 @@ div.user[vip="diamond"]::after {
 	background-position: 0px 0px;
 }
 
-#ac-games, #pf-games, #s-products, #pf-items {
+#ac-games, #ac-friends, #pf-games, #pf-items, #s-products {
 	position: relative;
 	display: block;
 	width: 100%;
-	height: auto;
+	height: fit-content;
 	margin: 10px 0px;
 	max-height: 640px;
 	overflow-x: hidden;
@@ -1772,6 +1802,55 @@ div.user[vip="diamond"]::after {
 	width: fit-content;
 	height: fit-content;
 	border: 1px solid #808080;
+}
+
+#ac-friends>div {
+	position: relative;
+	display: flex;
+	width: calc(100% - 20px);
+	height: 50px;
+	padding: 10px;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+
+#ac-friends>div>img {
+	position: relative;
+	display: block;
+	width: 48px;
+	height: 48px;
+	flex: 0 0 48px;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	background-color: #ffffff;
+}
+
+#ac-friends>div>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 24px;
+	margin: 0px 15px;
+	flex: 0 1 100%;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#ac-friends>div>button {
+	position: relative;
+	display: block;
+	width: 38px;
+	height: 38px;
+	margin: 0px 5px;
+	flex: 0 0 38px;
+	border: 1px solid #808080;
+	cursor: pointer;
+	outline: none;
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: center;
 }
 
 #ac-name-edit, #ac-email-edit {
