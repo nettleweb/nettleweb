@@ -1675,35 +1675,37 @@ div.user[data-vip="diamond"]::after {
 	background-image: url("res/new-chat.svg");
 }
 
-#ac-prof {
+#ac-prof, #profile-page>div {
 	position: relative;
 	display: block;
-	width: calc(100% - 2px);
-	height: 80px;
+	width: calc(100% - 32px);
+	height: fit-content;
+	margin: 10px 0px;
+	padding: 15px;
 	border: 1px solid #808080;
 	border-radius: 10px;
 }
 
-#ac-prof>div {
-	position: absolute;
-	display: block;
-	width: calc(100% - 100px);
-	height: 24px;
-	top: 15px;
-	left: 80px;
+#ac-prof>div, #profile-page>div>div {
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 85px);
+	height: fit-content;
+	margin: 0px 0px 0px 15px;
+	vertical-align: top;
 }
 
 #ch-avatar {
-	position: absolute;
-	display: block;
+	position: relative;
+	display: inline-block;
 	width: 48px;
 	height: 48px;
-	top: 15px;
-	left: 15px;
+	margin: 5px;
 	border: 1px solid #808080;
-	border-radius: 25px;
 	cursor: pointer;
 	outline: none;
+	border-radius: 25px;
+	vertical-align: top;
 	background-image: url("res/edit.svg");
 	background-size: 24px 24px;
 	background-color: #c0c0c0;
@@ -1731,7 +1733,6 @@ div.user[data-vip="diamond"]::after {
 	display: inline-block;
 	width: fit-content;
 	height: 24px;
-	margin: 0px 5px;
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 24px;
@@ -1739,7 +1740,7 @@ div.user[data-vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#ac-edit {
+#ac-edit, #ac-bio-edit {
 	position: relative;
 	display: inline-block;
 	width: 24px;
@@ -1748,7 +1749,7 @@ div.user[data-vip="diamond"]::after {
 	cursor: pointer;
 	border: none;
 	outline: none;
-	vertical-align: top;
+	vertical-align: middle;
 	background-image: url("res/edit.svg");
 	background-size: 24px 24px;
 	background-repeat: no-repeat;
@@ -1769,6 +1770,18 @@ div.user[data-vip="diamond"]::after {
 	background-size: 24px 24px;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
+}
+
+#ac-bio {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+	color: #808080;
+	font-size: 13px;
+	line-height: 18px;
+	letter-spacing: 0px;
 }
 
 #ac-games, #ac-friends, #pf-games, #pf-items, #s-products {
@@ -1820,9 +1833,10 @@ div.user[data-vip="diamond"]::after {
 	width: 48px;
 	height: 48px;
 	flex: 0 0 48px;
+	cursor: pointer;
 	border: 1px solid #808080;
+	background: #ffffff;
 	border-radius: 25px;
-	background-color: #ffffff;
 }
 
 #ac-friends>div>div {
@@ -1832,6 +1846,7 @@ div.user[data-vip="diamond"]::after {
 	height: 24px;
 	margin: 0px 15px;
 	flex: 0 1 100%;
+	cursor: pointer;
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 24px;
@@ -1868,47 +1883,48 @@ div.user[data-vip="diamond"]::after {
 	background-position: 0px 0px;
 }
 
-#profile-page>div {
+#avatar {
 	position: relative;
-	display: block;
-	width: calc(100% - 22px);
-	height: 145px;
-	margin: 20px 0px;
-	border: 1px solid #808080;
-	border-radius: 10px;
-}
-
-#profile-page>div>img {
-	position: absolute;
-	display: block;
+	display: inline-block;
 	width: 48px;
 	height: 48px;
-	top: 15px;
-	left: 15px;
+	margin: 5px;
 	border: 1px solid #808080;
+	background: #ffffff;
 	border-radius: 25px;
+	vertical-align: top;
 }
 
-#profile-page>div>div {
-	position: absolute;
+#id {
+	position: relative;
 	display: block;
-	width: calc(100% - 100px);
+	width: 100%;
 	height: 24px;
-	top: 15px;
-	left: 80px;
+	margin: 0px 0px 10px;
 	font-size: 13px;
 	font-weight: 600;
 	line-height: 24px;
 	letter-spacing: 0px;
 }
 
-#profile-page>div>span {
-	position: absolute;
+#bio {
+	position: relative;
 	display: block;
-	width: calc(100% - 30px);
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px 0px;
+	color: #808080;
+	font-size: 13px;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#profile-page>div>span {
+	position: relative;
+	display: block;
+	width: 100%;
 	height: 50px;
-	top: 90px;
-	left: 15px;
+	margin: 20px 0px 0px;
 	border-top: 1px solid #808080;
 }
 
