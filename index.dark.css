@@ -16,11 +16,11 @@ option, optgroup, #navigation-bar {
 	background: #404040;
 }
 
-#version, #nav-bar>button, #game-category>button, #item-category>button {
+#version, #nav-bar>button, #game-category>button, #item-category>button, #bio, #ac-bio {
 	color: #d0d0d0;
 }
 
-#nav-bar>button[data-current], #game-category>button[data-current], #item-category>button[data-current], #chatmode>button {
+#nav-bar>button[data-current], #game-category>button[data-current], #item-category>button[data-current], #chatmode>button, #ac-un, #id {
 	color: #ffffff;
 }
 
@@ -101,11 +101,11 @@ option, optgroup, #navigation-bar {
 	background: #606060;
 }
 
-#chatmode>button:not([data-current]):hover, #toggle:hover, #newchat:hover, #history>div:hover, #channels>div:hover, #account-settings input~button:hover {
+#chatmode>button:not([data-current]):hover, #toggle:hover, #newchat:hover, #history>div:hover, #msglist>div:hover, #channels>div:hover, #account-settings input~button:hover, #ac-friends>div>button:hover {
 	background-color: #606060;
 }
 
-#chatmode>button:not([data-current]):active, #toggle:active, #newchat:active, #history>div:active, #history>div>[data-current], #channels>div:active, #channels>div[data-current], #account-settings input~button:active {
+#chatmode>button:not([data-current]):active, #toggle:active, #newchat:active, #history>div:active, #history>div[data-current], #msglist>div:active, #msglist>div[data-current], #channels>div:active, #channels>div[data-current], #account-settings input~button:active, #ac-friends>div>button:active {
 	background-color: #808080;
 }
 
@@ -117,7 +117,11 @@ option, optgroup, #navigation-bar {
 	background-image: url("res/close-w.svg");
 }
 
-#ac-edit, #ac-name-edit, #ac-email-edit {
+#account-settings .message {
+	background-image: url("res/new-chat-w.svg");
+}
+
+#ac-edit, #ac-bio-edit, #ac-name-edit, #ac-email-edit {
 	background-image: url("res/edit-w.svg");
 }
 
