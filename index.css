@@ -595,7 +595,15 @@ div.user[data-vip="diamond"]::after {
 	margin: 15px 0px;
 }
 
-#weather>embed, #calc-container>embed, #webemu-container>embed, #console-container>embed {
+#bitcoin {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 300px;
+	margin: 15px 0px;
+}
+
+#weather>embed, #bitcoin>embed, #calc-container>embed, #webemu-container>embed, #console-container>embed {
 	position: absolute;
 	display: block;
 	width: 100%;
@@ -1787,9 +1795,10 @@ div.user[data-vip="diamond"]::after {
 #ac-games, #ac-friends, #pf-games, #pf-items, #s-products {
 	position: relative;
 	display: block;
-	width: 100%;
+	width: calc(100% - 10px);
 	height: fit-content;
 	margin: 10px 0px;
+	padding: 5px;
 	max-height: 640px;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -1849,6 +1858,18 @@ div.user[data-vip="diamond"]::after {
 	cursor: pointer;
 	font-size: 13px;
 	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#ac-friends>div>span {
+	position: absolute;	
+	display: block;
+	width: 300px;
+	height: 24px;
+	top: 34px;
+	left: 75px;
+	color: #808080;
 	line-height: 24px;
 	letter-spacing: 0px;
 }
@@ -2371,6 +2392,22 @@ div.user[data-vip="diamond"]::after {
 	margin: 10px 0px;
 }
 
+#like {
+	position: relative;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: 0px 2px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	vertical-align: middle;
+	background-image: url("res/thumb-up.svg");
+	background-size: 18px 18px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
 #user, #seller {
 	position: relative;
 	display: block;
@@ -2404,6 +2441,20 @@ div.user[data-vip="diamond"]::after {
 	vertical-align: top;
 }
 
+#ecode {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	padding: 10px;
+	outline: 1px solid #808080;
+	font-size: 13px;
+	font-weight: 400;
+	font-family: "Ubuntu Mono", monospace;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
 #editor {
 	position: relative;
 	display: none;
@@ -2422,20 +2473,6 @@ div.user[data-vip="diamond"]::after {
 	margin: 5px;
 	padding: 5px 15px;
 	vertical-align: top;
-}
-
-#dlink, #ecode {
-	position: relative;
-	display: block;
-	width: calc(100% - 20px);
-	height: fit-content;
-	padding: 10px;
-	outline: 1px solid #808080;
-	font-size: 13px;
-	font-weight: 400;
-	font-family: "Ubuntu Mono", monospace;
-	line-height: 18px;
-	letter-spacing: 0px;
 }
 
 #s-games {
