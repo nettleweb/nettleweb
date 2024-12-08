@@ -129,6 +129,10 @@ option, optgroup, #navigation-bar {
 	background-image: url("res/link-w.svg");
 }
 
+#like {
+	background-image: url("res/thumb-up-w.svg");
+}
+
 #install {
 	filter: brightness(200%);
 	background: #101010;

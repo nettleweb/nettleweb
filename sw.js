@@ -55,7 +55,7 @@
 		}
 
 		const res = await caches.match(request, { cacheName }) || await e.preloadResponse || await optFetch(request);
-		if (origin !== "http://localhost:8000") {
+		if (res.ok && origin !== "http://localhost:8000") {
 			try {
 				await (await caches.open(cacheName)).put(request, res.clone());
 			} catch (err) {

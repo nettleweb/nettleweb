@@ -599,7 +599,7 @@ div.user[data-vip="diamond"]::after {
 	position: relative;
 	display: block;
 	width: 100%;
-	height: 300px;
+	height: 470px;
 	margin: 15px 0px;
 }
 
@@ -977,7 +977,7 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#yt-load-more {
+#yt-load-more, #loadmore {
 	position: relative;
 	display: none;
 	width: fit-content;
@@ -990,11 +990,11 @@ div.user[data-vip="diamond"]::after {
 	border-radius: 25px;
 }
 
-#yt-load-more:hover {
+#yt-load-more:hover, #loadmore:hover {
 	background: #f0f0f0;
 }
 
-#yt-load-more:active {
+#yt-load-more:active, #loadmore:active {
 	background: #e0e0e0;
 }
 
@@ -1394,7 +1394,7 @@ div.user[data-vip="diamond"]::after {
 	overflow-y: auto;
 }
 
-#messages>div {
+#messages>div, #comments>div {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -1402,7 +1402,7 @@ div.user[data-vip="diamond"]::after {
 	margin: 15px 0px;
 }
 
-#messages>div>img {
+#messages>div>img, #comments>div>img {
 	position: relative;
 	display: inline-block;
 	width: 32px;
@@ -1414,7 +1414,7 @@ div.user[data-vip="diamond"]::after {
 	background: #ffffff;
 }
 
-#messages>div>div {
+#messages>div>div, #comments>div>div {
 	position: relative;
 	display: inline-block;
 	width: calc(100% - 60px);
@@ -1428,7 +1428,7 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#messages>div>div>div {
+#messages>div>div>div, #comments>div>div>div {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -2096,10 +2096,10 @@ div.user[data-vip="diamond"]::after {
 	vertical-align: middle;
 }
 
-#uploadgames-page>div>textarea, #editor>div>textarea, #a-product>div>textarea, #payi>textarea {
+#uploadgames-page>div>textarea, #editor>div>textarea, #a-product>div>textarea, #payi>textarea, #add-comm>textarea {
 	position: relative;
 	display: block;
-	width: 100%;
+	width: calc(100% - 22px);
 	height: fit-content;
 	margin: 10px 0px;
 	padding: 10px;
@@ -2125,7 +2125,7 @@ div.user[data-vip="diamond"]::after {
 	vertical-align: middle;
 }
 
-#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #uploadgames-page>div>textarea:focus, #gamemu-options>div>select:focus, #editor>div>input[type="text"]:focus, #editor>div>textarea:focus, #a-product>div>input[type="text"]:focus, #a-product>div>input[type="number"]:focus, #a-product>div>textarea:focus, #payi>select:focus, #payi>textarea:focus {
+#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #uploadgames-page>div>input[type="text"]:focus, #uploadgames-page>div>select:focus, #uploadgames-page>div>textarea:focus, #gamemu-options>div>select:focus, #editor>div>input[type="text"]:focus, #editor>div>textarea:focus, #a-product>div>input[type="text"]:focus, #a-product>div>input[type="number"]:focus, #a-product>div>textarea:focus, #payi>select:focus, #payi>textarea:focus, #add-comm>textarea:focus {
 	border-color: #808080;
 }
 
@@ -2473,6 +2473,14 @@ div.user[data-vip="diamond"]::after {
 	margin: 5px;
 	padding: 5px 15px;
 	vertical-align: top;
+}
+
+#comments, #add-comm {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 10px 0px;
 }
 
 #s-games {
