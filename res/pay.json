@@ -1,0 +1,8 @@
+{
+	"default_applications": [
+		"/manifest.json"
+	],
+	"supported_origins": [
+		"https://*"
+	]
+}

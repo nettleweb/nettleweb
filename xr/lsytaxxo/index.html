@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="stylesheet" type="text/css" href="css/minesweeper.css" />
+		<base href="." target="_blank" />
+		<script type="text/javascript" src="js/rocket.12.06.js"></script>
+		<script type="text/javascript" src="js/seedrandom.js"></script>
+		<script type="text/javascript" src="js/minesweeper.js"></script>
+		<script type="text/javascript" src="js/tile.js"></script>
+		<script type="text/javascript" src="js/face.js"></script>
+		<script type="text/javascript" src="js/grid.js"></script>
+		<script type="text/javascript" src="js/ssd.js"></script>
+		<title>Minesweeper</title>
+	</head>
+	<body>
+		<div id="container">
+			<h1>Minesweeper</h1>
+			<div>
+				<button id="button_beginner" type="button">Beginner</button>
+				<button id="button_intermediate" type="button">Intermediate</button>
+				<button id="button_expert" type="button">Expert</button>
+				<button id="button_custom" type="button">Custom</button>
+			</div>
+			<div>
+				<label for="width">Width:</label>
+				<input id="width" type="number" min="9" max="500" value="16" />
+				<label for="height">Height:</label>
+				<input id="height" type="number" min="9" max="500" value="16" />
+				<label for="mines">Mines:</label>
+				<input id="mines" type="number" min="10" max="500" value="40" />
+			</div>
+			<div id="play_area"></div>
+		</div>
+	</body>
+</html>

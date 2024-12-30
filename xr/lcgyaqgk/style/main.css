@@ -1,0 +1,1097 @@
+@import url(fonts/clear-sans.css);
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #faf8ef;
+  color: #776e65;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px; }
+
+body {
+  margin: 80px 0; }
+
+.heading:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+h1.title {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0;
+  display: block;
+  float: left; }
+
+@-webkit-keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+
+@-moz-keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+
+@keyframes move-up {
+  0% {
+    top: 25px;
+    opacity: 1; }
+
+  100% {
+    top: -50px;
+    opacity: 0; } }
+
+.scores-container {
+  float: right;
+  text-align: right; }
+
+.score-container, .best-container {
+  position: relative;
+  display: inline-block;
+  background: #bbada0;
+  padding: 15px 25px;
+  font-size: 25px;
+  height: 25px;
+  line-height: 47px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: white;
+  margin-top: 8px;
+  text-align: center; }
+  .score-container:after, .best-container:after {
+    position: absolute;
+    width: 100%;
+    top: 10px;
+    left: 0;
+    text-transform: uppercase;
+    font-size: 13px;
+    line-height: 13px;
+    text-align: center;
+    color: #eee4da; }
+  .score-container .score-addition, .best-container .score-addition {
+    position: absolute;
+    right: 30px;
+    color: red;
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: bold;
+    color: rgba(119, 110, 101, 0.9);
+    z-index: 100;
+    -webkit-animation: move-up 600ms ease-in;
+    -moz-animation: move-up 600ms ease-in;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both; }
+
+.score-container:after {
+  content: "Score"; }
+
+.best-container:after {
+  content: "Best"; }
+
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.65; }
+
+a {
+  color: #776e65;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer; }
+
+strong.important {
+  text-transform: uppercase; }
+
+hr {
+  border: none;
+  border-bottom: 1px solid #d8d4d0;
+  margin-top: 20px;
+  margin-bottom: 30px; }
+
+.container {
+  width: 984px;
+  margin: 0 auto; }
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.game-container {
+  margin-top: 40px;
+  position: relative;
+  padding: 15px;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  background: #bbada0;
+  border-radius: 6px;
+  width: 984px;
+  height: 984px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  .game-container .game-message {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(238, 228, 218, 0.5);
+    z-index: 100;
+    text-align: center;
+    -webkit-animation: fade-in 800ms ease 1200ms;
+    -moz-animation: fade-in 800ms ease 1200ms;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both; }
+    .game-container .game-message p {
+      font-size: 60px;
+      font-weight: bold;
+      height: 60px;
+      line-height: 60px;
+      margin-top: 222px; }
+    .game-container .game-message .lower {
+      display: block;
+      margin-top: 59px; }
+    .game-container .game-message a {
+      display: inline-block;
+      background: #8f7a66;
+      border-radius: 3px;
+      padding: 0 20px;
+      text-decoration: none;
+      color: #f9f6f2;
+      height: 40px;
+      line-height: 42px;
+      margin-left: 9px; }
+    .game-container .game-message.game-won {
+      background: rgba(237, 194, 46, 0.5);
+      color: #f9f6f2; }
+    .game-container .game-message.game-won, .game-container .game-message.game-over {
+      display: block; }
+
+.grid-container {
+  position: absolute;
+  z-index: 1; }
+
+.grid-row {
+  margin-bottom: 15px; }
+  .grid-row:last-child {
+    margin-bottom: 0; }
+  .grid-row:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.grid-cell {
+  width: 106.25px;
+  height: 106.25px;
+  margin-right: 15px;
+  float: left;
+  border-radius: 3px;
+  background: rgba(238, 228, 218, 0.35); }
+  .grid-cell:last-child {
+    margin-right: 0; }
+
+.tile-container {
+  position: absolute;
+  z-index: 2; }
+
+.tile {
+  width: 106.25px;
+  height: 106.25px;
+  line-height: 116.25px; }
+  .tile.tile-position-1-1 {
+    position: absolute;
+    left: 0px;
+    top: 0px; }
+  .tile.tile-position-1-2 {
+    position: absolute;
+    left: 0px;
+    top: 121px; }
+  .tile.tile-position-1-3 {
+    position: absolute;
+    left: 0px;
+    top: 243px; }
+  .tile.tile-position-1-4 {
+    position: absolute;
+    left: 0px;
+    top: 364px; }
+  .tile.tile-position-1-5 {
+    position: absolute;
+    left: 0px;
+    top: 485px; }
+  .tile.tile-position-1-6 {
+    position: absolute;
+    left: 0px;
+    top: 606px; }
+  .tile.tile-position-1-7 {
+    position: absolute;
+    left: 0px;
+    top: 728px; }
+  .tile.tile-position-1-8 {
+    position: absolute;
+    left: 0px;
+    top: 849px; }
+  .tile.tile-position-2-1 {
+    position: absolute;
+    left: 121px;
+    top: 0px; }
+  .tile.tile-position-2-2 {
+    position: absolute;
+    left: 121px;
+    top: 121px; }
+  .tile.tile-position-2-3 {
+    position: absolute;
+    left: 121px;
+    top: 243px; }
+  .tile.tile-position-2-4 {
+    position: absolute;
+    left: 121px;
+    top: 364px; }
+  .tile.tile-position-2-5 {
+    position: absolute;
+    left: 121px;
+    top: 485px; }
+  .tile.tile-position-2-6 {
+    position: absolute;
+    left: 121px;
+    top: 606px; }
+  .tile.tile-position-2-7 {
+    position: absolute;
+    left: 121px;
+    top: 728px; }
+  .tile.tile-position-2-8 {
+    position: absolute;
+    left: 121px;
+    top: 849px; }
+  .tile.tile-position-3-1 {
+    position: absolute;
+    left: 243px;
+    top: 0px; }
+  .tile.tile-position-3-2 {
+    position: absolute;
+    left: 243px;
+    top: 121px; }
+  .tile.tile-position-3-3 {
+    position: absolute;
+    left: 243px;
+    top: 243px; }
+  .tile.tile-position-3-4 {
+    position: absolute;
+    left: 243px;
+    top: 364px; }
+  .tile.tile-position-3-5 {
+    position: absolute;
+    left: 243px;
+    top: 485px; }
+  .tile.tile-position-3-6 {
+    position: absolute;
+    left: 243px;
+    top: 606px; }
+  .tile.tile-position-3-7 {
+    position: absolute;
+    left: 243px;
+    top: 728px; }
+  .tile.tile-position-3-8 {
+    position: absolute;
+    left: 243px;
+    top: 849px; }
+  .tile.tile-position-4-1 {
+    position: absolute;
+    left: 364px;
+    top: 0px; }
+  .tile.tile-position-4-2 {
+    position: absolute;
+    left: 364px;
+    top: 121px; }
+  .tile.tile-position-4-3 {
+    position: absolute;
+    left: 364px;
+    top: 243px; }
+  .tile.tile-position-4-4 {
+    position: absolute;
+    left: 364px;
+    top: 364px; }
+  .tile.tile-position-4-5 {
+    position: absolute;
+    left: 364px;
+    top: 485px; }
+  .tile.tile-position-4-6 {
+    position: absolute;
+    left: 364px;
+    top: 606px; }
+  .tile.tile-position-4-7 {
+    position: absolute;
+    left: 364px;
+    top: 728px; }
+  .tile.tile-position-4-8 {
+    position: absolute;
+    left: 364px;
+    top: 849px; }
+  .tile.tile-position-5-1 {
+    position: absolute;
+    left: 485px;
+    top: 0px; }
+  .tile.tile-position-5-2 {
+    position: absolute;
+    left: 485px;
+    top: 121px; }
+  .tile.tile-position-5-3 {
+    position: absolute;
+    left: 485px;
+    top: 243px; }
+  .tile.tile-position-5-4 {
+    position: absolute;
+    left: 485px;
+    top: 364px; }
+  .tile.tile-position-5-5 {
+    position: absolute;
+    left: 485px;
+    top: 485px; }
+  .tile.tile-position-5-6 {
+    position: absolute;
+    left: 485px;
+    top: 606px; }
+  .tile.tile-position-5-7 {
+    position: absolute;
+    left: 485px;
+    top: 728px; }
+  .tile.tile-position-5-8 {
+    position: absolute;
+    left: 485px;
+    top: 849px; }
+  .tile.tile-position-6-1 {
+    position: absolute;
+    left: 606px;
+    top: 0px; }
+  .tile.tile-position-6-2 {
+    position: absolute;
+    left: 606px;
+    top: 121px; }
+  .tile.tile-position-6-3 {
+    position: absolute;
+    left: 606px;
+    top: 243px; }
+  .tile.tile-position-6-4 {
+    position: absolute;
+    left: 606px;
+    top: 364px; }
+  .tile.tile-position-6-5 {
+    position: absolute;
+    left: 606px;
+    top: 485px; }
+  .tile.tile-position-6-6 {
+    position: absolute;
+    left: 606px;
+    top: 606px; }
+  .tile.tile-position-6-7 {
+    position: absolute;
+    left: 606px;
+    top: 728px; }
+  .tile.tile-position-6-8 {
+    position: absolute;
+    left: 606px;
+    top: 849px; }
+  .tile.tile-position-7-1 {
+    position: absolute;
+    left: 728px;
+    top: 0px; }
+  .tile.tile-position-7-2 {
+    position: absolute;
+    left: 728px;
+    top: 121px; }
+  .tile.tile-position-7-3 {
+    position: absolute;
+    left: 728px;
+    top: 243px; }
+  .tile.tile-position-7-4 {
+    position: absolute;
+    left: 728px;
+    top: 364px; }
+  .tile.tile-position-7-5 {
+    position: absolute;
+    left: 728px;
+    top: 485px; }
+  .tile.tile-position-7-6 {
+    position: absolute;
+    left: 728px;
+    top: 606px; }
+  .tile.tile-position-7-7 {
+    position: absolute;
+    left: 728px;
+    top: 728px; }
+  .tile.tile-position-7-8 {
+    position: absolute;
+    left: 728px;
+    top: 849px; }
+  .tile.tile-position-8-1 {
+    position: absolute;
+    left: 849px;
+    top: 0px; }
+  .tile.tile-position-8-2 {
+    position: absolute;
+    left: 849px;
+    top: 121px; }
+  .tile.tile-position-8-3 {
+    position: absolute;
+    left: 849px;
+    top: 243px; }
+  .tile.tile-position-8-4 {
+    position: absolute;
+    left: 849px;
+    top: 364px; }
+  .tile.tile-position-8-5 {
+    position: absolute;
+    left: 849px;
+    top: 485px; }
+  .tile.tile-position-8-6 {
+    position: absolute;
+    left: 849px;
+    top: 606px; }
+  .tile.tile-position-8-7 {
+    position: absolute;
+    left: 849px;
+    top: 728px; }
+  .tile.tile-position-8-8 {
+    position: absolute;
+    left: 849px;
+    top: 849px; }
+
+.tile {
+  border-radius: 3px;
+  background: #eee4da;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 55px;
+  -webkit-transition: 100ms ease-in-out;
+  -moz-transition: 100ms ease-in-out;
+  -webkit-transition-property: top, left;
+  -moz-transition-property: top, left; }
+  .tile.tile-2 {
+    background: #eee4da;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
+  .tile.tile-4 {
+    background: #ede0c8;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0); }
+  .tile.tile-8 {
+    color: #f9f6f2;
+    background: #f2b179; }
+  .tile.tile-16 {
+    color: #f9f6f2;
+    background: #f59563; }
+  .tile.tile-32 {
+    color: #f9f6f2;
+    background: #f67c5f; }
+  .tile.tile-64 {
+    color: #f9f6f2;
+    background: #f65e3b; }
+  .tile.tile-128 {
+    color: #f9f6f2;
+    background: #edcf72;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.2381), inset 0 0 0 1px rgba(255, 255, 255, 0.14286);
+    font-size: 45px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-128 {
+        font-size: 25px; } }
+  .tile.tile-256 {
+    color: #f9f6f2;
+    background: #edcc61;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+    font-size: 45px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-256 {
+        font-size: 25px; } }
+  .tile.tile-512 {
+    color: #f9f6f2;
+    background: #edc850;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+    font-size: 45px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-512 {
+        font-size: 25px; } }
+  .tile.tile-1024 {
+    color: #f9f6f2;
+    background: #edc53f;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-1024 {
+        font-size: 15px; } }
+  .tile.tile-2048 {
+    color: #f9f6f2;
+    background: #edc22e;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-2048 {
+        font-size: 15px; } }
+  .tile.tile-4096 {
+    color: #f9f6f2;
+    background: #ebb914;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.63556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-4096 {
+        font-size: 15px; } }
+  .tile.tile-8192 {
+    color: #f9f6f2;
+    background: #d3a612;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.71556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 35px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-8192 {
+        font-size: 15px; } }
+  .tile.tile-16384 {
+    color: #f9f6f2;
+    background: #bc9410;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.79556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 30px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-16384 {
+        font-size: 10px; } }
+   .tile.tile-32768 {
+    color: #f9f6f2;
+    background: #bc9410;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.79556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 30px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-32768 {
+        font-size: 10px; } }
+   .tile.tile-65536 {
+    color: #f9f6f2;
+    background: #bc9410;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.79556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 30px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-65536 {
+        font-size: 10px; } }
+   .tile.tile-131072 {
+    color: #f9f6f2;
+    background: #bc9410;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.79556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 30px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-131072 {
+        font-size: 10px; } }
+   .tile.tile-262144 {
+    color: #f9f6f2;
+    background: #bc9410;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.79556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 30px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-262144 {
+        font-size: 10px; } }
+   .tile.tile-524288 {
+    color: #f9f6f2;
+    background: #bc9410;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.79556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 30px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-523288 {
+        font-size: 10px; } }
+   .tile.tile-1048576 {
+    color: #f9f6f2;
+    background: #bc9410;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.79556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    font-size: 23px; }
+    @media screen and (max-width: 480px) {
+      .tile.tile-1048576 {
+        font-size: 5px; } }
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+
+@-moz-keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+
+.tile-new {
+  -webkit-animation: appear 200ms ease 100ms;
+  -moz-animation: appear 200ms ease 100ms;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both; }
+
+@-webkit-keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+
+@-moz-keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+
+@keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0); }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2); }
+
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1); } }
+
+.tile-merged {
+  z-index: 20;
+  -webkit-animation: pop 200ms ease 100ms;
+  -moz-animation: pop 200ms ease 100ms;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both; }
+
+.game-intro {
+  margin-bottom: 0; }
+
+.game-explanation {
+  margin-top: 50px; }
+
+@media screen and (max-width: 480px) {
+  html, body {
+    font-size: 15px; }
+
+  body {
+    margin: 20px 0;
+    padding: 0 20px; }
+
+  h1.title {
+    font-size: 27px;
+    margin-top: 15px; }
+
+  .container {
+    width: 550px;
+    margin: 0 auto; }
+
+  .score-container, .best-container {
+    margin-top: 0;
+    padding: 15px 10px;
+    min-width: 40px; }
+
+  .heading {
+    margin-bottom: 10px; }
+
+  .game-container {
+    margin-top: 40px;
+    position: relative;
+    padding: 10px;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    background: #bbada0;
+    border-radius: 6px;
+    width: 550px;
+    height: 550px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; }
+    .game-container .game-message {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(238, 228, 218, 0.5);
+      z-index: 100;
+      text-align: center;
+      -webkit-animation: fade-in 800ms ease 1200ms;
+      -moz-animation: fade-in 800ms ease 1200ms;
+      -webkit-animation-fill-mode: both;
+      -moz-animation-fill-mode: both; }
+      .game-container .game-message p {
+        font-size: 60px;
+        font-weight: bold;
+        height: 60px;
+        line-height: 60px;
+        margin-top: 222px; }
+      .game-container .game-message .lower {
+        display: block;
+        margin-top: 59px; }
+      .game-container .game-message a {
+        display: inline-block;
+        background: #8f7a66;
+        border-radius: 3px;
+        padding: 0 20px;
+        text-decoration: none;
+        color: #f9f6f2;
+        height: 40px;
+        line-height: 42px;
+        margin-left: 9px; }
+      .game-container .game-message.game-won {
+        background: rgba(237, 194, 46, 0.5);
+        color: #f9f6f2; }
+      .game-container .game-message.game-won, .game-container .game-message.game-over {
+        display: block; }
+
+  .grid-container {
+    position: absolute;
+    z-index: 1; }
+
+  .grid-row {
+    margin-bottom: 10px; }
+    .grid-row:last-child {
+      margin-bottom: 0; }
+    .grid-row:after {
+      content: "";
+      display: block;
+      clear: both; }
+
+  .grid-cell {
+    width: 57.5px;
+    height: 57.5px;
+    margin-right: 10px;
+    float: left;
+    border-radius: 3px;
+    background: rgba(238, 228, 218, 0.35); }
+    .grid-cell:last-child {
+      margin-right: 0; }
+
+  .tile-container {
+    position: absolute;
+    z-index: 2; }
+
+  .tile {
+    width: 57.5px;
+    height: 57.5px;
+    line-height: 67.5px; }
+    .tile.tile-position-1-1 {
+      position: absolute;
+      left: 0px;
+      top: 0px; }
+    .tile.tile-position-1-2 {
+      position: absolute;
+      left: 0px;
+      top: 68px; }
+    .tile.tile-position-1-3 {
+      position: absolute;
+      left: 0px;
+      top: 135px; }
+    .tile.tile-position-1-4 {
+      position: absolute;
+      left: 0px;
+      top: 203px; }
+    .tile.tile-position-1-5 {
+      position: absolute;
+      left: 0px;
+      top: 270px; }
+    .tile.tile-position-1-6 {
+      position: absolute;
+      left: 0px;
+      top: 338px; }
+    .tile.tile-position-1-7 {
+      position: absolute;
+      left: 0px;
+      top: 405px; }
+    .tile.tile-position-1-8 {
+      position: absolute;
+      left: 0px;
+      top: 473px; }
+    .tile.tile-position-2-1 {
+      position: absolute;
+      left: 68px;
+      top: 0px; }
+    .tile.tile-position-2-2 {
+      position: absolute;
+      left: 68px;
+      top: 68px; }
+    .tile.tile-position-2-3 {
+      position: absolute;
+      left: 68px;
+      top: 135px; }
+    .tile.tile-position-2-4 {
+      position: absolute;
+      left: 68px;
+      top: 203px; }
+    .tile.tile-position-2-5 {
+      position: absolute;
+      left: 68px;
+      top: 270px; }
+    .tile.tile-position-2-6 {
+      position: absolute;
+      left: 68px;
+      top: 338px; }
+    .tile.tile-position-2-7 {
+      position: absolute;
+      left: 68px;
+      top: 405px; }
+    .tile.tile-position-2-8 {
+      position: absolute;
+      left: 68px;
+      top: 473px; }
+    .tile.tile-position-3-1 {
+      position: absolute;
+      left: 135px;
+      top: 0px; }
+    .tile.tile-position-3-2 {
+      position: absolute;
+      left: 135px;
+      top: 68px; }
+    .tile.tile-position-3-3 {
+      position: absolute;
+      left: 135px;
+      top: 135px; }
+    .tile.tile-position-3-4 {
+      position: absolute;
+      left: 135px;
+      top: 203px; }
+    .tile.tile-position-3-5 {
+      position: absolute;
+      left: 135px;
+      top: 270px; }
+    .tile.tile-position-3-6 {
+      position: absolute;
+      left: 135px;
+      top: 338px; }
+    .tile.tile-position-3-7 {
+      position: absolute;
+      left: 135px;
+      top: 405px; }
+    .tile.tile-position-3-8 {
+      position: absolute;
+      left: 135px;
+      top: 473px; }
+    .tile.tile-position-4-1 {
+      position: absolute;
+      left: 203px;
+      top: 0px; }
+    .tile.tile-position-4-2 {
+      position: absolute;
+      left: 203px;
+      top: 68px; }
+    .tile.tile-position-4-3 {
+      position: absolute;
+      left: 203px;
+      top: 135px; }
+    .tile.tile-position-4-4 {
+      position: absolute;
+      left: 203px;
+      top: 203px; }
+    .tile.tile-position-4-5 {
+      position: absolute;
+      left: 203px;
+      top: 270px; }
+    .tile.tile-position-4-6 {
+      position: absolute;
+      left: 203px;
+      top: 338px; }
+    .tile.tile-position-4-7 {
+      position: absolute;
+      left: 203px;
+      top: 405px; }
+    .tile.tile-position-4-8 {
+      position: absolute;
+      left: 203px;
+      top: 473px; }
+	.tile.tile-position-5-1 {
+      position: absolute;
+      left: 270px;
+      top: 0px; }
+    .tile.tile-position-5-2 {
+      position: absolute;
+      left: 270px;
+      top: 68px; }
+    .tile.tile-position-5-3 {
+      position: absolute;
+      left: 270px;
+      top: 135px; }
+    .tile.tile-position-5-4 {
+      position: absolute;
+      left: 270px;
+      top: 203px; }
+    .tile.tile-position-5-5 {
+      position: absolute;
+      left: 270px;
+      top: 270px; }
+    .tile.tile-position-5-6 {
+      position: absolute;
+      left: 270px;
+      top: 338px; }
+    .tile.tile-position-5-7 {
+      position: absolute;
+      left: 270px;
+      top: 405px; }
+    .tile.tile-position-5-8 {
+      position: absolute;
+      left: 270px;
+      top: 473px; }
+	.tile.tile-position-6-1 {
+      position: absolute;
+      left: 338px;
+      top: 0px; }
+    .tile.tile-position-6-2 {
+      position: absolute;
+      left: 338px;
+      top: 68px; }
+    .tile.tile-position-6-3 {
+      position: absolute;
+      left: 338px;
+      top: 135px; }
+    .tile.tile-position-6-4 {
+      position: absolute;
+      left: 338px;
+      top: 203px; }
+    .tile.tile-position-6-5 {
+      position: absolute;
+      left: 338px;
+      top: 270px; }
+    .tile.tile-position-6-6 {
+      position: absolute;
+      left: 338px;
+      top: 338px; }
+    .tile.tile-position-6-7 {
+      position: absolute;
+      left: 338px;
+      top: 405px; }
+    .tile.tile-position-6-8 {
+      position: absolute;
+      left: 338px;
+      top: 473px; }
+	.tile.tile-position-7-1 {
+      position: absolute;
+      left: 405px;
+      top: 0px; }
+    .tile.tile-position-7-2 {
+      position: absolute;
+      left: 405px;
+      top: 68px; }
+    .tile.tile-position-7-3 {
+      position: absolute;
+      left: 405px;
+      top: 135px; }
+    .tile.tile-position-7-4 {
+      position: absolute;
+      left: 405px;
+      top: 203px; }
+    .tile.tile-position-7-5 {
+      position: absolute;
+      left: 405px;
+      top: 270px; }
+    .tile.tile-position-7-6 {
+      position: absolute;
+      left: 405px;
+      top: 338px; }
+    .tile.tile-position-7-7 {
+      position: absolute;
+      left: 405px;
+      top: 405px; }
+    .tile.tile-position-7-8 {
+      position: absolute;
+      left: 405px;
+      top: 473px; }
+	.tile.tile-position-8-1 {
+      position: absolute;
+      left: 473px;
+      top: 0px; }
+    .tile.tile-position-8-2 {
+      position: absolute;
+      left: 473px;
+      top: 68px; }
+    .tile.tile-position-8-3 {
+      position: absolute;
+      left: 473px;
+      top: 135px; }
+    .tile.tile-position-8-4 {
+      position: absolute;
+      left: 473px;
+      top: 203px; }
+    .tile.tile-position-8-5 {
+      position: absolute;
+      left: 473px;
+      top: 270px; }
+    .tile.tile-position-8-6 {
+      position: absolute;
+      left: 473px;
+      top: 338px; }
+    .tile.tile-position-8-7 {
+      position: absolute;
+      left: 473px;
+      top: 405px; }
+    .tile.tile-position-8-8 {
+      position: absolute;
+      left: 473px;
+      top: 473px; }
+
+  .game-container {
+    margin-top: 20px; }
+
+  .tile {
+    font-size: 35px; }
+
+  .game-message p {
+    font-size: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    margin-top: 90px !important; }
+  .game-message .lower {
+    margin-top: 30px !important; } }

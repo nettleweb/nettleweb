@@ -1,0 +1,16 @@
+/*
+	! Access-Control-Allow-Origin
+	Referrer-Policy: no-referrer
+	Permissions-Policy: camera=(), gyroscope=(), microphone=(), geolocation=(), local-fonts=(), magnetometer=(), accelerometer=(), idle-detection=(), storage-access=(), browsing-topics=(), display-capture=(), encrypted-media=(), compute-pressure=(), window-management=(), xr-spatial-tracking=(), attribution-reporting=()
+	X-Content-Type-Options: nosniff
+	Cross-Origin-Opener-Policy: same-origin
+	Cross-Origin-Embedder-Policy: credentialless
+
+/ext/webemu/
+	Content-Type: application/xhtml+xml
+
+/ext/console/
+	Content-Type: application/xhtml+xml
+
+/res/pay.json
+	Link: </res/pay.json>; rel="payment-method-manifest"

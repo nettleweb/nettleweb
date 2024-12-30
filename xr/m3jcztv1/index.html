@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html id="fpdoodle" lang="en-NL">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta content="width=device-width,maximum-scale=1.0,user-scalable=no" name="viewport">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+  <script src="index.js"></script>
+  <script async="" src="createjs-2015.11.26.min.js"></script>
+  <script async="" src="cannon.min.js"></script>
+  <script async="" src="bundle.min.js"></script>
+  <script async="" src="kitsune20.js"></script>
+  <script nonce="">(function () {
+    window.google = {kEI: 'ABCDEFGHIJKLMNOPQRSTUV', kEXPI: '31', kBL: 'k8M4'};
+    google.sn = 'webhp';
+    google.kHL = 'en-NL';
+  })();
+  (function () {
+    var f = this || self;
+    var h, k = [];
+
+    function l(a) {
+      for (var b; a && ( ! a.getAttribute || ! (b = a.getAttribute("eid")));) a = a.parentNode;
+      return b || h
+    }
+
+    function m(a) {
+      for (var b = null; a && ( ! a.getAttribute || ! (b = a.getAttribute("leid")));) a = a.parentNode;
+      return b
+    }
+
+    function n(a, b, c, d, g) {
+      var e = "";
+      c || -1 !== b.search("&ei=") || (e = "&ei=" + l(d), -1 === b.search("&lei=") && (d = m(d)) && (e += "&lei=" + d));
+      d = "";
+      ! c && f._cshid && -1 === b.search("&cshid=") && "slh" !== a && (d = "&cshid=" + f._cshid);
+      c = c || "/" + (g || "gen_204") + "?atyp=i&ct=" + a + "&cad=" + b + e + "&zx=" + Date.now() + d;
+      /^http:/i.test(c) && "https:" === window.location.protocol && (google.ml && google.ml(Error("a"), ! 1, {
+        src: c,
+        glmm: 1
+      }), c = "");
+      return c
+    };h = google.kEI;
+    google.getEI = l;
+    google.getLEI = m;
+    google.ml = function () {
+      return null
+    };
+    google.log = function (a, b, c, d, g) {
+      if (c = n(a, b, c, d, g)) {
+        a = new Image;
+        var e = k.length;
+        k[e] = a;
+        a.onerror = a.onload = a.onabort = function () {
+          delete k[e]
+        };
+        a.src = c
+      }
+    };
+    google.logUrl = n;
+  }).call(this);
+  (function () {
+    google.y = {};
+    google.sy = [];
+    google.x = function (a, b) {
+      if (a) var c = a.id; else {
+        do c = Math.random(); while (google.y[c])
+      }
+      google.y[c] = [a, b];
+      return ! 1
+    };
+    google.sx = function (a) {
+      google.sy.push(a)
+    };
+    google.lm = [];
+    google.plm = function (a) {
+      google.lm.push.apply(google.lm, a)
+    };
+    google.lq = [];
+    google.load = function (a, b, c) {
+      google.lq.push([[a], b, c])
+    };
+    google.loadAll = function (a, b) {
+      google.lq.push([a, b])
+    };
+    google.bx = ! 1;
+    google.lx = function () {
+    };
+  }).call(this);
+  google.f = {};
+  (function () {
+    document.documentElement.addEventListener("submit", function (b) {
+      var a;
+      if (a = b.target) {
+        var c = a.getAttribute("data-submitfalse");
+        a = "1" == c || "q" == c && ! a.elements.q.value ? ! 0 : ! 1
+      } else a = ! 1;
+      a && (b.preventDefault(), b.stopPropagation())
+    }, ! 0);
+    document.documentElement.addEventListener("click", function (b) {
+      var a;
+      a:{
+        for (a = b.target; a && a != document.documentElement; a = a.parentElement) if ("A" == a.tagName) {
+          a = "1" == a.getAttribute("data-nohref");
+          break a
+        }
+        a = ! 1
+      }
+      a && b.preventDefault()
+    }, ! 0);
+  }).call(this);
+  (function () {
+    google.hs = {h: true, peh: true, sie: false};
+  })();</script>
+  <title>Champion Island</title>
+  <!--<script src="/js/main.js"></script> This was removed cuz it breaks stuff -->
+  <script type="text/javascript" charset="UTF-8" src="kitsune_compiled_deferred_module.js" nonce=""></script>
+</head>
+<body data-new-gr-c-s-check-loaded="14.1022.0" data-gr-ext-installed="" style="margin: 0; width: 2458px;">
+<script nonce="">(function () {
+  var expids = '0,772215,1,530320,56873,954,5104,207,1987,2817,2316,145,238,23,223,5,1354,662,4588,1122516,797556,27,13190,13858,2627,274,10509,48,18,460,248,107,82,4,59,147,688053,8399,180,3382,3320,2044,314,1526,1770,1137,4795,5298,2488,328,5033,10931,279,1191,14920,7052,2445,3439,845,4693,10213,13149,1800,512,2111,4859,1361,9291,447,2574,17587,6595,1,3,10988,4020,978,13228,3847,3776,416,2530,3,3898,3933,448,12,866,12,5,7,2148,7096,4516,2778,919,5081,62,1531,1279,2213,529,149,1943,1983,4,4310,109,2003,1402,606,2023,1733,42,523,5765,257,6070,2577,605,2622,2846,6,12354,5096,7877,3462,4981,908,2,941,15756,3,576,1014,1,2015,3429,149,11327,2648,4,1528,2304,1240,7856,2626,2015,3,4794,8814,2725,2039,2658,7357,30,3878,9750,2305,639,1493,5587,3771,6763,665,811,5004,1,2313,228,4094,17,3122,5,908,3,3540,2,11943,2767,1814,283,38,874,5992,12526,2,1394,2806,1715,2,3057,726,1,2118,2594,727,5418,1312,92,692,255,493,2379,407,1192,822,1274,4579,2050,574,3,1070,173,5551,1,1041,75,168,917,1290,75,3248,82,1,1711,293,1932,185,263,1120,454,1144,3715,1,289,1,540,3,125,747,4601,2,11,1448,85,2384,1,1457,70,225,2574,2,1,6,152,1,814,1297,118,393,1997,7,54,68,899,885,291,16,321,103,232,87,555,311,14,129,27,2,4,733,17,30,1,110,188,147,423,328,86,2,835,285,342,1384,212,15,1,1,3,292,532,727,295,395,1507,349,360,635,132,87,3,13,556,75,1,155,636,360,1248,316,2,1,3,377,592,361,1316,291,8,307,144,2,1,293,2,2,914,2307,42,5601854,3904,226,220,58,2,1802830,3884295,309683,2800697,882,444,1,2,80,1,1796,1,9,2,2551,1,889,795,2,561,1,4265,1,1,2,1331,3299,843,2609,155,17,13,72,139,4,2,20,2,169,13,19,46,5,39,96,548,29,2,2,1,2,1,2,2,7,4,1,2,2,2,2,2,2,319,34,513,186,1,1,158,3,2,2,2,2,2,4,2,3,3,235,34,10,40,2,15,23654790,299865,1515992,1256903,94360,1174097,338,3,2340,74,906,6,168,5,1494,207,261,772077';
+  var nowOptInFlag = false;
+  var bachDisableTfjs = false;
+  var exp1 = 0;
+  var exp2 = 0;
+  var exp3 = 0;
+  var exp4 = 0;
+  var exp5 = 0;
+  window.google = window.google || {};
+  window.google.kEXPI = window.google.kEXPI || expids;
+  window.google.doodle = window.google.doodle || {};
+  window.google.doodle.flags = {
+    nowOptIn: nowOptInFlag, bNoLocal: bachDisableTfjs, exp1: exp1, exp2: exp2, exp3: exp3, exp4: exp4, exp5: exp5
+  };
+})();</script>
+<span style="display:none" id="hplogoved" data-ved="01234567890ABCDEFGHIJK-LMNOPQRSTUVWXY"><span id="hplogoshareved"
+    data-ved="01234567890ABCDEFGHIJK-LMNOPQRSTUVWXYZab"></span></span>
+<style>#hplogo {
+    height: 216px;
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    width: 384px;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none
+}
+
+#sdoodles, #sdoodles center, #sdoodles body, #sdoodles #hplogo, #sdoodles #hplogo2 {
+    overflow: hidden;
+    margin: 0;
+    height: 100%;
+    width: 100%
+}
+
+#sadoodle, #fpdoodle, #sadoodle center, #fpdoodle center, #sadoodle body, #fpdoodle body, #sadoodle #hplogo, #fpdoodle #hplogo, #sadoodle #hplogo2, #fpdoodle #hplogo2 {
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+    width: 100vw
+}
+
+#hpcta {
+    image-rendering: pixelated;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    position: absolute;
+    cursor: pointer;
+    border: 0;
+    padding: 0;
+    background-color: transparent;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat
+}
+
+.hpcta-marathon {
+    background-image: url(CTA-Marathon-174788017-174787794.png)
+}
+
+.hpcta-archery {
+    background-image: url(CTA-Archery-174787996-174787824.png)
+}
+
+.hpcta-closing {
+    background-image: url(CTA-Closing-174787829-192414335.png)
+}
+
+.hpcta-opening {
+    background-image: url(CTA-Opening-144867217-174787752-174787825-192413481.png)
+}
+
+.hpcta-rugby {
+    background-image: url(CTA-Rugby-174787947-174787773.png)
+}
+
+.hpcta-skateboarding {
+    background-image: url(CTA-Skateboarding-174787927.png)
+}
+
+.hpcta-swimming {
+    background-image: url(CTA-Swimming-174787828-174787766.png)
+}
+
+.hpcta-tabletennis {
+    background-image: url(CTA-TableTennis-174787827-174787820.png)
+}
+
+.hpcta-climbing {
+    background-image: url(CTA_Climbing-174787997.png)
+}
+
+#hpctaplay {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(CTA-CenteredPlayButtonFrame1.png);
+    image-rendering: pixelated;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    cursor: pointer;
+    padding: 0;
+    visibility: hidden;
+    animation: hpctaplayanimate-offset 1.5s steps(1, end) infinite
+}
+
+.hpcta-closing #hpctaplay, .hpcta-opening #hpctaplay {
+    background-image: url(CTA-CenteredPlayButtonFrame1.png);
+    animation: hpctaplayanimate-centered 1.5s steps(1, end) infinite
+}
+
+@keyframes hpctaplayanimate-centered {
+    0% {
+        background-image: url(CTA-CenteredPlayButtonFrame1.png)
+    }
+    50% {
+        background-image: url(CTA-CenteredPlayButtonFrame2.png)
+    }
+}
+
+@keyframes hpctaplayanimate-offset {
+    0% {
+        background-image: url(CTA-OffsetPlayButtonFrame1.png)
+    }
+    50% {
+        background-image: url(CTA-OffsetPlayButtonFrame2.png)
+    }
+}
+
+#hpcanvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+#hplogoaria, #hplogogamearia {
+    top: 0;
+    left: -2px;
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    overflow: hidden
+}
+
+#hplogovideo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+#hplogovideo video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%
+}
+
+@font-face {
+    font-family: 'PixelMplus10';
+    src: url('https://www.gstatic.com/external_hosted/pixelmplus_font/PixelMplus10-Regular.ttf')
+}</style><!-- find.foo/letsplayagame21 -->
+<div id="hplogo" style="will-change: width, height; overflow: visible; width: 100%; height: 100%;">
+  <div id="hplogo2" role="region" tabindex="0" dir="ltr" aria-controls="hplogoaria" aria-label="{{ARIA_LABEL}}"
+      style="background-color: rgb(0, 0, 0);">
+    <div id="hplogovideo" data-width="960" data-height="540"
+        style="transform-origin: 0 0; position: absolute; width: 2032px; height: 1143px; left: 213px; top: 0; background: rgb(0, 0, 0);"></div>
+    <canvas id="hpcanvas" width="960" height="540" dir="ltr"
+        style="transform-origin: 0 0; position: absolute; width: 2032px; height: 1143px; left: 213px; top: 0; opacity: 1;"></canvas>
+    <div role="region" id="hplogoaria" aria-live="assertive">Game paused</div>
+    <div id="hplogogamearia" aria-live="polite">You are in the overworld</div>
+  </div>
+  <button id="hpcta" class="hpcta-opening">
+    <div id="hpctaplay" style="visibility: inherit;"></div>
+  </button>
+  <style>
+      .ddl-lightbox_ {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-align-items: center;
+          align-items: center;
+          -webkit-justify-content: center;
+          justify-content: center;
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          overflow: hidden;
+          opacity: 0;
+          z-index: 1000;
+          background-color: rgba(0, 0, 0, 0.8);
+          visibility: hidden
+      }
+
+      .ddl-lightboxContainer_ {
+          position: relative;
+          height: 90%;
+          width: 90%
+      }
+
+      .ddl-lightboxContent_ {
+          -webkit-transform-origin: 0 0;
+          -ms-transform-origin: 0 0;
+          -o-transform-origin: 0 0;
+          transform-origin: 0 0
+      }
+
+      .ddl-lightboxEnabled_ {
+          opacity: 1;
+          visibility: visible
+      }
+  </style>
+  <div data-width="960" data-height="540"
+      style="pointer-events: none; position: absolute; top: 0; left: 213px; width: 2032px; height: 1143px; direction: ltr; transform-origin: 0 0;"></div>
+  <div style="position: absolute; left: 0; top: 0; opacity: 0.01; font-family: PixelMplus10,serif;">.</div>
+</div>
+<script>(function setCta() {
+  var bugId = '144867217';
+  var elem = document.getElementById('hpcta');
+  var mapping = {
+    '174788017': 'hpcta-marathon',
+    '174787794': 'hpcta-marathon',
+    '174787996': 'hpcta-archery',
+    '174787824': 'hpcta-archery',
+    '174787829': 'hpcta-closing',
+    '192414335': 'hpcta-closing',
+    '144867217': 'hpcta-opening',
+    '174787752': 'hpcta-opening',
+    '174787825': 'hpcta-opening',
+    '192413481': 'hpcta-opening',
+    '174787947': 'hpcta-rugby',
+    '174787773': 'hpcta-rugby',
+    '174787927': 'hpcta-skateboarding',
+    '174787828': 'hpcta-swimming',
+    '174787766': 'hpcta-swimming',
+    '174787827': 'hpcta-tabletennis',
+    '174787820': 'hpcta-tabletennis',
+    '174787997': 'hpcta-climbing',
+  };
+  if (mapping.hasOwnProperty(bugId)) {
+    elem.classList.add(mapping[bugId])
+  } else {
+    elem.classList.add('hpcta-opening')
+  }
+})();</script>
+<script>(function () {/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+  var d = function (b) {
+    var a = 0;
+    return function () {
+      return a < b.length ? {done: ! 1, value: b[a++]} : {done: ! 0}
+    }
+  }, e = function (b) {
+    var a = "undefined" != typeof Symbol && Symbol.iterator && b[Symbol.iterator];
+    return a ? a.call(b) : {next: d(b)}
+  }, f = function (b) {
+    for (var a, c = []; ! (a = b.next()).done;) c.push(a.value);
+    return c
+  }, g = this || self;
+  var h = function (b, a) {
+    var c = document.createElement("script");
+    c.async = ! 0;
+    a && (c.onload = a);
+    c.src = b;
+    document.body.appendChild(c)
+  }, k = function (b, a) {
+    var c = b.shift();
+    c && h(c, function () {
+      a();
+      k(b, a)
+    })
+  };
+  window.google || (window.google = {});
+  google.doodle || (google.doodle = {});
+  google.doodle.id = "144867217";
+  google.doodle.url = "/search?q=Olympics&oi=ddle&ct=144867217&hl=en-GB&kgmid=%2Fm%2F05gj2h";
+  google.doodle.alt = "Doodle Champion Island Games!";
+  google.doodle.share = "Feline up for a challenge? Help Lucky claim victory in the Doodle Champion Island Games! #GoogleDoodle";
+  google.doodle.shortlink = "//g.co/doodle/99dkzef";
+  google.doodle.facebook_link = "//g.co/doodle/dd7muyq";
+  google.doodle.twitter_link = "//g.co/doodle/s4mc93n";
+  google.doodle.email_link = "//g.co/doodle/ktg7y8y";
+  google.doodle.copy_link = "//g.co/doodle/y7wunpa";
+  google.doodle.gallery = "http://www.google.com/doodles/doodle-champion-island-games-july-24?hl=en-GB";
+  google.doodle.large_image = "doodle-champion-island-games-july-24-6753651837109015.3-l.png";
+  google.doodle.hl = "en-GB";
+  google.doodle.gl = "";
+  google.doodle.msgs = {};
+  google.doodle.doodle_args = {
+    "submitScoreUrl": "https://us-central1-kitsune-271319.cloudfunctions.net/submitScore",
+    "leaderboardUrl": "https://storage.googleapis.com/kitsune-scores/scores.json",
+    "defaultLeaderboard": "[{\\\"TeamId\\\":0,\\\"GlobalScore\\\":32941,\\\"RecordCount\\\":590},{\\\"TeamId\\\":1,\\\"GlobalScore\\\":30938,\\\"RecordCount\\\":510},{\\\"TeamId\\\":2,\\\"GlobalScore\\\":36028,\\\"RecordCount\\\":650},{\\\"TeamId\\\":3,\\\"GlobalScore\\\":31865,\\\"RecordCount\\\":550}]",
+    "leaderboardCacheIntervalMs": "60000"
+  };
+  if ( ! google.doodle || ! google.doodle.loaded) {
+    var l = ["google", "doodle", "loaded"], m = g;
+    l[0] in m || "undefined" == typeof m.execScript || m.execScript("var " + l[0]);
+    for (var n; l.length && (n = l.shift());) l.length ? m[n] && m[n] !== Object.prototype[n] ? m = m[n] : m = m[n] = {} : m[n] = ! 0;
+    var p = JSON.parse('["createjs-2015.11.26.min.js","cannon.min.js","bundle.min.js"]'),
+      q = JSON.parse("[]"),
+      r = [].concat(p instanceof Array ? p : f(e(p)), q instanceof Array ? q : f(e(q))), t = 0, u = function () {
+        t++;
+        t >= r.length && h("kitsune20.js")
+      };
+    k(q, u);
+    for (var v = 0; v < p.length; v++) h(p[v], u);
+    0 == r.length && u()
+  }
+}).call(this);</script>
+</body>
+</html>

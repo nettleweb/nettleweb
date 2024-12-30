@@ -1,0 +1,78 @@
+@font-face {
+	font-family: "Ubuntu Mono";
+	src: url("res/mono.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: "Ubuntu";
+	src: url("res/ubuntu.woff2") format("woff2");
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	font-smooth: never;
+	-webkit-font-smoothing: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+::selection {
+	color: #ffffff;
+	background: #004080;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #c0c0c0;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #b0b0b0;
+}
+
+::-webkit-scrollbar-thumb:active {
+	background: #a0a0a0;
+}
+
+body {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	font-style: normal;
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 500;
+	color: #303030;
+	overflow: hidden;
+	background: #ffffff;
+	accent-color: #004080;
+}
+
+input, select, option, textarea, button {
+	font-size: inherit;
+	font-style: inherit;
+	font-family: inherit;
+	font-weight: inherit;
+	font-stretch: inherit;
+	font-variant: inherit;
+	color: inherit;
+	background: rgba(0, 0, 0, 0);
+	box-sizing: content-box;
+}
+
+a {
+	color: unset;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+hr {
+	margin: 20px 0px;
+	border: none;
+	border-bottom: 1px solid #808080;
+}

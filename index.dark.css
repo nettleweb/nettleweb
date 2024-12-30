@@ -1,0 +1,183 @@
+body {
+	color: #e0e0e0;
+	background: #202020;
+}
+
+option, optgroup, #navigation-bar, #nwidget {
+	background: #404040;
+}
+
+#logo, #banner {
+	background-image: url("res/logo-w.svg");
+}
+
+#game-category, #game-navigator, #item-category, #item-navigator {
+	border-color: #606060;
+	background: #404040;
+}
+
+#version, #nav-bar>button, #game-category>button, #item-category>button {
+	color: #d0d0d0;
+}
+
+#nav-bar>button[data-current], #game-category>button[data-current], #item-category>button[data-current], #chatmode>button, #ac-un, #id {
+	color: #ffffff;
+}
+
+#hamb, #hamb::before, #hamb::after {
+	background: #ffffff;
+}
+
+#accn-btn {
+	filter: brightness(80%);
+	background-image: url("res/login-w.svg");
+}
+
+#accn-btn[data-ac] {
+	background-image: url("res/account-w.svg");
+}
+
+#nmsg-btn {
+	filter: brightness(80%);
+	background-image: url("res/bell-w.svg");
+}
+
+#nmsg-btn[data-unread] {
+	background-image: url("res/bell-empty-w.svg");
+}
+
+#accn-btn:hover, #nmsg-btn:hover {
+	filter: brightness(85%);
+}
+
+#accn-btn:active, #nmsg-btn:active {
+	filter: brightness(90%);
+}
+
+#accn-btn[data-current], #nmsg-btn[data-current] {
+	filter: none;
+}
+
+#game-search>button, #item-search>button, #yt-search>button, #search>button {
+	background-image: url("res/search-w.svg");
+}
+
+.game, .item {
+	border-color: #606060;
+	background-color: #404040;
+}
+
+#yt-results>div>div>.desc, #headlines>div>div>.desc, #nwidget>div>span, #ac-friends>div>span, #bio, #ac-bio {
+	color: #c0c0c0;
+}
+
+#yt-results>div>div>.time,#headlines>div>div>.time, #footer, #game-disclaimer, #item-disclaimer, #idisc {
+	color: #a0a0a0;
+}
+
+#sidemenu, #header {
+	background: #404040;
+}
+
+#chatmode, #account {
+	background: #505050;
+}
+
+#global {
+	background-image: url("res/global-w.svg");
+}
+
+#friends {
+	background-image: url("res/friends-w.svg");
+}
+
+#chatgpt {
+	background-image: url("res/gpt-w.svg");
+}
+
+#toggle {
+	background-image: url("res/menu-w.svg");
+}
+
+#toggle[title="Close"] {
+	background-image: url("res/back-w.svg");
+}
+
+#newchat {
+	background-image: url("res/new-chat-w.svg");
+}
+
+#history>div>button, #messages>div>button.delete, #comments>div>button.delete {
+	background-image: url("res/delete-w.svg");
+}
+
+#chat, #ac-prof {
+	background: #202020;
+}
+
+#emoji {
+	background-image: url("res/emoji-w.svg");
+}
+
+#ufile {
+	background-image: url("res/add-file-w.svg");
+}
+
+#yt-load-more:hover, #menu>div:hover, #headlines>div:hover, #ub-shortcuts>div:hover, #yt-results>div:hover {
+	background: #404040;
+}
+
+#yt-load-more:active, #menu>div:active, #headlines>div:active, #ub-shortcuts>div:active, #yt-results>div:active {
+	background: #606060;
+}
+
+#chatmode>button:not([data-current]):hover, #toggle:hover, #newchat:hover, #history>div:hover, #msglist>div:hover, #channels>div:hover, #account-settings input~button:hover, #ac-friends>div>button:hover {
+	background-color: #606060;
+}
+
+#chatmode>button:not([data-current]):active, #toggle:active, #newchat:active, #history>div:active, #history>div[data-current], #msglist>div:active, #msglist>div[data-current], #channels>div:active, #channels>div[data-current], #account-settings input~button:active, #ac-friends>div>button:active {
+	background-color: #808080;
+}
+
+#account-settings button.tick, #messages>div button.tick, #comments>div button.tick {
+	background-image: url("res/tick-w.svg");
+}
+
+#account-settings button.cross, #messages>div button.cross, #comments>div button.cross {
+	background-image: url("res/close-w.svg");
+}
+
+#account-settings button.message {
+	background-image: url("res/new-chat-w.svg");
+}
+
+#ac-edit, #ac-bio-edit, #ac-name-edit, #ac-email-edit, #messages>div>button.edit, #comments>div>button.edit {
+	background-image: url("res/edit-w.svg");
+}
+
+#ac-link {
+	background-image: url("res/link-w.svg");
+}
+
+#like {
+	background-image: url("res/thumb-up-w.svg");
+}
+
+#install {
+	filter: brightness(200%);
+	background: #101010;
+}
+
+#install:hover {
+	background: #202020;
+}
+
+#install:active {
+	background: #303030;
+}
+
+@media all and (max-width: 800px) {
+	#nav-bar {
+		background: #404040;
+	}
+}

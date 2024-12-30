@@ -1,0 +1,454 @@
+/*
+Assignment: Javascript Assignment
+Filename: game.css
+@author: KITSANTAS FOTIOS (17421808)
+Date: 30/04/17
+*/
+
+body {background-image: url(images/bg.png); margin: 0; padding: 0; font-family: calibri, sans-serif;}
+
+
+aside {display: none; width: 200px; position: fixed; height: 100vh; left: 100%; margin-left: -240px; background-color: #ddd; border-left: 5px solid #bbb; padding: 20px;}
+#closeside {float: right; font-weight: bold; cursor: pointer;}
+
+.character {position: absolute; top: 200px; left: 200px; display: block;}
+.character .body {width: 32px; height: 32px; background-image: url(images/body0.png); background-position: 64px 0px; margin-top: 14px; }
+.character .head {width: 32px; height: 32px; background-image: url(images/head0.png); margin-bottom: 0;position: absolute; background-repeat: no-repeat; background-position: 0px -64px;}
+
+aside ul {list-style-type: none; margin-left: 0; padding-left: 0; margin-bottom: 20px; overflow: auto;}
+.heads li, .bodies li {width: 32px; height: 32px; background-position: 0 -64px; float: left; cursor: pointer; border: 2px solid #ddd; margin-right: 4px;}
+.heads li:hover, .bodies li:hover {border: 2px solid red;}
+#head0 {background-image: url(images/head0.png);}
+
+#head1 {background-image: url(images/head1.png);}
+#head2 {background-image: url(images/head2.png);}
+#head3 {background-image: url(images/head3.png);}
+#head4 {background-image: url(images/head4.png);}
+
+.bodies li {background-position: 64px 0px;}
+#body0 {background-image: url(images/body0.png);}
+#body1 {background-image: url(images/body1.png);}
+#body2 {background-image: url(images/body2.png);}
+#body3 {background-image: url(images/body3.png);}
+#body4 {background-image: url(images/body4.png);}
+
+.tree {float: right; margin-top: 2vh; margin-right: 5vw;}
+
+#opponent {left: 500px; top: 500px;}
+#opponent .body {background-image: url(images/body1.png);}
+#opponent .head {background-image: url(images/head1.png);}
+
+.character.standUp .head {
+	background-position: 0px 0px;
+}
+
+.character.standDown .head {
+	background-position: 0px -64px;
+}
+
+.character.standLeft .head {
+	background-position: 0px -32px;
+}
+
+.character.standRight .head {
+	background-position: 0px -96px;
+}
+
+.character.standUp .body {
+	background-position: 0px 0px;
+}
+
+.character.standDown .body {
+	background-position: -64px 0px;
+}
+
+.character.standLeft .body {
+	background-position: -32px 0px;
+}
+
+.character.standRight .body {
+	background-position: -96px 0px;
+}
+
+
+
+
+.character.walkUp .head {
+	background-position: 0px 0px;
+	animation: headbob 0.5s infinite;
+}
+
+.character.walkUp .body {
+    animation: walkup 1s steps(3) infinite;
+}
+
+
+.character.walkDown .head {
+	background-position: 0px -64px;
+	animation: headbob 0.75s infinite;
+}
+
+.character.walkDown .body {
+    animation: walkdown 1s steps(3) infinite;
+}
+
+.character.walkLeft .head {
+	background-position: 0px -32px;
+	margin-top: -3px;
+	margin-left: -2px;
+	animation: headbob2 0.75s infinite;
+}
+
+.character.walkLeft .body {
+    animation: walkleft 1s steps(3) infinite;
+}
+
+@keyframes walkleft {
+   0%, 100% { background-position:  -32px  -32px; }
+     50% { background-position: -32px -128px; }
+}
+
+
+.character.walkRight .head {
+	background-position: 0px -96px;
+	margin-top: -3px;
+	margin-left: 4px;
+	animation: headbob3 0.75s infinite;
+}
+
+.character.walkRight .body {
+    animation: walkright 1s steps(3) infinite;
+}
+
+@keyframes walkright {
+   0%, 100% { background-position:  -96px  -32px; }
+     50% { background-position: -96px -128px; }
+}
+
+
+
+@keyframes walkup {
+   0%, 100% { background-position:  0px  -32px; }
+     50% { background-position: 0px -128px; }
+}
+
+
+@keyframes walkdown {
+   0%, 100% { background-position:  -64px  -32px; }
+     50% { background-position: -64px -128px; }
+}
+
+
+@keyframes headbob {
+   0%, 100% { margin-top: 0px; }
+     50% { margin-top: 1px; }
+}
+
+
+@keyframes headbob2 {
+   0%, 100% { margin-left: -2px; }
+     50% { margin-left: 0px; }
+}
+
+
+@keyframes headbob3 {
+   0%, 100% { margin-left: 2px; }
+     50% { margin-left: 0px; }
+}
+
+
+.track {border-style: solid;
+	border-collapse: separate;
+	display: table;
+	border-width: 16px;
+	-moz-border-image: url(outer.png) 14 15 14 16 repeat;
+	-webkit-border-image: url(images/outer.png) 14 15 14 16 repeat;
+	-o-border-image: url(outer.png) 14 15 14 16 repeat;
+	border-image: url(images/outer.png) 14 15 14 16 repeat; background-image: url(images/mud.png);
+	 position: absolute; height: 80vh; width: 80vw; margin: 5vw; margin-top: 5vh;
+}
+
+
+.track .inner {
+	background-image: url(images/bg.png);
+	border-image: url(images/inner.png); border-image-slice: 16 16 16 16 fill; border-image-width: 16px 16px 16px 16px; border-image-outset: 0px 0px 0px 0px; border-image-repeat: round round;
+	border-collapse: separate; margin-top: 15vh; margin-left: 10vw; display: table;  solid transparent; background-color: green; width: 60vw; height: 50vh;}
+
+.horse {background-image: url(images/horse2.png);}
+.horse.runLeft {
+	width: 96px;
+	height: 60px;
+	display: block;
+	background-position: 0px -256px;
+	animation: horseLeft steps(1) 0.5s  infinite;
+}
+
+@keyframes horseLeft {
+	0%, 100% {background-position: 0px -256px; }
+	50% {background-position: 0px -450px;}
+}
+
+
+.horse.runRight {
+	width: 96px;
+	height: 60px;
+	display: block;
+	background-position: 0px -320px;
+	animation: horseRight steps(1) 0.5s  infinite;
+}
+
+@keyframes horseRight {
+	0%, 100% {background-position: 0px -320px; }
+	50% {background-position: 0px -512px;}
+}
+
+.horse.runDown {
+	width: 48px;
+	height: 64px;
+	background-position:48px 192px;
+	animation: horseDown steps(1) 0.75s  infinite;
+}
+
+
+@keyframes horseDown {
+	0%, 100% {background-position:48px -192px; }
+	33% {background-position:48px -380px; }
+	66% {background-position:48px 0px;}
+}
+
+
+.horse.runUp {
+	width: 48px;
+	height: 64px;
+	background-position:0px 192px;
+	animation: horseUp steps(1) 0.75s  infinite;
+}
+
+
+@keyframes horseUp {
+	0%, 100% {background-position:0px -192px; }
+	33% {background-position:0px -380px; }
+	66% {background-position:0px 0px;}
+}
+
+
+#startline {
+	width: 2vw;
+	height: 15vh;
+background-color: #eee;
+background-image: linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black),
+linear-gradient(-45deg, black 25%, transparent 25%, transparent 75%, black 75%, black);
+background-size:1vw 1vw;
+position: absolute;
+margin-left: 20vw;
+opacity: 0.7;
+}
+
+#horse1 {
+	position: absolute; top: 4vh; z-index: 999;
+}
+
+#horse4 .rider .head {background-image: url(images/head2.png);}
+#horse4 .rider .body {background-image: url(images/body3.png);}
+
+
+#horse3 .rider .head {background-image: url(images/head1.png);}
+#horse3 .rider .body {background-image: url(images/body1.png);}
+
+#horse2 .rider .head {background-image: url(images/head4.png);}
+#horse2 .rider .body {background-image: url(images/body4.png);}
+
+#horse2 {
+	position: absolute; top: 8vh;  z-index: 999;
+	background-image: url(images/horse3.png);
+}
+
+#horse3 {
+	position: absolute; top: 12vh;  z-index: 999;
+	background-image: url(images/horse1.png);
+}
+
+#horse4 {
+	position: absolute; top: 16vh; z-index: 999;
+	background-image: url(images/horse4.png);
+}
+
+
+.horse {left: 20vw;}
+
+.horse.standLeft {background-position: 0px -64px; width: 96px; height: 60px;}
+.horse.standLeft .rider .body {background-position: -32px -320px;}
+.horse.standLeft .rider .head {background-position: 0px -32px;}
+
+
+.horse.standRight {background-position: 0px -128px; width: 96px; height: 60px;}
+.horse.standRight .rider {margin-left: -15px;}
+.horse.standRight .rider .body {background-position: -96px -320px;}
+.horse.standRight .rider .head {background-position: 0px -96px;}
+
+
+.horse .rider .head {
+	position: absolute;
+	margin-left: 40px;
+	margin-top: -16px;
+	background-image: url(images/head0.png);
+	width: 32px;
+	height: 32px;
+}
+
+
+.horse .rider .body {
+	background-image: url(images/body0.png);
+ 	width: 32px;
+ 	height: 32px;
+ 	margin-left: 40px;
+ 	margin-top: 8px;
+}
+
+
+.horse.runDown .rider, .horse.runRight .rider, .horse.runLeft .rider{
+	animation: riderBob1 0.75s infinite;
+}
+
+.horse.runLeft .rider .body {
+	background-position: -32px -320px;
+}
+
+
+
+.horse.runRight .rider {
+	margin-left: -15px;
+}
+
+.horse.runRight .rider .head {
+	background-position: 0px -96px;
+	animation: headbob4 0.5s infinite;
+}
+
+.horse.runRight .rider .body {
+	background-position: -96px -320px;
+}
+
+
+.horse.runDown, .horse.runUp {
+	margin-left: 32px;
+}
+
+.horse.runDown .rider {
+	margin-left: -32px;
+
+}
+
+.horse.runDown .rider .head {
+	background-position: 0px -64px;
+	animation: headbob5 0.5s infinite;
+}
+
+.horse.runDown .rider .body {
+	background-position: -64px -320px;
+	margin-top: -16px;
+}
+
+
+
+
+.horse.runUp .rider {
+	margin-left: -32px;
+    animation: riderBob2 0.75s infinite;
+}
+
+.horse.runUp .rider .head {
+	background-position: 0px 0px;
+	animation: headbob5 0.5s infinite;
+}
+
+.horse.runUp .rider .body {
+	background-position: 0px -320px;
+	margin-top: -16px;
+}
+
+
+
+
+
+.horse.runLeft .rider .head {
+	background-position: 0px -32px;
+	animation: headbob4 0.5s infinite;
+}
+
+
+@keyframes headbob4 {
+   0%, 100% { margin-left: 40px; }
+     50% { margin-left: 42px; }
+}
+
+@keyframes headbob5 {
+   0%, 100% { margin-top: -10px; }
+     50% { margin-top: -8px; }
+}
+
+
+@keyframes riderBob1 {
+	 0%, 100% { margin-top: 8px; }
+     50% { margin-top: 10px; }
+}
+
+@keyframes riderBob2 {
+	 0%, 100% { margin-top: 18px; }
+     50% { margin-top: 20px; }
+}
+
+
+#start {
+	float: right;
+	margin: 1vw;
+	padding: 1vw;
+	background: #3498db;
+	background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+	background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+	background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+	background-image: -o-linear-gradient(top, #3498db, #2980b9);
+	background-image: linear-gradient(to bottom, #3498db, #2980b9);
+	-webkit-border-radius: 28;
+	-moz-border-radius: 28;
+	border-radius: 28px;
+	font-family: Arial;
+	color: #ffffff;
+	font-size: 20px;
+	padding: 10px 20px 10px 20px;
+	text-decoration: none;
+	cursor: pointer;
+	text-shadow: 2px 2px 2px #333;
+}
+
+#start:hover {
+	color: #000;
+}
+#start:disabled{
+	background: grey;
+
+}
+#bet, #results {
+	background-color: #ffefb4;
+	padding: 1vw;
+	width: 20vw;
+	border: 2px solid #555;
+	border-radius: 20px;
+	margin-top: 5vh;
+	margin-left: 2vw;
+	overflow: auto;
+	float: left;
+}
+
+#funds {font-weight: bold;}
+#funds:before {content: "£";}
+
+label, input, select {float:  left; display: block; width: 8vw; margin-bottom: 0.5vh;}
+label {clear: left;}
+
+#results {width: auto; position: absolute; margin-top: 8vh; margin-left: 48vw;}
+#results td {height: 30px; width: 30px; background-repeat: no-repeat; background-position: 0px -64px;}
+#results .horse1 { background-image: url(images/head0.png);}
+#results .horse2 {  background-image: url(images/head4.png);}
+#results .horse3 {  background-image: url(images/head1.png);}
+#results .horse4 {  background-image: url(images/head2.png);}

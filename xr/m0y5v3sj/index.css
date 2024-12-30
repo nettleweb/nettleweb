@@ -1,0 +1,22 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-smooth: never;
+	-webkit-font-smoothing: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+	font-style: normal;
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 500;
+	color: #303030;
+	overflow: hidden;
+	background: #ffffff;
+	accent-color: #004080;
+}

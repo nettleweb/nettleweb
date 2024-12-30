@@ -1,0 +1,2927 @@
+@import url("common.css");
+
+#error, noscript>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 10px;
+	margin: 20px auto;
+	color: #ff0000;
+	border: 1px solid #ff0000;
+	border-radius: 10px;
+	z-index: 10;
+	background: #ffe0e0;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#error {
+	display: none;
+}
+
+#anchor {
+	position: absolute;
+	display: block;
+	width: 800px;
+	height: 600px;
+	top: -1000px;
+	left: -1000px;
+	z-index: -1000;
+	touch-action: none;
+	pointer-events: none;
+}
+
+#overlay {
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	z-index: 99999;
+	background: #ffffff;
+	pointer-events: none;
+}
+
+#overlay[data-x] {
+	display: block;
+}
+
+#overlay>iframe {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	overflow: hidden;
+}
+
+#navigation-bar {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 50px;
+	top: 0px;
+	left: 0px;
+	cursor: default;
+	background: #f0f0f0;
+	user-select: none;
+}
+
+#logo {
+	position: absolute;
+	display: block;
+	width: 150px;
+	height: 50px;
+	left: 20px;
+	background-image: url("res/logo.svg");
+	background-size: 150px 50px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#status {
+	position: absolute;
+	display: block;
+	width: 100px;
+	height: 30px;
+	top: 10px;
+	left: 190px;
+	cursor: default;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 30px;
+	letter-spacing: 0px;
+}
+
+#version {
+	position: absolute;
+	display: block;
+	width: auto;
+	height: 30px;
+	top: 10px;
+	left: 300px;
+	color: #606060;
+	cursor: default;
+	font-size: 12px;
+	line-height: 30px;
+	letter-spacing: 0px;
+}
+
+#side-menu, #hamb {
+	display: none;
+}
+
+#nav-bar {
+	position: absolute;
+	display: block;
+	width: auto;
+	height: 30px;
+	padding: 0px 10px 0px 0px;
+	top: 10px;
+	right: 85px;
+	border-right: 2px solid #808080;
+}
+
+#nav-bar>button, #game-category>button, #item-category>button {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 20px;
+	padding: 5px 0px;
+	margin: 0px 15px;
+	color: #606060;
+	border: none;
+	outline: none;
+	line-height: 20px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#nav-bar>button:hover, #game-category>button:hover, #item-category>button:hover {
+	color: #a0a0a0;
+}
+
+#nav-bar>button:active, #game-category>button:active, #item-category>button:active {
+	color: #c0c0c0;
+}
+
+#nav-bar>button[data-current], #game-category>button[data-current], #item-category>button[data-current] {
+	color: #303030;
+	font-weight: 600;
+}
+
+#accn-btn {
+	position: absolute;
+	display: block;
+	width: 24px;
+	height: 24px;
+	top: 13px;
+	right: 15px;
+	border: none;
+	filter: brightness(250%);
+	outline: none;
+	background-image: url("res/login.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#accn-btn[data-ac] {
+	background-image: url("res/account.svg");
+}
+
+#nmsg-btn {
+	position: absolute;
+	display: block;
+	width: 24px;
+	height: 24px;
+	top: 13px;
+	right: 49px;
+	border: none;
+	filter: brightness(250%);
+	outline: none;
+	background-image: url("res/bell-empty.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#nmsg-btn[data-unread] {
+	background-image: url("res/bell.svg");
+}
+
+#nmsg-btn[data-unread]::after {
+	position: absolute;
+	display: block;
+	width: 10px;
+	height: 10px;
+	top: -1px;
+	right: -1px;
+	content: "";
+	background: #ff0000;
+	border-radius: 5px;
+}
+
+#accn-btn:hover, #nmsg-btn:hover {
+	filter: brightness(300%);
+}
+
+#accn-btn:active, #nmsg-btn:active {
+	filter: brightness(350%);
+}
+
+#accn-btn[data-current], #nmsg-btn[data-current] {
+	filter: none;
+}
+
+#loading {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 20px;
+	top: 250px;
+	left: 0px;
+	font-size: 16px;
+	text-align: center;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#loading::before {
+	position: absolute;
+	display: block;
+	width: 50%;
+	height: 50px;
+	top: -250px;
+	right: 0px;
+	content: "";
+	background: #f0f0f0;
+}
+
+#content {
+	position: absolute;
+	display: none;
+	width: calc(100% - 40px);
+	height: calc(100% - 90px);
+	bottom: 0px;
+	padding: 20px 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#content>div {
+	position: relative;
+	display: none;
+	width: 800px;
+	height: fit-content;
+	margin: 10px auto 20px;
+}
+
+#content>div[data-current] {
+	display: block;
+}
+
+#content>div>h2 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 10px;
+	margin: 80px auto 60px;
+	font-size: 24px;
+	font-weight: 600;
+	line-height: 40px;
+}
+
+#s-content {
+	position: absolute;
+	display: block;
+	width: calc(100% - 40px);
+	height: calc(100% - 90px);
+	bottom: 0px;
+	padding: 20px 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.adsbygoogle {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.text-body {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	padding: 10px 0px;
+}
+
+.text-body>* {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+	line-height: 1;
+	letter-spacing: 0px;
+}
+
+.text-body>h2 {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.text-body>h3 {
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.text-body>h4 {
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.text-body>h5 {
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+.text-body>hr {
+	width: 100%;
+	height: 1px;
+	margin: 20px 0px;
+	border-bottom: 1px solid #c0c0c0;
+}
+
+.text-body>p {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.text-body>ul {
+	position: relative;
+	display: block;
+	width: calc(100% - 10px);
+	height: fit-content;
+	margin: 15px 0px;
+	padding: 5px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+.text-body>code {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	padding: 10px;
+	outline: none;
+	font-size: 10px;
+	font-family: "Ubuntu Mono", monospace;
+	line-height: 10px;
+	letter-spacing: -1px;
+	overflow-wrap: break-word;
+}
+
+.pri-button {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 10px 20px;
+	color: #ffffff;
+	cursor: pointer;
+	outline: none;
+	text-align: center;
+	font-weight: 500;
+	line-height: 18px;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	background-color: #004080;
+}
+
+.pri-button:not(:disabled):hover {
+	background-color: #0050a0;
+}
+
+.pri-button:not(:disabled):active {
+	background-color: #0060c0;
+}
+
+.pri-button:disabled {
+	cursor: default;
+	background-color: #808080;
+}
+
+.game {
+	position: relative;
+	display: inline-block;
+	width: 144px;
+	height: 144px;
+	margin: 0px 15px 15px 0px;
+	cursor: pointer;
+	border: 1px solid #a0a0a0;
+	border-radius: 10px;
+	vertical-align: top;
+	text-decoration: none;
+	background-size: 144px 108px;
+	background-color: #f0f0f0;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+.game:hover, .item:hover {
+	border-color: #808080;
+}
+
+.game:active, .item:active {
+	border-color: #303030;
+}
+
+.game>img {
+	position: absolute;
+	display: block;
+	width: 24px;
+	height: 24px;
+	top: 2px;
+	left: 2px;
+}
+
+.game>span {
+	position: absolute;
+	display: block;
+	width: 45px;
+	height: 16px;
+	padding: 2px 5px;
+	top: 2px;
+	right: -5px;
+	color: #ffffff;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16px;
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+
+.game>div, .item>div {
+	position: absolute;
+	display: block;
+	width: 134px;
+	height: 30px;
+	padding: 3px 5px;
+	top: 108px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 14px;
+	letter-spacing: 0px;
+}
+
+.item {
+	position: relative;
+	display: inline-block;
+	width: 144px;
+	height: 164px;
+	margin: 0px 15px 15px 0px;
+	cursor: pointer;
+	border: 1px solid #a0a0a0;
+	border-radius: 10px;
+	vertical-align: top;
+	text-decoration: none;
+	background-size: 144px 108px;
+	background-color: #f0f0f0;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+.item>span {
+	position: absolute;
+	display: block;
+	width: 134px;
+	height: 14px;
+	padding: 3px 5px;
+	top: 144px;
+	text-align: center;
+	font-weight: 600;
+	line-height: 14px;
+	letter-spacing: 0px;
+}
+
+div.user[data-vip]::after {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 5px;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+div.user[data-vip="gold"]::after {
+	content: "\01f451";
+}
+
+div.user[data-vip="diamond"]::after {
+	content: "\01f48e";
+}
+
+#banner {
+	position: relative;
+	display: block;
+	width: 512px;
+	height: 128px;
+	margin: 30px auto 50px;
+	background-image: url("res/logo.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#banner::after {
+	position: absolute;
+	display: block;
+	width: 240px;
+	height: 24px;
+	right: 0px;
+	bottom: 0px;
+	color: #808080;
+	content: "Your ultimate internet hub!";
+	font-size: 18px;
+	font-style: italic;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#notice {
+	position: relative;
+	display: none;
+	width: calc(100% - 32px);
+	height: fit-content;
+	margin: 20px 0px;
+	padding: 10px 15px;
+	color: #808000;
+	border: 1px solid #808000;
+	border-radius: 10px;
+	background: #ffffe0;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#notice::before {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	padding: 0px 5px 0px 0px;
+	content: "\01f4e2";
+}
+
+#menu {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 40px 0px;
+}
+
+#menu>div {
+	position: relative;
+	display: inline-block;
+	width: 180px;
+	height: 180px;
+	margin: 10px 15px 10px 0px;
+	cursor: pointer;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	vertical-align: top;
+}
+
+#menu>div:hover, #headlines>div:hover, #ub-shortcuts>div:hover, #yt-results>div:hover {
+	background: #f8f8f8;
+}
+
+#menu>div:active, #headlines>div:active, #ub-shortcuts>div:active, #yt-results>div:active {
+	background: #f0f0f0;
+}
+
+#menu>div>img {
+	position: absolute;
+	display: block;
+	width: 96px;
+	height: 96px;
+	top: 15px;
+	left: 42px;
+}
+
+#menu>div>div {
+	position: absolute;
+	display: block;
+	width: 140px;
+	height: 36px;
+	top: 115px;
+	left: 20px;
+	font-size: 18px;
+	text-align: center;
+	line-height: 36px;
+	letter-spacing: 0px;
+}
+
+#discover {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 40px 0px;
+}
+
+#discover>h3, #services-page>h3, #store-manager-page-1>h3, #store-manager-page-2>h3 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+	font-size: 18px;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#discover>hr, #services-page>hr, #store-manager-page-1>hr, #store-manager-page-2>hr {
+	margin: 20px 0px;
+	border-bottom: 1px solid #c0c0c0;
+}
+
+#weather {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100px;
+	margin: 15px 0px;
+}
+
+#bitcoin {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 470px;
+	margin: 15px 0px;
+}
+
+#weather>embed, #bitcoin>embed, #calc-container>embed, #webemu-container>embed, #console-container>embed, #test-frame>embed, body>embed {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#headlines, #yt-results {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 20px 0px;
+}
+
+#headlines>div, #yt-results>div {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	margin: 10px 0px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+#headlines>div>img, #yt-results>div>img {
+	position: relative;
+	display: inline-block;
+	width: 160px;
+	height: 90px;
+	margin: 0px 10px 0px 0px;
+	object-fit: cover;
+	vertical-align: top;
+}
+
+#headlines>div>div, #yt-results>div>div {
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 170px);
+	height: fit-content;
+	vertical-align: top;
+}
+
+#headlines>div>div>.title, #yt-results>div>div>.title {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 0px 0px 10px;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#headlines>div>div>.desc, #yt-results>div>div>.desc {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 10px 0px 5px;
+	color: #606060;
+	line-height: 16px;
+	letter-spacing: 0px;
+}
+
+#headlines>div>div>.time, #yt-results>div>div>.time {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 5px 0px;
+	color: #707070;
+	font-size: 12px;
+	line-height: 14px;
+	letter-spacing: 0px;
+}
+
+#game-search, #item-search, #vid-search, #yt-search, #search {
+	position: relative;
+	display: block;
+	width: 400px;
+	height: 40px;
+	margin: 20px auto;
+	border: 1px solid #808080;
+}
+
+#game-search>input, #item-search>input, #vid-search>input, #yt-search>input, #search>input {
+	position: absolute;
+	display: block;
+	width: calc(100% - 52px);
+	height: 20px;
+	top: 10px;
+	left: 10px;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#game-search>button, #item-search>button, #vid-search>button, #yt-search>button, #search>button {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	top: 10px;
+	right: 10px;
+	border: none;
+	outline: none;
+	background-image: url("res/search.svg");
+	background-size: 18px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#game-category, #item-category {
+	position: relative;
+	display: block;
+	width: calc(100% - 2px);
+	height: fit-content;
+	margin: 30px 0px;
+	border: 1px solid #a0a0a0;
+	border-radius: 10px;
+	background: #f0f0f0;
+}
+
+#game-category>div, #item-category>div {
+	position: absolute;
+	display: block;
+	width: 140px;
+	height: 24px;
+	top: 3px;
+	right: 10px;
+}
+
+#game-category>div>label, #item-category>div>label {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 24px;
+	font-size: 12px;
+	line-height: 24px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#game-category>div>select, #item-category>div>select {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 18px;
+	padding: 2px;
+	border: 1px solid #808080;
+	outline: none;
+	font-size: 12px;
+	line-height: 22px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#game-container, #item-container {
+	position: relative;
+	display: block;
+	width: calc(100% + 12px);
+	height: fit-content;
+	margin: 30px 0px;
+}
+
+#game-navigator, #item-navigator {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 30px auto;
+	border: 1px solid #303030;
+	background: #f0f0f0;
+}
+
+#game-navigator>button, #item-navigator>button {
+	position: relative;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	outline: none;
+	border-top: 1px solid #ffffff;
+	border-left: 1px solid #ffffff;
+	border-right: 1px solid #808080;
+	border-bottom: 1px solid #808080;
+	vertical-align: top;
+	background-size: 30px 30px;
+	background-color: #c0c0c0;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#game-navigator>button:disabled, #item-navigator>button:disabled {
+	cursor: default;
+	filter: brightness(200%) contrast(40%);
+	border-color: #c0c0c0;
+}
+
+#game-navigator>button:not(:disabled):active, #item-navigator>button:not(:disabled):active {
+	border-top-color: #808080;
+	border-left-color: #808080;
+	border-right-color: #ffffff;
+	border-bottom-color: #ffffff;
+}
+
+#gnav-back, #nav-back {
+	background-image: url("res/back.svg");
+}
+
+#gnav-forward, #nav-forward {
+	background-image: url("res/forward.svg");
+}
+
+#game-navigator>div, #item-navigator>div {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 20px;
+	padding: 5px 10px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#game-navigator>div>input, #item-navigator>div>input {
+	position: relative;
+	display: inline;
+	width: 40px;
+	height: fit-content;
+	border: none;
+	outline: none;
+	font-size: 12px;
+	text-align: end;
+	line-height: 20px;
+	border-bottom: 1px solid #808080;
+}
+
+#game-navigator>div>input:focus, #item-navigator>div>input:focus {
+	border-bottom: 1px solid #303030;
+}
+
+#game-disclaimer, #item-disclaimer, #idisc {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 20px 0px;
+	color: #808080;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+#vid-list {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 40px 0px;
+}
+
+#vid-list>div {
+	position: relative;
+	display: block;
+	width: calc(100% - 32px);
+	height: fit-content;
+	margin: 20px 0px;
+	padding: 15px;
+	border: 1px solid #c0c0c0;
+	border-radius: 10px;
+}
+
+#vid-list>div>video {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 0px 0px 15px;
+	object-fit: contain;
+	object-position: 0px 0px;
+}
+
+#vid-list>div>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px 10px;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#vid-list>div>span {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 10px 0px 0px;
+	color: #606060;
+	line-height: 16px;
+	letter-spacing: 0px;
+}
+
+#services-page>div>h3 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 0px 15px;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#ub-container, #yt-container, #gamemu-container {
+	position: relative;
+	display: block;
+	width: calc(100% - 30px);
+	height: fit-content;
+	margin: 20px 0px;
+	padding: 15px;
+	border: 1px solid #808080;
+	border-radius: 15px;
+}
+
+#addr {
+	position: relative;
+	display: block;
+	width: 360px;
+	height: 20px;
+	margin: 20px auto;
+	padding: 10px 20px;
+	border: 1px solid #c0c0c0;
+	border-radius: 25px;
+	outline: none;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#addr:focus, #ub-option-bar>select:focus, #yt-option-bar>select:focus {
+	border-color: #808080;
+}
+
+#ub-option-bar, #yt-option-bar {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px auto;
+}
+
+#ub-option-bar>label, #yt-option-bar>label {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 24px;
+	margin: 0px 5px;
+	color: #808080;
+	line-height: 24px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#ub-option-bar>select, #yt-option-bar>select {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 20px;
+	padding: 1px 2px;
+	border: 1px solid #c0c0c0;
+	outline: none;
+	line-height: 20px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#ub-shortcuts {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 20px 0px;
+	text-align: center;
+}
+
+#ub-shortcuts>div {
+	position: relative;
+	display: inline-block;
+	width: 120px;
+	height: 120px;
+	margin: 0px 10px 10px 0px;
+	cursor: pointer;
+	border-radius: 25px;
+}
+
+#ub-shortcuts>div>img {
+	position: absolute;
+	display: block;
+	width: 48px;
+	height: 48px;
+	top: 11px;
+	left: 36px;
+}
+
+#ub-shortcuts>div>div {
+	position: absolute;
+	display: block;
+	width: 100px;
+	height: 30px;
+	top: 80px;
+	left: 10px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 14px;
+	letter-spacing: 0px;
+}
+
+#yt-load-more, #loadmore {
+	position: relative;
+	display: none;
+	width: fit-content;
+	height: fit-content;
+	margin: 20px auto 10px;
+	padding: 10px 15px;
+	cursor: pointer;
+	outline: none;
+	border: 1px solid #808080;
+	border-radius: 25px;
+}
+
+#yt-load-more:hover, #loadmore:hover {
+	background: #f0f0f0;
+}
+
+#yt-load-more:active, #loadmore:active {
+	background: #e0e0e0;
+}
+
+#gamemu-options {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+}
+
+#gamemu-options>div>select {
+	max-width: 120px;
+}
+
+#startemu {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 20px 0px 10px;
+}
+
+#webemu-container {
+	position: relative;
+	display: block;
+	width: 1200px;
+	height: 1000px;
+	margin: 0px -220px;
+	overflow: hidden;
+}
+
+#calc-container, #console-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: unset;
+	margin: 10px 0px;
+	aspect-ratio: 4/3;
+}
+
+#community-page>div, #game {
+	position: relative;
+	display: block;
+	width: 800px;
+	height: 600px;
+	margin: 10px -1px;
+	border: 1px solid #808080;
+}
+
+#sidemenu {
+	position: absolute;
+	display: block;
+	width: 200px;
+	height: 100%;
+	background: #e0e0e0;
+	border-right: 1px solid #a0a0a0;
+}
+
+#chatmode {
+	position: absolute;
+	display: block;
+	width: 200px;
+	height: 80px;
+	background: #d8d8d8;
+}
+
+#chatmode>button {
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 24px;
+	padding: 26px 0px 0px;
+	color: #303030;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 24px;
+	border-radius: 10px;
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 13px 4px;
+}
+
+#chatmode>button[data-current] {
+	cursor: default;
+	filter: invert(19%) sepia(21%) saturate(6764%) hue-rotate(193deg) brightness(95%) contrast(105%);
+	font-weight: 600;
+}
+
+#global {
+	top: 15px;
+	left: 15px;
+	background-image: url("res/global.svg");
+}
+
+#friends {
+	top: 15px;
+	left: 70px;
+	background-image: url("res/friends.svg");
+}
+
+#chatgpt {
+	top: 15px;
+	left: 125px;
+	background-image: url("res/gpt.svg");
+}
+
+#channels, #msglist, #history {
+	position: absolute;
+	display: none;
+	width: 184px;
+	height: calc(100% - 130px);
+	top: 80px;
+	left: 0px;
+	padding: 0px 8px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#msglist>div {
+	position: relative;
+	display: block;
+	width: 184px;
+	height: 42px;
+	cursor: pointer;
+}
+
+#msglist>div>img {
+	position: absolute;
+	display: block;
+	width: 32px;
+	height: 32px;
+	top: 4px;
+	left: 5px;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	background-color: #ffffff;
+}
+
+#msglist>div>div {
+	position: absolute;
+	display: block;
+	width: 130px;
+	height: 24px;
+	top: 9px;
+	left: 49px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#history>div {
+	position: relative;
+	display: block;
+	width: 184px;
+	height: 35px;
+	cursor: pointer;
+}
+
+#history>div>div {
+	position: absolute;
+	display: block;
+	width: 139px;
+	height: 25px;
+	top: 5px;
+	left: 5px;
+	font-size: 13px;
+	white-space: pre;
+	line-height: 25px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+#history>div>button {
+	position: absolute;
+	display: block;
+	width: 35px;
+	height: 35px;
+	top: 0px;
+	right: 0px;
+	border: none;
+	outline: none;
+	background-image: url("res/delete.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 5px 6px;
+}
+
+#history>div>button:hover {
+	background-color: #ff8080;
+}
+
+#history>div>button:active {
+	background-color: #ff0000;
+}
+
+#newchat {
+	position: relative;
+	display: block;
+	width: 140px;
+	height: 15px;
+	margin: 5px 0px 0px;
+	padding: 10px 9px 10px 35px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	font-size: 13px;
+	text-align: start;
+	line-height: 15px;
+	letter-spacing: 0px;
+	background-image: url("res/new-chat.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 5px 6px;
+}
+
+#channels>span {
+	position: relative;
+	display: block;
+	width: 184px;
+	height: 16px;
+	margin: 20px 0px 5px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 16px;
+	border-bottom: 1px solid #a0a0a0;
+}
+
+#channels>div {
+	position: relative;
+	display: block;
+	width: 176px;
+	height: 25px;
+	padding: 5px 4px;
+	cursor: pointer;
+	font-size: 13px;
+	line-height: 25px;
+	letter-spacing: 0px;
+}
+
+#channels>div:hover, #msglist>div:hover, #history>div:hover, #newchat:hover, #toggle:hover, #chatmode>button:not([data-current]):hover {
+	background-color: #d0d0d0;
+}
+
+#channels>div:active, #channels>div[data-current], #msglist>div:active, #msglist>div[data-current], #history>div:active, #history>div[data-current], #newchat:active, #toggle:active, #chatmode>button:not([data-current]):active {
+	background-color: #c0c0c0;
+}
+
+#account {
+	position: absolute;
+	display: block;
+	width: 200px;
+	height: 50px;
+	left: 0px;
+	bottom: 0px;
+	background: #d8d8d8;
+}
+
+#chat-profile {
+	position: absolute;
+	display: none;
+	width: 180px;
+	height: 40px;
+	padding: 5px 10px;
+}
+
+#chat-profile>img {
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	vertical-align: top;
+	background-color: #ffffff;
+}
+
+#chat-profile>div {
+	position: relative;
+	display: inline-block;
+	width: 123px;
+	height: 20px;
+	margin: 10px 0px 10px 10px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0px;
+	vertical-align: middle;
+}
+
+#chat-login {
+	position: relative;
+	display: block;
+	width: 160px;
+	height: 26px;
+	margin: 6px 20px;
+	padding: 5px 0px;
+}
+
+#chat {
+	position: absolute;
+	display: block;
+	width: calc(100% - 201px);
+	height: 100%;
+	top: 0px;
+	right: 0px;
+	background: #f0f0f0;
+}
+
+#header {
+	position: relative;
+	display: flex;
+	width: calc(100% - 10px);
+	height: 35px;
+	padding: 5px;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	background: #e0e0e0;
+	border-bottom: 1px solid #a0a0a0;
+}
+
+#header>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 25px;
+	padding: 5px 10px;
+	flex: 0 1 100%;
+	font-size: 13px;
+	font-weight: 600;
+	white-space: pre;
+	line-height: 25px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+#toggle {
+	position: relative;
+	display: block;
+	width: 35px;
+	height: 35px;
+	flex: 0 0 35px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	border-radius: 25px;
+	background-image: url("res/menu.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+}
+
+#toggle[title="Close"] {
+	background-image: url("res/back.svg");
+}
+
+#discord {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: 25px;
+	padding: 5px 20px;
+	flex: 0 0 auto;
+	line-height: 25px;
+}
+
+#picker {
+	position: absolute;
+	display: none;
+	width: 400px;
+	height: 400px;
+	right: 0px;
+	bottom: 50px;
+}
+
+#picker>* {
+	position: absolute;
+	display: block;
+	width: 400px;
+	height: 400px;
+	overflow: hidden;
+}
+
+#messages {
+	position: absolute;
+	display: block;
+	width: calc(100% - 40px);
+	height: calc(100% - 96px);
+	padding: 0px 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#messages>div, #comments>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+}
+
+#messages>div>img, #comments>div>img {
+	position: relative;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin: 0px 15px 0px 5px;
+	border: 1px solid #ffffff;
+	border-radius: 25px;
+	vertical-align: top;
+	background: #ffffff;
+}
+
+#messages>div>div, #comments>div>div {
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 60px);
+	height: fit-content;
+	font-weight: 400;
+	line-height: 20px;
+	overflow: hidden;
+	overflow-wrap: break-word;
+	white-space: pre-wrap;
+	vertical-align: top;
+	letter-spacing: 0px;
+}
+
+#messages>div>div>div, #comments>div>div>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 0px 10px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#messages>div>div>a {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 5px 5px;
+	font-size: 13px;
+	font-weight: 400;
+	font-family: "Ubuntu Mono", monospace;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#messages>div>div>img, #messages>div>div>video {
+	position: relative;
+	display: block;
+	width: 300px;
+	height: fit-content;
+	margin: 5px 5px 15px;
+	object-fit: contain;
+	object-position: 0px 0px;
+}
+
+#messages>div>button.edit, #comments>div>button.edit {
+	position: absolute;
+	display: none;
+	width: 18px;
+	height: 18px;
+	top: 0px;
+	right: -5px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-image: url("res/edit.svg");
+	background-size: 18px 18px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#messages>div>button.delete, #comments>div>button.delete {
+	position: absolute;
+	display: none;
+	width: 18px;
+	height: 18px;
+	top: 0px;
+	right: 18px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	z-index: 2;
+	background-image: url("res/delete.svg");
+	background-size: 18px 18px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#messages>div:hover>button:not(:disabled), #comments>div:hover>button:not(:disabled) {
+	display: block;
+}
+
+#interface {
+	position: absolute;
+	display: block;
+	width: calc(100% - 10px);
+	height: 40px;
+	padding: 5px;
+	left: 0px;
+	bottom: 0px;
+}
+
+#interface>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: -1px 0px 0px;
+	border: 1px solid #808080;
+}
+
+#sendmsg {
+	position: absolute;
+	display: block;
+	width: calc(100% - 90px);
+	height: 20px;
+	top: 10px;
+	left: 10px;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#emoji {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	top: 5px;
+	right: 10px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-image: url("res/emoji.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#ufile {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 30px;
+	top: 5px;
+	right: 50px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-image: url("res/add-file.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#upload-info {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+}
+
+#upload-test {
+	position: relative;
+	display: none;
+	width: 100%;
+	height: fit-content;
+	margin: 20px -10px;
+	padding: 10px;
+	outline: 1px solid #808080;
+}
+
+#test-frame {
+	position: relative;
+	display: block;
+	width: 800px;
+	height: 600px;
+	margin: 10px 0px;
+}
+
+#upload-message {
+	position: relative;
+	display: none;
+	width: calc(100% - 20px);
+	height: fit-content;
+	margin: 15px 0px;
+	color: #808080;
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#login-dialog {
+	position: relative;
+	display: block;
+	width: 280px;
+	height: fit-content;
+	margin: 30px auto;
+	padding: 10px;
+	border: 1px solid #808080;
+	border-radius: 10px;
+}
+
+#login-dialog>h3 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 20px auto;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#login-dialog>input {
+	position: relative;
+	display: block;
+	width: 258px;
+	height: 20px;
+	margin: 10px 0px;
+	padding: 5px 10px;
+	border: 1px solid #c0c0c0;
+	border-radius: 10px;
+	outline: none;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#login-dialog>input:focus {
+	border-color: #808080;
+}
+
+#login-dialog>button {
+	position: relative;
+	display: block;
+	width: 238px;
+	height: 20px;
+	margin: 10px 0px;
+	padding: 5px 20px;
+}
+
+#login-dialog>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 5px;
+	color: #8080ff;
+	cursor: pointer;
+	line-height: 20px;
+	letter-spacing: 0px;
+	text-decoration: underline;
+}
+
+#login-dialog>span {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px;
+}
+
+#account-settings {
+	display: none;
+}
+
+#account-settings>button, #purchase-page>button {
+	position: relative;
+	display: block;
+	width: 120px;
+	height: 20px;
+	margin: 15px 0px;
+	padding: 5px 20px;
+}
+
+#account-settings input, #messages>div input, #comments>div input {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 14px;
+	margin: 5px 10px;
+	padding: 5px;
+	border: 1px solid #c0c0c0;
+	outline: none;
+	font-size: 13px;
+	line-height: 14px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#account-settings input:focus, #account-settings input~button:focus, #ac-friends>div>button:focus, #messages>div input:focus, #messages>div input~button:focus, #comments>div input:focus, #comments>div input~button:focus {
+	border-color: #808080;
+}
+
+#account-settings input~button, #messages>div input~button, #comments>div input~button {
+	position: relative;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 5px 2px;
+	border: 1px solid #c0c0c0;
+	cursor: pointer;
+	outline: none;
+	vertical-align: top;
+	background-size: 18px 18px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#account-settings input~button:hover, #ac-friends>div>button:hover, #messages>div input~button:hover, #comments>div input~button:hover {
+	background-color: #d0d0d0;
+}
+
+#account-settings input~button:active, #ac-friends>div>button:active, #messages>div input~button:active, #comments>div input~button:active {
+	background-color: #c0c0c0;
+}
+
+#account-settings button.tick, #messages>div button.tick, #comments>div button.tick {
+	background-image: url("res/tick.svg");
+}
+
+#account-settings button.cross, #messages>div button.cross, #comments>div button.cross {
+	background-image: url("res/close.svg");
+}
+
+#account-settings button.message {
+	background-image: url("res/new-chat.svg");
+}
+
+#ac-prof, #profile-page>div {
+	position: relative;
+	display: block;
+	width: calc(100% - 32px);
+	height: fit-content;
+	margin: 10px 0px;
+	padding: 15px;
+	border: 1px solid #808080;
+	border-radius: 10px;
+}
+
+#ac-prof>div, #profile-page>div>div {
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 85px);
+	height: fit-content;
+	margin: 0px 0px 0px 15px;
+	vertical-align: top;
+}
+
+#ch-avatar {
+	position: relative;
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	margin: 5px;
+	border: 1px solid #808080;
+	cursor: pointer;
+	outline: none;
+	border-radius: 25px;
+	vertical-align: top;
+	background-image: url("res/edit.svg");
+	background-size: 24px 24px;
+	background-color: #c0c0c0;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#ch-avatar>img {
+	position: absolute;
+	display: block;
+	width: 48px;
+	height: 48px;
+	top: 0px;
+	left: 0px;
+	background: #ffffff;
+	border-radius: 25px;
+}
+
+#ch-avatar:hover>img {
+	display: none;
+}
+
+#ac-un {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 24px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#ac-edit, #ac-bio-edit {
+	position: relative;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 0px 5px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	vertical-align: middle;
+	background-image: url("res/edit.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#ac-link {
+	position: relative;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin: 0px 5px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	vertical-align: top;
+	background-image: url("res/link.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#ac-bio {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+	color: #808080;
+	font-size: 13px;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#ac-games, #ac-friends, #pf-games, #pf-items, #s-products {
+	position: relative;
+	display: block;
+	width: calc(100% - 10px);
+	height: fit-content;
+	margin: 10px 0px;
+	padding: 5px;
+	max-height: 640px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#ac-orders, #s-orders {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 20px 0px;
+}
+
+#ac-orders>table, #s-orders>table {
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	border: 2px solid #303030;
+}
+
+#ac-orders>table th, #ac-orders>table td, #s-orders>table th, #s-orders>table td {
+	position: relative;
+	width: fit-content;
+	height: fit-content;
+	border: 1px solid #808080;
+}
+
+#ac-friends>div {
+	position: relative;
+	display: flex;
+	width: calc(100% - 20px);
+	height: 50px;
+	padding: 10px;
+	flex-wrap: nowrap;
+	flex-direction: row;
+}
+
+#ac-friends>div>img {
+	position: relative;
+	display: block;
+	width: 48px;
+	height: 48px;
+	flex: 0 0 48px;
+	cursor: pointer;
+	border: 1px solid #808080;
+	background: #ffffff;
+	border-radius: 25px;
+}
+
+#ac-friends>div>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 24px;
+	margin: 0px 15px;
+	flex: 0 1 100%;
+	cursor: pointer;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#ac-friends>div>span {
+	position: absolute;	
+	display: block;
+	width: 300px;
+	height: 24px;
+	top: 34px;
+	left: 75px;
+	color: #808080;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#ac-friends>div>button {
+	position: relative;
+	display: block;
+	width: 38px;
+	height: 38px;
+	margin: 0px 5px;
+	flex: 0 0 38px;
+	border: 1px solid #808080;
+	cursor: pointer;
+	outline: none;
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#ac-name-edit, #ac-email-edit {
+	position: relative;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	vertical-align: middle;
+	background-image: url("res/edit.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#avatar {
+	position: relative;
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	margin: 5px;
+	border: 1px solid #808080;
+	background: #ffffff;
+	border-radius: 25px;
+	vertical-align: top;
+}
+
+#id {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 24px;
+	margin: 0px 0px 10px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#bio {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px 0px;
+	color: #808080;
+	font-size: 13px;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#profile-page>div>span {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 50px;
+	margin: 20px 0px 0px;
+	border-top: 1px solid #808080;
+}
+
+#profile-page>div>span>button {
+	position: relative;
+	display: inline-block;
+	width: 120px;
+	height: 20px;
+	margin: 10px 15px;
+	padding: 5px 20px;
+	vertical-align: top;
+}
+
+#profile-page>h3 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 40px 0px 20px;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+}
+
+#purchase-page>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 70px;
+	margin: 15px 0px;
+}
+
+#purchase-page>div>img {
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 50px;
+	top: 10px;
+	left: 10px;
+	object-fit: cover;
+	object-position: center;
+}
+
+#purchase-page>div>div {
+	position: absolute;
+	display: block;
+	width: calc(100% - 114px);
+	height: 32px;
+	top: 10px;
+	left: 70px;
+	font-size: 14px;
+	line-height: 16px;
+	letter-spacing: 0px;
+}
+
+#purchase-page>div>span {
+	position: absolute;
+	display: block;
+	width: calc(100% - 114px);
+	height: 18px;
+	top: 42px;
+	left: 70px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#purchase-page>div>button {
+	position: absolute;
+	display: block;
+	width: 24px;
+	height: 24px;
+	top: 18px;
+	right: 10px;
+	border: 2px solid #303030;
+	cursor: pointer;
+	outline: none;
+	background-image: url("res/close.svg");
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#purchase-page>span {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
+#purchase-page>form {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	margin: 15px 0px;
+	padding: 10px;
+}
+
+#purchase-page>form>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+}
+
+#purchase-page>form>fieldset {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+	border: 1px solid #808080;
+}
+
+#purchase-page>form>fieldset>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 5px;
+}
+
+#settings-page>div, #upload-info>div, #gamemu-options>div, #editor>div, #a-product>div, #payi {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px;
+}
+
+#settings-page>div>label, #upload-info>div>label, #gamemu-options>div>label, #editor>div>label, #a-product>label, #payi>label {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 10px 0px 0px;
+	color: #808080;
+	line-height: 14px;
+	letter-spacing: 0px;
+	vertical-align: middle;
+}
+
+#upload-info>div>textarea, #editor>div>textarea, #a-product>div>textarea, #payi>textarea, #add-comm>textarea {
+	position: relative;
+	display: block;
+	width: calc(100% - 22px);
+	height: fit-content;
+	margin: 10px 0px;
+	padding: 10px;
+	border: 1px solid #c0c0c0;
+	border-radius: 10px;
+	outline: none;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0px;
+}
+
+#settings-page>div>input[type="text"], #settings-page>div>select, #upload-info>div>input[type="text"], #upload-info>div>select, #gamemu-options>div>select, #editor>div>input[type="text"], #a-product>div>input[type="text"], #a-product>div>input[type="number"], #payi>select {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	padding: 5px 10px;
+	outline: none;
+	line-height: 14px;
+	letter-spacing: 0px;
+	border: 1px solid #c0c0c0;
+	border-radius: 25px;
+	vertical-align: middle;
+}
+
+#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #upload-info>div>input[type="text"]:focus, #upload-info>div>select:focus, #upload-info>div>textarea:focus, #gamemu-options>div>select:focus, #editor>div>input[type="text"]:focus, #editor>div>textarea:focus, #a-product>div>input[type="text"]:focus, #a-product>div>input[type="number"]:focus, #a-product>div>textarea:focus, #payi>select:focus, #payi>textarea:focus, #add-comm>textarea:focus {
+	border-color: #808080;
+}
+
+#bottom-widget {
+	position: relative;
+	display: block;
+	width: 760px;
+	height: 200px;
+	margin: 40px auto 0px;
+	padding: 20px;
+	border-top: 1px solid #808080;
+}
+
+#footer {
+	position: relative;
+	display: flex;
+	width: 760px;
+	height: fit-content;
+	margin: 40px auto 0px;
+	padding: 20px 20px 40px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	color: #808080;
+	cursor: default;
+	border-top: 1px solid #808080;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#footer>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	padding: 5px;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: center;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+#nwidget {
+	position: absolute;
+	display: none;
+	width: 300px;
+	height: 600px;
+	top: 50px;
+	right: 5px;
+	border: 1px solid #808080;
+	background: #ffffff;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#nwidget[data-current] {
+	display: block;
+}
+
+#nwidget>div {
+	position: relative;
+	display: block;
+	width: calc(100% - 10px);
+	height: fit-content;
+	margin: 10px 5px;
+	cursor: pointer;
+}
+
+#nwidget>div>div {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 5px 0px;
+	font-size: 14px;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#nwidget>div>span {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 5px 0px;
+	color: #808080;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0px;
+}
+
+#install {
+	position: absolute;
+	display: none;
+	width: 130px;
+	height: 18px;
+	padding: 5px;
+	left: 10px;
+	bottom: 10px;
+	border: 1px solid #004080;
+	border-radius: 25px;
+	cursor: pointer;
+	outline: none;
+	text-align: center;
+	background: #ffffff;
+}
+
+#install:hover {
+	background: #f0f0f0;
+}
+
+#install:active {
+	background: #e0e0e0;
+}
+
+#install>span::before {
+	position: relative;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	content: " ";
+	vertical-align: top;
+	background-image: url("res/download.svg");
+	background-size: 18px 18px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#install>span {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: 18px;
+	color: #004080;
+	line-height: 18px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#settings {
+	position: absolute;
+	display: block;
+	width: 48px;
+	height: 48px;
+	right: 20px;
+	bottom: 22px;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 2px 2px #808080;
+	border-radius: 25px;
+	background-image: url("res/settings.svg");
+	background-size: 48px 48px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#settings:active, #checkout:active {
+	box-shadow: -2px -2px #808080;
+}
+
+#checkout {
+	position: absolute;
+	display: none;
+	width: 48px;
+	height: 48px;
+	right: 78px;
+	bottom: 22px;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 2px 2px #808080;
+	border-radius: 25px;
+	background-image: url("res/checkout.svg");
+	background-size: 48px 48px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#frame-view {
+	position: absolute;
+	display: none;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+#frame {
+	position: absolute;
+	display: block;
+	width: 1280px;
+	height: 720px;
+	top: 50%;
+	left: 50%;
+	overflow: hidden;
+	transform: translate(-50%, -50%);
+	background: #ffffff;
+}
+
+#frame>*, #player>* {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+}
+
+#frame-close, #frame-newtab {
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 40px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-size: 40px 40px;
+	background-repeat: no-repeat;
+	background-position: 0px;
+}
+
+#frame-close {
+	top: 20px;
+	right: 20px;
+	background-image: url("res/close-w.svg");
+}
+
+#frame-newtab {
+	right: 20px;
+	bottom: 20px;
+	background-image: url("res/newtab-w.svg");
+}
+
+#player {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+#player>iframe {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	overflow: hidden;
+}
+
+#controller {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 30px;
+	bottom: 0px;
+	background: rgba(0, 0, 0, 0.7);
+}
+
+#hide, #lock, #newtab, #fullscreen {
+	position: absolute;
+	display: block;
+	width: 24px;
+	height: 24px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#hide {
+	top: 3px;
+	left: 3px;
+	background-image: url("res/close-w.svg");
+}
+
+#lock {
+	top: 3px;
+	right: 63px;
+	background-image: url("res/lock-open-w.svg");
+}
+
+#newtab {
+	top: 3px;
+	right: 33px;
+	background-image: url("res/newtab-w.svg");
+}
+
+#fullscreen {
+	top: 3px;
+	right: 3px;
+	background-image: url("res/fullscreen-w.svg");
+}
+
+#game-page>.text-body {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 10px 0px 20px;
+}
+
+#name {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px;
+}
+
+#like {
+	position: relative;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	margin: 0px 2px;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	vertical-align: middle;
+	background-image: url("res/thumb-up.svg");
+	background-size: 18px 18px;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+
+#user, #seller {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	cursor: pointer;
+}
+
+#user>img, #seller>img {
+	position: relative;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	margin: 0px 5px;
+	border: 1px solid #808080;
+	border-radius: 25px;
+	vertical-align: top;
+	background: #ffffff;
+}
+
+#user>div, #seller>div {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 5px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 20px;
+	letter-spacing: 0px;
+	vertical-align: top;
+}
+
+#ecode {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	padding: 10px;
+	outline: 1px solid #808080;
+	font-size: 13px;
+	font-weight: 400;
+	font-family: "Ubuntu Mono", monospace;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+#editor {
+	position: relative;
+	display: none;
+	width: calc(100% - 20px);
+	height: fit-content;
+	margin: 15px 0px;
+	padding: 10px;
+	outline: 1px solid #808080;
+}
+
+#editor>button {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 5px;
+	padding: 5px 15px;
+	vertical-align: top;
+}
+
+#comments, #add-comm {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 10px 0px;
+}
+
+#s-games {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+}
+
+#s-games>.game {
+	margin: 0px 8px 0px 0px;
+}
+
+#previews {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 320px;
+	gap: 10px;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	overflow-x: auto;
+	overflow-y: hidden;
+}
+
+#previews>img {
+	position: relative;
+	display: block;
+	width: 400px;
+	height: 300px;
+	flex: 300px 0 0;
+	object-fit: cover;
+	object-position: center;
+}
+
+#ibuy, #iadd {
+	position: relative;
+	display: inline-block;
+	width: calc(50% - 45px);
+	height: 20px;
+	margin: 20px 10px;
+	padding: 5px 0px;
+	vertical-align: top;
+}
+
+@media all and (max-width: 379px)  {
+	#weather {
+		height: 430px;
+	}
+
+	#bitcoin {
+		height: 550px;
+	}
+}
+
+@media all and (max-width: 400px) {
+	#bitcoin {
+		height: 520px;
+	}
+}
+
+@media all and (max-width: 447px) {
+	#menu>div {
+		position: relative;
+		display: block;
+		width: calc(100% - 2px);
+		height: 78px;
+		margin: 10px 0px;
+	}
+
+	#menu>div>img {
+		top: 15px;
+		left: 15px;
+		width: 48px;
+		height: 48px;
+	}
+
+	#menu>div>div {
+		top: 15px;
+		left: 73px;
+		width: 100px;
+		height: 48px;
+		text-align: start;
+		line-height: 48px;
+	}
+}
+
+@media all and (max-width: 450px) {
+	#search, #vid-search, #game-search, #item-search {
+		width: calc(100% - 20px);
+		margin: 20px 10px;
+	}
+}
+
+@media all and (max-width: 480px) {
+	#addr {
+		width: calc(100% - 40px);
+		margin: 20px 0px;
+	}
+
+	#yt-search {
+		width: calc(100% - 20px);
+		margin: 20px 10px;
+	}
+}
+
+@media all and (max-width: 600px) {
+	#banner {
+		width: 100%;
+		height: unset;
+		aspect-ratio: 3/1;
+	}
+}
+
+@media all and (max-width: 800px) {
+	#hamb {
+		position: absolute;
+		display: block;
+		width: 20px;
+		height: 2px;
+		top: 24px;
+		right: 10px;
+		color: rgba(0, 0, 0, 0);
+		background: #303030;
+		text-indent: -30px; /*prevent overflow on mobile devices*/
+	}
+
+	#hamb::before, #hamb::after {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: "";
+		background: #303030;
+		transition: transform 0.2s ease-out;
+	}
+	
+	#hamb::before {
+		top: 6px;
+	}
+	
+	#hamb::after {
+		top: -6px;
+	}
+
+	#nav-bar {
+		position: absolute;
+		display: none;
+		width: auto;
+		height: auto;
+		top: 50px;
+		right: 5px;
+		border: 1px solid #808080;
+		z-index: 2;
+		background: #d0d0d0;
+	}
+
+	#nav-bar>button {
+		display: block;
+	}
+
+	#side-menu:checked ~ #nav-bar {
+		display: block;
+	}
+
+	#side-menu:checked ~ #hamb {
+		background: rgba(0, 0, 0, 0);
+	}
+
+	#side-menu:checked ~ #hamb::before {
+		top: 0px;
+		transform: rotate(-45deg);
+	}
+
+	#side-menu:checked ~ #hamb::after {
+		top: 0px;
+		transform: rotate(45deg);
+	}
+
+	#accn-btn {
+		right: 40px;
+	}
+
+	#nmsg-btn {
+		right: 74px;
+	}
+}
+
+@media (min-width: 380px) and (max-width: 820px)  {
+	#weather {
+		height: 180px;
+	}
+}
+
+@media all and (max-width: 850px) {
+	#content>div, #bottom-widget, #footer {
+		width: 100%;
+	}
+
+	#community-page>div, #game {
+		width: calc(100% + 10px);
+		margin: 10px -5px;
+	}
+
+	#discord {
+		display: none;
+	}
+}
+
+@media (max-width: 850px) and (orientation: portrait) {
+	#community-page>div, #game, #calc-container, #console-container {
+		aspect-ratio: 9/18;
+	}
+}
+
+@media (max-width: 1300px) and (orientation: portrait) {
+	#frame {
+		width: 95%;
+		height: unset;
+		aspect-ratio: 9/16;
+	}
+}
+
+@media (max-width: 1300px) and (orientation: landscape) {
+	#frame {
+		width: 90%;
+		height: unset;
+		aspect-ratio: 16/9;
+	}
+}

@@ -1,0 +1,74 @@
+{
+	"id": "nettleweb",
+	"name": "NettleWeb",
+	"version": "6.5.0-dev2",
+	"short_name": "NettleWeb",
+	"categories": ["games", "social", "entertainment"],
+	"description": "Play free online games, watch exclusive videos, and interact with a community that values your privacy. Explore our collection of HTML5, Flash, and classic games, engage in live chat, and enjoy a social experience without the snooping.",
+	"scope": "/",
+	"display": "fullscreen",
+	"start_url": "/",
+	"orientation": "any",
+	"theme_color": "#004080",
+	"background_color": "#ffffff",
+	"display_override": [
+		"fullscreen",
+		"standalone",
+		"minimal-ui",
+		"window-controls-overlay"
+	],
+	"icons": [
+		{
+			"src": "/res/logo48.png",
+			"type": "image/png",
+			"sizes": "48x48"
+		},
+		{
+			"src": "/res/logo64.png",
+			"type": "image/png",
+			"sizes": "64x64"
+		},
+		{
+			"src": "/res/logo96.png",
+			"type": "image/png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "/res/logo128.png",
+			"type": "image/png",
+			"sizes": "128x128"
+		},
+		{
+			"src": "/res/logo192.png",
+			"type": "image/png",
+			"sizes": "192x192"
+		},
+		{
+			"src": "/res/logo256.png",
+			"type": "image/png",
+			"sizes": "256x256"
+		},
+		{
+			"src": "/res/logo512.png",
+			"type": "image/png",
+			"sizes": "512x512"
+		},
+		{
+			"src": "/res/logo2.svg",
+			"type": "image/svg+xml",
+			"sizes": "any",
+			"purpose": "any"
+		},
+		{
+			"src": "/res/logo3.svg",
+			"type": "image/svg+xml",
+			"sizes": "any",
+			"purpose": "maskable"
+		}
+	],
+	"serviceworker": {
+		"src": "/sw.js",
+		"scope": "/",
+		"use_cache": false
+	}
+}

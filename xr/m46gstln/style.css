@@ -1,0 +1,19 @@
+body {
+  background-image: url('https://media.istockphoto.com/id/1147686050/photo/paper-texture-on-white-color-background.jpg?s=612x612&w=0&k=20&c=7VMnfwqRItsWjlwyN_-YlbhQogMfWInwZCCKIK0a0yg=');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center bottom;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 75vh;
+}
+
+.board button {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  border-radius: 50%;
+  border: 4px solid black;
+  margin: 1px;
+}

@@ -1,0 +1,75 @@
+﻿{"frames": {
+
+"bg10000":
+{
+	"frame": {"x":2,"y":484,"w":1398,"h":480},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1398,"h":480},
+	"sourceSize": {"w":1398,"h":480}
+},
+"bg1red0000":
+{
+	"frame": {"x":2,"y":966,"w":1398,"h":480},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1398,"h":480},
+	"sourceSize": {"w":1398,"h":480}
+},
+"bg2blue0000":
+{
+	"frame": {"x":2,"y":2,"w":1398,"h":480},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":1398,"h":480},
+	"sourceSize": {"w":1398,"h":480}
+},
+"branding_l20000":
+{
+	"frame": {"x":1045,"y":1448,"w":194,"h":70},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":194,"h":70},
+	"sourceSize": {"w":194,"h":70}
+},
+"logo0000":
+{
+	"frame": {"x":303,"y":1448,"w":546,"h":135},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":546,"h":135},
+	"sourceSize": {"w":546,"h":135}
+},
+"sponsor_place copy 20000":
+{
+	"frame": {"x":851,"y":1448,"w":192,"h":126},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":192,"h":126},
+	"sourceSize": {"w":192,"h":126}
+},
+"yep100000":
+{
+	"frame": {"x":1241,"y":1448,"w":121,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":121,"h":46},
+	"sourceSize": {"w":121,"h":46}
+},
+"yep_10 copy0000":
+{
+	"frame": {"x":2,"y":1448,"w":299,"h":249},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":299,"h":249},
+	"sourceSize": {"w":299,"h":249}
+}},
+"meta": {
+	"app": "Adobe Flash Professional",
+	"version": "15.0.1.179",
+	"image": "preloader.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1"
+}
+}

@@ -1,0 +1,84 @@
+{
+  "name": "Scary Runner",
+  "short_name": "Scary Runner",
+  "id": "com.example.lanerunner3d",
+  "description": "This 3D lane runner game shows the basics of adjusting a 3D camera, variables, sound effects, saving and loading a highscore, and how to use the platformer behavior in a 3D space.",
+  "orientation": "portrait",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "black",
+  "categories": ["games", "entertainment"],
+  "icons": [{
+        "src": "ios-icon-20.png",
+        "sizes": "20x20"
+      },{
+        "src": "ios-icon-29.png",
+        "sizes": "29x29"
+      },{
+        "src": "android-icon-36.png",
+        "sizes": "36x36"
+      },{
+        "src": "ios-icon-40.png",
+        "sizes": "40x40"
+      },{
+        "src": "android-icon-48.png",
+        "sizes": "48x48"
+      },{
+        "src": "ios-icon-50.png",
+        "sizes": "50x50"
+      },{
+        "src": "ios-icon-57.png",
+        "sizes": "57x57"
+      },{
+        "src": "ios-icon-58.png",
+        "sizes": "58x58"
+      },{
+        "src": "ios-icon-60.png",
+        "sizes": "60x60"
+      },{
+        "src": "android-icon-72.png",
+        "sizes": "72x72"
+      },{
+        "src": "ios-icon-76.png",
+        "sizes": "76x76"
+      },{
+        "src": "ios-icon-80.png",
+        "sizes": "80x80"
+      },{
+        "src": "ios-icon-87.png",
+        "sizes": "87x87"
+      },{
+        "src": "android-icon-96.png",
+        "sizes": "96x96"
+      },{
+        "src": "ios-icon-100.png",
+        "sizes": "100x100"
+      },{
+        "src": "ios-icon-114.png",
+        "sizes": "114x114"
+      },{
+        "src": "ios-icon-120.png",
+        "sizes": "120x120"
+      },{
+        "src": "android-icon-144.png",
+        "sizes": "144x144"
+      },{
+        "src": "ios-icon-152.png",
+        "sizes": "152x152"
+      },{
+        "src": "ios-icon-167.png",
+        "sizes": "167x167"
+      },{
+        "src": "ios-icon-180.png",
+        "sizes": "180x180"
+      },{
+        "src": "android-icon-192.png",
+        "sizes": "192x192"
+      },{
+        "src": "desktop-icon-512.png",
+        "sizes": "512x512"
+      },{
+        "src": "ios-icon-1024.png",
+        "sizes": "1024x1024"
+      }]
+}

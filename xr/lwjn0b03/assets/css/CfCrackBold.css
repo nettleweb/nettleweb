@@ -1,0 +1,7 @@
+@font-face {
+    font-family: cfcrackbold;
+    src: url(../fonts/CfCrackBold/cfcrackandbold.eot?) format("eot"), url(../fonts/CfCrackBold/cfcrackandbold.woff) format("woff"), url(../fonts/CfCrackBold/cfcrackandbold.ttf) format("truetype"),
+        url(../fonts/CfCrackBold/cfcrackandbold.svg#cfcrackandbold) format("svg");
+    font-weight: 400;
+    font-style: normal;
+}

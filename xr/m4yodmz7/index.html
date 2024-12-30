@@ -1,0 +1,111 @@
+<!--
+Assignment: Javascript Assignment
+Filename: game.html
+@author: KITSANTAS FOTIOS (17421808)
+Date: 30/04/17
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Horse Racing</title>
+    <link rel="stylesheet" href="game.css" />
+    <script src="game.js"></script>
+</head>
+
+<body>
+    <div id="horse1" class="horse standRight">
+        <div class="rider">
+            <div class="head">
+            </div>
+            <div class="body">
+            </div>
+        </div>
+    </div>
+
+
+    <div id="horse2" class="horse standRight">
+        <div class="rider">
+            <div class="head">
+            </div>
+            <div class="body">
+            </div>
+        </div>
+    </div>
+
+
+    <div id="horse3" class="horse standRight">
+        <div class="rider">
+            <div class="head">
+            </div>
+            <div class="body">
+            </div>
+        </div>
+    </div>
+
+
+    <div id="horse4" class="horse standRight">
+        <div class="rider">
+            <div class="head">
+            </div>
+            <div class="body">
+            </div>
+        </div>
+    </div>
+
+
+    <div class="track">
+        <div id="startline">
+        </div>
+
+        <div class="inner">
+            <button id="start">Start Race</button><!-- Make it a button -->
+
+            <div id="bet">
+                <p>You currently have <span id="funds">100</span></p>
+                <label>Bet Amount (£)</label>
+                <input type="number" id="amount" value="0"><!-- Add type and default value -->
+                <label>Bet on horse:</label>
+                <select id="bethorse">
+                    <option value="1">White</option>
+                    <option value="2">Blue</option>
+                    <option value="3">Green</option>
+                    <option value="4">Brown</option>
+                </select>
+                <label>Number of lap</label><!-- Add Number of Laps -->
+                <input type="number" id="num_lap" name="num_lap" value="1"><!-- Number of Laps text box to get number of Laps -->
+            </div>
+            <img src="images/tree.png" class="tree" />
+            <br>
+            <table id="results">
+                <thead>
+                    <tr>
+                        <th>Results</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1st</td>
+                        <td class="result horse1"></td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td class="result horse2"></td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td class="result horse3"></td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td class="result horse4"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
