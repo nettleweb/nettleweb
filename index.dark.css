@@ -159,8 +159,12 @@ option, optgroup, #navigation-bar, #nwidget {
 	background-image: url("res/link-w.svg");
 }
 
-#like {
+#like, #vlike {
 	background-image: url("res/thumb-up-w.svg");
+}
+
+#vview {
+	background-image: url("res/view-w.svg");
 }
 
 #install {

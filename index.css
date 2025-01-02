@@ -736,7 +736,7 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#game-search, #item-search, #vid-search, #yt-search, #search {
+#game-search, #item-search, #yt-search, #search {
 	position: relative;
 	display: block;
 	width: 400px;
@@ -745,7 +745,7 @@ div.user[data-vip="diamond"]::after {
 	border: 1px solid #808080;
 }
 
-#game-search>input, #item-search>input, #vid-search>input, #yt-search>input, #search>input {
+#game-search>input, #item-search>input, #yt-search>input, #search>input {
 	position: absolute;
 	display: block;
 	width: calc(100% - 52px);
@@ -759,7 +759,7 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#game-search>button, #item-search>button, #vid-search>button, #yt-search>button, #search>button {
+#game-search>button, #item-search>button, #yt-search>button, #search>button {
 	position: absolute;
 	display: block;
 	width: 20px;
@@ -917,57 +917,6 @@ div.user[data-vip="diamond"]::after {
 	line-height: 18px;
 }
 
-#vid-list {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 40px 0px;
-}
-
-#vid-list>div {
-	position: relative;
-	display: block;
-	width: calc(100% - 32px);
-	height: fit-content;
-	margin: 20px 0px;
-	padding: 15px;
-	border: 1px solid #c0c0c0;
-	border-radius: 10px;
-}
-
-#vid-list>div>video {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 0px 0px 15px;
-	object-fit: contain;
-	object-position: 0px 0px;
-}
-
-#vid-list>div>div {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 15px 0px 10px;
-	font-weight: 600;
-	line-height: 18px;
-	letter-spacing: 0px;
-}
-
-#vid-list>div>span {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 10px 0px 0px;
-	color: #606060;
-	line-height: 16px;
-	letter-spacing: 0px;
-}
-
 #services-page>div>h3 {
 	position: relative;
 	display: block;
@@ -979,7 +928,7 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#ub-container, #yt-container, #gamemu-container {
+#ub-container, #gamemu-container {
 	position: relative;
 	display: block;
 	width: calc(100% - 30px);
@@ -1009,7 +958,7 @@ div.user[data-vip="diamond"]::after {
 	border-color: #808080;
 }
 
-#ub-option-bar, #yt-option-bar {
+#ub-option-bar {
 	position: relative;
 	display: block;
 	width: fit-content;
@@ -1083,6 +1032,14 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
+#yt-option-bar {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 20px auto 40px;
+}
+
 #yt-load-more, #loadmore {
 	position: relative;
 	display: none;
@@ -1142,7 +1099,7 @@ div.user[data-vip="diamond"]::after {
 	aspect-ratio: 4/3;
 }
 
-#community-page>div, #game {
+#community-page>div, #game, #video {
 	position: relative;
 	display: block;
 	width: 800px;
@@ -2493,7 +2450,7 @@ div.user[data-vip="diamond"]::after {
 	background: #ffffff;
 }
 
-#frame>*, #player>* {
+#frame>*, #player>embed, #player>iframe, #video>iframe {
 	position: absolute;
 	display: block;
 	width: 100%;
@@ -2501,29 +2458,38 @@ div.user[data-vip="diamond"]::after {
 	border: none;
 }
 
-#frame-close, #frame-newtab {
+#frame-close {
 	position: absolute;
 	display: block;
 	width: 40px;
 	height: 40px;
+	top: 20px;
+	right: 20px;
+	border: 1px solid #ffffff;
 	cursor: pointer;
-	border: none;
 	outline: none;
+	background-image: url("res/close-w.svg");
 	background-size: 40px 40px;
+	background-color: #000000;
 	background-repeat: no-repeat;
 	background-position: 0px;
 }
 
-#frame-close {
-	top: 20px;
-	right: 20px;
-	background-image: url("res/close-w.svg");
-}
-
-#frame-newtab {
+#frame-expand {
+	position: absolute;
+	display: block;
+	width: 40px;
+	height: 40px;
 	right: 20px;
 	bottom: 20px;
-	background-image: url("res/newtab-w.svg");
+	border: 1px solid #ffffff;
+	cursor: pointer;
+	outline: none;
+	background-image: url("res/fullscreen-w.svg");
+	background-size: 40px 40px;
+	background-color: #000000;
+	background-repeat: no-repeat;
+	background-position: 0px;
 }
 
 #player {
@@ -2531,15 +2497,6 @@ div.user[data-vip="diamond"]::after {
 	display: block;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
-}
-
-#player>iframe {
-	position: absolute;
-	display: block;
-	width: 100%;
-	height: 100%;
-	border: none;
 	overflow: hidden;
 }
 
@@ -2589,7 +2546,7 @@ div.user[data-vip="diamond"]::after {
 	background-image: url("res/fullscreen-w.svg");
 }
 
-#game-page>.text-body {
+#game-page>.text-body, #item-page>.text-body, #video-page>.text-body {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -2605,7 +2562,7 @@ div.user[data-vip="diamond"]::after {
 	margin: 10px 0px;
 }
 
-#like {
+#like, #vlike, #vview {
 	position: relative;
 	display: inline-block;
 	width: 18px;
@@ -2740,6 +2697,25 @@ div.user[data-vip="diamond"]::after {
 	vertical-align: top;
 }
 
+#vlike {
+	cursor: not-allowed;
+}
+
+#vview {
+	cursor: not-allowed;
+	background-image: url("res/view.svg");
+}
+
+#video>video {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: none;
+	object-fit: contain;
+	object-position: center;
+}
+
 @media all and (max-width: 379px)  {
 	#weather {
 		height: 430px;
@@ -2783,7 +2759,7 @@ div.user[data-vip="diamond"]::after {
 }
 
 @media all and (max-width: 450px) {
-	#search, #vid-search, #game-search, #item-search {
+	#search, #yt-search, #game-search, #item-search {
 		width: calc(100% - 20px);
 		margin: 20px 10px;
 	}
@@ -2793,11 +2769,6 @@ div.user[data-vip="diamond"]::after {
 	#addr {
 		width: calc(100% - 40px);
 		margin: 20px 0px;
-	}
-
-	#yt-search {
-		width: calc(100% - 20px);
-		margin: 20px 10px;
 	}
 }
 
@@ -2894,7 +2865,7 @@ div.user[data-vip="diamond"]::after {
 		width: 100%;
 	}
 
-	#community-page>div, #game {
+	#community-page>div, #game, #video {
 		width: calc(100% + 10px);
 		margin: 10px -5px;
 	}
