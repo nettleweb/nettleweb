@@ -588,11 +588,11 @@ div.user[data-vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#menu>div:hover, #headlines>div:hover, #ub-shortcuts>div:hover, #yt-results>div:hover {
+#menu>div:hover, #headlines>div:hover, #ub-shortcuts>div:hover, #yt-results>div:hover, #s-videos>div:hover {
 	background: #f8f8f8;
 }
 
-#menu>div:active, #headlines>div:active, #ub-shortcuts>div:active, #yt-results>div:active {
+#menu>div:active, #headlines>div:active, #ub-shortcuts>div:active, #yt-results>div:active, #s-videos>div:active {
 	background: #f0f0f0;
 }
 
@@ -666,7 +666,7 @@ div.user[data-vip="diamond"]::after {
 	overflow: hidden;
 }
 
-#headlines, #yt-results {
+#headlines, #yt-results, #s-videos {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -674,7 +674,7 @@ div.user[data-vip="diamond"]::after {
 	margin: 20px 0px;
 }
 
-#headlines>div, #yt-results>div {
+#headlines>div, #yt-results>div, #s-videos>div {
 	position: relative;
 	display: block;
 	width: calc(100% - 20px);
@@ -684,7 +684,7 @@ div.user[data-vip="diamond"]::after {
 	cursor: pointer;
 }
 
-#headlines>div>img, #yt-results>div>img {
+#headlines>div>img, #yt-results>div>img, #s-videos>div>img {
 	position: relative;
 	display: inline-block;
 	width: 160px;
@@ -694,7 +694,7 @@ div.user[data-vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#headlines>div>div, #yt-results>div>div {
+#headlines>div>div, #yt-results>div>div, #s-videos>div>div {
 	position: relative;
 	display: inline-block;
 	width: calc(100% - 170px);
@@ -702,7 +702,7 @@ div.user[data-vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#headlines>div>div>.title, #yt-results>div>div>.title {
+#headlines>div>div>.title, #yt-results>div>div>.title, #s-videos>div>div>.title {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -713,7 +713,7 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#headlines>div>div>.desc, #yt-results>div>div>.desc {
+#headlines>div>div>.desc, #yt-results>div>div>.desc, #s-videos>div>div>.desc {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -724,7 +724,7 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#headlines>div>div>.time, #yt-results>div>div>.time {
+#headlines>div>div>.time, #yt-results>div>div>.time, #s-videos>div>div>.time {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -1916,10 +1916,9 @@ div.user[data-vip="diamond"]::after {
 #ac-games, #ac-friends, #pf-games, #pf-items, #s-products {
 	position: relative;
 	display: block;
-	width: calc(100% - 10px);
+	width: 100%;
 	height: fit-content;
 	margin: 10px 0px;
-	padding: 5px;
 	max-height: 640px;
 	overflow-x: hidden;
 	overflow-y: auto;
