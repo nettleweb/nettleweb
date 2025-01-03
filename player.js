@@ -96,8 +96,7 @@
 					logLevel: "warn",
 					letterbox: "on",
 					openUrlMode: "confirm",
-					upgradeToHttps: true,
-					preferredRenderer: "webgpu"
+					upgradeToHttps: true
 				});
 			}
 			break;
