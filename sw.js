@@ -44,14 +44,20 @@
 				return await optFetch(request);
 		}
 
-		if (url.origin === origin && url.pathname === "/manifest.json") {
-			return await optFetch(url, {
-				body: null,
-				mode: "same-origin",
-				cache: "no-cache",
-				method: request.method,
-				headers: request.headers
-			});
+		switch (request.destination) {
+			case "":
+				if (url.origin === origin && url.pathname === "/manifest.json") {
+					return await optFetch(url, {
+						body: null,
+						mode: "same-origin",
+						cache: "no-cache"
+					});
+				}
+				break;
+			case "video":
+				return await optFetch(request); // video requests are never cached
+			default:
+				break;
 		}
 
 		const res = await caches.match(request, { cacheName }) || await e.preloadResponse || await optFetch(request);
