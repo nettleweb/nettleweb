@@ -76,3 +76,7 @@ hr {
 	border: none;
 	border-bottom: 1px solid #808080;
 }
+
+video {
+	background: #000000;
+}
