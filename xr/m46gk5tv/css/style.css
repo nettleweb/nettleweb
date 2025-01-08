@@ -1,0 +1,45 @@
+@font-face {
+  font-family: 'Commodore';
+  src: url('CommodorePixelized.ttf');
+}
+body {
+  font-family: 'Verdana';
+  text-align: center;
+  color: #BBB;
+}
+canvas {
+  font-size: 24px;
+}
+h1 {
+  font-family: 'Commodore';
+}
+a:link {
+  color: #888888;
+}
+a:visited {
+  color: #666666;
+}
+a:active {
+  color: #DDDDDD;
+}
+td {
+  text-align: center;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+}
+div {
+  width: 750px;
+  margin: 0 auto;
+}
+input[type=button] {
+  height: 120px;
+  width: 120px;
+  font-size: 200%;
+  box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -ms-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+}
+input#spcbar {
+  width: 250px;
+}

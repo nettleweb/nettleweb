@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head><title>Blastar | The HTML5 Game</title>
+<link rel="stylesheet" href="css/style.css">
+<script>
+
+kEmptyIterationMillis = 4
+kPutSpriteMillis = 40
+kMainLoopMillis = 150
+kRocketsLoopMillis = 150
+kStatusBeamLoopMillis = 220
+
+
+var SC=0, SH
+var P, C
+var H, G
+
+function blastar() {
+  fillTextStyle = "#BBBBBB"
+  SH=5;SC=0
+  screen(2)
+  print(Array(14).join(" ") + "BLASTAR")
+  blastarTune()
+}
+
+function blastarTune() {
+  play(3, 9, 50, "CECECDBABADACECEBDACDBDCEGG", blastarTune2)
+}
+function blastarTune2() {
+  play(4, 9, 50, "CECECDBABADACECEBDACDBDCEGG", blastarTune3)
+}
+function blastarTune3() {
+  play(3, 9, 50, "CECECDBABADACECEBDACDBDCEGG", blastarTune4)
+}
+function blastarTune4() {
+  play(4, 9, 50, "CECECDBABADACECEBDACDBDCEGG", showAuthor)
+}
+
+function showAuthor() {
+  screen(1, 2)
+  print("  BY E.R.MUSK")
+  window.setTimeout(promptForInstructions, 350*kEmptyIterationMillis)
+}
+
+function promptForInstructions() {
+  cls()
+  // TODO: double check number of spaces.
+  locate(10, 5);print("             BLASTAR");print("");
+  print("          DO YOU NEED INSTRUCTIONS")
+  print("                 (Y/N)")
+  inKey(maybeGiveInstructions)
+}
+
+function maybeGiveInstructions(keycode) {
+  beep()
+  if (keycode == 121 || keycode == 89) {
+    screen(1)
+    // TODO: double check number of spaces.
+    print("");print("");print("");
+    print("        <       USE JOYSTICK      >");print("")  // Removed 2 spaces.
+    print("               FOR CONTROL AND");print("")
+    print("                 FIRE BUTTON");print("")
+    print("                  TO SHOOT")
+    print("");print("");print("")
+    print("    MISSION:DESTROY ALIEN FREIGHTER");print("")
+    print("    CARRYING DEADLY HYDROGEN BOMBS");print("")
+    print("    AND STATUS BEAM MACHINES");print("")
+    ctx.strokeRect(45*3, 10*3, 180*3, 80*3)
+    inKey(startGame)
+  } else {
+    startGame()
+  }
+}
+
+function startGame() {
+  cls()
+  // Load Sprites
+  sprite = [document.getElementById("sprite0"),
+            null,
+            document.getElementById("sprite2"),
+            document.getElementById("sprite3"),
+            document.getElementById("sprite4"),
+            document.getElementById("sprite5"),
+            document.getElementById("sprite6")]
+  spriteBits = [
+    [0x99, 0x99, 0x99, 0xe7, 0xc3, 0xc3, 0xc3, 0xc3],  // Ship
+    [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00],
+    [0x00, 0x00, 0x42, 0xa5, 0x42, 0x00, 0x00, 0x00],  // Rockets
+    [0x18, 0x42, 0xe7, 0xbd, 0x5a, 0x24, 0x3c, 0x66],  // Freighter
+    [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00],  // Explosion
+    [0x00, 0x10, 0x38, 0x7c, 0x7c, 0x38, 0x10, 0x00]   // Status Beam
+  ]
+  mainProgram()
+}
+
+function mainProgram() {
+  locate(0,0); 
+  print("   SCORE" + SC + "       SHIPS " + SH)
+  P = 120; C = 180
+  H = 30; G = 15
+  spriteOn()
+  startLoop(mainLoop, kMainLoopMillis)
+}
+
+function mainLoop() {
+  maybeMoveShip()
+  putSprite(3, H, G)
+  if (Math.abs(H-P) <= 1) {
+    stopLoop()
+    fireStatusBeam()
+  } else {
+    H+=3
+    if (H>250) H = 10
+    if (F) {
+      stopLoop()
+      shootRockets()
+    }
+  }
+}
+
+function maybeMoveShip() {
+  F = strig()
+  D = stick()
+  putSprite(3, H, G)
+  switch (D) {
+    case 1: C-=4; break
+    case 2: P+=2;C-=2; break
+    case 3: P+=4; break
+    case 4: P+=2;C+=2; break
+    case 5: C+=4; break
+    case 6: P-=2;C+=2; break
+    case 7: P-=4; break
+    case 8: P-=2;C-=2; break
+  }
+  putSprite(0, P, C)
+  if (C<10) C=10
+  if (C>190) C=180
+  if (P<10) P=10
+  if (P>240) P=240
+}
+
+function shootRockets() {
+  U=P;W=C-5
+  playSoundAndEnterRocketsLoop()
+}
+
+function playSoundAndEnterRocketsLoop() {
+  play(4, 6, 50, "D", playRocketSound2)
+}
+function playRocketSound2() {
+  play(4, 6, 30, "F", enterRocketsLoop)
+}
+
+function enterRocketsLoop() {
+  startLoop(rocketsLoop, kRocketsLoopMillis)
+}
+
+function rocketsLoop() {
+  putSprite(3, H, G)
+  H += 4
+  W -= 6
+  putSprite(2, U, W)
+  if (H == P) {
+    stopLoop()
+    fireStatusBeam()
+  } else {
+    maybeMoveShip()
+    spriteOn()
+    onSpriteGoSub(destroyFreighter)
+    if (F) {
+      stopLoop()
+      shootRockets()
+    } else if (W < -10) {
+      stopLoop()
+      startLoop(mainLoop, kMainLoopMillis)
+    }
+  }
+}
+
+function destroyFreighter() {
+  SC += 80
+  putSprite(4, H, G)
+  setTimeout(newFreighter, 20*kPutSpriteMillis)
+}
+
+function newFreighter() {
+  cls()
+  locate(3, 0)  // (sic)
+  print("SCORE" + SC + "            SHIPS " + SH)
+  spriteOff()
+  G = 20 + Math.floor(Math.random() * 150)
+  startLoop(mainLoop, kMainLoopMillis)
+}
+
+function fireStatusBeam() {
+  OO=H;NN=G+5
+  startLoop(statusBeamLoop, kStatusBeamLoopMillis)
+}
+
+function statusBeamLoop() {
+  spriteOn()
+  NN += 4
+  PI=P;maybeMoveShip();P=PI
+  locate(15, 15); print("            STATUS BEAM")
+  onSpriteGoSub(destroyShip)
+  putSprite(5, OO, NN)
+  play(2, 9, 15, "B", maybeEndStatusBeamLoop)
+}
+function maybeEndStatusBeamLoop() {
+  if (NN > 205) {
+    // goto 620
+    stopLoop()
+    startLoop(mainLoop, kMainLoopMillis)
+  }
+}
+
+function destroyShip() {
+  SH -= 1
+  setTimeout(nextShip, 60*kEmptyIterationMillis)
+}
+
+function nextShip() {
+  cls()
+  locate(0, 3)
+  print("SCORE " + SC + "             SHIPS " + SH)
+  putSprite(5, 128, 205)
+  putSprite(6, P, C)
+  G = 20 + Math.floor(170 * Math.random())
+  H = 0
+  spriteOff()
+  if (SH >= 0) {
+    startLoop(mainLoop, kMainLoopMillis)
+  } else {
+    cls()
+    locate(0, 0)
+    print("                BLASTAR"); print("")
+    print("             FLEET DESTROYED"); print("")
+    print("      WOULD YOU LIKE ANOTHER GAME")
+    inKey(maybeStartAnotherGame)
+  }
+}
+
+function maybeStartAnotherGame(key) {
+  if (key == 121 || key == 89) {
+    blastar()
+  } else {
+    // TODO: how do I end?
+    print(">")
+  }
+}
+
+/////////////////////////////////////////////////////////////////////////////////////
+
+function startLoop(loop, period) {
+  function f() {
+    try {
+      loop()
+    } catch(e) {}
+  }
+  currentInterval = setInterval(f, period)
+}
+
+function stopLoop() {
+  clearInterval(currentInterval - 1)  // Just in case. Safari has timing hiccups.
+  clearInterval(currentInterval)
+}
+
+//////////////////////// just-enough BASIC emulation code ///////////////////////////
+
+var lastKeyDownMillis = 0
+var left = false
+var right = false
+var up = false
+var down = false
+var spacebar = false
+
+var ctx
+var fillTextStyle
+var cursorRow = 0, cursorCol = 0
+var textBuffers = []
+var keyPressCallback = null
+
+// TODO: clean up sprite vars.
+var sprite = []
+var spriteX = [-10,-10,-10,-10,-10,-10,-10,-10]
+var spriteY = [-10,-10,-10,-10,-10,-10,-10,-10]
+var spriteBits
+var spriteStatus = false
+var onSprite = null
+
+var currentInterval
+
+function initBasicEnvironment() {
+  canvas = document.getElementById("canvas")
+  ctx = canvas.getContext("2d")
+  ctx.font = "24px Commodore, Courier New"
+  ctx.strokeStyle = "#BBBBBB"
+  ctx.lineWidth = 3
+  ctx.fillRect(0, 0, 750, 600)
+  for (var i = 0; i < 25; i++) textBuffers.push("")
+  initSound()
+  initEventHandling()
+}
+
+function putSprite(id, x, y) {
+  spriteX[id] = x
+  spriteY[id] = y
+  redraw()
+  if (spriteStatus) checkCollisions()
+}
+
+function redraw() {
+  ctx.fillStyle = "#000000"
+  ctx.fillRect(0, 0, 750, 600)
+  ctx.fillStyle = fillTextStyle
+
+  for (var i = 0; i < textBuffers.length; i++) {
+    ctx.fillText(textBuffers[i], 0, (i + 1)*24)
+  }
+
+  for (var i = 0; i < sprite.length; i++) {
+    if (sprite[i]) ctx.drawImage(sprite[i], spriteX[i]*3, spriteY[i]*3, 24, 24)
+  }
+}
+
+function checkCollisions() {
+  if (!onSprite) return
+  for (var i = 0; i < 4; i++) {
+    if (spriteX[i] < 0 || spriteY[i] > 204) continue
+    xi = spriteX[i]; yi = spriteY[i]
+    for (var j = i + 1; j < 6; j++) {
+      if (spriteX[j] < 0 || spriteY[j] > 204) continue
+      if (i == 0 && j == 2) continue  // Friendly fire
+      xj = spriteX[j]; yj = spriteY[j]
+      if (Math.abs(xi - xj) < 8 && Math.abs(yi - yj) < 8) {
+        for (var y = Math.max(yi, yj); y < Math.min(yi + 8, yj + 8); y++) {
+          if (xj < xi) {
+            if ((spriteBits[i][y - yi] << (xi-xj)) & spriteBits[j][y - yj]) collision()
+          } else {
+            if ((spriteBits[j][y - yj] << (xj-xi)) & spriteBits[i][y - yi]) collision()
+          }
+        }
+      }
+    }
+  }
+}
+
+function collision() {
+  stopLoop()
+  tmpOnSprite = onSprite
+  onSprite = null
+  tmpOnSprite()
+  throw "Interrupt"
+}
+
+function spriteOn() {
+  spriteStatus = true
+  checkCollisions()
+
+  // Added
+  spriteX[2] = -10
+  spriteX[4] = -10
+  spriteX[5] = -10
+  spriteX[6] = -10
+}
+
+function spriteOff() {
+  onSprite = null
+  spriteStatus = false
+
+  // Added
+  spriteX = [-10,-10,-10,-10,-10,-10,-10,-10]
+}
+
+function onSpriteGoSub(sub) {
+  onSprite = sub
+  if (spriteStatus) checkCollisions()
+}
+
+function locate(row, col) {
+  cursorRow = row
+  cursorCol = col
+}
+
+function print(txt) {
+  oldText = textBuffers[cursorRow]
+  pre = oldText.substr(0, cursorCol)
+  pre += Array(cursorCol - pre.length + 1).join(" ")
+  textBuffers[cursorRow] = pre + txt + oldText.substr(cursorCol + pre.length + txt.length)
+  cursorRow++
+  cursorCol = 0
+  redraw()
+}
+
+function cls() {
+  ctx.fillStyle = "#000000"
+  ctx.fillRect(0, 0, 750, 600)
+  for (var i = 0; i < textBuffers.length; i++) textBuffers[i] = ""
+  spriteX = [-10,-10,-10,-10,-10,-10,-10,-10]
+  locate(0, 0)
+}
+
+function screen(a, b) {
+  cls()
+}
+
+function initEventHandling() {
+  window.addEventListener("keypress", keyPress, false)
+  // Prevents double-tap to zoom, runs at most one of (mouse, touch) events.
+  function neuter(e) {
+    e.stopPropagation();
+    e.preventDefault();
+  }
+  function pressSpaceBar(e) {
+    fakeKeyDown(32)
+    fakeKeyUp(32)
+    neuter(e)
+  }
+  //spcbar = document.getElementById("spcbar")
+  //spcbar.addEventListener("mousedown", pressSpaceBar, false)
+  //spcbar.addEventListener("touchstart", pressSpaceBar, false)
+
+  function addKeyEvents(el, keyCode) {
+    function genKeyDown(evt) {
+      fakeKeyDown(keyCode);neuter(evt)
+    }
+    el.addEventListener("mousedown", genKeyDown, false)
+    el.addEventListener("touchstart", genKeyDown, false)
+    function genKeyUp(evt) {
+      fakeKeyUp(keyCode);neuter(evt)
+    }
+    el.addEventListener("mouseup", genKeyUp, false)
+    el.addEventListener("touchend", genKeyUp, false)
+  }
+  addKeyEvents(document.getElementById("left"), 37)
+  addKeyEvents(document.getElementById("up"), 38)
+  addKeyEvents(document.getElementById("right"), 39)
+  addKeyEvents(document.getElementById("down"), 40)
+  addKeyEvents(document.getElementById("yes"), 89)
+  addKeyEvents(document.getElementById("no"), 78)
+  addKeyEvents(document.getElementById("spcbar"), 32)
+
+  // Prevent double tap zoom on gamepad.
+  var gamepad = document.getElementById("gamepad")
+  gamepad.addEventListener("mousedown", neuter)
+  gamepad.addEventListener("touchstart", neuter)
+  gamepad.addEventListener("mouseup", neuter)
+  gamepad.addEventListener("touchend", neuter)
+}
+
+function keyDown(evt) {
+  lastKeyDownMillis = Date.now()
+  switch (evt.keyCode) {
+    case 37: left = true; break
+    case 39: right = true; break
+    case 40: down = true; break
+    case 38: up = true; break
+    case 32: spacebar = true; break
+    default: return
+  }
+  evt.preventDefault()
+}
+
+var konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65]
+var konamiCodeIndex = 0
+
+function keyUp(evt) {
+  if (konamiCodeIndex < konamiCode.length) {
+    if (evt.keyCode != konamiCode[konamiCodeIndex++]) {
+      if (konamiCodeIndex == 3 && evt.keyCode == 38) {
+        konamiCodeIndex = 2
+      } else {
+        konamiCodeIndex = 0
+      }
+    }
+    if (konamiCodeIndex == konamiCode.length) {
+      sprite[0] = document.getElementById("dragon")
+    }
+  }
+  switch (evt.keyCode) {
+    case 37: delayRelease(function() {left = false}); break
+    case 39: delayRelease(function() {right = false}); break
+    case 40: delayRelease(function() {down = false}); break
+    case 38: delayRelease(function() {up = false}); break
+    case 32: delayRelease(function() {spacebar = false}); break
+    default: return
+  }
+  evt.preventDefault()
+}
+
+function delayRelease(callback) {
+  setTimeout(callback, Math.max(0, kMainLoopMillis - (Date.now() - lastKeyDownMillis)))
+}
+
+function fakeKeyDown(keyCode) {
+  if (keyPressCallback == null) keyDown({keyCode: keyCode, preventDefault: function(){}})
+}
+
+function fakeKeyUp(keyCode) {
+  evt = {keyCode: keyCode, preventDefault: function(){}}
+  if (keyPressCallback == null) {
+    keyUp(evt)
+  } else {
+    keyPress(evt)
+  }
+}
+
+function strig() {
+  return spacebar
+}
+
+function stick() {
+  r = right && !left
+  l = left && !right
+  u = up && !down
+  d = down && !up
+  if (r) {
+    if (u) {
+      return 2
+    } else if (d) {
+      return 4
+    }
+    return 3
+  } else if (l) {
+    if (u) {
+      return 8
+    } else if (d) {
+      return 6
+    }
+    return 7  
+  } else if (u) {
+    return 1
+  } else if (d) {
+    return 5
+  }
+  return 0
+}
+
+function inKey(callback) {
+  keyPressCallback = callback
+  window.removeEventListener("keydown", keyDown, false)
+  window.removeEventListener("keyup", keyUp, false)
+  up = down = right = left = spacebar = false
+}
+
+function keyPress(evt) {
+  if (keyPressCallback) {
+    tmpKeyPressCallback = keyPressCallback
+    keyPressCallback = null
+    window.addEventListener("keydown", keyDown, false)
+    window.addEventListener("keyup", keyUp, false)
+    tmpKeyPressCallback(evt.keyCode || evt.which)
+    evt.preventDefault()
+  }
+}
+
+
+// SOUND SYNTHESIS
+
+var samplingRate = 22050
+var semiTones = {}
+var speaker = []
+var currentSpeaker = 0
+
+function initSound() {
+  semiTones["C"] = 0
+  semiTones["C#"] = 1
+  semiTones["D"] = 2
+  semiTones["E-"] = 3
+  semiTones["E"] = 4
+  semiTones["F"] = 5
+  semiTones["F#"] = 6
+  semiTones["G"] = 7
+  semiTones["G#"] = 8
+  semiTones["A"] = 9
+  semiTones["B-"] = 10
+  semiTones["B"] = 11
+  speaker[0] = document.getElementById("speaker0")
+  speaker[1] = document.getElementById("speaker1")
+  toggleMute(document.getElementById("muted"))
+}
+
+function toggleMute(muted) {
+  speaker[0].muted = muted.checked
+  speaker[1].muted = muted.checked
+}
+
+function encodeLong(value) {
+  enc = "";
+  for (var i = 0; i < 4; ++i) {
+    enc += String.fromCharCode(value % 256);
+    value = Math.floor(value / 256);
+  }
+  return enc
+}
+
+function wavHeader(n) {
+  return ("RIFF" + encodeLong(36 + 2*n) + "WAVEfmt \x10\x00\x00\x00\x01\x00\x01\x00" +
+          encodeLong(samplingRate) + encodeLong(2*samplingRate) + "\x02\x00\x10\x00data" +
+          encodeLong(2*n))
+}
+
+function encodeWave(wave) {
+  var n = wave.length;
+  var raw = wavHeader(n)
+  for (var i = 0; i < n; ++i) {
+    var sample = Math.round(wave[i] * 32767);
+    if (sample < 0) sample += 1<<16;
+    raw += String.fromCharCode(sample % 256);
+    raw += String.fromCharCode(Math.floor(sample / 256));
+  }
+  return "data:audio/wav;base64," + btoa(raw);
+}
+
+function addSoundWave(frequency, duration, amplitude, wave) {
+  amplitude *= 0.25
+  // Pulse wave, width=half period. A=0, D=0, S=amplitude, R=0.
+  numSamples = Math.round(duration * samplingRate)
+  periodSamples = Math.round(samplingRate * 1.0 / frequency)
+  for (var i = 0, ii=0; i < numSamples; ++i, ++ii) {
+    if (ii >= periodSamples) ii -= periodSamples
+    if (ii < periodSamples / 2) {
+      wave.push(amplitude)
+    } else {
+      wave.push(-amplitude)
+    }
+  }
+  return wave
+}
+
+function addNote(o, v, l, note, wave) {
+  cFreq = 32.7 * Math.pow(2, o)
+  frequency = cFreq * Math.pow(Math.pow(2.0, 1/12), semiTones[note])
+  addSoundWave(frequency, (2.0/l)*7/8, v/15, wave)
+  return addSoundWave(frequency, (2.0/l)*1/8, 0, wave)
+}
+
+function playInSpeaker(wave) {
+  speaker[currentSpeaker].src = encodeWave(wave)
+  speaker[currentSpeaker].play()
+  currentSpeaker = 1 - currentSpeaker
+}
+
+function play(o, v, l, notes, callback) {
+  wave = []
+  for (var i = 0; i < notes.length; ++i) {
+    addNote(o, v, l, notes[i], wave)
+  }
+  playInSpeaker(wave)
+  window.setTimeout(callback, 1000 * wave.length / samplingRate)
+}
+
+function beep() {
+  wave = []
+  addSoundWave(800, 0.25, 9/15, wave)
+  playInSpeaker(wave)
+}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-63957406-1', 'auto');
+  ga('send', 'pageview');
+</script></head>
+<body bgcolor="#333" onload="initBasicEnvironment(); blastar()">
+<center>
+<h1>Blastar for HTML5</h1>
+<img src="img/blastar0.ico" id="sprite0" style="display: none">
+<img src="img/blastar1.ico" id="sprite2" style="display: none">
+<img src="img/blastar2.ico" id="sprite3" style="display: none">
+<img src="img/blastar3.ico" id="sprite4" style="display: none">
+<img src="img/blastar4.ico" id="sprite5" style="display: none">
+<img src="img/blastar5.ico" id="sprite6" style="display: none">
+<img src="img/dragon.png" id="dragon" style="display: none">
+<div>
+<canvas height="600" width="750" id="canvas" style="width: 750px">[YOUR BROWSER IS NOT SUPPORTED]</canvas>
+<br><audio id="speaker0">[Audio is not supported in your browser]</audio><audio id="speaker1"></audio>
+<label><input type="checkbox" id="muted" onclick="toggleMute(this)"> MUTE</label><br><br>
+</div>
+<table id="gamepad"><tr><td><input type="button" value="Y" id="yes"><input type="button" value="N" id="no"><br><br>
+<input type="button" value="      [spacebar]       " id="spcbar">
+</td>
+<td> <input type="button" value="^" id="up"><br>
+<input type="button" value="<" id="left"><input type="button" value="v" id="down"><input type="button" value=">" id="right"></td></tr></table>
+<p>&nbsp;</p>
+<h2>Instructions for the web version</h2>
+<div>Use the arrow keys to move your ship and the space bar to shoot.</div>
+</center>
+</body></html>

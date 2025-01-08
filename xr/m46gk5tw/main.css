@@ -1,0 +1,55 @@
+body {
+	text-align: center;
+} 
+
+.row div {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgb(223, 223, 223);
+	border: 5px solid white;
+}
+
+.row div:hover {
+	cursor: pointer;
+}
+
+.row div.yellow {
+	border: 5px solid yellow;
+}
+
+.on {
+	background-color: rgb(66, 184, 221) !important;
+}
+
+.not-show {
+	display: none;
+}
+
+button {
+	font-family: inherit;
+	font-size: 100%;
+	padding: 0.5em 1em;
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+	color: white;
+	border-radius: 4px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#shuffle {
+	background-color: rgb(242, 207, 7);
+}
+
+#solve {
+	background-color: rgb(2, 141, 247);
+}
+
+#hide {
+	background-color: rgb(4, 206, 242);
+}
+
+a {
+	font-size: 150%;
+}
