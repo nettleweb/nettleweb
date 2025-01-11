@@ -2606,20 +2606,32 @@ div.user[data-vip="diamond"]::after {
 	margin: 10px 0px;
 }
 
-#like, #vlike, #vview {
+#like, #share, #vlike, #vview {
 	position: relative;
 	display: inline-block;
-	width: 18px;
-	height: 18px;
-	margin: 0px 2px;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 3px;
+	padding: 0px 0px 0px 22px;
 	cursor: pointer;
 	border: none;
 	outline: none;
-	vertical-align: middle;
-	background-image: url("res/thumb-up.svg");
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 18px;
+	letter-spacing: 0px;
+	vertical-align: top;
 	background-size: 18px 18px;
 	background-repeat: no-repeat;
 	background-position: 0px 0px;
+}
+
+#like {
+	background-image: url("res/thumb-up.svg");
+}
+
+#share {
+	background-image: url("res/share.svg");
 }
 
 #user, #seller {
@@ -2743,6 +2755,7 @@ div.user[data-vip="diamond"]::after {
 
 #vlike {
 	cursor: not-allowed;
+	background-image: url("res/thumb-up.svg");
 }
 
 #vview {

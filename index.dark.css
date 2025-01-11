@@ -163,6 +163,10 @@ option, optgroup, #navigation-bar, #nwidget {
 	background-image: url("res/thumb-up-w.svg");
 }
 
+#share {
+	background-image: url("res/share-w.svg");
+}
+
 #vview {
 	background-image: url("res/view-w.svg");
 }
