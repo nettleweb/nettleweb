@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="12" tilewidth="70" tileheight="70">
+ <tileset firstgid="1" name="tiles_spritesheet" tilewidth="70" tileheight="70">
+  <image source="../tilesets/tiles_spritesheet.png" width="840" height="912"/>
+ </tileset>
+ <layer name="backbackground" width="30" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMBgBAAWgAAE=
+  </data>
+ </layer>
+ <layer name="background" width="30" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUkAv0qGzeTALyjlDaCklME4mthIRJtZeQ3eSYh8/MmaOYIAYAA68wcA==
+  </data>
+ </layer>
+ <layer name="surface" width="30" height="12">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUBELpRiDOgGJOKtuhCDU3Bof8TCg9g0p2w+wTRTI7EIu6mUjsGQwI/5OLRZHMK8GjDlc4jAIEAACYEhBZ
+  </data>
+ </layer>
+ <objectgroup name="items" width="30" height="12">
+  <object x="1087" y="580"/>
+  <object x="1995" y="526"/>
+  <object x="1715" y="528"/>
+  <object x="1716" y="458"/>
+  <object x="1716" y="389"/>
+ </objectgroup>
+</map>

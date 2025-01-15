@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="30" height="15" tilewidth="70" tileheight="70">
+ <tileset firstgid="1" name="tiles_spritesheet" tilewidth="70" tileheight="70">
+  <image source="../tilesets/tiles_spritesheet.png" width="840" height="912"/>
+ </tileset>
+ <layer name="backbackground" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGLgAABwgAAQ==
+  </data>
+ </layer>
+ <layer name="background" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4D2QAyIlQbaEaNgyAK9AbLXCkorMSDSr+YAuYUSMJMCPBB2kms3ufYAAFSWHIw=
+  </data>
+ </layer>
+ <layer name="surface" width="30" height="15">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2B4gkYgzsCBM2lsdykWO2Ohcq5ArEtj+wmBwGFu32CyH2a3IgPu9EgsJjXdguwUpcz5DDMptLOEAbtfYgiYg0sfLkyJPwH+4xdr
+  </data>
+ </layer>
+ <objectgroup name="items" width="30" height="15">
+  <object x="1995" y="734"/>
+  <object x="1847" y="742"/>
+  <object x="1847" y="684"/>
+  <object x="1851" y="629"/>
+  <object x="1319" y="750"/>
+  <object x="1321" y="700"/>
+  <object x="1321" y="650"/>
+  <object x="646" y="962"/>
+  <object x="644" y="915"/>
+  <object x="645" y="869"/>
+  <object x="423" y="954"/>
+  <object x="465" y="396"/>
+  <object x="647" y="401"/>
+  <object x="645" y="356"/>
+  <object x="649" y="299"/>
+ </objectgroup>
+</map>

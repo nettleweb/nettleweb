@@ -1,0 +1,6 @@
+<TextureAtlas imagePath="particles.png">
+	<SubTexture name="air.png" x="0" y="0" width="30" height="30"/>
+	<SubTexture name="earth.png" x="30" y="0" width="30" height="30"/>
+	<SubTexture name="fire.png" x="0" y="30" width="30" height="30"/>
+	<SubTexture name="water.png" x="30" y="30" width="30" height="30"/>
+</TextureAtlas>

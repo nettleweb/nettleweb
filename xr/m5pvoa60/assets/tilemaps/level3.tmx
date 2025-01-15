@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="55" height="31" tilewidth="70" tileheight="70">
+ <tileset firstgid="1" name="tiles_spritesheet" tilewidth="70" tileheight="70">
+  <image source="../tilesets/tiles_spritesheet.png" width="840" height="912"/>
+ </tileset>
+ <layer name="backbackground" width="55" height="31">
+  <data encoding="base64" compression="zlib">
+   eJztz7EJwDAMRUEN45EygOvg/evIOJXxAhZ38BGoexFw1v775vr2u93smF1PbsTqq9R2WgXaAAAAAADq+ADWGAVt
+  </data>
+ </layer>
+ <layer name="background" width="55" height="31">
+  <data encoding="base64" compression="zlib">
+   eJzt1kEOgjAQheEXD+HCuHJhdO8B3uU4hZcVkho1qUhLh5mp8yezAdL0oywAoijfIXPtvPkuZNulifz0/l328j3uK+9F/9egvQHBBvTti6JfcZx7movuVprGcW542Y7w6zulmSI+XT34poi8y7uPmHd59RHLXN58RJnLi4+oc1n3EetcVn1EG5c1H9HWZcVHyLgkfdcFzxCyLq3zI7Zx1fqe/3vf1rPiWnN+c+tZcZX4StbzlNY715gHJnjSxg==
+  </data>
+ </layer>
+ <layer name="surface" width="55" height="31">
+  <data encoding="base64" compression="zlib">
+   eJztl8ENwjAMRXNhCwbgxIkTpw7AAB2AAboFjE0s5QBRXNWJiX8iP+lLVVXF/yuum4bgOI4zFtekGbknzcIp6sXobeirlU3pGTQknmfNp5Gr1Pc9+v0Z9RDcl4Cy3xtz3boWCmuSFmgZNfygZSK0PfXOSDNiLah1bnzTO5NFn/yzpsYcr8H3bcx61nPySP3WnrbMyM3MfG5KPVrvm5Qav+gZZ8iU++lx9uL+9y8VtUrvVz4rEM6T53Asn9X3m8gzLuF3f/bYy4eUiViibsJ1KB/Xt0iS5hqdDx36P+s=
+  </data>
+ </layer>
+ <objectgroup name="items" width="55" height="31"/>
+</map>

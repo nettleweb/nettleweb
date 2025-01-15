@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="37" height="45" tilewidth="70" tileheight="70">
+ <tileset firstgid="1" name="tiles_spritesheet" tilewidth="70" tileheight="70">
+  <image source="../tilesets/tiles_spritesheet.png" width="840" height="912"/>
+ </tileset>
+ <layer name="backbackground" width="37" height="45">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAABvBhoEAAE=
+  </data>
+ </layer>
+ <layer name="background" width="37" height="45">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2DoACYS2YMZSCGx1QbMFcQDzYF2wCgYBaNg2AEpMuVGwcgFwgPtACyAd6AdMArwgqHSLhwFQwOM5PQ0caAdgAZaGQafm0bB4AZMOOiRCEbb2SMPMDGM7DQ/1AAsrkB51Q2KB2LcUBWHeBAU0xqYovFtGXC7abABi0GIAVPGDNs=
+  </data>
+ </layer>
+ <layer name="surface" width="37" height="45">
+  <data encoding="base64" compression="zlib">
+   eJzt18EJgDAMQNGO4QAO4BiO4dkBxJsLOLQVWijSQ0yDjfAf5GA9+MWCGgIA+LTF2YvjI631nGw2vlcrXrtutOnQpiNpW+OMcRblea1n25Su0zqWbR6aPO0vWupokaFNhhYZ2mS+bqm9A4dOLW/QpkObzh/aWr+BLVuys2OTp2dGSx0tNv+t1uPRBWuFK7Y=
+  </data>
+ </layer>
+ <objectgroup name="items" width="37" height="45"/>
+</map>
