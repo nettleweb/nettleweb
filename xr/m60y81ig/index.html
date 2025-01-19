@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="stylesheet" href="themes/geometrydashlite.io/rs/css/home.css?v=1" />
+	<title>Geometry Dash Lite</title>
+</head>
+
+<body>
+	<style>
+		html {
+			box-sizing: border-box;
+		}
+
+		*,
+		*:before,
+		*:after {
+			box-sizing: inherit;
+		}
+
+		body {
+			margin: 0;
+			background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 102, 255));
+			overflow: hidden;
+		}
+
+		#gameContainer {
+			width: 100vw;
+			height: 100vh;
+		}
+
+		canvas {
+			width: 100%;
+			height: 100%;
+			display: block;
+		}
+
+		canvas+* {
+			z-index: 2;
+		}
+
+		.container {
+			max-width: 1600px;
+			position: relative;
+		}
+
+		.posImg {
+			position: absolute;
+			top: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.logo {
+			position: absolute;
+			display: block;
+			max-width: 100vw;
+			max-height: 70vh;
+			top: 300px;
+		}
+
+		.pos_progress {
+			position: absolute;
+			bottom: 15%;
+			width: 100%;
+		}
+
+		.progress {
+			margin: 1.5em auto;
+			max-width: 436px;
+			height: auto;
+			display: none;
+			position: relative;
+		}
+
+		.full {
+			width: 97%;
+			transform-origin: top left;
+		}
+
+		.box_process {
+			width: 100%;
+		}
+
+		.process {
+			width: 98%;
+		}
+
+		.progress .posfull,
+		.progress .posbox {
+			position: absolute;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.progress .posfull {
+			top: 8px;
+			z-index: 1;
+		}
+
+		.progress .posbox {
+			top: 0;
+			z-index: 2;
+		}
+
+		#loader {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 102, 255));
+		}
+
+		.pos_spinner {
+			position: absolute;
+			top: 70%;
+			left: 50%;
+			transform: translate(-30%, -50%);
+		}
+
+		.spinner,
+		.spinner:after {
+			display: none;
+			border-radius: 50%;
+			width: 5em;
+			height: 5em;
+		}
+
+		.spinner {
+			margin: 10px;
+			font-size: 10px;
+			position: relative;
+			text-indent: -9999em;
+			border-top: 1.1em solid rgba(255, 255, 255, 0.2);
+			border-right: 1.1em solid rgba(255, 255, 255, 0.2);
+			border-bottom: 1.1em solid rgba(255, 255, 255, 0.2);
+			border-left: 1.1em solid #ffffff;
+			transform: translateZ(0);
+			animation: spinner-spin 1.1s infinite linear;
+		}
+
+		@keyframes spinner-spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+	<div id="gameContainer"></div>
+	<div id="loader"><img class="logo" src="image/loading.png?v=1">
+		<div class="spinner"></div>
+		<div class=" pos_progress">
+			<div class="progress">
+				<div class="posfull"><img class="full" src="image/process_bar_back.png"></div>
+				<div class="posbox"><img class="box_process" src="image/process_bar_front.png"></div>
+			</div>
+		</div>
+		<script src="Build/UnityLoader.js"></script>
+		<script>
+			var gameInstance = UnityLoader.instantiate("gameContainer", "Build/GeometryDashLite.json", {
+				onProgress: UnityProgress
+			});
+
+			function UnityProgress(gameInstance, progress) {
+				if (!gameInstance.Module) {
+					return;
+				}
+				const loader = document.querySelector("#loader");
+				if (!gameInstance.progress) {
+					const progress = document.querySelector("#loader .progress");
+					progress.style.display = "block";
+					gameInstance.progress = progress.querySelector(".full");
+					loader.querySelector(".spinner").style.display = "none";
+				}
+				gameInstance.progress.style.transform = `scaleX(${progress})`;
+				if (progress === 1 && !gameInstance.removeTimeout) {
+					gameInstance.removeTimeout = setTimeout(function () {
+						loader.style.display = "none";
+					}, 2000);
+				}
+			}
+		</script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				let buttondiv = document.getElementsByTagName('button');
+				for (let i = 0; i < buttondiv.length; i++) {
+					if (buttondiv[i].innerHTML == "OK") {
+						buttondiv[i].click();
+					}
+				}
+				setTimeout(function () {
+					let buttonok = document.getElementsByTagName('button');
+					for (let i = 0; i < buttondiv.length; i++) {
+						if (buttonok[i].innerHTML == "OK") {
+							buttonok[i].click();
+						}
+					}
+				}, 1000);
+			});
+		</script>
+		<script src="themes/geometrydashlite.io/rs/js/jquery-3.4.1.min.js"></script>
+		<script>
+			function ToggleInfo() {
+				if ($('button.hide-main-panel').children('i')[0].textContent != 'Info') {
+					$("div.main-panel").css('width', '0px');
+					$("div.main-panel-ads").css('display', 'none');
+					$("div.main-panel-content").css('display', 'none');
+					$('button.hide-main-panel').children('i').html('Info');
+					console.log('Info');
+				} else {
+					$("div.main-panel").css('width', $("div.main-panel").css('max-width'));
+					$("div.main-panel-ads").css('display', 'block');
+					$("div.main-panel-content").css('display', 'block');
+					$('button.hide-main-panel').children('i').html('>>');
+					console.log('>>');
+				}
+			}
+
+			function ShowInfo() {
+				$("div.main-panel").css('width', $("div.main-panel").css('max-width'));
+				$("div.main-panel-ads").css('display', 'block');
+				$("div.main-panel-content").css('display', 'block');
+				$('button.hide-main-panel').children('i').html('>>');
+			}
+
+			function HideInfo() {
+				$("div.main-panel").css('width', '0px');
+				$("div.main-panel-ads").css('display', 'none');
+				$("div.main-panel-content").css('display', 'none');
+				$('button.hide-main-panel').children('i').html('Info');
+			}
+			$('button.hide-main-panel').click(function () {
+				console.log('a');
+				ToggleInfo();
+			});
+		</script>
+</body>
+
+</html>
