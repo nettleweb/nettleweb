@@ -14,6 +14,7 @@
                 "mame2003_skip_warnings": "enabled"
             }
         },
+        "save": false,
         "license": "LICENSE.md",
         "repo": "https://github.com/EmulatorJS/mame2003-libretro"
     },
@@ -30,6 +31,7 @@
         "options": {
             "supportsMouse": true
         },
+        "save": "nvr",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/vice-libretro"
     },
@@ -43,6 +45,7 @@
                 "EMUTYPE=x64sc"
             ]
         },
+        "save": "nvr",
         "options": {
             "supportsMouse": true
         },
@@ -62,6 +65,7 @@
         "options": {
             "supportsMouse": true
         },
+        "save": "nvr",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/vice-libretro"
     },
@@ -76,6 +80,7 @@
             ]
         },
         "options": {},
+        "save": "nvr",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/vice-libretro"
     },
@@ -90,6 +95,7 @@
             ]
         },
         "options": {},
+        "save": "nvr",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/vice-libretro"
     },
@@ -103,6 +109,7 @@
                 "EMUTYPE=xvic"
             ]
         },
+        "save": "nvr",
         "options": {},
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/vice-libretro"
@@ -116,6 +123,7 @@
             "arguments": []
         },
         "options": {},
+        "save": "srm",
         "license": "Copying",
         "repo": "https://github.com/EmulatorJS/libretro-fceumm"
     },
@@ -128,6 +136,7 @@
             "arguments": []
         },
         "options": {},
+        "save": "srm",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/nestopia"
     },
@@ -140,6 +149,7 @@
             "arguments": []
         },
         "options": {},
+        "save": "srm",
         "license": "LICENSE",
         "repo": "https://github.com/EmulatorJS/snes9x"
     },
@@ -152,6 +162,7 @@
             "arguments": []
         },
         "options": {},
+        "save": "srm",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/gambatte-libretro"
     },
@@ -164,6 +175,7 @@
             "arguments": []
         },
         "options": {},
+        "save": "srm",
         "license": "LICENSE",
         "repo": "https://github.com/EmulatorJS/mgba"
     },
@@ -176,6 +188,7 @@
             "arguments": []
         },
         "options": {},
+        "save": "srm",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/beetle-vb-libretro"
     },
@@ -190,6 +203,7 @@
         "options": {
             "defaultWebGL2": true
         },
+        "save": "srm",
         "license": "LICENSE",
         "repo": "https://github.com/EmulatorJS/mupen64plus-libretro-nx"
     },
@@ -205,6 +219,7 @@
             "defaultWebGL2": true,
             "supportsMouse": true
         },
+        "save": "sav",
         "license": "LICENSE",
         "repo": "https://github.com/EmulatorJS/melonDS"
     },
@@ -220,6 +235,7 @@
             "defaultWebGL2": true,
             "supportsMouse": true
         },
+        "save": "dsv",
         "license": "",
         "repo": "https://github.com/EmulatorJS/desmume2015"
     },
@@ -235,6 +251,7 @@
             "defaultWebGL2": true,
             "supportsMouse": true
         },
+        "save": "dsv",
         "license": "",
         "repo": "https://github.com/EmulatorJS/desmume"
     },
@@ -247,6 +264,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": "srm",
         "license": "License.txt",
         "repo": "https://github.com/EmulatorJS/a5200"
     },
@@ -259,6 +277,7 @@
             "makescript": "makefile.libretro"
         },
         "options": {},
+        "save": false,
         "license": "",
         "repo": "https://github.com/EmulatorJS/fbalpha2012_cps1"
     },
@@ -271,6 +290,7 @@
             "makescript": "makefile.libretro"
         },
         "options": {},
+        "save": false,
         "license": "",
         "repo": "https://github.com/EmulatorJS/fbalpha2012_cps2"
     },
@@ -283,6 +303,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": false,
         "license": "License.txt",
         "repo": "https://github.com/EmulatorJS/prosystem-libretro"
     },
@@ -295,6 +316,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": false,
         "license": "",
         "repo": "https://github.com/EmulatorJS/stella2014-libretro"
     },
@@ -307,6 +329,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": "srm",
         "license": "",
         "repo": "https://github.com/EmulatorJS/opera-libretro"
     },
@@ -319,6 +342,7 @@
             "makescript": "Makefile.libretro"
         },
         "options": {},
+        "save": "srm",
         "license": "LICENSE.txt",
         "repo": "https://github.com/EmulatorJS/Genesis-Plus-GX"
     },
@@ -331,6 +355,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": "srm",
         "license": "",
         "repo": "https://github.com/EmulatorJS/yabause"
     },
@@ -343,6 +368,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": false,
         "license": "",
         "repo": "https://github.com/EmulatorJS/libretro-handy"
     },
@@ -355,6 +381,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": "srm",
         "license": "",
         "repo": "https://github.com/EmulatorJS/virtualjaguar-libretro"
     },
@@ -369,6 +396,7 @@
         "options": {
             "defaultWebGL2": true
         },
+        "save": "srm",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/pcsx_rearmed"
     },
@@ -381,6 +409,7 @@
             "makescript": "Makefile.libretro"
         },
         "options": {},
+        "save": "srm",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/picodrive"
     },
@@ -393,6 +422,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": false,
         "license": "src/license.txt",
         "repo": "https://github.com/EmulatorJS/FBNeo"
     },
@@ -407,6 +437,7 @@
         "options": {
             "defaultWebGL2": true
         },
+        "save": "srm",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/beetle-psx-libretro"
     },
@@ -424,6 +455,7 @@
                 "beetle_psx_hw_renderer": "software"
             }
         },
+        "save": "srm",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/beetle-pce-libretro"
     },
@@ -436,6 +468,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": "srm",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/beetle-pcfx-libretro"
     },
@@ -448,6 +481,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": "srm",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/beetle-ngp-libretro"
     },
@@ -460,6 +494,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": "srm",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/beetle-wswan-libretro"
     },
@@ -472,6 +507,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": "srm",
         "license": "LICENSE",
         "repo": "https://github.com/EmulatorJS/Gearcoleco"
     },
@@ -484,6 +520,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": "srm",
         "license": "",
         "repo": "https://github.com/EmulatorJS/parallel-n64"
     },
@@ -496,6 +533,7 @@
             "makescript": "Makefile"
         },
         "options": {},
+        "save": false,
         "license": "LICENSE.md",
         "repo": "https://github.com/EmulatorJS/mame2003-plus-libretro"
     },
@@ -510,6 +548,7 @@
         "options": {
             "supportsMouse": true
         },
+        "save": "nvr",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/libretro-uae"
     },
@@ -522,6 +561,7 @@
             "makescript": "Makefile.libretro"
         },
         "options": {},
+        "save": "srm",
         "license": "",
         "repo": "https://github.com/EmulatorJS/smsplus-gx"
     },
@@ -534,6 +574,7 @@
             "arguments": []
         },
         "options": {},
+        "save": false,
         "license": "LICENSE",
         "repo": "https://github.com/EmulatorJS/81-libretro"
     },
@@ -546,6 +587,7 @@
             "arguments": []
         },
         "options": {},
+        "save": false,
         "license": "LICENSE",
         "repo": "https://github.com/EmulatorJS/fuse-libretro"
     },
@@ -558,6 +600,7 @@
             "arguments": []
         },
         "options": {},
+        "save": "SNA",
         "license": "",
         "repo": "https://github.com/EmulatorJS/libretro-cap32"
     },
@@ -570,6 +613,7 @@
             "arguments": []
         },
         "options": {},
+        "save": false,
         "license": "LICENSE",
         "repo": "https://github.com/EmulatorJS/libretro-crocods"
     },
@@ -582,6 +626,7 @@
             "arguments": []
         },
         "options": {},
+        "save": "dsg",
         "license": "COPYING",
         "repo": "https://github.com/EmulatorJS/libretro-prboom"
     },
@@ -596,6 +641,7 @@
         "options": {
             "defaultWebGL2": true
         },
+        "save": false,
         "license": "LICENSE.TXT",
         "repo": "https://github.com/EmulatorJS/ppsspp"
     }
