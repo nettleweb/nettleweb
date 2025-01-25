@@ -58,7 +58,7 @@ option, optgroup, #navigation-bar, #nwidget {
 	filter: none;
 }
 
-#game-search>button, #item-search>button, #yt-search>button, #search>button {
+.search>button {
 	background-image: url("res/search-w.svg");
 }
 
@@ -67,11 +67,11 @@ option, optgroup, #navigation-bar, #nwidget {
 	background-color: #404040;
 }
 
-#yt-results>div>div>.desc, #s-videos>div>div>.desc, #headlines>div>div>.desc, #nwidget>div>span, #ac-friends>div>span, #bio, #ac-bio {
+.list-body>div>div>.desc, #nwidget>div>span, #ac-friends>div>span, #bio, #ac-bio {
 	color: #c0c0c0;
 }
 
-#yt-results>div>div>.time, #s-videos>div>div>.time, #headlines>div>div>.time, #footer, #game-disclaimer, #item-disclaimer, #idisc {
+.list-body>div>div>.time, #footer, #game-disclaimer, #item-disclaimer, #idisc {
 	color: #a0a0a0;
 }
 
@@ -123,11 +123,11 @@ option, optgroup, #navigation-bar, #nwidget {
 	background-image: url("res/add-file-w.svg");
 }
 
-#yt-load-more:hover, #menu>div:hover, #headlines>div:hover, #ub-shortcuts>div:hover, #yt-results>div:hover, #s-videos>div:hover {
+#yt-load-more:hover, #p-load-more:hover, #loadmore:hover, #menu>div:hover, #ub-shortcuts>div:hover, .list-body>div:hover {
 	background: #404040;
 }
 
-#yt-load-more:active, #menu>div:active, #headlines>div:active, #ub-shortcuts>div:active, #yt-results>div:active, #s-videos>div:active {
+#yt-load-more:active, #p-load-more:active, #loadmore:active, #menu>div:active, #ub-shortcuts>div:active, .list-body>div:active {
 	background: #606060;
 }
 

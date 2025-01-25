@@ -372,6 +372,152 @@
 	overflow-wrap: break-word;
 }
 
+.list-body {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 20px 0px;
+}
+
+.list-body>div {
+	position: relative;
+	display: block;
+	width: calc(100% - 20px);
+	height: fit-content;
+	margin: 10px 0px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.list-body>div:hover, #menu>div:hover {
+	background: #f8f8f8;
+}
+
+.list-body>div:active, #menu>div:active {
+	background: #f0f0f0;
+}
+
+.list-body>div>img {
+	position: relative;
+	display: inline-block;
+	width: 160px;
+	height: 90px;
+	margin: 0px 10px 0px 0px;
+	object-fit: cover;
+	vertical-align: top;
+}
+
+.list-body>div>div {
+	position: relative;
+	display: inline-block;
+	width: calc(100% - 170px);
+	height: fit-content;
+	vertical-align: top;
+}
+
+.list-body>div>div>.title {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 0px 0px 10px;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+.list-body>div>div>.desc {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 10px 0px 5px;
+	color: #606060;
+	line-height: 16px;
+	letter-spacing: 0px;
+}
+
+.list-body>div>div>.time {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 5px 0px;
+	color: #707070;
+	font-size: 12px;
+	line-height: 14px;
+	letter-spacing: 0px;
+}
+
+.input-body {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: fit-content;
+	margin: 15px 0px;
+}
+
+.input-body>h3 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 25px 0px 15px;
+}
+
+.input-body>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px;
+}
+
+.input-body>div>label {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 0px 10px 0px 0px;
+	line-height: 14px;
+	letter-spacing: 0px;
+	vertical-align: middle;
+}
+
+.input-body>div>textarea, #add-comm>textarea {
+	position: relative;
+	display: block;
+	width: calc(100% - 22px);
+	height: fit-content;
+	margin: 10px 0px;
+	padding: 10px;
+	border: 1px solid #c0c0c0;
+	border-radius: 10px;
+	outline: none;
+	font-size: 13px;
+	line-height: 15px;
+	letter-spacing: 0px;
+}
+
+.input-body>div>select, .input-body>div>input[type="text"], .input-body>div>input[type="number"] {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	padding: 5px 10px;
+	outline: none;
+	line-height: 14px;
+	letter-spacing: 0px;
+	border: 1px solid #c0c0c0;
+	border-radius: 25px;
+	vertical-align: middle;
+}
+
+.input-body>div>select:focus, .input-body>div>input[type="text"]:focus, .input-body>div>input[type="number"]:focus, #add-comm>textarea:focus {
+	border-color: #808080;
+}
+
 .pri-button {
 	position: relative;
 	display: block;
@@ -496,6 +642,44 @@
 	letter-spacing: 0px;
 }
 
+.search {
+	position: relative;
+	display: block;
+	width: 400px;
+	height: 40px;
+	margin: 20px auto;
+	border: 1px solid #808080;
+}
+
+.search>input {
+	position: absolute;
+	display: block;
+	width: calc(100% - 52px);
+	height: 20px;
+	top: 10px;
+	left: 10px;
+	border: none;
+	outline: none;
+	font-size: 14px;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+.search>button {
+	position: absolute;
+	display: block;
+	width: 20px;
+	height: 20px;
+	top: 10px;
+	right: 10px;
+	border: none;
+	outline: none;
+	background-image: url("res/search.svg");
+	background-size: 18px;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
 div.user[data-vip]::after {
 	position: relative;
 	display: inline-block;
@@ -588,14 +772,6 @@ div.user[data-vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#menu>div:hover, #headlines>div:hover, #ub-shortcuts>div:hover, #yt-results>div:hover, #s-videos>div:hover {
-	background: #f8f8f8;
-}
-
-#menu>div:active, #headlines>div:active, #ub-shortcuts>div:active, #yt-results>div:active, #s-videos>div:active {
-	background: #f0f0f0;
-}
-
 #menu>div>img {
 	position: absolute;
 	display: block;
@@ -650,128 +826,12 @@ div.user[data-vip="diamond"]::after {
 	margin: 15px 0px;
 }
 
-#bitcoin {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 470px;
-	margin: 15px 0px;
-}
-
-#weather>embed, #bitcoin>embed, #calc-container>embed, #webemu-container>embed, #console-container>embed, #test-frame>embed, body>embed {
+#weather>embed, #calc-container>embed, #webemu-container>embed, #console-container>embed, #test-frame>embed, body>embed {
 	position: absolute;
 	display: block;
 	width: 100%;
 	height: 100%;
 	overflow: hidden;
-}
-
-#headlines, #yt-results, #s-videos {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 20px 0px;
-}
-
-#headlines>div, #yt-results>div, #s-videos>div {
-	position: relative;
-	display: block;
-	width: calc(100% - 20px);
-	height: fit-content;
-	margin: 10px 0px;
-	padding: 10px;
-	cursor: pointer;
-}
-
-#headlines>div>img, #yt-results>div>img, #s-videos>div>img {
-	position: relative;
-	display: inline-block;
-	width: 160px;
-	height: 90px;
-	margin: 0px 10px 0px 0px;
-	object-fit: cover;
-	vertical-align: top;
-}
-
-#headlines>div>div, #yt-results>div>div, #s-videos>div>div {
-	position: relative;
-	display: inline-block;
-	width: calc(100% - 170px);
-	height: fit-content;
-	vertical-align: top;
-}
-
-#headlines>div>div>.title, #yt-results>div>div>.title, #s-videos>div>div>.title {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 0px 0px 10px;
-	font-weight: 600;
-	line-height: 18px;
-	letter-spacing: 0px;
-}
-
-#headlines>div>div>.desc, #yt-results>div>div>.desc, #s-videos>div>div>.desc {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 10px 0px 5px;
-	color: #606060;
-	line-height: 16px;
-	letter-spacing: 0px;
-}
-
-#headlines>div>div>.time, #yt-results>div>div>.time, #s-videos>div>div>.time {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 5px 0px;
-	color: #707070;
-	font-size: 12px;
-	line-height: 14px;
-	letter-spacing: 0px;
-}
-
-#game-search, #item-search, #yt-search, #search {
-	position: relative;
-	display: block;
-	width: 400px;
-	height: 40px;
-	margin: 20px auto;
-	border: 1px solid #808080;
-}
-
-#game-search>input, #item-search>input, #yt-search>input, #search>input {
-	position: absolute;
-	display: block;
-	width: calc(100% - 52px);
-	height: 20px;
-	top: 10px;
-	left: 10px;
-	border: none;
-	outline: none;
-	font-size: 14px;
-	line-height: 20px;
-	letter-spacing: 0px;
-}
-
-#game-search>button, #item-search>button, #yt-search>button, #search>button {
-	position: absolute;
-	display: block;
-	width: 20px;
-	height: 20px;
-	top: 10px;
-	right: 10px;
-	border: none;
-	outline: none;
-	background-image: url("res/search.svg");
-	background-size: 18px;
-	background-repeat: no-repeat;
-	background-position: center;
 }
 
 #game-category, #item-category {
@@ -1040,7 +1100,7 @@ div.user[data-vip="diamond"]::after {
 	margin: 20px auto 40px;
 }
 
-#yt-load-more, #loadmore {
+#yt-load-more, #p-load-more, #loadmore {
 	position: relative;
 	display: none;
 	width: fit-content;
@@ -1053,24 +1113,12 @@ div.user[data-vip="diamond"]::after {
 	border-radius: 25px;
 }
 
-#yt-load-more:hover, #loadmore:hover {
+#yt-load-more:hover, #p-load-more:hover, #loadmore:hover {
 	background: #f0f0f0;
 }
 
-#yt-load-more:active, #loadmore:active {
+#yt-load-more:active, #p-load-more:active, #loadmore:active {
 	background: #e0e0e0;
-}
-
-#gamemu-options {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 15px 0px;
-}
-
-#gamemu-options>div>select {
-	max-width: 120px;
 }
 
 #startemu {
@@ -1673,14 +1721,6 @@ div.user[data-vip="diamond"]::after {
 	background-position: center;
 }
 
-#upload-info {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: fit-content;
-	margin: 15px 0px;
-}
-
 #upload-test {
 	position: relative;
 	display: none;
@@ -1786,7 +1826,7 @@ div.user[data-vip="diamond"]::after {
 	display: none;
 }
 
-#account-settings>button, #purchase-page>button {
+#account-settings>button, #settings-page>button, #purchase-page>button {
 	position: relative;
 	display: block;
 	width: 120px;
@@ -2239,59 +2279,6 @@ div.user[data-vip="diamond"]::after {
 	width: fit-content;
 	height: fit-content;
 	margin: 5px;
-}
-
-#settings-page>div, #upload-info>div, #gamemu-options>div, #editor>div, #a-product>div, #payi {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 10px 0px;
-}
-
-#settings-page>div>label, #upload-info>div>label, #gamemu-options>div>label, #editor>div>label, #a-product>label, #payi>label {
-	position: relative;
-	display: inline-block;
-	width: fit-content;
-	height: fit-content;
-	margin: 0px 10px 0px 0px;
-	color: #808080;
-	line-height: 14px;
-	letter-spacing: 0px;
-	vertical-align: middle;
-}
-
-#upload-info>div>textarea, #editor>div>textarea, #a-product>div>textarea, #payi>textarea, #add-comm>textarea {
-	position: relative;
-	display: block;
-	width: calc(100% - 22px);
-	height: fit-content;
-	margin: 10px 0px;
-	padding: 10px;
-	border: 1px solid #c0c0c0;
-	border-radius: 10px;
-	outline: none;
-	font-size: 13px;
-	line-height: 15px;
-	letter-spacing: 0px;
-}
-
-#settings-page>div>input[type="text"], #settings-page>div>select, #upload-info>div>input[type="text"], #upload-info>div>select, #gamemu-options>div>select, #editor>div>input[type="text"], #a-product>div>input[type="text"], #a-product>div>input[type="number"], #payi>select {
-	position: relative;
-	display: inline-block;
-	width: fit-content;
-	height: fit-content;
-	padding: 5px 10px;
-	outline: none;
-	line-height: 14px;
-	letter-spacing: 0px;
-	border: 1px solid #c0c0c0;
-	border-radius: 25px;
-	vertical-align: middle;
-}
-
-#settings-page>div>input[type="text"]:focus, #settings-page>div>select:focus, #upload-info>div>input[type="text"]:focus, #upload-info>div>select:focus, #upload-info>div>textarea:focus, #gamemu-options>div>select:focus, #editor>div>input[type="text"]:focus, #editor>div>textarea:focus, #a-product>div>input[type="text"]:focus, #a-product>div>input[type="number"]:focus, #a-product>div>textarea:focus, #payi>select:focus, #payi>textarea:focus, #add-comm>textarea:focus {
-	border-color: #808080;
 }
 
 #bottom-widget {
@@ -2763,7 +2750,7 @@ div.user[data-vip="diamond"]::after {
 	background-image: url("res/view.svg");
 }
 
-#vdesc {
+#vdesc, #pdesc {
 	position: relative;
 	display: block;
 	width: 100%;
@@ -2787,16 +2774,6 @@ div.user[data-vip="diamond"]::after {
 @media all and (max-width: 379px)  {
 	#weather {
 		height: 430px;
-	}
-
-	#bitcoin {
-		height: 550px;
-	}
-}
-
-@media all and (max-width: 400px) {
-	#bitcoin {
-		height: 520px;
 	}
 }
 
@@ -2827,7 +2804,7 @@ div.user[data-vip="diamond"]::after {
 }
 
 @media all and (max-width: 450px) {
-	#search, #yt-search, #game-search, #item-search {
+	.search {
 		width: calc(100% - 20px);
 		margin: 20px 10px;
 	}
