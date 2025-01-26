@@ -4,11 +4,27 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<base href="." target="_blank" />
+		<link rel="stylesheet" type="text/css" href="/common.css" />
+		<link rel="stylesheet" type="text/css" href="data:text/css;base64,cnVmZmxlLXBsYXllcntwb3NpdGlvbjphYnNvbHV0ZTtkaXNwbGF5OmJsb2NrO3dpZHRoOjEwMCU7aGVpZ2h0OjEwMCU7Ym9yZGVyOm5vbmU7b3ZlcmZsb3c6aGlkZGVuO30K" />
 		<title>Plants VS Zombies</title>
-		<link rel="stylesheet" type="text/css" href="index.css" />
-		<script type="text/javascript" src="/lib/ruffle/ruffle.js"></script>
 	</head>
 	<body>
-		<script type="text/javascript" src="index.js"></script>
+		<script type="text/javascript" src="/lib/ruffle/ruffle.js"></script>
+		<script type="text/javascript">"use strict"; (() => {
+	const player = RufflePlayer.newest().createPlayer();
+	document.body.appendChild(player);
+	player.load({
+		url: "pvz_9_15.swf",
+		wmode: "opaque",
+		scale: "showAll",
+		quality: "best",
+		autoplay: "auto",
+		logLevel: "warn",
+		letterbox: "on",
+		openUrlMode: "confirm",
+		upgradeToHttps: true
+	});
+})();
+		</script>
 	</body>
 </html>
