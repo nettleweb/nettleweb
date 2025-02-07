@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Browser-based side scrolling video game with the matter.js physics engine.">
+    <meta name="author" content="Ross Landgreen">
+    <meta property="og:description" content="Browser-based side scrolling video game with the matter.js physics engine.">
+    <meta property="og:title" content="n-gon">
+    <meta name="twitter:title" content="n-gon">
+    <meta name="twitter:description" content="Browser-based side scrolling video game with the matter.js physics engine.">
+    <!-- <meta http-equiv="refresh" content="0; url=https://landgreen.github.io/n-gon/"> -->
+    <title>n-gon</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel='shortcut icon' href='favicon.ico' type='image/x-icon' />
+</head>
+
+<body>
+    <div id='guns'></div>
+    <div id='field'></div>
+    <div id='right-HUD-constraint'></div>
+    <div id='right-HUD'></div>
+    <div id="text-log"></div>
+    <div id="fade-out"></div>
+    <div id="health-bg"></div>
+    <div id="health"></div>
+    <div id="defense-bar"></div>
+    <div id="damage-bar"></div>
+    <div id="dmg"></div>
+    <div id='construct'></div>
+    <canvas id="canvas"></canvas>
+    <div id="choose-grid"></div>
+    <div id="experiment-grid"></div>
+    <div style="position: absolute; top:0;left:0;">
+        <div id="pause-grid-left" class="pause-grid"></div>
+    </div>
+    <div style="position: absolute; top:0;right:0;">
+        <div id="pause-grid-right" class="pause-grid"></div>
+    </div>
+    <svg class="SVG-button SVG-button-splash" id="start-button" width="82" height="45" stroke='none' fill='#333' font-size="30px" font-family="Arial, sans-serif" onclick="simulation.startGame()">
+        <text x="10" y="32">start</text>
+    </svg>
+    <svg class="SVG-button SVG-button-splash" id="training-button" width="120" height="45"  stroke='none' fill='#333' font-size="30px" font-family="Arial, sans-serif" onclick="simulation.startGame(false, true)">
+        <text x="10" y="32">training</text>
+    </svg>
+    <svg class="SVG-button SVG-button-splash" id="experiment-button" width="170" height="45">
+        <text stroke='none' fill='#333' stroke-width="2" font-size="30px" font-family="Arial, sans-serif" x="10" y="32">experiment</text>
+    </svg>
+
+    
+    <div id='info'>        
+        <div>
+            <details id='settings-details'>
+                <summary>settings</summary>
+                <div class="details-div" style="max-width: 24rem; line-height: 150%;">
+                    <input onclick="build.showImages('settings')" type="checkbox" id="hide-images" name="hide-images" style="width:17px; height:17px;">
+                    <label for="hide-images" title="hide images for fields, guns, and tech">hide images</label>
+                    <br>
+                    <input onclick="build.hideHUD('settings')" type="checkbox" id="hide-hud" name="hide-hud" style="width:17px; height:17px;">
+                    <label for="hide-hud" title="hide: tech, damage taken, damage, in game console, new level animation">minimal HUD</label>
+                    <br>
+                    <label for="fps-select" title="use this to slow the game down">limit frames per second:</label>
+                    <select name="fps-select" id="fps-select">
+                        <option value="max" selected>no cap</option>
+                        <option value="72">72 fps</option>
+                        <option value="60">60 fps</option>
+                        <option value="45">45 fps</option>
+                        <option value="30">30 fps</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input type="checkbox" id="community-maps" name="community-maps" style="width:17px; height:17px;">
+                    <label for="community-maps" title="add about 18 player made levels to the random n-gon level pool">community maps</label>
+                    <br>
+                    <label for="banned" title="type banned levels with a space between them.  Example:  run temple biohazard">banned levels:</label>
+                    <input id="banned" name="banned" placeholder="list levels by name" autocomplete="off" spellcheck="false" style="width: 182px;" />
+                    <br>
+                    <label for="seed" title="the randoms seed determines level order, tech choices, and mob types">randomization seed:</label>
+                    <input type="text" id="seed" name="seed" autocomplete="off" spellcheck="false" minlength="1" style="width: 120px;">
+                    <br><span id="previous-seed" style="color:#bbb"></span>
+                </div>
+            </details>
+        </div>
+        <div>
+            <details id="control-details">
+                <summary>controls</summary>
+                <div class="details-div" style="max-width: 24rem;">
+                    To change controls click a box
+                    <br>and press an unused key.
+                    <br><br>
+                    <table id="control-table">
+                        <tr>
+                            <th>FIRE</th>
+                            <td id='key-fire' class='key-input'>F</td>
+                            <td class='key-used'>MouseLeft</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>FIELD</th>
+                            <td id='key-field' class='key-input'>SPACE</td>
+                            <td class='key-used'>MouseRight</td>
+                        </tr>
+                        <tr>
+                            <th>JUMP</th>
+                            <td id='key-up' class='key-input'>W</td>
+                            <td class='key-used'>ArrowUp</td>
+                        </tr>
+                        <tr>
+                            <th>CROUCH</th>
+                            <td id='key-down' class='key-input'>S</td>
+                            <td class='key-used'>ArrowDown</td>
+                        </tr>
+                        <tr>
+                            <th>LEFT</th>
+                            <td id='key-left' class='key-input'>A</td>
+                            <td class='key-used'>ArrowLeft</td>
+                        </tr>
+                        <tr>
+                            <th>RIGHT</th>
+                            <td id='key-right' class='key-input'>D</td>
+                            <td class='key-used'>ArrowRight</td>
+                        </tr>
+                        <tr>
+                            <th>GUN →</th>
+                            <td id='key-next-gun' class='key-input'>Q</td>
+                            <td class='key-used'>MouseWheel</td>
+                        </tr>
+                        <tr>
+                            <th>GUN ←</th>
+                            <td id='key-previous-gun' class='key-input'>E</td>
+                            <td class='key-used'>MouseWheel</td>
+                        </tr>
+                        <tr style="opacity:0.5;">
+                            <th>GUN #</th>
+                            <td id="key-num" class='key-input'>Num</td>
+                        </tr>
+                        <tr>
+                            <th>PAUSE</th>
+                            <td id='key-pause' class='key-input'>P</td>
+                            <td></td>
+                        </tr>
+                        <tr id="control-testing">
+                            <th>TESTING</th>
+                            <td id='key-testing' class='key-input'>T</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <br><button id="control-reset" type="button">reset</button><span style="font-size: 60%;"> to default keys</span>
+                </div>
+            </details>
+        </div>
+        <div>
+            <details id="updates">
+                <summary>updates</summary>
+                <div id="updates-div" class="details-div" style="font-size: 70%;height: 400px;overflow: scroll;max-width: 50rem;"></div>
+            </details>
+        </div>
+        <div>
+            <details>
+                <summary>about</summary>
+                <div class="details-div" style="max-width: 24rem;padding:0.6em;font-size: 1.3rem;">
+                    <a id="github" href="https://github.com/landgreen/n-gon" aria-label="github">
+                        <!-- <svg viewBox="0 0 100 16" xmlns="http://www.w3.org/2000/svg" fill="#1B1F23">
+                            <path d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" />
+                            <g stroke='none' font-size="8px" font-family="Arial Black, sans-serif">
+                                <text x="19" y="11">Github</text>
+                            </g>
+                        </svg> -->
+                        <svg viewBox="-19 -8 40 16" xmlns="http://www.w3.org/2000/svg" stroke="#333" stroke-width="0.4" >
+                            <defs>
+                                <linearGradient id="horizontalGradient" x1="-8" y1="0" x2="8" y2="0" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#e0e3e6" />
+                                    <stop offset="100%" stop-color="#fff" />
+                                </linearGradient>
+                            </defs>
+                            <circle cx="0" cy="0" r="7" fill="url(#horizontalGradient)" />
+                            <circle cx="4" cy="0" r="1.1" fill="none" />
+                            <path d="M5.3 0 h1.7" stroke="#1B1F23" />
+                        </svg>
+                    </a>        
+                    <p>
+                        I wrote n-gon in JavaScript, CSS, and HTML using the matter.js 2-D physics library.
+                        The code is free and open source on <a id="github" href="https://github.com/landgreen/n-gon" aria-label="github">Github</a>.
+                        This is just my hobby project, but I try to fix bugs when <a id="github" href="https://github.com/landgreen/n-gon/issues" aria-label="github">reported</a>.
+                    </p>
+                    
+                    <span style="max-width: 25rem; line-height: 180%;">
+                    <label for="classic-select" title="play older versions of n-gon">classic n-gon:</label>
+                    <select name="classic-select" id="classic-select" onChange="window.location.href=this.value">
+                        <option value="https://scratch.mit.edu/projects/14005697/fullscreen/">mech: 2014</option>
+                        <option value="https://scratch.mit.edu/projects/22573757/fullscreen/">spacetime: 2015</option>
+                        <option value="https://scratch.mit.edu/projects/41429974/fullscreen/">ballistics: 2015</option>
+                        <option value="https://scratch.mit.edu/projects/43690666/fullscreen/">portal: 2016</option>
+                        <option value="https://codepen.io/lilgreenland/full/ozXNWZ">side scroller: 2016</option>
+                        <option value="https://codepen.io/lilgreenland/full/wzARJY">side scroller: 2016</option>
+                        <option value="classic/7-1-2017/">LandGame: 2017</option>
+                        <option value="classic/4-15-2018/">n-gon: 2018</option>
+                        <option value="classic/7-11-2019/">n-gon: summer-2019</option>
+                        <option value="classic/9-8-2019/">n-gon: fall-2019</option>
+                        <option value="classic/7-15-2020/">n-gon: summer-2020</option>
+                        <option value="classic/6-1-2021/">n-gon: spring-2021</option>
+                        <option value="classic/11-1-2022/">n-gon: fall-2022</option>
+                        <option value="classic/7-29-2024/">n-gon: summer-2024</option>
+                        <option value="" selected>old versions</option>
+                    </select>
+                    <br><label for="classic-select" title="community links">community links:</label>
+                    <select name="classic-select" id="classic-select" onChange="window.location.href=this.value">
+                        <option value="https://www.cornbread2100.com/n-gon-loader">n-commit loader</option>
+                        <option value="https://3xiondev.github.io/n-gon-upgraded">n-gon upgraded</option>
+                        <option value="https://n-gon-enhanced.vercel.app">n-gon enhanced</option>
+                        <option value="https://coaldeficit.github.io/c-gon">c-gon</option>
+                        <option value="https://kgurchiek.github.io/n-gon-portal-gun">n-gon portal gun</option>
+                        <option value="https://github.com/Whyisthisnotavalable/n-scythe">n-scythe</option>
+                        <option value="https://github.com/kgurchiek/n-gon-mobile">n-mobile</option>
+                        <option value="https://github.com/kgurchiek/n-gon-controller">n-controller</option>
+                        <option value="https://github.com/kgurchiek/n-gon-stopwatch">n-stopwatch</option>
+                        <option value="https://github.com/Ant-Throw-Pology/n-qol">n-qol</option>
+                        <option value="https://github.com/c-rxxp-y/n-gon-treasury">n-treasury</option>
+                        <option value="https://github.com/3xionDev/n-docs">n-docs</option>
+                        <option value="https://ngon.fandom.com/wiki/N-gon">n-wiki fandom</option>
+                        <option value="https://n-gon.wiki/">n-wiki n-gon</option>
+                        <option value="" selected>mods, forks, info</option>
+                    </select>
+                </span>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <svg id='splash' class="intro ui" viewBox="0 0 800 800" onclick="simulation.startGame()">
+        <g class="fade-in" transform="translate(100,210) scale(34)" fill='#afafaf' stroke='none'>
+            <path d="M0 0  h1  v0.2  h1.7  l0.3 0.3  v2.6  h-1  v-1.7  h-1  v1.7  h-1 z" />
+            <rect x="4" y="1.25" width="1" height="0.5" rx='0.03' />
+            <path transform="translate(6.9,0) scale(1.25)" d="M0 0  h1  l 0.7 0.7  v2.3  l-0.2 0.2 h-1.8 v-0.5 h1.4   L 1.1 2.4   h-1.1  l -0.7 -0.7  v-1  l 0.7 -0.7 Z" />
+            <path transform="translate(10.9,0) scale(1.25)" d="M0 0  h1  l 0.7 0.7  v1  l -0.7 0.7  h-1  l -0.7 -0.7  v-1  l 0.7 -0.7 Z" />
+            <path transform="translate(14,0)" d="M0 0  h1  v0.2  h1.7  l0.3 0.3  v2.6  h-1  v-1.7  h-1  v1.7  h-1 z" />
+        </g>
+        <g transform="translate(100,210) scale(34)" fill='none' stroke='#333' stroke-linejoin="round" stroke-linecap="round">
+            <path class="draw-lines" d="M0 0  h1  v0.2  h1.7  l0.3 0.3  v2.6  h-1  v-1.7  h-1  v1.7  h-1 z" stroke-width='0.0875' />
+            <rect class="draw-lines-dash" x="4" y="1.25" width="1" height="0.5" stroke-width='0.0875' rx='0.03' />
+            <path class="draw-lines-g" transform="translate(6.9,0) scale(1.25)" d="M0 0  h1  l 0.7 0.7  v2.3  l-0.2 0.2 h-1.8 v-0.5 h1.4   L 1.1 2.4   h-1.1  l -0.7 -0.7  v-1  l 0.7 -0.7 Z" stroke-width='0.07' />
+            <path class="draw-lines-o" transform="translate(10.9,0) scale(1.25)" d="M0 0  h1  l 0.7 0.7  v1  l -0.7 0.7  h-1  l -0.7 -0.7  v-1  l 0.7 -0.7 Z" stroke-width='0.07' />
+            <path class="draw-lines" transform="translate(14,0)" d="M0 0  h1  v0.2  h1.7  l0.3 0.3  v2.6  h-1  v-1.7  h-1  v1.7  h-1 z" stroke-width='0.0875' />
+        </g>
+        <!-- mouse -->
+        <g class="draw-lines3" transform="translate(290,430) scale(0.28)" stroke-linecap="round" stroke-linejoin="round" stroke-width="10px" stroke="#333" fill="none">
+            <path class="fade-in" stroke="none" fill="#fff" d="M827,112 h30 a140,140,0,0,1,140,140 v268 a140,140,0,0,1-140,140 h-60 a140,140,0,0,1-140-140v-268 a140,140,0,0,1,140-140h60" />
+            <path class="fade-in" d="M832.41,106.64 V322 H651.57 V255 c0-82,67.5-148,150-148 Z" fill="rgb(0, 200, 255)" stroke="none" />
+            <path d="M827,112 h30 a140,140,0,0,1,140,140 v268 a140,140,0,0,1-140,140 h-60 a140,140,0,0,1-140-140v-268 a140,140,0,0,1,140-140h60" />
+            <path d="M657 317 h340 h-170 v-25 m0 -140 v-42 s 21 -59, -5 -59 S 807 7, 807 7" />
+            <ellipse fill="none" cx="827.57" cy="218.64" rx="29" ry="68" />
+            <ellipse fill="#fff" class="fade-in-fast" cx="827.57" cy="218.64" rx="29" ry="68" />
+        </g>
+
+        <!-- keys -->
+        <g transform="translate(195,480) scale(0.8)">
+            <!-- fade in background -->
+            <g fill='#fff' stroke='none' class="fade-in">
+                <path d="M0 60 h60 v-60 h-60 v60" class="draw-lines-box-1" />
+                <path d="M70 60 h60 v-60 h-60 v60" class="draw-lines-box-2" />
+                <path d="M140 60 h60 v-60 h-60 v60" class="draw-lines-box-3" />
+                <path d="M0 70 h60 v60 h-60 v-60" class="draw-lines-box-1" />
+                <path d="M70 70 h60 v60 h-60 v-60" class="draw-lines-box-2" />
+                <path d="M140 70 h60 v60 h-60 v-60" class="draw-lines-box-3" />
+            </g>
+            <g fill='none' stroke='#333' stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+                <path d="M0 60 h60 v-60 h-60 v60" class="draw-lines-box-1" />
+             <!-- <rect x="0" y="0" width="60" height="60" rx="10" ry="10" class="draw-lines-box-1" /> -->
+                <path d="M70 60 h60 v-60 h-60 v60" class="draw-lines-box-2" />
+                <path d="M140 60 h60 v-60 h-60 v60" class="draw-lines-box-3" />
+                <path d="M0 70 h60 v60 h-60 v-60" class="draw-lines-box-1" />
+                <path d="M70 70 h60 v60 h-60 v-60" class="draw-lines-box-2" />
+                <path d="M140 70 h60 v60 h-60 v-60" class="draw-lines-box-3" />
+            </g>
+            <g class="draw-lines4" text-anchor="middle" stroke='#000' fill='none' stroke-width="2" font-size="38px" font-family="Arial Black, sans-serif">
+                <text x="30" y="45" id="splash-previous-gun" stroke-width="2">Q</text>
+                <text x="100" y="45" id="splash-up">W</text>
+                <text x="170" y="45" id="splash-next-gun" stroke-width="2">E</text>
+                <text x="30" y="113" id="splash-left">A</text>
+                <text x="100" y="113" id="splash-down">S</text>
+                <text x="170" y="113" id="splash-right">D</text>
+            </g>
+        </g>
+        <g class="fade-in" fill="none" stroke="#aaa" stroke-width="1">
+            <path d="M 254 433.5 h-35.5 v40" />
+            <path d="M 295 433.5 h36.5 v40" />
+            <path d="M 274 625 v-35" />
+            <path d="M 430.5 442 v50 h38" />
+            <path d="M 612.5 442 v50 h-38" />
+        </g>
+        <g class="fade-in" stroke="none" fill="#aaa" font-size="16px">
+            <text x="253" y="422">switch</text>
+            <text x="257" y="438">guns</text>
+            <text x="255" y="638">move</text>
+            <text x="420" y="438">fire</text>
+            <text x="599" y="438">field</text>
+        </g>
+    </svg>
+    <script src='lib/matter.min.js'></script>
+    <!-- <script src='lib/decomp.min.js'></script> -->
+    <script src="js/simulation.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/powerup.js"></script>
+    <script src="js/tech.js"></script>
+    <script src="js/bullet.js"></script>
+    <script src="js/mob.js"></script>
+    <script src="js/spawn.js"></script>
+    <script src="js/level.js"></script>
+    <script src="js/lore.js"></script>
+    <script src="js/engine.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
