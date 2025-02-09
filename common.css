@@ -1,11 +1,21 @@
 @font-face {
-	font-family: "Ubuntu Mono";
 	src: url("res/mono.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 400;
+	font-family: "Ubuntu Mono";
+	font-stretch: 100%;
+	font-display: swap;
+	unicode-range: U+0000-007F;
 }
 
 @font-face {
-	font-family: "Ubuntu";
 	src: url("res/ubuntu.woff2") format("woff2");
+	font-style: normal;
+	font-weight: 400;
+	font-family: "Ubuntu";
+	font-stretch: 100%;
+	font-display: swap;
+	unicode-range: U+0000-007F;
 }
 
 * {

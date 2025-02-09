@@ -826,7 +826,7 @@ div.user[data-vip="diamond"]::after {
 	margin: 15px 0px;
 }
 
-#weather>embed, #calc-container>embed, #webemu-container>embed, #console-container>embed, #test-frame>embed, body>embed {
+#weather>embed, #calc-container>embed, #webemu-container>embed, #console-container>embed, #test-frame>embed, body>embed, body>iframe {
 	position: absolute;
 	display: block;
 	width: 100%;
@@ -1351,11 +1351,11 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#channels>div:hover, #msglist>div:hover, #history>div:hover, #newchat:hover, #toggle:hover, #chatmode>button:not([data-current]):hover {
+#channels>div:hover, #msglist>div:hover, #history>div:hover, #newchat:hover, #toggle:hover, #chinfo:hover, #chatmode>button:not([data-current]):hover {
 	background-color: #d0d0d0;
 }
 
-#channels>div:active, #channels>div[data-current], #msglist>div:active, #msglist>div[data-current], #history>div:active, #history>div[data-current], #newchat:active, #toggle:active, #chatmode>button:not([data-current]):active {
+#channels>div:active, #channels>div[data-current], #msglist>div:active, #msglist>div[data-current], #history>div:active, #history>div[data-current], #newchat:active, #toggle:active, #chinfo:active, #chatmode>button:not([data-current]):active {
 	background-color: #c0c0c0;
 }
 
@@ -1422,38 +1422,20 @@ div.user[data-vip="diamond"]::after {
 
 #header {
 	position: relative;
-	display: flex;
-	width: calc(100% - 10px);
-	height: 35px;
-	padding: 5px;
-	flex-direction: row;
-	flex-wrap: nowrap;
+	display: block;
+	width: 100%;
+	height: 45px;
 	background: #e0e0e0;
 	border-bottom: 1px solid #a0a0a0;
 }
 
-#header>div {
-	position: relative;
-	display: block;
-	width: 100%;
-	height: 25px;
-	padding: 5px 10px;
-	flex: 0 1 100%;
-	font-size: 13px;
-	font-weight: 600;
-	white-space: pre;
-	line-height: 25px;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	overflow-wrap: break-word;
-}
-
 #toggle {
-	position: relative;
+	position: absolute;
 	display: block;
 	width: 35px;
 	height: 35px;
-	flex: 0 0 35px;
+	top: 5px;
+	left: 5px;
 	border: none;
 	cursor: pointer;
 	outline: none;
@@ -1468,14 +1450,52 @@ div.user[data-vip="diamond"]::after {
 	background-image: url("res/back.svg");
 }
 
-#chinfo {
-	position: relative;
-	display: none;
-	width: fit-content;
+#chname {
+	position: absolute;
+	display: block;
+	width: calc(100% - 100px);
 	height: 25px;
-	padding: 5px 20px;
-	flex: 0 0 auto;
+	top: 10px;
+	left: 50px;
+	font-size: 13px;
+	font-weight: 600;
+	white-space: pre;
 	line-height: 25px;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	overflow-wrap: break-word;
+}
+
+#chinfo {
+	position: absolute;
+	display: none;
+	width: 35px;
+	height: 35px;
+	top: 5px;
+	right: 5px;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	border-radius: 25px;
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+}
+
+#chinfo[data-op] {
+	display: block;
+}
+
+#chinfo[data-op="discord"] {
+	background-image: url("res/newtab.svg");
+}
+
+#chinfo[data-op="profile"] {
+	background-image: url("res/account.svg");
+}
+
+#chinfo[data-op="grinfo"] {
+	background-image: url("res/info.svg");
 }
 
 #picker {
@@ -1774,7 +1794,7 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#login-dialog>input {
+#login-dialog>input[type="text"], #login-dialog>input[type="email"], #login-dialog>input[type="password"] {
 	position: relative;
 	display: block;
 	width: 258px;
@@ -1788,8 +1808,26 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#login-dialog>input:focus {
+#login-dialog>input[type="text"]:focus, #login-dialog>input[type="email"]:focus, #login-dialog>input[type="password"]:focus {
 	border-color: #808080;
+}
+
+#login-dialog>input[type="checkbox"] {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 1px 3px;
+	vertical-align: middle;
+}
+
+#login-dialog>label {
+	position: relative;
+	display: inline;
+	width: fit-content;
+	height: fit-content;
+	font-size: 13px;
+	line-height: 16px;
 }
 
 #login-dialog>button {
