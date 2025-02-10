@@ -642,6 +642,94 @@
 	letter-spacing: 0px;
 }
 
+.dialog {
+	position: relative;
+	display: block;
+	width: 280px;
+	height: fit-content;
+	margin: 30px auto;
+	padding: 10px;
+	border: 1px solid #808080;
+	border-radius: 10px;
+}
+
+.dialog>h3 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 20px auto;
+	font-weight: 600;
+	line-height: 18px;
+	letter-spacing: 0px;
+}
+
+.dialog>input[type="text"], .dialog>input[type="email"], .dialog>input[type="password"] {
+	position: relative;
+	display: block;
+	width: 258px;
+	height: 20px;
+	margin: 10px 0px;
+	padding: 5px 10px;
+	border: 1px solid #c0c0c0;
+	border-radius: 10px;
+	outline: none;
+	line-height: 20px;
+	letter-spacing: 0px;
+}
+
+.dialog>input[type="text"]:focus, .dialog>input[type="email"]:focus, .dialog>input[type="password"]:focus {
+	border-color: #808080;
+}
+
+.dialog>input[type="checkbox"] {
+	position: relative;
+	display: inline-block;
+	width: fit-content;
+	height: fit-content;
+	margin: 1px 3px;
+	vertical-align: middle;
+}
+
+.dialog>label {
+	position: relative;
+	display: inline;
+	width: fit-content;
+	height: fit-content;
+	font-size: 13px;
+	line-height: 16px;
+}
+
+.dialog>button {
+	position: relative;
+	display: block;
+	width: 238px;
+	height: 20px;
+	margin: 10px 0px;
+	padding: 5px 20px;
+}
+
+.dialog>div {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 5px;
+	color: #8080ff;
+	cursor: pointer;
+	line-height: 20px;
+	letter-spacing: 0px;
+	text-decoration: underline;
+}
+
+.dialog>span {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 10px 0px;
+}
+
 .search {
 	position: relative;
 	display: block;
@@ -1770,94 +1858,6 @@ div.user[data-vip="diamond"]::after {
 	font-weight: 600;
 	line-height: 24px;
 	letter-spacing: 0px;
-}
-
-#login-dialog {
-	position: relative;
-	display: block;
-	width: 280px;
-	height: fit-content;
-	margin: 30px auto;
-	padding: 10px;
-	border: 1px solid #808080;
-	border-radius: 10px;
-}
-
-#login-dialog>h3 {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 20px auto;
-	font-weight: 600;
-	line-height: 18px;
-	letter-spacing: 0px;
-}
-
-#login-dialog>input[type="text"], #login-dialog>input[type="email"], #login-dialog>input[type="password"] {
-	position: relative;
-	display: block;
-	width: 258px;
-	height: 20px;
-	margin: 10px 0px;
-	padding: 5px 10px;
-	border: 1px solid #c0c0c0;
-	border-radius: 10px;
-	outline: none;
-	line-height: 20px;
-	letter-spacing: 0px;
-}
-
-#login-dialog>input[type="text"]:focus, #login-dialog>input[type="email"]:focus, #login-dialog>input[type="password"]:focus {
-	border-color: #808080;
-}
-
-#login-dialog>input[type="checkbox"] {
-	position: relative;
-	display: inline-block;
-	width: fit-content;
-	height: fit-content;
-	margin: 1px 3px;
-	vertical-align: middle;
-}
-
-#login-dialog>label {
-	position: relative;
-	display: inline;
-	width: fit-content;
-	height: fit-content;
-	font-size: 13px;
-	line-height: 16px;
-}
-
-#login-dialog>button {
-	position: relative;
-	display: block;
-	width: 238px;
-	height: 20px;
-	margin: 10px 0px;
-	padding: 5px 20px;
-}
-
-#login-dialog>div {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 10px 5px;
-	color: #8080ff;
-	cursor: pointer;
-	line-height: 20px;
-	letter-spacing: 0px;
-	text-decoration: underline;
-}
-
-#login-dialog>span {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 10px 0px;
 }
 
 #account-settings {
