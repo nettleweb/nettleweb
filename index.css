@@ -275,6 +275,17 @@
 	line-height: 40px;
 }
 
+#content>div>h3 {
+	position: relative;
+	display: block;
+	width: fit-content;
+	height: fit-content;
+	margin: 15px 0px;
+	font-size: 18px;
+	line-height: 24px;
+	letter-spacing: 0px;
+}
+
 #s-content {
 	position: absolute;
 	display: block;
@@ -335,7 +346,7 @@
 	line-height: 24px;
 }
 
-.text-body>hr {
+.text-body>hr, .input-body>hr, #content>div>hr {
 	width: 100%;
 	height: 1px;
 	margin: 20px 0px;
@@ -888,22 +899,6 @@ div.user[data-vip="diamond"]::after {
 	width: 100%;
 	height: fit-content;
 	margin: 40px 0px;
-}
-
-#discover>h3, #services-page>h3, #store-manager-page-1>h3, #store-manager-page-2>h3 {
-	position: relative;
-	display: block;
-	width: fit-content;
-	height: fit-content;
-	margin: 15px 0px;
-	font-size: 18px;
-	line-height: 24px;
-	letter-spacing: 0px;
-}
-
-#discover>hr, #services-page>hr, #store-manager-page-1>hr, #store-manager-page-2>hr {
-	margin: 20px 0px;
-	border-bottom: 1px solid #c0c0c0;
 }
 
 #weather {
@@ -1864,7 +1859,7 @@ div.user[data-vip="diamond"]::after {
 	display: none;
 }
 
-#account-settings>button, #settings-page>button, #purchase-page>button {
+#account-settings>button, #settings-page>button, #group-page>button, #purchase-page>button {
 	position: relative;
 	display: block;
 	width: 120px;
@@ -1873,7 +1868,7 @@ div.user[data-vip="diamond"]::after {
 	padding: 5px 20px;
 }
 
-#account-settings input, #messages>div input, #comments>div input {
+#account-settings input, #group-page input, #messages>div input, #comments>div input {
 	position: relative;
 	display: inline-block;
 	width: fit-content;
@@ -1888,11 +1883,11 @@ div.user[data-vip="diamond"]::after {
 	vertical-align: top;
 }
 
-#account-settings input:focus, #account-settings input~button:focus, #ac-friends>div>button:focus, #messages>div input:focus, #messages>div input~button:focus, #comments>div input:focus, #comments>div input~button:focus {
+#account-settings input:focus, #account-settings input~button:focus, #group-page input:focus, #group-page input~button:focus, #ac-friends>div>button:focus, #grusers>div>button:focus, #messages>div input:focus, #messages>div input~button:focus, #comments>div input:focus, #comments>div input~button:focus {
 	border-color: #808080;
 }
 
-#account-settings input~button, #messages>div input~button, #comments>div input~button {
+#account-settings input~button, #group-page input~button, #messages>div input~button, #comments>div input~button {
 	position: relative;
 	display: inline-block;
 	width: 24px;
@@ -1907,19 +1902,19 @@ div.user[data-vip="diamond"]::after {
 	background-position: center;
 }
 
-#account-settings input~button:hover, #ac-friends>div>button:hover, #messages>div input~button:hover, #comments>div input~button:hover {
+#account-settings input~button:hover, #group-page input~button:hover, #ac-friends>div>button:hover, #grusers>div>button:hover, #messages>div input~button:hover, #comments>div input~button:hover {
 	background-color: #d0d0d0;
 }
 
-#account-settings input~button:active, #ac-friends>div>button:active, #messages>div input~button:active, #comments>div input~button:active {
+#account-settings input~button:active, #group-page input~button:active, #ac-friends>div>button:active, #grusers>div>button:active, #messages>div input~button:active, #comments>div input~button:active {
 	background-color: #c0c0c0;
 }
 
-#account-settings button.tick, #messages>div button.tick, #comments>div button.tick {
+#account-settings button.tick, #group-page button.tick, #messages>div button.tick, #comments>div button.tick {
 	background-image: url("res/tick.svg");
 }
 
-#account-settings button.cross, #messages>div button.cross, #comments>div button.cross {
+#account-settings button.cross, #group-page button.cross, #messages>div button.cross, #comments>div button.cross, #grusers>div button.cross {
 	background-image: url("res/close.svg");
 }
 
@@ -2117,7 +2112,7 @@ div.user[data-vip="diamond"]::after {
 	letter-spacing: 0px;
 }
 
-#ac-friends>div>button {
+#ac-friends>div>button, #grusers>div>button {
 	position: relative;
 	display: block;
 	width: 38px;
