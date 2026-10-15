@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"lib": ["ES2022", "DOM", "DOM.Iterable"],
+		"types": [],
+		"target": "ES2022",
+		"module": "ES6",
+		"strict": true,
+		"outDir": "../out/",
+		"allowJs": true,
+		"checkJs": false,
+		"sourceMap": false,
+		"alwaysStrict": true,
+		"moduleResolution": "Node",
+		"strictNullChecks": true,
+		"strictBindCallApply": true,
+		"strictFunctionTypes": true,
+		"strictPropertyInitialization": true,
+		"forceConsistentCasingInFileNames": true
+	},
+	"compileOnSave": true,
+	"buildOptions": {
+		"verbose": true
+	}
+}

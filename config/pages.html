@@ -1,0 +1,634 @@
+
+<div id="home-page" data-current="1">
+	<div id="banner"></div>
+	<div id="notice"></div>
+	<form id="search" class="search" action="null" method="post">
+		<input name="q" type="text" maxlength="50" placeholder="Search the internet" autocomplete="off" />
+		<button type="submit" title="Search"></button>
+	</form>
+	<div id="menu">
+		<div id="goto-games">
+			<img src="res/games.svg" width="96" height="96" loading="lazy" decoding="async" draggable="false" alt="Games" />
+			<div>Games</div>
+		</div>
+		<div id="goto-video">
+			<img src="res/video.svg" width="96" height="96" loading="lazy" decoding="async" draggable="false" alt="Video" />
+			<div>Videos</div>
+		</div>
+		<div id="goto-apps">
+			<img src="res/apps.svg" width="96" height="96" loading="lazy" decoding="async" draggable="false" alt="Apps" />
+			<div>Apps</div>
+		</div>
+		<div id="goto-chat">
+			<img src="res/chat.svg" width="96" height="96" loading="lazy" decoding="async" draggable="false" alt="Chat" />
+			<div>Chat</div>
+		</div>
+	</div>
+	<div id="discover">
+		<h3>Weather</h3>
+		<div id="weather">
+			<embed type="text/plain" width="1024" height="768" src="weather.html" />
+		</div>
+		<hr />
+		<h3>Top Headlines</h3>
+		<div id="headlines" class="list-body">Loading...</div>
+	</div>
+</div>
+<div id="games-page">
+	<h2>Games</h2>
+	<form id="game-search" class="search" action="null" method="post">
+		<input name="q" type="text" maxlength="50" placeholder="Search Games" autocomplete="off" />
+		<button type="submit" title="Search"></button>
+	</form>
+	<div id="game-category">
+		<ul>
+			<li><button type="button" data-match="all" data-current="">All</button></li>
+			<li><button type="button" data-match="html5">HTML5</button></li>
+			<li><button type="button" data-match="flash">Flash</button></li>
+			<li><button type="button" data-match="dos">DOS</button></li>
+			<li><button type="button" data-match="cards">Cards</button></li>
+			<li><button type="button" data-match="puzzle">Puzzle</button></li>
+			<li><button type="button" data-match="arcade">Arcade</button></li>
+			<li><button type="button" data-match="mahjong">Mahjong</button></li>
+			<li><button type="button" data-match="classic">Classic</button></li>
+			<li><button type="button" data-match="shooting">Shooting</button></li>
+		</ul>
+	</div>
+	<div id="game-sortorder">
+		<label for="game-sort">Sort by:</label>
+		<select id="game-sort">
+			<option value="n">Name</option>
+			<option value="r">Random</option>
+			<option value="p">Popularity</option>
+			<option value="d">Date Added</option>
+		</select>
+	</div>
+	<div id="game-container">Loading...</div>
+	<div id="game-navigator">
+		<button id="gnav-back" type="button" title="Previous page" disabled=""></button>
+		<div>Page: <input id="gnav-page-no" type="number" min="1" max="999" value="0" placeholder="1" autocomplete="off" /> / <span id="gnav-page-count">0</span></div>
+		<button id="gnav-forward" type="button" title="Next page" disabled=""></button>
+	</div>
+</div>
+<div id="videos-page">
+	<h2>Videos</h2>
+	<form id="yt-search" class="search" action="null" method="post">
+		<input name="q" type="text" maxlength="50" placeholder="Search Videos" autocomplete="off" />
+		<button type="submit" title="Search"></button>
+	</form>
+	<div id="yt-option-bar">
+		<label for="service">Platform:</label>
+		<select id="service"></select>
+		<button id="toggle-filter" type="button">Advanced Search</button>
+	</div>
+	<div id="yt-filter-bar">
+		<div>Sort Filters:</div>
+		<div id="sort-filters"></div>
+		<div>Content Filters:</div>
+		<div id="content-filters"></div>
+	</div>
+	<div id="yt-results" class="list-body">Loading...</div>
+	<button id="yt-load-more" type="button">Load More</button>
+</div>
+<div id="gamemu-page">
+	<h2>Game Emulator</h2>
+	<div>
+		<div class="input-body">
+			<div>
+				<label for="emulator">Emulator:</label>
+				<select id="emulator">
+					<option value="ps2">Play.js</option>
+					<option value="swf">Ruffle</option>
+					<option value="dos">JS-DOS</option>
+					<option value="emu" selected="">EmulatorJS</option>
+				</select>
+			</div>
+			<div>
+				<label for="core">System:</label>
+				<select id="core">
+					<optgroup label="Nintendo">
+						<option value="n64">N64</option>
+						<option value="nds">NDS</option>
+						<option value="nes" selected="">NES/Famicom</option>
+						<option value="snes">SNES</option>
+						<option value="gb">Game Boy</option>
+						<option value="gba">Game Boy Advance</option>
+						<option value="vb">Virtual Boy</option>
+					</optgroup>
+					<optgroup label="Sega">
+						<option value="sega32x">32X</option>
+						<option value="segaCD">CD</option>
+						<option value="segaGG">Game Gear</option>
+						<option value="segaMD">Mega Drive</option>
+						<option value="segaMS">Master System</option>
+						<option value="segaSaturn">Saturn</option>
+					</optgroup>
+					<optgroup label="Atari">
+						<option value="atari2600">2600</option>
+						<option value="atari5200">5200</option>
+						<option value="atari7800">7800</option>
+						<option value="jaguar">Jaguar</option>
+						<option value="lynx">Lynx</option>
+					</optgroup>
+					<optgroup label="Commodore">
+						<option value="c64">C64</option>
+						<option value="c128">C128</option>
+						<option value="amiga">Amiga</option>
+						<option value="pet">PET</option>
+						<option value="plus4">Plus/4</option>
+						<option value="vic20">VIC-20</option>
+					</optgroup>
+					<optgroup label="Other">
+						<option value="psx">PS1</option>
+						<option value="psp">PSP</option>
+						<option value="3do">3DO</option>
+						<option value="arcade">Arcade</option>
+						<option value="mame2003">MAME 2003</option>
+						<option value="coleco">ColecoVision</option>
+						<option value="pce">NEC TurboGrafx-16/SuperGrafx/PC Engine</option>
+						<option value="pcfx">NEC PC-FX</option>
+						<option value="ngp">SNK NeoGeo Pocket</option>
+						<option value="ws">Bandai WonderSwan</option>
+					</optgroup>
+					<option value="ps2" hidden="" disabled="">PS2</option>
+					<option value="dos" hidden="" disabled="">DOS</option>
+					<option value="swf" hidden="" disabled="">Flash</option>
+				</select>
+			</div>
+			<div>
+				<label for="bios">BIOS:</label>
+				<input id="bios" type="file" />
+			</div>
+			<div>
+				<label for="game-rom">Game ROM:</label>
+				<input id="game-rom" type="file" />
+			</div>
+		</div>
+		<button id="startemu" type="button" class="pri-button">Start Emulator</button>
+	</div>
+</div>
+<div id="desmos-page">
+	<h2>Calculator</h2>
+	<embed type="text/plain" width="1024" height="768" src="ext/calc/" />
+</div>
+<div id="webemu-page">
+	<h2>PC Emulator</h2>
+	<embed type="text/plain" width="1024" height="768" src="ext/webemu/" />
+</div>
+<div id="console-page">
+	<h2>Debug Console</h2>
+	<embed type="text/plain" width="1024" height="768" src="ext/console/" />
+</div>
+<div id="unbl0ck-page">
+	<h2>Unblосkеr</h2>
+	<div>
+		<h3>Unblосkеr</h3>
+		<input id="addr" type="text" spellcheck="false" placeholder="Search or type a URL" autocomplete="off" />
+		<div id="ub-option-bar">
+			<label for="ub-mode">Mode:</label>
+			<select id="ub-mode">
+				<option value="raw-embed-v2">Raw Embed V2</option>
+				<option value="raw-embed">Raw Embed</option>
+				<option value="prq-embed">PRQ Embed</option>
+				<option value="puppeteer">Puppeteer</option>
+			</select>
+		</div>
+	</div>
+</div>
+<div id="services-page">
+	<h2>Apps</h2>
+	<div id="u">
+		<div>Unblосkеr</div>
+		<span>Get instant access to restricted websites. Bypass network or device restrictions. Free to use with no ads.</span>
+	</div>
+	<div id="e">
+		<div>Game Emulator</div>
+		<span>Play Flash, PS2, NES and other console games in browser without additional plugins or downloads.</span>
+	</div>
+	<div id="d">
+		<div>Calculator</div>
+		<span>A simple, easy to use graphical calculator designed for people who love math.</span>
+	</div>
+	<div id="p">
+		<div>PC Emulator</div>
+		<span>Run MS-DOS, Windows 95 and Windows 98 directly in browser. (For fun only, practically useless)</span>
+	</div>
+	<div id="c">
+		<div>Debug Console</div>
+		<span>Run the JS console in Chrome DevTools on restricted browsers or devices. (For advanced users only)</span>
+	</div>
+</div>
+<div id="community-page">
+	<h2>Chat</h2>
+	<div>
+		<div id="sidemenu">
+			<div id="chatmode">
+				<button id="global" type="button">Server</button>
+				<button id="friends" type="button">Friends</button>
+				<button id="chatgpt" type="button">AI Chat</button>
+			</div>
+			<div id="channels"></div>
+			<div id="msglist"></div>
+			<div id="history">
+				<button id="newchat" type="button">New chat</button>
+			</div>
+			<div id="account">
+				<div id="chat-profile"></div>
+				<button id="chat-login" class="pri-button" type="button">Login</button>
+			</div>
+		</div>
+		<div id="chat">
+			<div id="header">
+				<button id="toggle" type="button" title="Close"></button>
+				<div id="chname">Loading...</div>
+				<button id="chinfo" type="button" title="View channel info"></button>
+			</div>
+			<div id="starter">
+				<fieldset>
+					<legend>Direct Messages</legend>
+					<input id="dm-un" type="text" required="" minlength="4" maxlength="30" placeholder="Username" autocomplete="off" />
+					<button id="dm-btn" type="button" class="pri-button">Start new chat</button>
+				</fieldset>
+				<fieldset>
+					<legend>Create Groups</legend>
+					<input id="gr-name" type="text" required="" minlength="2" maxlength="30" placeholder="Group Name" autocomplete="off" />
+					<button id="gr-create" type="button" class="pri-button">Create</button>
+				</fieldset>
+				<fieldset>
+					<legend>Join Groups</legend>
+					<input id="gr-code" type="text" required="" minlength="12" maxlength="40" placeholder="Invite Code" autocomplete="off" />
+					<button id="gr-join" type="button" class="pri-button">Join</button>
+				</fieldset>
+			</div>
+			<div id="messages"></div>
+			<div id="interface">
+				<div>
+					<input id="sendmsg" type="text" required="" minlength="1" maxlength="8000" placeholder="Message" autocomplete="off" />
+					<button id="ufile" type="button" title="Upload file"></button>
+					<button id="emoji" type="button" title="Insert emoji"></button>
+				</div>
+			</div>
+			<div id="picker"></div>
+		</div>
+	</div>
+</div>
+<div id="mirrorlink-page">
+	<h2>About &amp; FAQ</h2>
+	<div class="text-body">
+		<h3>About NettleWeb</h3>
+		<p>The NettleWeb Project is a free, open-source, community-maintained project. It aims to provide every internet user a private and unrestricted web browsing environment, with the focus of liberty, privacy and community. We believe that it is incorrect to steal user data without their proper consent, and everyone deserves the right to do whatever they want.</p>
+		<h3>The NettleWeb Website</h3>
+		<p>The NettleWeb Website (nettleweb.com) is a free, open-source online community platform. It allows users to chat, watch videos and play games, without any privacy or censorship concerns. nettleweb.com is more than just a website, but a hub of creativity, socialization, and fun.</p>
+		<h3>Frequently Asked Questions (FAQ)</h3>
+		<h4>Is NettleWeb free to use?</h4>
+		<p>Yes, NettleWeb is completely free to use. All features within NettleWeb can be accessed with absolutely no charge.</p>
+		<h4>Where can I find the source code?</h4>
+		<p>NettleWeb, as a free, open-source project, has most of its source code published on the official <a href="https://github.com/nettleweb" target="_blank" rel="noopener">GitHub</a> and <a href="https://gitea.com/nettleweb" target="_blank" rel="noopener">Gitea</a> profiles. You can access it by following the links.</p>
+		<p>Note: Some parts of the project have not been released due to security concerns, we will release these parts once these issues have been resolved.</p>
+		<h4>What are the rules for posting messages across the website?</h4>
+		<p>NettleWeb aims to bring everyone a liberal, uncensored online social environment, so we are not willing to restrict our users freedom.</p>
+		<p>However as a basic requirement of building a healthy community, you are required to follow the rules below:</p>
+		<p>- No illegal contents - Posting any illegal or extreme contents publicly is strictly prohibited, as required by the law.</p>
+		<p>- No NSFW / adult-only contents - The NettleWeb community is inclusive to people at all age, so you are not permitted to post any explicit content which could be harmful to certain users.</p>
+		<p>- No over-advertising / repetitive messages - Do not post messages with the same content more than once. Although this is usually acceptable for reactions, attempts to fill the screen and prevent others from scrolling back to older messages are strictly prohibited. This includes the use of third-party clients for bypassing the rate limits or using automatic tools that slow down the server.</p>
+		<p>If you did not comply with the rules above while using the platform, you may receive content deletion, account suspension or a permanent restriction of a certain feature depending on the severity.</p>
+		<h4>I have discovered contents that appear to violate the rules, how should I report them?</h4>
+		<p>You can always report to the admins by following the 'report abuse' link in the footer. Attaching screenshots within your report could help us to better understand the case, especially when dealing with end-to-end encrypted contents.</p>
+		<h4>Is NettleWeb designed for bypassing network restrictions?</h4>
+		<p>No, NettleWeb is an online community platform or an internet hub with social features. It has its main focus on improving chat features and how they can be integrated with other features on the website. Although there is an unblосkеr in the apps page, it is a leftover from the legacy WhiteSpider project, which is not yet removed due to dependency breakage. It has not been updated and may be removed in the future. You should always comply with your network policies.</p>
+		<h4>Why I can't give likes or post comments in the videos?</h4>
+		<p>The NettleWeb Videos service currently acts as a crawler that collects data from other streaming sites. It does not store any video related data on its own. Until NettleWeb releases its own streaming platform, all videos will be view-only with no interactions allowed.</p>
+	</div>
+</div>
+<div id="uploadgames-page">
+	<h2>Upload Game</h2>
+	<div class="input-body">
+		<div>
+			<label for="game-name">Name:</label>
+			<input id="game-name" type="text" required="" minlength="1" maxlength="256" placeholder="Example" autocomplete="off" />
+		</div>
+		<div>
+			<label for="game-type">Type:</label>
+			<select id="game-type">
+				<option value="html5">HTML5</option>
+				<option value="flash">Flash</option>
+				<option value="dos">DOS</option>
+			</select>
+		</div>
+		<div>
+			<label for="game-file">File:</label>
+			<input id="game-file" type="file" accept=".zip" required="" />
+		</div>
+		<div>
+			<label for="game-tags">Tags:</label>
+			<input id="game-tags" type="text" required="" minlength="1" maxlength="300" placeholder="action,arcade,classic" autocomplete="off" />
+		</div>
+		<div>
+			<label for="game-desc">Description (optional):</label>
+			<textarea id="game-desc" cols="100" rows="20" wrap="hard" maxlength="5000" placeholder="Something about this game..." autocomplete="off"></textarea>
+		</div>
+	</div>
+	<div class="text-body">
+		<hr />
+		<h3>Notice</h3>
+		<p>Your game will be reviewed by the administrators before becoming visible to the public. This process could take 3-5 days, or even longer in some cases. Certain infomration may be edited or deleted based on our needs.</p>
+		<p>If you are submitting a new game, please ensure that your submission meets the following requirements:</p>
+		<p>1. All information of the game are filled correctly.</p>
+		<p>2. The game is playable without depending on third-party resources.</p>
+		<p>3. The game is not duplicated with one that already exists on the site.</p>
+		<p>4. The game is not copyright-protected, or is explicitly allowed for redistribution.</p>
+		<p>If you are updating an existing game, please scroll down to see the instructions.</p>
+		<br />
+		<h4>HTML5 Games</h4>
+		<p>The game file must be a valid ZIP file with a file named exactly `index.html` inside. The file will be used as the game's entry. If your game need to be compiled, please do so before uploading as we only accept static HTML/JS/CSS files.</p>
+		<p>The game does not depend on any resources from any third-party domains. (Connecting to third-party hosts will be blocked by the website's CSP, which might result the game being rejected.)</p>
+		<br />
+		<h4>Flash Games</h4>
+		<p>The game file must be a valid SWF file.</p>
+		<p>The game must not contain a site lock, or any settings preventing it from running on other websites.</p>
+		<p>If the game depends on external files apart from the SWF, upload it in ZIP format as a HTML5 game with a tag 'flash'.</p>
+		<br />
+		<h4>DOS Games</h4>
+		<p>The game file must be a valid JS-DOS bundle. If you have a ZIP file, please convert it into a JS-DOS bundle via the <a href="https://dos.zone/studio/" target="_blank" rel="noopener">DOS Zone Studio</a>.
+		</p>
+		<br />
+		<h4>Other Emulator Games</h4>
+		<p>Unfortunately, other emulator-based games, such as N64, NES, SNES, are not currently supported to be uploaded here. However you can play them with the game emulator under the 'apps' page.</p>
+		<br />
+		<h4>Updating an existing game?</h4>
+		<p>If you need to update an existing game, select the new game file and set the 'name' field to 'Update: [GAME NAME/ID]' (Example: 'Update: 1v1.lol'). You may leave other fields empty as they will inherit from the original game.</p>
+		<hr />
+	</div>
+	<div id="upload-test">
+		<p>Please test the game to see if it can be played when embedded. Games that are not playable or does not comply with the website's CSP will be rejected.</p>
+		<div id="test-frame"></div>
+		<p>Once you have tested the game and confirmed that it functions correctly, click the button below again to upload.</p>
+	</div>
+	<div id="upload-message"></div>
+	<button id="upload" type="button" class="pri-button">Upload</button>
+</div>
+<div id="accountinfo-page">
+	<h2>My Account</h2>
+	<div id="login-dialog" class="dialog"><span>Loading...</span></div>
+	<div id="account-settings" class="text-body">
+		<h3>Public Profile</h3>
+		<div id="ac-prof">
+			<button id="ch-avatar" type="button" title="Change avatar">
+				<img width="48" height="48" loading="eager" decoding="sync" draggable="false" alt="Avatar" />
+			</button>
+			<div>
+				<div id="ac-un" class="user"></div>
+				<button id="ac-edit" type="button" title="Change username"></button>
+				<button id="ac-link" type="button" title="Get link"></button>
+				<br />
+				<div id="ac-bio"></div>
+				<button id="ac-bio-edit" type="button" title="Change bio"></button>
+			</div>
+		</div>
+		<hr />
+		<h3>My Games</h3>
+		<div id="ac-games"></div>
+		<button id="ug" type="button" class="pri-button">Upload Game</button>
+		<hr />
+		<h3>My Friends</h3>
+		<div id="ac-friends"></div>
+		<button id="ff" type="button" class="pri-button">Add Friend</button>
+		<hr />
+		<h3>Account Information</h3>
+		<div>
+			<span>UID:</span>
+			<span id="ac-uid"></span>
+		</div>
+		<div>
+			<span>Name:</span>
+			<span id="ac-name"></span>
+			<button id="ac-name-edit" type="button" title="Change name"></button>
+		</div>
+		<div>
+			<span>Email:</span>
+			<span id="ac-email"></span>
+			<button id="ac-email-edit" type="button" title="Change email"></button>
+		</div>
+		<div>
+			<span>Membership:</span>
+			<span id="ac-membership"></span>
+		</div>
+		<hr />
+		<h3>Security</h3>
+		<button id="cp" type="button" class="pri-button">Change Password</button>
+		<button id="tf" type="button" class="pri-button">Enable Two-Factor</button>
+		<button id="rs" type="button" class="pri-button">Logout All Sessions</button>
+		<hr />
+		<h3>Functions</h3>
+		<button id="sm" type="button" class="pri-button">Storage Manager</button>
+		<hr />
+		<h3>Destructive Zone</h3>
+		<button id="so" type="button" class="pri-button">Sign Out</button>
+		<button id="da" type="button" class="pri-button" disabled="">Delete Account</button>
+	</div>
+</div>
+<div id="group-invite-page">
+	<div class="dialog">
+		<span>You have been invited to join <b id="igrname">a group chat</b>.</span>
+		<span>Members: <span id="gr-users">0</span></span>
+		<span>Invite Code: <span id="igrcode">null</span></span>
+		<button id="gr-accept" type="button" class="pri-button">Accept Invite</button>
+	</div>
+</div>
+<div id="account-reset-page">
+	<h2>Account Recovery</h2>
+	<div class="dialog">
+		<h3>Reset Password</h3>
+		<input id="np" type="password" required="" minlength="8" maxlength="30" placeholder="New Password" autocomplete="off" />
+		<input id="rp" type="password" required="" minlength="8" maxlength="30" placeholder="Confirm Password" autocomplete="off" />
+		<button id="reset" type="button" class="pri-button">Reset</button>
+	</div>
+</div>
+<div id="game-page">
+	<div id="game">
+		<div id="player"></div>
+		<div id="controller">
+			<button id="hide" type="button" title="Hide controller"></button>
+			<button id="lock" type="button" title="Enable scroll lock"></button>
+			<button id="newtab" type="button" title="Open in new tab"></button>
+			<button id="fullscreen" type="button" title="Enter fullscreen"></button>
+		</div>
+	</div>
+	<div class="text-body">
+		<h3 id="name">Dummy</h3>
+		<div>
+			<button id="like" type="button" title="Likes">Like</button>
+			<button id="share" type="button" title="Share">Share</button>
+		</div>
+		<div>Type: <span id="type"></span></div>
+		<div>Tags: <span id="tags"></span></div>
+		<div>Game ID: <span id="code"></span></div>
+		<div>Date Added: <span id="date"></span></div>
+		<div>Uploaded by:</div>
+		<div id="user"></div>
+		<div>Add to Your Website:</div>
+		<div id="ecode"></div>
+		<hr />
+		<h4>About</h4>
+		<div id="desc"></div>
+		<button id="edit" type="button" class="pri-button">Edit Game Info</button>
+		<div id="editor">
+			<h4>Edit Game Info</h4>
+			<div class="input-body">
+				<div>
+					<label for="e-name">Name:</label>
+					<input id="e-name" type="text" required="" minlength="1" maxlength="256" placeholder="Example" autocomplete="off" />
+				</div>
+				<div>
+					<label for="e-tags">Tags:</label>
+					<input id="e-tags" type="text" required="" minlength="1" maxlength="300" placeholder="action,arcade,classic" autocomplete="off" />
+				</div>
+				<div>
+					<label for="e-desc">Description:</label>
+					<textarea id="e-desc" cols="100" rows="20" wrap="hard" maxlength="5000" placeholder="Something about this game..." autocomplete="off"></textarea>
+				</div>
+			</div>
+			<button id="e-canc" type="button" class="pri-button">Cancel</button>
+			<button id="e-subm" type="button" class="pri-button">Submit</button>
+		</div>
+		<hr />
+		<h4>Comments</h4>
+		<div id="comments"></div>
+		<button id="loadmore" type="button">Load More</button>
+		<div id="add-comm">
+			<textarea id="comm" cols="100" rows="10" wrap="hard" maxlength="1000" placeholder="Leave a comment..." autocomplete="off"></textarea>
+			<button id="post" type="button" class="pri-button">Post Comment</button>
+		</div>
+		<hr />
+		<h4>More Games</h4>
+		<div id="s-games"></div>
+	</div>
+</div>
+<div id="video-page">
+	<div id="video"></div>
+	<div class="text-body">
+		<h3 id="vname">Dummy</h3>
+		<div>
+			<button id="vlike" type="button" title="Likes">0</button>
+			<button id="vview" type="button" title="Views">0</button>
+		</div>
+		<hr />
+		<div>Tags: <span id="vtags"></span></div>
+		<div>Privacy: <span id="privacy"></span></div>
+		<div>License: <span id="license"></span></div>
+		<div>Category: <span id="category"></span></div>
+		<div>Upload Date: <span id="vdate"></span></div>
+		<div>Original URL: <span id="origin"></span></div>
+		<div>Uploader:</div>
+		<div id="uploader"></div>
+		<hr />
+		<h4>About</h4>
+		<div id="vdesc"></div>
+		<hr />
+		<h4>More Videos</h4>
+		<div id="s-videos" class="list-body"></div>
+	</div>
+</div>
+<div id="group-page">
+	<div class="text-body">
+		<h3 id="grname">Dummy</h3>
+		<div>Group ID: <span id="grid"></span></div>
+		<div>Invite Link: <span id="grlink"></span></div>
+		<div>Invite Code: <span id="grcode"></span></div>
+		<hr />
+		<h4>Members</h4>
+		<div id="grusers"></div>
+	</div>
+	<hr />
+	<button id="gredit" type="button" class="pri-button">Rename Group</button>
+	<button id="grleave" type="button" class="pri-button">Leave Group</button>
+</div>
+<div id="profile-page">
+	<div>
+		<img id="avatar" src="res/preview.svg" width="48" height="48" loading="eager" decoding="sync" draggable="false" alt="Avatar" />
+		<div>
+			<div id="id" class="user"></div>
+			<div id="bio"></div>
+		</div>
+		<span>
+			<button id="dm" type="button" class="pri-button">Message</button>
+			<button id="af" type="button" class="pri-button">Add Friend</button>
+		</span>
+	</div>
+	<h3>Games</h3>
+	<span id="pf-games"></span>
+</div>
+<div id="playlist-page">
+	<div class="text-body">
+		<img id="pprev" src="res/preview.svg" loading="lazy" decoding="async" draggable="false" alt="Banner" />
+		<h3 id="pname">Dummy</h3>
+		<div>Streams: <span id="streams"></span></div>
+		<div>Original URL: <span id="porigin"></span></div>
+		<div>Uploader:</div>
+		<div id="puploader"></div>
+		<div>Subchannel:</div>
+		<div id="psubchannel"></div>
+		<hr />
+		<h4>Contents</h4>
+		<div id="p-videos" class="list-body"></div>
+		<button id="p-load-more" type="button">Load More</button>
+	</div>
+</div>
+<div id="settings-page">
+	<h2>Settings</h2>
+	<div class="input-body">
+		<h3>Appearance</h3>
+		<div>
+			<label for="font">Font:</label>
+			<select id="font">
+				<option value="normal">Normal</option>
+				<option value="mono">Monospace</option>
+			</select>
+		</div>
+		<div>
+			<label for="theme">Theme:</label>
+			<select id="theme">
+				<option value="default">Default</option>
+				<option value="light">Light</option>
+				<option value="dark">Dark</option>
+			</select>
+		</div>
+		<div>
+			<label for="tabname">Tab Name:</label>
+			<input id="tabname" type="text" placeholder="NettleWeb" autocomplete="off" />
+		</div>
+		<div>
+			<label for="tabicon">Tab Icon:</label>
+			<input id="tabicon" type="file" accept="image/*" />
+		</div>
+		<div>
+			<label for="image">Background:</label>
+			<input id="image" type="file" accept="image/*" />
+		</div>
+		<hr />
+		<h3>Network</h3>
+		<div>
+			<label for="cdn">CDN Server:</label>
+			<input id="cdn" type="text" spellcheck="false" placeholder=" (Default) " autocomplete="off" />
+		</div>
+		<div>
+			<label for="backend">Backend Server:</label>
+			<input id="backend" type="text" spellcheck="false" placeholder=" (Default) " autocomplete="off" />
+		</div>
+		<hr />
+		<h3>Privacy</h3>
+		<div>
+			<label for="stealth-mode">Stealth Mode:</label>
+			<select id="stealth-mode">
+				<option value="disabled">Disabled</option>
+				<option value="blur">Blur</option>
+				<option value="blank">Blank</option>
+				<option value="google">Google</option>
+			</select>
+		</div>
+	</div>
+	<br />
+	<hr />
+	<button id="clear-cache" type="button" class="pri-button">Clear Cache</button>
+	<button id="clear-data" type="button" class="pri-button">Clear All Data</button>
+</div>

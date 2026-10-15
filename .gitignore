@@ -1,3 +1,7 @@
-/local
-/node_modules
+/local/
+/bun.lock
+/.vscode/
+/.firebase/
+/node_modules/
+/pnpm-lock.yaml
 /package-lock.json

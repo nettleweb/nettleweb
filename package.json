@@ -1,0 +1,23 @@
+{
+	"main": "main.js",
+	"type": "module",
+	"private": true,
+	"devDependencies": {
+		"@nettleweb/core": "^0.2.0",
+		"@nettleweb/emoji-picker-lite": "../../emoji-picker-lite",
+		"engine.io-client": "^6.6.7",
+		"fflate": "^0.8.3",
+		"firebase": "^13.0.0",
+		"lean-qr": "^2.7.4",
+		"string-pool-plugin": "^0.1.0",
+		"ts-loader": "^9.6.2",
+		"webpack": "^5.111.1",
+		"webpack-cli": "^7.2.3"
+	},
+	"scripts": {
+		"build": "./scripts/build.sh",
+		"config": "./scripts/config.js",
+		"start": "./scripts/start.js > /dev/null 2>&1 & disown",
+		"sign": "./scripts/sign.js"
+	}
+}

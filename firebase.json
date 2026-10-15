@@ -1,0 +1,13 @@
+{
+	"hosting": {
+		"public": "./static/",
+		"ignore": [
+			"firebase.json",
+			"**/.*",
+			"**/*.md",
+			"**/.git/**",
+			"**/.github/**",
+			"**/node_modules/**"
+		]
+	}
+}
