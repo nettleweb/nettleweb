@@ -4,13 +4,15 @@
 	"private": true,
 	"devDependencies": {
 		"@nettleweb/core": "^0.2.0",
-		"@nettleweb/emoji-picker-lite": "../../emoji-picker-lite",
+		"@nettleweb/emoji-picker-lite": "file:../../emoji-picker-lite",
 		"engine.io-client": "^6.6.7",
 		"fflate": "^0.8.3",
 		"firebase": "^13.0.0",
 		"lean-qr": "^2.7.4",
 		"string-pool-plugin": "^0.1.0",
+		"terser-webpack-plugin": "^5.6.1",
 		"ts-loader": "^9.6.2",
+		"typescript": "^6.0.3",
 		"webpack": "^5.111.1",
 		"webpack-cli": "^7.2.3"
 	},

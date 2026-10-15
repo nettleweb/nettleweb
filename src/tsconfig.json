@@ -10,7 +10,7 @@
 		"checkJs": false,
 		"sourceMap": false,
 		"alwaysStrict": true,
-		"moduleResolution": "Node",
+		"moduleResolution": "bundler",
 		"strictNullChecks": true,
 		"strictBindCallApply": true,
 		"strictFunctionTypes": true,

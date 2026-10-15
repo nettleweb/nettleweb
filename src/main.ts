@@ -5,7 +5,7 @@ import config from "./misc/config";
 import _logger from "./misc/misc";
 import { deflateSync } from "fflate";
 import { generate } from "lean-qr";
-import { Picker } from "emoji-picker-lite";
+import { Picker } from "@nettleweb/emoji-picker-lite";
 import { Socket, SocketOptions } from "engine.io-client";
 import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8Array, UTF_8, win } from "./misc/ctxfn";
 

@@ -20,7 +20,7 @@ const config = {
 		]
 	},
 	output: {
-		path: path.resolve("../out/"),
+		path: path.resolve("../local/out/"),
 		charset: true,
 		filename: "out.js",
 		uniqueName: "NettleWeb",
