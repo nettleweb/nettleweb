@@ -18,4 +18,4 @@ fi
 
 rm -rf "./node_modules/@types/node"
 cd $baseDir/src/ && webpack; cd $baseDir
-cp -fl out/out.js static/main.js
+cp -fl local/out/out.js static/main.js

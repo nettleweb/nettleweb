@@ -1512,7 +1512,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 			gamePlayer.appendChild(createGameFrame(type, createGameURL(file, gid)));
 
 			{
-				const url = "/" + gid;
+				const url = "#/" + gid;
 				const furl = Constants.origin + url;
 
 				if (!mirror) {
@@ -1869,7 +1869,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 					doc.title = "NettleWeb Games"
 
 				unblEndSes = restoreRootPath;
-				his.replaceState(void 0, "", "/games");
+				his.replaceState(void 0, "", "#/games");
 			}
 
 			if (gameContainer.childElementCount === 0) {
@@ -2557,7 +2557,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 					doc.title = "NettleWeb Videos";
 
 				unblEndSes = restoreRootPath;
-				his.replaceState(void 0, "", "/videos");
+				his.replaceState(void 0, "", "#/videos");
 			}
 
 			if (service.childElementCount === 0) {
@@ -4046,7 +4046,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 						doc.title = "NettleWeb Chat";
 
 					unblEndSes = restoreRootPath;
-					his.replaceState(void 0, "", "/chat");
+					his.replaceState(void 0, "", "#/chat");
 				}
 			};
 			friends.onclick = () => {
@@ -4516,7 +4516,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 
 				if (!mirror) {
 					unblEndSes = restoreRootPath;
-					his.replaceState(void 0, "", "/@" + user);
+					his.replaceState(void 0, "", "#/@" + user);
 				}
 			}
 
@@ -4848,7 +4848,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 		const upldPage = $("uploadgames-page");
 		const settPage = $("settings-page");
 
-		const path = loc.pathname;
+		const path = loc.hash;
 		const search = new URLSearchParams(loc.search);
 
 		$("logo").onclick = homeBtn.onclick = () => {
@@ -4886,7 +4886,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 					doc.title = "NettleWeb Apps";
 
 				unblEndSes = restoreRootPath;
-				his.replaceState(void 0, "", "/apps");
+				his.replaceState(void 0, "", "#/apps");
 			}
 		};
 		infoBtn.onclick = () => {
@@ -4909,7 +4909,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 					doc.title = "About NettleWeb";
 
 				unblEndSes = restoreRootPath;
-				his.replaceState(void 0, "", "/about");
+				his.replaceState(void 0, "", "#/about");
 			}
 		};
 		$("u").onclick = () => {
@@ -5021,26 +5021,28 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 		his.replaceState(void 0, "", "/");
 
 		switch (path) {
-			case "/":
+			case "":
+			case "#":
+			case "#/":
 				break;
-			case "/apps":
+			case "#/apps":
 				appsBtn.click();
 				break;
-			case "/chat":
+			case "#/chat":
 				chatBtn.click();
 				break;
-			case "/games":
+			case "#/games":
 				gameBtn.click();
 				break;
-			case "/videos":
+			case "#/videos":
 				strmBtn.click();
 				break;
-			case "/about":
+			case "#/about":
 				infoBtn.click();
 				break;
 			default:
-				if (path.slice(0, 2) === "/@") {
-					const user = path.slice(1);
+				if (path.slice(0, 3) === "#/@") {
+					const user = path.slice(2);
 					if (user.length <= 50) {
 						try {
 							await openProfile(user);
@@ -5048,8 +5050,8 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 							error("Failed to open user profile. Message: " + err);
 						}
 					}
-				} else if (path.slice(0, 6) === "/join/") {
-					const code = path.slice(6);
+				} else if (path.slice(0, 7) === "#/join/") {
+					const code = path.slice(7);
 					if (code.length === 12) {
 						try {
 							const info = await fetchSIO(SIOPath.getgroupinfo, code);
@@ -5086,8 +5088,8 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 							error("Failed to open invite link. Message: " + err);
 						}
 					}
-				} else if (path.slice(0, 7) === "/reset/") {
-					const token = path.slice(7);
+				} else if (path.slice(0, 8) === "#/reset/") {
+					const token = path.slice(8);
 					if (token.length === 256) {
 						const resetPage = $("account-reset-page");
 
@@ -5125,8 +5127,8 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 							});
 						};
 					}
-				} else if (path.length > 4 && path.length < 20) {
-					const id = parseInt(path.slice(1), 36);
+				} else if (path.slice(0, 8) === "#/games/") {
+					const id = parseInt(path.slice(8), 36);
 					if (Number.isSafeInteger(id) && id > 0) {
 						// ensure game list initialized before use
 						await initGameList();
