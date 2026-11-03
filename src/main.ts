@@ -259,10 +259,9 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 		const gid = game.date.toString(36);
 		const name = game.name;
 
-		const elem = mkElem("a");
-		elem.href = Constants.root + gid;
+		const elem = mkElem("button");
+		elem.type = "button";
 		elem.title = "Play " + name;
-		elem.target = "_self";
 		elem.className = "game";
 		elem.style.backgroundImage = "url(\"" + proxyBase + "p/" + gid + "\")";
 
@@ -527,9 +526,6 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 	const frame = $("frame");
 	const frameView = $("frame-view");
 	const accnBtn = $("accn-btn");
-	const chatBtn = $("chat-btn") as HTMLButtonElement;
-	const gameBtn = $("game-btn") as HTMLButtonElement;
-	const strmBtn = $("strm-btn") as HTMLButtonElement;
 	const nmsgBtn = $("nmsg-btn") as HTMLButtonElement;
 	const sideMenu = $("side-menu") as HTMLInputElement;
 
@@ -545,11 +541,21 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 	let loadAccnInfo: () => void;
 
 	// lateinit functions
+	let openURL: (url: string) => Promise<void>;
 	let openChat: (info: UserInfo) => Promise<void>;
 	let playGame: (game: GameInfo) => Promise<void>;
+	let openVideo: (vid: string) => void; // TODO!
 	let openProfile: (uid: string) => Promise<void>;
 	let openChannel: (chId: string) => Promise<void>;
 	let initGameList: () => Promise<void>;
+
+	// lateinit page openers
+	let openHomePage: () => void;
+	let openAppsPage: () => void;
+	let openChatPage: () => void;
+	let openGamePage: () => void;
+	let openStrmPage: () => void;
+	let openInfoPage: () => void;
 
 	// socket message callback
 	let onLogin: (() => void) | null = null;
@@ -748,6 +754,12 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 			});
 		};
 	};
+	win.onpopstate = win.onhashchange = (e: Event) => {
+		e.preventDefault();
+		e.stopPropagation();
+		openURL(loc.hash);
+	};
+
 	errEl.onclick = () => {
 		errEl.innerHTML = "";
 		errEl.style.display = "none";
@@ -1182,6 +1194,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 		const loadmore = $("loadmore");
 		const controller = $("controller");
 
+		const gameBtn = $("game-btn") as HTMLButtonElement;
 		const gameBtn2 = $("goto-games") as HTMLButtonElement;
 		const gamesPage = $("games-page");
 		const gnavBack = $("gnav-back") as HTMLButtonElement;
@@ -1512,7 +1525,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 			gamePlayer.appendChild(createGameFrame(type, createGameURL(file, gid)));
 
 			{
-				const url = "#/" + gid;
+				const url = "/#/games/" + gid;
 				const furl = Constants.origin + url;
 
 				if (!mirror) {
@@ -1849,7 +1862,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 			} else error("Fullscreen mode is not supported in the current browsing context.");
 		};
 
-		gameBtn.onclick = gameBtn2.onclick = () => {
+		gameBtn.onclick = gameBtn2.onclick = openGamePage = () => {
 			if (unblEndSes != null)
 				unblEndSes();
 			for (const elem of curElems)
@@ -1895,6 +1908,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 		const loadmore = $("yt-load-more");
 		const strmBtn2 = $("goto-video") as HTMLButtonElement;
 		const strmPage = $("videos-page");
+		const strmBtn = $("strm-btn") as HTMLButtonElement;
 		const results = $("yt-results");
 		const service = $("service") as HTMLSelectElement;
 
@@ -2065,7 +2079,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 			elem.onclick = () => {
 				switch (type) {
 					case "stream":
-						openVideo(url);
+						_openVideo(url);
 						break;
 					case "playlist":
 						openPlaylist(url);
@@ -2213,7 +2227,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 			});
 		}
 
-		function openVideo(url: string) {
+		function _openVideo(url: string) {
 			fetchSIO(SIOPath.ytstream, [url, resultsServiceId]).then((info) => {
 				if (info == null || typeof info !== "object") {
 					error("Error: API server returned invalid response.");
@@ -2234,10 +2248,21 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 				sideMenu.checked = false;
 				videoPage.setAttribute("data-current", "");
 
+				if (!mirror) {
+					if (!cloaking)
+						doc.title = "NettleWeb Videos";
+
+					his.replaceState(void 0, "", "#/videos/" + resultsServiceId + ";" + encodeURIComponent(Base64.encode(UTF_8.encode(url))));
+				}
+
 				unblEndSes = () => {
+					if (!cloaking)
+						doc.title = "NettleWeb";
+
 					unblEndSes = null;
 					video.innerHTML = "";
 					clearInterval(syncTimer);
+					his.replaceState(void 0, "", "/");
 				};
 
 				vidName.textContent = info.name;
@@ -2519,7 +2544,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 			if (url != null) {
 				const id = parseVideoID(url);
 				if (id != null)
-					openVideo("https://www.youtube.com/watch?v=" + id);
+					_openVideo("https://www.youtube.com/watch?v=" + id);
 				else
 					error("Error: Failed to parse video ID from the provided URL.");
 			} else runSearch("", input);
@@ -2537,7 +2562,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 				filterBar.removeAttribute("style");
 			} else filterBar.style.display = "block";
 		};
-		strmBtn.onclick = strmBtn2.onclick = () => {
+		strmBtn.onclick = strmBtn2.onclick = openStrmPage = () => {
 			if (unblEndSes != null)
 				unblEndSes();
 			for (const elem of curElems)
@@ -2586,6 +2611,12 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 					strmBtn2.disabled = false;
 				});
 			}
+		};
+
+		openVideo = (vid: string) => {
+			const [svc, id] = vid.split(";", 2);
+			resultsServiceId = svc;
+			_openVideo(UTF_8.decode(Base64.decode(decodeURIComponent(id))));
 		};
 	}
 
@@ -2966,6 +2997,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 		}
 
 		{
+			const chatBtn = $("chat-btn") as HTMLButtonElement;
 			const chatBtn2 = $("goto-chat") as HTMLButtonElement;
 			const chatPage = $("community-page");
 			const channelElems = channels.children;
@@ -4023,7 +4055,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 				groupEdit.replaceWith(elem);
 				input.select();
 			};
-			chatBtn.onclick = chatBtn2.onclick = () => {
+			chatBtn.onclick = chatBtn2.onclick = openChatPage = () => {
 				if (unblEndSes != null)
 					unblEndSes();
 				for (const elem of curElems)
@@ -4848,10 +4880,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 		const upldPage = $("uploadgames-page");
 		const settPage = $("settings-page");
 
-		const path = loc.hash;
-		const search = new URLSearchParams(loc.search);
-
-		$("logo").onclick = homeBtn.onclick = () => {
+		$("logo").onclick = homeBtn.onclick = openHomePage = () => {
 			if (unblEndSes != null)
 				unblEndSes();
 			for (const elem of curElems)
@@ -4866,7 +4895,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 				behavior: "instant"
 			});
 		};
-		$("goto-apps").onclick = appsBtn.onclick = () => {
+		$("goto-apps").onclick = appsBtn.onclick = openAppsPage = () => {
 			if (unblEndSes != null)
 				unblEndSes();
 			for (const elem of curElems)
@@ -4889,7 +4918,7 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 				his.replaceState(void 0, "", "#/apps");
 			}
 		};
-		infoBtn.onclick = () => {
+		infoBtn.onclick = openInfoPage = () => {
 			if (unblEndSes != null)
 				unblEndSes();
 			for (const elem of curElems)
@@ -5016,158 +5045,163 @@ import { AES, ArrayBuffer, Base32, Base64, doc, Error, Hex, NTON, Object, Uint8A
 				behavior: "instant"
 			});
 		};
+	}
+
+	{
+		const path = loc.hash;
+		const search = new URLSearchParams(path.split("?", 2)[1] || "");
 
 		his.scrollRestoration = "manual";
 		his.replaceState(void 0, "", "/");
 
-		switch (path) {
-			case "":
-			case "#":
-			case "#/":
-				break;
-			case "#/apps":
-				appsBtn.click();
-				break;
-			case "#/chat":
-				chatBtn.click();
-				break;
-			case "#/games":
-				gameBtn.click();
-				break;
-			case "#/videos":
-				strmBtn.click();
-				break;
-			case "#/about":
-				infoBtn.click();
-				break;
-			default:
-				if (path.slice(0, 3) === "#/@") {
-					const user = path.slice(2);
-					if (user.length <= 50) {
-						try {
-							await openProfile(user);
-						} catch (err) {
-							error("Failed to open user profile. Message: " + err);
+		await (openURL = async (path: string) => {
+			switch (path) {
+				case "":
+				case "#":
+				case "#/":
+					openHomePage();
+					break;
+				case "#/apps":
+				case "#/apps/":
+					openAppsPage();
+					break;
+				case "#/chat":
+				case "#/chat/":
+					openChatPage();
+					break;
+				case "#/games":
+				case "#/games/":
+					openGamePage();
+					break;
+				case "#/videos":
+				case "#/videos/":
+					openStrmPage();
+					break;
+				case "#/about":
+				case "#/about/":
+					openInfoPage();
+					break;
+				default:
+					if (path.slice(0, 3) === "#/@") {
+						const user = path.slice(2);
+						if (user.length <= 50) {
+							try {
+								await openProfile(user);
+							} catch (err) {
+								error("Failed to open user profile. Message: " + err);
+							}
 						}
-					}
-				} else if (path.slice(0, 7) === "#/join/") {
-					const code = path.slice(7);
-					if (code.length === 12) {
-						try {
-							const info = await fetchSIO(SIOPath.getgroupinfo, code);
+					} else if (path.slice(0, 7) === "#/join/") {
+						const code = path.slice(7);
+						if (code.length === 12) {
+							try {
+								const info = await fetchSIO(SIOPath.getgroupinfo, code);
 
-							$("igrcode").textContent = code;
-							$("igrname").textContent = info.name;
-							$("gr-users").textContent = info.users;
-							$("gr-accept").onclick = () => {
-								if (user == null) {
-									accnBtn.click();
-									return;
-								}
+								$("igrcode").textContent = code;
+								$("igrname").textContent = info.name;
+								$("gr-users").textContent = info.users;
+								$("gr-accept").onclick = () => {
+									if (user == null) {
+										accnBtn.click();
+										return;
+									}
 
-								fetchSIO(SIOPath.joingroupchat, [user, code]).then(({ id }) => {
-									openChannel(id).catch((err) => {
-										error("Failed to open chat channel. Message: " + err);
+									fetchSIO(SIOPath.joingroupchat, [user, code]).then(({ id }) => {
+										openChannel(id).catch((err) => {
+											error("Failed to open chat channel. Message: " + err);
+										});
+									}).catch((err) => {
+										error("Failed to join group chat. Message: " + err);
 									});
-								}).catch((err) => {
-									error("Failed to join group chat. Message: " + err);
+								};
+
+								for (const e of curElems)
+									e.removeAttribute("data-current");
+
+								$("group-invite-page").setAttribute("data-current", "");
+								sideMenu.checked = false;
+								content.scrollTo({
+									top: 0,
+									left: 0,
+									behavior: "instant"
 								});
-							};
+							} catch (err) {
+								error("Failed to open invite link. Message: " + err);
+							}
+						}
+					} else if (path.slice(0, 8) === "#/reset/") {
+						const token = path.slice(8);
+						if (token.length === 256) {
+							const resetPage = $("account-reset-page");
 
 							for (const e of curElems)
 								e.removeAttribute("data-current");
 
-							$("group-invite-page").setAttribute("data-current", "");
+							resetPage.setAttribute("data-current", "");
 							sideMenu.checked = false;
 							content.scrollTo({
 								top: 0,
 								left: 0,
 								behavior: "instant"
 							});
-						} catch (err) {
-							error("Failed to open invite link. Message: " + err);
-						}
-					}
-				} else if (path.slice(0, 8) === "#/reset/") {
-					const token = path.slice(8);
-					if (token.length === 256) {
-						const resetPage = $("account-reset-page");
 
-						for (const e of curElems)
-							e.removeAttribute("data-current");
+							const pass = $("np") as HTMLInputElement;
+							const cPass = $("rp") as HTMLInputElement;
 
-						resetPage.setAttribute("data-current", "");
-						sideMenu.checked = false;
-						content.scrollTo({
-							top: 0,
-							left: 0,
-							behavior: "instant"
-						});
-
-						const pass = $("np") as HTMLInputElement;
-						const cPass = $("rp") as HTMLInputElement;
-
-						$("reset").onclick = () => {
-							const value = pass.value;
-							if (value.length < 8 || value.length > 30) {
-								error("The new password must have 8 to 30 characters.");
-								return;
-							}
-
-							if (value !== cPass.value) {
-								error("The confirm password does not match the new password.");
-								return;
-							}
-
-							fetchSIO(SIOPath.resetpassword2, [token, value]).then(() => {
-								resetPage.remove();
-								accnBtn.click();
-							}).catch((err) => {
-								error("Failed to reset password. Message: " + err)
-							});
-						};
-					}
-				} else if (path.slice(0, 8) === "#/games/") {
-					const id = parseInt(path.slice(8), 36);
-					if (Number.isSafeInteger(id) && id > 0) {
-						// ensure game list initialized before use
-						await initGameList();
-
-						for (const game of gameList!) {
-							const gid = game.date;
-							if (gid === id) {
-								if (search.get("hidegui") === "1") {
-									docBody.innerHTML = "";
-									docBody.appendChild(createGameFrame(game.type, createGameURL(game.file, gid.toString(36))));
-									injectAnchorFrame();
+							$("reset").onclick = () => {
+								const value = pass.value;
+								if (value.length < 8 || value.length > 30) {
+									error("The new password must have 8 to 30 characters.");
 									return;
 								}
 
-								try {
-									await playGame(game);
-								} catch (err) {
-									error("Failed to launch game. Message: " + err);
+								if (value !== cPass.value) {
+									error("The confirm password does not match the new password.");
+									return;
 								}
 
-								break;
+								fetchSIO(SIOPath.resetpassword2, [token, value]).then(() => {
+									resetPage.remove();
+									accnBtn.click();
+								}).catch((err) => {
+									error("Failed to reset password. Message: " + err)
+								});
+							};
+						}
+					} else if (path.slice(0, 8) === "#/games/") {
+						const id = parseInt(path.slice(8), 36);
+						if (Number.isSafeInteger(id) && id > 0) {
+							// ensure game list initialized before use
+							await initGameList();
+
+							for (const game of gameList!) {
+								const gid = game.date;
+								if (gid === id) {
+									if (search.get("hidegui") === "1") {
+										docBody.innerHTML = "";
+										docBody.appendChild(createGameFrame(game.type, createGameURL(game.file, gid.toString(36))));
+										injectAnchorFrame();
+										return;
+									}
+
+									try {
+										await playGame(game);
+									} catch (err) {
+										error("Failed to launch game. Message: " + err);
+									}
+
+									break;
+								}
 							}
 						}
+					} else if (path.slice(0, 9) === "#/videos/") {
+						openVideo(path.slice(9));
+					} else {
+						error("Error: Page does not exist: " + path);
 					}
-				} else {
-					error("Error: Page does not exist: " + path);
-				}
-				break;
-		}
-
-		if (search.get("m") === "1") {
-			setTimeout(() => {
-				content.scrollTo({
-					top: content.scrollHeight,
-					left: 0,
-					behavior: "instant"
-				});
-			}, 5000);
-		}
+					break;
+			}
+		})(path);
 
 		$("loading").remove();
 		content.setAttribute("data-x", "");

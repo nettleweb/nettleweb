@@ -189,10 +189,7 @@
 			URL.revokeObjectURL(bios);
 	}
 
-	/**
-	 * @param {MessageEvent} e 
-	 */
-	function messageCallback(e) {
+	win.onmessage = (e) => {
 		if (e.origin === win.origin) {
 			const { id, url } = e.data || {};
 			switch (id) {
@@ -213,10 +210,8 @@
 					console.error("Unknown player type: ", id);
 					break;
 			}
-			win.removeEventListener("message", messageCallback);
+			win.onmessage = null;
 		}
-	}
-
-	win.addEventListener("message", messageCallback, { passive: true });
+	};
 	parent.postMessage(sid, win.origin, []);
 })(window);

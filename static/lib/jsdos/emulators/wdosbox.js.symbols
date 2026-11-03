@@ -1,0 +1,2860 @@
+0:__syscall_fcntl64
+1:__wasi_fd_close
+2:ws_client_network_disconnected
+3:exit
+4:emscripten_asm_const_int
+5:__wasi_fd_write
+6:__syscall_unlinkat
+7:__syscall_openat
+8:__cxa_throw
+9:ws_client_stdout
+10:emscripten_force_exit
+11:emsc_getMTimeMs
+12:emsc_exit_runtime
+13:__syscall_rmdir
+14:ws_init_runtime
+15:ws_client_warn
+16:ws_client_network_connected
+17:ws_client_log
+18:ws_client_error
+19:syncSleep
+20:legalimport$_mktime_js
+21:legalimport$_localtime_js
+22:legalimport$__wasi_fd_seek
+23:legalimport$__wasi_clock_time_get
+24:legalimport$__syscall_ftruncate64
+25:isWorker
+26:isNode
+27:initTimeoutSyncSleep
+28:initMessageSyncSleep
+29:emscripten_resize_heap
+30:emscripten_exit_with_live_runtime
+31:emscripten_date_now
+32:emsc_ws_exit_runtime
+33:emsc_ws_client_sound_push
+34:emsc_ws_client_sound_init
+35:emsc_ws_client_frame_set_size
+36:emsc_start_frame_update
+37:emsc_progress
+38:emsc_pack_fs_to_bundle
+39:emsc_extract_bundle_to_fs
+40:emsc_end_frame_update
+41:emsc_dump_memory_contents
+42:emsc_add_frame_line
+43:em_net_send
+44:em_net_disconnect
+45:destroyAsyncify
+46:_tzset_js
+47:_setitimer_js
+48:_emscripten_runtime_keepalive_clear
+49:_abort_js
+50:__wasi_proc_exit
+51:__wasi_fd_read
+52:__wasi_environ_sizes_get
+53:__wasi_environ_get
+54:__syscall_stat64
+55:__syscall_renameat
+56:__syscall_readlinkat
+57:__syscall_newfstatat
+58:__syscall_mkdirat
+59:__syscall_lstat64
+60:__syscall_ioctl
+61:__syscall_getdents64
+62:__syscall_getcwd
+63:__syscall_fstat64
+64:__syscall_faccessat
+65:__syscall_chmod
+66:__call_sighandler
+67:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_string()
+68:Logger::operator()(char const*, ...)
+69:getLogger(LOG_TYPES, LOG_SEVERITIES)
+70:IO_WriteB(unsigned int, unsigned int)
+71:mem_writeb(unsigned int, unsigned char)
+72:get_CF()
+73:Program::WriteOut(char const*, ...)
+74:CPU_Exception(unsigned int, unsigned int)
+75:mem_unalignedreadw(unsigned int)
+76:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::basic_string[abi:ne210108]<0>(char const*)
+77:mem_readw(unsigned int)
+78:mem_readb(unsigned int)
+79:Fetchb()
+80:mem_writew(unsigned int, unsigned short)
+81:mem_writed(unsigned int, unsigned int)
+82:mem_unalignedreadd(unsigned int)
+83:emmalloc_free
+84:MSG_Get(char const*)
+85:FillFlags()
+86:mem_readd(unsigned int)
+87:zip_error_set
+88:strlen
+89:MSG_Add(char const*, char const*)
+90:IO_ReadB(unsigned int)
+91:FillFlagsNoCFOF()
+92:mem_unalignedwritew(unsigned int, unsigned short)
+93:mem_unalignedwrited(unsigned int, unsigned int)
+94:operator new(unsigned long)
+95:strcpy
+96:CALLBACK_SCF(bool)
+97:CPU_Push16(unsigned int)
+98:get_ZF()
+99:E_Exit(char const*, ...)
+100:bool std::__2::operator==[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, char const*)
+101:get_OF()
+102:DOS_SetError(unsigned short)
+103:CPU_Push32(unsigned int)
+104:get_SF()
+105:CPU_Pop32()
+106:CPU_Pop16()
+107:strcat
+108:strcasecmp
+109:Fetchw()
+110:IO_RegisterWriteHandler(unsigned int, void (*)(unsigned int, unsigned int, unsigned int), unsigned int, unsigned int)
+111:emmalloc_memalign
+112:strcmp
+113:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__assign_external(char const*)
+114:CPU_IO_Exception(unsigned int, unsigned int)
+115:Property::Set_help(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+116:InitPageHandler::~InitPageHandler()
+117:IO_RegisterReadHandler(unsigned int, unsigned int (*)(unsigned int, unsigned int), unsigned int, unsigned int)
+118:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::resize(unsigned long, char)
+119:Fetchd()
+120:CPU_SetSegGeneral(SegNames, unsigned int)
+121:ScanCMDBool(char*, char const*)
+122:DOS_Block::psp()
+123:std::__2::locale::__imp::release()
+124:IO_WriteW(unsigned int, unsigned int)
+125:MEM_BlockWrite(unsigned int, void const*, unsigned int)
+126:strrchr
+127:PIC_AddEvent(void (*)(unsigned int), float, unsigned int)
+128:std::__2::__throw_bad_cast[abi:nn210108]()
+129:_zip_error_set_from_source
+130:IO_WriteHandleObject::Install(unsigned int, void (*)(unsigned int, unsigned int, unsigned int), unsigned int, unsigned int)
+131:strreplace(char*, char, char)
+132:std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>::equal[abi:nn210108](std::__2::istreambuf_iterator<char, std::__2::char_traits<char>> const&) const
+133:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::operator=(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+134:toupper
+135:strchr
+136:__shgetc
+137:std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>::equal[abi:nn210108](std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>> const&) const
+138:std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>::__assign_external(wchar_t const*)
+139:fseek
+140:Value::destroy()
+141:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::basic_string(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+142:get_PF()
+143:OPL2::operator_output(OPL2::operator_struct*, int, int)
+144:CALLBACK_Allocate()
+145:strncpy
+146:fclose
+147:IO_ReadHandleObject::Install(unsigned int, unsigned int (*)(unsigned int, unsigned int), unsigned int, unsigned int)
+148:stat
+149:memcmp
+150:_zip_buffer_free
+151:DOS_CloseFile(unsigned short, bool, unsigned char*)
+152:std::__2::__cloc()
+153:fread
+154:__multf3
+155:Property::Set_values(char const* const*)
+156:PIC_RemoveEvents(void (*)(unsigned int))
+157:DSP_AddData(unsigned char)
+158:std::__2::locale::id::__get()
+159:crc32_z
+160:___cxa_atexit
+161:MemStruct::GetIt(unsigned int, unsigned int)
+162:CPU_PopSeg(SegNames, bool)
+163:outc(unsigned char)
+164:VGA_SetClock(unsigned int, unsigned int)
+165:Section_prop::Add_string(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Property::Changeable::Value, char const*)
+166:CommandLine::FindCommand(unsigned int, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&)
+167:std::__2::locale::__imp::install(std::__2::locale::facet*, long)
+168:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::erase(unsigned long, unsigned long)
+169:VGA_StartResize(unsigned int)
+170:MEM_BlockRead(unsigned int, void*, unsigned int)
+171:DOS_MCB::SetPSPSeg(unsigned short)
+172:DOS_WriteFile(unsigned short, unsigned char*, unsigned short*, bool)
+173:DOS_Block::dta(unsigned int)
+174:GetMsPassedFromStart()
+175:GDTDescriptorTable::GetDescriptor(unsigned int, Descriptor&)
+176:DOS_ReadFile(unsigned short, unsigned char*, unsigned short*, bool)
+177:DOS_OpenFile(char const*, unsigned char, unsigned short*, bool)
+178:fiprintf
+179:device_EMM::Close()
+180:__dynamic_cast
+181:Section_prop::Get_string(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&) const
+182:Section::AddInitFunction(void (*)(Section*), bool)
+183:Section::AddDestroyFunction(void (*)(Section*), bool)
+184:MEM_StrCopy(unsigned int, char*, unsigned int)
+185:zip_source_free
+186:fwrite
+187:abort
+188:__syscall_ret
+189:Value::ToString() const
+190:VGA_SetMode(VGAModes)
+191:OPL3::operator_advance(OPL3::operator_struct*, int)
+192:DOS_MCB::SetSize(unsigned short)
+193:DOS_Block::dta()
+194:CALLBACK_HandlerObject::Install(unsigned int (*)(), unsigned int, char const*)
+195:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> std::__2::operator+[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, char const*)
+196:_zip_buffer_put_16
+197:_zip_buffer_get_16
+198:_zip_buffer_get
+199:PIC_ActivateIRQ(unsigned int)
+200:FM_KEYOFF((anonymous namespace)::OPL3_SLOT*, unsigned int)
+201:DOS_MakeName(char const*, char*, unsigned char*)
+202:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::find(char, unsigned long) const
+203:OPL3::change_frequency(unsigned int, unsigned int, OPL3::operator_struct*)
+204:void std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::emplace_back<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&&)
+205:__isspace
+206:DoString(STRING_OP)_672
+207:DoString(STRING_OP)_617
+208:DoString(STRING_OP)
+210:std::__2::ios_base::setstate[abi:ne210108](unsigned int)
+211:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::sgetc[abi:ne210108]()
+212:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::sbumpc[abi:ne210108]()
+213:siprintf
+214:ftell
+215:exp2
+216:VGA_SetupHandlers()
+217:DOS_GetMemory(unsigned short)
+218:DOS_FCB::DOS_FCB(unsigned short, unsigned short, bool)
+219:CommandLine::FindString(char const*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&, bool)
+220:CPU_Interrupt(unsigned int, unsigned int, unsigned int)
+221:AutoexecObject::Install(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+222:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> std::__2::operator+[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+223:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::substr[abi:ne210108](unsigned long, unsigned long) const
+224:out
+225:__multi3
+226:Section_prop::Get_bool(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&) const
+227:Section_prop::Add_bool(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Property::Changeable::Value, bool)
+228:MixerChannel::Enable(bool)
+229:MEM_SetPageHandler(unsigned int, unsigned int, PageHandler*)
+230:CALLBACK_HandlerObject::Set_RealVec(unsigned char)
+231:upcase(char*)
+232:std::__2::ctype<char> const& std::__2::use_facet[abi:ne210108]<std::__2::ctype<char>>(std::__2::locale const&)
+233:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::append[abi:ne210108](std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+234:std::__2::__check_grouping(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, unsigned int*, unsigned int*, unsigned int&)
+235:pad
+236:fopen_wrap(char const*, char const*)
+237:chan_calc((anonymous namespace)::OPL3*, (anonymous namespace)::OPL3_CH*)
+238:__ashlti3
+239:OPL2::disable_operator(OPL2::operator_struct*, unsigned int)
+240:KEYBOARD_AddBuffer(unsigned char)
+241:GUI_ShutDown(Section*)
+242:DOS_PSP::GetFileHandle(unsigned short)
+243:strncasecmp
+244:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> std::__2::operator+[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&&, char const*)
+245:_zip_source_call
+246:__memcpy
+247:Section_prop::Add_int(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Property::Changeable::Value, int)
+248:MIDI_RawOutByte(unsigned char)
+249:CTMIXER_UpdateVolumes()
+250:CPU_JMP(bool, unsigned int, unsigned int, unsigned int)
+251:tolower
+252:mem_memcpy(unsigned int, unsigned int, unsigned int)
+253:get_AF()
+254:atoi
+255:Section_prop::Get_int(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&) const
+256:FPU_PREP_PUSH()
+257:DBOPL::Operator::KeyOff(unsigned char)
+258:CommandLine::FindExist(char const*, bool)
+259:CPU_RET(bool, unsigned int, unsigned int)
+260:CALLBACK_Setup(unsigned int, unsigned int (*)(), unsigned int, char const*)
+261:strncmp
+262:std::__2::ctype<wchar_t> const& std::__2::use_facet[abi:nn210108]<std::__2::ctype<wchar_t>>(std::__2::locale const&)
+263:std::__2::basic_streambuf<wchar_t, std::__2::char_traits<wchar_t>>::sgetc[abi:nn210108]()
+264:std::__2::basic_streambuf<wchar_t, std::__2::char_traits<wchar_t>>::sbumpc[abi:nn210108]()
+265:__addtf3
+266:Value::operator=(Value const&)
+267:StripSpaces(char*&)
+268:PAGING_ClearTLB()
+269:INT10_SetCursorPos(unsigned char, unsigned char, unsigned char)
+270:void VGA_UnchainedEGA_Handler::writeHandler<true>(unsigned int, unsigned char)
+271:std::__2::basic_istringstream<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_istringstream()
+272:snprintf
+273:fatDrive::readSector(unsigned int, void*)
+274:_zip_buffer_put_32
+275:__floatsitf
+276:VGA_UnchainedRead_Handler::readHandler(unsigned int)
+277:Section_prop::Get_prop(int)
+278:PageHandler::~PageHandler()
+279:IO_WriteHandleObject::Uninstall()
+280:DOS_SeekFile(unsigned short, unsigned int*, unsigned int, bool)
+281:DOS_GetDefaultDrive()
+282:DOS_File::UpdateDateTimeFromHost()
+283:Config::GetSection(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&) const
+284:CSerial::rise(unsigned char)
+285:CPU_CALL(bool, unsigned int, unsigned int, unsigned int)
+286:CALLBACK_Setup(unsigned int, unsigned int (*)(), unsigned int, unsigned int, char const*)
+287:CALLBACK_RunRealInt(unsigned char)
+288:void std::__2::vector<unsigned int, std::__2::allocator<unsigned int>>::emplace_back<unsigned int const&>(unsigned int const&)
+289:std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::~vector[abi:ne210108]()
+290:std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>::operator*[abi:nn210108]() const
+291:std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>::operator*[abi:nn210108]() const
+292:_tr_flush_block
+293:(anonymous namespace)::OPL_SLOT::KEYOFF(unsigned int)
+294:SetCurMode(VideoModeBlock*, unsigned short)
+295:PROGRAMS_MakeFile(char const*, void (*)(Program**))
+296:IO_ReadW(unsigned int)
+297:IO_ReadHandleObject::Uninstall()
+298:GetDMAChannel(unsigned char)
+299:DOS_MCB::GetSize()
+300:DOS_DTA::SetResult(char const*, unsigned int, unsigned short, unsigned short, unsigned char)
+301:Config::AddSection_prop(char const*, void (*)(Section*), bool)
+302:CURSOR_POS_ROW(unsigned char)
+303:CURSOR_POS_COL(unsigned char)
+304:CPU_SetFlags(unsigned int, unsigned int)
+305:CPU_LMSW(unsigned int)
+306:CPU_ARPL(unsigned int&, unsigned int)
+307:zip_source_seek
+308:std::__2::moneypunct<char, false>::do_grouping() const
+309:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> std::__2::operator+[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&&)
+310:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::find[abi:ne210108](char const*, unsigned long) const
+311:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::append(char const*)
+312:std::__2::basic_istringstream<char, std::__2::char_traits<char>, std::__2::allocator<char>>::basic_istringstream[abi:ne210108](std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, unsigned int)
+313:std::__2::__num_put_base::__identify_padding(char*, char*, std::__2::ios_base const&)
+314:sin
+315:read_kcl_file(char const*, char const*, bool)
+316:read_kcl_data(unsigned char*, unsigned int, char const*, bool)
+317:memchr
+318:fmod
+319:device_EMM::~device_EMM()
+320:_zip_string_free
+321:_zip_buffer_new
+322:_zip_buffer_get_32
+323:__uselocale
+324:OPL2::change_frequency(unsigned int, unsigned int, OPL2::operator_struct*)
+325:MIXER::~MIXER()
+326:FPU_FCOM(unsigned int, unsigned int)
+327:DOS_Shell::ParseLine(char*)
+328:DOS_DTA::GetResult(char*, unsigned int&, unsigned short&, unsigned short&, unsigned char&)
+330:zip_strerror
+331:zip_error_init
+332:strstr
+333:std::__2::locale::use_facet(std::__2::locale::id&) const
+334:std::__2::basic_ostream<char, std::__2::char_traits<char>>& std::__2::operator<<[abi:ne210108]<std::__2::char_traits<char>>(std::__2::basic_ostream<char, std::__2::char_traits<char>>&, char const*)
+335:std::__2::basic_istream<char, std::__2::char_traits<char>>::operator>>(int&)
+336:std::__2::__locale_guard::~__locale_guard[abi:nn210108]()
+337:fopen
+338:__shlim
+339:Value::operator int() const
+340:UpdateEMSMapping()
+341:QueueByte(unsigned char)
+342:PIC_DeActivateIRQ(unsigned int)
+343:IO_WriteD(unsigned int, unsigned int)
+344:IO_ReadD(unsigned int)
+345:ECBClass::setCompletionFlag(unsigned char)
+346:DOS_FindFirst(char*, unsigned short, bool)
+347:DOS_Drive_Cache::GetExpandName(char const*)
+348:DOS_AllocateMemory(unsigned short*, unsigned short*)
+349:CPU_SET_CRX(unsigned int, unsigned int)
+350:CPU_LIDT(unsigned int, unsigned int)
+351:CALLBACK_HandlerObject::~CALLBACK_HandlerObject()
+352:zip_source_read
+353:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::push_back(char)
+354:std::__2::basic_ostream<char, std::__2::char_traits<char>>::operator<<(unsigned int)
+355:std::__2::__num_get_base::__get_base(std::__2::ios_base&)
+356:std::__2::__list_imp<jsdos::WsBuffer, std::__2::allocator<jsdos::WsBuffer>>::clear()
+357:std::__2::__libcpp_asprintf_l(char**, __locale_struct*, char const*, ...)
+358:puts
+359:int std::__2::__get_up_to_n_digits[abi:nn210108]<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>&, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, unsigned int&, std::__2::ctype<wchar_t> const&, int)
+360:int std::__2::__get_up_to_n_digits[abi:nn210108]<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>&, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, unsigned int&, std::__2::ctype<char> const&, int)
+361:_zip_ef_free
+362:_zip_buffer_set_offset
+363:_zip_buffer_put_64
+364:__localtime_r
+365:__extenddftf2
+366:Program::WriteOut_NoParsing(char const*)
+367:OPL3::enable_operator(unsigned int, OPL3::operator_struct*, unsigned int)
+368:MEM_NextHandle(int)
+369:INT10_SetSinglePaletteRegister(unsigned char, unsigned char)
+370:ECBClass::setInUseFlag(unsigned char)
+371:DmaChannel::Register_Callback(void (*)(DmaChannel*, DMAEvent))
+372:DmaChannel::Read(unsigned int, unsigned char*)
+373:DOS_Drive_Cache::ExpandName(char*)
+374:DOSBOX_RunMachine()
+375:DBOPL::Operator::KeyOn(unsigned char)
+376:CSerial::setEvent(unsigned short, float)
+377:CPU_LLDT(unsigned int)
+378:CPU_LGDT(unsigned int, unsigned int)
+379:CALLBACK_Idle
+380:std::__2::vector<unsigned int, std::__2::allocator<unsigned int>>::~vector[abi:ne210108]()
+381:std::__2::to_string(int)
+382:std::__2::time_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, tm*, wchar_t const*, wchar_t const*) const
+383:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, tm*, char const*, char const*) const
+384:std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>> std::__2::__pad_and_output[abi:ne210108]<char, std::__2::char_traits<char>>(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, char const*, char const*, char const*, std::__2::ios_base&, char)
+385:std::__2::list<Property*, std::__2::allocator<Property*>>::push_back(Property* const&)
+386:std::__2::ios_base::~ios_base()
+387:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__move_assign[abi:nn210108](std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&, std::__2::integral_constant<bool, true>)
+388:std::__2::__list_imp<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::clear()
+389:scalbn
+390:is_equal(std::type_info const*, std::type_info const*, bool)
+391:fatDrive::getFileDirEntry(char const*, direntry*, unsigned int*, unsigned int*)
+392:fatDrive::getDirClustNum(char*, unsigned int*, bool)
+393:emmalloc_aligned_realloc
+394:bool std::__2::operator==[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+395:bool std::__2::__sort3[abi:ne210108]<std::__2::_ClassicAlgPolicy, bool (*&)(DtaResult const&, DtaResult const&), DtaResult*, 0>(DtaResult*, DtaResult*, DtaResult*, bool (*&)(DtaResult const&, DtaResult const&))
+396:bool std::__2::__sort3[abi:ne210108]<std::__2::_ClassicAlgPolicy, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&), DOS_Drive_Cache::CFileInfo**, 0>(DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&))
+397:adler32_z
+398:add_key(unsigned short)
+399:_zip_buffer_left
+400:_zip_buffer_get_64
+401:(anonymous namespace)::FM_OPL::CALC_CH((anonymous namespace)::OPL_CH&)
+402:XGA_GetPoint(unsigned int, unsigned int)
+403:WildFileCmp(char const*, char const*)
+404:PIC_SetIRQMask(unsigned int, bool)
+405:PAGING_LinkPage(unsigned int, unsigned int)
+406:MixerChannel::AddSamples_m8(unsigned int, unsigned char const*)
+407:MEM_AllocatePages(unsigned int, bool)
+408:DOS_PSP::GetEnvironment()
+409:DOS_FCB::GetName(char*)
+410:DOS_Drive_Cache::FindDirInfo(char const*, char*)
+411:Config::GetSectionFromProperty(char const*) const
+412:CPU_LTR(unsigned int)
+413:CPU_IRET(bool, unsigned int)
+414:CDROM_Interface_Fake::ChannelControl(SCtrl)
+415:CALC_FCSLOT((anonymous namespace)::OPL3_CH*, (anonymous namespace)::OPL3_SLOT*)
+416:zip_source_tell_write
+417:zip_source_stat
+418:zip_source_make_command_bitmap
+419:zip_source_close
+420:strtok
+421:std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::insert(std::__2::__wrap_iter<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const*>, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&&)
+422:std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>> std::__2::__pad_and_output[abi:nn210108]<wchar_t, std::__2::char_traits<wchar_t>>(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, wchar_t const*, wchar_t const*, wchar_t const*, std::__2::ios_base&, wchar_t)
+423:std::__2::moneypunct<char, false>::do_pos_format() const
+424:std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>::operator++[abi:nn210108]()
+425:std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>::operator++[abi:nn210108]()
+426:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::clear[abi:ne210108]()
+427:std::__2::basic_istream<char, std::__2::char_traits<char>>::sentry::sentry(std::__2::basic_istream<char, std::__2::char_traits<char>>&, bool)
+428:std::__2::__libcpp_snprintf_l(char*, unsigned long, __locale_struct*, char const*, ...)
+429:op_calc(unsigned int, unsigned int, int, unsigned int)
+430:iprintf
+431:imageDisk::~imageDisk()
+432:fatDrive::writeSector(unsigned int, void*)
+433:do_putc
+434:device_EMM::Read(unsigned char*, unsigned short*)
+435:counter_latch(unsigned int)
+436:calc_vol(unsigned char)
+437:buffer_free
+438:bool std::__2::operator!=[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, char const*)
+439:_zip_write
+440:__wasi_syscall_ret
+441:Value::Value(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Value::Etype)
+442:Program::SetEnv(char const*, char const*)
+443:Overlay_Drive::is_deleted_file(char const*)
+444:OPL3_SLOT_CONNECT((anonymous namespace)::OPL3*, (anonymous namespace)::OPL3_SLOT*)
+445:OPL2::operator_advance(OPL2::operator_struct*, int)
+446:OPL2::enable_operator(unsigned int, OPL2::operator_struct*, unsigned int)
+447:MixerObject::~MixerObject()
+448:MixerObject::Install(void (*)(unsigned int), unsigned int, char const*)
+449:MixerChannel::SetFreq(unsigned int)
+450:MEM_ReleasePages(int)
+451:INT10_TeletypeOutput(unsigned char, unsigned char)
+452:DOS_SetMemAllocStrategy(unsigned short)
+453:DOS_PSP::GetParent()
+454:DOS_LinkUMBsToMemChain(unsigned short)
+455:DOS_InfoBlock::GetUMBChainState()
+456:DOS_FileExists(char const*)
+457:DOS_File::SetName(char const*)
+458:DOS_FCB::GetRecord(unsigned short&, unsigned char&)
+459:DOS_DTA::GetSearchParams(unsigned char&, char*)
+460:DOS_CreateFile(char const*, unsigned short, unsigned short*, bool)
+461:DOS_Block::psp(unsigned short)
+462:CPU_ENTER(bool, unsigned int, unsigned int)
+463:CALLBACK_RunRealFar(unsigned short, unsigned short)
+464:zip_stat_init
+465:void std::__2::__reverse_impl[abi:nn210108]<std::__2::_ClassicAlgPolicy, char*>(char*, char*, std::__2::random_access_iterator_tag)
+466:strcspn
+467:std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::clear[abi:ne210108]()
+468:std::__2::list<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::push_back(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+469:std::__2::basic_ostringstream<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_ostringstream()
+470:std::__2::basic_ostream<char, std::__2::char_traits<char>>::sentry::~sentry()
+471:std::__2::basic_ostream<char, std::__2::char_traits<char>>::sentry::sentry(std::__2::basic_ostream<char, std::__2::char_traits<char>>&)
+472:std::__2::allocator<wchar_t>::allocate[abi:nn210108](unsigned long)
+473:std::__2::__allocation_guard<std::__2::allocator<std::__2::__list_node<MouseEvent, void*>>>::__destroy[abi:ne210108]()
+474:sscanf
+475:jsdos::wsSend(jsdos::Peer, void const*, int)
+476:fatDrive::getAbsoluteSectFromChain(unsigned int, unsigned int)
+477:fatDrive::getAbsoluteSectFromBytePos(unsigned int, unsigned int)
+478:driveInactive(unsigned char)
+479:cdromDrive::FileUnlink(char*)
+480:_zip_guess_encoding
+481:_zip_dirent_free
+482:_zip_buffer_offset
+483:__memset
+484:__lshrti3
+485:__letf2
+486:XGA_DrawWaitSub(unsigned int, unsigned int)
+487:XGA_DrawPoint(unsigned int, unsigned int, unsigned int)
+488:Value::Value(Value const&)
+489:VGA_UnchainedVGA_Handler::writeHandler(unsigned int, unsigned char)
+490:VGA_DAC_SetEntry(unsigned int, unsigned char, unsigned char, unsigned char)
+491:VGA_ChainedEGA_Handler::writeHandler(unsigned int, unsigned char)
+492:StripWord(char*&)
+493:Prop_int::SetMinMax(Value const&, Value const&)
+494:Program::GetEnvStr(char const*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&)
+495:PAGING_LinkPage_ReadOnly(unsigned int, unsigned int)
+496:Overlay_Drive::add_deleted_file(char const*, bool)
+497:OpenDosboxFile(char const*)
+498:MEM_FreeTotal()
+499:INT10_LoadFont(unsigned int, bool, unsigned int, unsigned int, unsigned int, unsigned int)
+500:DOS_PSP::SetFileHandle(unsigned short, unsigned char)
+501:DOS_MCB::GetPSPSeg()
+502:DOS_InfoBlock::GetStartOfUMBChain()
+503:DOS_FindNext()
+504:DOS_FCB::SetRecord(unsigned short, unsigned char)
+505:DOS_Drive_Cache::GetLongName(DOS_Drive_Cache::CFileInfo*, char*)
+506:DOS_DTA::SetDirID(unsigned short)
+507:DOS_Canonicalize(char const*, char*)
+508:DBOPL::Chip::WriteReg(unsigned int, unsigned char)
+509:Config::ParseConfigFile(char const*)
+510:CommandLine::~CommandLine()
+511:CPU_VERW(unsigned int)
+512:CPU_VERR(unsigned int)
+513:CPU_PUSHF(unsigned int)
+514:CPU_POPF(unsigned int)
+515:CPU_LSL(unsigned int, unsigned int&)
+516:CPU_LAR(unsigned int, unsigned int&)
+517:CMscdex::GetSubUnit(unsigned short)
+518:BIOS_AddKeyToBuffer(unsigned short)
+523:zip_error_to_data
+524:zip_error_fini
+525:vsnprintf
+526:void std::__2::__double_or_nothing[abi:nn210108]<unsigned int>(std::__2::unique_ptr<unsigned int, void (*)(void*)>&, unsigned int*&, unsigned int*&)
+527:std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::__throw_length_error[abi:ne210108]()
+528:std::__2::numpunct<wchar_t> const& std::__2::use_facet[abi:nn210108]<std::__2::numpunct<wchar_t>>(std::__2::locale const&)
+529:std::__2::numpunct<char> const& std::__2::use_facet[abi:nn210108]<std::__2::numpunct<char>>(std::__2::locale const&)
+530:std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>::basic_string[abi:nn210108]<0>(wchar_t const*)
+531:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::append(char const*, unsigned long)
+532:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__grow_by_and_replace(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, char const*)
+533:std::__2::__num_get<wchar_t>::__stage2_int_loop(wchar_t, int, char*, char*&, unsigned int&, wchar_t, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, unsigned int*, unsigned int*&, wchar_t*)
+534:std::__2::__num_get<char>::__stage2_int_loop(char, int, char*, char*&, unsigned int&, char, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, unsigned int*, unsigned int*&, char*)
+535:pow
+536:open_directory(char const*)
+537:mkdir
+538:isoDrive::lookup(isoDirEntry*, char const*)
+539:fmt_u
+540:flush_pending
+541:fflush
+542:fatDrive::getClusterValue(unsigned int)
+543:emmalloc_calloc
+544:copysource::operator=(copysource const&)
+545:chan_calc_ext((anonymous namespace)::OPL3*, (anonymous namespace)::OPL3_CH*)
+546:_zip_buffer_put
+547:_zip_buffer_new_from_source
+548:__floatunsitf
+549:(anonymous namespace)::FM_OPL::op_calc(unsigned int, unsigned int, int, unsigned int)
+550:XGA_GetMixResult(unsigned int, unsigned int, unsigned int)
+551:VGA_CheckScanLength()
+552:ScanCMDRemain(char*)
+553:RENDER_EndUpdate(bool)
+554:Program::~Program()_174
+555:PAGING_UnlinkPages(unsigned int, unsigned int)
+556:PAGING_PageFault(unsigned int, unsigned int, unsigned int)
+557:Overlay_Drive::update_cache(bool)
+558:MyFifo::addb(unsigned char)
+559:Module_base::Change_Config(Section*)
+560:MSCDEX_SetCDInterface(int, int)
+561:MEM_A20_Enable(bool)
+562:InitPageHandler::InitPage(unsigned int, bool)
+563:InitPageHandler::InitPageCheckOnly(unsigned int, bool)
+564:INT10_ScrollWindow(unsigned char, unsigned char, unsigned char, unsigned char, signed char, unsigned char, unsigned char)
+565:ECBClass::~ECBClass()
+566:DestroyConditionFlags()
+567:DSP_PrepareDMA_Old(DMA_MODES, bool, bool)
+568:DOS_MCB::SetFileName(char const*)
+569:DOS_FindDevice(char const*)
+570:DOS_FCB::GetSeqData(unsigned char&, unsigned short&)
+571:DOS_FCB::GetDrive()
+572:DOS_Drive::GetInfo()
+573:DOS_AddDevice(DOS_Device*)
+574:Cross::ResolveHomedir(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&)
+575:CommandLine::CommandLine(char const*, char const*)
+576:CSerial::clear(unsigned char)
+577:CMscdex::ReadSectors(unsigned char, bool, unsigned int, unsigned short, unsigned int)
+578:zip_close
+579:wchar_t const* std::__2::__num_get<wchar_t>::__do_widen_p[abi:nn210108]<wchar_t>(std::__2::ios_base&, wchar_t*) const
+580:void std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::emplace_back<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+581:void std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__init<char*, 0>(char*, char*)
+582:unlink
+583:umask
+584:trim(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&)
+585:trim(char*)
+586:top12
+587:time
+588:tandy_update_palette()
+589:strncat
+590:std::__throw_bad_array_new_length[abi:ne210108]()
+591:std::__2::list<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::push_front(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+592:std::__2::filesystem::detail::capture_errno()
+593:std::__2::codecvt<char, char, __mbstate_t>::do_unshift(__mbstate_t&, char*, char*, char*&) const
+594:std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>::__move_assign[abi:nn210108](std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>&, std::__2::integral_constant<bool, true>)
+595:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__grow_by_without_replace[abi:nn210108](unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)
+596:std::__2::basic_ifstream<char, std::__2::char_traits<char>>::~basic_ifstream()
+597:std::__2::__split_buffer<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>&>::~__split_buffer()
+598:std::__2::__split_buffer<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>&>::__split_buffer(unsigned long, unsigned long, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>&)
+599:std::__2::__num_get<wchar_t>::__stage2_int_prep[abi:nn210108](std::__2::ios_base&, wchar_t&)
+600:std::__2::__num_get<char>::__stage2_int_prep[abi:nn210108](std::__2::ios_base&, char&)
+601:std::__2::__itoa::__base_10_u32[abi:nn210108](char*, unsigned int)
+602:round
+603:remove
+604:read_directory_next(dir_struct*, char*, bool&)
+605:open
+606:ltrim(char*)
+607:log
+608:localFile::localFile(char const*, _IO_FILE*)
+609:localDrive::~localDrive()
+610:localDrive::TestDir(char*)
+611:localDrive::FileExists(char const*)
+612:keyboard_layout::~keyboard_layout()
+613:fatDrive::getEntryName(char*, char*)
+614:fatDrive::directoryChange(unsigned int, direntry*, int)
+615:fatDrive::addDirectoryEntry(unsigned int, direntry)
+616:fatDrive::FindNextInternal(unsigned int, DOS_DTA&, direntry*)
+617:device_CON::ReadFromControlChannel(unsigned int, unsigned short, unsigned short*)
+618:convToDirFile(char*, char*)
+619:close_directory(dir_struct*)
+620:close
+621:buffer_new
+622:asyncify_sleep
+623:_zip_string_get
+624:_zip_error_copy
+625:_zip_dirent_clone
+626:_zip_cdir_free
+627:_zip_buffer_eof
+628:_tr_flush_bits
+629:__sin
+630:__fseeko
+631:__cos
+632:Value::copy(Value const&)
+633:VGA_SetCGA4Table(unsigned char, unsigned char, unsigned char, unsigned char)
+634:VGA_DetermineMode()
+635:VGA_DAC_CombineColor(unsigned char, unsigned char)
+636:VGA_ATTR_SetPalette(unsigned char, unsigned char)
+637:TIMER_AddTickHandler(void (*)())
+638:StripSpaces(char*&, char)
+639:Section_prop::Add_multiremain(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Property::Changeable::Value, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+640:Property::~Property()_2934
+641:Property::Property(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Property::Changeable::Value)
+642:PAGING_MapPage(unsigned int, unsigned int)
+643:Overlay_Drive::is_deleted_path(char const*)
+644:MixerChannel::SetVolume(float, float)
+645:MixerChannel::AddSamples_m16(unsigned int, short const*)
+646:JOYSTICK_IsEnabled(unsigned int)
+647:IO_FreeReadHandler(unsigned int, unsigned int, unsigned int)
+648:GFX_SetTitle(int, int, bool)
+649:FROUND(double)
+650:EGA_RIL(unsigned short, unsigned short&, unsigned short&)
+651:DisconnectFromServer(bool)
+652:DOS_Shell::~DOS_Shell()
+653:DOS_Shell::DoCommand(char*)
+654:DOS_Shell::DOS_Shell()
+655:DOS_InfoBlock::SetUMBChainState(unsigned char)
+656:DOS_GetCurrentDir(unsigned char, char*)
+657:DOS_FreeMemory(unsigned short)
+658:DOS_Drive_Cache::SetLabel(char const*, bool, bool)
+659:DOS_Drive_Cache::EmptyCache()
+660:DOS_Drive_Cache::DeleteFileInfo(DOS_Drive_Cache::CFileInfo*)
+661:DOS_Drive_Cache::DeleteEntry(char const*, bool)
+662:DOS_Drive_Cache::CreateEntry(DOS_Drive_Cache::CFileInfo*, char const*, bool)
+663:DOS_Drive_Cache::CFileInfo::CFileInfo()
+664:DOS_DTA::SetupSearch(unsigned char, unsigned char, char*)
+665:DOS_DTA::GetDirID()
+666:Cross::IsPathAbsolute(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+667:Cross::GetPlatformConfigName(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&)
+668:CSerial::Write_MCR(unsigned char)
+669:CPU_HLT(unsigned int)
+670:CPU_GET_CRX(unsigned int)
+671:CONFIG::writeconf(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, bool)
+672:CONFIG::securemode_check()
+673:CALLBACK_SetDescription(unsigned int, char const*)
+674:zip_source_tell
+675:zip_source_open
+676:strtox_3540
+677:strpbrk
+678:strdup
+679:std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::erase[abi:ne210108](std::__2::__wrap_iter<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const*>)
+680:std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::__recommend[abi:ne210108](unsigned long) const
+681:std::__2::vector<Value, std::__2::allocator<Value>>::~vector[abi:ne210108]()
+682:std::__2::operator==[abi:nn210108](std::__2::error_code const&, std::__2::error_condition const&)
+683:std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>> const& std::__2::use_facet[abi:nn210108]<std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>>(std::__2::locale const&)
+684:std::__2::moneypunct<wchar_t, false>::do_decimal_point() const
+685:std::__2::moneypunct<char, false>::do_decimal_point() const
+686:std::__2::locale::~locale()
+687:std::__2::list<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::erase(std::__2::__list_const_iterator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, void*>)
+688:std::__2::codecvt<char16_t, char, __mbstate_t>::do_max_length() const
+689:std::__2::basic_stringbuf<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_stringbuf()
+690:std::__2::basic_stringbuf<char, std::__2::char_traits<char>, std::__2::allocator<char>>::str() const
+691:std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>> const* std::__2::__scan_keyword[abi:nn210108]<std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>> const*, std::__2::ctype<wchar_t>>(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>&, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>> const*, std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>> const*, std::__2::ctype<wchar_t> const&, unsigned int&, bool)
+692:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const* std::__2::__scan_keyword[abi:nn210108]<std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const*, std::__2::ctype<char>>(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>&, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const*, std::__2::ctype<char> const&, unsigned int&, bool)
+693:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::rfind(char, unsigned long) const
+694:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::replace(unsigned long, unsigned long, char const*)
+695:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::~basic_streambuf()
+696:std::__2::basic_ostringstream<char, std::__2::char_traits<char>, std::__2::allocator<char>>::basic_ostringstream[abi:ne210108]()
+697:std::__2::basic_ostream<char, std::__2::char_traits<char>>::operator<<(int)
+698:std::__2::basic_istream<char, std::__2::char_traits<char>>& std::__2::operator>>[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_istream<char, std::__2::char_traits<char>>&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&)
+699:std::__2::basic_ios<char, std::__2::char_traits<char>>::fill[abi:nn210108]() const
+700:std::__2::__to_chars_result std::__2::__to_chars_integral[abi:nn210108]<unsigned long, 0>(char*, char*, unsigned long, int)
+701:std::__2::__to_chars_result std::__2::__to_chars_integral[abi:nn210108]<unsigned long long, 0>(char*, char*, unsigned long long, int)
+702:std::__2::__split_buffer<unsigned int, std::__2::allocator<unsigned int>&>::~__split_buffer()
+703:std::__2::__split_buffer<unsigned int, std::__2::allocator<unsigned int>&>::__split_buffer(unsigned long, unsigned long, std::__2::allocator<unsigned int>&)
+704:std::__2::__num_put_base::__format_float(char*, char const*, unsigned int)
+705:std::__2::__num_put<wchar_t>::__widen_and_group_int(char*, char*, char*, wchar_t*, wchar_t*&, wchar_t*&, std::__2::locale const&)
+706:std::__2::__num_put<char>::__widen_and_group_int(char*, char*, char*, char*, char*&, char*&, std::__2::locale const&)
+707:std::__2::__list_imp<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::__delete_node[abi:ne210108](std::__2::__list_node<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, void*>*)
+708:std::__2::__itoa::__append8[abi:nn210108](char*, unsigned int)
+709:sockInUse(unsigned short)
+710:read_directory_first(dir_struct*, char*, bool&)
+711:mbrtowc
+712:isvalid(char)
+713:isalpha
+714:imageDisk::Read_Sector(unsigned int, unsigned int, unsigned int, void*)
+715:imageDisk::Read_AbsoluteSector(unsigned int, void*)
+716:hash_resize
+717:getenv
+718:fill_window
+719:fatDrive::getFirstFreeClust()
+720:fatDrive::directoryBrowse(unsigned int, direntry*, int, int)
+721:fatDrive::deleteClustChain(unsigned int, unsigned int)
+722:fatDrive::allocateCluster(unsigned int, unsigned int)
+723:device_CON::ClearAnsi()
+724:counter_output(unsigned int)
+725:cos
+726:copyDirEntry(direntry const*, direntry*)
+727:cmos_writereg(unsigned int, unsigned int, unsigned int)
+728:_zip_string_new
+729:_zip_string_length
+730:_zip_progress_update
+731:_zip_get_dirent
+732:_zip_ef_new
+733:_zip_dirent_write
+734:_zip_dirent_init
+735:_tr_stored_block
+736:__strerror_l
+737:__strchrnul
+738:__ftello
+739:__cxxabiv1::__base_class_type_info::search_below_dst(__cxxabiv1::__dynamic_cast_info*, void const*, int, bool) const
+740:XGA_SetDualReg(unsigned int&, unsigned int)
+741:XGA_GetDualReg(unsigned int)
+742:WriteChar(unsigned short, unsigned short, unsigned char, unsigned char, unsigned char, bool)
+743:Value::SetValue(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Value::Etype)
+744:VGA_TANDY_PageHandler::GetHostWritePt(unsigned int)
+745:VGA_SetModeNow(VGAModes)
+746:VGA_SetCGA2Table(unsigned char, unsigned char)
+747:VGA_SetBlinking(unsigned int)
+748:VGA_ProcessSplit()
+749:VGA_DAC_SendColor(unsigned int, unsigned int)
+750:TaskStateSegment::SetSelector(unsigned int)
+751:Tandy_SetupTransfer(unsigned int, bool)
+752:TandyCheckLineMask()
+753:Section_prop::Get_hex(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&) const
+754:Section::ExecuteDestroy(bool)
+755:PIC_Controller::check_for_irq()
+756:MyFifo::getb()
+757:Mouse_BeforeNewVideoMode(bool)
+758:Mouse_AfterNewVideoMode(bool)
+759:MixerChannel::UpdateVolume()
+760:MixerChannel::FillUp()
+761:MixerChannel::AddSilence()
+762:MixerChannel::AddSamples_s16(unsigned int, short const*)
+763:MSCDEX_GetVolumeName(unsigned char, char*)
+764:MIXER_FindChannel(char const*)
+765:MEM_NextHandleAt(int, unsigned int)
+766:JoyStick::transform_input()
+767:IO_FreeWriteHandler(unsigned int, unsigned int, unsigned int)
+768:INT14_Wait(unsigned short, unsigned char, unsigned char, unsigned char*)
+769:INT10_WriteChar(unsigned char, unsigned char, unsigned char, unsigned short, bool)
+770:INT10_SetCursorShape(unsigned char, unsigned char)
+771:INT10_SetCurMode()
+772:INT10_PutPixel(unsigned short, unsigned short, unsigned char, unsigned char)
+773:GFX_EndUpdate(unsigned short const*)
+774:FPU_ESC7_Normal(unsigned int)
+775:FPU_ESC7_EA(unsigned int, unsigned int)
+776:FPU_ESC6_Normal(unsigned int)
+777:FPU_ESC6_EA(unsigned int, unsigned int)
+778:FPU_ESC5_Normal(unsigned int)
+779:FPU_ESC5_EA(unsigned int, unsigned int)
+780:FPU_ESC4_Normal(unsigned int)
+781:FPU_ESC4_EA(unsigned int, unsigned int)
+782:FPU_ESC3_Normal(unsigned int)
+783:FPU_ESC3_EA(unsigned int, unsigned int)
+784:FPU_ESC2_Normal(unsigned int)
+785:FPU_ESC2_EA(unsigned int, unsigned int)
+786:FPU_ESC1_Normal(unsigned int)
+787:FPU_ESC1_EA(unsigned int, unsigned int)
+788:FPU_ESC0_Normal(unsigned int)
+789:FPU_ESC0_EA(unsigned int, unsigned int)
+790:EMM_RestoreMappingTable()
+791:ECBClass::getSocket()
+792:ECBClass::NotifyESR()
+793:EATREE(unsigned int)
+794:DOS_Terminate(unsigned short, bool, unsigned char)
+795:DOS_Shell::Which(char*)
+796:DOS_ResizeMemory(unsigned short, unsigned short*)
+797:DOS_Rename(char const*, char const*)
+798:DOS_PSP::SetStack(unsigned int)
+799:DOS_PSP::SetCommandTail(unsigned int)
+800:DOS_PSP::MakeNew(unsigned short)
+801:DOS_FCB::SetRandom(unsigned int)
+802:DOS_Drive::~DOS_Drive()
+803:DOS_Drive::DOS_Drive()
+804:DOS_DeviceHeader::SetDriveLetter(unsigned char)
+805:DOS_CompressMemory()
+806:DOS_AddMultiplexHandler(bool (*)())
+807:DOS_21Handler()
+808:Cross::GetPlatformConfigDir(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&)
+809:ConnectToServer(char const*)
+810:CommandLine::FindEntry(char const*, std::__2::__list_iterator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, void*>&, bool)
+811:CheckVoiceIrq()
+812:CSerial::removeEvent(unsigned short)
+813:CSerial::Read_MSR()
+814:CPU_WRITE_TRX(unsigned int, unsigned int)
+815:CPU_WRITE_DRX(unsigned int, unsigned int)
+816:CPU_WRITE_CRX(unsigned int, unsigned int)
+817:CPU_SwitchTask(unsigned int, TSwitchType, unsigned int)
+818:CPU_STI()
+819:CPU_READ_TRX(unsigned int, unsigned int&)
+820:CPU_READ_DRX(unsigned int, unsigned int&)
+821:CPU_READ_CRX(unsigned int, unsigned int&)
+822:CPU_CPUID()
+823:CPU_CLI()
+824:CMscdex::StopAudio(unsigned char)
+825:CMscdex::GetAudioStatus(unsigned char, bool&, bool&, SMSF&, SMSF&)
+826:CDROM_Interface_Image::ReadSector(unsigned char*, bool, unsigned long)
+827:CDROM_Interface_Image::CanReadPVD(CDROM_Interface_Image::TrackFile*, int, bool)
+828:CDROM_Interface_Image::AddTrack(CDROM_Interface_Image::Track&, int&, int, int&, int)
+829:CALLBACK_SZF(bool)
+830:BIOS_ZeroExtendedSize(bool)
+831:AutoexecObject::~AutoexecObject()
+832:Adlib::Timer::Update(double)
+833:Adlib::Capture::AddWrite(unsigned int, unsigned char)
+844:zip_source_rollback_write
+845:zip_source_layered
+846:zip_source_keep
+847:zip_source_error
+848:zip_open
+849:write
+850:week_num
+851:wcrtomb
+852:wchar_t* std::__2::find[abi:nn210108]<wchar_t*, wchar_t>(wchar_t*, wchar_t*, wchar_t const&)
+853:void std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::__emplace_back_assume_capacity[abi:ne210108]<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&&)
+854:void std::__2::vector<CDROM_Interface_Image::Track, std::__2::allocator<CDROM_Interface_Image::Track>>::emplace_back<CDROM_Interface_Image::Track const&>(CDROM_Interface_Image::Track const&)
+855:void std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__init<char const*, 0>(char const*, char const*)
+856:void std::__2::__sort4[abi:ne210108]<std::__2::_ClassicAlgPolicy, bool (*&)(DtaResult const&, DtaResult const&), DtaResult*, 0>(DtaResult*, DtaResult*, DtaResult*, DtaResult*, bool (*&)(DtaResult const&, DtaResult const&))
+857:void std::__2::__sort4[abi:ne210108]<std::__2::_ClassicAlgPolicy, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&), DOS_Drive_Cache::CFileInfo**, 0>(DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&))
+858:void std::__2::__reverse_impl[abi:nn210108]<std::__2::_ClassicAlgPolicy, wchar_t*>(wchar_t*, wchar_t*, std::__2::random_access_iterator_tag)
+859:vga_write_p3d5(unsigned int, unsigned int, unsigned int)
+860:vga_write_p3d4(unsigned int, unsigned int, unsigned int)
+861:vfiprintf
+862:update_cga16_color()
+863:strtox
+864:strtoull
+865:strtol
+866:std::logic_error::~logic_error()_4227
+867:std::__2::vector<unsigned int, std::__2::allocator<unsigned int>>::__swap_out_circular_buffer(std::__2::__split_buffer<unsigned int, std::__2::allocator<unsigned int>&>&)
+868:std::__2::vector<unsigned int, std::__2::allocator<unsigned int>>::__recommend[abi:ne210108](unsigned long) const
+869:std::__2::vector<copysource, std::__2::allocator<copysource>>::__base_destruct_at_end[abi:ne210108](copysource*)
+870:std::__2::vector<Value, std::__2::allocator<Value>>::vector[abi:ne210108](std::__2::vector<Value, std::__2::allocator<Value>> const&)
+871:std::__2::to_string(unsigned int)
+872:std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>::operator=[abi:nn210108](char)
+873:std::__2::list<jsdos::WsBuffer, std::__2::allocator<jsdos::WsBuffer>>::push_back(jsdos::WsBuffer&&)
+874:std::__2::list<MouseEvent, std::__2::allocator<MouseEvent>>::push_back(MouseEvent&&)
+875:std::__2::list<KeyEvent, std::__2::allocator<KeyEvent>>::erase(std::__2::__list_const_iterator<KeyEvent, void*>)
+876:std::__2::ios_base::clear(unsigned int)
+877:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> std::__2::__concatenate_strings[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::allocator<char> const&, std::__2::__type_identity<std::__2::basic_string_view<char, std::__2::char_traits<char>>>::type, std::__2::__type_identity<std::__2::basic_string_view<char, std::__2::char_traits<char>>>::type)
+878:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::insert[abi:ne210108](unsigned long, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+879:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__throw_length_error[abi:ne210108]()
+880:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::basic_streambuf()
+881:std::__2::basic_istream<char, std::__2::char_traits<char>>::seekg(long long, std::__2::ios_base::seekdir)
+882:std::__2::basic_istream<char, std::__2::char_traits<char>>::getline(char*, long, char)
+883:std::__2::basic_istream<char, std::__2::char_traits<char>>::basic_istream[abi:ne210108](std::__2::basic_streambuf<char, std::__2::char_traits<char>>*)
+884:std::__2::basic_ios<char, std::__2::char_traits<char>>::~basic_ios()
+885:std::__2::basic_ios<char, std::__2::char_traits<char>>::widen[abi:ne210108](char) const
+886:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::~basic_filebuf()
+887:std::__2::allocator<std::__2::__list_node<MouseEvent, void*>>::allocate[abi:ne210108](unsigned long)
+888:std::__2::__num_get<wchar_t>::__stage2_float_prep(std::__2::ios_base&, wchar_t*, wchar_t&, wchar_t&)
+889:std::__2::__num_get<wchar_t>::__stage2_float_loop(wchar_t, bool&, char&, char*, char*&, wchar_t, wchar_t, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, unsigned int*, unsigned int*&, unsigned int&, wchar_t*)
+890:std::__2::__num_get<char>::__stage2_float_prep(std::__2::ios_base&, char*, char&, char&)
+891:std::__2::__num_get<char>::__stage2_float_loop(char, bool&, char&, char*, char*&, char, char, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, unsigned int*, unsigned int*&, unsigned int&, char*)
+892:std::__2::__libcpp_wcrtomb_l[abi:nn210108](char*, wchar_t, __mbstate_t*, __locale_struct*)
+893:std::__2::__itoa::__append6[abi:nn210108](char*, unsigned int)
+894:std::__2::__itoa::__append4[abi:nn210108](char*, unsigned int)
+895:status_latch(unsigned int)
+896:saa1099_device::envelope_w(int)
+897:rename
+898:readdir
+899:rand
+900:lowcase(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&)
+901:localDrive::localDrive(char const*, unsigned short, unsigned char, unsigned short, unsigned short, unsigned char)
+902:localDrive::UnMount()
+903:localDrive::GetFileAttr(char*, unsigned short*)
+904:localDrive::FindFirst(char*, DOS_DTA&, bool)
+905:localDrive::FileOpen(DOS_File**, char*, unsigned int)
+906:keyboard_layout::reset()
+907:keyboard_layout::read_keyboard_file(char const*, int)
+908:keyboard_layout::read_codepage_file(char const*, int)
+909:keyboard_layout::map_key(unsigned int, unsigned short, bool, bool)
+910:keyboard_layout::keyboard_layout()
+911:jsdos::wsRecv(jsdos::Peer*, void*, int)
+912:jsdos::wsClose(unsigned int)
+913:isoDrive::readSector(unsigned char*, unsigned int)
+914:isoDrive::FreeDirIterator(int)
+915:inflate_table
+916:imageDisk::imageDisk(_IO_FILE*, char const*, unsigned int, bool)
+917:imageDisk::GetBiosType()
+918:hash_string
+919:getcwd
+920:get_key(unsigned short&)
+921:fputs
+922:fileno
+923:fatDrive::setClusterValue(unsigned int, unsigned int)
+924:fatDrive::appendCluster(unsigned int)
+925:do_tzset
+926:decrypt
+927:copysource::copysource(copysource const&)
+928:copysource::copysource()
+929:closedir
+930:char* std::__2::find[abi:nn210108]<char*, char>(char*, char*, char const&)
+931:cdromDrive::Rename(char*, char*)
+932:build_tree
+933:bool std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__addr_in_range[abi:ne210108]<char>(char const&) const
+934:bank_setup_pvga1a()
+935:attempt_allocate
+936:_zip_unchange_data
+937:_zip_u2d_time
+938:_zip_read_data
+939:_zip_read
+940:_zip_get_name
+941:_zip_get_encryption_implementation
+942:_zip_fseek
+943:_zip_file_get_offset
+944:_zip_entry_finalize
+945:_zip_ef_get_by_id
+946:_zip_dirent_finalize
+947:_zip_checkcons
+948:_zip_allocate_new
+949:__trunctfdf2
+950:__towrite
+951:__toread
+952:__subtf3
+953:__rem_pio2
+954:__overflow
+955:__fwritex
+956:__fstat
+957:__fseeko_unlocked
+958:__cxxabiv1::__class_type_info::process_static_type_above_dst(__cxxabiv1::__dynamic_cast_info*, void const*, void const*, int) const
+959:__cxxabiv1::__class_type_info::process_found_base_class(__cxxabiv1::__dynamic_cast_info*, void*, int) const
+960:__cxxabiv1::__base_class_type_info::search_above_dst(__cxxabiv1::__dynamic_cast_info*, void const*, void const*, int, bool) const
+961:__cxa_allocate_exception
+962:(anonymous namespace)::OPL_CH::CALC_FCSLOT((anonymous namespace)::OPL_SLOT&)
+963:Value::operator=(int)
+964:Value::operator=(char const*)
+965:VGA_Text_Memwrap(unsigned int)
+966:VGA_DAC_UpdateColor(unsigned int)
+967:VFILE_Register(char const*, unsigned char*, unsigned int)
+968:TaskStateSegment::SaveSelector()
+969:TIMER_DelTickHandler(void (*)())
+970:Set_Label(char const*, char*, bool)
+971:Section_prop::Get_multival(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&) const
+972:Section_prop::Add_path(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Property::Changeable::Value, char const*)
+973:Section::~Section()
+974:Section::ExecuteInit(bool)
+975:RestoreCursorBackground()
+976:RestoreCursorBackgroundText()
+977:ROMPageHandler::writeb(unsigned int, unsigned int)
+978:Prop_multival::make_default_value()
+979:Prop_bool::~Prop_bool()
+980:Program::~Program()
+981:Program::ChangeToLongCmd()
+982:PathExists(char const*)
+983:PIC_Controller::start_irq(unsigned char)
+984:PIC_Controller::set_imr(unsigned char)
+985:PAGING_SetDirBase(unsigned int)
+986:Overlay_Drive::remove_deleted_file(char const*, bool)
+987:Overlay_Drive::is_dir_only_in_overlay(char const*)
+988:Overlay_Drive::create_file_in_overlay(char*, char const*)
+989:Overlay_Drive::add_deleted_path(char const*, bool)
+990:OPL3WriteReg((anonymous namespace)::OPL3*, int, int)
+991:OPL2::Handler::WriteAddr(unsigned int, unsigned char)
+992:MyFifo::MyFifo(unsigned int)
+993:Mouse_SetPS2State(bool)
+994:MixerChannel::AddSamples_s32(unsigned int, int const*)
+995:MessageBlock::~MessageBlock()
+996:MPU401_WriteCommand(unsigned int, unsigned int, unsigned int)
+997:MPU401_EOIHandler(unsigned int)
+998:MEM_GetPageHandler(unsigned int)
+999:KEYBOARD_ClrBuffer()
+1000:JOYSTICK_GetMove_Y(unsigned int)
+1001:JOYSTICK_GetMove_X(unsigned int)
+1002:InitPageUserROHandler::InitPage(unsigned int, unsigned int)
+1003:InitPageUserROHandler::InitPageCheckOnly(unsigned int, unsigned int)
+1004:IO_ReadBlocked(unsigned int, unsigned int)
+1005:INT1C_Handler()
+1006:INT10_TeletypeOutputAttr(unsigned char, unsigned char, bool)
+1007:INT10_SetupRomMemoryChecksum()
+1008:INT10_SetVideoMode(unsigned short)
+1009:INT10_SetOverscanBorderColor(unsigned char)
+1010:INT10_GetPixel(unsigned short, unsigned short, unsigned char, unsigned char*)
+1011:GenerateDMASound(unsigned int)
+1012:GUSReset()
+1013:GFX_StartUpdate(unsigned char*&, unsigned int&)
+1014:ForwardPIT(float)
+1015:FormatNumber(unsigned int, char*)
+1016:FPU_PUSH(double)
+1017:FPU_FXCH(unsigned int, unsigned int)
+1018:FPU_FINIT()
+1019:FCB_Parsename(unsigned short, unsigned short, unsigned char, char*, unsigned char*)
+1020:EMM_MapPage(unsigned int, unsigned short, unsigned short)
+1021:ECBClass::getFragDesc(unsigned short, fragmentDescriptor*)
+1022:ECBClass::getESRAddr()
+1023:ECBClass::ECBClass(unsigned short, unsigned short)
+1024:DmaController::~DmaController()
+1025:DmaChannel::Write(unsigned int, unsigned char*)
+1026:DmaChannel::SetMask(bool)
+1027:Descriptor::GetLimit()
+1028:DSP_Reset()
+1029:DSP_ChangeMode(DSP_MODES)
+1030:DOS_UnlinkFile(char const*)
+1031:DOS_Shell::ShowPrompt()
+1032:DOS_Shell::CMD_PAUSE(char*)
+1033:DOS_SetDrive(unsigned char)
+1034:DOS_SetDefaultDrive(unsigned char)
+1035:DOS_PSP::SetEnvironment(unsigned short)
+1036:DOS_PSP::GetStack()
+1037:DOS_PSP::FindFreeFileEntry()
+1038:DOS_PSP::CopyFileTable(DOS_PSP*, bool)
+1039:DOS_InfoBlock::SetStartOfUMBChain(unsigned short)
+1040:DOS_GetSTDINStatus()
+1041:DOS_GetFileAttr(char const*, unsigned short*)
+1042:DOS_ForceDuplicateEntry(unsigned short, unsigned short)
+1043:DOS_File::~DOS_File()
+1044:DOS_FCBOpen(unsigned short, unsigned short)
+1045:DOS_FCBFindFirst(unsigned short, unsigned short)
+1046:DOS_FCB::SetName(unsigned char, char*, char*)
+1047:DOS_FCB::GetAttr(unsigned char&)
+1048:DOS_Drive_Cache::ReadDir(unsigned short, char*&)
+1049:DOS_Drive_Cache::OpenDir(DOS_Drive_Cache::CFileInfo*, char const*, unsigned short&)
+1050:DOS_Drive_Cache::CacheOut(char const*, bool)
+1051:DOS_Drive_Cache::AddEntry(char const*, bool)
+1052:DOS_DeviceHeader::SetStrategy(unsigned short)
+1053:DOS_DeviceHeader::SetInterrupt(unsigned short)
+1054:DISNEY_disable(unsigned int)
+1055:DISNEY_analyze(unsigned int)
+1056:DBOPL::Operator::UpdateRates(DBOPL::Chip const*)
+1057:DBOPL::Operator::UpdateFrequency()
+1058:DBOPL::Operator::UpdateAttenuation()
+1059:DBOPL::Channel::UpdateSynth(DBOPL::Chip const*)
+1060:Config::PrintConfig(char const*) const
+1061:CSerial::changeLineProperties()
+1062:CSerial::Write_THR(unsigned char)
+1063:CSerial::Write_LCR(unsigned char)
+1064:CSerial::Read_LSR()
+1065:CSerial::ComputeInterrupts()
+1066:CPU_Core_Full_Run()
+1067:CMscdex::ReadVTOC(unsigned short, unsigned short, unsigned int, unsigned short&, unsigned short&)
+1068:CMscdex::PlayAudioSector(unsigned char, unsigned int, unsigned int)
+1069:CMscdex::GetCDInfo(unsigned char, unsigned char&, unsigned char&, SMSF&)
+1070:CMOS_SetRegister(unsigned int, unsigned char)
+1071:CDROM_Interface_Image::LoadUnloadMedia(bool)
+1072:CDROM_Interface_Image::GetTrack(int)
+1073:CDROM_Interface_Image::GetCueKeyword(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&, std::__2::basic_istream<char, std::__2::char_traits<char>>&)
+1074:CALLBACK_SIF(bool)
+1075:AutoexecObject::CreateAutoexec()
+1076:Adlib::Module::DualWrite(unsigned char, unsigned char, unsigned char)
+1077:Adlib::Module::CacheWrite(unsigned int, unsigned char)
+1078:Adlib::Chip::Read()
+1079:Adlib::Capture::CloseFile()
+1080:AcceptsMode_PVGA1A(unsigned int)
+1084:zipfile_to_fs
+1085:zip_stat_index
+1086:zip_source_seek_write
+1087:zip_source_seek_compute_offset
+1088:zip_source_layered_create
+1089:zip_source_function_create
+1090:zip_source_file_create
+1091:zip_source_file
+1092:zip_source_decompress
+1093:zip_source_crc
+1094:zip_source_buffer
+1095:zip_set_file_compression
+1096:zip_recursively
+1097:zip_file_add
+1098:zip_error_to_str
+1099:zip_error_strerror
+1100:zip_discard
+1101:zError
+1102:ymf262_write(void*, int, int)
+1103:ym3812_write(void*, int, int)
+1104:write_tandy_reg(unsigned char)
+1105:write_tandy(unsigned int, unsigned int, unsigned int)
+1106:write_pcjr(unsigned int, unsigned int, unsigned int)
+1107:write_p61(unsigned int, unsigned int, unsigned int)
+1108:write_cga_color_select(unsigned int)
+1109:write_cga(unsigned int, unsigned int, unsigned int)
+1110:wctomb
+1111:wcslen
+1112:vsscanf
+1113:void std::__2::__split_buffer<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>&>::emplace_back<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&&)
+1114:void std::__2::__sort5[abi:ne210108]<std::__2::_ClassicAlgPolicy, bool (*&)(DtaResult const&, DtaResult const&), DtaResult*, 0>(DtaResult*, DtaResult*, DtaResult*, DtaResult*, DtaResult*, bool (*&)(DtaResult const&, DtaResult const&))
+1115:void std::__2::__sort5[abi:ne210108]<std::__2::_ClassicAlgPolicy, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&), DOS_Drive_Cache::CFileInfo**, 0>(DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&))
+1116:void std::__2::__sift_down[abi:ne210108]<std::__2::_ClassicAlgPolicy, bool (*&)(DtaResult const&, DtaResult const&), DtaResult*>(DtaResult*, bool (*&)(DtaResult const&, DtaResult const&), std::__2::iterator_traits<DtaResult*>::difference_type, DtaResult*)
+1117:void std::__2::__sift_down[abi:ne210108]<std::__2::_ClassicAlgPolicy, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&), DOS_Drive_Cache::CFileInfo**>(DOS_Drive_Cache::CFileInfo**, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&), std::__2::iterator_traits<DOS_Drive_Cache::CFileInfo**>::difference_type, DOS_Drive_Cache::CFileInfo**)
+1118:void std::__2::__introsort<std::__2::_ClassicAlgPolicy, bool (*&)(DtaResult const&, DtaResult const&), DtaResult*, false>(DtaResult*, DtaResult*, bool (*&)(DtaResult const&, DtaResult const&), std::__2::iterator_traits<DtaResult*>::difference_type, bool)
+1119:void std::__2::__introsort<std::__2::_ClassicAlgPolicy, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&), DOS_Drive_Cache::CFileInfo**, false>(DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&), std::__2::iterator_traits<DOS_Drive_Cache::CFileInfo**>::difference_type, bool)
+1120:void std::__2::__double_or_nothing[abi:nn210108]<char>(std::__2::unique_ptr<char, void (*)(void*)>&, char*&, char*&)
+1121:void std::__2::__call_once_proxy[abi:nn210108]<std::__2::tuple<std::__2::locale::id::__get()::$_0&&>>(void*) (.llvm.13489086924808924217)
+1122:vga_read_p3da(unsigned int, unsigned int)
+1123:vga_read_p3d5(unsigned int, unsigned int)
+1124:updateDPT()
+1125:upcase(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&)
+1126:unsigned short std::__2::__num_get_unsigned_integral[abi:nn210108]<unsigned short>(char const*, char const*, unsigned int&, int)
+1127:unsigned long std::__2::__str_find_first_of[abi:ne210108]<char, unsigned long, std::__2::char_traits<char>, 4294967295ul>(char const*, unsigned long, char const*, unsigned long, unsigned long)
+1128:unsigned long std::__2::__str_find_first_not_of[abi:ne210108]<char, unsigned long, std::__2::char_traits<char>, 4294967295ul>(char const*, unsigned long, char const*, unsigned long, unsigned long)
+1129:unsigned long std::__2::__str_find[abi:ne210108]<char, unsigned long, std::__2::char_traits<char>, 4294967295ul>(char const*, unsigned long, char const*, unsigned long, unsigned long)
+1130:unsigned long long std::__2::__num_get_unsigned_integral[abi:nn210108]<unsigned long long>(char const*, char const*, unsigned int&, int)
+1131:unsigned int std::__2::__num_get_unsigned_integral[abi:nn210108]<unsigned int>(char const*, char const*, unsigned int&, int)
+1132:unlinkat
+1133:trimString(char*)
+1134:swapInDisks()
+1135:strtoll
+1136:strtod
+1137:strspn
+1138:strnlen
+1139:store_int
+1140:stop_handler()
+1141:std::logic_error::~logic_error()
+1142:std::logic_error::logic_error(char const*)
+1143:std::__2::vector<std::__2::locale::facet*, std::__2::__sso_allocator<std::__2::locale::facet*, 30ul>>::__construct_at_end(unsigned long)
+1144:std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::__swap_out_circular_buffer(std::__2::__split_buffer<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>&>&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>*)
+1145:std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::__swap_out_circular_buffer(std::__2::__split_buffer<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>&>&)
+1146:std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::__move_range(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>*)
+1147:std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::__base_destruct_at_end[abi:ne210108](std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>*)
+1148:std::__2::vector<Value, std::__2::allocator<Value>>::__destroy_vector::operator()[abi:ne210108]()
+1149:std::__2::vector<DOS_Drive_Cache::CFileInfo*, std::__2::allocator<DOS_Drive_Cache::CFileInfo*>>::insert(std::__2::__wrap_iter<DOS_Drive_Cache::CFileInfo* const*>, DOS_Drive_Cache::CFileInfo* const&)
+1150:std::__2::vector<CDROM_Interface_Image::Track, std::__2::allocator<CDROM_Interface_Image::Track>>::__recommend[abi:ne210108](unsigned long) const
+1151:std::__2::to_string(double)
+1152:std::__2::time_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::~time_put()_4053
+1153:std::__2::time_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::~time_put()
+1154:std::__2::time_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::__get_year(int&, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>&, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, unsigned int&, std::__2::ctype<wchar_t> const&) const
+1155:std::__2::time_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::__get_weekdayname(int&, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>&, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, unsigned int&, std::__2::ctype<wchar_t> const&) const
+1156:std::__2::time_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::__get_monthname(int&, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>&, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, unsigned int&, std::__2::ctype<wchar_t> const&) const
+1157:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_date_order() const
+1158:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::__get_year(int&, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>&, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, unsigned int&, std::__2::ctype<char> const&) const
+1159:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::__get_weekdayname(int&, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>&, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, unsigned int&, std::__2::ctype<char> const&) const
+1160:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::__get_monthname(int&, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>&, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, unsigned int&, std::__2::ctype<char> const&) const
+1161:std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>> std::__2::num_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::__do_put_integral[abi:nn210108]<unsigned long>(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, wchar_t, unsigned long) const
+1162:std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>::operator=[abi:nn210108](wchar_t)
+1163:std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>> std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::__do_put_integral[abi:nn210108]<unsigned long>(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, char, unsigned long) const
+1164:std::__2::numpunct<wchar_t>::~numpunct()
+1165:std::__2::numpunct<char>::~numpunct()
+1166:std::__2::num_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, unsigned int&) const
+1167:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>> const& std::__2::use_facet[abi:nn210108]<std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>>(std::__2::locale const&)
+1168:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, unsigned int&) const
+1169:std::__2::moneypunct<wchar_t, true> const& std::__2::use_facet[abi:nn210108]<std::__2::moneypunct<wchar_t, true>>(std::__2::locale const&)
+1170:std::__2::moneypunct<wchar_t, false> const& std::__2::use_facet[abi:nn210108]<std::__2::moneypunct<wchar_t, false>>(std::__2::locale const&)
+1171:std::__2::moneypunct<wchar_t, false>::do_negative_sign() const
+1172:std::__2::moneypunct<char, true> const& std::__2::use_facet[abi:nn210108]<std::__2::moneypunct<char, true>>(std::__2::locale const&)
+1173:std::__2::moneypunct<char, false> const& std::__2::use_facet[abi:nn210108]<std::__2::moneypunct<char, false>>(std::__2::locale const&)
+1174:std::__2::moneypunct<char, false>::do_negative_sign() const
+1175:std::__2::money_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::__do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>&, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, bool, std::__2::locale const&, unsigned int, unsigned int&, bool&, std::__2::ctype<wchar_t> const&, std::__2::unique_ptr<wchar_t, void (*)(void*)>&, wchar_t*&, wchar_t*)
+1176:std::__2::money_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::__do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>&, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, bool, std::__2::locale const&, unsigned int, unsigned int&, bool&, std::__2::ctype<char> const&, std::__2::unique_ptr<char, void (*)(void*)>&, char*&, char*)
+1177:std::__2::messages<char>::do_open(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, std::__2::locale const&) const
+1178:std::__2::locale::locale()
+1179:std::__2::locale::__imp::~__imp()
+1180:std::__2::locale::__imp::has_facet(long) const
+1181:std::__2::list<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::pop_front()
+1182:std::__2::list<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::erase(std::__2::__list_const_iterator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, void*>, std::__2::__list_const_iterator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, void*>)
+1183:std::__2::list<MessageBlock, std::__2::allocator<MessageBlock>>::push_back(MessageBlock const&)
+1184:std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>::__test_for_eof[abi:nn210108]() const
+1185:std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>::__test_for_eof[abi:nn210108]() const
+1186:std::__2::ios_base::getloc() const
+1187:std::__2::filesystem::(anonymous namespace)::remove_all_impl(int, std::__2::filesystem::path const&, std::__2::error_code&)
+1188:std::__2::ctype<wchar_t>::do_widen(char) const
+1189:std::__2::ctype<char>::~ctype()
+1190:std::__2::codecvt<wchar_t, char, __mbstate_t>::~codecvt()_3949
+1191:std::__2::codecvt<char, char, __mbstate_t> const& std::__2::use_facet[abi:nn210108]<std::__2::codecvt<char, char, __mbstate_t>>(std::__2::locale const&)
+1192:std::__2::codecvt<char, char, __mbstate_t>::do_out(__mbstate_t&, char const*, char const*, char const*&, char*, char*, char*&) const
+1193:std::__2::codecvt<char32_t, char, __mbstate_t>::do_out(__mbstate_t&, char32_t const*, char32_t const*, char32_t const*&, char*, char*, char*&) const
+1194:std::__2::codecvt<char32_t, char, __mbstate_t>::do_length(__mbstate_t&, char const*, char const*, unsigned long) const
+1195:std::__2::codecvt<char32_t, char, __mbstate_t>::do_in(__mbstate_t&, char const*, char const*, char const*&, char32_t*, char32_t*, char32_t*&) const
+1196:std::__2::codecvt<char16_t, char, __mbstate_t>::do_out(__mbstate_t&, char16_t const*, char16_t const*, char16_t const*&, char*, char*, char*&) const
+1197:std::__2::codecvt<char16_t, char, __mbstate_t>::do_length(__mbstate_t&, char const*, char const*, unsigned long) const
+1198:std::__2::codecvt<char16_t, char, __mbstate_t>::do_in(__mbstate_t&, char const*, char const*, char const*&, char16_t*, char16_t*, char16_t*&) const
+1199:std::__2::char_traits<char>::find[abi:ne210108](char const*, unsigned long, char const&)
+1200:std::__2::basic_string_view<char, std::__2::char_traits<char>>::compare(std::__2::basic_string_view<char, std::__2::char_traits<char>>) const
+1201:std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>::push_back(wchar_t)
+1202:std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>::__init(unsigned long, wchar_t)
+1203:std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>::__grow_by_without_replace[abi:nn210108](unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long)
+1204:std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>::__grow_by_and_replace(unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, unsigned long, wchar_t const*)
+1205:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> std::__2::operator+[abi:nn210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, char const*)
+1206:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> std::__2::operator+[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, char)
+1207:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> std::__2::operator+[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(char const*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&&)
+1208:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> std::__2::operator+<char, std::__2::char_traits<char>, std::__2::allocator<char>>(char const*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+1209:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> std::__2::__concatenate_strings[abi:nn210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::allocator<char> const&, std::__2::__type_identity<std::__2::basic_string_view<char, std::__2::char_traits<char>>>::type, std::__2::__type_identity<std::__2::basic_string_view<char, std::__2::char_traits<char>>>::type)
+1210:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::replace[abi:ne210108](unsigned long, unsigned long, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+1211:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::replace(unsigned long, unsigned long, char const*, unsigned long)
+1212:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::insert(unsigned long, char const*, unsigned long)
+1213:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::find_first_of[abi:ne210108](std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, unsigned long) const
+1214:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::find_first_of[abi:ne210108](char const*, unsigned long) const
+1215:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::find_first_not_of[abi:ne210108](std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, unsigned long) const
+1216:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::find[abi:ne210108](std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, unsigned long) const
+1217:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::at(unsigned long)
+1218:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__move_assign[abi:ne210108](std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&, std::__2::integral_constant<bool, true>)
+1219:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__init(unsigned long, char)
+1220:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__init(char const*, unsigned long)
+1221:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__erase_to_end[abi:ne210108](unsigned long)
+1222:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::__assign_external(char const*, unsigned long)
+1223:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>* std::__2::move[abi:ne210108]<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>*>(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>*)
+1224:std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>& std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>::append[abi:ne210108]<char const*, 0>(char const*, char const*)
+1225:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::sputc[abi:nn210108](char)
+1226:std::__2::basic_ostringstream<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_ostringstream()_3671
+1227:std::__2::basic_ostream<char, std::__2::char_traits<char>>::~basic_ostream()_3626
+1228:std::__2::basic_ostream<char, std::__2::char_traits<char>>::flush()
+1229:std::__2::basic_ostream<char, std::__2::char_traits<char>>& std::__2::ends[abi:ne210108]<char, std::__2::char_traits<char>>(std::__2::basic_ostream<char, std::__2::char_traits<char>>&)
+1230:std::__2::basic_ostream<char, std::__2::char_traits<char>>& std::__2::__put_character_sequence[abi:ne210108]<char, std::__2::char_traits<char>>(std::__2::basic_ostream<char, std::__2::char_traits<char>>&, char const*, unsigned long)
+1231:std::__2::basic_istringstream<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_istringstream()_3674
+1232:std::__2::basic_istream<char, std::__2::char_traits<char>>::~basic_istream()_3606
+1233:std::__2::basic_istream<char, std::__2::char_traits<char>>::tellg()
+1234:std::__2::basic_istream<char, std::__2::char_traits<char>>& std::__2::getline[abi:ne210108]<char, std::__2::char_traits<char>, std::__2::allocator<char>>(std::__2::basic_istream<char, std::__2::char_traits<char>>&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&, char)::'lambda'(long)::operator()(long) const
+1235:std::__2::basic_ios<char, std::__2::char_traits<char>>::init[abi:ne210108](std::__2::basic_streambuf<char, std::__2::char_traits<char>>*)
+1236:std::__2::basic_ifstream<char, std::__2::char_traits<char>>::~basic_ifstream()_3677
+1237:std::__2::basic_ifstream<char, std::__2::char_traits<char>>::basic_ifstream(char const*, unsigned int)
+1238:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::open(char const*, unsigned int)
+1239:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::basic_filebuf()
+1240:std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>::allocate[abi:ne210108](unsigned long)
+1241:std::__2::allocator<copysource>::allocate[abi:ne210108](unsigned long)
+1242:std::__2::__time_put::~__time_put()
+1243:std::__2::__time_put::__do_put(char*, char*&, tm const*, char, char) const
+1244:std::__2::__throw_length_error[abi:ne210108](char const*)
+1245:std::__2::__sso_allocator<std::__2::locale::facet*, 30ul>::deallocate[abi:nn210108](std::__2::locale::facet**, unsigned long)
+1246:std::__2::__sso_allocator<std::__2::locale::facet*, 30ul>::allocate[abi:nn210108](unsigned long, void const*)
+1247:std::__2::__split_buffer<CDROM_Interface_Image::Track, std::__2::allocator<CDROM_Interface_Image::Track>&>::__split_buffer(unsigned long, unsigned long, std::__2::allocator<CDROM_Interface_Image::Track>&)
+1248:std::__2::__num_put<wchar_t>::__widen_and_group_float(char*, char*, char*, wchar_t*, wchar_t*&, wchar_t*&, std::__2::locale const&)
+1249:std::__2::__num_put<char>::__widen_and_group_float(char*, char*, char*, char*, char*&, char*&, std::__2::locale const&)
+1250:std::__2::__money_put<wchar_t>::__gather_info(bool, bool, std::__2::locale const&, std::__2::money_base::pattern&, wchar_t&, wchar_t&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&, std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>&, std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>&, int&)
+1251:std::__2::__money_put<wchar_t>::__format(wchar_t*, wchar_t*&, wchar_t*&, unsigned int, wchar_t const*, wchar_t const*, std::__2::ctype<wchar_t> const&, bool, std::__2::money_base::pattern const&, wchar_t, wchar_t, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>> const&, std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>> const&, int)
+1252:std::__2::__money_put<char>::__gather_info(bool, bool, std::__2::locale const&, std::__2::money_base::pattern&, char&, char&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&, int&)
+1253:std::__2::__money_put<char>::__format(char*, char*&, char*&, unsigned int, char const*, char const*, std::__2::ctype<char> const&, bool, std::__2::money_base::pattern const&, char, char, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, int)
+1254:std::__2::__list_node<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, void*>* std::__2::__list_imp<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>::__create_node[abi:ne210108]<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&>(std::__2::__list_node_base<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, void*>*, std::__2::__list_node_base<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, void*>*, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+1255:std::__2::__list_node<Section::Function_wrapper, void*>* std::__2::__list_imp<Section::Function_wrapper, std::__2::allocator<Section::Function_wrapper>>::__create_node[abi:ne210108]<Section::Function_wrapper const&>(std::__2::__list_node_base<Section::Function_wrapper, void*>*, std::__2::__list_node_base<Section::Function_wrapper, void*>*, Section::Function_wrapper const&)
+1256:std::__2::__list_imp<MessageBlock, std::__2::allocator<MessageBlock>>::__delete_node[abi:ne210108](std::__2::__list_node<MessageBlock, void*>*)
+1257:std::__2::__libcpp_sscanf_l(char const*, __locale_struct*, char const*, ...)
+1258:std::__2::__libcpp_mbrtowc_l[abi:nn210108](wchar_t*, char const*, unsigned long, __mbstate_t*, __locale_struct*)
+1259:std::__2::__libcpp_mb_cur_max_l[abi:nn210108](__locale_struct*)
+1260:std::__2::__generic_error_category::message(int) const
+1261:std::__2::__exception_guard_exceptions<std::__2::_AllocatorDestroyRangeReverse<std::__2::allocator<Value>, Value*>>::~__exception_guard_exceptions[abi:ne210108]()
+1262:std::__2::__allocation_guard<std::__2::allocator<std::__2::__list_node<jsdos::WsBuffer, void*>>>::__allocation_guard[abi:ne210108]<std::__2::allocator<std::__2::__list_node<jsdos::WsBuffer, void*>>>(std::__2::allocator<std::__2::__list_node<jsdos::WsBuffer, void*>>, unsigned long)
+1263:std::__2::__allocation_guard<std::__2::allocator<std::__2::__list_node<bool (*)(), void*>>>::__allocation_guard[abi:ne210108]<std::__2::allocator<std::__2::__list_node<bool (*)(), void*>>>(std::__2::allocator<std::__2::__list_node<bool (*)(), void*>>, unsigned long)
+1264:std::__2::__allocation_guard<std::__2::allocator<std::__2::__list_node<MouseEvent, void*>>>::__allocation_guard[abi:ne210108]<std::__2::allocator<std::__2::__list_node<MouseEvent, void*>>>(std::__2::allocator<std::__2::__list_node<MouseEvent, void*>>, unsigned long)
+1265:sn76496_base_device::sound_stream_update(device_sound_interface::sound_stream&, short**, short**, int)
+1266:setvbuf
+1267:send_tree
+1268:scanexp
+1269:scalbnl
+1270:safe_create_dir
+1271:saa1099_device::sound_stream_update(device_sound_interface::sound_stream&, short**, short**, int)
+1272:saa1099_device::saa1099_device(machine_config const&, char const*, device_t*, unsigned int)
+1273:saa1099_device::data_w(int, int, unsigned char)
+1274:saa1099_device::control_w(int, int, unsigned char)
+1275:rtrim(char*)
+1276:rmdir
+1277:receivePacket(unsigned char*, short)
+1278:readNextIPXHeader()
+1279:printf_core
+1280:powf
+1281:pop_arg
+1282:operator_new_impl(unsigned long)
+1283:opendir
+1284:op_calc1(unsigned int, unsigned int, int, unsigned int)
+1285:now()
+1286:modify_cycles(int)
+1287:memmove
+1288:mem_strlen(unsigned int)
+1289:mbsrtowcs
+1290:lowcase(char*)
+1291:longest_match
+1292:long std::__2::__num_get_signed_integral[abi:nn210108]<long>(char const*, char const*, unsigned int&, int)
+1293:long long std::__2::__num_get_signed_integral[abi:nn210108]<long long>(char const*, char const*, unsigned int&, int)
+1294:long double std::__2::__num_get_float[abi:nn210108]<long double>(char const*, char const*, unsigned int&)
+1295:logf
+1296:localFile::Write(unsigned char*, unsigned short*)
+1297:localFile::UpdateDateTimeFromHost()
+1298:localFile::Flush()
+1299:localDrive::FileStat(char const*, FileStat_Block*)
+1300:ldexp
+1301:keyboard_layout::read_keyboard_file(char const*, int, int)
+1302:keyboard_layout::extract_codepage(char const*)
+1303:jsdos::requestExit()
+1304:jsdos::Mouse_CursorMoved(float, float, float, float, bool)
+1305:isxdigit
+1306:isoDrive::readDirEntry(isoDirEntry*, unsigned char*)
+1307:isoDrive::UpdateMscdex(char, char const*, unsigned char&)
+1308:isoDrive::ReadCachedSector(unsigned char**, unsigned int)
+1309:isoDrive::GetNextDirEntry(int, isoDirEntry*)
+1310:isoDrive::GetDirIterator(isoDirEntry const*)
+1311:isdigit
+1312:is_leap
+1313:init_block.llvm.13396601274247129430
+1314:incrementFDD()
+1315:imageDisk::Write_Sector(unsigned int, unsigned int, unsigned int, void*)
+1316:imageDisk::Write_AbsoluteSector(unsigned int, void*)
+1317:imageDisk::Set_Geometry(unsigned int, unsigned int, unsigned int, unsigned int)
+1318:imageDisk::Get_Geometry(unsigned int*, unsigned int*, unsigned int*, unsigned int*)
+1319:getint
+1320:getRelMickey(float, float, float, float)
+1321:frexp
+1322:freelocale
+1323:fp_barrierf
+1324:fmodl
+1325:float std::__2::__num_get_float[abi:nn210108]<float>(char const*, char const*, unsigned int&)
+1326:ferror
+1327:fcntl
+1328:fatFile::fatFile(char const*, unsigned int, unsigned int, fatDrive*)
+1329:fatFile::Seek(unsigned int*, unsigned int)
+1330:fatDrive::zeroOutCluster(unsigned int)
+1331:double std::__2::__num_get_float[abi:nn210108]<double>(char const*, char const*, unsigned int&)
+1332:dirname
+1333:device_NUL::device_NUL()
+1334:device_LPT1::GetInformation()
+1335:device_CON::Seek(unsigned int*, unsigned int)
+1336:device_CON::Output(unsigned char)
+1337:deflate_stored
+1338:deflateEnd
+1339:copysignl
+1340:context_free
+1341:compression_source_new
+1342:compress_block
+1343:claim_more_memory
+1344:chmod
+1345:check_key(unsigned short&)
+1346:cdromDrive::FileCreate(DOS_File**, char*, unsigned short)
+1347:ccc(DOS_File*)
+1348:buffer_seek
+1349:buffer_grow_fragments
+1350:buffer_find_fragment
+1351:bool std::__2::__insertion_sort_incomplete[abi:ne210108]<std::__2::_ClassicAlgPolicy, bool (*&)(DtaResult const&, DtaResult const&), DtaResult*>(DtaResult*, DtaResult*, bool (*&)(DtaResult const&, DtaResult const&))
+1352:bool std::__2::__insertion_sort_incomplete[abi:ne210108]<std::__2::_ClassicAlgPolicy, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&), DOS_Drive_Cache::CFileInfo**>(DOS_Drive_Cache::CFileInfo**, DOS_Drive_Cache::CFileInfo**, bool (*&)(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&))
+1353:atan
+1354:allocate
+1355:ackClient(IPaddress, bool, PackedIP*)
+1356:access
+1357:_zip_string_write
+1358:_zip_string_equal
+1359:_zip_string_crc32
+1360:_zip_stat_merge
+1361:_zip_source_zip_new
+1362:_zip_source_new
+1363:_zip_read_string
+1364:_zip_progress_end
+1365:_zip_name_locate
+1366:_zip_hash_delete
+1367:_zip_hash_add
+1368:_zip_fseek_u
+1369:_zip_file_replace
+1370:_zip_error_clear
+1371:_zip_entry_init
+1372:_zip_ef_write
+1373:_zip_ef_utf8
+1374:_zip_ef_size
+1375:_zip_ef_remove_internal
+1376:_zip_ef_parse
+1377:_zip_ef_merge
+1378:_zip_dirent_read
+1379:_zip_dirent_process_ef_utf_8
+1380:_zip_dirent_needs_zip64
+1381:_zip_cdir_new
+1382:_zip_cdir_grow
+1383:_zip_buffer_put_8
+1384:_zip_buffer_get_8
+1385:__vfprintf_internal
+1386:__uflow
+1387:__trunctfsf2
+1388:__tan
+1389:__strftime_l
+1390:__nl_langinfo_l
+1391:__math_xflowf
+1392:__math_xflow
+1393:__loc_is_allocated
+1394:__getf2
+1395:__get_locale
+1396:__ftello_unlocked
+1397:__fstatat
+1398:__floatscan
+1399:__fdopen
+1400:__divtf3
+1401:__cxxabiv1::__base_class_type_info::has_unambiguous_public_base(__cxxabiv1::__dynamic_cast_info*, void*, int) const
+1402:__clock_gettime
+1403:(anonymous namespace)::FM_OPL::op_calc1(unsigned int, unsigned int, int, unsigned int)
+1404:(anonymous namespace)::FM_OPL::WriteReg(int, int)
+1405:XMS_QueryFreeMemory(unsigned short&, unsigned short&)
+1406:XMS_GetHandleInformation(unsigned int, unsigned char&, unsigned char&, unsigned short&)
+1407:XMS_FreeMemory(unsigned int)
+1408:XMS_EnableA20(bool)
+1409:XMS::~XMS()
+1410:XGA_Write(unsigned int, unsigned int, unsigned int)
+1411:XGA_Read(unsigned int, unsigned int)
+1412:XGA_DrawWait(unsigned int, unsigned int)
+1413:Virtual_File::GetInformation()
+1414:VideoModeMemSize(unsigned int)
+1415:Value::plaincopy(Value const&)
+1416:Value::operator==(Value const&) const
+1417:VGA_VerticalTimer(unsigned int)
+1418:VGA_StartUpdateLFB()
+1419:VGA_SetupDrawing(unsigned int)
+1420:VGA_KillDrawing()
+1421:VGA_Changes_Handler::readb(unsigned int)
+1422:VGA_ActivateHardwareCursor()
+1423:VFILE_Remove(char const*)
+1424:VESA_SetCPUWindow(unsigned char, unsigned char)
+1425:VESA_GetCPUWindow(unsigned char, unsigned short&)
+1426:UpdateTrack(unsigned char)
+1427:UpdateConductor()
+1428:UnmountHelper(char)
+1429:TaskStateSegment::Get_SSx_ESPx(unsigned int, unsigned int&, unsigned int&)
+1430:Tandy_TransferInProgress()
+1431:TandyDACModeChanged()
+1432:TIMER::~TIMER()
+1433:TANDY_FindMode()
+1434:TANDYSOUND::~TANDYSOUND()
+1435:SetTextLines()
+1436:Section_prop::~Section_prop()
+1437:Section_prop::Section_prop(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+1438:Section_prop::Add_multi(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Property::Changeable::Value, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+1439:Section_prop::Add_hex(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Property::Changeable::Value, Hex)
+1440:Section_line::~Section_line()
+1441:Section::Section(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+1442:SaveVgaRegisters()
+1443:SaveRegisters()
+1444:SaveFindResult(DOS_FCB&)
+1445:SERIALPORTS::~SERIALPORTS()
+1446:SB_Get_Address(unsigned int&, unsigned int&, unsigned int&)
+1447:SBLASTER::~SBLASTER()
+1448:RestoreVgaRegisters()
+1449:ReadCharAttr(unsigned short, unsigned short, unsigned char, unsigned short*)
+1450:RENDER_SetPal(unsigned char, unsigned char, unsigned char, unsigned char)
+1451:RENDER_Reset()
+1452:RENDER_Halt()
+1453:RENDER_CallBack(GFX_CallBackFunctions_t)
+1454:RAMPageHandler::GetHostReadPt(unsigned int)
+1455:Property::Get_help()
+1456:Property::CheckValue(Value const&, bool)
+1457:Prop_string::Prop_string(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Property::Changeable::Value, char const*)
+1458:Prop_path::~Prop_path()
+1459:Prop_multival::~Prop_multival()_2942
+1460:Prop_multival::~Prop_multival()
+1461:Prop_multival::Prop_multival(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&, Property::Changeable::Value, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+1462:Prop_int::~Prop_int()
+1463:Program::Program()
+1464:PackIP(IPaddress, PackedIP*)
+1465:PIC_RemoveSpecificEvents(void (*)(unsigned int), unsigned int)
+1466:PIC_Controller::raise_irq(unsigned char)
+1467:PIC_Controller::lower_irq(unsigned char)
+1468:PIC_Controller::check_after_EOI()
+1469:PIC_Controller::activate()
+1470:PIC_8259A::~PIC_8259A()
+1471:PCSPEAKER_SetCounter(unsigned int, unsigned int)
+1472:PCSPEAKER::~PCSPEAKER()
+1473:PCJr_FindMode()
+1474:PAGING_Enable(bool)
+1475:Overlay_Drive::~Overlay_Drive()
+1476:Overlay_Drive::remove_special_file_from_disk(char const*, char const*)
+1477:Overlay_Drive::remove_DOSname_from_cache(char const*)
+1478:Overlay_Drive::create_filename_of_special_operation(char const*, char const*)
+1479:Overlay_Drive::check_if_leading_is_deleted(char const*)
+1480:Overlay_Drive::add_special_file_to_disk(char const*, char const*)
+1481:Overlay_Drive::add_DOSdir_to_cache(char const*)
+1482:Overlay_Drive::Sync_leading_dirs(char const*)
+1483:OpenCaptureFile(char const*, char const*)
+1484:OPL3::change_releaserate(unsigned int, OPL3::operator_struct*)
+1485:OPL3::change_decayrate(unsigned int, OPL3::operator_struct*)
+1486:OPL3::change_attackrate(unsigned int, OPL3::operator_struct*)
+1487:OPL2::operator_sustain(OPL2::operator_struct*)
+1488:OPL2::operator_release(OPL2::operator_struct*)
+1489:OPL2::operator_decay(OPL2::operator_struct*)
+1490:OPL2::operator_attack(OPL2::operator_struct*)
+1491:OPL2::change_releaserate(unsigned int, OPL2::operator_struct*)
+1492:OPL2::change_decayrate(unsigned int, OPL2::operator_struct*)
+1493:OPL2::change_attackrate(unsigned int, OPL2::operator_struct*)
+1494:NormalDw_9_15_R(void const*)
+1495:NormalDw_9_15_L(void const*)
+1496:NormalDw_8_15_R(void const*)
+1497:NormalDw_8_15_L(void const*)
+1498:NormalDw_15_15_R(void const*)
+1499:NormalDw_15_15_L(void const*)
+1500:NormalDh_9_15_R(void const*)
+1501:NormalDh_9_15_L(void const*)
+1502:NormalDh_8_15_R(void const*)
+1503:NormalDh_8_15_L(void const*)
+1504:NormalDh_15_15_R(void const*)
+1505:NormalDh_15_15_L(void const*)
+1506:Normal1x_9_15_R(void const*)
+1507:Normal1x_9_15_L(void const*)
+1508:Normal1x_8_15_R(void const*)
+1509:Normal1x_8_15_L(void const*)
+1510:Normal1x_15_15_R(void const*)
+1511:Normal1x_15_15_L(void const*)
+1512:Mouse_Reset()
+1513:Mouse_ResetHardware()
+1514:MixerChannel::Mix(unsigned int)
+1515:MixerChannel::AddSamples_s8(unsigned int, unsigned char const*)
+1516:MessageBlock::MessageBlock(char const*, char const*)
+1517:MakeAspectTable(unsigned int, unsigned int, double, unsigned int)
+1518:MSCDEX_RemoveDrive(char)
+1519:MSCDEX_Interrupt_Handler()
+1520:MSCDEX_IOCTL_Optput(unsigned int, unsigned char)
+1521:MSCDEX_IOCTL_Input(unsigned int, unsigned char)
+1522:MSCDEX_HasMediaChanged(unsigned char)
+1523:MSCDEX_AddDrive(char, char const*, unsigned char&)
+1524:MPU401_WriteData(unsigned int, unsigned int, unsigned int)
+1525:MPU401_Reset()
+1526:MPU401_EOIHandlerDispatch()
+1527:MPU401::~MPU401()
+1528:MIXER_MixData(unsigned int)
+1529:MIXER_AddChannel(void (*)(unsigned int), unsigned int, char const*)
+1530:MIXER::ShowVolume(char const*, float, float)
+1531:MIXER::MakeVolume(char*, float&, float&)
+1532:MIDI::~MIDI()
+1533:MEM_ReAllocatePages(int&, unsigned int, bool)
+1534:MEMORY::~MEMORY()
+1535:MAMEOPL3::Handler::~Handler()
+1536:MAMEOPL2::Handler::~Handler()
+1537:KEYBOARD_SetPort60(unsigned char)
+1538:KEYBOARD_AddKey(KBD_KEYS, bool)
+1539:JOYSTICK::~JOYSTICK()
+1540:IsEnhancedKey(unsigned short&)
+1541:IPX_StartServer(unsigned short)
+1542:IPX_ServerLoop()
+1543:IPX_Handler()
+1544:IPX::~IPX()
+1545:IO_USEC_write_delay()
+1546:IO_USEC_read_delay()
+1547:INTRO::DisplayMount()
+1548:INT33_Handler()
+1549:INT10_VideoState_Save(unsigned int, unsigned int)
+1550:INT10_VideoState_Restore(unsigned int, unsigned int)
+1551:INT10_VideoState_GetSize(unsigned int)
+1552:INT10_TeletypeOutputAttr(unsigned char, unsigned char, bool, unsigned char)
+1553:INT10_SetSingleDACRegister(unsigned char, unsigned char, unsigned char, unsigned char)
+1554:INT10_SetColorSelect(unsigned char)
+1555:INT10_SetBackgroundBorder(unsigned char)
+1556:INT10_SetActivePage(unsigned char)
+1557:INT10_ReloadFont()
+1558:INT10_ReadCharAttr(unsigned short*, unsigned char)
+1559:INT10_PerformGrayScaleSumming(unsigned short, unsigned short)
+1560:INT10_EGA_RIL_ReadRegister(unsigned char&, unsigned short)
+1561:Herc_Palette()
+1562:GetEMSType(Section_prop*)
+1563:GUSChannels::WriteWaveCtrl(unsigned char)
+1564:GUSChannels::WriteRampCtrl(unsigned char)
+1565:GUSChannels::WritePanPot(unsigned char)
+1566:GUS::~GUS()
+1567:GFX_GetRGB(unsigned char, unsigned char, unsigned char)
+1568:FinishSetMode(bool)
+1569:FPU_ST80(unsigned int, unsigned int)
+1570:FPU_GetTag()
+1571:FPU_FST_I32(unsigned int)
+1572:FPU_FST_I16(unsigned int)
+1573:FPU_FST_F64(unsigned int)
+1574:FPU_FST_F32(unsigned int)
+1575:FPU_FSTENV(unsigned int)
+1576:FPU_FLD_I32(unsigned int, unsigned int)
+1577:FPU_FLD_I16(unsigned int, unsigned int)
+1578:FPU_FLD_F64(unsigned int, unsigned int)
+1579:FPU_FLD_F32(unsigned int, unsigned int)
+1580:FPU_FLDENV(unsigned int)
+1581:FPU_FLD80(unsigned int)
+1582:ExpandDot(char*, char*, unsigned long)
+1583:ExecuteReadRegister()
+1584:EMS::~EMS()
+1585:EMM_MapSegment(unsigned int, unsigned short, unsigned short)
+1586:EMM_GetFreePages()
+1587:EMM_AllocateMemory(unsigned short, unsigned short&, bool)
+1588:EGA16_FillRow(unsigned char, unsigned char, unsigned char, unsigned int, unsigned char)
+1589:EGA16_CopyRow(unsigned char, unsigned char, unsigned char, unsigned char, unsigned int)
+1590:ECBClass::getInUseFlag()
+1591:ECBClass::getFragCount()
+1592:DtaResult::getExtension() const
+1593:DriveManager::InitializeDrive(int)
+1594:DriveManager::CycleDisks(int, bool)
+1595:DriveManager::AppendDisk(int, DOS_Drive*)
+1596:DrawCursor()
+1597:DmaController::WriteControllerReg(unsigned int, unsigned int, unsigned int)
+1598:DmaController::ReadControllerReg(unsigned int, unsigned int)
+1599:DmaController::DmaController(unsigned char)
+1600:Descriptor::Load(unsigned int)
+1601:DTAExtendName(char*, char*, char*)
+1602:DSP_SetSpeaker(bool)
+1603:DSP_DoDMATransfer(DMA_MODES, unsigned int, bool, bool)
+1604:DSP_ChangeRate(unsigned int)
+1605:DOS_UpdatePSPName()
+1606:DOS_Shell::SyntaxError()
+1607:DOS_Shell::RunInternal()
+1608:DOS_Shell::InputCommand(char*)
+1609:DOS_Shell::Execute(char*, char*)
+1610:DOS_SDA::SetDrive(unsigned char)
+1611:DOS_RemoveDir(char const*)
+1612:DOS_ParamBlock::SaveData()
+1613:DOS_PSP::SetFCB2(unsigned int)
+1614:DOS_PSP::SetFCB1(unsigned int)
+1615:DOS_PSP::SaveVectors()
+1616:DOS_OpenFileExtended(char const*, unsigned short, unsigned short, unsigned short, unsigned short*, unsigned short*)
+1617:DOS_MakeDir(char const*)
+1618:DOS_MCB::GetFileName(char*)
+1619:DOS_KeyboardLayout::~DOS_KeyboardLayout()
+1620:DOS_InfoBlock::GetPointer()
+1621:DOS_GetAmount()
+1622:DOS_GetAllocationInfo(unsigned char, unsigned short*, unsigned char*, unsigned short*)
+1623:DOS_FreeProcessMemory(unsigned short)
+1624:DOS_FCBWrite(unsigned short, unsigned short, unsigned short)
+1625:DOS_FCBRead(unsigned short, unsigned short, unsigned short)
+1626:DOS_FCBRandomWrite(unsigned short, unsigned short, unsigned short*, bool)
+1627:DOS_FCBRandomRead(unsigned short, unsigned short, unsigned short*, bool)
+1628:DOS_FCBFindNext(unsigned short, unsigned short)
+1629:DOS_FCB::Valid()
+1630:DOS_FCB::SetSizeDateTime(unsigned int, unsigned short, unsigned short)
+1631:DOS_FCB::SetSeqData(unsigned char, unsigned short)
+1632:DOS_FCB::GetSizeDateTime(unsigned int&, unsigned short&, unsigned short&)
+1633:DOS_FCB::GetRandom(unsigned int&)
+1634:DOS_FCB::FileOpen(unsigned char)
+1635:DOS_Drive_Cache::SetResult(DOS_Drive_Cache::CFileInfo*, char*&, unsigned int)
+1636:DOS_Drive_Cache::SetBaseDir(char const*)
+1637:DOS_Drive_Cache::RemoveTrailingDot(char*)
+1638:DOS_Drive_Cache::OpenDir(char const*, unsigned short&)
+1639:DOS_Drive_Cache::FindNext(unsigned short, char*&)
+1640:DOS_Drive_Cache::CompareShortname(char const*, char const*)
+1641:DOS_Drive_Cache::Clear()
+1642:DOS_Drive_Cache::ClearFileInfo(DOS_Drive_Cache::CFileInfo*)
+1643:DOS_Drive_Cache::CFileInfo::~CFileInfo()
+1644:DOS_Drive_Cache::AddEntryDirOverlay(char const*, bool)
+1645:DOS_DeviceHeader::SetNumSubUnits(unsigned char)
+1646:DOS_DelMultiplexHandler(bool (*)())
+1647:DOS_DelDevice(DOS_Device*)
+1648:DOS_DTA::GetSearchDrive()
+1649:DOS_ChangeDir(char const*)
+1650:DOS_AddDays(unsigned int)
+1651:DOS::~DOS()
+1652:DMA_BlockWrite(unsigned int, unsigned int, void*, unsigned int, unsigned char)
+1653:DMA::~DMA()
+1654:DISNEY_enable(unsigned int)
+1655:DISNEY_PlayStereo(unsigned int, unsigned char*, unsigned char*)
+1656:DISNEY::~DISNEY()
+1657:DBOPL::Operator::UpdateRelease(DBOPL::Chip const*)
+1658:DBOPL::Operator::UpdateDecay(DBOPL::Chip const*)
+1659:DBOPL::Operator::UpdateAttack(DBOPL::Chip const*)
+1660:DBOPL::Handler::Handler()
+1661:DBOPL::Chip::UpdateSynths()
+1662:DBOPL::Channel::UpdateFrequency(DBOPL::Chip const*, unsigned char)
+1663:DBOPL::Channel::SetChanData(DBOPL::Chip const*, unsigned int)
+1664:Cross::CreatePlatformConfigDir(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&)
+1665:CommandLine::FillVector(std::__2::vector<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>, std::__2::allocator<std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>>>&)
+1666:CheckDMAEnd()
+1667:CTMIXER_Reset()
+1668:CSerialDummy::~CSerialDummy()
+1669:CSerial::~CSerial()
+1670:CSerial::Write_IER(unsigned char)
+1671:CSerial::Write_FCR(unsigned char)
+1672:CSerial::Read_RHR()
+1673:CSerial::Putchar(unsigned char, bool, bool, unsigned int)
+1674:CSerial::Getchar(unsigned char*, unsigned char*, bool, unsigned int)
+1675:CSerial::ByteTransmitting()
+1676:CSerial::ByteTransmitted()
+1677:CPU_Core_Simple_Run()
+1678:CPU_Core_Prefetch_Run()
+1679:CPU_Core_Normal_Run()
+1680:CPU_CheckSegments()
+1681:CPU::Change_Config(Section*)
+1682:CMscdex::LoadUnloadMedia(unsigned char, bool)
+1683:CMscdex::IsValidDrive(unsigned short)
+1684:CMscdex::GetTempBuffer()
+1685:CMscdex::GetSubChannelData(unsigned char, unsigned char&, unsigned char&, unsigned char&, SMSF&, SMSF&)
+1686:CMscdex::GetCurrentPos(unsigned char, SMSF&)
+1687:CMS_ShutDown(Section*)
+1688:CMS_Init(Section*)
+1689:CMS::~CMS()
+1690:CMOS::~CMOS()
+1691:CDROM_Interface_Image::~CDROM_Interface_Image()
+1692:CDROM_Interface_Image::GetMediaTrayStatus(bool&, bool&, bool&)
+1693:CDROM_Interface_Image::GetCueString(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&, std::__2::basic_istream<char, std::__2::char_traits<char>>&)
+1694:CDROM_Interface_Image::GetCueFrame(int&, std::__2::basic_istream<char, std::__2::char_traits<char>>&)
+1695:CDROM_Interface_Image::CDROM_Interface_Image(unsigned char)
+1696:CDROM_Interface_Image::BinaryFile::~BinaryFile()
+1697:CDROM_Interface_Image::BinaryFile::BinaryFile(char const*, bool&)
+1698:CDROM_Interface_Fake::SetDevice(char*, int)
+1699:CALLBACK_SetupExtra(unsigned int, unsigned int, unsigned int, bool)
+1700:BatchFile::~BatchFile()
+1701:BOOT::getFSFile(char const*, unsigned int*, unsigned int*, bool)
+1702:BOOT::disable_umb_ems_xms()
+1703:BIOS::~BIOS()
+1704:Adlib::Timer::Start(double)
+1705:Adlib::Module::~Module()
+1706:Adlib::Chip::Write(unsigned int, unsigned char)
+1707:Adlib::Capture::ClearBuf()
+1708:Adlib::Capture::AddBuf(unsigned char, unsigned char)
+1709:AUTOEXEC::~AUTOEXEC()
+1726:zipfile_add
+1727:zip_to_fs
+1728:zip_source_pkware
+1729:zip_from_fs
+1730:zcfree
+1731:zcalloc
+1732:ws_client_net_recv
+1733:write_sb(unsigned int, unsigned int, unsigned int)
+1734:write_p92(unsigned int, unsigned int, unsigned int)
+1735:write_p64(unsigned int, unsigned int, unsigned int)
+1736:write_p60(unsigned int, unsigned int, unsigned int)
+1737:write_p43(unsigned int, unsigned int, unsigned int)
+1738:write_p3d5_et4k(unsigned int, unsigned int, unsigned int)
+1739:write_p3d5_et3k(unsigned int, unsigned int, unsigned int)
+1740:write_p3cf_pvga1a(unsigned int, unsigned int, unsigned int)
+1741:write_p3cf(unsigned int, unsigned int, unsigned int)
+1742:write_p3ce(unsigned int, unsigned int, unsigned int)
+1743:write_p3cd_et4k(unsigned int, unsigned int, unsigned int)
+1744:write_p3cd_et3k(unsigned int, unsigned int, unsigned int)
+1745:write_p3c9(unsigned int, unsigned int, unsigned int)
+1746:write_p3c8(unsigned int, unsigned int, unsigned int)
+1747:write_p3c7(unsigned int, unsigned int, unsigned int)
+1748:write_p3c6(unsigned int, unsigned int, unsigned int)
+1749:write_p3c5_et4k(unsigned int, unsigned int, unsigned int)
+1750:write_p3c5_et3k(unsigned int, unsigned int, unsigned int)
+1751:write_p3c5(unsigned int, unsigned int, unsigned int)
+1752:write_p3c4(unsigned int, unsigned int, unsigned int)
+1753:write_p3c2(unsigned int, unsigned int, unsigned int)
+1754:write_p3c0_et4k(unsigned int, unsigned int, unsigned int)
+1755:write_p3c0_et3k(unsigned int, unsigned int, unsigned int)
+1756:write_p3c0(unsigned int, unsigned int, unsigned int)
+1757:write_p201_timed(unsigned int, unsigned int, unsigned int)
+1758:write_p201(unsigned int, unsigned int, unsigned int)
+1759:write_lightpen(unsigned int, unsigned int, unsigned int)
+1760:write_latch(unsigned int, unsigned int, unsigned int)
+1761:write_hercules(unsigned int, unsigned int, unsigned int)
+1762:write_gus(unsigned int, unsigned int, unsigned int)
+1763:write_data(unsigned int, unsigned int, unsigned int)
+1764:write_crtc_index_other(unsigned int, unsigned int, unsigned int)
+1765:write_crtc_data_other(unsigned int, unsigned int, unsigned int)
+1766:write_command(unsigned int, unsigned int, unsigned int)
+1767:write_cms_detect(unsigned int, unsigned int, unsigned int)
+1768:write_cms(unsigned int, unsigned int, unsigned int)
+1769:window_read
+1770:virtual thunk to std::__2::basic_ostringstream<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_ostringstream()_3673
+1771:virtual thunk to std::__2::basic_ostringstream<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_ostringstream()
+1772:virtual thunk to std::__2::basic_ostream<char, std::__2::char_traits<char>>::~basic_ostream()_3627
+1773:virtual thunk to std::__2::basic_ostream<char, std::__2::char_traits<char>>::~basic_ostream()
+1774:virtual thunk to std::__2::basic_istringstream<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_istringstream()_3676
+1775:virtual thunk to std::__2::basic_istringstream<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_istringstream()
+1776:virtual thunk to std::__2::basic_istream<char, std::__2::char_traits<char>>::~basic_istream()_3607
+1777:virtual thunk to std::__2::basic_istream<char, std::__2::char_traits<char>>::~basic_istream()
+1778:virtual thunk to std::__2::basic_ifstream<char, std::__2::char_traits<char>>::~basic_ifstream()_3679
+1779:virtual thunk to std::__2::basic_ifstream<char, std::__2::char_traits<char>>::~basic_ifstream()
+1780:vga_read_p3d4(unsigned int, unsigned int)
+1781:swapInNextDisk(bool)
+1782:string_read
+1783:std::bad_array_new_length::what() const
+1784:std::__2::time_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, wchar_t, tm const*, char, char) const
+1785:std::__2::time_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, char, tm const*, char, char) const
+1786:std::__2::time_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get_year(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, tm*) const
+1787:std::__2::time_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get_weekday(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, tm*) const
+1788:std::__2::time_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get_time(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, tm*) const
+1789:std::__2::time_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get_monthname(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, tm*) const
+1790:std::__2::time_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get_date(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, tm*) const
+1791:std::__2::time_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, tm*, char, char) const
+1792:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get_year(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, tm*) const
+1793:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get_weekday(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, tm*) const
+1794:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get_time(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, tm*) const
+1795:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get_monthname(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, tm*) const
+1796:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get_date(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, tm*) const
+1797:std::__2::time_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, tm*, char, char) const
+1798:std::__2::numpunct<wchar_t>::~numpunct()_4001
+1799:std::__2::numpunct<wchar_t>::do_truename() const
+1800:std::__2::numpunct<wchar_t>::do_thousands_sep() const
+1801:std::__2::numpunct<wchar_t>::do_grouping() const
+1802:std::__2::numpunct<wchar_t>::do_falsename() const
+1803:std::__2::numpunct<char>::~numpunct()_3999
+1804:std::__2::numpunct<char>::do_truename() const
+1805:std::__2::numpunct<char>::do_thousands_sep() const
+1806:std::__2::numpunct<char>::do_grouping() const
+1807:std::__2::numpunct<char>::do_falsename() const
+1808:std::__2::numpunct<char>::do_decimal_point() const
+1809:std::__2::num_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, wchar_t, void const*) const
+1810:std::__2::num_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, wchar_t, unsigned long) const
+1811:std::__2::num_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, wchar_t, unsigned long long) const
+1812:std::__2::num_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, wchar_t, long) const
+1813:std::__2::num_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, wchar_t, long long) const
+1814:std::__2::num_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, wchar_t, long double) const
+1815:std::__2::num_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, wchar_t, double) const
+1816:std::__2::num_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, wchar_t, bool) const
+1817:std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, char, void const*) const
+1818:std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, char, unsigned long) const
+1819:std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, char, unsigned long long) const
+1820:std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, char, long) const
+1821:std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, char, long long) const
+1822:std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, char, long double) const
+1823:std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, char, double) const
+1824:std::__2::num_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, char, bool) const
+1825:std::__2::num_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, void*&) const
+1826:std::__2::num_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, unsigned short&) const
+1827:std::__2::num_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, unsigned long long&) const
+1828:std::__2::num_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, long long&) const
+1829:std::__2::num_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, long double&) const
+1830:std::__2::num_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, long&) const
+1831:std::__2::num_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, float&) const
+1832:std::__2::num_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, double&) const
+1833:std::__2::num_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::ios_base&, unsigned int&, bool&) const
+1834:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, void*&) const
+1835:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, unsigned short&) const
+1836:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, unsigned long long&) const
+1837:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, long long&) const
+1838:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, long double&) const
+1839:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, long&) const
+1840:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, float&) const
+1841:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, double&) const
+1842:std::__2::num_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::ios_base&, unsigned int&, bool&) const
+1843:std::__2::money_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, bool, std::__2::ios_base&, wchar_t, std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>> const&) const
+1844:std::__2::money_put<wchar_t, std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_put(std::__2::ostreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, bool, std::__2::ios_base&, wchar_t, long double) const
+1845:std::__2::money_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, bool, std::__2::ios_base&, char, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&) const
+1846:std::__2::money_put<char, std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>>::do_put(std::__2::ostreambuf_iterator<char, std::__2::char_traits<char>>, bool, std::__2::ios_base&, char, long double) const
+1847:std::__2::money_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, bool, std::__2::ios_base&, unsigned int&, std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>>&) const
+1848:std::__2::money_get<wchar_t, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>>::do_get(std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, std::__2::istreambuf_iterator<wchar_t, std::__2::char_traits<wchar_t>>, bool, std::__2::ios_base&, unsigned int&, long double&) const
+1849:std::__2::money_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, bool, std::__2::ios_base&, unsigned int&, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>>&) const
+1850:std::__2::money_get<char, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>>::do_get(std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, std::__2::istreambuf_iterator<char, std::__2::char_traits<char>>, bool, std::__2::ios_base&, unsigned int&, long double&) const
+1851:std::__2::messages<wchar_t>::do_get(long, int, int, std::__2::basic_string<wchar_t, std::__2::char_traits<wchar_t>, std::__2::allocator<wchar_t>> const&) const
+1852:std::__2::messages<char>::do_get(long, int, int, std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&) const
+1853:std::__2::locale::facet::__on_zero_shared()
+1854:std::__2::locale::__imp::~__imp()_3907
+1855:std::__2::ios_base::~ios_base()_3695
+1856:std::__2::error_category::equivalent(std::__2::error_code const&, int) const
+1857:std::__2::error_category::equivalent(int, std::__2::error_condition const&) const
+1858:std::__2::error_category::default_error_condition(int) const
+1859:std::__2::ctype<wchar_t>::do_widen(char const*, char const*, wchar_t*) const
+1860:std::__2::ctype<wchar_t>::do_toupper(wchar_t) const
+1861:std::__2::ctype<wchar_t>::do_toupper(wchar_t*, wchar_t const*) const
+1862:std::__2::ctype<wchar_t>::do_tolower(wchar_t) const
+1863:std::__2::ctype<wchar_t>::do_tolower(wchar_t*, wchar_t const*) const
+1864:std::__2::ctype<wchar_t>::do_scan_not(unsigned long, wchar_t const*, wchar_t const*) const
+1865:std::__2::ctype<wchar_t>::do_scan_is(unsigned long, wchar_t const*, wchar_t const*) const
+1866:std::__2::ctype<wchar_t>::do_narrow(wchar_t, char) const
+1867:std::__2::ctype<wchar_t>::do_narrow(wchar_t const*, wchar_t const*, char, char*) const
+1868:std::__2::ctype<wchar_t>::do_is(wchar_t const*, wchar_t const*, unsigned long*) const
+1869:std::__2::ctype<wchar_t>::do_is(unsigned long, wchar_t) const
+1870:std::__2::ctype<char>::~ctype()_3931
+1871:std::__2::ctype<char>::do_widen(char const*, char const*, char*) const
+1872:std::__2::ctype<char>::do_toupper(char) const
+1873:std::__2::ctype<char>::do_toupper(char*, char const*) const
+1874:std::__2::ctype<char>::do_tolower(char) const
+1875:std::__2::ctype<char>::do_tolower(char*, char const*) const
+1876:std::__2::ctype<char>::do_narrow(char, char) const
+1877:std::__2::ctype<char>::do_narrow(char const*, char const*, char, char*) const
+1878:std::__2::collate<wchar_t>::do_transform(wchar_t const*, wchar_t const*) const
+1879:std::__2::collate<wchar_t>::do_hash(wchar_t const*, wchar_t const*) const
+1880:std::__2::collate<wchar_t>::do_compare(wchar_t const*, wchar_t const*, wchar_t const*, wchar_t const*) const
+1881:std::__2::collate<char>::do_transform(char const*, char const*) const
+1882:std::__2::collate<char>::do_hash(char const*, char const*) const
+1883:std::__2::collate<char>::do_compare(char const*, char const*, char const*, char const*) const
+1884:std::__2::codecvt<wchar_t, char, __mbstate_t>::~codecvt()
+1885:std::__2::codecvt<wchar_t, char, __mbstate_t>::do_unshift(__mbstate_t&, char*, char*, char*&) const
+1886:std::__2::codecvt<wchar_t, char, __mbstate_t>::do_out(__mbstate_t&, wchar_t const*, wchar_t const*, wchar_t const*&, char*, char*, char*&) const
+1887:std::__2::codecvt<wchar_t, char, __mbstate_t>::do_max_length() const
+1888:std::__2::codecvt<wchar_t, char, __mbstate_t>::do_length(__mbstate_t&, char const*, char const*, unsigned long) const
+1889:std::__2::codecvt<wchar_t, char, __mbstate_t>::do_in(__mbstate_t&, char const*, char const*, char const*&, wchar_t*, wchar_t*, wchar_t*&) const
+1890:std::__2::codecvt<wchar_t, char, __mbstate_t>::do_encoding() const
+1891:std::__2::codecvt<char, char, __mbstate_t>::do_length(__mbstate_t&, char const*, char const*, unsigned long) const
+1892:std::__2::basic_stringbuf<char, std::__2::char_traits<char>, std::__2::allocator<char>>::~basic_stringbuf()_3669
+1893:std::__2::basic_stringbuf<char, std::__2::char_traits<char>, std::__2::allocator<char>>::underflow()
+1894:std::__2::basic_stringbuf<char, std::__2::char_traits<char>, std::__2::allocator<char>>::seekpos(std::__2::fpos<__mbstate_t>, unsigned int)
+1895:std::__2::basic_stringbuf<char, std::__2::char_traits<char>, std::__2::allocator<char>>::seekoff(long long, std::__2::ios_base::seekdir, unsigned int)
+1896:std::__2::basic_stringbuf<char, std::__2::char_traits<char>, std::__2::allocator<char>>::pbackfail(int)
+1897:std::__2::basic_stringbuf<char, std::__2::char_traits<char>, std::__2::allocator<char>>::overflow(int)
+1898:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::~basic_streambuf()_3589
+1899:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::xsputn(char const*, long)
+1900:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::xsgetn(char*, long)
+1901:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::underflow()
+1902:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::uflow()
+1903:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::setbuf(char*, long)
+1904:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::seekpos(std::__2::fpos<__mbstate_t>, unsigned int)
+1905:std::__2::basic_streambuf<char, std::__2::char_traits<char>>::seekoff(long long, std::__2::ios_base::seekdir, unsigned int)
+1906:std::__2::basic_ostream<char, std::__2::char_traits<char>>::~basic_ostream()_3624
+1907:std::__2::basic_istream<char, std::__2::char_traits<char>>::~basic_istream()_3604
+1908:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::~basic_filebuf()_3659
+1909:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::underflow()
+1910:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::sync()
+1911:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::setbuf(char*, long)
+1912:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::seekpos(std::__2::fpos<__mbstate_t>, unsigned int)
+1913:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::seekoff(long long, std::__2::ios_base::seekdir, unsigned int)
+1914:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::pbackfail(int)
+1915:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::overflow(int)
+1916:std::__2::basic_filebuf<char, std::__2::char_traits<char>>::imbue(std::__2::locale const&)
+1917:std::__2::__time_get_c_storage<wchar_t>::__x() const
+1918:std::__2::__time_get_c_storage<wchar_t>::__weeks() const
+1919:std::__2::__time_get_c_storage<wchar_t>::__r() const
+1920:std::__2::__time_get_c_storage<wchar_t>::__months() const
+1921:std::__2::__time_get_c_storage<wchar_t>::__c() const
+1922:std::__2::__time_get_c_storage<wchar_t>::__am_pm() const
+1923:std::__2::__time_get_c_storage<wchar_t>::__X() const
+1924:std::__2::__time_get_c_storage<char>::__x() const
+1925:std::__2::__time_get_c_storage<char>::__weeks() const
+1926:std::__2::__time_get_c_storage<char>::__r() const
+1927:std::__2::__time_get_c_storage<char>::__months() const
+1928:std::__2::__time_get_c_storage<char>::__c() const
+1929:std::__2::__time_get_c_storage<char>::__am_pm() const
+1930:std::__2::__time_get_c_storage<char>::__X() const
+1931:std::__2::__system_error_category::name() const
+1932:std::__2::__system_error_category::default_error_condition(int) const
+1933:std::__2::__generic_error_category::name() const
+1934:start
+1935:sn_write
+1936:sn76496_base_device::device_start()
+1937:setMyPeerId
+1938:saa1099_device::device_start()
+1939:runRuntime
+1940:rescanFilesystem
+1941:requestUnmute
+1942:requestResume
+1943:requestPause
+1944:requestMute
+1945:requestExit
+1946:read_sb(unsigned int, unsigned int)
+1947:read_p92(unsigned int, unsigned int)
+1948:read_p64(unsigned int, unsigned int)
+1949:read_p62(unsigned int, unsigned int)
+1950:read_p61(unsigned int, unsigned int)
+1951:read_p60(unsigned int, unsigned int)
+1952:read_p3d5_et4k(unsigned int, unsigned int)
+1953:read_p3d5_et3k(unsigned int, unsigned int)
+1954:read_p3cf_pvga1a(unsigned int, unsigned int)
+1955:read_p3cf(unsigned int, unsigned int)
+1956:read_p3ce(unsigned int, unsigned int)
+1957:read_p3cd_et4k(unsigned int, unsigned int)
+1958:read_p3cd_et3k(unsigned int, unsigned int)
+1959:read_p3cc(unsigned int, unsigned int)
+1960:read_p3c9(unsigned int, unsigned int)
+1961:read_p3c8(unsigned int, unsigned int)_2500
+1962:read_p3c8(unsigned int, unsigned int)
+1963:read_p3c7(unsigned int, unsigned int)
+1964:read_p3c6(unsigned int, unsigned int)
+1965:read_p3c5_et4k(unsigned int, unsigned int)
+1966:read_p3c5_et3k(unsigned int, unsigned int)
+1967:read_p3c5(unsigned int, unsigned int)
+1968:read_p3c4(unsigned int, unsigned int)
+1969:read_p3c2(unsigned int, unsigned int)
+1970:read_p3c1_et4k(unsigned int, unsigned int)
+1971:read_p3c1_et3k(unsigned int, unsigned int)
+1972:read_p3c1(unsigned int, unsigned int)
+1973:read_p3c0(unsigned int, unsigned int)
+1974:read_p201_timed(unsigned int, unsigned int)
+1975:read_p201(unsigned int, unsigned int)
+1976:read_latch(unsigned int, unsigned int)
+1977:read_herc_status(unsigned int, unsigned int)
+1978:read_gus(unsigned int, unsigned int)
+1979:read_file
+1980:read_data(unsigned int, unsigned int)
+1981:read_data
+1982:read_crtc_index_other(unsigned int, unsigned int)
+1983:read_crtc_data_other(unsigned int, unsigned int)
+1984:read_command(unsigned int, unsigned int)
+1985:read_cms_detect(unsigned int, unsigned int)
+1986:process
+1987:pop_arg_long_double
+1988:pkware_decrypt
+1989:pauseExecution
+1990:packFsToBundle
+1991:non-virtual thunk to sn76496_base_device::sound_stream_update(device_sound_interface::sound_stream&, short**, short**, int)
+1992:non-virtual thunk to saa1099_device::sound_stream_update(device_sound_interface::sound_stream&, short**, short**, int)
+1993:networkDisconnect
+1994:networkConnect
+1995:multiplex_xms()
+1996:main
+1997:localFile::Seek(unsigned int*, unsigned int)
+1998:localFile::Read(unsigned char*, unsigned short*)
+1999:localFile::GetInformation()
+2000:localFile::Close()
+2001:localDrive::Rename(char*, char*)
+2002:localDrive::RemoveDir(char*)
+2003:localDrive::MakeDir(char*)
+2004:localDrive::GetSystemFilename(char*, char const*)
+2005:localDrive::GetSystemFilePtr(char const*, char const*)
+2006:localDrive::GetMediaByte()
+2007:localDrive::FindNext(DOS_DTA&)
+2008:localDrive::FileUnlink(char*)
+2009:localDrive::FileCreate(DOS_File**, char*, unsigned short)
+2010:localDrive::AllocationInfo(unsigned short*, unsigned char*, unsigned short*, unsigned short*)
+2011:libzip_destroy
+2012:legalstub$mouseSync
+2013:legalstub$mouseMove
+2014:legalstub$mouseButton
+2015:legalstub$dynCall_viijii
+2016:legalstub$dynCall_jiji
+2017:legalstub$dynCall_jiiji
+2018:legalstub$dynCall_jiiiji
+2019:legalstub$dynCall_iiij
+2020:legalstub$dynCall_iiiiijj
+2021:legalstub$dynCall_iiiiij
+2022:legalstub$dynCall_iiiiiijj
+2023:legalstub$addKey
+2024:isoFile::Seek(unsigned int*, unsigned int)
+2025:isoFile::Read(unsigned char*, unsigned short*)
+2026:isoFile::Close()
+2027:isoDrive::~isoDrive()
+2028:isoDrive::UnMount()
+2029:isoDrive::TestDir(char*)
+2030:isoDrive::GetMediaByte()
+2031:isoDrive::GetLabel()
+2032:isoDrive::GetFileAttr(char*, unsigned short*)
+2033:isoDrive::FindNext(DOS_DTA&)
+2034:isoDrive::FindFirst(char*, DOS_DTA&, bool)
+2035:isoDrive::FileStat(char const*, FileStat_Block*)
+2036:isoDrive::FileOpen(DOS_File**, char*, unsigned int)
+2037:isoDrive::FileExists(char const*)
+2038:isoDrive::AllocationInfo(unsigned short*, unsigned char*, unsigned short*, unsigned short*)
+2039:isoDrive::Activate()
+2040:int DBOPL::Operator::TemplateVolume<(DBOPL::Operator::State)4>()
+2041:int DBOPL::Operator::TemplateVolume<(DBOPL::Operator::State)3>()
+2042:int DBOPL::Operator::TemplateVolume<(DBOPL::Operator::State)2>()
+2043:int DBOPL::Operator::TemplateVolume<(DBOPL::Operator::State)1>()
+2044:int DBOPL::Operator::TemplateVolume<(DBOPL::Operator::State)0>()
+2045:input
+2046:illegal_handler()
+2047:get_changes_mtime_ms
+2048:getConfigContent
+2049:getCPUMetrics
+2050:fsDeleteFile
+2051:fmt_fp
+2052:fatFile::Write(unsigned char*, unsigned short*)
+2053:fatFile::Read(unsigned char*, unsigned short*)
+2054:fatFile::Close()
+2055:fatDrive::TestDir(char*)
+2056:fatDrive::Rename(char*, char*)
+2057:fatDrive::RemoveDir(char*)
+2058:fatDrive::MakeDir(char*)
+2059:fatDrive::GetMediaByte()
+2060:fatDrive::GetFileAttr(char*, unsigned short*)
+2061:fatDrive::FindNext(DOS_DTA&)
+2062:fatDrive::FindFirst(char*, DOS_DTA&, bool)
+2063:fatDrive::FileUnlink(char*)
+2064:fatDrive::FileOpen(DOS_File**, char*, unsigned int)
+2065:fatDrive::FileExists(char const*)
+2066:fatDrive::FileCreate(DOS_File**, char*, unsigned short)
+2067:fatDrive::AllocationInfo(unsigned short*, unsigned char*, unsigned short*, unsigned short*)
+2068:extractBundleToFs
+2069:exitRuntime
+2070:end_of_input
+2071:end
+2072:emmalloc_malloc
+2073:em_client_sockdrive_opened
+2074:emGetRunningProgram
+2075:dynCall_viiiiii
+2076:dynCall_viiiii
+2077:dynCall_viiii
+2078:dynCall_viii
+2079:dynCall_vii
+2080:dynCall_vi
+2081:dynCall_v
+2082:dynCall_iiiiiiiii
+2083:dynCall_iiiiiiii
+2084:dynCall_iiiiiii
+2085:dynCall_iiiiii
+2086:dynCall_iiiiid
+2087:dynCall_iiiii
+2088:dynCall_iiii
+2089:dynCall_iii
+2090:dynCall_iidiiii
+2091:dynCall_ii
+2092:dynCall_i
+2093:dumpMemory
+2094:disney_write(unsigned int, unsigned int, unsigned int)
+2095:disney_read(unsigned int, unsigned int)
+2096:device_NUL::Write(unsigned char*, unsigned short*)
+2097:device_NUL::Seek(unsigned int*, unsigned int)
+2098:device_NUL::Read(unsigned char*, unsigned short*)
+2099:device_NUL::GetInformation()
+2100:device_MSCDEX::Write(unsigned char*, unsigned short*)
+2101:device_MSCDEX::WriteToControlChannel(unsigned int, unsigned short, unsigned short*)
+2102:device_MSCDEX::ReadFromControlChannel(unsigned int, unsigned short, unsigned short*)
+2103:device_MSCDEX::GetInformation()
+2104:device_EMM::Write(unsigned char*, unsigned short*)
+2105:device_EMM::WriteToControlChannel(unsigned int, unsigned short, unsigned short*)
+2106:device_EMM::ReadFromControlChannel(unsigned int, unsigned short, unsigned short*)
+2107:device_EMM::GetInformation()
+2108:device_CON::Write(unsigned char*, unsigned short*)
+2109:device_CON::Read(unsigned char*, unsigned short*)
+2110:device_CON::GetInformation()
+2111:device_COM::~device_COM()
+2112:device_COM::Write(unsigned char*, unsigned short*)
+2113:device_COM::Read(unsigned char*, unsigned short*)
+2114:deflate_slow
+2115:deflate_fast
+2116:default_handler()
+2117:decompress_allocate
+2118:crc_read
+2119:compression_flags
+2120:compress_callback
+2121:compress_allocate
+2122:cmos_timerevent(unsigned int)
+2123:cmos_selreg(unsigned int, unsigned int, unsigned int)
+2124:cmos_readreg(unsigned int, unsigned int)
+2125:cdromDrive::UnMount()
+2126:cdromDrive::SetDir(char const*)
+2127:cdromDrive::GetFileAttr(char*, unsigned short*)
+2128:cdromDrive::FindFirst(char*, DOS_DTA&, bool)
+2129:cdromDrive::FileOpen(DOS_File**, char*, unsigned int)
+2130:adlib_gusforward(unsigned int, unsigned int, unsigned int)
+2131:action_terminate
+2132:action_abort
+2133:_zip_buffer_data
+2134:_emscripten_timeout
+2135:_emscripten_tempret_set
+2136:_emscripten_stack_alloc
+2137:__wasm_call_ctors
+2138:__stdio_write
+2139:__stdio_seek
+2140:__stdio_read
+2141:__stdio_close
+2142:__funcs_on_exit
+2143:__emscripten_stdout_seek
+2144:__cxxabiv1::__vmi_class_type_info::search_below_dst(__cxxabiv1::__dynamic_cast_info*, void const*, int, bool) const
+2145:__cxxabiv1::__vmi_class_type_info::search_above_dst(__cxxabiv1::__dynamic_cast_info*, void const*, void const*, int, bool) const
+2146:__cxxabiv1::__vmi_class_type_info::has_unambiguous_public_base(__cxxabiv1::__dynamic_cast_info*, void*, int) const
+2147:__cxxabiv1::__si_class_type_info::search_below_dst(__cxxabiv1::__dynamic_cast_info*, void const*, int, bool) const
+2148:__cxxabiv1::__si_class_type_info::search_above_dst(__cxxabiv1::__dynamic_cast_info*, void const*, void const*, int, bool) const
+2149:__cxxabiv1::__si_class_type_info::has_unambiguous_public_base(__cxxabiv1::__dynamic_cast_info*, void*, int) const
+2150:__cxxabiv1::__class_type_info::search_below_dst(__cxxabiv1::__dynamic_cast_info*, void const*, int, bool) const
+2151:__cxxabiv1::__class_type_info::search_above_dst(__cxxabiv1::__dynamic_cast_info*, void const*, void const*, int, bool) const
+2152:__cxxabiv1::__class_type_info::has_unambiguous_public_base(__cxxabiv1::__dynamic_cast_info*, void*, int) const
+2153:__cxxabiv1::__class_type_info::can_catch(__cxxabiv1::__shim_type_info const*, void*&) const
+2154:__cxx_global_array_dtor_4027
+2155:__cxx_global_array_dtor_3231
+2156:__cxx_global_array_dtor_306
+2157:__cxx_global_array_dtor_302
+2158:__cxx_global_array_dtor_3004
+2159:__cxx_global_array_dtor_284
+2160:__cxx_global_array_dtor_2810
+2161:__cxx_global_array_dtor_2752
+2162:__cxx_global_array_dtor_260
+2163:__cxx_global_array_dtor_2285
+2164:__cxx_global_array_dtor_1828
+2165:__cxx_global_array_dtor_1686
+2166:__cxx_global_array_dtor_1579
+2167:__cxx_global_array_dtor_1498
+2168:__cxx_global_array_dtor.83
+2169:__cxx_global_array_dtor.68
+2170:__cxx_global_array_dtor.53
+2171:__cxx_global_array_dtor.40
+2172:__cxx_global_array_dtor.4
+2173:__cxx_global_array_dtor.38
+2174:__cxx_global_array_dtor.36
+2175:__cxx_global_array_dtor.34
+2176:__cxx_global_array_dtor.32
+2177:__cxx_global_array_dtor.30
+2178:__cxx_global_array_dtor.2_308
+2179:__cxx_global_array_dtor.29
+2180:__cxx_global_array_dtor.2
+2181:__cxx_global_array_dtor.134
+2182:__cxx_global_array_dtor.131
+2183:__cxx_global_array_dtor.107
+2184:__cxx_global_array_dtor.1
+2185:__cxx_global_array_dtor
+2186:XMS_ShutDown(Section*)
+2187:XMS_Init(Section*)
+2188:XMS_Handler()
+2189:XMS::~XMS()_931
+2190:Virtual_File::Seek(unsigned int*, unsigned int)
+2191:Virtual_File::Read(unsigned char*, unsigned short*)
+2192:Virtual_Drive::TestDir(char*)
+2193:Virtual_Drive::GetMediaByte()
+2194:Virtual_Drive::GetLabel()
+2195:Virtual_Drive::GetFileAttr(char*, unsigned short*)
+2196:Virtual_Drive::FindNext(DOS_DTA&)
+2197:Virtual_Drive::FindFirst(char*, DOS_DTA&, bool)
+2198:Virtual_Drive::FileStat(char const*, FileStat_Block*)
+2199:Virtual_Drive::FileOpen(DOS_File**, char*, unsigned int)
+2200:Virtual_Drive::FileExists(char const*)
+2201:Virtual_Drive::AllocationInfo(unsigned short*, unsigned char*, unsigned short*, unsigned short*)
+2202:VGA_VertInterrupt(unsigned int)
+2203:VGA_UnchainedVGA_Handler::writew(unsigned int, unsigned int)
+2204:VGA_UnchainedVGA_Handler::writed(unsigned int, unsigned int)
+2205:VGA_UnchainedVGA_Handler::writeb(unsigned int, unsigned int)
+2206:VGA_UnchainedRead_Handler::readw(unsigned int)
+2207:VGA_UnchainedRead_Handler::readd(unsigned int)
+2208:VGA_UnchainedRead_Handler::readb(unsigned int)
+2209:VGA_UnchainedEGA_Handler::writew(unsigned int, unsigned int)
+2210:VGA_UnchainedEGA_Handler::writed(unsigned int, unsigned int)
+2211:VGA_UnchainedEGA_Handler::writeb(unsigned int, unsigned int)
+2212:VGA_TEXT_Xlat16_Draw_Line(unsigned int, unsigned int)
+2213:VGA_TEXT_PageHandler::writeb(unsigned int, unsigned int)
+2214:VGA_TEXT_PageHandler::readb(unsigned int)
+2215:VGA_TEXT_Herc_Draw_Line(unsigned int, unsigned int)
+2216:VGA_TEXT_Draw_Line(unsigned int, unsigned int)
+2217:VGA_TANDY_PageHandler::GetHostReadPt(unsigned int)
+2218:VGA_PanningLatch(unsigned int)
+2219:VGA_PCJR_Handler::GetHostReadPt(unsigned int)
+2220:VGA_Other_VertInterrupt(unsigned int)
+2221:VGA_Memory_ShutDown(Section*)
+2222:VGA_Map_Handler::GetHostWritePt(unsigned int)
+2223:VGA_Map_Handler::GetHostReadPt(unsigned int)
+2224:VGA_MMIO_Handler::writew(unsigned int, unsigned int)
+2225:VGA_MMIO_Handler::writed(unsigned int, unsigned int)
+2226:VGA_MMIO_Handler::writeb(unsigned int, unsigned int)
+2227:VGA_MMIO_Handler::readw(unsigned int)
+2228:VGA_MMIO_Handler::readd(unsigned int)
+2229:VGA_MMIO_Handler::readb(unsigned int)
+2230:VGA_LIN4_Handler::writew(unsigned int, unsigned int)
+2231:VGA_LIN4_Handler::writed(unsigned int, unsigned int)
+2232:VGA_LIN4_Handler::writeb(unsigned int, unsigned int)
+2233:VGA_LIN4_Handler::readw(unsigned int)
+2234:VGA_LIN4_Handler::readd(unsigned int)
+2235:VGA_LIN4_Handler::readb(unsigned int)
+2236:VGA_LFB_Handler::GetHostReadPt(unsigned int)
+2237:VGA_LFBChanges_Handler::writew(unsigned int, unsigned int)
+2238:VGA_LFBChanges_Handler::writed(unsigned int, unsigned int)
+2239:VGA_LFBChanges_Handler::writeb(unsigned int, unsigned int)
+2240:VGA_LFBChanges_Handler::readw(unsigned int)
+2241:VGA_LFBChanges_Handler::readd(unsigned int)
+2242:VGA_LFBChanges_Handler::readb(unsigned int)
+2243:VGA_Init(Section*)
+2244:VGA_HERC_Handler::GetHostReadPt(unsigned int)
+2245:VGA_Empty_Handler::readb(unsigned int)
+2246:VGA_Draw_Xlat16_Linear_Line(unsigned int, unsigned int)
+2247:VGA_Draw_VGA_Line_HWMouse(unsigned int, unsigned int)
+2248:VGA_Draw_Linear_Line(unsigned int, unsigned int)
+2249:VGA_Draw_LIN32_Line_HWMouse(unsigned int, unsigned int)
+2250:VGA_Draw_LIN16_Line_HWMouse(unsigned int, unsigned int)
+2251:VGA_Draw_CGA16_Line(unsigned int, unsigned int)
+2252:VGA_Draw_4BPP_Line_Double(unsigned int, unsigned int)
+2253:VGA_Draw_4BPP_Line(unsigned int, unsigned int)
+2254:VGA_Draw_2BPP_Line(unsigned int, unsigned int)
+2255:VGA_Draw_2BPPHiRes_Line(unsigned int, unsigned int)
+2256:VGA_Draw_1BPP_Line(unsigned int, unsigned int)
+2257:VGA_DrawSingleLine(unsigned int)
+2258:VGA_DrawPart(unsigned int)
+2259:VGA_DrawEGASingleLine(unsigned int)
+2260:VGA_DisplayStartLatch(unsigned int)
+2261:VGA_Changes_Handler::writew(unsigned int, unsigned int)
+2262:VGA_Changes_Handler::writed(unsigned int, unsigned int)
+2263:VGA_Changes_Handler::writeb(unsigned int, unsigned int)
+2264:VGA_Changes_Handler::readw(unsigned int)
+2265:VGA_Changes_Handler::readd(unsigned int)
+2266:VGA_ChainedVGA_Handler::writew(unsigned int, unsigned int)
+2267:VGA_ChainedVGA_Handler::writed(unsigned int, unsigned int)
+2268:VGA_ChainedVGA_Handler::writeb(unsigned int, unsigned int)
+2269:VGA_ChainedVGA_Handler::readw(unsigned int)
+2270:VGA_ChainedVGA_Handler::readd(unsigned int)
+2271:VGA_ChainedVGA_Handler::readb(unsigned int)
+2272:VGA_ChainedEGA_Handler::writew(unsigned int, unsigned int)
+2273:VGA_ChainedEGA_Handler::writed(unsigned int, unsigned int)
+2274:VGA_ChainedEGA_Handler::writeb(unsigned int, unsigned int)
+2275:VGA_ChainedEGA_Handler::readw(unsigned int)
+2276:VGA_ChainedEGA_Handler::readd(unsigned int)
+2277:VESA_SetWindow()
+2278:VESA_PMSetWindow()
+2279:VESA_PMSetStart()
+2280:VESA_PMSetPalette()
+2281:VCPI_PM_Handler()
+2282:V86_Monitor()
+2283:UIR_Handler()
+2284:TriggerEventByName
+2285:TandyDAC_DMA_CallBack(DmaChannel*, DMAEvent)
+2286:TandyDACWrite(unsigned int, unsigned int, unsigned int)
+2287:TandyDACUpdate(unsigned int)
+2288:TandyDACRead(unsigned int, unsigned int)
+2289:TIMER_Init(Section*)
+2290:TIMER_Destroy(Section*)
+2291:TIMER::~TIMER()_2105
+2292:TANDYSOUND_ShutDown(Section*)
+2293:TANDYSOUND_Init(Section*)
+2294:TANDYSOUND::~TANDYSOUND()_2512
+2295:SortByNameRev(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&)
+2296:SortByDirName(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&)
+2297:SortByDirNameRev(DOS_Drive_Cache::CFileInfo* const&, DOS_Drive_Cache::CFileInfo* const&)
+2298:SetClock_PVGA1A(unsigned int, unsigned int)
+2299:SetClock_ET4K(unsigned int, unsigned int)
+2300:SetClock_ET3K(unsigned int, unsigned int)
+2301:Serial_EventHandler(unsigned int)
+2302:Section_prop::~Section_prop()_2896
+2303:Section_prop::PrintData(_IO_FILE*) const
+2304:Section_prop::HandleInputline(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+2305:Section_prop::GetPropValue(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&) const
+2306:Section_line::~Section_line()_2945
+2307:Section_line::PrintData(_IO_FILE*) const
+2308:Section_line::HandleInputline(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+2309:Section_line::GetPropValue(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&) const
+2310:SVGA_S3_WriteSEQ(unsigned int, unsigned int, unsigned int)
+2311:SVGA_S3_WriteCRTC(unsigned int, unsigned int, unsigned int)
+2312:SVGA_S3_ReadSEQ(unsigned int, unsigned int)
+2313:SVGA_S3_ReadCRTC(unsigned int, unsigned int)
+2314:SVGA_S3_HWCursorActive()
+2315:SVGA_S3_GetClock()
+2316:SN76496Write(unsigned int, unsigned int, unsigned int)
+2317:SN76496Update(unsigned int)
+2318:SHELL_ProgramStart(Program**)
+2319:SHELL_Init()
+2320:SERIAL_Write(unsigned int, unsigned int, unsigned int)
+2321:SERIAL_Read(unsigned int, unsigned int)
+2322:SERIAL_Init(Section*)
+2323:SERIAL_Destroy(Section*)
+2324:SERIALPORTS::~SERIALPORTS()_2707
+2325:SBLASTER_ShutDown(Section*)
+2326:SBLASTER_Init(Section*)
+2327:SBLASTER_CallBack(unsigned int)
+2328:SBLASTER::~SBLASTER()_2009
+2329:Reboot_Handler()
+2330:RESCAN_ProgramStart(Program**)
+2331:RESCAN::Run()
+2332:RENDER_StartLineHandler(void const*)
+2333:RENDER_Init(Section*)
+2334:RENDER_FinishLineHandler(void const*)
+2335:RENDER_ClearCacheHandler(void const*)
+2336:Property::SetVal(Value const&, bool, bool)
+2337:Property::GetValues() const
+2338:Prop_string::SetValue(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+2339:Prop_string::CheckValue(Value const&, bool)
+2340:Prop_path::~Prop_path()_2939
+2341:Prop_path::SetValue(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+2342:Prop_multival_remain::SetValue(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+2343:Prop_multival::SetValue(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+2344:Prop_multival::GetValues() const
+2345:Prop_int::~Prop_int()_2935
+2346:Prop_int::SetValue(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+2347:Prop_int::SetVal(Value const&, bool, bool)
+2348:Prop_int::CheckValue(Value const&, bool)
+2349:Prop_hex::SetValue(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+2350:Prop_bool::SetValue(std::__2::basic_string<char, std::__2::char_traits<char>, std::__2::allocator<char>> const&)
+2351:PageHandler::writew_checked(unsigned int, unsigned int)
+2352:PageHandler::writew(unsigned int, unsigned int)
+2353:PageHandler::writed_checked(unsigned int, unsigned int)
+2354:PageHandler::writed(unsigned int, unsigned int)
+2355:PageHandler::writeb_checked(unsigned int, unsigned int)
+2356:PageHandler::writeb(unsigned int, unsigned int)
+2357:PageHandler::readw_checked(unsigned int, unsigned short*)
+2358:PageHandler::readw(unsigned int)
+2359:PageHandler::readd_checked(unsigned int, unsigned int*)
+2360:PageHandler::readd(unsigned int)
+2361:PageHandler::readb_checked(unsigned int, unsigned char*)
+2362:PageHandler::readb(unsigned int)
+2363:PageFaultCore()
+2364:PS2_Handler()
+2365:PROGRAMS_Init(Section*)
+2366:PROGRAMS_Handler()
+2367:PIT0_Event(unsigned int)
+2368:PIC_Init(Section*)
+2369:PIC_Destroy(Section*)
+2370:PIC_8259A::~PIC_8259A()_505
+2371:PCSPEAKER_ShutDown(Section*)
+2372:PCSPEAKER_Init(Section*)
+2373:PCSPEAKER_CallBack(unsigned int)
+2374:PCSPEAKER::~PCSPEAKER()_1973
+2375:PAGING_Init(Section*)
+2376:Overlay_Drive::~Overlay_Drive()_1249
+2377:Overlay_Drive::TestDir(char*)
+2378:Overlay_Drive::Rename(char*, char*)
+2379:Overlay_Drive::RemoveDir(char*)
+2380:Overlay_Drive::MakeDir(char*)
+2381:Overlay_Drive::GetFileAttr(char*, unsigned short*)
+2382:Overlay_Drive::FindNext(DOS_DTA&)
+2383:Overlay_Drive::FindFirst(char*, DOS_DTA&, bool)
+2384:Overlay_Drive::FileUnlink(char*)
+2385:Overlay_Drive::FileStat(char const*, FileStat_Block*)
+2386:Overlay_Drive::FileOpen(DOS_File**, char*, unsigned int)
+2387:Overlay_Drive::FileExists(char const*)
+2388:Overlay_Drive::FileCreate(DOS_File**, char*, unsigned short)
+2389:Overlay_Drive::EmptyCache()
+2390:OverlayFile::Write(unsigned char*, unsigned short*)
+2391:OPL_Write(unsigned int, unsigned int, unsigned int)
+2392:OPL_SaveRawEvent(bool)
+2393:OPL_Read(unsigned int, unsigned int)
+2394:OPL_CallBack(unsigned int)
+2395:OPL3::Handler::WriteReg(unsigned int, unsigned char)
+2396:OPL3::Handler::WriteAddr(unsigned int, unsigned char)
+2397:OPL3::Handler::Init(unsigned int)
+2398:OPL3::Handler::Generate(MixerChannel*, unsigned int)
+2399:OPL2::Handler::WriteReg(unsigned int, unsigned char)
+2400:OPL2::Handler::Init(unsigned int)
+2401:OPL2::Handler::Generate(MixerChannel*, unsigned int)
+2402:Normal_Loop()
+2403:NormalDw_9_32_R(void const*)
+2404:NormalDw_9_32_L(void const*)
+2405:NormalDw_8_8_R(void const*)
+2406:NormalDw_8_8_L(void const*)
+2407:NormalDw_8_32_R(void const*)
+2408:NormalDw_8_32_L(void const*)
+2409:NormalDw_32_32_R(void const*)
+2410:NormalDw_32_32_L(void const*)
+2411:NormalDw_32_16_R(void const*)
+2412:NormalDw_32_16_L(void const*)
+2413:NormalDw_32_15_R(void const*)
+2414:NormalDw_32_15_L(void const*)
+2415:NormalDw_16_32_R(void const*)
+2416:NormalDw_16_32_L(void const*)
+2417:NormalDw_16_15_R(void const*)
+2418:NormalDw_16_15_L(void const*)
+2419:NormalDw_15_32_R(void const*)
+2420:NormalDw_15_32_L(void const*)
+2421:NormalDw_15_16_R(void const*)
+2422:NormalDw_15_16_L(void const*)
+2423:NormalDh_9_32_R(void const*)
+2424:NormalDh_9_32_L(void const*)
+2425:NormalDh_8_8_R(void const*)
+2426:NormalDh_8_8_L(void const*)
+2427:NormalDh_8_32_R(void const*)
+2428:NormalDh_8_32_L(void const*)
+2429:NormalDh_32_32_R(void const*)
+2430:NormalDh_32_32_L(void const*)
+2431:NormalDh_32_16_R(void const*)
+2432:NormalDh_32_16_L(void const*)
+2433:NormalDh_32_15_R(void const*)
+2434:NormalDh_32_15_L(void const*)
+2435:NormalDh_16_32_R(void const*)
+2436:NormalDh_16_32_L(void const*)
+2437:NormalDh_16_15_R(void const*)
+2438:NormalDh_16_15_L(void const*)
+2439:NormalDh_15_32_R(void const*)
+2440:NormalDh_15_32_L(void const*)
+2441:NormalDh_15_16_R(void const*)
+2442:NormalDh_15_16_L(void const*)
+2443:Normal1x_9_32_R(void const*)
+2444:Normal1x_9_32_L(void const*)
+2445:Normal1x_8_8_R(void const*)
+2446:Normal1x_8_8_L(void const*)
+2447:Normal1x_8_32_R(void const*)
+2448:Normal1x_8_32_L(void const*)
+2449:Normal1x_32_32_R(void const*)
+2450:Normal1x_32_32_L(void const*)
+2451:Normal1x_32_16_R(void const*)
+2452:Normal1x_32_16_L(void const*)
+2453:Normal1x_32_15_R(void const*)
+2454:Normal1x_32_15_L(void const*)
+2455:Normal1x_16_32_R(void const*)
+2456:Normal1x_16_32_L(void const*)
+2457:Normal1x_16_15_R(void const*)
+2458:Normal1x_16_15_L(void const*)
+2459:Normal1x_15_32_R(void const*)
+2460:Normal1x_15_32_L(void const*)
+2461:Normal1x_15_16_R(void const*)
+2462:Normal1x_15_16_L(void const*)
+2463:MidiHandler_oss::PlaySysex(unsigned char*, unsigned int)
+2464:MidiHandler_oss::PlayMsg(unsigned char*)
+2465:MidiHandler_oss::Open(char const*)
+2466:MidiHandler_oss::GetName()
+2467:MidiHandler_oss::Close()
+2468:MidiHandler::Open(char const*)
+2469:MidiHandler::GetName()
+2470:MSCDEX_Strategy_Handler()
+2471:MSCDEX_ShutDown(Section*)
+2472:MSCDEX_Init(Section*)
+2473:MSCDEX_Handler()
+2474:MPU401_ResetDone(unsigned int)
+2475:MPU401_ReadStatus(unsigned int, unsigned int)
+2476:MPU401_ReadData(unsigned int, unsigned int)
+2477:MPU401_Init(Section*)
+2478:MPU401_Event(unsigned int)
+2479:MPU401_Destroy(Section*)
+2480:MPU401::~MPU401()_2477
+2481:MOUSE_Limit_Events(unsigned int)
+2482:MOUSE_Init(Section*)
+2483:MOUSE_BD_Handler()
+2484:MOUNT_ProgramStart(Program**)
+2485:MOUNT::Run()
+2486:MIXER_ProgramStart(Program**)
+2487:MIXER_Mix_NoSound()
+2488:MIXER_Mix()
+2489:MIXER_Init(Section*)
+2490:MIXER::Run()
+2491:MIDI_Init(Section*)
+2492:MIDI_Destroy(Section*)
+2493:MIDI::~MIDI()_1853
+2494:MEM_ShutDown(Section*)
+2495:MEM_ProgramStart(Program**)
+2496:MEM_Init(Section*)
+2497:MEMORY::~MEMORY()_2642
+2498:MEM::Run()
+2499:MAMEOPL3::Handler::~Handler()_2412
+2500:MAMEOPL3::Handler::WriteReg(unsigned int, unsigned char)
+2501:MAMEOPL3::Handler::Init(unsigned int)
+2502:MAMEOPL3::Handler::Generate(MixerChannel*, unsigned int)
+2503:MAMEOPL2::Handler::~Handler()_2406
+2504:MAMEOPL2::Handler::WriteReg(unsigned int, unsigned char)
+2505:MAMEOPL2::Handler::Init(unsigned int)
+2506:MAMEOPL2::Handler::Generate(MixerChannel*, unsigned int)
+2507:LOADROM_ProgramStart(Program**)
+2508:LOADROM::Run()
+2509:LOADFIX_ProgramStart(Program**)
+2510:LOADFIX::Run()
+2511:KEYB_ProgramStart(Program**)
+2512:KEYBOARD_TransferBuffer(unsigned int)
+2513:KEYBOARD_TickHandler()
+2514:KEYBOARD_Init(Section*)
+2515:KEYB::Run()
+2516:JOYSTICK_Init(Section*)
+2517:JOYSTICK_Destroy(Section*)
+2518:JOYSTICK::~JOYSTICK()_2457
+2519:InitPageUserROHandler::writew_checked(unsigned int, unsigned int)
+2520:InitPageUserROHandler::writew(unsigned int, unsigned int)
+2521:InitPageUserROHandler::writed_checked(unsigned int, unsigned int)
+2522:InitPageUserROHandler::writed(unsigned int, unsigned int)
+2523:InitPageUserROHandler::writeb_checked(unsigned int, unsigned int)
+2524:InitPageUserROHandler::writeb(unsigned int, unsigned int)
+2525:InitPageHandler::writew_checked(unsigned int, unsigned int)
+2526:InitPageHandler::writew(unsigned int, unsigned int)
+2527:InitPageHandler::writed_checked(unsigned int, unsigned int)
+2528:InitPageHandler::writed(unsigned int, unsigned int)
+2529:InitPageHandler::writeb_checked(unsigned int, unsigned int)
+2530:InitPageHandler::writeb(unsigned int, unsigned int)
+2531:InitPageHandler::readw_checked(unsigned int, unsigned short*)
+2532:InitPageHandler::readw(unsigned int)
+2533:InitPageHandler::readd_checked(unsigned int, unsigned int*)
+2534:InitPageHandler::readd(unsigned int)
+2535:InitPageHandler::readb_checked(unsigned int, unsigned char*)
+2536:InitPageHandler::readb(unsigned int)
+2537:IncreaseHue(bool)
+2538:IncreaseFrameSkip(bool)
+2539:IllegalPageHandler::writeb(unsigned int, unsigned int)
+2540:IllegalPageHandler::readb(unsigned int)
+2541:IRQ_TandyDAC()
+2542:IRQ1_Handler()
+2543:IPX_ShutDown(Section*)
+2544:IPX_Multiplex()
+2545:IPX_Init(Section*)
+2546:IPX_ESRHandler()
+2547:IPX_ClientLoop()
+2548:IPX_AES_EventHandler(unsigned int)
+2549:IPXNET_ProgramStart(Program**)
+2550:IPXNET::Run()
+2551:IPX::~IPX()_252
+2552:IO_WriteDefault(unsigned int, unsigned int, unsigned int)
+2553:IO_ReadDefault(unsigned int, unsigned int)
+2554:IO_Init(Section*)
+2555:IO_Destroy(Section*)
+2556:IOFaultCore()
+2557:INTRO_ProgramStart(Program**)
+2558:INTRO::Run()
+2559:INT8_Handler()
+2560:INT74_Ret_Handler()
+2561:INT74_Handler()
+2562:INT70_Handler()
+2563:INT67_Handler()
+2564:INT4B_Handler()
+2565:INT2F_Handler()
+2566:INT2E_Handler()
+2567:INT1A_Handler()
+2568:INT17_Handler()
+2569:INT16_Handler()
+2570:INT15_Handler()
+2571:INT14_Handler()
+2572:INT13_DiskHandler()
+2573:INT12_Handler()
+2574:INT11_Handler()
+2575:INT10_Init(Section*)
+2576:INT10_Handler()
+2577:IMGMOUNT_ProgramStart(Program**)
+2578:IMGMOUNT::Run()
+2579:HLT_Decode()
+2580:GetClock_PVGA1A()
+2581:GetClock_ET4K()
+2582:GetClock_ET3K()
+2583:GUS_TimerEvent(unsigned int)
+2584:GUS_ShutDown(Section*)
+2585:GUS_Init(Section*)
+2586:GUS_DMA_Callback(DmaChannel*, DMAEvent)
+2587:GUS_CallBack(unsigned int)
+2588:GUS::~GUS()_2035
+2589:GUI_StartUp(Section*)
+2590:FinishSetMode_PVGA1A(unsigned int, VGA_ModeExtraData*)
+2591:FinishSetMode_ET4K(unsigned int, VGA_ModeExtraData*)
+2592:FinishSetMode_ET3K(unsigned int, VGA_ModeExtraData*)
+2593:FPU_Init(Section*)
+2594:END_DMA_Event(unsigned int)
+2595:EMS_ShutDown(Section*)
+2596:EMS_Init(Section*)
+2597:EMS::~EMS()_913
+2598:EA_32_87_n()_722
+2599:EA_32_87_n()_667
+2600:EA_32_87_n()
+2601:EA_32_86_n()_721
+2602:EA_32_86_n()_666
+2603:EA_32_86_n()
+2604:EA_32_85_n()_720
+2605:EA_32_85_n()_665
+2606:EA_32_85_n()
+2607:EA_32_84_n()_719
+2608:EA_32_84_n()_664
+2609:EA_32_84_n()
+2610:EA_32_83_n()_718
+2611:EA_32_83_n()_663
+2612:EA_32_83_n()
+2613:EA_32_82_n()_717
+2614:EA_32_82_n()_662
+2615:EA_32_82_n()
+2616:EA_32_81_n()_716
+2617:EA_32_81_n()_661
+2618:EA_32_81_n()
+2619:EA_32_80_n()_715
+2620:EA_32_80_n()_660
+2621:EA_32_80_n()
+2622:EA_32_47_n()_714
+2623:EA_32_47_n()_659
+2624:EA_32_47_n()
+2625:EA_32_46_n()_713
+2626:EA_32_46_n()_658
+2627:EA_32_46_n()
+2628:EA_32_45_n()_712
+2629:EA_32_45_n()_657
+2630:EA_32_45_n()
+2631:EA_32_44_n()_711
+2632:EA_32_44_n()_656
+2633:EA_32_44_n()
+2634:EA_32_43_n()_710
+2635:EA_32_43_n()_655
+2636:EA_32_43_n()
+2637:EA_32_42_n()_709
+2638:EA_32_42_n()_654
+2639:EA_32_42_n()
+2640:EA_32_41_n()_708
+2641:EA_32_41_n()_653
+2642:EA_32_41_n()
+2643:EA_32_40_n()_707
+2644:EA_32_40_n()_652
+2645:EA_32_40_n()
+2646:EA_32_07_n()_706
+2647:EA_32_07_n()_651
+2648:EA_32_07_n()
+2649:EA_32_06_n()_705
+2650:EA_32_06_n()_650
+2651:EA_32_06_n()
+2652:EA_32_05_n()_704
+2653:EA_32_05_n()_649
+2654:EA_32_05_n()
+2655:EA_32_04_n()_703
+2656:EA_32_04_n()_648
+2657:EA_32_04_n()
+2658:EA_32_03_n()_702
+2659:EA_32_03_n()_647
+2660:EA_32_03_n()
+2661:EA_32_02_n()_701
+2662:EA_32_02_n()_646
+2663:EA_32_02_n()
+2664:EA_32_01_n()_700
+2665:EA_32_01_n()_645
+2666:EA_32_01_n()
+2667:EA_32_00_n()_699
+2668:EA_32_00_n()_644
+2669:EA_32_00_n()
+2670:EA_16_87_n()_698
+2671:EA_16_87_n()_643
+2672:EA_16_87_n()
+2673:EA_16_86_n()_697
+2674:EA_16_86_n()_642
+2675:EA_16_86_n()
+2676:EA_16_85_n()_696
+2677:EA_16_85_n()_641
+2678:EA_16_85_n()
+2679:EA_16_84_n()_695
+2680:EA_16_84_n()_640
+2681:EA_16_84_n()
+2682:EA_16_83_n()_694
+2683:EA_16_83_n()_639
+2684:EA_16_83_n()
+2685:EA_16_82_n()_693
+2686:EA_16_82_n()_638
+2687:EA_16_82_n()
+2688:EA_16_81_n()_692
+2689:EA_16_81_n()_637
+2690:EA_16_81_n()
+2691:EA_16_80_n()_691
+2692:EA_16_80_n()_636
+2693:EA_16_80_n()
+2694:EA_16_47_n()_690
+2695:EA_16_47_n()_635
+2696:EA_16_47_n()
+2697:EA_16_46_n()_689
+2698:EA_16_46_n()_634
+2699:EA_16_46_n()
+2700:EA_16_45_n()_688
+2701:EA_16_45_n()_633
+2702:EA_16_45_n()
+2703:EA_16_44_n()_687
+2704:EA_16_44_n()_632
+2705:EA_16_44_n()
+2706:EA_16_43_n()_686
+2707:EA_16_43_n()_631
+2708:EA_16_43_n()
+2709:EA_16_42_n()_685
+2710:EA_16_42_n()_630
+2711:EA_16_42_n()
+2712:EA_16_41_n()_684
+2713:EA_16_41_n()_629
+2714:EA_16_41_n()
+2715:EA_16_40_n()_683
+2716:EA_16_40_n()_628
+2717:EA_16_40_n()
+2718:EA_16_07_n()_682
+2719:EA_16_07_n()_627
+2720:EA_16_07_n()
+2721:EA_16_06_n()_681
+2722:EA_16_06_n()_626
+2723:EA_16_06_n()
+2724:EA_16_05_n()_680
+2725:EA_16_05_n()_625
+2726:EA_16_05_n()
+2727:EA_16_04_n()_679
+2728:EA_16_04_n()_624
+2729:EA_16_04_n()
+2730:EA_16_03_n()_678
+2731:EA_16_03_n()_623
+2732:EA_16_03_n()
+2733:EA_16_02_n()_677
+2734:EA_16_02_n()_622
+2735:EA_16_02_n()
+2736:EA_16_01_n()_676
+2737:EA_16_01_n()_621
+2738:EA_16_01_n()
+2739:EA_16_00_n()_675
+2740:EA_16_00_n()_620
+2741:EA_16_00_n()
+2742:DtaResult::compareSize(DtaResult const&, DtaResult const&)
+2743:DtaResult::compareName(DtaResult const&, DtaResult const&)
+2744:DtaResult::compareExt(DtaResult const&, DtaResult const&)
+2745:DtaResult::compareDate(DtaResult const&, DtaResult const&)
+2746:DosBox_Pause()
+2747:DetermineMode_PVGA1A()
+2748:DetermineMode_ET4K()
+2749:DetermineMode_ET3K()
+2750:Default_IRQ_Handler()
+2751:DecreaseHue(bool)
+2752:DecreaseFrameSkip(bool)
+2753:DSP_RaiseIRQEvent(unsigned int)
+2754:DSP_FinishReset(unsigned int)
+2755:DSP_E2_DMA_CallBack(DmaChannel*, DMAEvent)
+2756:DSP_DMA_CallBack(DmaChannel*, DMAEvent)
+2757:DSP_ADC_CallBack(DmaChannel*, DMAEvent)
+2758:DRIVES_Init(Section*)
+2759:DOS_ShutDown(Section*)
+2760:DOS_Shell::~DOS_Shell()_1708
+2761:DOS_Shell::Run()
+2762:DOS_Shell::CMD_VER(char*)
+2763:DOS_Shell::CMD_TYPE(char*)
+2764:DOS_Shell::CMD_TIME(char*)
+2765:DOS_Shell::CMD_SUBST(char*)
+2766:DOS_Shell::CMD_SHIFT(char*)
+2767:DOS_Shell::CMD_SET(char*)
+2768:DOS_Shell::CMD_RMDIR(char*)
+2769:DOS_Shell::CMD_RENAME(char*)
+2770:DOS_Shell::CMD_REM(char*)
+2771:DOS_Shell::CMD_PATH(char*)
+2772:DOS_Shell::CMD_MKDIR(char*)
+2773:DOS_Shell::CMD_LOADHIGH(char*)
+2774:DOS_Shell::CMD_IF(char*)
+2775:DOS_Shell::CMD_HELP(char*)
+2776:DOS_Shell::CMD_GOTO(char*)
+2777:DOS_Shell::CMD_EXIT(char*)
+2778:DOS_Shell::CMD_ECHO(char*)
+2779:DOS_Shell::CMD_DIR(char*)
+2780:DOS_Shell::CMD_DELETE(char*)
+2781:DOS_Shell::CMD_DATE(char*)
+2782:DOS_Shell::CMD_COPY(char*)
+2783:DOS_Shell::CMD_CLS(char*)
+2784:DOS_Shell::CMD_CHOICE(char*)
+2785:DOS_Shell::CMD_CHDIR(char*)
+2786:DOS_Shell::CMD_CALL(char*)
+2787:DOS_Shell::CMD_ATTRIB(char*)
+2788:DOS_MultiplexFunctions()
+2789:DOS_KeyboardLayout_ShutDown(Section*)
+2790:DOS_KeyboardLayout_Init(Section*)
+2791:DOS_KeyboardLayout::~DOS_KeyboardLayout()_1188
+2792:DOS_Init(Section*)
+2793:DOS_File::RemoveRef()
+2794:DOS_File::IsOpen()
+2795:DOS_File::IsName(char const*)
+2796:DOS_File::GetName()
+2797:DOS_File::AddRef()
+2798:DOS_Drive::SetDir(char const*)
+2799:DOS_Drive::GetLabel()
+2800:DOS_Drive::EmptyCache()
+2801:DOS_Device::Write(unsigned char*, unsigned short*)
+2802:DOS_Device::WriteToControlChannel(unsigned int, unsigned short, unsigned short*)
+2803:DOS_Device::Seek(unsigned int*, unsigned int)
+2804:DOS_Device::Read(unsigned char*, unsigned short*)
+2805:DOS_Device::ReadFromControlChannel(unsigned int, unsigned short, unsigned short*)
+2806:DOS_Device::GetInformation()
+2807:DOS_Device::Close()
+2808:DOS_27Handler()
+2809:DOS_26Handler()
+2810:DOS_25Handler()
+2811:DOS_20Handler()
+2812:DOSBOX_UnlockSpeed(bool)
+2813:DOSBOX_RealInit(Section*)
+2814:DOS::~DOS()_1463
+2815:DMA_Write_Port(unsigned int, unsigned int, unsigned int)
+2816:DMA_Silent_Event(unsigned int)
+2817:DMA_Read_Port(unsigned int, unsigned int)
+2818:DMA_Init(Section*)
+2819:DMA_Destroy(Section*)
+2820:DMA::~DMA()_2072
+2821:DISNEY_ShutDown(Section*)
+2822:DISNEY_Init(Section*)
+2823:DISNEY_CallBack(unsigned int)
+2824:DISNEY::~DISNEY()_2592
+2825:DBOPL::Handler::WriteReg(unsigned int, unsigned char)
+2826:DBOPL::Handler::WriteAddr(unsigned int, unsigned char)
+2827:DBOPL::Handler::Init(unsigned int)
+2828:DBOPL::Handler::Generate(MixerChannel*, unsigned int)
+2829:DBOPL::Channel* DBOPL::Channel::BlockTemplate<(DBOPL::SynthMode)8>(DBOPL::Chip*, unsigned int, int*)
+2830:DBOPL::Channel* DBOPL::Channel::BlockTemplate<(DBOPL::SynthMode)7>(DBOPL::Chip*, unsigned int, int*)
+2831:DBOPL::Channel* DBOPL::Channel::BlockTemplate<(DBOPL::SynthMode)6>(DBOPL::Chip*, unsigned int, int*)
+2832:DBOPL::Channel* DBOPL::Channel::BlockTemplate<(DBOPL::SynthMode)5>(DBOPL::Chip*, unsigned int, int*)
+2833:DBOPL::Channel* DBOPL::Channel::BlockTemplate<(DBOPL::SynthMode)3>(DBOPL::Chip*, unsigned int, int*)
+2834:DBOPL::Channel* DBOPL::Channel::BlockTemplate<(DBOPL::SynthMode)2>(DBOPL::Chip*, unsigned int, int*)
+2835:DBOPL::Channel* DBOPL::Channel::BlockTemplate<(DBOPL::SynthMode)1>(DBOPL::Chip*, unsigned int, int*)
+2836:DBOPL::Channel* DBOPL::Channel::BlockTemplate<(DBOPL::SynthMode)11>(DBOPL::Chip*, unsigned int, int*)
+2837:DBOPL::Channel* DBOPL::Channel::BlockTemplate<(DBOPL::SynthMode)10>(DBOPL::Chip*, unsigned int, int*)
+2838:DBOPL::Channel* DBOPL::Channel::BlockTemplate<(DBOPL::SynthMode)0>(DBOPL::Chip*, unsigned int, int*)
+2839:CycleHercPal(bool)
+2840:Composite(bool)
+2841:CommandLine::GetCount()
+2842:CSerialDummy::~CSerialDummy()_2645
+2843:CSerialDummy::transmitByte(unsigned char, bool)
+2844:CSerialDummy::setRTSDTR(bool, bool)
+2845:CSerialDummy::handleUpperEvent(unsigned short)
+2846:CPU_ShutDown(Section*)
+2847:CPU_Init(Section*)
+2848:CPU_CycleIncrease(bool)
+2849:CPU_CycleDecrease(bool)
+2850:CPU_Core_Simple_Trap_Run()
+2851:CPU_Core_Prefetch_Trap_Run()
+2852:CPU_Core_Normal_Trap_Run()
+2853:CONFIG_ProgramStart(Program**)
+2854:CONFIG::Run()
+2855:CMS_CallBack(unsigned int)
+2856:CMS::~CMS()_2580
+2857:CMOS_Init(Section*)
+2858:CMOS_Destroy(Section*)
+2859:CMOS::~CMOS()_2136
+2860:CGAModel(bool)
+2861:CDROM_Interface_Image::~CDROM_Interface_Image()_425
+2862:CDROM_Interface_Image::StopAudio()
+2863:CDROM_Interface_Image::SetDevice(char*, int)
+2864:CDROM_Interface_Image::ReadSectors(unsigned int, bool, unsigned long, unsigned long)
+2865:CDROM_Interface_Image::PlayAudioSector(unsigned long, unsigned long)
+2866:CDROM_Interface_Image::PauseAudio(bool)
+2867:CDROM_Interface_Image::GetUPC(unsigned char&, char*)
+2868:CDROM_Interface_Image::GetAudioTracks(int&, int&, SMSF&)
+2869:CDROM_Interface_Image::GetAudioTrackInfo(int, SMSF&, unsigned char&)
+2870:CDROM_Interface_Image::GetAudioSub(unsigned char&, unsigned char&, unsigned char&, SMSF&, SMSF&)
+2871:CDROM_Interface_Image::GetAudioStatus(bool&, bool&)
+2872:CDROM_Interface_Image::ChannelControl(SCtrl)
+2873:CDROM_Interface_Image::CDAudioCallBack(unsigned int)
+2874:CDROM_Interface_Image::BinaryFile::~BinaryFile()_415
+2875:CDROM_Interface_Image::BinaryFile::read(unsigned char*, int, int)
+2876:CDROM_Interface_Image::BinaryFile::getLength()
+2877:CDROM_Interface_Fake::ReadSectors(unsigned int, bool, unsigned long, unsigned long)
+2878:CDROM_Interface_Fake::GetUPC(unsigned char&, char*)
+2879:CDROM_Interface_Fake::GetAudioTracks(int&, int&, SMSF&)
+2880:CDROM_Interface_Fake::GetAudioTrackInfo(int, SMSF&, unsigned char&)
+2881:CDROM_Interface_Fake::GetAudioSub(unsigned char&, unsigned char&, unsigned char&, SMSF&, SMSF&)
+2882:CDROM_Interface_Fake::GetAudioStatus(bool&, bool&)
+2883:CALLBACK_Init(Section*)
+2884:BatchFile::~BatchFile()_1818
+2885:BatchFile::ReadLine(char*)
+2886:BOOT_ProgramStart(Program**)
+2887:BOOT::Run()
+2888:BIOS_Init(Section*)
+2889:BIOS_Destroy(Section*)
+2890:BIOS::~BIOS()_971
+2891:Adlib::Module::~Module()_2387
+2892:AcceptsMode_ET3K(unsigned int)
+2893:AUTOEXEC_Init(Section*)
+2894:AUTOEXEC::~AUTOEXEC()_1710
